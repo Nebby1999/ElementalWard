@@ -1,0 +1,22 @@
+{
+    "name": "Nebula.Editor",
+    "rootNamespace": "Nebula.Editor",
+    "references": [
+        "GUID:08a9467597375a344a1062389773e861",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:15fc0a57446b3144c949da3e2b9737a9",
+        "GUID:c579267770062bf448e75eb160330b7f",
+        "GUID:8d96260df7ddb384dbace5e8de4da39f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
