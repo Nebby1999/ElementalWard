@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: CharacterBodyNames Shared Data
+  m_Name: ElementNames Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: CharacterBodyNames
-  m_TableCollectionNameGuidString: 8c44967c25becad43a772685c6219fef
+  m_TableCollectionName: ElementNames
+  m_TableCollectionNameGuidString: 4358e8ee0aac8194a950d3d331e58e12
   m_Entries:
-  - m_Id: 75501486080
-    m_Key: TESTBODY_BODY_NAME
+  - m_Id: 130991562752
+    m_Key: ELEMENT_FIRE
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 7036998794288037958
+    rid: 352136342394634247
   references:
     version: 2
     RefIds:
-    - rid: 7036998794288037958
+    - rid: 352136342394634247
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
         asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1683323317786
+        m_CustomEpoch: 1683390674706

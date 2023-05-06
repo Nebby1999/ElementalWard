@@ -8,7 +8,7 @@ namespace ElementalWard
 {
     public enum ElementIndex
     {
-        None = -1;
+        None = -1
     }
     public static class ElementCatalog
     {
