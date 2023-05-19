@@ -21,7 +21,6 @@ namespace Nebula
         {
             if (Initialized)
                 return;
-
             Initialized = true;
 
             entityStates = LoadEntityStates();

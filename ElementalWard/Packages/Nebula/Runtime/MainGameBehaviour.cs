@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
 namespace Nebula
@@ -20,9 +21,9 @@ namespace Nebula
         public static event Action OnLateUpdate;
         public static event Action OnShutdown;
 
-        [SerializeField] private SceneReference _gameLoadingSceneName;
-        [SerializeField] private SceneReference _loadingFinishedScene;
-        [SerializeField] private SceneReference _inbetweenScenesLoadingScene;
+        [SerializeField] private AssetReferenceScene _gameLoadingSceneName;
+        [SerializeField] private AssetReferenceScene _loadingFinishedScene;
+        [SerializeField] private AssetReferenceScene _inbetweenScenesLoadingScene;
 
         protected virtual void Awake()
         {
@@ -37,14 +38,13 @@ namespace Nebula
             if(!LoadStarted)
             {
                 LoadStarted = true;
-                SceneLoader.LoadingSceneName = _inbetweenScenesLoadingScene;
+                SceneLoader.LoadingScene = _inbetweenScenesLoadingScene;
                 StartCoroutine(LoadGame());
             }
         }
 
         protected virtual IEnumerator LoadGame()
         {
-            LoadStarted = true;
             SceneManager.sceneLoaded += (s, e) =>
             {
                 Debug.Log($"Loaded Scene {s.name} loadSceneMode={e}");

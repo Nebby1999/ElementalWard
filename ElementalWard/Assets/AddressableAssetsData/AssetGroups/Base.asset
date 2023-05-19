@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base
+  m_EditorClassIdentifier: 
+  m_GroupName: Base
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1f4f718f85a30434caf1a590615cfa8d
+  m_SerializeEntries:
+  - m_GUID: 1a9e2141d3e0fa04290025009c28892c
+    m_Address: ElementalWard/Base/ElementalWardApplication.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d6f348ac9e174c4a8289bd2cfae6db9
+    m_Address: ElementalWard/Base/PlayerInput.inputactions
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 28aa601881adfcb49a6f8ddb16607476, type: 2}
+    - {fileID: 11400000, guid: 036557228eaa74641ae3862ee0a5ca7f, type: 2}

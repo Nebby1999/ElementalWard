@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Nebula;
 using UObject = UnityEngine.Object;
+using System.Threading.Tasks;
 
 namespace ElementalWard
 {
@@ -10,7 +11,12 @@ namespace ElementalWard
     {
         protected override IEnumerator LoadGameContent()
         {
-            yield break;
+            return InitializeCatalogs();
+        }
+
+        private IEnumerator InitializeCatalogs()
+        {
+            return ElementCatalog.Initialize();
         }
     }
 }

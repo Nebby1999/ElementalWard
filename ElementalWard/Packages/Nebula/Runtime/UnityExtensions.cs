@@ -4,6 +4,7 @@ namespace Nebula
 {
     public static class UnityExtensions
     {
+        public static T AsValidOrNull<T>(this T t) where T : UnityEngine.Object => t ? t : null;
         public static GameObject GetRootGameObject(this Component c) => GetRootGameObject(c.gameObject);
         public static GameObject GetRootGameObject(this Behaviour b) => GetRootGameObject(b.gameObject);
         public static GameObject GetRootGameObject(this MonoBehaviour mb) => GetRootGameObject(mb.gameObject);
@@ -16,7 +17,6 @@ namespace Nebula
 
         public static void SetActiveSafe(this GameObject go, bool state)
         {
-            go.GetComponent<IAnimationClipSource>();
             if (!go)
                 return;
 

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-ElementDefs-Water
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-ElementDefs-Water
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 504e84fbfb23de043a608fe59b6302ee
+  m_SerializeEntries:
+  - m_GUID: 5288bfc2c6fc0a24c8ded36f8f774a21
+    m_Address: ElementalWard/Base/ElementDefs/Water/Water.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ElementDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c70ac757d5920d4a959e52ace634b90
+    m_Address: ElementalWard/Base/ElementDefs/Water
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e37f1f5fe6adcbc49bf206e0b73bbf4a, type: 2}
+    - {fileID: 11400000, guid: 903d982931125f64b9a3a80b2d5892cb, type: 2}

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-ElementDefs-Fire
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-ElementDefs-Fire
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 59c2dc62d9f80c64ca2c4b27578af360
+  m_SerializeEntries:
+  - m_GUID: 9ce85ac5506aef942beb4eeedb885921
+    m_Address: ElementalWard/Base/ElementDefs/Fire/Fire.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ElementDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3cec1dd369f2904c9f0c19b3108c3e8
+    m_Address: ElementalWard/Base/ElementDefs/Fire
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 58f0c9bc84ef26442aac30e6508f2230, type: 2}
+    - {fileID: 11400000, guid: a697b942d77ac1e42bd42afe785a41ae, type: 2}

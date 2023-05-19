@@ -5,6 +5,8 @@ using Nebula;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using System;
+using UnityEngine.AddressableAssets;
+using UnityEngine.SceneManagement;
 
 namespace Nebula
 {
@@ -23,7 +25,7 @@ namespace Nebula
         }
         private static DummyLoader _loader;
 
-        public static SceneReference LoadingSceneName
+        public static AssetReference LoadingScene
         {
             get
             {
@@ -64,7 +66,7 @@ namespace Nebula
                 return IsTypeDerivedFromGenericType(typeToCheck.BaseType, genericType);
             }
         }
-        private static SceneReference _loadingSceneName;
+        private static AssetReference _loadingSceneName;
 
         private class DummyLoader : MonoBehaviour { }
 
