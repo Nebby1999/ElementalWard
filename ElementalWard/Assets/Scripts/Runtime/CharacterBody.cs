@@ -27,6 +27,7 @@ namespace ElementalWard
         [SerializeField] private float _lvlAttackSpeed;
         [SerializeField] private float _lvlDamage;
         [SerializeField] private float _lvlArmor;
+        [SerializeField] private Transform aimOriginTransform;
 
         public float MaxHealth { get; private set; }
         public float Regen { get; private set; }
@@ -36,22 +37,36 @@ namespace ElementalWard
         public float Damage { get; private set; }
         public float Armor { get; private set; }
         public uint Level => tiedMaster ? tiedMaster.Level : 1;
+        public CharacterInputBank InputBank { get; private set; }
+        public float Speed => MovementSpeed;
+        public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
         private CharacterMaster tiedMaster;
         private bool statsDirty;
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
+            InputBank = GetComponent<CharacterInputBank>();
+        }
+        private void Start()
+        {
+            RecalculateStats();
         }
 
-        // Update is called once per frame
         void Update()
         {
         }
 
         public void RecalculateStats()
         {
-
+            uint levelMinusOne = Level - 1;
+            MaxHealth = _baseHealth + _lvlHealth * levelMinusOne;
+            Regen = _baseRegen + _lvlRegen * levelMinusOne;
+            Shield = _baseShield + _lvlShield * levelMinusOne;
+            MovementSpeed = _baseMovementSpeed + _lvlMovementSpeed * levelMinusOne;
+            AttackSpeed = _baseAttackSpeed + _lvlAttackSpeed * levelMinusOne;
+            Damage = _baseDamage + _lvlDamage * levelMinusOne;
+            Armor = _baseArmor + _lvlArmor * levelMinusOne;
         }
+        [ContextMenu("Recalculate Stats")]
         public void SetStatsDirty() => statsDirty = true;
 		private void FixedUpdate()
 		{

@@ -10,32 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: ElementNames_en
+  m_Name: BodyNames_en
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en
-  m_SharedData: {fileID: 11400000, guid: 4358e8ee0aac8194a950d3d331e58e12, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 0da2be190230c094fbe4104cafe25a0f, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 130991562752
-    m_Localized: Igneo
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17252891271168
-    m_Localized: Aqua
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17513835700224
-    m_Localized: Aero
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17781902057472
-    m_Localized: Petra
-    m_Metadata:
-      m_Items: []
-  - m_Id: 18039470071808
-    m_Localized: Electro
+  - m_Id: 53160906752
+    m_Localized: Test Body
     m_Metadata:
       m_Items: []
   references:

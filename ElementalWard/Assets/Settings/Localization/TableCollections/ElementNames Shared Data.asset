@@ -13,37 +13,37 @@ MonoBehaviour:
   m_Name: ElementNames Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: ElementNames
-  m_TableCollectionNameGuidString: 4358e8ee0aac8194a950d3d331e58e12
+  m_TableCollectionNameGuidString: 7b8a29c33dc975e45af56b9aa82312b7
   m_Entries:
-  - m_Id: 130991562752
-    m_Key: ELEMENT_FIRE
+  - m_Id: 125936275456
+    m_Key: ELEMENT_EARTH_NAME
     m_Metadata:
       m_Items: []
-  - m_Id: 17252891271168
-    m_Key: ELEMENT_WATER
+  - m_Id: 217816698880
+    m_Key: ELEMENT_ELECTRIC_NAME
     m_Metadata:
       m_Items: []
-  - m_Id: 17513835700224
-    m_Key: ELEMENT_WIND
+  - m_Id: 312041738240
+    m_Key: ELEMENT_FIRE_NAME
     m_Metadata:
       m_Items: []
-  - m_Id: 17781902057472
-    m_Key: ELEMENT_EARTH
+  - m_Id: 402777116672
+    m_Key: ELEMENT_WATER_NAME
     m_Metadata:
       m_Items: []
-  - m_Id: 18039470071808
-    m_Key: ELEMENT_ELECTRIC
+  - m_Id: 458708160512
+    m_Key: ELEMENT_WIND_NAME
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 352136342394634247
+    rid: 352136750446149653
   references:
     version: 2
     RefIds:
-    - rid: 352136342394634247
+    - rid: 352136750446149653
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
         asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1683390674706
+        m_CustomEpoch: 1684950284513

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: CharacterBodyNames
+  m_Name: BodyNames
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 8c44967c25becad43a772685c6219fef, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 0da2be190230c094fbe4104cafe25a0f, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 78f99a3abcacc9346a7dca5756bc8dad, type: 2}
+  - {fileID: 11400000, guid: 21f73601a00ba8e4e93cc71ea9a39bc9, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:

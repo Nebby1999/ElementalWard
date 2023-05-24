@@ -8,14 +8,18 @@ namespace ElementalWard
 {
     public class EntityStateMachine : EntityStateMachineBase
     {
-        public class CommonComponentLocator
+        public struct CommonComponentLocator
         {
+            public Transform transform;
+            public readonly CharacterMovementController characterMovementController;
             public readonly CharacterBody characterBody;
-            public readonly InputBank inputBank;
+            public readonly CharacterInputBank inputBank;
             public CommonComponentLocator(GameObject gameObject)
             {
+                transform = gameObject.transform;
+                characterMovementController = gameObject.GetComponent<CharacterMovementController>();
                 characterBody = gameObject.GetComponent<CharacterBody>();
-                inputBank = gameObject.GetComponent<InputBank>();
+                inputBank = gameObject.GetComponent<CharacterInputBank>();
             }
         }
 
