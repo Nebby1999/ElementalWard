@@ -6,13 +6,15 @@ using UnityEngine.InputSystem;
 using System;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.AddressableAssets;
+using Cinemachine;
+using Nebula;
 
 namespace ElementalWard
 {
     [RequireComponent(typeof(CharacterMaster), typeof(PlayerInput))]
     public class PlayableCharacterMaster : MonoBehaviour
     {
-        private const string CAMERA_ADDRESS = "ElementalWard/Base/ElementalWardCam.prefab";
+        private const string CAMERA_ADDRESS = "ElementalWard/Base/FirstPersonCamera.prefab";
         public CharacterMaster ManagedMaster { get; private set; }
         public PlayerInput PlayerInput { get; private set; }
         public CharacterInputBank BodyInputs { get; private set; }
@@ -30,9 +32,14 @@ namespace ElementalWard
 
         private void SpawnCamera(CharacterBody body)
         {
-            var camera = Addressables.LoadAssetAsync<GameObject>(CAMERA_ADDRESS).WaitForCompletion();
-            Instantiate(camera, body.transform.position, body.transform.rotation, body.transform);
-            PlayerInput.camera = camera.GetComponent<Camera>();
+            var fpsVirtualCameraPrefab = Addressables.LoadAssetAsync<GameObject>(CAMERA_ADDRESS).WaitForCompletion();
+            var fpsVirtualCamera = Instantiate(fpsVirtualCameraPrefab).GetComponent<CinemachineVirtualCamera>();
+            var characterCameraController = body.GetComponent<CharacterCameraController>();
+            if(characterCameraController)
+            {
+                characterCameraController.VirtualCamera = fpsVirtualCamera;
+            }
+
             BodyInputs = body.InputBank;
             OnPlayableBodySpawned?.Invoke(body);
         }

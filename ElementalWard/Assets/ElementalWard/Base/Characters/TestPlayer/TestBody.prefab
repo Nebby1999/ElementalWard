@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3900817627430093398}
   - component: {fileID: 6045485379497889296}
   - component: {fileID: -7556436084046398385}
+  - component: {fileID: 6144592808034582868}
   - component: {fileID: 4000646230687331242}
   m_Layer: 0
   m_Name: TestBody
@@ -122,6 +123,19 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &6144592808034582868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ff2cf134e5f7d4ab2bd5e010f0e59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!54 &4000646230687331242
 Rigidbody:
   m_ObjectHideFlags: 0
