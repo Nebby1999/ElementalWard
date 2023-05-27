@@ -13,41 +13,19 @@ namespace ElementalWard
 
         [SerializeField] private bool _spawnOnStart;
         [SerializeField] private GameObject _defaultBodyPrefab;
-        public uint Level { get => _level; set => _level = value; }
         [SerializeField] private uint _level;
-        public float CurrentXP
-        {
-            get => _currentXP;
-            set
-            {
-                var newCurrentXP = _currentXP + value;
-                if (newCurrentXP > _neededXPForNextLevel)
-                {
-                    _currentXP = newCurrentXP - _neededXPForNextLevel;
-                    LevelUp();
-                    return;
-                }
-                _currentXP = newCurrentXP;
-            }
-        }
         [SerializeField] private float _currentXP;
         [SerializeField] private float _neededXPForNextLevel;
+        [SerializeField] private bool _autoCalculateNextLevelRequirement = true;
+        public uint Level => _level;
+        public float CurrentXP => _currentXP;
+        public float NeededXPForNextLevel => _neededXPForNextLevel;
         public GameObject CurrentCharacterPrefab { get => _currentCharacterPrefab; }
         private GameObject _currentCharacterPrefab;
         public CharacterBody CurrentBody { get; private set; }
         public Action<CharacterBody> OnBodySpawned;
         public static event Action<CharacterMaster> OnLevelUpGlobal;
-
-		private void OnValidate()
-		{
-            _currentXP = 0;
-            _neededXPForNextLevel = Level * LEVEL_TO_XP_COEF / LEVEL_TO_XP_DIVISOR;
-		}
-        private void LevelUp()
-        {
-            OnLevelUpGlobal?.Invoke(this);
-        }
-		void Start()
+        private void Start()
         {
             _currentCharacterPrefab = _defaultBodyPrefab;
             if (_defaultBodyPrefab && _spawnOnStart)
@@ -55,10 +33,32 @@ namespace ElementalWard
                 SpawnHere();
             }
         }
+        private void FixedUpdate()
+        {
+            if (_currentXP > _neededXPForNextLevel)
+            {
+                _level++;
+                _currentXP -= _neededXPForNextLevel;
+                LevelUp();
+            }
+        }
+
+        private void OnValidate()
+        {
+            if (_autoCalculateNextLevelRequirement)
+            {
+                _neededXPForNextLevel = CalculateExperienceForLevel(_level + 1);
+            }
+        }
+        private void LevelUp()
+        {
+            _neededXPForNextLevel = CalculateExperienceForLevel(_level + 1);
+            OnLevelUpGlobal?.Invoke(this);
+        }
         public void SpawnHere() => Spawn(transform.position, Quaternion.identity);
         public void Spawn(Vector3 position, Quaternion rotation)
         {
-            if(CurrentBody)
+            if (CurrentBody)
             {
                 Destroy(CurrentBody);
             }
@@ -68,14 +68,14 @@ namespace ElementalWard
         }
         public void SetCharacterPrefab(GameObject characterObject, bool forceRespawn = true)
         {
-            if(characterObject.GetComponent<CharacterBody>())
+            if (characterObject.GetComponent<CharacterBody>())
             {
                 _currentCharacterPrefab = characterObject;
-                if(forceRespawn && CurrentBody)
+                if (forceRespawn && CurrentBody)
                 {
                     Vector3 pos = transform.position;
                     Quaternion rot = transform.rotation;
-                    if(CurrentBody)
+                    if (CurrentBody)
                     {
                         pos = CurrentBody.transform.position;
                         rot = CurrentBody.transform.rotation;
@@ -84,10 +84,18 @@ namespace ElementalWard
                 }
             }
         }
-        // Update is called once per frame
-        void Update()
+        private void AddXP(uint xpAmount)
         {
-        
+            _currentXP += xpAmount;
+        }
+
+        private void RemoveXP(uint xpAmount)
+        {
+            _currentXP -= xpAmount;
+        }
+        private float CalculateExperienceForLevel(uint levelToCalculate)
+        {
+            return levelToCalculate * LEVEL_TO_XP_COEF / LEVEL_TO_XP_DIVISOR;
         }
     }
 }

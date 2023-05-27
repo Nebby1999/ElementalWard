@@ -49,9 +49,10 @@ MonoBehaviour:
   _spawnOnStart: 1
   _defaultBodyPrefab: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
     type: 3}
-  _level: 76
-  _currentXP: 0
-  _neededXPForNextLevel: 4150.845
+  _level: 19
+  _currentXP: 462.6
+  _neededXPForNextLevel: 1092.3276
+  _autoCalculateNextLevelRequirement: 1
 --- !u!114 &7342703876500854070
 MonoBehaviour:
   m_ObjectHideFlags: 0

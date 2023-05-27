@@ -27,9 +27,6 @@ namespace ElementalWard
         public ButtonState jump;
         public ButtonState dash;
 
-        /// <summary>
-        /// Represents the current blue axis (forward) of this object
-        /// </summary>
         public Vector3 AimDirection
         {
             get
@@ -46,6 +43,7 @@ namespace ElementalWard
             }
         }
         private Vector3 _aimDirection;
+        public float yRotation;
 
         public Vector3 AimOrigin => characterBody ? characterBody.AimOriginTransform.position : transform.position;
 

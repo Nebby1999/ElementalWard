@@ -10,23 +10,24 @@ namespace ElementalWard
     [RequireComponent(typeof(Rigidbody), typeof(CharacterBody))]
     public class CharacterMovementController : MonoBehaviour
     {
-        public float turnSensitivity;
         public Rigidbody RigidBody { get; private set; }
         public CharacterBody CharacterBody { get; private set; }
-        public Vector3 MovementVector { get; set; }
-        public Vector3 LookRotation { get; set; }
+        public Vector3 MovementInput { get; set; }
+        public float yRotation { get; set; }
 
+        private Transform _transform;
         private void Awake()
         {
             RigidBody = GetComponent<Rigidbody>();
             CharacterBody = GetComponent<CharacterBody>();
+            _transform = transform;
         }
 
         private void FixedUpdate()
         {
-            var yVelocity = RigidBody.velocity.y;
-            var xzMovementVector = MovementVector * CharacterBody.MovementSpeed;
-            RigidBody.velocity = new Vector3(xzMovementVector.x, yVelocity, xzMovementVector.z);
+            RigidBody.MoveRotation(Quaternion.Euler(0, yRotation, 0));
+            Vector3 vel = (transform.forward * MovementInput.z + transform.right * MovementInput.x) * CharacterBody.MovementSpeed;
+            RigidBody.velocity = new Vector3(vel.x, RigidBody.velocity.y, vel.z);
         }
     }
 }

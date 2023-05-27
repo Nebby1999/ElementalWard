@@ -19,6 +19,10 @@ namespace ElementalWard
         public PlayerInput PlayerInput { get; private set; }
         public CharacterInputBank BodyInputs { get; private set; }
         public static event Action<CharacterBody> OnPlayableBodySpawned;
+
+        private Transform bodyCameraTransform;
+        private Vector2 rawMovementInput;
+        private Vector2 rawLookInput;
         private void Awake()
         {
             ManagedMaster = GetComponent<CharacterMaster>();
@@ -34,14 +38,25 @@ namespace ElementalWard
         {
             var fpsVirtualCameraPrefab = Addressables.LoadAssetAsync<GameObject>(CAMERA_ADDRESS).WaitForCompletion();
             var fpsVirtualCamera = Instantiate(fpsVirtualCameraPrefab).GetComponent<CinemachineVirtualCamera>();
-            var characterCameraController = body.GetComponent<CharacterCameraController>();
-            if(characterCameraController)
+            var bodyCamera = body.GetComponent<CharacterCameraController>();
+            if(bodyCamera)
             {
-                characterCameraController.VirtualCamera = fpsVirtualCamera;
+                bodyCamera.VirtualCamera = fpsVirtualCamera;
+                bodyCameraTransform = fpsVirtualCamera.transform;
             }
 
             BodyInputs = body.InputBank;
             OnPlayableBodySpawned?.Invoke(body);
+        }
+
+        private void Update()
+        {
+            if(BodyInputs)
+            {
+                BodyInputs.moveVector = new Vector3(rawMovementInput.x, 0, rawMovementInput.y);
+                BodyInputs.AimDirection = bodyCameraTransform.AsValidOrNull()?.forward ?? Vector3.forward;
+                BodyInputs.yRotation = bodyCameraTransform.AsValidOrNull()?.rotation.eulerAngles.y ?? 0f;
+            }
         }
 
         private void OnDisable()
@@ -51,15 +66,12 @@ namespace ElementalWard
 
         public void OnMove(InputAction.CallbackContext ctx)
         {
-            if(BodyInputs)
-            {
-                BodyInputs.moveVector = ctx.ReadValue<Vector2>();
-            }
+            rawMovementInput = ctx.ReadValue<Vector2>();
         }
 
         public void OnLook(InputAction.CallbackContext ctx)
         {
-            var mouseDirection = ctx.ReadValue<Vector2>();
+            rawLookInput = ctx.ReadValue<Vector2>();
         }
 
     }

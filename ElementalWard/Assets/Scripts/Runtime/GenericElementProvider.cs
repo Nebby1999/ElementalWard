@@ -7,10 +7,9 @@ namespace ElementalWard
 {
     public interface IElementProvider
     {
-
+        public ElementDef CurrentElement { get; set; }
     }
-    public class GenericElementProvider : MonoBehaviour, IElementProvider
+    public class GenericElementProvider : MonoBehaviour
     {
-
     }
 }

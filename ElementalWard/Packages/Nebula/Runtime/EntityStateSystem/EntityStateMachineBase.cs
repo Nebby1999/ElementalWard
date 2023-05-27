@@ -17,6 +17,9 @@ namespace Nebula
         public SerializableSystemType initialState;
         [SerializableSystemType.RequiredBaseType(typeof(EntityStateBase))]
         public SerializableSystemType mainState;
+#if UNITY_EDITOR
+        private static List<EntityStateMachineBase> machines = new List<EntityStateMachineBase>();
+#endif
 
         public EntityStateBase NewState { get; private set; }
         public EntityStateBase CurrentState { get; private set; }
@@ -25,6 +28,9 @@ namespace Nebula
         {
             CurrentState = new Uninitialized();
             CurrentState.outer = this;
+#if UNITY_EDITOR
+            machines.Add(this);
+#endif
         }
 
         protected virtual void Start()
@@ -75,6 +81,21 @@ namespace Nebula
         protected virtual void OnDestroy()
         {
             CurrentState.OnExit();
+#if UNITY_EDITOR
+            machines.Remove(this);
+#endif
         }
+#if UNITY_EDITOR
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void OnDomainReload()
+        {
+            if (!UnityEditor.EditorApplication.isPlaying)
+                return;
+            foreach(var machine in machines)
+            {
+                machine.SetState(EntityStateCatalog.InstantiateState(machine.mainState));
+            }
+        }
+#endif
     }
 }

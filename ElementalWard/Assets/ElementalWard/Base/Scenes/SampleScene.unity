@@ -622,6 +622,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: _level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: _neededXPForNextLevel
+      value: 54.616386
+      objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_RootOrder
