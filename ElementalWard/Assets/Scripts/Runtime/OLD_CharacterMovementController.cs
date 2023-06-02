@@ -8,7 +8,7 @@ using UnityEngine;
 namespace ElementalWard
 {
     [RequireComponent(typeof(Rigidbody), typeof(CharacterBody))]
-    public class CharacterMovementController : MonoBehaviour
+    public class OLD_CharacterMovementController : MonoBehaviour
     {
         public Rigidbody RigidBody { get; private set; }
         public CharacterBody CharacterBody { get; private set; }
