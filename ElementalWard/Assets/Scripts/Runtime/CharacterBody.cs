@@ -28,6 +28,7 @@ namespace ElementalWard
         [SerializeField] private float _lvlDamage;
         [SerializeField] private float _lvlArmor;
         [SerializeField] private Transform aimOriginTransform;
+        [SerializeField] private float sprintSpeedMultiplier;
 
         public float MaxHealth { get; private set;}
         public float MaxShield { get; private set; }
@@ -39,6 +40,18 @@ namespace ElementalWard
         public uint Level => tiedMaster ? tiedMaster.Level : 1;
         public CharacterInputBank InputBank { get; private set; }
         public HealthComponent HealthComponent { get; private set; }
+        public bool IsSprinting
+        {
+            get => _isSprinting;
+            set
+            {
+                if (_isSprinting == value)
+                    return;
+                _isSprinting = value;
+                RecalculateStats();
+            }
+        }
+        private bool _isSprinting;
         public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
         private CharacterMaster tiedMaster;
         private bool statsDirty;
@@ -64,7 +77,14 @@ namespace ElementalWard
             MaxHealth = _baseHealth + _lvlHealth * levelMinusOne;
             Regen = _baseRegen + _lvlRegen * levelMinusOne;
             MaxShield = _baseShield + _lvlShield * levelMinusOne;
-            MovementSpeed = _baseMovementSpeed + _lvlMovementSpeed * levelMinusOne;
+
+            var movementSpeed = _baseMovementSpeed;
+            var lvlMovementSpeed = _lvlMovementSpeed * levelMinusOne;
+            var finalMovementSpeed = movementSpeed + lvlMovementSpeed;
+            if (IsSprinting)
+                finalMovementSpeed *= sprintSpeedMultiplier;
+            MovementSpeed = finalMovementSpeed;
+
             AttackSpeed = _baseAttackSpeed + _lvlAttackSpeed * levelMinusOne;
             Damage = _baseDamage + _lvlDamage * levelMinusOne;
             Armor = _baseArmor + _lvlArmor * levelMinusOne;

@@ -8,24 +8,44 @@ using UnityEngine.InputSystem;
 
 namespace ElementalWard
 {
+    /// <summary>
+    /// Represents inputs for a character.
+    /// </summary>
     public class CharacterInputBank : MonoBehaviour
     {
-        public struct ButtonState
+        public struct Button
         {
-            public bool Performed => Phase == InputActionPhase.Performed;
-            public bool Waiting => Phase == InputActionPhase.Waiting;
-            public bool Started => Phase == InputActionPhase.Started;
-            public bool Disabled => Phase == InputActionPhase.Disabled;
-            public bool Canceled => Phase == InputActionPhase.Canceled;
-            public InputActionPhase Phase { get; private set; }
+            public InputAction TiedAction
+            {
+                get => _tiedAction;
+                set
+                {
+                    if (value.type != InputActionType.Button)
+                        throw new InvalidOperationException("InputAction type for TiedAction needs to be Button!");
+                    _tiedAction = value;
+                }
+            }
+            private InputAction _tiedAction;
 
-            public void SetPhase(InputActionPhase newPhase) => Phase = newPhase;
+            /// <summary>
+            /// <inheritdoc cref="InputAction.WasPerformedThisFrame"/>
+            /// </summary>
+            public bool WasPerformedThisFrame => _tiedAction?.WasPerformedThisFrame() ?? false;
+            /// <summary>
+            /// <inheritdoc cref="InputAction.WasReleasedThisFrame"/>
+            /// </summary>
+            public bool WasReleasedThisFrame => _tiedAction?.WasReleasedThisFrame() ?? false;
+            /// <summary>
+            /// <inheritdoc cref="InputAction.WasPressedThisFrame"/>
+            /// </summary>
+            public bool WasPressedThisFrame => _tiedAction?.WasPressedThisFrame() ?? false;
+            /// <summary>
+            /// <inheritdoc cref="InputAction.inProgress"/>
+            /// </summary>
+            public bool IsPressed => _tiedAction?.inProgress ?? false;
         }
         public Vector3 moveVector;
-        public ButtonState fire;
-        public ButtonState modifier;
-        public ButtonState jump;
-        public ButtonState dash;
+        public Button jumpButton;
 
         public Vector3 AimDirection
         {
@@ -43,15 +63,12 @@ namespace ElementalWard
             }
         }
         private Vector3 _aimDirection;
-        public float yRotation;
-
+        public Quaternion LookRotation { get; set; }
         public Vector3 AimOrigin => characterBody ? characterBody.AimOriginTransform.position : transform.position;
-
         private CharacterBody characterBody;
         private void Awake()
         {
             characterBody = GetComponent<CharacterBody>();
-
         }
         private void Start()
         {
@@ -60,6 +77,7 @@ namespace ElementalWard
 
         private void Update()
         {
+
 #if DEBUG
             Debug.DrawRay(AimOrigin, AimDirection * 5, Color.yellow, 0.01f);
 #endif

@@ -11,22 +11,29 @@ using Nebula;
 
 namespace ElementalWard
 {
+    /// <summary>
+    /// Represents a <see cref="CharacterMaster"/> that's controlled by a player, it takes care of transferring the Inputs to the body's <see cref="CharacterInputBank"/>.
+    /// </summary>
     [RequireComponent(typeof(CharacterMaster), typeof(PlayerInput))]
     public class PlayableCharacterMaster : MonoBehaviour
     {
         private const string CAMERA_ADDRESS = "ElementalWard/Base/FirstPersonCamera.prefab";
+        private const string INPUT_ACTION_ASSET_ADDRESS = "ElementalWard/Base/ElementalWardInput.inputactions";
         public CharacterMaster ManagedMaster { get; private set; }
         public PlayerInput PlayerInput { get; private set; }
         public CharacterInputBank BodyInputs { get; private set; }
         public static event Action<CharacterBody> OnPlayableBodySpawned;
 
-        private Transform bodyCameraTransform;
-        private Vector2 rawMovementInput;
-        private Vector2 rawLookInput;
+        private Transform _bodyCameraTransform;
+        private Vector2 _rawMovementInput;
+        private Vector2 _rawLookInput;
+        private InputActionPhase _jumpInput;
         private void Awake()
         {
             ManagedMaster = GetComponent<CharacterMaster>();
             PlayerInput = GetComponent<PlayerInput>();
+            if (PlayerInput)
+                PlayerInput.actions = Addressables.LoadAssetAsync<InputActionAsset>(INPUT_ACTION_ASSET_ADDRESS).WaitForCompletion();
         }
 
         private void OnEnable()
@@ -42,20 +49,32 @@ namespace ElementalWard
             if(bodyCamera)
             {
                 bodyCamera.VirtualCamera = fpsVirtualCamera;
-                bodyCameraTransform = fpsVirtualCamera.transform;
+                _bodyCameraTransform = fpsVirtualCamera.transform;
             }
-
-            BodyInputs = body.InputBank;
+            SetBodyInputs(body.InputBank);
             OnPlayableBodySpawned?.Invoke(body);
         }
 
+        private void SetBodyInputs(CharacterInputBank input)
+        {
+            BodyInputs = input;
+            if (!BodyInputs)
+                return;
+            var actions = PlayerInput.actions;
+            var map = actions.FindActionMap(ElementalWardInputGuids.PlayerGUID);
+            if (map == null)
+                return;
+
+            BodyInputs.jumpButton.TiedAction = map.FindAction(ElementalWardInputGuids.Player.JumpGUID);/**/
+        }
         private void Update()
         {
             if(BodyInputs)
             {
-                BodyInputs.moveVector = new Vector3(rawMovementInput.x, 0, rawMovementInput.y);
-                BodyInputs.AimDirection = bodyCameraTransform.AsValidOrNull()?.forward ?? Vector3.forward;
-                BodyInputs.yRotation = bodyCameraTransform.AsValidOrNull()?.rotation.eulerAngles.y ?? 0f;
+                BodyInputs.moveVector = new Vector3(_rawMovementInput.x, 0, _rawMovementInput.y);
+                //Instead of doing fancy vector math, we can just take the actual camera's forward axis so we can properly decide the body's aim dections.
+                BodyInputs.LookRotation = _bodyCameraTransform.AsValidOrNull()?.rotation ?? Quaternion.identity;
+                BodyInputs.AimDirection = _bodyCameraTransform.forward;
             }
         }
 
@@ -66,13 +85,12 @@ namespace ElementalWard
 
         public void OnMove(InputAction.CallbackContext ctx)
         {
-            rawMovementInput = ctx.ReadValue<Vector2>();
+            _rawMovementInput = ctx.ReadValue<Vector2>();
         }
 
         public void OnLook(InputAction.CallbackContext ctx)
         {
-            rawLookInput = ctx.ReadValue<Vector2>();
+            _rawLookInput = ctx.ReadValue<Vector2>();
         }
-
     }
 }

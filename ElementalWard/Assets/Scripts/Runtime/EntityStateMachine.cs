@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UObject = UnityEngine.Object;
+using KinematicCharacterController;
 using Nebula;
 
 namespace ElementalWard
@@ -11,13 +12,13 @@ namespace ElementalWard
         public struct CommonComponentLocator
         {
             public readonly Transform transform;
-            public readonly OLD_CharacterMovementController characterMovementController;
+            public readonly CharacterMovementController characterMovementController;
             public readonly CharacterBody characterBody;
             public readonly CharacterInputBank inputBank;
             public CommonComponentLocator(GameObject gameObject)
             {
                 transform = gameObject.transform;
-                characterMovementController = gameObject.GetComponent<OLD_CharacterMovementController>();
+                characterMovementController = gameObject.GetComponent<CharacterMovementController>();
                 characterBody = gameObject.GetComponent<CharacterBody>();
                 inputBank = gameObject.GetComponent<CharacterInputBank>();
             }

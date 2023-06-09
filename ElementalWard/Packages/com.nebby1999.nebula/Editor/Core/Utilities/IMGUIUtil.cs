@@ -76,6 +76,18 @@ namespace Nebula.Editor
             return buttonVal;
         }
 
+        public static bool ButtonAction(Action action, string text, string tooltip = null, Texture texture = null) => ButtonAction(action, new GUIContent(text, texture, tooltip));
+        
+        public static bool ButtonAction(Action action, GUIContent label)
+        {
+            if(GUILayout.Button(label))
+            {
+                action();
+                return true;
+            }
+            return false;
+        }
+
         public static bool TryDrawFieldFromFieldInfo(FieldInfo fieldInfo, object objectInstance)
         {
             try

@@ -9,6 +9,9 @@ using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {
+    /// <summary>
+    /// Takes care of properly updating the virtual camera's transform to match the virtual camera's rotation, which as a results allows us to get the proper aim direction.
+    /// </summary>
     public class CharacterCameraController : MonoBehaviour
     {
         public Vector3 cameraPositionOffset;
