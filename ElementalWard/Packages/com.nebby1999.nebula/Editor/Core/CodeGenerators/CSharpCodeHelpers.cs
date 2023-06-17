@@ -81,6 +81,14 @@ namespace Nebula.Editor
             return name + suffix;
         }
 
+        public static string MakeIdentifierCamelCase(string name, string suffix = "")
+        {
+            var str = MakeIdentifier(name, suffix);
+            char[] chars = str.ToCharArray();
+            chars[0] = char.ToLowerInvariant(chars[0]);
+            return new string(chars);
+        }
+
         public static string MakeTypeName(string name, string suffix = "")
         {
             var symbolName = MakeIdentifier(name, suffix);

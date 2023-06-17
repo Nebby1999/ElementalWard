@@ -50,6 +50,10 @@ namespace Nebula.Serialization
             }
         }
 
+        public static implicit operator Type(SerializableSystemType t)
+        {
+            return Type.GetType(t._assemblyQualifiedName);
+        }
         [SerializeField]
         private string _assemblyQualifiedName;
     }

@@ -14,10 +14,20 @@ namespace Nebula
         /// </summary>
         /// <param name="text">The string object to check</param>
         /// <returns>True if the string object is not Null, Empty or Whitespace, false otherwise.</returns>
-        public static bool IsNullOrEmptyOrWhitespace(this string text)
+        public static bool IsNullOrWhiteSpace(this string text)
         {
             return (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text));
         }
+
+        public static string WithAllWhitespaceStripped(this string str)
+        {
+            var buffer = new StringBuilder();
+            foreach (var ch in str)
+                if (!char.IsWhiteSpace(ch))
+                    buffer.Append(ch);
+            return buffer.ToString();
+        }
+
         /// <summary>
         /// Extension to allow tuple style deconstruction of keys and values when enumerating a dictionary.
         /// Example: foreach(var (key, value) in myDictionary)

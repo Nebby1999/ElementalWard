@@ -125,7 +125,7 @@ namespace Nebula.Editor.Inspectors
 
         private void FilterInstanceFields()
         {
-            if(SearchBar.IsNullOrEmptyOrWhitespace())
+            if(SearchBar.IsNullOrWhiteSpace())
             {
                 _filteredTypeInstanceFields = _inspectedTypeInstanceFields;
                 return;

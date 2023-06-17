@@ -43,9 +43,28 @@ namespace ElementalWard
             /// <inheritdoc cref="InputAction.inProgress"/>
             /// </summary>
             public bool IsPressed => _tiedAction?.inProgress ?? false;
+
+            public Button(InputAction action)
+            {
+                if (action.type != InputActionType.Button)
+                    throw new ArgumentException($"The InputAction for a Button struct needs to be of type {nameof(InputActionType)}.{nameof(InputActionType.Button)}. Supplied Type: {action.type}.");
+
+                _tiedAction = action;
+            }
+
+            public static implicit operator Button(InputAction action)
+            {
+                return new Button(action);
+            }
         }
         public Vector3 moveVector;
+        /// <summary>
+        /// if this value is > 0, then go to the next element, otherwise, go back to the previous element
+        /// </summary>
+        public float elementAxis;
+        public Button fireButton;
         public Button jumpButton;
+        public Button sprintButton;
 
         public Vector3 AimDirection
         {

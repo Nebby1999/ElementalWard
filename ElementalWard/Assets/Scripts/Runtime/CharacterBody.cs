@@ -17,6 +17,7 @@ namespace ElementalWard
         [SerializeField] private float _baseAttackSpeed;
         [SerializeField] private float _baseDamage;
         [SerializeField] private float _baseArmor;
+        [SerializeField] private float _jumpStrength;
 
         public bool autoCalculateLevelStats;
 
@@ -37,7 +38,8 @@ namespace ElementalWard
         public float AttackSpeed { get; private set; }
         public float Damage { get; private set; }
         public float Armor { get; private set; }
-        public uint Level => tiedMaster ? tiedMaster.Level : 1;
+        public float JumpStrength { get; private set; }
+        public uint Level => TiedMaster.AsValidOrNull()?.Level ?? 1;
         public CharacterInputBank InputBank { get; private set; }
         public HealthComponent HealthComponent { get; private set; }
         public bool IsSprinting
@@ -51,9 +53,9 @@ namespace ElementalWard
                 RecalculateStats();
             }
         }
+        public CharacterMaster TiedMaster { get; set; }
         private bool _isSprinting;
         public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
-        private CharacterMaster tiedMaster;
         private bool statsDirty;
         private void Awake()
         {
@@ -65,10 +67,6 @@ namespace ElementalWard
             RecalculateStats();
             HealthComponent.HealthProvider = this;
             HealthComponent.CurrentHealth = MaxHealth;
-        }
-
-        void Update()
-        {
         }
 
         public void RecalculateStats()
@@ -88,6 +86,7 @@ namespace ElementalWard
             AttackSpeed = _baseAttackSpeed + _lvlAttackSpeed * levelMinusOne;
             Damage = _baseDamage + _lvlDamage * levelMinusOne;
             Armor = _baseArmor + _lvlArmor * levelMinusOne;
+            JumpStrength = _jumpStrength;
         }
         [ContextMenu("Recalculate Stats")]
         public void SetStatsDirty() => statsDirty = true;

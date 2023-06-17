@@ -5,9 +5,10 @@ using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {
+
     public interface IElementProvider
     {
-        public ElementDef CurrentElement { get; set; }
+        public ElementDef Element { get; set; }
     }
     public class GenericElementProvider : MonoBehaviour
     {

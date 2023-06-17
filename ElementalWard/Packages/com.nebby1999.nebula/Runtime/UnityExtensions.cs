@@ -10,6 +10,12 @@ namespace Nebula
         public static GameObject GetRootGameObject(this MonoBehaviour mb) => GetRootGameObject(mb.gameObject);
         public static GameObject GetRootGameObject(this GameObject go) => go.transform.root.gameObject;
 
+        public static T EnsureComponent<T>(this Component c) where T : Component => EnsureComponent<T>(c.gameObject);
+        public static T EnsureComponent<T>(this Behaviour b) where T : Component => EnsureComponent<T>(b.gameObject);
+        public static T EnsureComponent<T>(this MonoBehaviour mb) where T : Component => EnsureComponent<T>(mb.gameObject);
+        public static T EnsureComponent<T>(this GameObject go) where T : Component => go.GetComponent<T>().AsValidOrNull() ?? go.AddComponent<T>();
+
+
         public static T GetComponentFromRoot<T>(this Component c) => GetComponentFromRoot<T>(c.gameObject);
         public static T GetComponentFromRoot<T>(this Behaviour b) => GetComponentFromRoot<T>(b.gameObject);
         public static T GetComponentFromRoot<T>(this MonoBehaviour mb) => GetComponentFromRoot<T>(mb.gameObject);

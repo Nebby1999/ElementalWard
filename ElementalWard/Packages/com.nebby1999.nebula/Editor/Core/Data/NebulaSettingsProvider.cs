@@ -6,7 +6,9 @@ using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System;
 using UnityEngine.InputSystem;
+using UnityEditorInternal;
 using System.IO;
+using static Nebula.Editor.NebulaSettings;
 
 namespace Nebula.Editor
 {
@@ -14,17 +16,17 @@ namespace Nebula.Editor
     {
         private NebulaSettings settings;
         private SerializedObject serializedObject;
-        private bool[] foldouts;
         [SettingsProvider]
         public static SettingsProvider CreateProvider()
         {
             var keywords = new[] { "Nebula" };
             var settings = NebulaSettings.instance;
+            settings.hideFlags = HideFlags.DontSave | HideFlags.HideInHierarchy;
+            settings.DoSave();
             return new NebulaSettingsProvider("Project/Nebula", SettingsScope.Project, keywords)
             {
                 settings = settings,
                 serializedObject = new SerializedObject(settings),
-                foldouts = new bool[settings.inputActionGUIDs.Length]
             };
         }
 
@@ -32,108 +34,113 @@ namespace Nebula.Editor
         {
             using (new GUIScope())
             {
-                EditorGUILayout.LabelField("Input Action GUID Creator");
-
                 EditorGUILayout.BeginVertical("box");
-                if(settings.inputActionGUIDs.Length == 0)
-                {
-                    EditorGUILayout.LabelField("No Input Action GUID Creators defined");
-                }
-                else
-                {
-                    for(int i = 0; i < settings.inputActionGUIDs.Length; i++)
-                    {
-                        settings.inputActionGUIDs[i] = Draw(settings.inputActionGUIDs[i], i);
-                    }
-                }
+                CreateInputActionGUIDFields();
+                EditorGUILayout.Space(10);
+                CreateLayerIndexFields();
+                EditorGUILayout.Space(10);
+                CreateGameTagFields();
                 EditorGUILayout.EndVertical();
-
-                EditorGUILayout.BeginHorizontal();
-
-                IMGUIUtil.ButtonAction(() =>
-                {
-                    Array.Resize(ref settings.inputActionGUIDs, settings.inputActionGUIDs.Length + 1);
-                    Array.Resize(ref foldouts, settings.inputActionGUIDs.Length + 1);
-                }, "Add new Input Action Assets");
-                IMGUIUtil.ButtonAction(() =>
-                {
-                    NebulaSettings.instance.GenerateCode();
-                }, "Re-Generate Classes");
-                EditorGUILayout.EndHorizontal();
             }
         }
 
-        private NebulaSettings.InputActionGUIDData Draw(NebulaSettings.InputActionGUIDData data, int index)
+        private void CreateInputActionGUIDFields()
         {
             EditorGUILayout.BeginVertical("box");
-
-            string label = data.inputActionAsset ? data.inputActionAsset.name : $"Element {index}";
-            foldouts[index] = EditorGUILayout.Foldout(foldouts[index], label, true);
-            Rect rect = GUILayoutUtility.GetLastRect();
-
-            if (foldouts[index])
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("Input Action GUID Creator");
+            IMGUIUtil.ButtonAction(() =>
             {
-                EditorGUI.BeginChangeCheck();
-                data.inputActionAsset = (InputActionAsset)EditorGUILayout.ObjectField("Input Actions", data.inputActionAsset, typeof(InputActionAsset), false);
+                NebulaSettings.instance.GenerateInputGUIDS();
+            }, "Re-Generate Classes", options: GUILayout.MaxWidth(200));
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("inputActionGUIDs"));
+            EditorGUILayout.EndVertical();
+        }
 
-                if(data.inputActionAsset)
+        private void CreateLayerIndexFields()
+        {
+            EditorGUILayout.BeginVertical("box");
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("Layer Index Code Generator", EditorStyles.boldLabel);
+            IMGUIUtil.ButtonAction(() =>
+            {
+                NebulaSettings.instance.GenerateLayerIndexStruct();
+            }, "Re-Generate Struct", options: GUILayout.MaxWidth(200));
+            EditorGUILayout.EndHorizontal();
+
+            var prop = serializedObject.FindProperty("createLayerIndexStruct");
+            EditorGUILayout.PropertyField(prop);
+            if(prop.boolValue)
+            {
+                var layerIndexSturctData = serializedObject.FindProperty("layerIndexStructData");
+                var filePath = layerIndexSturctData.FindPropertyRelative("filePath");
+                var nameSpace = layerIndexSturctData.FindPropertyRelative("nameSpace");
+
+                EditorGUILayout.PropertyField(layerIndexSturctData.FindPropertyRelative("commonMaskSelector"));
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.PropertyField(filePath);
+                if (GUILayout.Button("…", EditorStyles.miniButton, GUILayout.MaxWidth(20)))
                 {
-                    EditorGUILayout.BeginHorizontal();
-
-                    string defaultFileName = "";
-                    if(data.inputActionAsset)
+                    var fileName = EditorUtility.SaveFilePanel("Location for generated C# file", Application.dataPath, "LayerIndex", "cs");
+                    if (!string.IsNullOrEmpty(fileName))
                     {
-                        var assetPath = AssetDatabase.GetAssetPath(data.inputActionAsset);
-                        defaultFileName = Path.ChangeExtension(assetPath, ".cs");
+                        if (fileName.StartsWith(Application.dataPath))
+                            fileName = "Assets/" + fileName.Substring(Application.dataPath.Length + 1);
+
+                        filePath.stringValue = fileName;
                     }
-                    data.filePath = EditorGUILayout.TextField("File path", data.filePath);
-                    if (GUILayout.Button("…", EditorStyles.miniButton, GUILayout.MaxWidth(20)))
-                    {
-                        var fileName = EditorUtility.SaveFilePanel("Location for generated C# file",
-                            Path.GetDirectoryName(defaultFileName), data.inputActionAsset.name
-                             + "Guids", "cs");
-                        if (!string.IsNullOrEmpty(fileName))
-                        {
-                            if (fileName.StartsWith(Application.dataPath))
-                                fileName = "Assets/" + fileName.Substring(Application.dataPath.Length + 1);
-
-                            data.filePath = fileName;
-                        }
-                    }
-
-                    EditorGUILayout.EndHorizontal();
-
-                    data.nameSpace = EditorGUILayout.TextField("Namespace", data.nameSpace);
                 }
+                EditorGUILayout.EndHorizontal();
+                EditorGUILayout.PropertyField(nameSpace);
             }
             EditorGUILayout.EndVertical();
+        }
 
-            if(Event.current.type == EventType.ContextClick)
+        private void CreateGameTagFields()
+        {
+            EditorGUILayout.BeginVertical("box");
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("Game Tag Data Code Generator", EditorStyles.boldLabel);
+            IMGUIUtil.ButtonAction(() =>
             {
-                Vector2 mousePos = Event.current.mousePosition;
-                if(rect.Contains(mousePos))
-                {
-                    GenericMenu menu = new GenericMenu();
-                    menu.AddItem(new GUIContent("Delete Element"), false, () =>
-                    {
-                        Nebula.ArrayUtils.RemoveAtAndResize(ref foldouts, index, 1);
-                        Nebula.ArrayUtils.RemoveAtAndResize(ref settings.inputActionGUIDs, index, 1);
-                    });
-                    menu.ShowAsContext();
-                    Event.current.Use();
-                }
-            }
+                NebulaSettings.instance.GenerateGameTagData();
+            }, "Re-Generate Class", options: GUILayout.MaxWidth(200));
+            EditorGUILayout.EndHorizontal();
 
-            return data;
+            var prop = serializedObject.FindProperty("createGameTagData");
+            EditorGUILayout.PropertyField(prop);
+            if(prop.boolValue)
+            {
+                var gameTagsData = serializedObject.FindProperty("gameTagsData");
+                var filePath = gameTagsData.FindPropertyRelative("filePath");
+                var nameSpace = gameTagsData.FindPropertyRelative("nameSpace");
+
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.PropertyField(filePath);
+                if (GUILayout.Button("…", EditorStyles.miniButton, GUILayout.MaxWidth(20)))
+                {
+                    var fileName = EditorUtility.SaveFilePanel("Location for generated C# file", Application.dataPath, "GameTags", "cs");
+                    if (!string.IsNullOrEmpty(fileName))
+                    {
+                        if (fileName.StartsWith(Application.dataPath))
+                            fileName = "Assets/" + fileName.Substring(Application.dataPath.Length + 1);
+
+                        filePath.stringValue = fileName;
+                    }
+                }
+                EditorGUILayout.EndHorizontal();
+                EditorGUILayout.PropertyField(nameSpace);
+            }
+            EditorGUILayout.EndVertical();
         }
 
         public override void OnDeactivate()
         {
             base.OnDeactivate();
+            serializedObject?.ApplyModifiedProperties();
             if(settings)
-            {
                 settings.DoSave();
-            }
         }
         public NebulaSettingsProvider(string path, SettingsScope scopes, IEnumerable<string> keywords = null) : base(path, scopes, keywords)
         {

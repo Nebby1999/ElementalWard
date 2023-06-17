@@ -49,6 +49,7 @@ namespace Nebula
 
             newState.outer = this;
             NewState = null;
+            CurrentState.ModifyNextState(newState);
             CurrentState.OnExit();
             CurrentState = newState;
             CurrentState.OnEnter();

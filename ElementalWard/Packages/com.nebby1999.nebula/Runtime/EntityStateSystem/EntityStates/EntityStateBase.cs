@@ -30,7 +30,11 @@ namespace EntityStates
         {
             FixedAge += Time.fixedDeltaTime;
         }
-
+        public virtual void ModifyNextState(EntityStateBase state) { }
+        protected static T Instantiate<T>(T obj) where T : UnityEngine.Object
+        {
+            return UnityEngine.Object.Instantiate(obj);
+        }
         protected static void Destroy(UnityEngine.Object obj) => UnityEngine.Object.Destroy(obj);
         protected T GetComponent<T>() => outer.GetComponent<T>();
         protected Component GetComponent(Type type) => outer.GetComponent(type);

@@ -11,14 +11,16 @@
         "GUID:6055be8ebefd69e48b49212b09b47b2f",
         "GUID:9e24947de15b9834991c9d8411ea37cf",
         "GUID:84651a3751eca9349aac36a66bba901b",
-        "GUID:5a9f2cb26e9e04d4395570f092e3dfc8"
+        "GUID:5a9f2cb26e9e04d4395570f092e3dfc8",
+        "GUID:9a87097604f806340b969a2d9261a322"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "Newtonsoft.Json.dll"
+        "Newtonsoft.Json.dll",
+        "ImGui.NET.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],

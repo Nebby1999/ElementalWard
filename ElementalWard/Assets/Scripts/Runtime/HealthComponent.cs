@@ -5,6 +5,14 @@ using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {
+    public interface IOnIncomingDamage
+    {
+        public void OnIncomingDamage(DamageInfo damageInfo);
+    }
+    public interface IOnTakeDamage
+    {
+        public void OnTakeDamage(DamageReport dReport);
+    }
     public interface IHealthProvider
     {
         public float MaxHealth { get; }
@@ -12,8 +20,7 @@ namespace ElementalWard
     }
     public class HealthComponent : MonoBehaviour
     {
-        public float CurrentHealth { get => _currentHealth; internal set => _currentHealth = value; }
-        private float _currentHealth;
+        public float CurrentHealth { get; internal set; }
         public IHealthProvider HealthProvider
         {
             get => _healthProvider;
@@ -22,23 +29,31 @@ namespace ElementalWard
                 if(_healthProvider != value)
                 {
                     _healthProvider = value;
-                    if(_currentHealth > _healthProvider.MaxHealth)
+                    if(CurrentHealth > _healthProvider.MaxHealth)
                     {
-                        _currentHealth = _healthProvider.MaxHealth;
+                        CurrentHealth = _healthProvider.MaxHealth;
                     }
                 }
             }
         }
         private IHealthProvider _healthProvider;
 
+        private IOnIncomingDamage[] _incomingDamageRecievers;
+        private IOnTakeDamage[] _takeDamageRecievers;
+
         private void Awake()
         {
             HealthProvider = GetComponent<IHealthProvider>();
         }
 
+        public void TakeDamage(DamageInfo damageInfo)
+        {
+            CurrentHealth -= damageInfo.damage;
+        }
+
         public void FixedUpdate()
         {
-            if(_currentHealth <= 0)
+            if(CurrentHealth <= 0)
             {
                 Destroy(gameObject);
             }

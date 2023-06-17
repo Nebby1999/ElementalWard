@@ -24,7 +24,7 @@ namespace Nebula.Editor
         /// <exception cref="NullReferenceException">when the objField does not have a bindingPath set.</exception>
         public static SerializedProperty GetBindedProperty(this IBindable bindableElement, SerializedObject objectBound)
         {
-            if (bindableElement.bindingPath.IsNullOrEmptyOrWhitespace())
+            if (bindableElement.bindingPath.IsNullOrWhiteSpace())
                 throw new NullReferenceException($"{bindableElement} does not have a bindingPath set");
 
             return objectBound.FindProperty(bindableElement.bindingPath);

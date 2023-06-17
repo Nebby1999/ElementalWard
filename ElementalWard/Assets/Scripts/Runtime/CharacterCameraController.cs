@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using Nebula;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace ElementalWard
     /// </summary>
     public class CharacterCameraController : MonoBehaviour
     {
-        public Vector3 cameraPositionOffset;
+        public Transform desiredCameraTransform;
         public CinemachineVirtualCamera VirtualCamera
         {
             get => _virtualCamera;
@@ -28,12 +29,7 @@ namespace ElementalWard
         private CinemachineBrain _brain;
         private void UpdateVirtualCamera()
         {
-            VirtualCamera.Follow = transform;
-            var currentComponent = VirtualCamera.GetCinemachineComponent(CinemachineCore.Stage.Body);
-            if(currentComponent is not CinemachineHardLockToTarget)
-            {
-                VirtualCamera.AddCinemachineComponent<CinemachineHardLockToTarget>();
-            }
+            VirtualCamera.Follow = desiredCameraTransform.AsValidOrNull() ?? transform;
             _brain = CinemachineCore.Instance.FindPotentialTargetBrain(VirtualCamera);
         }
 

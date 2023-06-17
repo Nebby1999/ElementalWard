@@ -2,12 +2,14 @@
 using Nebula;
 using Nebula.Serialization;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Nebula
 {
@@ -17,19 +19,21 @@ namespace Nebula
         private static Type[] entityStates = Array.Empty<Type>();
         private static readonly Dictionary<Type, Action<object>> instanceFieldInitializers = new Dictionary<Type, Action<object>>();
 
-        public static void Initialize()
+        public static IEnumerator Initialize()
         {
-            if (Initialized)
-                return;
-            Initialized = true;
+            var handle = Addressables.LoadAssetsAsync<EntityStateConfiguration>("EntityStateConfigurations", null);
+            while (!handle.IsDone)
+                yield return new WaitForEndOfFrame();
 
+            var results = handle.Result;
             entityStates = LoadEntityStates();
 
-            var entityStateConfigurations = Resources.LoadAll<EntityStateConfiguration>("ESC");
-            foreach(EntityStateConfiguration config in entityStateConfigurations)
+            foreach(EntityStateConfiguration config in results)
             {
                 ApplyStateConfig(config);
             }
+
+            yield break;
         }
 
         private static Type[] LoadEntityStates()

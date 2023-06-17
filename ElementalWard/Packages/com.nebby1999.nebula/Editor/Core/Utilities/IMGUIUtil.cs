@@ -76,11 +76,11 @@ namespace Nebula.Editor
             return buttonVal;
         }
 
-        public static bool ButtonAction(Action action, string text, string tooltip = null, Texture texture = null) => ButtonAction(action, new GUIContent(text, texture, tooltip));
+        public static bool ButtonAction(Action action, string text, string tooltip = null, Texture texture = null, params GUILayoutOption[] options) => ButtonAction(action, new GUIContent(text, texture, tooltip), options);
         
-        public static bool ButtonAction(Action action, GUIContent label)
+        public static bool ButtonAction(Action action, GUIContent label, params GUILayoutOption[] options)
         {
-            if(GUILayout.Button(label))
+            if(GUILayout.Button(label, options))
             {
                 action();
                 return true;

@@ -26,8 +26,8 @@ namespace ElementalWard
 
         private Transform _bodyCameraTransform;
         private Vector2 _rawMovementInput;
+        private Vector2 _rawScrollInput;
         private Vector2 _rawLookInput;
-        private InputActionPhase _jumpInput;
         private void Awake()
         {
             ManagedMaster = GetComponent<CharacterMaster>();
@@ -61,11 +61,13 @@ namespace ElementalWard
             if (!BodyInputs)
                 return;
             var actions = PlayerInput.actions;
-            var map = actions.FindActionMap(ElementalWardInputGuids.PlayerGUID);
+            var map = actions.FindActionMap(ElementalWardInputGuids.playerGUID);
             if (map == null)
                 return;
 
-            BodyInputs.jumpButton.TiedAction = map.FindAction(ElementalWardInputGuids.Player.JumpGUID);/**/
+            BodyInputs.fireButton = map.FindAction(ElementalWardInputGuids.Player.fireGUID);
+            BodyInputs.jumpButton = map.FindAction(ElementalWardInputGuids.Player.jumpGUID);
+            BodyInputs.sprintButton = map.FindAction(ElementalWardInputGuids.Player.sprintGUID);
         }
         private void Update()
         {
@@ -75,6 +77,7 @@ namespace ElementalWard
                 //Instead of doing fancy vector math, we can just take the actual camera's forward axis so we can properly decide the body's aim dections.
                 BodyInputs.LookRotation = _bodyCameraTransform.AsValidOrNull()?.rotation ?? Quaternion.identity;
                 BodyInputs.AimDirection = _bodyCameraTransform.forward;
+                BodyInputs.elementAxis = _rawScrollInput.y;
             }
         }
 
@@ -91,6 +94,11 @@ namespace ElementalWard
         public void OnLook(InputAction.CallbackContext ctx)
         {
             _rawLookInput = ctx.ReadValue<Vector2>();
+        }
+
+        public void OnElementScroll(InputAction.CallbackContext ctx)
+        {
+            _rawScrollInput = ctx.ReadValue<Vector2>();
         }
     }
 }

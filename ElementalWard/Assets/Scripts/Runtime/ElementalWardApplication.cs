@@ -9,6 +9,7 @@ namespace ElementalWard
 {
     public class ElementalWardApplication : MainGameBehaviour<ElementalWardApplication>
     {
+        public const string APP_NAME = "ElementalWard";
         protected override void Awake()
         {
             base.Awake();
@@ -30,7 +31,9 @@ namespace ElementalWard
 
         private IEnumerator InitializeCatalogs()
         {
-            return ElementCatalog.Initialize();
+            yield return EntityStateCatalog.Initialize();
+            yield return BuffCatalog.Initialize();
+            yield return ElementCatalog.Initialize();
         }
     }
 }

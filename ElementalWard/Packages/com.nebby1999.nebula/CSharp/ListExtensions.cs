@@ -31,6 +31,8 @@ namespace Nebula
             }
         }
 
+
+        [Obsolete("Use a hashset you ape")]
         public static void AddSafely<T>(this IList<T> list, T element)
         {
             if(!list.Contains(element))
@@ -39,6 +41,7 @@ namespace Nebula
             }
         }
 
+        [Obsolete("Use a hashset you ape")]
         public static void RemoveSafely<T>(this IList<T> list, T element)
         {
             if(list.Contains(element))

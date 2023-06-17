@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace EntityStates
 {
-    public class GenericCharacterMain : BaseCharacterState
+    public class GenericCharacterMain : BaseCharacterMain
     {
         private Vector3 moveVector;
         private Vector3 aimDirection;
@@ -24,35 +24,37 @@ namespace EntityStates
 
         protected virtual void GatherInputs()
         {
-            if(BodyInputBank)
+            if(HasCharacterInputBank)
             {
-                moveVector = BodyInputBank.moveVector;
-                aimDirection = BodyInputBank.AimDirection;
-                wantsToJump = BodyInputBank.jumpButton.WasPressedThisFrame;
+                moveVector = CharacterInputBank.moveVector;
+                aimDirection = CharacterInputBank.AimDirection;
+                wantsToJump = CharacterInputBank.jumpButton.WasPressedThisFrame;
+                wantsToSprint |= CharacterInputBank.sprintButton.IsPressed;
             }
         }
         protected virtual void HandleMovement()
         {
-            if(MovementController)
+            if(HasCharacterMovementController)
             {
-                MovementController.movementDirection = moveVector;
+                CharacterMovementController.MovementDirection = CharacterInputBank.LookRotation * moveVector;
+                CharacterMovementController.CharacterRotation = Quaternion.Euler(0, CharacterInputBank.LookRotation.eulerAngles.y, 0);
             }
             ProcessJump();
-            if(Body)
+            if(HasCharacterBody)
             {
                 bool shouldSprint = wantsToSprint;
                 if (moveVector.magnitude <= 0.5f)
                     shouldSprint = false;
 
-                Body.IsSprinting = shouldSprint;
+                CharacterBody.IsSprinting = shouldSprint;
             }
         }
 
         protected virtual void ProcessJump()
         {
-            if(!wantsToJump)
+            if(wantsToJump && HasCharacterMovementController)
             {
-                return;
+                CharacterMovementController.Jump();
             }
 
         }

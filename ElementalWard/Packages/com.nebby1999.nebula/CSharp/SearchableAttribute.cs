@@ -28,6 +28,11 @@ namespace Nebula
                     optedInAssemblies.Add(assembly);
                 }
             }
+
+            foreach(Assembly optedInAssembly in optedInAssemblies)
+            {
+
+            }
         }
 
         static SearchableAttribute()

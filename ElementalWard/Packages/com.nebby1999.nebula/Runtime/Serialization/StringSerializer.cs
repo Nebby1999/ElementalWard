@@ -108,7 +108,9 @@ namespace Nebula.Serialization
                 result.inWeight = intermediate.inWeight;
                 result.outWeight = intermediate.outWeight;
                 result.weightedMode = intermediate.weightedMode;
+#pragma warning disable CS0618 // Type or member is obsolete
                 result.tangentMode = intermediate.tangentMode;
+#pragma warning restore CS0618 // Type or member is obsolete
                 return result;
             }
 
@@ -122,13 +124,16 @@ namespace Nebula.Serialization
                 result.inWeight = src.inWeight;
                 result.outWeight = src.outWeight;
                 result.weightedMode = src.weightedMode;
+#pragma warning disable CS0618 // Type or member is obsolete
                 result.tangentMode = src.tangentMode;
+#pragma warning restore CS0618 // Type or member is obsolete
                 return result;
             }
         }
 
         private static readonly Dictionary<Type, SerializationHandler> typeToHandler = new Dictionary<Type, SerializationHandler>();
         private static readonly SerializationHandler enumHandler;
+        private static readonly SerializationHandler arrayHandler;
         private static CultureInfo Invariant => CultureInfo.InvariantCulture;
 
         private static string[] SplitToComponents(string value, Type type, int minComponentCount)

@@ -139,7 +139,12 @@ namespace Nebula.Editor.PropertyDrawers
                 var finalTypes = types.Where((t) => !t.IsAbstract);
 
                 if (requiredBaseType != null)
-                    finalTypes = finalTypes.Where(t => t.IsSubclassOf(requiredBaseType));
+                    finalTypes = finalTypes.Where(t =>
+                    {
+                        if (requiredBaseType.IsInterface)
+                            return t.GetInterface(requiredBaseType.Name, true) != null;
+                        return t.IsSubclassOf(requiredBaseType);
+                    });
 
                 finalTypes.ToList().ForEach(t => typeTreePicker.treeView.PopulateItem(t));
             }

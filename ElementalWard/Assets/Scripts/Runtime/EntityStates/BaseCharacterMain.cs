@@ -5,10 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElementalWard.Assets.Scripts.Runtime.EntityStates
+namespace EntityStates
 {
     public class BaseCharacterMain : BaseCharacterState
     {
+        public bool HasCharacterMovementController { get; private set; }
+        public bool HasCharacterInputBank { get; private set; }
 
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            HasCharacterMovementController = CharacterMovementController;
+            HasCharacterInputBank = CharacterInputBank;
+        }
     }
 }

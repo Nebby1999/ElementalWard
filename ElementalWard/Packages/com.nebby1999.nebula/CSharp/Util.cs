@@ -4,7 +4,6 @@ namespace Nebula
 {
     public static class Util
     {
-        public static bool IsNullOrWhiteSpace(this string str) => string.IsNullOrEmpty(str) || string.IsNullOrWhiteSpace(str);
         public static bool IsBetween(float val, float min, float max)
         {
             return val >= Mathf.Min(min, max) && val <= Mathf.Max(min, max);

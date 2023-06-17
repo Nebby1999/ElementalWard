@@ -1,10 +1,23 @@
 {
   "dependencies": {
+    "com.nebby1999.nebula": {
+      "version": "file:com.nebby1999.nebula",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.philippestamand.kinematiccharactercontroller": {
       "version": "file:KinematicCharacterController",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
+    },
+    "com.psydack.uimgui": {
+      "version": "https://github.com/psydack/uimgui.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "1957436cf805ff960e92aea2e50135289338164a"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -146,6 +159,17 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.probuilder": {
+      "version": "5.0.7",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.render-pipelines.core": {
       "version": "14.0.8",
       "depth": 1,
@@ -184,7 +208,7 @@
     },
     "com.unity.settings-manager": {
       "version": "2.0.1",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

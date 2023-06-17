@@ -11,16 +11,18 @@ namespace ElementalWard
     {
         public struct CommonComponentLocator
         {
+            public readonly GameObject gameObject;
             public readonly Transform transform;
             public readonly CharacterMovementController characterMovementController;
             public readonly CharacterBody characterBody;
             public readonly CharacterInputBank inputBank;
-            public CommonComponentLocator(GameObject gameObject)
+            public CommonComponentLocator(GameObject go)
             {
-                transform = gameObject.transform;
-                characterMovementController = gameObject.GetComponent<CharacterMovementController>();
-                characterBody = gameObject.GetComponent<CharacterBody>();
-                inputBank = gameObject.GetComponent<CharacterInputBank>();
+                gameObject = go;
+                transform = go.transform;
+                characterMovementController = go.GetComponent<CharacterMovementController>();
+                characterBody = go.GetComponent<CharacterBody>();
+                inputBank = go.GetComponent<CharacterInputBank>();
             }
         }
 
