@@ -39,22 +39,3 @@ namespace ElementalWard
         }
     }
 }
-
-!c n exeshortcut
-# Executable Shortcut
-
-You can create a shortcut that points to the ror2 executable that, when clicked, will open an instance that corresponds to a desired r2modman profile. this is especially useful in scenarios where you need two instances of the game open, such as when testing networking locally (for more information you can type the command ``!localnetwork``
-
-## Steps
-
-* Create a shortcut of your Risk of Rain 2 Executable. (https://cdn.discordapp.com/attachments/723014139060027462/1120088221146173513/image.png)
-
-* Right click the shortcut, select properties. (https://cdn.discordapp.com/attachments/723014139060027462/1120088352306245632/image.png)
-
-* Open your preferred r2modman profile, go into settings, and select debug, then click ``Set Launch Parameters`` (https://cdn.discordapp.com/attachments/723014139060027462/1120088831912329296/image.png)
-
-* Copy the "Modded" parameters (https://cdn.discordapp.com/attachments/723014139060027462/1120089373992554587/image.png)
-
-* Back on the shortcut's properties, append the launch parameters into the target field. (https://cdn.discordapp.com/attachments/723014139060027462/1120089573775659181/image.png)
-
-* double clicking the shortcut will now open the chosen profile
