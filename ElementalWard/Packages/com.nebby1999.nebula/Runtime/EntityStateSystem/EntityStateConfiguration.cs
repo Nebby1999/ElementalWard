@@ -18,12 +18,13 @@ namespace Nebula
         [ContextMenu("Set name to targetType name")]
         public void SetNameToTargetTypeName()
         {
-            if (targetType.Type == null)
+            Type _targetType = targetType;
+            if (_targetType == null)
                 return;
 
-            name = targetType.Type.FullName;
+            name = _targetType.FullName;
 #if UNITY_EDITOR
-            UnityEditor.AssetDatabase.RenameAsset(UnityEditor.AssetDatabase.GetAssetPath(this), targetType.Type.FullName);
+            UnityEditor.AssetDatabase.RenameAsset(UnityEditor.AssetDatabase.GetAssetPath(this), _targetType.FullName);
 #endif
         }
 
@@ -34,7 +35,8 @@ namespace Nebula
             if (!Application.isPlaying)
                 return;
 
-            if (targetType.Type == null)
+            Type _targetType = targetType;
+            if (_targetType == null)
                 return;
 
             EntityStateBase state = EntityStateCatalog.InstantiateState(targetType);
@@ -50,9 +52,10 @@ namespace Nebula
             if (!Application.isPlaying)
                 return;
 
-            if(targetType.Type == null)
+            Type _targetType = targetType;
+            if(_targetType == null)
             {
-                Debug.LogError($"{this} has an invalid TargetType set! (targetType.TypeName value: {targetType.TypeName})");
+                Debug.LogError($"{this} has an invalid TargetType set! (targetType.TypeName value: {_targetType})");
                 return;
             }
 
@@ -60,7 +63,7 @@ namespace Nebula
             {
                 try
                 {
-                    FieldInfo fieldInfo = targetType.Type.GetField(field.fieldName, BindingFlags.Public | BindingFlags.Static);
+                    FieldInfo fieldInfo = _targetType.GetField(field.fieldName, BindingFlags.Public | BindingFlags.Static);
                     if (fieldInfo == null)
                     {
                         continue;
@@ -84,9 +87,10 @@ namespace Nebula
             if (!Application.isPlaying)
                 return null;
 
-            if(targetType.Type == null)
+            Type _targetType = targetType;
+            if(_targetType == null)
             {
-                Debug.LogError($"{this} has an invalid TargetType set! (targetType.TypeName value: {targetType.TypeName})");
+                Debug.LogError($"{this} has an invalid TargetType set! (targetType.TypeName value: {_targetType})");
                 return null;
             }
 
@@ -95,7 +99,7 @@ namespace Nebula
             {
                 try
                 {
-                    FieldInfo field = targetType.Type.GetField(serializedField.fieldName);
+                    FieldInfo field = _targetType.GetField(serializedField.fieldName);
                     if(field != null && ShouldSerializeField(field))
                     {
                         fieldValuePair.Add((field, serializedField.serializedValue.GetValue(field)));

@@ -23,16 +23,32 @@ namespace ElementalWard
         public static int DotCount => dotDefs.Length;
         public static int BuffCount => buffDefs.Length;
         private static BuffDef[] buffDefs = Array.Empty<BuffDef>();
-        private static DotBuffDef[] dotDefs = Array.Empty<DotBuffDef>();
         private static Dictionary<string, BuffIndex> buffNametoBuffIndex = new(StringComparer.OrdinalIgnoreCase);
+        private static DotBuffDef[] dotDefs = Array.Empty<DotBuffDef>();
         private static Dictionary<string, DotIndex> dotNameToDotIndex = new(StringComparer.OrdinalIgnoreCase);
+        private static HashSet<BuffIndex> dotBuffIndices = new HashSet<BuffIndex>();
+        private static Type[] dotBehaviours = Array.Empty<Type>();
 
+        public static DotBehaviour InitializeDotBehaviour(DotBuffDef dotBuffDef) => dotBuffDef ? InitializeDotBehaviour(dotBuffDef.DotIndex) : null;
+
+        public static DotBehaviour InitializeDotBehaviour(DotIndex dotIndex)
+        {
+            if (dotIndex == DotIndex.None)
+                return null;
+
+            DotBuffDef dotBuffDef = GetDotDef(dotIndex);
+            var instance = (DotBehaviour)Activator.CreateInstance(dotBehaviours[(int)dotIndex]);
+            instance.TiedDotDef = dotBuffDef;
+            return instance;
+        }
+        public static bool IsBuffADot(BuffDef buffDef) => buffDef ? dotBuffIndices.Contains(buffDef.BuffIndex) : false;
+        public static bool IsBuffADot(BuffIndex index) => dotBuffIndices.Contains(index);
         public static DotBuffDef GetDotDef(DotIndex dotIndex)
         {
             return ArrayUtils.GetSafe(ref dotDefs, (int)dotIndex);
         }
 
-        public static BuffDef GetBuffDef(ElementIndex index)
+        public static BuffDef GetBuffDef(BuffIndex index)
         {
             return ArrayUtils.GetSafe(ref buffDefs, (int)index);
         }
@@ -41,7 +57,9 @@ namespace ElementalWard
         {
             if (dotNameToDotIndex.TryGetValue(dotName, out DotIndex index))
                 return index;
-
+#if DEBUG
+            Debug.LogWarning($"Failed to find DotIndex for DotDef with name {dotName}");
+#endif
             return DotIndex.None;
         }
 
@@ -49,7 +67,9 @@ namespace ElementalWard
         {
             if (buffNametoBuffIndex.TryGetValue(buffName, out BuffIndex index))
                 return index;
-
+#if DEBUG
+            Debug.LogWarning($"Failed to find BuffIndex for BuffDef with name {buffName}");
+#endif
             return BuffIndex.None;
         }
 
@@ -102,12 +122,26 @@ namespace ElementalWard
             var results = handle.Result.OrderBy(dbd => dbd.name).ToArray();
 
             dotDefs = new DotBuffDef[results.Length];
+            dotBehaviours = new Type[results.Length];
+
             for (int i = 0; i < results.Length; i++)
             {
                 DotBuffDef dotBuffDef = results[i];
                 DotIndex dotIndex = (DotIndex)i;
                 dotBuffDef.DotIndex = dotIndex;
+                dotDefs[i] = dotBuffDef;
                 dotNameToDotIndex[dotBuffDef.name] = dotIndex;
+                dotBuffIndices.Add(dotBuffDef.BuffIndex);
+
+                Type type = dotBuffDef.dotBehaviour;
+                if (type == null)
+                {
+                    Debug.LogWarning($"{dotBuffDef} does not implement a dot behaviour.", dotBuffDef);
+                    continue;
+                }
+                dotBehaviours[i] = type;
+                var instance = (DotBehaviour)Activator.CreateInstance(type);
+                yield return instance.Initialize();
             }
 
             yield break;

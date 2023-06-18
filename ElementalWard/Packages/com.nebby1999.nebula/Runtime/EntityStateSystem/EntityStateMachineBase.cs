@@ -35,7 +35,7 @@ namespace Nebula
 
         protected virtual void Start()
         {
-            var initState = initialState.Type;
+            var initState = (Type)initialState;
             if(CurrentState is Uninitialized && initState != null && initState.IsSubclassOf(typeof(EntityStateBase)))
             {
                 SetState(EntityStateCatalog.InstantiateState(initState));

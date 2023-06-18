@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nebula.Editor.CodeGenerators;
+using Nebula.Serialization;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;

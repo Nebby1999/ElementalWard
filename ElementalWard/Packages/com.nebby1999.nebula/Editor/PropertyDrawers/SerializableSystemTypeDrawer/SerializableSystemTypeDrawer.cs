@@ -2,6 +2,7 @@
 using System;
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.Graphs;
 using UnityEngine;
 
 namespace Nebula.Editor.PropertyDrawers
@@ -16,6 +17,8 @@ namespace Nebula.Editor.PropertyDrawers
 
             var typeReference = property.FindPropertyRelative("_assemblyQualifiedName");
             HandleDragAndDrop(typeReference, position);
+
+            var completeRect = position;
 
             position = EditorGUI.PrefixLabel(position,
                 GUIUtility.GetControlID(FocusType.Passive), label);
@@ -43,7 +46,6 @@ namespace Nebula.Editor.PropertyDrawers
                     serializedObject = property.serializedObject,
                 };
             }
-
             EditorGUI.EndProperty();
         }
 

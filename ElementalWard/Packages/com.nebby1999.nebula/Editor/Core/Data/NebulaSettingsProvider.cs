@@ -51,6 +51,7 @@ namespace Nebula.Editor
             EditorGUILayout.LabelField("Input Action GUID Creator");
             IMGUIUtil.ButtonAction(() =>
             {
+                Save();
                 NebulaSettings.instance.GenerateInputGUIDS();
             }, "Re-Generate Classes", options: GUILayout.MaxWidth(200));
             EditorGUILayout.EndHorizontal();
@@ -65,6 +66,7 @@ namespace Nebula.Editor
             EditorGUILayout.LabelField("Layer Index Code Generator", EditorStyles.boldLabel);
             IMGUIUtil.ButtonAction(() =>
             {
+                Save();
                 NebulaSettings.instance.GenerateLayerIndexStruct();
             }, "Re-Generate Struct", options: GUILayout.MaxWidth(200));
             EditorGUILayout.EndHorizontal();
@@ -104,6 +106,7 @@ namespace Nebula.Editor
             EditorGUILayout.LabelField("Game Tag Data Code Generator", EditorStyles.boldLabel);
             IMGUIUtil.ButtonAction(() =>
             {
+                Save();
                 NebulaSettings.instance.GenerateGameTagData();
             }, "Re-Generate Class", options: GUILayout.MaxWidth(200));
             EditorGUILayout.EndHorizontal();
@@ -138,8 +141,13 @@ namespace Nebula.Editor
         public override void OnDeactivate()
         {
             base.OnDeactivate();
+            Save();
+        }
+
+        private void Save()
+        {
             serializedObject?.ApplyModifiedProperties();
-            if(settings)
+            if (settings)
                 settings.DoSave();
         }
         public NebulaSettingsProvider(string path, SettingsScope scopes, IEnumerable<string> keywords = null) : base(path, scopes, keywords)

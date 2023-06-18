@@ -18,6 +18,9 @@ namespace ElementalWard
         public static class CommonMasks
         {
             private const string BULLET_COMMENT = @"Combination ofWorld and EntityPrecise";
+            ///<summary>
+            ///Combination ofWorld and EntityPrecise
+            ///</summary>
             public static readonly LayerMask Bullet = 72;
         }
         public int IntVal { get => _intVal; private set => _intVal = value; }

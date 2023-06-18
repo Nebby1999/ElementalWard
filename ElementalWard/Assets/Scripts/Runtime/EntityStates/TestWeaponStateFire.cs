@@ -15,9 +15,11 @@ namespace EntityStates
         {
             base.OnEnter();
             Ray ray = GetAimRay();
+            var bodyInfo = new BodyInfo(CharacterBody);
+            bodyInfo.element = elementDef;
             var atk = new HitscanAttack()
             {
-                attacker = new BodyInfo(CharacterBody),
+                attacker = bodyInfo,
                 damageCoefficient = 1,
                 raycastCount = 1,
                 raycastDirection = ray.direction,

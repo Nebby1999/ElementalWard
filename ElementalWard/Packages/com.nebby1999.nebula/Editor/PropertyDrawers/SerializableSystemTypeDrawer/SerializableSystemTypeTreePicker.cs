@@ -129,57 +129,73 @@ namespace Nebula.Editor.PropertyDrawers
                 typeTreePicker.treeView.AssignDefaults();
                 typeTreePicker.treeView.SetRootItem(requiredBaseType != null ? $"Types subclassing {requiredBaseType}" : "Types");
 
-                List<Type> types = new List<Type>();
-                foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+                Type[] types = requiredBaseType == null ? TypeCacheRequester.GetAllTypes(true) : TypeCacheRequester.GetTypesDerivedFrom(requiredBaseType, true);
+
+                foreach (Type t in types)
                 {
-                    var ts = assembly.GetTypesSafe();
-                    types.AddRange(ts);
+                    typeTreePicker.treeView.PopulateItem(t);
                 }
-
-                var finalTypes = types.Where((t) => !t.IsAbstract);
-
-                if (requiredBaseType != null)
-                    finalTypes = finalTypes.Where(t =>
-                    {
-                        if (requiredBaseType.IsInterface)
-                            return t.GetInterface(requiredBaseType.Name, true) != null;
-                        return t.IsSubclassOf(requiredBaseType);
-                    });
-
-                finalTypes.ToList().ForEach(t => typeTreePicker.treeView.PopulateItem(t));
             }
 
             private Type GetRequiredBaseType()
             {
                 Type typeOfObject = serializedObject.targetObject.GetType();
 
+                Type requiredBaseType = GetBaseTypeFromFieldInfo(typeOfObject) ?? GetBaseTypeFromArrayFieldInfo(typeOfObject) ?? GetBaseTypeFromStructFieldInfo();
 
-                var field = typeOfObject.GetFields()
-                                         .Where(fieldInfo => fieldInfo.GetCustomAttribute<SerializableSystemType.RequiredBaseTypeAttribute>(true) != null)
-                                         .Where(fieldInfo => fieldInfo.Name == parentProperty.name)
-                                         .FirstOrDefault();
-                                         /*.Where(fieldInfo => fieldInfo.Name == parentProperty.name)
-                                         .FirstOrDefault();*/
+                return requiredBaseType;
+            }
 
-                Type requiredBaseType = null;
-                if (field != null)
+
+            private Type GetBaseTypeFromFieldInfo(Type typeOfObject)
+            {
+                try
                 {
-                    SerializableSystemType.RequiredBaseTypeAttribute attribute = (SerializableSystemType.RequiredBaseTypeAttribute)field.GetCustomAttributes(typeof(SerializableSystemType.RequiredBaseTypeAttribute), true).First();
-                    if (attribute != null)
+                    var field = typeOfObject.GetFields()
+                                             .Where(fieldInfo => fieldInfo.GetCustomAttributes(typeof(SerializableSystemType.RequiredBaseTypeAttribute), true) != null)
+                                             .Where(fieldInfo => fieldInfo.Name == parentProperty.name)
+                                             .FirstOrDefault();
+
+                    Type requiredBaseType = null;
+                    if (field != null)
                     {
-                        requiredBaseType = attribute.requiredType;
+                        SerializableSystemType.RequiredBaseTypeAttribute attribute = (SerializableSystemType.RequiredBaseTypeAttribute)field.GetCustomAttributes(typeof(SerializableSystemType.RequiredBaseTypeAttribute), true).First();
+                        if (attribute != null)
+                        {
+                            requiredBaseType = attribute.requiredType;
+                        }
                     }
-                }
 
-                //If the lookup fails, look for it using this different method.
-                if (requiredBaseType == null)
+                    return requiredBaseType;
+                }
+                catch (Exception e)
                 {
+                    Debug.LogError($"Could not find base type from field info, resorting to other methods... \n\n\n{e}");
+                    return null;
+                }
+            }
+
+            private Type GetBaseTypeFromStructFieldInfo()
+            {
+                try
+                {
+                    Type requiredBaseType = null;
+
                     var path = parentProperty.propertyPath;
                     path = path.Substring(0, path.LastIndexOf("."));
                     var pProp = serializedObject.FindProperty(path);
                     var parentType = AppDomain.CurrentDomain.GetAssemblies().SelectMany(asm => asm.GetTypes()).FirstOrDefault(t => t.Name == pProp.type);
 
                     var fieldInfo = parentType.GetField(parentProperty.name);
+
+                    if (fieldInfo == null)
+                    {
+                        path = path.Substring(0, path.LastIndexOf("."));
+                        pProp = serializedObject.FindProperty(path);
+                        parentType = AppDomain.CurrentDomain.GetAssemblies().SelectMany(asm => asm.GetTypes()).FirstOrDefault(t => t.Name == pProp.type);
+
+                        fieldInfo = parentType.GetField(parentProperty.name);
+                    }
                     var requiredBaseTypeAttribute = fieldInfo.GetCustomAttributes(typeof(SerializableSystemType.RequiredBaseTypeAttribute), true).FirstOrDefault();
 
                     if (fieldInfo != null)
@@ -193,13 +209,65 @@ namespace Nebula.Editor.PropertyDrawers
                             }
                         }
                     }
+
+                    return requiredBaseType;
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Could not find base type from struct field info, resorting to other methods... \n\n\n{e}");
+                    return null;
+                }
+            }
+
+            private Type GetBaseTypeFromArrayFieldInfo(Type typeOfObject)
+            {
+                var path = parentProperty.propertyPath;
+                if (!path.Contains("Array.data["))
+                {
+                    return null;
+                }
+                //parent property is an array, find it.
+                string modifiedPath = path;
+                SerializedProperty arrayProp = parentProperty.serializedObject.FindProperty(modifiedPath);
+                int tries = 0;
+                while (!arrayProp.isArray)
+                {
+                    modifiedPath = path.Substring(0, path.LastIndexOf("."));
+                    arrayProp = parentProperty.serializedObject.FindProperty(modifiedPath);
+                    tries++;
+
+                    if (tries > 10)
+                    {
+                        Debug.LogWarning("Took over ten tries to attempt to find the base type from array field info, breaking.");
+                        break;
+                    }
+                }
+
+                string fieldName = modifiedPath.Substring(0, modifiedPath.LastIndexOf("."));
+
+                var field = typeOfObject.GetFields()
+                                             .Where(fieldInfo =>
+                                             {
+                                                 return fieldInfo.GetCustomAttributes(typeof(SerializableSystemType.RequiredBaseTypeAttribute), true) != null;
+                                             })
+                                             .Where(fieldInfo =>
+                                             {
+                                                 return fieldInfo.Name == fieldName;
+                                             })
+                                             .FirstOrDefault();
+
+                Type requiredBaseType = null;
+                if (field != null)
+                {
+                    SerializableSystemType.RequiredBaseTypeAttribute attribute = (SerializableSystemType.RequiredBaseTypeAttribute)field.GetCustomAttributes(typeof(SerializableSystemType.RequiredBaseTypeAttribute), true).First();
+                    if (attribute != null)
+                    {
+                        requiredBaseType = attribute.requiredType;
+                    }
                 }
 
                 return requiredBaseType;
             }
         }
-
     }
-
-
 }

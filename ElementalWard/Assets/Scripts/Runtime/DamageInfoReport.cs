@@ -7,14 +7,15 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public readonly struct BodyInfo
+    public struct BodyInfo
     {
-        public readonly GameObject gameObject;
-        public readonly CharacterBody characterBody;
-        public readonly ElementDef element;
+        public GameObject gameObject;
+        public CharacterBody characterBody;
+        public ElementDef element;
+
+        public T GetComponent<T>() => gameObject ? gameObject.GetComponent<T>() : default(T);
 
         public static implicit operator bool(BodyInfo info) => info.gameObject;
-
         public BodyInfo(CharacterBody characterBody)
         {
             gameObject = characterBody.gameObject;
@@ -35,14 +36,18 @@ namespace ElementalWard
     }
     public class DamageInfo
     {
+        public DamageType damageType = DamageType.None;
         public float damage;
+        public bool rejected = false;
         public BodyInfo attackerBody;
     }
 
     public class DamageReport
     {
+        public DamageType damageType = DamageType.None;
         public float damage;
         public BodyInfo attackerBody;
         public BodyInfo victimBody;
+        public DamageInfo damageInfo;
     }
 }

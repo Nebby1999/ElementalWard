@@ -51,7 +51,7 @@ namespace ElementalWard
                 var damageInfo = new DamageInfo
                 {
                     attackerBody = attacker,
-                    damage = _damage
+                    damage = _damage,
                 };
 
                 hurtBox.HealthComponent.TakeDamage(damageInfo);

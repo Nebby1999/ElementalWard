@@ -1,3 +1,5 @@
+using Nebula;
+using Nebula.Serialization;
 using UnityEngine;
 
 namespace ElementalWard
@@ -9,7 +11,9 @@ namespace ElementalWard
         public float secondsPerTick;
         public float damageCoefficient;
         public Color damageColor;
-        public bool resetTimerOnAdd;
+        public bool resetFixedAgeOnAdd;
+        [SerializableSystemType.RequiredBaseType(typeof(DotBehaviour))]
+        public SerializableSystemType dotBehaviour;
 
         public DotIndex DotIndex { get; internal set; }
         private void OnValidate()

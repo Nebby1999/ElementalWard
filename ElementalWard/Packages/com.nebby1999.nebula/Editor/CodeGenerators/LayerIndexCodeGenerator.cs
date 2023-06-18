@@ -122,6 +122,9 @@ namespace Nebula.Editor.CodeGenerators
                 if(!commonMask.comment.IsNullOrWhiteSpace())
                 {
                     writer.WriteLine($"private const string {identifier.ToUpperInvariant()}_COMMENT = @\"{commonMask.comment}\";");
+                    writer.WriteLine("///<summary>");
+                    writer.WriteLine("///" + commonMask.comment);
+                    writer.WriteLine("///</summary>");
                 }
                 writer.WriteLine($"public static readonly LayerMask {identifier} = {(int)commonMask.layerMask};");
             }

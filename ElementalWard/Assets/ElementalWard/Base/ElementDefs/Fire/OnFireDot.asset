@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0625880fdf0b244bb0e79c8e21c954d, type: 3}
-  m_Name: OnFire
+  m_Name: OnFireDot
   m_EditorClassIdentifier: 
   buffName:
     m_TableReference:
@@ -31,11 +31,15 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   buffColor: {r: 1, g: 0.29973018, b: 0, a: 1}
+  canStack: 0
   isDebuff: 1
   secondsPerTick: 0.5
   damageCoefficient: 0.25
   damageColor: {r: 1, g: 0.29803923, b: 0, a: 1}
-  resetTimerOnAdd: 0
+  resetFixedAgeOnAdd: 0
+  dotBehaviour:
+    _assemblyQualifiedName: ElementalWard.FireDotBehaviour, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   references:
     version: 2
     RefIds: []

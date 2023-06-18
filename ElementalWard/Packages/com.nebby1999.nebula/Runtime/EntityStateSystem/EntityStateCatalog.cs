@@ -59,7 +59,7 @@ namespace Nebula
 
         private static void ApplyStateConfig(EntityStateConfiguration config)
         {
-            Type targetType = config.targetType.Type;
+            Type targetType = config.targetType;
             if (targetType == null)
                 return;
 
@@ -80,9 +80,10 @@ namespace Nebula
 
         public static EntityStateBase InstantiateState(SerializableSystemType serializableSystemType)
         {
-            if (serializableSystemType.Type == null || !serializableSystemType.Type.IsSubclassOf(typeof(EntityStateBase)))
+            Type type = serializableSystemType;
+            if (type == null || !type.IsSubclassOf(typeof(EntityStateBase)))
                 throw new ArgumentException($"SerializableSystemType provided has a null type or does not subclass EntityState");
-            return InstantiateState(serializableSystemType.Type);
+            return InstantiateState(type);
         }
         public static EntityStateBase InstantiateState(Type stateType)
         {

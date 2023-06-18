@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bc77b2a6abb2664f92242e0c5e166e5, type: 3}
-  m_Name: Water
+  m_Name: FireElement
   m_EditorClassIdentifier: 
   elementName:
     m_TableReference:
       m_TableCollectionName: GUID:7b8a29c33dc975e45af56b9aa82312b7
     m_TableEntryReference:
-      m_KeyId: 402777116672
+      m_KeyId: 312041738240
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  elementColor: {r: 0, g: 0.2650609, b: 1, a: 1}
+  elementColor: {r: 1, g: 0.42267352, b: 0, a: 1}
+  elementEvents:
+    _assemblyQualifiedName: ElementalWard.FireElementEvents, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   references:
     version: 2
     RefIds: []

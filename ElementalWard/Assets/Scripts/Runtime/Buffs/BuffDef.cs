@@ -9,6 +9,7 @@ namespace ElementalWard
         public LocalizedString buffName;
         public LocalizedString buffDescription;
         public Color buffColor;
+        public bool canStack;
         public bool isDebuff;
 
         public BuffIndex BuffIndex { get; internal set; }
