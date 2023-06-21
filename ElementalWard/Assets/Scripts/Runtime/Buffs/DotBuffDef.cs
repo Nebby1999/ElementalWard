@@ -15,7 +15,7 @@ namespace ElementalWard
         [SerializableSystemType.RequiredBaseType(typeof(DotBehaviour))]
         public SerializableSystemType dotBehaviour;
 
-        public DotIndex DotIndex { get; internal set; }
+        public DotIndex DotIndex { get; internal set; } = DotIndex.None;
         private void OnValidate()
         {
             isDebuff = true;

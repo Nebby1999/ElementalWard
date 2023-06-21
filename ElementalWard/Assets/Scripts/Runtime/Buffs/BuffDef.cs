@@ -12,6 +12,6 @@ namespace ElementalWard
         public bool canStack;
         public bool isDebuff;
 
-        public BuffIndex BuffIndex { get; internal set; }
+        public BuffIndex BuffIndex { get; internal set; } = BuffIndex.None;
     }
 }

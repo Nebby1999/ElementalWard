@@ -1,4 +1,5 @@
 using Nebula;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,14 @@ using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {
+    public interface IOnIncomingDamage
+    {
+        public void OnIncomingDamage(DamageInfo info);
+    }
+    public interface IOnTakeDamage
+    {
+        public void OnTakeDamage(DamageReport report);
+    }
     public interface IHealthProvider
     {
         public float MaxHealth { get; }
@@ -32,10 +41,15 @@ namespace ElementalWard
         private IHealthProvider _healthProvider;
         public ElementDef CurrentElement => _elementProvider?.Element;
         private IElementProvider _elementProvider;
+        private IOnTakeDamage[] _takeDamageReceivers = Array.Empty<IOnTakeDamage>();
+        private IOnIncomingDamage[] _incomingDamageReceivers = Array.Empty<IOnIncomingDamage>();
         private void Awake()
         {
             HealthProvider = GetComponent<IHealthProvider>();
             _elementProvider = GetComponent<IElementProvider>();
+
+            _takeDamageReceivers = GetComponents<IOnTakeDamage>();
+            _incomingDamageReceivers = GetComponents<IOnIncomingDamage>();
         }
 
         public void TakeDamage(DamageInfo damageInfo)
@@ -45,6 +59,10 @@ namespace ElementalWard
             IElementEvents selfElementEvents = ElementCatalog.GetElementEventsFor(CurrentElement);
 
             selfElementEvents?.OnIncomingDamage(damageInfo, this);
+            foreach(IOnIncomingDamage onIncomingDamage in _incomingDamageReceivers)
+            {
+                onIncomingDamage.OnIncomingDamage(damageInfo);
+            }
 
             if (damageInfo.rejected)
                 return;
@@ -62,6 +80,10 @@ namespace ElementalWard
             };
             report.damageInfo = damageInfo;
 
+            foreach(IOnTakeDamage onTakeDamage in _takeDamageReceivers)
+            {
+                onTakeDamage.OnTakeDamage(report);
+            }
             selfElementEvents?.OnDamageTaken(report);
             attackerElementEvents?.OnDamageDealt(report);
         }

@@ -14,19 +14,21 @@ namespace EntityStates
         public override void OnEnter()
         {
             base.OnEnter();
+            duration = baseDuration / attackSpeedStat;
             Ray ray = GetAimRay();
             var bodyInfo = new BodyInfo(CharacterBody);
             bodyInfo.element = elementDef;
             var atk = new HitscanAttack()
             {
                 attacker = bodyInfo,
-                damageCoefficient = 1,
+                baseDamage = damageStat * 1,
                 raycastCount = 1,
                 raycastDirection = ray.direction,
                 raycastOrigin = ray.origin,
                 raycastLength = 100,
                 raycastRadius = 1,
-                raycastSpread = Vector2.zero,
+                minSpread = 5,
+                maxSpread = 10,
                 tracerEffect = tracerFX,
                 tracerData = new VFXData
                 {
@@ -36,15 +38,8 @@ namespace EntityStates
                 }
             };
             atk.Fire();
-        }
 
-        public override void FixedUpdate()
-        {
-            base.FixedUpdate();
-            if(FixedAge > duration)
-            {
-                outer.SetNextStateToMain();
-            }
+            outer.SetNextStateToMain();
         }
 
         public override void ModifyNextState(EntityStateBase state)

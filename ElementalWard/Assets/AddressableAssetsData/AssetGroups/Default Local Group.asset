@@ -16,7 +16,23 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: f88e60eecee812c4ca4d5f5f58c25ac7
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 70a542564ff00b64b8462a71e5b59c1b
+    m_Address: ElementalWard/Base/ElementDefs/ElementOverload.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3cdddd3025ac41949af10e9f2f53620f
+    m_Address: Assets/ElementalWard/Base/ElementDefs/matGenericOverload.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97d317b99c4dec5409eda54e52e6cb96
+    m_Address: Assets/ElementalWard/Base/ElementDefs/OverloadBuff.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BuffDefs
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

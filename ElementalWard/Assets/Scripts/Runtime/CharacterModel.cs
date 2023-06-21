@@ -25,14 +25,14 @@ namespace ElementalWard
 
         private void OnValidate()
         {
-            for(int i = 0; i < rendererInfos.Length; i++)
+            for (int i = 0; i < rendererInfos.Length; i++)
             {
                 RendererInfo info = rendererInfos[i];
                 if (!info.renderer)
                     Debug.LogWarning($"RendererInfo index {i} on {this} has a null renderer", this);
-
-                if (!info.defaultMaterial)
-                    Debug.LogWarning($"RendererInfo index {i} on {this} has a null renderer", this);
+                else
+                    info.defaultMaterial = info.renderer.sharedMaterial;
+                rendererInfos[i] = info;
             }
         }
         private void Update()

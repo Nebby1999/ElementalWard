@@ -1,41 +1,77 @@
 using Nebula;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace ElementalWard
 {
     public class FireDotBehaviour : DotBehaviour
     {
-        private HealthComponent victimHealthComponent;
-        private float damagePerTick;
-        private float stopWatch;
+        private static GameObject _onFireVFX;
+        private static AsyncOperationHandle handle;
+        private GameObject _onFireVFXInstance;
+        private Transform _victimTransform;
+        private HealthComponent _victimHealthComponent;
+        private float _damagePerTick;
+        private float _stopWatch;
         public override IEnumerator LoadAssetsOnInitialization()
         {
+            handle = Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab");
+            while(!handle.IsDone)
+                yield return new WaitForEndOfFrame();
+            _onFireVFX = (GameObject)handle.Result;
             yield break;
         }
 
         public override void OnInflicted(DotInflictInfo dotInfo)
         {
             base.OnInflicted(dotInfo);
-            victimHealthComponent = dotInfo.victim.GetComponent<HealthComponent>();
+            _victimTransform = dotInfo.victim.gameObject.transform;
+            _victimHealthComponent = dotInfo.victim.GetComponent<HealthComponent>();
             var inflictorBody = dotInfo.inflictor.characterBody;
-            var totalDamage = (inflictorBody ? inflictorBody.Damage : dotInfo.customDamageSource) * dotInfo.damageCoefficient;
-            damagePerTick = totalDamage / (TiedDotDef.secondsPerTick * dotInfo.fixedAgeDuration);
+            var totalDamage = (inflictorBody ? inflictorBody.Damage : dotInfo.customDamageSource) * TiedDotDef.damageCoefficient;
+            _damagePerTick = (totalDamage * DotStacks) / (TiedDotDef.secondsPerTick * dotInfo.fixedAgeDuration);
+            if(!_onFireVFXInstance && _onFireVFX)
+            {
+                _onFireVFXInstance = FXManager.SpawnVisualFX(_onFireVFX, new VFXData
+                {
+                    instantiationPosition = _victimTransform.position,
+                    instantiationRotation = Quaternion.identity,
+                    scale = inflictorBody ? inflictorBody.Radius : 1
+                });
+            }
         }
 
         public override void OnFixedUpdate(float fixedDeltaTime)
         {
             base.OnFixedUpdate(fixedDeltaTime);
-            stopWatch += fixedDeltaTime;
-            if(stopWatch > TiedDotDef.secondsPerTick)
+            _stopWatch += fixedDeltaTime;
+            if(_stopWatch > TiedDotDef.secondsPerTick)
             {
-                stopWatch = 0;
-                victimHealthComponent.AsValidOrNull()?.TakeDamage(new DamageInfo
+                _stopWatch = 0;
+                _victimHealthComponent.AsValidOrNull()?.TakeDamage(new DamageInfo
                 {
                     damageType = DamageType.DOT,
                     attackerBody = Info.inflictor,
-                    damage = damagePerTick,
+                    damage = _damagePerTick,
                 });
             }
+        }
+
+        public override void OnUpdate(float deltaTime)
+        {
+            base.OnUpdate(deltaTime);
+            if(_onFireVFXInstance)
+            {
+                _onFireVFXInstance.transform.SetPositionAndRotation(_victimTransform.position, _victimTransform.rotation);
+            }
+        }
+
+        public override void OnRemoved(DotInflictInfo dotInfo)
+        {
+            base.OnRemoved(dotInfo);
+            Destroy(_onFireVFXInstance);
         }
     }
 }

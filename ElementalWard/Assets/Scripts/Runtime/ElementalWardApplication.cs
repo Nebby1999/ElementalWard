@@ -10,6 +10,7 @@ namespace ElementalWard
     public class ElementalWardApplication : MainGameBehaviour<ElementalWardApplication>
     {
         public const string APP_NAME = "ElementalWard";
+        public float distance;
         protected override void Awake()
         {
             base.Awake();
@@ -24,6 +25,7 @@ namespace ElementalWard
             Cursor.lockState = CursorLockMode.None;
 #endif
         }
+
         protected override IEnumerator LoadGameContent()
         {
             return InitializeCatalogs();

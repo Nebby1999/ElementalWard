@@ -18,6 +18,7 @@ namespace ElementalWard
         public Color vfxColor;
         public Vector3 origin;
         public Vector3 start;
+        public float scale;
 
         /// <summary>
         /// The position of the prefab when it gets instantiated

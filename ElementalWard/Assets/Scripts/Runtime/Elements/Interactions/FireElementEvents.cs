@@ -28,7 +28,7 @@ namespace ElementalWard
         public void OnDamageDealt(DamageReport report)
         {
             var victimElement = report.victimBody.element;
-            if (victimElement == waterElement)
+            if (victimElement == waterElement || victimElement == TiedElement)
                 return;
 
             //Inflict DOT
@@ -39,15 +39,13 @@ namespace ElementalWard
                 if (victimBuffController)
                     victimBuffController.InflictDot(new DotInflictInfo
                     {
-                        fixedAgeDuration = 10,
+                        fixedAgeDuration = 5,
                         inflictor = report.attackerBody,
-                        damageCoefficient = 1f,
                         dotDef = onFire,
                         maxStacks = 5,
+                        damageMultiplier = 1,
                     });
             }
-#if DEBUG
-#endif
         }
 
         public void OnIncomingDamage(DamageInfo incomingDamageInfo, HealthComponent selfHealthComponent)
@@ -71,21 +69,16 @@ namespace ElementalWard
 
         public void OnDamageTaken(DamageReport report)
         {
-            var attackerElement = report.attackerBody.element;
-            if(attackerElement == waterElement)
-            {
-#if DEBUG
-                Debug.Log("Taken damage from water, disabling passive.");
-#endif
-                //Disable Passive.
-            }
-            if(attackerElement == TiedElement)
-            {
-#if DEBUG
-                Debug.Log("Taken damage from Fire, Overcharging");
-#endif
-                //Overcharge
+            if (!report.attackerBody.element || report.attackerBody.element != TiedElement)
                 return;
+
+            if(report.attackerBody.element == waterElement)
+            {
+                Debug.Log("Steam Bomb");
+            }
+            if(report.attackerBody.element == electricElement)
+            {
+                Debug.Log("Plasma Bomb");
             }
         }
     }

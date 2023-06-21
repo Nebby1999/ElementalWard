@@ -17,20 +17,35 @@ namespace Nebula
         public SerializableSystemType initialState;
         [SerializableSystemType.RequiredBaseType(typeof(EntityStateBase))]
         public SerializableSystemType mainState;
-#if UNITY_EDITOR
-        private static List<EntityStateMachineBase> machines = new List<EntityStateMachineBase>();
-#endif
 
         public EntityStateBase NewState { get; private set; }
+#if UNITY_EDITOR
+        public EntityStateBase CurrentState
+        {
+            get
+            {
+                if(_currentState == null)
+                {
+                    Debug.LogWarning("_currentState is null! forcing state to mainState!");
+                    _currentState = EntityStateCatalog.InstantiateState(mainState);
+                    _currentState.outer = this;
+                }
+                return _currentState;
+            }
+            set
+            {
+                _currentState = value;
+            }
+        }
+        private EntityStateBase _currentState;
+#else
         public EntityStateBase CurrentState { get; private set; }
+#endif
 
         protected virtual void Awake()
         {
             CurrentState = new Uninitialized();
             CurrentState.outer = this;
-#if UNITY_EDITOR
-            machines.Add(this);
-#endif
         }
 
         protected virtual void Start()
@@ -82,21 +97,6 @@ namespace Nebula
         protected virtual void OnDestroy()
         {
             CurrentState.OnExit();
-#if UNITY_EDITOR
-            machines.Remove(this);
-#endif
         }
-#if UNITY_EDITOR
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void OnDomainReload()
-        {
-            if (!UnityEditor.EditorApplication.isPlaying)
-                return;
-            foreach(var machine in machines)
-            {
-                machine.SetState(EntityStateCatalog.InstantiateState(machine.mainState));
-            }
-        }
-#endif
     }
 }

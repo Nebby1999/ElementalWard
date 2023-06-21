@@ -29,6 +29,8 @@ namespace ElementalWard
         private static HashSet<BuffIndex> dotBuffIndices = new HashSet<BuffIndex>();
         private static Type[] dotBehaviours = Array.Empty<Type>();
 
+        //Fucking hack
+        private static DotBehaviour currentlyLoadingBehaviour;
         public static DotBehaviour InitializeDotBehaviour(DotBuffDef dotBuffDef) => dotBuffDef ? InitializeDotBehaviour(dotBuffDef.DotIndex) : null;
 
         public static DotBehaviour InitializeDotBehaviour(DotIndex dotIndex)
@@ -94,6 +96,7 @@ namespace ElementalWard
             for (int i = 0; i < results.Length; i++)
             {
                 BuffDef buffDef = results[i];
+                buffDefs[i] = buffDef;
                 BuffIndex buffIndex = (BuffIndex)i;
                 buffDef.BuffIndex = buffIndex;
                 buffNametoBuffIndex[buffDef.name] = buffIndex;
@@ -126,6 +129,7 @@ namespace ElementalWard
 
             for (int i = 0; i < results.Length; i++)
             {
+                currentlyLoadingBehaviour = null;
                 DotBuffDef dotBuffDef = results[i];
                 DotIndex dotIndex = (DotIndex)i;
                 dotBuffDef.DotIndex = dotIndex;
@@ -141,6 +145,7 @@ namespace ElementalWard
                 }
                 dotBehaviours[i] = type;
                 var instance = (DotBehaviour)Activator.CreateInstance(type);
+                currentlyLoadingBehaviour = instance;
                 yield return instance.Initialize();
             }
 

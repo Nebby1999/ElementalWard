@@ -11,14 +11,13 @@ using UnityEngine.Localization;
 
 namespace ElementalWard
 {
-    [CreateAssetMenu(menuName = ElementalWardApplication.APP_NAME + "/Elements/InteractionMatrix")]
+    [CreateAssetMenu(menuName = ElementalWardApplication.APP_NAME + "/ElementDef")]
     public class ElementDef : ScriptableObject
     {
         public LocalizedString elementName;
         public Color elementColor;
-
         [SerializableSystemType.RequiredBaseType(typeof(IElementEvents))]
         public SerializableSystemType elementEvents;
-        public ElementIndex ElementIndex { get; set; }
+        public ElementIndex ElementIndex { get; set; } = ElementIndex.None;
     }
 }

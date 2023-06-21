@@ -54,6 +54,7 @@ namespace ElementalWard
             }
         }
         public CharacterMaster TiedMaster { get; set; }
+        public float Radius { get; internal set; }
         private bool _isSprinting;
         public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
         private bool statsDirty;
@@ -61,6 +62,9 @@ namespace ElementalWard
         {
             InputBank = GetComponent<CharacterInputBank>();
             HealthComponent = GetComponent<HealthComponent>();
+
+            var collider1 = GetComponent<CapsuleCollider>();
+            Radius = collider1 ? collider1.radius : 1;
         }
         private void Start()
         {
