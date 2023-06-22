@@ -34,6 +34,11 @@ namespace ElementalWard
     {
         public static GameObject SpawnVisualFX(GameObject vfxPrefab, VFXData data)
         {
+            if (!vfxPrefab)
+            {
+                Debug.LogWarning("vfxPrefab is null, cannot spawn vfx");
+                return null;
+            }
             var instantiationPos = data.instantiationPosition;
             var instantiationRot = data.instantiationRotation;
             var instance = Object.Instantiate(vfxPrefab, instantiationPos, instantiationRot);

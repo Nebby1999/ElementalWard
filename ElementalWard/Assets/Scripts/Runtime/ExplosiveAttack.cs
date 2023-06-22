@@ -24,9 +24,10 @@ namespace ElementalWard
 
                 var flag = (hurtBox.TiedCollider.Raycast(new Ray(explosiveAttack.explosionOrigin, -initialHitNormal), out var hitInfo, explosiveAttack.explosionRadius));
                 Hit result = default;
+                result.hurtBox = hurtBox;
                 result.distanceSqr = flag ? (explosiveAttack.explosionOrigin - hitInfo.point).sqrMagnitude : initialDistanceSqr;
                 result.hitPos = flag ? hitInfo.point : initialHitPos;
-                result.hitNormal = flag ? hitInfo.normal : initialHitNormal;
+                result.hitNormal = flag ? -hitInfo.normal : initialHitNormal;
                 result.passLos = explosiveAttack.requireLineOfSight;
                 return result;
             }
@@ -46,6 +47,8 @@ namespace ElementalWard
         public bool hitSelf;
         public bool requireLineOfSight;
         public FalloffCalculateDelegate falloffCalculation = DefaultFalloffCalculation;
+        public GameObject explosionVFX;
+        public VFXData explosionVFXData = default;
 
         private static List<Hit> _hitsBuffer = new List<Hit>(256);
         private static List<HealthComponent> _encounteredHealthComponentsBuffer = new List<HealthComponent>();
@@ -54,6 +57,8 @@ namespace ElementalWard
         {
             Hit[] hits = CollectHits();
             HandleHits(hits);
+            if(explosionVFX)
+                FXManager.SpawnVisualFX(explosionVFX, explosionVFXData);
             return new Result
             {
                 hits = hits,

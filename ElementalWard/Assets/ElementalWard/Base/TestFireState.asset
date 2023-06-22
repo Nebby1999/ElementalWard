@@ -26,3 +26,38 @@ MonoBehaviour:
       serializedValue:
         stringValue: 0.25
         objectReferenceValue: {fileID: 0}
+    - fieldName: testType
+      serializedValue:
+        stringValue: '{"AssemblyQualifiedName":"EntityStates.TestWeaponStateFire+TestType,
+          ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","values":"Raycast"}'
+        objectReferenceValue: {fileID: 0}
+    - fieldName: explosionFX
+      serializedValue:
+        stringValue: 
+        objectReferenceValue: {fileID: 7701910270056990116, guid: af4585a4f5c732f47a62dc530283dd17,
+          type: 3}
+    - fieldName: damageType
+      serializedValue:
+        stringValue: '{"AssemblyQualifiedName":"ElementalWard.DamageType, ElementalWard,
+          Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","values":"None"}'
+        objectReferenceValue: {fileID: 0}
+    - fieldName: raycastCount
+      serializedValue:
+        stringValue: 1
+        objectReferenceValue: {fileID: 0}
+    - fieldName: minSpread
+      serializedValue:
+        stringValue: 1
+        objectReferenceValue: {fileID: 0}
+    - fieldName: maxSpread
+      serializedValue:
+        stringValue: 10
+        objectReferenceValue: {fileID: 0}
+    - fieldName: explosionRadius
+      serializedValue:
+        stringValue: 0
+        objectReferenceValue: {fileID: 0}
+    - fieldName: requiresLOS
+      serializedValue:
+        stringValue: 0
+        objectReferenceValue: {fileID: 0}

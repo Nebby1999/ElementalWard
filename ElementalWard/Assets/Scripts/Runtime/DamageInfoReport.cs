@@ -11,8 +11,12 @@ namespace ElementalWard
     {
         public GameObject gameObject;
         public CharacterBody characterBody;
-        public ElementDef element;
-
+        /// <summary>
+        /// If provided, the BodyInfo will use this element, instead of the one provided by an IElementProvider
+        /// </summary>
+        public ElementDef elementOverride;
+        public ElementDef Element => elementOverride ? elementOverride : _elementProvider.Element;
+        private readonly IElementProvider _elementProvider;
         public T GetComponent<T>() => gameObject ? gameObject.GetComponent<T>() : default(T);
 
         public static implicit operator bool(BodyInfo info) => info.gameObject;
@@ -20,18 +24,18 @@ namespace ElementalWard
         {
             gameObject = characterBody.gameObject;
             this.characterBody = characterBody;
+            elementOverride = null;
 
-            var provider = characterBody.GetComponent<IElementProvider>();
-            element = provider?.Element;
+            _elementProvider = characterBody.GetComponent<IElementProvider>();
         }
 
         public BodyInfo(GameObject bodyGameObject)
         {
             gameObject = bodyGameObject;
             this.characterBody = bodyGameObject.GetComponent<CharacterBody>();
+            elementOverride = null;
 
-            var provider = bodyGameObject.GetComponent<IElementProvider>();
-            element = provider?.Element;
+            _elementProvider = bodyGameObject.GetComponent<IElementProvider>();
         }
     }
     public class DamageInfo

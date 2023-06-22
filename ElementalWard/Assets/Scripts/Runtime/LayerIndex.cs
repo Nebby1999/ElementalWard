@@ -17,9 +17,9 @@ namespace ElementalWard
     {
         public static class CommonMasks
         {
-            private const string BULLET_COMMENT = @"Combination ofWorld and EntityPrecise";
+            private const string BULLET_COMMENT = @"Combination of World and EntityPrecise";
             ///<summary>
-            ///Combination ofWorld and EntityPrecise
+            ///Combination of World and EntityPrecise
             ///</summary>
             public static readonly LayerMask Bullet = 72;
         }
@@ -36,6 +36,7 @@ namespace ElementalWard
         public static readonly LayerIndex water = GetLayerIndex("Water");
         public static readonly LayerIndex uI = GetLayerIndex("UI");
         public static readonly LayerIndex entityPrecise = GetLayerIndex("EntityPrecise");
+        public static readonly LayerIndex projectile = GetLayerIndex("Projectile");
         private static readonly LayerMask[] _collisionMasks = CalcCollisionMasks();
         private static LayerIndex GetLayerIndex(string layerName)
         {

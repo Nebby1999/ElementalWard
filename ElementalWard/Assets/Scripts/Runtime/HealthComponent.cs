@@ -40,21 +40,28 @@ namespace ElementalWard
         }
         private IHealthProvider _healthProvider;
         public ElementDef CurrentElement => _elementProvider?.Element;
+        [Tooltip("If the game object that has this health component doesnt have a component that implements IHealthProvider, use this value for health.")]
+        [SerializeField] private float _defaultMaxHealth = 100;
         private IElementProvider _elementProvider;
         private IOnTakeDamage[] _takeDamageReceivers = Array.Empty<IOnTakeDamage>();
         private IOnIncomingDamage[] _incomingDamageReceivers = Array.Empty<IOnIncomingDamage>();
         private void Awake()
         {
-            HealthProvider = GetComponent<IHealthProvider>();
             _elementProvider = GetComponent<IElementProvider>();
 
             _takeDamageReceivers = GetComponents<IOnTakeDamage>();
             _incomingDamageReceivers = GetComponents<IOnIncomingDamage>();
         }
 
+        private void Start()
+        {
+            if(_healthProvider == null && CurrentHealth == 0)
+                CurrentHealth = _defaultMaxHealth;
+        }
+
         public void TakeDamage(DamageInfo damageInfo)
         {
-            var attackerElement = damageInfo.attackerBody.element;
+            var attackerElement = damageInfo.attackerBody.Element;
             IElementEvents attackerElementEvents = ElementCatalog.GetElementEventsFor(attackerElement);
             IElementEvents selfElementEvents = ElementCatalog.GetElementEventsFor(CurrentElement);
 
@@ -86,12 +93,6 @@ namespace ElementalWard
             }
             selfElementEvents?.OnDamageTaken(report);
             attackerElementEvents?.OnDamageDealt(report);
-        }
-
-        private IElementEvents GetInteractionFromMatrix(DamageInfo damageInfo)
-        {
-            //Todo, make matrix stuff
-            return null;
         }
 
         public void FixedUpdate()

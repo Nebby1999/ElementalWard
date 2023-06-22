@@ -36,7 +36,8 @@ namespace EntityStates
         {
             if(HasCharacterMovementController)
             {
-                CharacterMovementController.MovementDirection = CharacterInputBank.LookRotation * moveVector;
+                var motor = CharacterMovementController.Motor;
+                CharacterMovementController.MovementDirection = motor.CharacterForward * moveVector.z + motor.CharacterRight * moveVector.x;
                 CharacterMovementController.CharacterRotation = Quaternion.Euler(0, CharacterInputBank.LookRotation.eulerAngles.y, 0);
             }
             ProcessJump();

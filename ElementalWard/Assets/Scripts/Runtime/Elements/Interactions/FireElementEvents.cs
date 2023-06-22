@@ -27,7 +27,7 @@ namespace ElementalWard
 
         public void OnDamageDealt(DamageReport report)
         {
-            var victimElement = report.victimBody.element;
+            var victimElement = report.victimBody.Element;
             if (victimElement == waterElement || victimElement == TiedElement)
                 return;
 
@@ -50,7 +50,7 @@ namespace ElementalWard
 
         public void OnIncomingDamage(DamageInfo incomingDamageInfo, HealthComponent selfHealthComponent)
         {
-            var attackerElement = incomingDamageInfo.attackerBody.element;
+            var attackerElement = incomingDamageInfo.attackerBody.Element;
             if(attackerElement == waterElement)
             {
 #if DEBUG
@@ -69,14 +69,14 @@ namespace ElementalWard
 
         public void OnDamageTaken(DamageReport report)
         {
-            if (!report.attackerBody.element || report.attackerBody.element != TiedElement)
+            if (!report.attackerBody.Element || report.attackerBody.Element != TiedElement)
                 return;
 
-            if(report.attackerBody.element == waterElement)
+            if(report.attackerBody.Element == waterElement)
             {
                 Debug.Log("Steam Bomb");
             }
-            if(report.attackerBody.element == electricElement)
+            if(report.attackerBody.Element == electricElement)
             {
                 Debug.Log("Plasma Bomb");
             }

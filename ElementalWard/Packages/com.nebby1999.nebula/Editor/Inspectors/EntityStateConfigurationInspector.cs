@@ -15,20 +15,20 @@ namespace Nebula.Editor.Inspectors
     [CustomEditor(typeof(EntityStateConfiguration))]
     public class EntityStateConfigurationInspector : IMGUIInspector<EntityStateConfiguration>
     {
-        private delegate object FieldDrawHandler(FieldInfo fieldInfo, object value);
+        private delegate object FieldDrawHandler(GUIContent label, object value);
         private static readonly Dictionary<Type, FieldDrawHandler> typeDrawers = new Dictionary<Type, FieldDrawHandler>
         {
-            [typeof(bool)] = (fieldInfo, value) => EditorGUILayout.Toggle(ObjectNames.NicifyVariableName(fieldInfo.Name), (bool)value),
-            [typeof(long)] = (fieldInfo, value) => EditorGUILayout.LongField(ObjectNames.NicifyVariableName(fieldInfo.Name), (long)value),
-            [typeof(int)] = (fieldInfo, value) => EditorGUILayout.IntField(ObjectNames.NicifyVariableName(fieldInfo.Name), (int)value),
-            [typeof(float)] = (fieldInfo, value) => EditorGUILayout.FloatField(ObjectNames.NicifyVariableName(fieldInfo.Name), (float)value),
-            [typeof(double)] = (fieldInfo, value) => EditorGUILayout.DoubleField(ObjectNames.NicifyVariableName(fieldInfo.Name), (double)value),
-            [typeof(string)] = (fieldInfo, value) => EditorGUILayout.TextField(ObjectNames.NicifyVariableName(fieldInfo.Name), (string)value),
-            [typeof(Vector2)] = (fieldInfo, value) => EditorGUILayout.Vector2Field(ObjectNames.NicifyVariableName(fieldInfo.Name), (Vector2)value),
-            [typeof(Vector3)] = (fieldInfo, value) => EditorGUILayout.Vector3Field(ObjectNames.NicifyVariableName(fieldInfo.Name), (Vector3)value),
-            [typeof(Color)] = (fieldInfo, value) => EditorGUILayout.ColorField(ObjectNames.NicifyVariableName(fieldInfo.Name), (Color)value),
-            [typeof(Color32)] = (fieldInfo, value) => (Color32)EditorGUILayout.ColorField(ObjectNames.NicifyVariableName(fieldInfo.Name), (Color32)value),
-            [typeof(AnimationCurve)] = (fieldInfo, value) => EditorGUILayout.CurveField(ObjectNames.NicifyVariableName(fieldInfo.Name), (AnimationCurve)value ?? new AnimationCurve()),
+            [typeof(bool)] = (label, value) => EditorGUILayout.Toggle(label, (bool)value),
+            [typeof(long)] = (label, value) => EditorGUILayout.LongField(label, (long)value),
+            [typeof(int)] = (label, value) => EditorGUILayout.IntField(label, (int)value),
+            [typeof(float)] = (label, value) => EditorGUILayout.FloatField(label, (float)value),
+            [typeof(double)] = (label, value) => EditorGUILayout.DoubleField(label, (double)value),
+            [typeof(string)] = (label, value) => EditorGUILayout.TextField(label, (string)value),
+            [typeof(Vector2)] = (label, value) => EditorGUILayout.Vector2Field(label, (Vector2)value),
+            [typeof(Vector3)] = (label, value) => EditorGUILayout.Vector3Field(label, (Vector3)value),
+            [typeof(Color)] = (label, value) => EditorGUILayout.ColorField(label, (Color)value),
+            [typeof(Color32)] = (label, value) => (Color32)EditorGUILayout.ColorField(label, (Color32)value),
+            [typeof(AnimationCurve)] = (label, value) => EditorGUILayout.CurveField(label, (AnimationCurve)value ?? new AnimationCurve()),
         };
 
         private static readonly Dictionary<Type, Func<object>> specialDefaultValueCreators = new Dictionary<Type, Func<object>>
@@ -127,53 +127,119 @@ namespace Nebula.Editor.Inspectors
         {
             var serializedValueProperty = field.FindPropertyRelative(nameof(SerializedField.serializedValue));
             SerializedProperty stringValueProp = serializedValueProperty.FindPropertyRelative(nameof(SerializedValue.stringValue));
-            var serializedValue = default(SerializedValue);
+
+            DrawHeaderFromField(fieldInfo);
+
             if (typeof(UnityEngine.Object).IsAssignableFrom(fieldInfo.FieldType))
             {
-                var objectValue = serializedValueProperty.FindPropertyRelative(nameof(SerializedValue.objectReferenceValue));
-                EditorGUILayout.ObjectField(objectValue, fieldInfo.FieldType, new GUIContent(ObjectNames.NicifyVariableName(fieldInfo.Name)));
+                DrawFieldAsObjectField(serializedValueProperty, fieldInfo);
+                return;
             }
-            else if(fieldInfo.FieldType.IsEnum)
+            if(fieldInfo.FieldType.IsEnum)
             {
-                Func<string, Enum, GUILayoutOption[], Enum> func = fieldInfo.FieldType.GetCustomAttribute<FlagsAttribute>() != null ? EditorGUILayout.EnumFlagsField : EditorGUILayout.EnumPopup;
-                serializedValue = new SerializedValue
+                if(fieldInfo.FieldType.GetCustomAttribute<FlagsAttribute>() != null)
                 {
-                    stringValue = string.IsNullOrWhiteSpace(stringValueProp.stringValue) ? null : stringValueProp.stringValue
-                };
-
-                EditorGUI.BeginChangeCheck();
-                var newValue = func(ObjectNames.NicifyVariableName(fieldInfo.Name), (Enum)serializedValue.GetValue(fieldInfo), Array.Empty<GUILayoutOption>());
-                if(EditorGUI.EndChangeCheck())
-                {
-                    serializedValue.SetValue(fieldInfo, newValue);
-                    stringValueProp.stringValue = serializedValue.stringValue;
+                    DrawFieldAsEnumFlagsField(stringValueProp, fieldInfo);
+                    return;
                 }
+                DrawFieldAsEnumField(stringValueProp, fieldInfo);
+                return;
             }
-            else
+            if(typeDrawers.TryGetValue(fieldInfo.FieldType, out var drawer))
             {
-                serializedValue = new SerializedValue
-                {
-                    stringValue = string.IsNullOrWhiteSpace(stringValueProp.stringValue) ? null : stringValueProp.stringValue
-                };
+                DrawFieldAsTypeDrawer(stringValueProp, drawer, fieldInfo);
+                return;
+            }
+            DrawUnrecognizedField(field);
+        }
 
-                if (typeDrawers.TryGetValue(fieldInfo.FieldType, out var drawer))
-                {
-                    EditorGUI.BeginChangeCheck();
-                    var newValue = drawer(fieldInfo, serializedValue.GetValue(fieldInfo));
+        private void DrawHeaderFromField(FieldInfo fieldInfo)
+        {
+            var headerAttribute = fieldInfo.GetCustomAttribute<HeaderAttribute>();
+            if (headerAttribute == null)
+                return;
+            EditorGUILayout.LabelField(headerAttribute.header, EditorStyles.boldLabel);
+        }
 
-                    if (EditorGUI.EndChangeCheck())
-                    {
-                        serializedValue.SetValue(fieldInfo, newValue);
-                        stringValueProp.stringValue = serializedValue.stringValue;
-                    }
-                }
-                else
-                {
-                    DrawUnrecognizedField(field);
-                }
+        private void DrawFieldAsObjectField(SerializedProperty serializedValueProperty, FieldInfo fieldInfo)
+        {
+            var objectValue = serializedValueProperty.FindPropertyRelative(nameof(SerializedValue.objectReferenceValue));
+
+            GUIContent guiContent = new GUIContent
+            {
+                text = ObjectNames.NicifyVariableName(fieldInfo.Name),
+                tooltip = fieldInfo.GetCustomAttribute<TooltipAttribute>()?.tooltip ?? string.Empty
+            };
+
+            EditorGUILayout.ObjectField(objectValue, fieldInfo.FieldType, guiContent);
+        }
+
+        private void DrawFieldAsEnumFlagsField(SerializedProperty stringValueProp, FieldInfo fieldInfo)
+        {
+            var serializedValue = new SerializedValue
+            {
+                stringValue = string.IsNullOrEmpty(stringValueProp.stringValue) ? null : stringValueProp.stringValue
+            };
+
+            GUIContent guiContent = new GUIContent
+            {
+                text = ObjectNames.NicifyVariableName(fieldInfo.Name),
+                tooltip = fieldInfo.GetCustomAttribute<TooltipAttribute>()?.tooltip ?? string.Empty
+            };
+
+            EditorGUI.BeginChangeCheck();
+            var newValue = EditorGUILayout.EnumFlagsField(guiContent, (Enum)serializedValue.GetValue(fieldInfo));
+            if(EditorGUI.EndChangeCheck())
+            {
+                serializedValue.SetValue(fieldInfo, newValue);
+                stringValueProp.stringValue = serializedValue.stringValue;
             }
         }
 
+        private void DrawFieldAsEnumField(SerializedProperty stringValueProp, FieldInfo fieldInfo)
+        {
+            var serializedValue = new SerializedValue
+            {
+                stringValue = string.IsNullOrWhiteSpace(stringValueProp.stringValue) ? null : stringValueProp.stringValue
+            };
+
+            GUIContent guiContent = new GUIContent
+            {
+                text = ObjectNames.NicifyVariableName(fieldInfo.Name),
+                tooltip = fieldInfo.GetCustomAttribute<TooltipAttribute>()?.tooltip ?? string.Empty
+            };
+
+            EditorGUI.BeginChangeCheck();
+            var newValue = EditorGUILayout.EnumPopup(guiContent, (Enum)serializedValue.GetValue(fieldInfo));
+            if(EditorGUI.EndChangeCheck())
+            {
+                serializedValue.SetValue(fieldInfo, newValue);
+                stringValueProp.stringValue = serializedValue.stringValue;
+            }
+        }
+
+        private void DrawFieldAsTypeDrawer(SerializedProperty stringValueProp, FieldDrawHandler drawer, FieldInfo fieldInfo)
+        {
+            var serializedValue = new SerializedValue
+            {
+                stringValue = string.IsNullOrWhiteSpace(stringValueProp.stringValue) ? null : stringValueProp.stringValue
+            };
+
+            GUIContent guiContent = new GUIContent
+            {
+                text = ObjectNames.NicifyVariableName(fieldInfo.Name),
+                tooltip = fieldInfo.GetCustomAttribute<TooltipAttribute>()?.tooltip ?? string.Empty
+            };
+
+            EditorGUI.BeginChangeCheck();
+            var newValue = drawer(guiContent, serializedValue.GetValue(fieldInfo));
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedValue.SetValue(fieldInfo, newValue);
+                stringValueProp.stringValue = serializedValue.stringValue;
+            }
+        }
         private SerializedProperty GetOrCreateField(SerializedProperty collectionProperty, FieldInfo fieldInfo)
         {
             for (var i = 0; i < collectionProperty.arraySize; i++)

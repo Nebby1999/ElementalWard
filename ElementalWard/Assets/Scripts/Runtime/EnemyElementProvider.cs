@@ -47,7 +47,7 @@ namespace ElementalWard
             if (!canBeOverLoaded || !_element)
                 return;
 
-            if (report.attackerBody.element != Element)
+            if (report.attackerBody.Element != Element)
                 return;
 
             _currentCount = BuffController.GetBuffCount(_buffDef.BuffIndex);
