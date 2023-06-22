@@ -42,6 +42,22 @@ namespace Nebula
         public EntityStateBase CurrentState { get; private set; }
 #endif
 
+        public static TEntityStateMachine FindByCustomName<TEntityStateMachine>(GameObject obj, string name) where TEntityStateMachine : EntityStateMachineBase
+        {
+            TEntityStateMachine[] entityStateMachines = obj.GetComponents<TEntityStateMachine>();
+            TEntityStateMachine chosen = null;
+            for(int i = 0; i < entityStateMachines.Length; i++)
+            {
+                var entityStateMachine = entityStateMachines[i];
+                if(entityStateMachine.stateMachineName.Equals(name, StringComparison.Ordinal))
+                {
+                    chosen = entityStateMachine;
+                    break;
+                }
+            }
+            return chosen;
+        }
+
         protected virtual void Awake()
         {
             CurrentState = new Uninitialized();

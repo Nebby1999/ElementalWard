@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/ElementalWard/Base/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/ElementalWard/Base/Scenes/GameLoadingScene.unity
+    guid: 694ce9e34df26f74c91687ff76bae4c0
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: fecf41610343431458cdee9fd779ba17,
       type: 2}
