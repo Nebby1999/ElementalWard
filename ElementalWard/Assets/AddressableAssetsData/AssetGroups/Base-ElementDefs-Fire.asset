@@ -18,13 +18,30 @@ MonoBehaviour:
   m_GUID: 59c2dc62d9f80c64ca2c4b27578af360
   m_SerializeEntries:
   - m_GUID: 9ce85ac5506aef942beb4eeedb885921
-    m_Address: ElementalWard/Base/ElementDefs/Fire/Fire.asset
+    m_Address: ElementalWard/Base/ElementDefs/Fire/FireElement.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - ElementDefs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb0b4c4ad63cc3942b25bbf46800bd8e
+    m_Address: ElementalWard/Base/ElementDefs/Fire/OnFireDot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BuffDefs
+    - DotBuffDefs
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e3cec1dd369f2904c9f0c19b3108c3e8
     m_Address: ElementalWard/Base/ElementDefs/Fire
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46907842be872e048bc73105ce7984f8
+    m_Address: ElementalWard/Base/ElementDefs/Fire/matOnFire.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53ed0d3f3f1efa84eaf375611ef93f15
+    m_Address: ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

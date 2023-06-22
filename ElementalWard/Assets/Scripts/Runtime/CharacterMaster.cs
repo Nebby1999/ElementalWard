@@ -1,3 +1,4 @@
+using Nebula;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ElementalWard
         public const float LEVEL_TO_XP_DIVISOR = 7.69f;
 
         [SerializeField] private bool _spawnOnStart;
-        [SerializeField] private GameObject _defaultBodyPrefab;
+        [SerializeField, ForcePrefab] private GameObject _defaultBodyPrefab;
         [SerializeField] private uint _level;
         [SerializeField] private float _currentXP;
         [SerializeField] private float _neededXPForNextLevel;
@@ -64,6 +65,7 @@ namespace ElementalWard
             }
             var go = Instantiate(CurrentCharacterPrefab, position, rotation);
             CurrentBody = go.GetComponent<CharacterBody>();
+            CurrentBody.TiedMaster = this;
             OnBodySpawned?.Invoke(CurrentBody);
         }
         public void SetCharacterPrefab(GameObject characterObject, bool forceRespawn = true)

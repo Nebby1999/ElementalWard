@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 1f4f718f85a30434caf1a590615cfa8d
   m_SerializeEntries:
+  - m_GUID: ffa2199ad423f4748a3ad4122b82623a
+    m_Address: ElementalWard/Base/TestFireState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8d6f348ac9e174c4a8289bd2cfae6db9
     m_Address: ElementalWard/Base/ElementalWardInput.inputactions
     m_ReadOnly: 0
@@ -24,11 +30,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1a9e2141d3e0fa04290025009c28892c
     m_Address: ElementalWard/Base/ElementalWardApplication.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 491884a3452fa054fa81ab5c816ec83d
-    m_Address: ElementalWard/Base/ElementalWardCam.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

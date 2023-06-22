@@ -10,12 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 3775747226426235319}
   - component: {fileID: 3775747226426235318}
-  - component: {fileID: 3900817627430093398}
-  - component: {fileID: 6045485379497889296}
-  - component: {fileID: -7556436084046398385}
-  - component: {fileID: 6144592808034582868}
   - component: {fileID: -4341213335146336977}
+  - component: {fileID: -7556436084046398385}
+  - component: {fileID: 1757390674160115001}
+  - component: {fileID: 3900817627430093398}
+  - component: {fileID: 6144592808034582868}
+  - component: {fileID: 6211735034298263058}
+  - component: {fileID: 468388779112043098}
   - component: {fileID: 4000646230687331242}
+  - component: {fileID: 5225117992790200305}
   m_Layer: 0
   m_Name: TestBody
   m_TagString: Untagged
@@ -67,6 +70,7 @@ MonoBehaviour:
   _baseAttackSpeed: 1
   _baseDamage: 10
   _baseArmor: 0
+  _jumpStrength: 9
   autoCalculateLevelStats: 1
   _lvlHealth: 20
   _lvlShield: 0
@@ -76,10 +80,11 @@ MonoBehaviour:
   _lvlDamage: 1.5
   _lvlArmor: 0
   aimOriginTransform: {fileID: 0}
+  sprintSpeedMultiplier: 1.3
   references:
     version: 2
     RefIds: []
---- !u!114 &3900817627430093398
+--- !u!114 &-4341213335146336977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,21 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3775747226426235317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36c97195d64f3e349bc74ac23f8f7891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveVector: {x: 0, y: 0, z: 0}
-  yRotation: 0
---- !u!114 &6045485379497889296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3775747226426235317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a06b7e0e5b06064885d815bbd01582e, type: 3}
+  m_Script: {fileID: 11500000, guid: 619d13cc3dea8fc469daeddd2c3fdd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-7556436084046398385
@@ -124,6 +115,39 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1757390674160115001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41070830be8927548bab75a885f37c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachineName: Weapon
+  initialState:
+    _assemblyQualifiedName: ElementalWard.TestWeaponState, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  mainState:
+    _assemblyQualifiedName: ElementalWard.TestWeaponState, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &3900817627430093398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c97195d64f3e349bc74ac23f8f7891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveVector: {x: 0, y: 0, z: 0}
+  elementAxis: 0
 --- !u!114 &6144592808034582868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff2cf134e5f7d4ab2bd5e010f0e59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPositionOffset: {x: 0, y: 0, z: 0}
---- !u!114 &-4341213335146336977
+  desiredCameraTransform: {fileID: 2819693679595101446}
+--- !u!114 &6211735034298263058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,9 +170,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 3775747226426235317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 619d13cc3dea8fc469daeddd2c3fdd2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3010f874a069e1d42a4bf98bb2a49122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultGravityCoefficient: 1
+  defaultDrag: 1
+  characterVelocity: {x: 0, y: 0, z: 0}
+  characterRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &468388779112043098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1bc5515e3ab954e80599c538834774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Capsule: {fileID: 5225117992790200305}
+  CapsuleRadius: 0.5
+  CapsuleHeight: 2
+  CapsuleYOffset: 0
+  CapsulePhysicsMaterial: {fileID: 0}
+  GroundDetectionExtraDistance: 0
+  MaxStableSlopeAngle: 60
+  StableGroundLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  DiscreteCollisionEvents: 0
+  StepHandling: 1
+  MaxStepHeight: 0.5
+  AllowSteppingWithoutStableGrounding: 0
+  MinRequiredStepDepth: 0.1
+  LedgeAndDenivelationHandling: 1
+  MaxStableDistanceFromLedge: 0.5
+  MaxVelocityForLedgeSnap: 0
+  MaxStableDenivelationAngle: 180
+  InteractiveRigidbodyHandling: 1
+  RigidbodyInteractionType: 0
+  SimulatedCharacterMass: 1
+  PreserveAttachedRigidbodyMomentum: 1
+  HasPlanarConstraint: 0
+  PlanarConstraintAxis: {x: 0, y: 0, z: 1}
+  MaxMovementIterations: 5
+  MaxDecollisionIterations: 1
+  CheckMovementInitialOverlaps: 1
+  KillVelocityWhenExceedMaxMovementIterations: 1
+  KillRemainingMovementWhenExceedMaxMovementIterations: 1
 --- !u!54 &4000646230687331242
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,15 +226,49 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775747226426235317}
-  serializedVersion: 2
-  m_Mass: 100
+  serializedVersion: 4
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!136 &5225117992790200305
+CapsuleCollider:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3775747228327262252
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +280,6 @@ GameObject:
   - component: {fileID: 3775747228327262241}
   - component: {fileID: 3775747228327262255}
   - component: {fileID: 3775747228327262254}
-  - component: {fileID: 3775747228327262253}
   m_Layer: 0
   m_Name: mdlTestBody
   m_TagString: Untagged
@@ -250,20 +353,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3775747228327262253
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3775747228327262252}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5848979200258604533
 GameObject:
   m_ObjectHideFlags: 0

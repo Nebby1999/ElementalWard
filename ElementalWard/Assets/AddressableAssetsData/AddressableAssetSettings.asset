@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
   m_DefaultGroup: f88e60eecee812c4ca4d5f5f58c25ac7
-  m_CachedHash:
+  m_currentHash:
     serializedVersion: 2
-    Hash: 3782aa9b60982228ec51a5a0f84095ee
+    Hash: 362d2be26c5d44b67a0077e0190fba71
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0021c684c0911b342bb84fac6ce7557a, type: 2}
   - {fileID: 11400000, guid: 362e475d668d3da4b9dd00120e59b9f0, type: 2}
   - {fileID: 11400000, guid: 284e1e9b2e1c8a744ab71ce6810430f5, type: 2}
+  - {fileID: 11400000, guid: 8c8d174510b2b2c4393aa50c2db69fef, type: 2}
   - {fileID: 11400000, guid: cbb51e08f3fceee4fbc1b5ae61aa36b7, type: 2}
   - {fileID: 11400000, guid: 338fc23c38ddffa448d414015ed6db71, type: 2}
   - {fileID: 11400000, guid: 87676a67ec062ff419c0e1b584c31c4f, type: 2}
@@ -98,6 +99,9 @@ MonoBehaviour:
     - Locale-en
     - Preload
     - ElementDefs
+    - EntityStateConfigurations
+    - DotBuffDefs
+    - BuffDefs
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 2df996069e2109d43843520f194e9ed8, type: 2}
@@ -117,3 +121,4 @@ MonoBehaviour:
     m_Settings: {fileID: 11400000}
     m_NextInstanceId: 0
     m_RegisteredServiceTypeRefs: []
+    m_PingTimeoutInMilliseconds: 5000

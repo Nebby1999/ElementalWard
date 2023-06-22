@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7637794846450996917
 MonoBehaviour:
@@ -49,9 +49,9 @@ MonoBehaviour:
   _spawnOnStart: 1
   _defaultBodyPrefab: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
     type: 3}
-  _level: 19
+  _level: 0
   _currentXP: 462.6
-  _neededXPForNextLevel: 1092.3276
+  _neededXPForNextLevel: 54.616386
   _autoCalculateNextLevelRequirement: 1
 --- !u!114 &7342703876500854070
 MonoBehaviour:
@@ -163,6 +163,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 494c5cda-6ce7-45de-81e6-4e83583b833b
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7342703876500854070}
+        m_TargetAssemblyTypeName: ElementalWard.PlayableCharacterMaster, ElementalWard
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bc938039-836b-4bc8-bc60-56b806693359
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
