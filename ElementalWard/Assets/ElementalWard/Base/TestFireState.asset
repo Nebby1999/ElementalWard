@@ -29,7 +29,7 @@ MonoBehaviour:
     - fieldName: testType
       serializedValue:
         stringValue: '{"AssemblyQualifiedName":"EntityStates.TestWeaponStateFire+TestType,
-          ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","values":"Raycast"}'
+          ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","values":"Projectile"}'
         objectReferenceValue: {fileID: 0}
     - fieldName: explosionFX
       serializedValue:
@@ -60,4 +60,13 @@ MonoBehaviour:
     - fieldName: requiresLOS
       serializedValue:
         stringValue: 0
+        objectReferenceValue: {fileID: 0}
+    - fieldName: projectilePrefab
+      serializedValue:
+        stringValue: 
+        objectReferenceValue: {fileID: 4501546993412182516, guid: 1ca8535b3f71ef54688803a52830232b,
+          type: 3}
+    - fieldName: projectileVelocity
+      serializedValue:
+        stringValue: 30
         objectReferenceValue: {fileID: 0}
