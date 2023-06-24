@@ -1,8 +1,11 @@
 using Nebula;
+using Nebula.Console;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -31,6 +34,8 @@ namespace ElementalWard
 
         //Fucking hack
         private static DotBehaviour currentlyLoadingBehaviour;
+        public static ResourceAvailability resourceAvailability = new ResourceAvailability(typeof(BuffCatalog));
+
         public static DotBehaviour InitializeDotBehaviour(DotBuffDef dotBuffDef) => dotBuffDef ? InitializeDotBehaviour(dotBuffDef.DotIndex) : null;
 
         public static DotBehaviour InitializeDotBehaviour(DotIndex dotIndex)
@@ -90,7 +95,7 @@ namespace ElementalWard
             while (!handle.IsDone)
                 yield return new WaitForEndOfFrame();
 
-            var results = handle.Result.OrderBy(bd => bd.name).ToArray();
+            var results = handle.Result.OrderBy(bd => bd.cachedName).ToArray();
 
             buffDefs = new BuffDef[results.Length];
             for (int i = 0; i < results.Length; i++)
@@ -99,16 +104,16 @@ namespace ElementalWard
                 buffDefs[i] = buffDef;
                 BuffIndex buffIndex = (BuffIndex)i;
                 buffDef.BuffIndex = buffIndex;
-                buffNametoBuffIndex[buffDef.name] = buffIndex;
+                buffNametoBuffIndex[buffDef.cachedName] = buffIndex;
             }
 
             yield break;
 
             void EnsureNaming(BuffDef bd)
             {
-                if (bd.name.IsNullOrWhiteSpace())
+                if (bd.cachedName.IsNullOrWhiteSpace())
                 {
-                    bd.name = "BUFFDEF_" + invalidNameTracker;
+                    bd.cachedName = "BUFFDEF_" + invalidNameTracker;
                     invalidNameTracker++;
                 }
             }
@@ -122,7 +127,7 @@ namespace ElementalWard
             while (!handle.IsDone)
                 yield return new WaitForEndOfFrame();
 
-            var results = handle.Result.OrderBy(dbd => dbd.name).ToArray();
+            var results = handle.Result.OrderBy(dbd => dbd.cachedName).ToArray();
 
             dotDefs = new DotBuffDef[results.Length];
             dotBehaviours = new Type[results.Length];
@@ -134,7 +139,7 @@ namespace ElementalWard
                 DotIndex dotIndex = (DotIndex)i;
                 dotBuffDef.DotIndex = dotIndex;
                 dotDefs[i] = dotBuffDef;
-                dotNameToDotIndex[dotBuffDef.name] = dotIndex;
+                dotNameToDotIndex[dotBuffDef.cachedName] = dotIndex;
                 dotBuffIndices.Add(dotBuffDef.BuffIndex);
 
                 Type type = dotBuffDef.dotBehaviour;
@@ -153,12 +158,23 @@ namespace ElementalWard
 
             void EnsureNaming(DotBuffDef bd)
             {
-                if (bd.name.IsNullOrWhiteSpace())
+                if (bd.cachedName.IsNullOrWhiteSpace())
                 {
-                    bd.name = "DOTBUFFDEF_" + invalidNameTracker;
+                    bd.cachedName = "DOTBUFFDEF_" + invalidNameTracker;
                     invalidNameTracker++;
                 }
             }
+        }
+
+        [ConsoleCommand("list_buffs", "Lists all the buffs available.")]
+        private static void CCListBuffs(ConsoleCommandArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var (buffName, buffIndex) in buffNametoBuffIndex)
+            {
+                sb.AppendLine($"{buffName} ({buffIndex})");
+            }
+            Debug.Log(sb.ToString());
         }
     }
 }

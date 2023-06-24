@@ -11,11 +11,12 @@ namespace ElementalWard
     {
         public GameObject gameObject;
         public CharacterBody characterBody;
+        public TeamIndex team;
         /// <summary>
         /// If provided, the BodyInfo will use this element, instead of the one provided by an IElementProvider
         /// </summary>
         public ElementDef elementOverride;
-        public ElementDef Element => elementOverride ? elementOverride : _elementProvider.Element;
+        public ElementDef Element => elementOverride ? elementOverride : _elementProvider?.Element;
         private readonly IElementProvider _elementProvider;
         public T GetComponent<T>() => gameObject ? gameObject.GetComponent<T>() : default(T);
 
@@ -25,6 +26,7 @@ namespace ElementalWard
             gameObject = characterBody.gameObject;
             this.characterBody = characterBody;
             elementOverride = null;
+            team = TeamComponent.GetObjectTeamIndex(gameObject);
 
             _elementProvider = characterBody.GetComponent<IElementProvider>();
         }
@@ -34,6 +36,7 @@ namespace ElementalWard
             gameObject = bodyGameObject;
             this.characterBody = bodyGameObject.GetComponent<CharacterBody>();
             elementOverride = null;
+            team = TeamComponent.GetObjectTeamIndex(gameObject);
 
             _elementProvider = bodyGameObject.GetComponent<IElementProvider>();
         }
@@ -44,6 +47,11 @@ namespace ElementalWard
         public float damage;
         public bool rejected = false;
         public BodyInfo attackerBody;
+
+        public static float GetDamageModifier(HurtBox hurtBox)
+        {
+            return hurtBox ? hurtBox.damageMultiplier : 1;
+        }
     }
 
     public class DamageReport

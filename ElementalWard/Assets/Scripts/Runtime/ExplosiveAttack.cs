@@ -114,6 +114,7 @@ namespace ElementalWard
                     damage = baseDamage * damageCoefFromFalloff,
                     damageType = damageType,
                 };
+                damageInfo.damage *= DamageInfo.GetDamageModifier(hit.hurtBox);
                 healthComponent.TakeDamage(damageInfo);
             }
         }

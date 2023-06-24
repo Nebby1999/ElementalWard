@@ -1,5 +1,75 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2145652062600670546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5023110401659953270}
+  - component: {fileID: 6107056565722685901}
+  - component: {fileID: 1112184084863171788}
+  m_Layer: 6
+  m_Name: HurtBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5023110401659953270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145652062600670546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3775747228327262241}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &6107056565722685901
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145652062600670546}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1112184084863171788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145652062600670546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c9f5ad6d270b7438dbe22457313550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthComponent: {fileID: -4341213335146336977}
+  damageMultiplier: 1
 --- !u!1 &3775747226426235317
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3775747226426235319}
   - component: {fileID: 3775747226426235318}
+  - component: {fileID: 3169269267638083133}
   - component: {fileID: -4341213335146336977}
   - component: {fileID: -7556436084046398385}
   - component: {fileID: 1757390674160115001}
@@ -84,6 +155,19 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &3169269267638083133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d223f84ee9c997243a61724cc5a4809e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultTeam: {fileID: 11400000, guid: 5f60cf8be3e00b04dbc78fb2486f8614, type: 2}
 --- !u!114 &-4341213335146336977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d13cc3dea8fc469daeddd2c3fdd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultMaxHealth: 100
 --- !u!114 &-7556436084046398385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,11 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: Body
   initialState:
-    _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.GenericGroundedCharacterMain, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mainState:
-    _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.GenericGroundedCharacterMain, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &1757390674160115001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,13 +255,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3775747226426235317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3010f874a069e1d42a4bf98bb2a49122, type: 3}
+  m_Script: {fileID: 11500000, guid: c1e70c20687f44d44a803b007535fc21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultGravityCoefficient: 1
-  defaultDrag: 1
+  defaultDrag: 0.1
   characterVelocity: {x: 0, y: 0, z: 0}
-  characterRotation: {x: 0, y: 0, z: 0, w: 1}
+  characterRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &468388779112043098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,9 +288,9 @@ MonoBehaviour:
   StepHandling: 1
   MaxStepHeight: 0.5
   AllowSteppingWithoutStableGrounding: 0
-  MinRequiredStepDepth: 0.1
+  MinRequiredStepDepth: 0
   LedgeAndDenivelationHandling: 1
-  MaxStableDistanceFromLedge: 0.5
+  MaxStableDistanceFromLedge: 0
   MaxVelocityForLedgeSnap: 0
   MaxStableDenivelationAngle: 180
   InteractiveRigidbodyHandling: 1
@@ -280,6 +365,7 @@ GameObject:
   - component: {fileID: 3775747228327262241}
   - component: {fileID: 3775747228327262255}
   - component: {fileID: 3775747228327262254}
+  - component: {fileID: 96326062932296070}
   m_Layer: 0
   m_Name: mdlTestBody
   m_TagString: Untagged
@@ -300,6 +386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2819693679595101446}
+  - {fileID: 5023110401659953270}
   m_Father: {fileID: 3775747226426235319}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -353,6 +440,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &96326062932296070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747228327262252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923534e12a443b940a08949051f86107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hurtBoxes: []
+  _mainHurtBox: {fileID: 1112184084863171788}
 --- !u!1 &5848979200258604533
 GameObject:
   m_ObjectHideFlags: 0

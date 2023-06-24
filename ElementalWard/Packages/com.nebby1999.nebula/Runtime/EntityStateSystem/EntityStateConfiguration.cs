@@ -9,7 +9,7 @@ using EntityStates;
 namespace Nebula
 {
     [CreateAssetMenu(fileName = "new EntityStateConfiguration", menuName = "Nebula/EntityStateConfiguration")]
-    public class EntityStateConfiguration : ScriptableObject
+    public class EntityStateConfiguration : NebulaScriptableObject
     {
         [SerializableSystemType.RequiredBaseType(typeof(EntityStates.EntityStateBase))]
         public SerializableSystemType targetType;
@@ -22,7 +22,7 @@ namespace Nebula
             if (_targetType == null)
                 return;
 
-            name = _targetType.FullName;
+            cachedName = _targetType.FullName;
 #if UNITY_EDITOR
             UnityEditor.AssetDatabase.RenameAsset(UnityEditor.AssetDatabase.GetAssetPath(this), _targetType.FullName);
 #endif

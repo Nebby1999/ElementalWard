@@ -65,10 +65,8 @@ namespace ElementalWard
         }
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
-            if (fireProjectileInfo.projectileSpeed.HasValue)
-                desiredForwardSpeed = fireProjectileInfo.projectileSpeed.Value;
-            if (fireProjectileInfo.projectileLifetime.HasValue)
-                projectileLifetime = fireProjectileInfo.projectileLifetime.Value;
+            fireProjectileInfo.TryGetProperty(CommonProjectileProperties.MovementSpeed, out desiredForwardSpeed);
+            fireProjectileInfo.TryGetProperty(CommonProjectileProperties.ProjectileLifeTime, out projectileLifetime);
         }
     }
 }

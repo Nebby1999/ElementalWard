@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Common
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Common
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c69b6ef476a3e7e489a007aa74a8a7d5
+  m_SerializeEntries:
+  - m_GUID: 5df25f955332ed842b71a7f0c5285308
+    m_Address: ElementalWard/Base/Common
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5908fb5cc54f1942a653c9da05fd6fd
+    m_Address: ElementalWard/Base/Common/SpriteLit-Emissive.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6528bf3bb449db946917ec75ff090767
+    m_Address: ElementalWard/Base/Common/SpriteLit.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e81cc6d377559724ab838158131fa562, type: 2}
+    - {fileID: 11400000, guid: d6fbb47fed19c9044ab080de6d643d0a, type: 2}

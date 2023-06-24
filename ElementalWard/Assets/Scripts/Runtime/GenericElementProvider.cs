@@ -11,6 +11,7 @@ namespace ElementalWard
     {
         public ElementDef Element { get; set; }
 
+        public ElementIndex ElementIndex => Element.AsValidOrNull()?.ElementIndex ?? ElementIndex.None;
         public Color? GetElementColor() => Element.AsValidOrNull()?.elementColor;
     }
     public class GenericElementProvider : MonoBehaviour, IElementProvider

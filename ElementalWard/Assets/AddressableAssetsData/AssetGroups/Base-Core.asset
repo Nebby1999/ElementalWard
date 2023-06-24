@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Core
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Core
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 48109965af42c2d478e73eaf9b9e79dc
+  m_SerializeEntries:
+  - m_GUID: 5f60cf8be3e00b04dbc78fb2486f8614
+    m_Address: ElementalWard/Base/Core/Teams/PlayerTeam.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TeamDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2fec3f90d671b8841900df2c89ab705d
+    m_Address: ElementalWard/Base/Core/DamageNumbers/matDamageNumbers.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d6f348ac9e174c4a8289bd2cfae6db9
+    m_Address: ElementalWard/Base/Core/ElementalWardInput.inputactions
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d1f883c3f8f1ff4fb46339dc23fe430
+    m_Address: ElementalWard/Base/Core/DamageNumbers/texDamageNumbers.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b7dfd7da9d2f2b40b1709ab23ccdffc
+    m_Address: ElementalWard/Base/Core/Teams/MonsterTeam.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TeamDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa701dbcd51a4594b84139e4147c2d54
+    m_Address: ElementalWard/Base/Core/GroundNodeBaker.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a9e2141d3e0fa04290025009c28892c
+    m_Address: ElementalWard/Base/Core/ElementalWardApplication.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59206e7ec324db145927731c8ca61be1
+    m_Address: ElementalWard/Base/Core/FirstPersonCamera.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 265f5c4bb1cccf6428f15bba3e297a17
+    m_Address: ElementalWard/Base/Core/AirNodeBaker.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a39892892f75ca947a718c47888ec5a7
+    m_Address: ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a5cd4fba7acf938488d953d124347bb4, type: 2}
+    - {fileID: 11400000, guid: f183fc3120856664b8f1243f933c2f70, type: 2}

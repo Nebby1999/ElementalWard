@@ -20,9 +20,10 @@ namespace ElementalWard
         }
         public void SetData(VFXData data)
         {
-            _scale = data.scale * scaleCoefficient;
+            data.TryGetProperty(CommonVFXProperties.Scale, out _scale);
+            _scale *= scaleCoefficient;
         }
-        public void Update()
+        private void LateUpdate()
         {
             _transform.localScale = _initialScale * _scale;
         }

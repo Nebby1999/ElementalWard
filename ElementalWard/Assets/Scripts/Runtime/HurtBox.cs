@@ -8,14 +8,18 @@ namespace ElementalWard
     {
         public HealthComponent HealthComponent => _healthComponent;
         [SerializeField] private HealthComponent _healthComponent;
+        public float damageMultiplier = 1;
 
         public Collider TiedCollider { get; private set; }
+        public int ColliderID { get; private set; }
+        public TeamIndex TeamIndex { get; set; } = TeamIndex.None;
 
         private Rigidbody _rigidBody;
         private void Awake()
         {
             TiedCollider = GetComponent<Collider>();
             TiedCollider.isTrigger = false;
+            ColliderID = TiedCollider.GetInstanceID();
 
             _rigidBody = this.EnsureComponent<Rigidbody>();
             _rigidBody.isKinematic = true;

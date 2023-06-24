@@ -1,0 +1,3723 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b176997a7710870488921a10d93aa068, type: 3}
+  m_Name: GroundNodes
+  m_EditorClassIdentifier: 
+  gridWorldSize: {x: 23, y: 23}
+  gridSizeX: 23
+  gridSizeY: 23
+  minPenalty: 5
+  maxPenalty: 9.081633
+  serializedNodes:
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -11
+    movementPenalty: 9.081633
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10
+      y: 1
+      z: -11
+    movementPenalty: 8.77551
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9
+      y: 1
+      z: -11
+    movementPenalty: 8.469388
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8
+      y: 1
+      z: -11
+    movementPenalty: 8.163265
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -1
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 0
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 1
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7
+      y: 1
+      z: -11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8
+      y: 1
+      z: -11
+    movementPenalty: 8.163265
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9
+      y: 1
+      z: -11
+    movementPenalty: 8.469388
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10
+      y: 1
+      z: -11
+    movementPenalty: 8.77551
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -11
+    movementPenalty: 9.081633
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -10
+    movementPenalty: 8.77551
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 5.0000005
+      z: -10
+    movementPenalty: 8.367347
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 5.0000005
+      z: -10
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 5.0000005
+      z: -10
+    movementPenalty: 8.367347
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -10
+    movementPenalty: 8.77551
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -9
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 9.9920076e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 9.992007e-17
+      z: -9
+    movementPenalty: 7.9591837
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -9
+    movementPenalty: 8.469388
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -8
+    movementPenalty: 8.163265
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 6.3265305
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 8.8817837e-17
+      z: -8
+    movementPenalty: 6.3265305
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 8.881784e-17
+      z: -8
+    movementPenalty: 7.5510206
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -8
+    movementPenalty: 8.163265
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -7
+    movementPenalty: 7.857143
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 7.771561e-17
+      z: -7
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 7.771561e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 7.771561e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 7.771561e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 7.771561e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 7.771562e-17
+      z: -7
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -7
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -6
+    movementPenalty: 7.857143
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 6.661338e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 6.6613384e-17
+      z: -6
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -6
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -5
+    movementPenalty: 8.163265
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 6.3265305
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.5102043
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.3061223
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.102041
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 5.5511145e-17
+      z: -5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 5.551115e-17
+      z: -5
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -5
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -4
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.2244897
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 6.020408
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 4.440892e-17
+      z: -4
+    movementPenalty: 5.8163266
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 4.440892e-17
+      z: -4
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 4.440892e-17
+      z: -4
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 4.440892e-17
+      z: -4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 4.440892e-17
+      z: -4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 4.440892e-17
+      z: -4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 4.4408918e-17
+      z: -4
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -4
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -3
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 3.3306685e-17
+      z: -3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 3.3306692e-17
+      z: -3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 6.2244897
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 6.020408
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 5.8163266
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 3.3306692e-17
+      z: -3
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 3.3306692e-17
+      z: -3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 3.3306692e-17
+      z: -3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 3.330669e-17
+      z: -3
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -3
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -2
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -10
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -9
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -8
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -7
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -6
+      y: 2.2204458e-17
+      z: -2
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -5
+      y: 2.2204459e-17
+      z: -2
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -4
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -3
+      y: 2.2204459e-17
+      z: -2
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -2
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 6.2244897
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -1
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 6.020408
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: 0
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 5.8163266
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 2.2204459e-17
+      z: -2
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 2.2204459e-17
+      z: -2
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 2.2204462e-17
+      z: -2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 2.220446e-17
+      z: -2
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -2
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: -1
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -10
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -9
+      y: 1.11022296e-17
+      z: -1
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -8
+      y: 1.110223e-17
+      z: -1
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -7
+      y: 1.11022296e-17
+      z: -1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -6
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -5
+      y: 1.1102228e-17
+      z: -1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -4
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -3
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -2
+      y: 1.110223e-17
+      z: -1
+    movementPenalty: 6.2244897
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: -1
+      y: 1.1102228e-17
+      z: -1
+    movementPenalty: 6.020408
+  - isValidPosition: 1
+    isOpen: 0
+    worldPosition:
+      x: 0
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 5.8163266
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 1.110223e-17
+      z: -1
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 1.1102231e-17
+      z: -1
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 1.11022296e-17
+      z: -1
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 1.1102229e-17
+      z: -1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 1.11022296e-17
+      z: -1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 1.11022296e-17
+      z: -1
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 1.11022296e-17
+      z: -1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 1.11022296e-17
+      z: -1
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: -1
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 0
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 0
+      z: 0
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 0
+      z: 0
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 0
+      z: 0
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 0
+      z: 0
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 0
+      z: 0
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 0
+      z: 0
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 0
+      z: 0
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 0
+      z: 0
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 0
+      z: 0
+    movementPenalty: 6.2244897
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 0
+      z: 0
+    movementPenalty: 6.020408
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 0
+      z: 0
+    movementPenalty: 5.8163266
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 0
+      z: 0
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -1.3234889e-24
+      z: 0
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 0
+      z: 0
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 0
+      z: 0
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 0
+      z: 0
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 0
+      z: 0
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 0
+      z: 0
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 0
+      z: 0
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 0
+      z: 0
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 0
+      z: 0
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 0
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 1
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -1.1102229e-17
+      z: 1
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -1.1102228e-17
+      z: 1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -1.1102229e-17
+      z: 1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 6.2244897
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 6.020408
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 5.8163266
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -1.1102231e-17
+      z: 1
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -1.1102232e-17
+      z: 1
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -1.1102232e-17
+      z: 1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -1.11022296e-17
+      z: 1
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 1
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 2
+    movementPenalty: 8.163265
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -2.220446e-17
+      z: 2
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -2.220446e-17
+      z: 2
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 6.3265305
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -2.2204459e-17
+      z: 2
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -2.2204459e-17
+      z: 2
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -2.2204459e-17
+      z: 2
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5.612245
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5.5102043
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -2.2204459e-17
+      z: 2
+    movementPenalty: 5.408163
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -2.2204459e-17
+      z: 2
+    movementPenalty: 5.3061223
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -2.2204459e-17
+      z: 2
+    movementPenalty: 5.2040815
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5.102041
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -2.220446e-17
+      z: 2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -2.2204462e-17
+      z: 2
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -2.220446e-17
+      z: 2
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 2
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 3
+    movementPenalty: 7.857143
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -3.330669e-17
+      z: 3
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -3.3306685e-17
+      z: 3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -3.330669e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -3.330669e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -3.330669e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -3.330669e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -3.3306695e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -3.330669e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -3.3306685e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -3.3306692e-17
+      z: 3
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 3
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 4
+    movementPenalty: 7.857143
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -4.440892e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -4.440892e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -4.440892e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -4.440892e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -4.440892e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -4.440892e-17
+      z: 4
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -4.4408918e-17
+      z: 4
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -4.440892e-17
+      z: 4
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 4
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 5
+    movementPenalty: 7.857143
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -5.5511148e-17
+      z: 5
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -5.551115e-17
+      z: 5
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 5
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 6
+    movementPenalty: 7.857143
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -6.661338e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -6.6613384e-17
+      z: 6
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 6
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 7
+    movementPenalty: 7.857143
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -7.7715604e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -7.771561e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -7.771562e-17
+      z: 7
+    movementPenalty: 7.142857
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 7
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 8
+    movementPenalty: 8.163265
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 6.3265305
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 5.714286
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 6.3265305
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -8.881784e-17
+      z: 8
+    movementPenalty: 7.5510206
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 8
+    movementPenalty: 8.163265
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 9
+    movementPenalty: 8.469388
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.428571
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 6.9387755
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 7.4489794
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: -9.992007e-17
+      z: 9
+    movementPenalty: 7.9591837
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 9
+    movementPenalty: 8.469388
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 10
+    movementPenalty: 8.77551
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -10
+      y: 5.0000005
+      z: 10
+    movementPenalty: 8.367347
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.142857
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.5510206
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9
+      y: 5.0000005
+      z: 10
+    movementPenalty: 7.9591837
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 10
+      y: 5.0000005
+      z: 10
+    movementPenalty: 8.367347
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 10
+    movementPenalty: 8.77551
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -11
+      y: 1
+      z: 11
+    movementPenalty: 9.081633
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10
+      y: 1
+      z: 11
+    movementPenalty: 8.77551
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9
+      y: 1
+      z: 11
+    movementPenalty: 8.469388
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8
+      y: 1
+      z: 11
+    movementPenalty: 8.163265
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -1
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 0
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 1
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7
+      y: 1
+      z: 11
+    movementPenalty: 7.857143
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8
+      y: 1
+      z: 11
+    movementPenalty: 8.163265
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9
+      y: 1
+      z: 11
+    movementPenalty: 8.469388
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10
+      y: 1
+      z: 11
+    movementPenalty: 8.77551
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 11
+      y: 1
+      z: 11
+    movementPenalty: 9.081633

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace ElementalWard
@@ -7,22 +8,35 @@ namespace ElementalWard
         public bool affectAllMaterials = false;
         private Renderer _renderer;
 
+        private Material[] _materials = Array.Empty<Material>();
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
         }
         public void SetData(VFXData data)
         {
+            data.TryGetProperty(CommonVFXProperties.Color, out Color color);
             if(affectAllMaterials)
             {
-                foreach(var mat in _renderer.materials)
+                _materials = _renderer.materials;
+                foreach(var material in _materials)
                 {
-                    mat.SetColor("_BaseColor", data.vfxColor);
+                    material.SetColor("_BaseColor", color);
                 }
                 return;
             }
 
-            _renderer.material.SetColor("_BaseColor", data.vfxColor);
+            _materials = new Material[1] { _renderer.material };
+            var mat = _materials[0];
+            mat.SetColor("_BaseColor", color);
+        }
+
+        private void OnDestroy()
+        {
+            foreach(Material mat in _materials)
+            {
+                Destroy(mat);
+            }
         }
     }
 }

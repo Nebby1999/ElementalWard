@@ -18,7 +18,7 @@ namespace Nebula
             for(int i = 0; i < tags.Length; i++)
             {
                 TagObject tag = tags[i];
-                if(tag.name.Equals(tagName, System.StringComparison.OrdinalIgnoreCase))
+                if(tag.cachedName.Equals(tagName, System.StringComparison.OrdinalIgnoreCase))
                 {
                     return i;
                 }
@@ -37,7 +37,7 @@ namespace Nebula
             if (index == -1)
                 return false;
 
-            return tags[index].name.Equals(tagName, System.StringComparison.OrdinalIgnoreCase);
+            return tags[index].cachedName.Equals(tagName, System.StringComparison.OrdinalIgnoreCase);
         }
 
         public bool ObjectHasTags(TagObject[] tags)

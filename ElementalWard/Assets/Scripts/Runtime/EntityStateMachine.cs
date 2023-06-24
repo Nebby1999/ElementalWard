@@ -1,28 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UObject = UnityEngine.Object;
-using KinematicCharacterController;
 using Nebula;
 
 namespace ElementalWard
 {
     public class EntityStateMachine : EntityStateMachineBase
     {
-        public struct CommonComponentLocator
+        public readonly struct CommonComponentLocator
         {
             public readonly GameObject gameObject;
             public readonly Transform transform;
-            public readonly CharacterMovementController characterMovementController;
+            public readonly ICharacterMovementController characterMovementController;
             public readonly CharacterBody characterBody;
             public readonly CharacterInputBank inputBank;
+            public readonly BodySkillManager skillManager;
+            public readonly Rigidbody rigidBody;
+            public readonly TeamComponent teamComponent;
+            public readonly HealthComponent healthComponent;
+            public readonly SpriteLocator spriteLocator;
             public CommonComponentLocator(GameObject go)
             {
                 gameObject = go;
                 transform = go.transform;
-                characterMovementController = go.GetComponent<CharacterMovementController>();
+                characterMovementController = go.GetComponent<ICharacterMovementController>();
                 characterBody = go.GetComponent<CharacterBody>();
                 inputBank = go.GetComponent<CharacterInputBank>();
+                skillManager = go.GetComponent<BodySkillManager>();
+                rigidBody = go.GetComponent<Rigidbody>();
+                teamComponent = go.GetComponent<TeamComponent>();
+                healthComponent = go.GetComponent<HealthComponent>();
+                spriteLocator = go.GetComponent<SpriteLocator>();
             }
         }
 

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ElementalWard;
 using Nebula;
+using Nebula.Console;
 using Nebula.Serialization;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -18,6 +19,7 @@ namespace ElementalWard
     }
     public static class ElementCatalog
     {
+        public const string ADDRESSABLE_LABEL = "ElementDefs";
         public static int ElementCount => elementDefs.Length;
         private static ElementDef[] elementDefs = Array.Empty<ElementDef>();
         private static Dictionary<string, ElementIndex> elementNameToIndex = new(StringComparer.OrdinalIgnoreCase);
@@ -56,12 +58,12 @@ namespace ElementalWard
         internal static IEnumerator Initialize()
         {
             int invalidNameTracker = 0;
-            var handle = Addressables.LoadAssetsAsync<ElementDef>("ElementDefs", EnsureNaming);
+            var handle = Addressables.LoadAssetsAsync<ElementDef>(ADDRESSABLE_LABEL, EnsureNaming);
             while(!handle.IsDone)
             {
                 yield return new WaitForEndOfFrame();
             }
-            var results = handle.Result.OrderBy(ed => ed.name).ToArray();
+            var results = handle.Result.OrderBy(ed => ed.cachedName).ToArray();
 
             elementDefs = new ElementDef[results.Length];
             elementEvents = new IElementEvents[results.Length];
@@ -71,7 +73,7 @@ namespace ElementalWard
                 ElementDef elementDef = results[i];
                 ElementIndex elementIndex = (ElementIndex)i;
                 elementDef.ElementIndex = elementIndex;
-                elementNameToIndex[elementDef.name] = elementIndex;
+                elementNameToIndex[elementDef.cachedName] = elementIndex;
                 elementDefs[i] = elementDef;
                 Type type = elementDef.elementEvents;
                 if(type == null)
@@ -90,12 +92,23 @@ namespace ElementalWard
 
             void EnsureNaming(ElementDef ed)
             {
-                if(ed.name.IsNullOrWhiteSpace())
+                if(ed.cachedName.IsNullOrWhiteSpace())
                 {
-                    ed.name = "ELEMENTDEF_" + invalidNameTracker;
+                    ed.cachedName = "ELEMENTDEF_" + invalidNameTracker;
                     invalidNameTracker++;
                 }
             }
+        }
+
+        [ConsoleCommand("list_elements", "Lists all the elements available.")]
+        private static void CCListElements(ConsoleCommandArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var (elementName, elementIndex) in elementNameToIndex)
+            {
+                sb.AppendLine($"{elementName} ({elementIndex})");
+            }
+            Debug.Log(sb.ToString());
         }
     }
 }

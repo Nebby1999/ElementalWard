@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7637794846450996917
 MonoBehaviour:
@@ -49,6 +49,7 @@ MonoBehaviour:
   _spawnOnStart: 1
   _defaultBodyPrefab: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
     type: 3}
+  _defaultTeam: {fileID: 11400000, guid: 5f60cf8be3e00b04dbc78fb2486f8614, type: 2}
   _level: 0
   _currentXP: 462.6
   _neededXPForNextLevel: 54.616386
@@ -179,6 +180,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bc938039-836b-4bc8-bc60-56b806693359
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e4637507-4466-4625-bf18-5c38c76eed38
+    m_ActionName: Player/Sprint[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b6a69f30-2f02-407d-9e46-93a072e375ce
+    m_ActionName: Player/Fire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 90496791-75a5-486f-a739-1442f5dcf45d
+    m_ActionName: Player/ElementScroll[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

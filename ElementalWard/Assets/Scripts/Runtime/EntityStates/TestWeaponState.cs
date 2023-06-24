@@ -21,7 +21,7 @@ namespace ElementalWard
 
             ElementChange();
 
-            if(CharacterInputBank && CharacterInputBank.fireButton.IsPressed)
+            if(CharacterInputBank && CharacterInputBank.skill1Button.down)
             {
                 var fireState = new TestWeaponStateFire();
                 fireState.elementDef = elementToFire;

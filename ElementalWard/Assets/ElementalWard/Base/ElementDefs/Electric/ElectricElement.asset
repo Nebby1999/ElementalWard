@@ -21,7 +21,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  elementColor: {r: 0.75828743, g: 1, b: 0, a: 1}
+  elementRamp: {fileID: 2800000, guid: 50f9ca3a2d1bde445a3e0e2ba2371cdf, type: 3}
+  elementColor: {r: 1, g: 1, b: 1, a: 1}
   elementEvents:
     _assemblyQualifiedName: ElementalWard.ElectricElementEvents, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

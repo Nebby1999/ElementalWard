@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Nebula
 {
     [CreateAssetMenu(menuName = "Nebula/GameEvent", fileName = "New GameEvent")]
-    public class GameEvent : ScriptableObject
+    public class GameEvent : NebulaScriptableObject
     {
         private List<GameEventListener> listeners = new List<GameEventListener>();
 

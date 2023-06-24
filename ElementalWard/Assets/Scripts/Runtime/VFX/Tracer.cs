@@ -31,11 +31,12 @@ namespace ElementalWard
 
         void IVisualEffect.SetData(VFXData data)
         {
-            Renderer.startColor = data.vfxColor;
-            Renderer.endColor = data.vfxColor;
+            data.TryGetProperty(CommonVFXProperties.Color, out Color color);
+            Renderer.startColor = color;
+            Renderer.endColor = color;
 
-            origin = data.origin;
-            destination = data.start;
+            data.TryGetProperty(CommonVFXProperties.Origin, out origin);
+            data.TryGetProperty(CommonVFXProperties.Start, out destination);
 
             Vector3 diff = destination - origin;
             totalDistance = diff.magnitude;

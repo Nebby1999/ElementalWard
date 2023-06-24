@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Characters-TestPlayer
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Characters-TestPlayer
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 86a9b90d60e20d542976932b1b45962a
+  m_SerializeEntries:
+  - m_GUID: ffa2199ad423f4748a3ad4122b82623a
+    m_Address: ElementalWard/Base/Characters/TestPlayer/TestFireState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af4585a4f5c732f47a62dc530283dd17
+    m_Address: ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd67e06c4dac8744bb19ec472ef5350b
+    m_Address: ElementalWard/Base/Characters/TestPlayer/TestBody.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterBodies
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc563c421bdb1bb4780b1ee355b6376b
+    m_Address: ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ca8535b3f71ef54688803a52830232b
+    m_Address: ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4c34184ec23db44f8561c05e84cd6e4
+    m_Address: ElementalWard/Base/Characters/TestPlayer/TestMaster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterMasters
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b432ded47bcb1ec4682d4803e5f18adc
+    m_Address: ElementalWard/Base/Characters/TestPlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: db5e47c1d0f70ed4a93e356f51cac39b, type: 2}
+    - {fileID: 11400000, guid: 43ea85dd4b1f38c469ff9d61d8288529, type: 2}

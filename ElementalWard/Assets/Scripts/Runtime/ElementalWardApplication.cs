@@ -5,6 +5,8 @@ using Nebula;
 using UObject = UnityEngine.Object;
 using System.Threading.Tasks;
 
+[assembly: SearchableAttribute.OptIn]
+
 namespace ElementalWard
 {
     public class ElementalWardApplication : MainGameBehaviour<ElementalWardApplication>
@@ -28,12 +30,17 @@ namespace ElementalWard
 
         protected override IEnumerator LoadGameContent()
         {
-            return InitializeCatalogs();
+            yield return InitializeCatalogs();
+            SystemInitializerAttribute.Execute();
+            yield break;
         }
 
         private IEnumerator InitializeCatalogs()
         {
+            yield return MasterCatalog.Initialize();
+            yield return BodyCatalog.Initialize();
             yield return EntityStateCatalog.Initialize();
+            yield return TeamCatalog.Initialize();
             yield return BuffCatalog.Initialize();
             yield return ElementCatalog.Initialize();
         }

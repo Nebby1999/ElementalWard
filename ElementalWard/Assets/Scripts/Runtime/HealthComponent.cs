@@ -22,6 +22,7 @@ namespace ElementalWard
     }
     public class HealthComponent : MonoBehaviour
     {
+        public bool IsAlive => CurrentHealth > 0;
         public float CurrentHealth { get; internal set; }
         public IHealthProvider HealthProvider
         {
@@ -42,25 +43,50 @@ namespace ElementalWard
         public ElementDef CurrentElement => _elementProvider?.Element;
         [Tooltip("If the game object that has this health component doesnt have a component that implements IHealthProvider, use this value for health.")]
         [SerializeField] private float _defaultMaxHealth = 100;
+
+        public HurtBoxGroup hurtBoxGroup;
+        public event Action<HealthComponent> OnDeath;
+
+        private DamageReport _lastDamageSource;
+        private CharacterDeathBehaviour _deathBehaviour;
         private IElementProvider _elementProvider;
+        private TeamComponent _teamComponent;
         private IOnTakeDamage[] _takeDamageReceivers = Array.Empty<IOnTakeDamage>();
         private IOnIncomingDamage[] _incomingDamageReceivers = Array.Empty<IOnIncomingDamage>();
+        private bool _wasAlive;
+
+        internal bool IsImmune { get; set; }
         private void Awake()
         {
             _elementProvider = GetComponent<IElementProvider>();
 
             _takeDamageReceivers = GetComponents<IOnTakeDamage>();
             _incomingDamageReceivers = GetComponents<IOnIncomingDamage>();
+            _deathBehaviour = GetComponent<CharacterDeathBehaviour>();
+            _teamComponent = GetComponent<TeamComponent>();
         }
 
         private void Start()
         {
             if(_healthProvider == null && CurrentHealth == 0)
                 CurrentHealth = _defaultMaxHealth;
+            _wasAlive = true;
         }
 
         public void TakeDamage(DamageInfo damageInfo)
         {
+            if (IsImmune)
+                return;
+
+            var selfTeamIndex = _teamComponent ? _teamComponent.CurrentTeamIndex : TeamIndex.None;
+            if(damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
+            {
+                bool? isEnemy = TeamCatalog.GetTeamInteraction(damageInfo.attackerBody.team, selfTeamIndex);
+                if(isEnemy == false)
+                {
+                    return;
+                }
+            }
             var attackerElement = damageInfo.attackerBody.Element;
             IElementEvents attackerElementEvents = ElementCatalog.GetElementEventsFor(attackerElement);
             IElementEvents selfElementEvents = ElementCatalog.GetElementEventsFor(CurrentElement);
@@ -93,13 +119,18 @@ namespace ElementalWard
             }
             selfElementEvents?.OnDamageTaken(report);
             attackerElementEvents?.OnDamageDealt(report);
+            _lastDamageSource = report;
+
+            ParticleTextSystem.SpawnParticle(transform.position, ParticleTextSystem.FormatDamage(damageInfo.damage, false), damageInfo.attackerBody.Element.AsValidOrNull()?.elementColor ?? Color.white);
         }
 
         public void FixedUpdate()
         {
-            if(CurrentHealth <= 0)
+            if(!IsAlive && _wasAlive)
             {
-                Destroy(gameObject);
+                _wasAlive = false;
+                _deathBehaviour.AsValidOrNull()?.OnDeath(_lastDamageSource);
+                OnDeath?.Invoke(this);
             }
         }
     }

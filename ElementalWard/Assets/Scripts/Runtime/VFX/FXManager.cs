@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.VFX;
+using static UnityEngine.UI.GridLayoutGroup;
 
 namespace ElementalWard
 {
@@ -15,11 +18,6 @@ namespace ElementalWard
     /// </summary>
     public struct VFXData
     {
-        public Color vfxColor;
-        public Vector3 origin;
-        public Vector3 start;
-        public float scale;
-
         /// <summary>
         /// The position of the prefab when it gets instantiated
         /// </summary>
@@ -28,6 +26,33 @@ namespace ElementalWard
         /// The rotation of the prefab when it gets instantiated
         /// </summary>
         public Quaternion instantiationRotation;
+
+        private Dictionary<string, object> _vfxProperties;
+
+        public void AddProperty(string propName, object value)
+        {
+            _vfxProperties ??= new Dictionary<string, object>();
+
+            if(_vfxProperties.ContainsKey(propName))
+            {
+                Debug.LogWarning($"VFXData already contains a Property of name {propName}.");
+            }
+            _vfxProperties.Add(propName, value);
+        }
+
+        public bool TryGetProperty<T>(string propName, out T value)
+        {
+            _vfxProperties ??= new Dictionary<string, object>();
+            if(_vfxProperties.TryGetValue(propName, out var val))
+            {
+                value = (T)val;
+                return true;
+            }
+            List<string> validProperties = _vfxProperties.Select(k => $"Key=\"{k.Key}\"-Value=\"{k.Value}\"").ToList();
+            Debug.LogError($"VFXData does not have a projectile property of name \"{propName}\". Valid VFX properties=\"{string.Join("\n", validProperties)}\"");
+            value = default;
+            return false;
+        }
     }
 
     public static class FXManager

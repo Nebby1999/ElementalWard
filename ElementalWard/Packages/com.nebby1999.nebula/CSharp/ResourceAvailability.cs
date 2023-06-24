@@ -15,7 +15,11 @@ namespace Nebula
             if (callingType == _ownerType)
             {
                 Available = true;
-                foreach (Action @delegate in _Delegates?.GetInvocationList())
+                var invocationList = _Delegates?.GetInvocationList() ?? Array.Empty<Delegate>();
+                if (invocationList.Length == 0)
+                    return;
+
+                foreach (Action @delegate in invocationList)
                 {
                     try
                     {

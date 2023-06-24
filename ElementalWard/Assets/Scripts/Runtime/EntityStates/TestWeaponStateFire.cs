@@ -1,6 +1,5 @@
 using ElementalWard;
 using Nebula;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace EntityStates
@@ -61,6 +60,13 @@ namespace EntityStates
             Ray ray = GetAimRay();
             var bodyInfo = new BodyInfo(CharacterBody);
             bodyInfo.elementOverride = elementDef;
+            var data = new VFXData
+            {
+                instantiationPosition = ray.origin,
+                instantiationRotation = Quaternion.identity
+            };
+            data.AddProperty(CommonVFXProperties.Color, elementDef.AsValidOrNull()?.elementColor ?? Color.white);
+
             var atk = new HitscanAttack()
             {
                 attacker = bodyInfo,
@@ -69,16 +75,11 @@ namespace EntityStates
                 raycastDirection = ray.direction,
                 raycastOrigin = ray.origin,
                 raycastLength = 100,
-                raycastRadius = 1,
+                raycastRadius = 0,
                 minSpread = minSpread,
                 maxSpread = maxSpread,
                 tracerEffect = tracerFX,
-                tracerData = new VFXData
-                {
-                    vfxColor = elementDef.AsValidOrNull()?.elementColor ?? Color.white,
-                    instantiationPosition = ray.origin,
-                    instantiationRotation = Quaternion.identity,
-                }
+                tracerData = data
             };
             atk.Fire();
         }
@@ -87,6 +88,14 @@ namespace EntityStates
         {
             var bodyInfo = new BodyInfo(CharacterBody);
             bodyInfo.elementOverride = elementDef;
+            VFXData data = new VFXData
+            {
+                instantiationPosition = Transform.position,
+                instantiationRotation = Quaternion.identity,
+            };
+            data.AddProperty(CommonVFXProperties.Scale, 10);
+            data.AddProperty(CommonVFXProperties.Color, elementDef.AsValidOrNull()?.elementColor ?? Color.white);
+
             var atk = new ExplosiveAttack
             {
                 attacker = bodyInfo,
@@ -95,13 +104,7 @@ namespace EntityStates
                 explosionRadius = explosionRadius,
                 requireLineOfSight = requiresLOS,
                 explosionVFX = explosionFX,
-                explosionVFXData = new VFXData
-                {
-                    instantiationPosition = Transform.position,
-                    instantiationRotation = Quaternion.identity,
-                    scale = 10,
-                    vfxColor = elementDef.AsValidOrNull()?.elementColor ?? Color.white,
-                },
+                explosionVFXData = data
             };
             atk.Fire();
         }
@@ -116,8 +119,8 @@ namespace EntityStates
                 owner = bodyInfo,
                 instantiationPosition = aimRay.origin,
                 instantiationRotation = Quaternion.LookRotation(aimRay.direction, Vector3.up),
-                projectileSpeed = projectileVelocity
             };
+            info.AddProperty(CommonProjectileProperties.MovementSpeed, projectileVelocity);
             ProjectileManager.SpawnProjectile(projectilePrefab, info);
         }
 

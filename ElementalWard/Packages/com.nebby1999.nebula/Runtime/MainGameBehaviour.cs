@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nebula.Console;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Nebula
                 return;
             }
             Instance = this as T;
-
+            ConsoleSystem.Initialize();
             if(!LoadStarted)
             {
                 LoadStarted = true;

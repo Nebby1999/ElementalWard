@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-ElementDefs
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-ElementDefs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 855fdb96ad8f83e40972aecb33055677
+  m_SerializeEntries:
+  - m_GUID: 3cdddd3025ac41949af10e9f2f53620f
+    m_Address: ElementalWard/Base/ElementDefs/matGenericOverload.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97d317b99c4dec5409eda54e52e6cb96
+    m_Address: ElementalWard/Base/ElementDefs/bdOverload.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BuffDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70a542564ff00b64b8462a71e5b59c1b
+    m_Address: ElementalWard/Base/ElementDefs/ElementOverload.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b2408652c6a7c9b4593407f0cb84e0cc, type: 2}
+    - {fileID: 11400000, guid: b6e893f890c2209498d546302319308a, type: 2}
