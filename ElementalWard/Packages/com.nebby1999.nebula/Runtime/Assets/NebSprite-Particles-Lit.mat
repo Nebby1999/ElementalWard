@@ -14,7 +14,8 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ENABLE_CLOUD_REMAPPING
-  - _TWIRL_SETTINGS_NONE
+  - _ENABLE_TWIRL
+  - _TWIRL_SETTINGS_USE_SINE_TIME
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -65,14 +66,14 @@ Material:
     m_Ints: []
     m_Floats:
     - _ENABLE_CLOUD_REMAPPING: 1
-    - _ENABLE_TWIRL: 0
+    - _ENABLE_TWIRL: 1
     - _EnableExternalAlpha: 0
-    - _TWIRL_SETTINGS: 0
-    - _Twirl_Strength: 0
+    - _TWIRL_SETTINGS: 2
+    - _Twirl_Strength: -10
     - _Use_Sine_Time_Instead: 0
     m_Colors:
     - _Center_Offset: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _Cloud_1_Scroll: {r: 0, g: 0, b: 0, a: 0}
+    - _Cloud_1_Scroll: {r: 0.3, g: 0, b: 0, a: 0}
     - _Cloud_2_Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
