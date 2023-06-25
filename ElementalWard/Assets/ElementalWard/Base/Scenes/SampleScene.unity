@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 410087040}
-  m_IndirectSpecularColor: {r: 0.18223348, g: 0.22473188, b: 0.2887432, a: 1}
+  m_IndirectSpecularColor: {r: 0.1737663, g: 0.21725664, b: 0.29939535, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,6 +134,9 @@ GameObject:
   - component: {fileID: 405570148}
   - component: {fileID: 405570147}
   - component: {fileID: 405570146}
+  - component: {fileID: 405570150}
+  - component: {fileID: 405570149}
+  - component: {fileID: 405570151}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -192,7 +195,7 @@ MonoBehaviour:
   _lvlDamage: 0
   _lvlArmor: 0
   aimOriginTransform: {fileID: 0}
-  sprintSpeedMultiplier: 0
+  sprintSpeedMultiplier: -0.03
   references:
     version: 2
     RefIds: []
@@ -204,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405570145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.866}
+  m_LocalPosition: {x: 0, y: 0.574, z: 1.866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -212,6 +215,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &405570149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405570145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9e2f3bf844e864fbf1f1ab8d826708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _element: {fileID: 0}
+  _buffDef: {fileID: 11400000, guid: 97d317b99c4dec5409eda54e52e6cb96, type: 2}
+  _overloadEffect: {fileID: 1098205142847553889, guid: 70a542564ff00b64b8462a71e5b59c1b,
+    type: 3}
+  canBeOverLoaded: 1
+  amountRequiredForDeath: 20
+--- !u!114 &405570150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405570145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1b09043cbf2324d9627b9cc3ff78ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &405570151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405570145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e5212390f71e24eac409b96394bcda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterRenderer: {fileID: 885119951}
+  _animator: {fileID: 885119955}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,14 +346,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_LocalRotation: {x: 0.0033756937, y: -0.17255072, z: 0.9842792, w: -0.03754115}
+  m_LocalRotation: {x: 0.6645946, y: 0.12541708, z: 0.01454273, w: 0.7364599}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 160.158, y: -538.806, z: 364.577}
+  m_LocalEulerAnglesHint: {x: 102.774994, y: -472.654, z: 238.296}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +619,7 @@ GameObject:
   - component: {fileID: 885119952}
   - component: {fileID: 885119951}
   - component: {fileID: 885119953}
+  - component: {fileID: 885119955}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -587,7 +635,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885119949}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.202, y: 0.045, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -612,7 +660,8 @@ MonoBehaviour:
   allowVerticalRotation: 0
   rendererInfos:
   - renderer: {fileID: 885119952}
-    defaultMaterial: {fileID: 2100000, guid: 9548e30684a2d4c48b5d49cca6d09cc1, type: 2}
+    defaultShadowCastingMode: 2
+    defaultMaterial: {fileID: 2100000, guid: 6528bf3bb449db946917ec75ff090767, type: 2}
 --- !u!212 &885119952
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -633,7 +682,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9548e30684a2d4c48b5d49cca6d09cc1, type: 2}
+  - {fileID: 2100000, guid: 6528bf3bb449db946917ec75ff090767, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -654,12 +703,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 38b9763678259114f8cb53acfcbb6abb, type: 3}
+  m_Sprite: {fileID: 9505709, guid: 8e4d9e298ffb63a4b8c612ca6e8bdcde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.96875, y: 2.15625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -683,6 +732,27 @@ MonoBehaviour:
   recieveShadows: 1
   staticShadowCaster: 0
   destroyAfterApply: 1
+--- !u!95 &885119955
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885119949}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc5866ad7496b754cbf26575c95890c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1104889923
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,8 +818,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.75, y: 1, z: 0.13}
-  m_Center: {x: 0.03, y: 0, z: 0}
+  m_Size: {x: 2.03, y: 2.02, z: 0.13}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1268701254
 GameObject:
   m_ObjectHideFlags: 0

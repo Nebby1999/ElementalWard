@@ -15,6 +15,7 @@ namespace ElementalWard
     public class ElementDef : ScriptableObject
     {
         public LocalizedString elementName;
+        public Texture2D elementRamp;
         public Color elementColor;
         [SerializableSystemType.RequiredBaseType(typeof(IElementEvents))]
         public SerializableSystemType elementEvents;

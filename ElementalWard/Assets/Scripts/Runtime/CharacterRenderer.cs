@@ -1,6 +1,7 @@
 using Nebula;
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace ElementalWard
 {
@@ -8,12 +9,10 @@ namespace ElementalWard
     public struct RendererInfo
     {
         public Renderer renderer;
+        public ShadowCastingMode defaultShadowCastingMode;
         public Material defaultMaterial;
-
-        [HideInInspector]
-        public bool isSpriteRenderer;
     }
-    public class CharacterModel : MonoBehaviour
+    public class CharacterRenderer : MonoBehaviour
     {
         public CharacterBody body;
         [Header("Look at Settings")]
@@ -25,6 +24,7 @@ namespace ElementalWard
         [Header("Renderer Data")]
         public RendererInfo[] rendererInfos = Array.Empty<RendererInfo>();
 
+        private MaterialPropertyBlock propertyStorage;
         public Transform LookAtTransform
         {
             get
@@ -38,15 +38,16 @@ namespace ElementalWard
                 _lookAtTransform = value;
             }
         }
+        public EightDirectionalCharacterAnimator EightDirectionalCharacterAnimator { get; private set; }
         private new Transform transform;
         private Transform _lookAtTransform;
-        private IElementProvider elementProvider;
-        private Color? elementColor;
+        private IElementProvider _elementProvider;
         private void Awake()
         {
+            propertyStorage = new MaterialPropertyBlock();
             transform = base.transform;
-            if(body.gameObject)
-                elementProvider = body.GetComponent<IElementProvider>();
+            _elementProvider = body.GetComponent<IElementProvider>();
+            EightDirectionalCharacterAnimator = body.GetComponent<EightDirectionalCharacterAnimator>();
 
             PlayableCharacterMaster.OnPlayableBodySpawned -= SetLookAtTransform;
             PlayableCharacterMaster.OnPlayableBodySpawned += SetLookAtTransform;
@@ -82,31 +83,52 @@ namespace ElementalWard
                 if (!info.renderer)
                     Debug.LogWarning($"RendererInfo index {i} on {this} has a null renderer", this);
                 else
+                {
                     info.defaultMaterial = info.renderer.sharedMaterial;
-
-                info.isSpriteRenderer = info.renderer is SpriteRenderer;
+                    info.defaultShadowCastingMode = info.renderer.shadowCastingMode;
+                }
                 rendererInfos[i] = info;
             }
         }
         private void Update()
         {
-            elementColor = elementProvider?.GetElementColor();
-            foreach(RendererInfo rendererInfo in rendererInfos)
-            {
-                var renderer = rendererInfo.renderer;
-                
-                if (rendererInfo.isSpriteRenderer)
-                    ((SpriteRenderer)renderer).color = Color.white;
-
-                renderer.material.color = elementColor ?? rendererInfo.defaultMaterial.color;
-            }
-
+            UpdateRenderers();
             if(lookAt)
             {
                 LookAtCamera();
             }
         }
 
+        private void UpdateRenderers()
+        {
+
+            foreach (RendererInfo rendererInfo in rendererInfos)
+            {
+                var renderer = rendererInfo.renderer;
+
+                if (EightDirectionalCharacterAnimator && renderer is SpriteRenderer spriteRenderer)
+                {
+                    spriteRenderer.color = Color.white;
+                    spriteRenderer.flipX = EightDirectionalCharacterAnimator.SpriteRotationIndex > 4;
+                }
+
+                var material = renderer.material;
+                Texture texture = null;
+                var elementDef = _elementProvider.Element;
+                if (elementDef)
+                    texture = elementDef.elementRamp;
+                int num = ((int?)_elementProvider?.ElementIndex) ?? -1;
+                renderer.GetPropertyBlock(propertyStorage);
+                propertyStorage.SetInteger("_ElementRampIndex", num);
+                if (texture)
+                {
+                    propertyStorage.SetTexture("_RecolorRamp", texture);
+                }
+                renderer.SetPropertyBlock(propertyStorage);
+            }
+
+
+        }
         private void LookAtCamera()
         {
             if (!_lookAtTransform)

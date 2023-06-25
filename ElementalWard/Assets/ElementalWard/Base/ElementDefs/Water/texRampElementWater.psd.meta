@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 38b9763678259114f8cb53acfcbb6abb
+guid: 53974555769fc19499a4138d92c2c950
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,27 +34,27 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
+    wrapU: 0
+    wrapV: 0
     wrapW: 0
-  nPOTScale: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 0
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
-  spriteTessellationDetail: 1
-  textureType: 8
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -109,32 +109,11 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline:
-    - - {x: 14, y: 1}
-      - {x: 15, y: 2}
-      - {x: 15, y: 8}
-      - {x: 14, y: 11}
-      - {x: 7, y: 17}
-      - {x: 4, y: 18}
-      - {x: -2, y: 18}
-      - {x: -3, y: 17}
-      - {x: -5, y: 17}
-      - {x: -12, y: 11}
-      - {x: -13, y: 8}
-      - {x: -13, y: 2}
-      - {x: -12, y: 1}
-      - {x: -12, y: -2}
-      - {x: -8, y: -6}
-      - {x: -8, y: -14}
-      - {x: -4, y: -18}
-      - {x: 6, y: -18}
-      - {x: 10, y: -14}
-      - {x: 10, y: -6}
-      - {x: 14, y: -2}
+    outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
