@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Nebula
 {
-    public static class Util
+    public static class CSharpUtil
     {
         public static bool IsBetween(float val, float min, float max)
         {

@@ -25,6 +25,13 @@ namespace ElementalWard
                 UpdateVirtualCamera();
             }
         }
+        public Camera Camera
+        {
+            get
+            {
+                return _brain ? _brain.OutputCamera : null;
+            }
+        }
         private CinemachineVirtualCamera _virtualCamera;
         private CinemachineBrain _brain;
         private void UpdateVirtualCamera()

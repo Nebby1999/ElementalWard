@@ -15,7 +15,7 @@ namespace ElementalWard
         /// If provided, the BodyInfo will use this element, instead of the one provided by an IElementProvider
         /// </summary>
         public ElementDef elementOverride;
-        public ElementDef Element => elementOverride ? elementOverride : _elementProvider.Element;
+        public ElementDef Element => elementOverride ? elementOverride : _elementProvider?.Element;
         private readonly IElementProvider _elementProvider;
         public T GetComponent<T>() => gameObject ? gameObject.GetComponent<T>() : default(T);
 

@@ -22,6 +22,7 @@ namespace ElementalWard
         public CharacterMaster ManagedMaster { get; private set; }
         public PlayerInput PlayerInput { get; private set; }
         public CharacterInputBank BodyInputs { get; private set; }
+        public CharacterCameraController PlayableCharacterCamera { get; private set; }
         public static event Action<CharacterBody> OnPlayableBodySpawned;
 
         private Transform _bodyCameraTransform;
@@ -45,10 +46,10 @@ namespace ElementalWard
         {
             var fpsVirtualCameraPrefab = Addressables.LoadAssetAsync<GameObject>(CAMERA_ADDRESS).WaitForCompletion();
             var fpsVirtualCamera = Instantiate(fpsVirtualCameraPrefab).GetComponent<CinemachineVirtualCamera>();
-            var bodyCamera = body.GetComponent<CharacterCameraController>();
-            if(bodyCamera)
+            PlayableCharacterCamera = body.GetComponent<CharacterCameraController>();
+            if(PlayableCharacterCamera)
             {
-                bodyCamera.VirtualCamera = fpsVirtualCamera;
+                PlayableCharacterCamera.VirtualCamera = fpsVirtualCamera;
                 _bodyCameraTransform = fpsVirtualCamera.transform;
             }
             SetBodyInputs(body.InputBank);
