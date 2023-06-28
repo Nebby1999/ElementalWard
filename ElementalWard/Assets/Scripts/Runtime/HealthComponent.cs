@@ -93,6 +93,8 @@ namespace ElementalWard
             }
             selfElementEvents?.OnDamageTaken(report);
             attackerElementEvents?.OnDamageDealt(report);
+
+            DamageNumberManager.Spawn(damageInfo.damage, transform.position, damageInfo.attackerBody.Element.AsValidOrNull()?.elementColor ?? Color.white, false);
         }
 
         public void FixedUpdate()

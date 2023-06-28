@@ -178,7 +178,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  _baseHealth: 250
+  _baseHealth: Infinity
   _baseShield: 0
   _baseRegen: 0
   _baseMovementSpeed: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   _baseArmor: 0
   _jumpStrength: 0
   autoCalculateLevelStats: 1
-  _lvlHealth: 50
+  _lvlHealth: Infinity
   _lvlShield: 0
   _lvlRegen: 0
   _lvlMovementSpeed: 0
@@ -1013,7 +1013,7 @@ GameObject:
   - component: {fileID: 1775011444}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
