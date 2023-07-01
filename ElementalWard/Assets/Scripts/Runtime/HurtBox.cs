@@ -8,6 +8,7 @@ namespace ElementalWard
     {
         public HealthComponent HealthComponent => _healthComponent;
         [SerializeField] private HealthComponent _healthComponent;
+        public float damageMultiplier = 1;
 
         public Collider TiedCollider { get; private set; }
 

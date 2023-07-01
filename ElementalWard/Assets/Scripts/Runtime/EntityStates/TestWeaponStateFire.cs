@@ -68,7 +68,7 @@ namespace EntityStates
                 raycastDirection = ray.direction,
                 raycastOrigin = ray.origin,
                 raycastLength = 100,
-                raycastRadius = 1,
+                raycastRadius = 0,
                 minSpread = minSpread,
                 maxSpread = maxSpread,
                 tracerEffect = tracerFX,

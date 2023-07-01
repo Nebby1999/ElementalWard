@@ -44,6 +44,11 @@ namespace ElementalWard
         public float damage;
         public bool rejected = false;
         public BodyInfo attackerBody;
+
+        public static float GetDamageModifier(HurtBox hurtBox)
+        {
+            return hurtBox ? hurtBox.damageMultiplier : 1;
+        }
     }
 
     public class DamageReport

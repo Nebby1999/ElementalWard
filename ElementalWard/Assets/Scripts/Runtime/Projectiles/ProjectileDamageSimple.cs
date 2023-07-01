@@ -30,12 +30,14 @@ namespace ElementalWard
             var healthComponent = hurtBox.HealthComponent;
             if (!healthComponent)
                 return;
-            healthComponent.TakeDamage(new DamageInfo
+
+            var damageInfo = new DamageInfo
             {
                 attackerBody = _owner,
                 damage = _owner.characterBody.Damage * defaultDamageCoefficient,
-                damageType = defaultDamageType
-            });
+                damageType = defaultDamageType,
+            };
+            damageInfo.damage *= DamageInfo.GetDamageModifier(hurtBox);
             Destroy(gameObject);
         }
     }
