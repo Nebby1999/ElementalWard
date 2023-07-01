@@ -10,32 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Base-ElementDefs-Water
+  m_Name: Base-Common
   m_EditorClassIdentifier: 
-  m_GroupName: Base-ElementDefs-Water
+  m_GroupName: Base-Common
   m_Data:
     m_SerializedData: []
-  m_GUID: 504e84fbfb23de043a608fe59b6302ee
+  m_GUID: c69b6ef476a3e7e489a007aa74a8a7d5
   m_SerializeEntries:
-  - m_GUID: 5c70ac757d5920d4a959e52ace634b90
-    m_Address: ElementalWard/Base/ElementDefs/Water
+  - m_GUID: 5df25f955332ed842b71a7f0c5285308
+    m_Address: ElementalWard/Base/Common
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 53974555769fc19499a4138d92c2c950
-    m_Address: ElementalWard/Base/ElementDefs/Water/texRampElementWater.psd
+  - m_GUID: 28ec0cd0eb321ac4eb5a53da567b9d29
+    m_Address: ElementalWard/Base/Common/SpriteLit-Emissive.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5288bfc2c6fc0a24c8ded36f8f774a21
-    m_Address: ElementalWard/Base/ElementDefs/Water/WaterElement.asset
+  - m_GUID: 6528bf3bb449db946917ec75ff090767
+    m_Address: ElementalWard/Base/Common/SpriteLit.mat
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - ElementDefs
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e37f1f5fe6adcbc49bf206e0b73bbf4a, type: 2}
-    - {fileID: 11400000, guid: 903d982931125f64b9a3a80b2d5892cb, type: 2}
+    - {fileID: 11400000, guid: e81cc6d377559724ab838158131fa562, type: 2}
+    - {fileID: 11400000, guid: d6fbb47fed19c9044ab080de6d643d0a, type: 2}

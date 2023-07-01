@@ -108,11 +108,6 @@ namespace ElementalWard
 
             var custom1Data = CreateCustomData(texCords);
             var custom2Data = CreateCustomData(texCords, 12);
-            for(int i = 0; i < 3; i++)
-            {
-                custom1Data[i] += 0.1f;
-                custom2Data[i] += 0.1f;
-            }
 
             var emitParams = new ParticleSystem.EmitParams
             {
@@ -121,9 +116,7 @@ namespace ElementalWard
                 applyShapeToPosition = true,
                 startSize3D = new Vector3(messageLenght, 1, 1)
             };
-            Debug.Log(message);
-            Debug.Log(custom1Data);
-            Debug.Log(custom2Data);
+
             _particleSystem.Emit(emitParams, 1);
 
             var customData = new List<Vector4>();
@@ -168,89 +161,14 @@ namespace ElementalWard
                     }
                     else
                     {
-                        data[i] = PackFloat(vecs);
+                        data[i] = PackFloat(vecs) + 0.1f;
                         i = 5;
                         break;
                     }
                 }
-                if (i < 4) data[i] = PackFloat(vecs);
+                if (i < 4) data[i] = PackFloat(vecs) + 0.1f;
             }
             return data;
         }
     }
-    /*public class DamageNumberManager : MonoBehaviour
-    {
-        private static GameObjectPool pool;
-        private static Transform lookAtTransform;
-
-        public TextMeshPro textMesh;
-        public float lifeTime;
-        public AnimationCurve speedCurve;
-        public AnimationCurve sizeCurve;
-
-        private float stopwatch;
-        public static GameObject Spawn(float dmgAmount, Vector3 pos, Color32 color, bool isHealing)
-        {
-            if (pool == null)
-                pool = new GameObjectPool(Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/DamageNumberManager.prefab").WaitForCompletion());
-
-            var instance = pool.Request();
-            SetupInstance(instance, dmgAmount, pos, color, isHealing);
-            instance.SetActive(true);
-            return instance;
-        }
-
-        private static void SetupInstance(GameObject instance, float amount, Vector3 pos, Color32 color, bool isHealing)
-        {
-            if (!lookAtTransform)
-                lookAtTransform = UnityUtil.MainCamera.transform;
-            instance.transform.position = pos;
-            instance.transform.localScale = Vector3.one;
-            DamageNumberManager componentInstance = instance.GetComponent<DamageNumberManager>();
-            componentInstance.textMesh.color = color;
-
-            char magnitude = char.MinValue;
-            float displayedValue = 0;
-            if (amount > 1_000_000)
-            {
-                displayedValue /= 1_000_000;
-                magnitude = 'M';
-            }
-            else if (amount > 1_000)
-            {
-                displayedValue /= 1_000;
-                magnitude = 'K';
-            }
-            else
-            {
-                displayedValue = amount;
-            }
-
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(isHealing ? '+' : '-');
-            stringBuilder.Append(displayedValue.ToString("#.#"));
-            if(magnitude != char.MinValue)
-            {
-                stringBuilder.Append(magnitude);
-            }
-            componentInstance.textMesh.text = stringBuilder.ToString();
-            componentInstance.stopwatch = 0;
-        }
-
-        private void Update()
-        {
-            float deltaTime = Time.deltaTime;
-            stopwatch += deltaTime;
-            var num = stopwatch / lifeTime;
-            var translation = Vector3.up * speedCurve.Evaluate(num);
-            var newsScale = Vector3.one * sizeCurve.Evaluate(num);
-            transform.Translate(translation * deltaTime);
-            transform.LookAt(lookAtTransform.position);
-            transform.localScale = newsScale;
-            if(stopwatch > lifeTime)
-            {
-                pool.Return(gameObject);
-            }
-        }
-    }*/
 }

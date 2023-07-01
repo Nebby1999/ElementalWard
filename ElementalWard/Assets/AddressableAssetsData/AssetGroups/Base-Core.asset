@@ -10,43 +10,40 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Base-ElementDefs-Fire
+  m_Name: Base-Core
   m_EditorClassIdentifier: 
-  m_GroupName: Base-ElementDefs-Fire
+  m_GroupName: Base-Core
   m_Data:
     m_SerializedData: []
-  m_GUID: 59c2dc62d9f80c64ca2c4b27578af360
+  m_GUID: 48109965af42c2d478e73eaf9b9e79dc
   m_SerializeEntries:
-  - m_GUID: 9ce85ac5506aef942beb4eeedb885921
-    m_Address: ElementalWard/Base/ElementDefs/Fire/FireElement.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - ElementDefs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1c561bb468991e642b115ab9a9b5e9cc
-    m_Address: ElementalWard/Base/ElementDefs/Fire/texRampElementFire.psd
+  - m_GUID: 2fec3f90d671b8841900df2c89ab705d
+    m_Address: ElementalWard/Base/Core/DamageNumbers/texDamageNumbers.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fb0b4c4ad63cc3942b25bbf46800bd8e
-    m_Address: ElementalWard/Base/ElementDefs/Fire/OnFireDot.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BuffDefs
-    - DotBuffDefs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 46907842be872e048bc73105ce7984f8
-    m_Address: ElementalWard/Base/ElementDefs/Fire/matOnFire.mat
+  - m_GUID: 8d6f348ac9e174c4a8289bd2cfae6db9
+    m_Address: ElementalWard/Base/Core/ElementalWardInput.inputactions
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e3cec1dd369f2904c9f0c19b3108c3e8
-    m_Address: ElementalWard/Base/ElementDefs/Fire
+  - m_GUID: 1a9e2141d3e0fa04290025009c28892c
+    m_Address: ElementalWard/Base/Core/ElementalWardApplication.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 53ed0d3f3f1efa84eaf375611ef93f15
-    m_Address: ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
+  - m_GUID: 59206e7ec324db145927731c8ca61be1
+    m_Address: ElementalWard/Base/Core/FirstPersonCamera.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d743b0b1be6102a44a954386f98b235a
+    m_Address: ElementalWard/Base/Core
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54dd3056bad5dc34bbff92b276d10656
+    m_Address: ElementalWard/Base/Core/DamageNumbers/texDamageNumbers.psd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -54,5 +51,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 58f0c9bc84ef26442aac30e6508f2230, type: 2}
-    - {fileID: 11400000, guid: a697b942d77ac1e42bd42afe785a41ae, type: 2}
+    - {fileID: 11400000, guid: a5cd4fba7acf938488d953d124347bb4, type: 2}
+    - {fileID: 11400000, guid: f183fc3120856664b8f1243f933c2f70, type: 2}

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Shaders
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Shaders
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ac9e01556ec88bc4e9d119795556e640
+  m_SerializeEntries:
+  - m_GUID: 4eaaf6fb726620449b6b27543b1c1aed
+    m_Address: ElementalWard/Base/Shaders
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ef40e7ca365cac4bbd4007193508dd6
+    m_Address: ElementalWard/Base/Shaders/3DSpriteLit.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 672015b7ca7f2654f9e0ed73fdb7db7d
+    m_Address: ElementalWard/Base/Shaders/TextParticles.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6ea6d251e97f454abf24826d1a3d7af
+    m_Address: ElementalWard/Base/Shaders/DamageNumber.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 459dd43e205edcd49a1a80e5c7d8680f
+    m_Address: ElementalWard/Base/Shaders/Includes/FragCalcs.hlsl
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6420dc3fb2a7c66489576ec3e9342327
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/Branch.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0a3a02bcd56a444eb0d4fbb197ff0cb
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/GetTextureColorAndAlpha.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5257dc5a9a9c8384083e20e1208a6784, type: 2}
+    - {fileID: 11400000, guid: b462ee4dd7e2e6744a7d8d057d9b77ae, type: 2}

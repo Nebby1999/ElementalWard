@@ -15,32 +15,11 @@ MonoBehaviour:
   m_GroupName: Base
   m_Data:
     m_SerializedData: []
-  m_GUID: 1f4f718f85a30434caf1a590615cfa8d
-  m_SerializeEntries:
-  - m_GUID: ffa2199ad423f4748a3ad4122b82623a
-    m_Address: ElementalWard/Base/TestFireState.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EntityStateConfigurations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8d6f348ac9e174c4a8289bd2cfae6db9
-    m_Address: ElementalWard/Base/ElementalWardInput.inputactions
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1a9e2141d3e0fa04290025009c28892c
-    m_Address: ElementalWard/Base/ElementalWardApplication.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 59206e7ec324db145927731c8ca61be1
-    m_Address: ElementalWard/Base/FirstPersonCamera.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_GUID: 2e729ad2d4394c84b9afa2822009077c
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 28aa601881adfcb49a6f8ddb16607476, type: 2}
-    - {fileID: 11400000, guid: 036557228eaa74641ae3862ee0a5ca7f, type: 2}
+    - {fileID: 11400000, guid: e034a2f893667d34fbf28acf60a173e9, type: 2}
+    - {fileID: 11400000, guid: cba704590be944d4bb245b25fa4c654d, type: 2}
