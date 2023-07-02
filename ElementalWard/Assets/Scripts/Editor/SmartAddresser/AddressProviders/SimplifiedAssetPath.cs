@@ -1,27 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules;
-using UnityEngine;
-using UObject = UnityEngine.Object;
+using SmartAddresser.Editor.Core.Models.Shared;
+using SmartAddresser.Editor.Core.Tools.Addresser.LayoutRuleEditor.Shared;
+using System;
 
-namespace Nebula.Editor.SmartAddresser
+namespace ElementalWard.Editor.SmartAddresser.AddressProviders
 {
-	[CreateAssetMenu(menuName = "Nebula/Editor/AddressProviders/SimplifiedAssetPath")]
-    public class SimplifiedAssetPath : AddressProviderAsset
+    /*public class SimplifiedAssetPath : IAddressProvider
     {
-		public override string GetDescription()
-		{
-			return "Regular asset path but without \"Assets/\"";
-		}
+        public string GetDescription()
+        {
+            return "Regular asset path but without \"Assets/\"";
+        }
 
-		public override string Provide(string assetPath, Type assetType, bool isFolder)
-		{
-			return assetPath.StartsWith("Assets/") ? assetPath.Substring("Assets/".Length) : assetPath;
-		}
+        public string Provide(string assetPath, Type assetType, bool isFolder)
+        {
+            return assetPath.StartsWith("Assets/") ? assetPath.Substring("Assets/".Length) : assetPath;
+        }
 
-		public override void Setup()
-		{
-		}
-    }
+        public void Setup()
+        {
+        }
+    }*/
 }

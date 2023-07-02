@@ -1,43 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SmartAddresser.Editor.Core.Models.Shared.AssetGroups;
 using SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl;
+using SmartAddresser.Editor.Foundation.ListableProperty;
 using UnityEditor;
 using UnityEngine;
 
-namespace Nebula.Editor.SmartAddresser
+namespace ElementalWard.Editor.SmartAddresser.AssetFilters
 {
-    [CreateAssetMenu(menuName = "Nebula/Editor/AssetFilter/NonFolderAssetsInFolder")]
-    public class NonFolderAssetsInFolder : AssetFilterAsset
+    [Serializable]
+    [AssetFilter("ElementalWard/Non Folder Assets In Folder", "Non Folder Asets In Folder")]
+    public class NonFolderAssetsInFolder : AssetFilterBase
     {
-        public UnityEngine.Object parentAsset;
-        private string parentAssetPath;
-        private string[] assetsInParentAssetPath;
-        public override string GetDescription()
+        public UnityEngine.Object FolderAsset
         {
-            return "All assets in the specified folder, but excluding nested folders.";
+            get => _folderAsset;
+            set
+            {
+                var assetPath = AssetDatabase.GetAssetPath(value);
+                if(string.IsNullOrEmpty(assetPath) || !AssetDatabase.IsValidFolder(assetPath))
+                {
+                    return;
+                }
+                _folderAsset = value;
+            }
+        }
+        [SerializeField] private UnityEngine.Object _folderAsset;
+
+        private string _parentAssetPath;
+        private string[] _assetsInParentAssetPath = Array.Empty<string>();
+        public override void SetupForMatching()
+        {
+            _parentAssetPath = AssetDatabase.GetAssetPath(_folderAsset);
+            if (System.IO.Directory.Exists(_parentAssetPath))
+            {
+                _assetsInParentAssetPath = System.IO.Directory.EnumerateFiles(_parentAssetPath).Where(pth => !pth.EndsWith(".meta")).Select(pth => pth.Replace('\\', '/')).ToArray();
+            }
         }
 
+        /// <inheritdoc />
         public override bool IsMatch(string assetPath, Type assetType, bool isFolder)
         {
-            if (parentAssetPath.IsNullOrWhiteSpace())
+            if (string.IsNullOrWhiteSpace(assetPath))
             {
-                Debug.LogError("Unassigned ParentAsset in NonFolderAssetsInFolder Asset Filter", this);
+                Debug.LogError("Unassigned ParentAsset in NonFolderAssetsInFolder Asset Filter");
                 return false;
             }
 
-            return assetsInParentAssetPath.Contains(assetPath);
+            return _assetsInParentAssetPath.Contains(assetPath);
         }
 
-        public override void SetupForMatching()
+        public override string GetDescription()
         {
-            parentAssetPath = AssetDatabase.GetAssetPath(parentAsset);
-            if(System.IO.Directory.Exists(parentAssetPath))
-            {
-                assetsInParentAssetPath = System.IO.Directory.EnumerateFiles(parentAssetPath).Where(pth => !pth.EndsWith(".meta")).Select(pth => pth.Replace('\\', '/')).ToArray();
-            }
+            return "Assets in Folder: " + (FolderAsset ? FolderAsset.name : "None");
         }
     }
 }
