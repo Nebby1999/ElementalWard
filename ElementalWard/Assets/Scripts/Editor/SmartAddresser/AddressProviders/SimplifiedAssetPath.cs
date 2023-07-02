@@ -5,11 +5,12 @@ using System;
 
 namespace ElementalWard.Editor.SmartAddresser.AddressProviders
 {
-    /*public class SimplifiedAssetPath : IAddressProvider
+    [Serializable]
+    public class SimplifiedAssetPath : IAddressProvider
     {
         public string GetDescription()
         {
-            return "Regular asset path but without \"Assets/\"";
+            return "Source: SimplifiedAssetPath";
         }
 
         public string Provide(string assetPath, Type assetType, bool isFolder)
@@ -20,5 +21,5 @@ namespace ElementalWard.Editor.SmartAddresser.AddressProviders
         public void Setup()
         {
         }
-    }*/
+    }
 }
