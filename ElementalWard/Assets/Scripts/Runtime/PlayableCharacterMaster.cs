@@ -17,8 +17,8 @@ namespace ElementalWard
     [RequireComponent(typeof(CharacterMaster), typeof(PlayerInput))]
     public class PlayableCharacterMaster : MonoBehaviour
     {
-        private const string CAMERA_ADDRESS = "ElementalWard/Base/FirstPersonCamera.prefab";
-        private const string INPUT_ACTION_ASSET_ADDRESS = "ElementalWard/Base/ElementalWardInput.inputactions";
+        private const string CAMERA_ADDRESS = "ElementalWard/Base/Core/FirstPersonCamera.prefab";
+        private const string INPUT_ACTION_ASSET_ADDRESS = "ElementalWard/Base/Core/ElementalWardInput.inputactions";
         public CharacterMaster ManagedMaster { get; private set; }
         public PlayerInput PlayerInput { get; private set; }
         public CharacterInputBank BodyInputs { get; private set; }

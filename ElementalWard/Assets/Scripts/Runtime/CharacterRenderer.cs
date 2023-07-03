@@ -9,10 +9,12 @@ namespace ElementalWard
     public struct RendererInfo
     {
         public Renderer renderer;
-        public ShadowCastingMode defaultShadowCastingMode;
         public Material defaultMaterial;
+        public ShadowCastingMode defaultShadowCastingMode;
+        public bool defaultStaticShadowCaster;
+        public bool defaultRecieveShadows;
     }
-    public class CharacterRenderer : MonoBehaviour
+    public class CharacterRenderer : MonoBehaviour, ILifeBehaviour
     {
         public CharacterBody body;
         [Header("Look at Settings")]
@@ -24,6 +26,8 @@ namespace ElementalWard
         [Header("Renderer Data")]
         public RendererInfo[] rendererInfos = Array.Empty<RendererInfo>();
 
+        [Header("Other")]
+        public Behaviour[] disableOnDeath = Array.Empty<Behaviour>();
         private MaterialPropertyBlock propertyStorage;
         public Transform LookAtTransform
         {
@@ -85,7 +89,6 @@ namespace ElementalWard
                 else
                 {
                     info.defaultMaterial = info.renderer.sharedMaterial;
-                    info.defaultShadowCastingMode = info.renderer.shadowCastingMode;
                 }
                 rendererInfos[i] = info;
             }
@@ -126,8 +129,6 @@ namespace ElementalWard
                 }
                 renderer.SetPropertyBlock(propertyStorage);
             }
-
-
         }
         private void LookAtCamera()
         {
@@ -137,6 +138,14 @@ namespace ElementalWard
             var position = _lookAtTransform.position;
             position.y = allowVerticalRotation ? position.y : transform.position.y;
             transform.LookAt(position);
+        }
+
+        public void OnDeathStart(DamageReport killingDamageInfo)
+        {
+            foreach(var behaviour in disableOnDeath)
+            {
+                behaviour.enabled = false;
+            }
         }
     }
 }

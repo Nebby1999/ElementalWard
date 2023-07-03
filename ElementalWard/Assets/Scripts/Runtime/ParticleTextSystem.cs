@@ -2,6 +2,7 @@ using Nebula;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace ElementalWard
         [Serializable]
         public struct SymbolsTextureData
         {
-            public Texture texture;
+            public Material material;
             public char[] chars;
 
             private Dictionary<char, Vector2> charDictionary;
@@ -25,14 +26,16 @@ namespace ElementalWard
             public void Initialize()
             {
                 charDictionary = new Dictionary<char, Vector2>();
+                var cols = (int)material.GetFloat("_Columns");
+                var rows = (int)material.GetFloat("_Rows");
                 for(int i = 0; i < chars.Length; i++)
                 {
                     var c = char.ToLowerInvariant(chars[i]);
                     if (charDictionary.ContainsKey(c))
                         continue;
 
-                    var x = i % 4;
-                    var y = 3 - i / 4;
+                    var x = i % cols;
+                    var y = (rows-1) - i / rows;
                     var uv = new Vector2(x,y);
                     charDictionary.Add(c, uv);
                 }
@@ -51,10 +54,9 @@ namespace ElementalWard
                 return Vector2.zero;
             }
         }
-        public const string DEFAULT_PREFAB_ADDRESS = "ElementalWard/Base/ParticleTextSystem.prefab";
+        public const string DEFAULT_PREFAB_ADDRESS = "ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab";
 
         [SerializeField] private SymbolsTextureData symbols;
-        private ParticleSystemRenderer _particleSystemRenderer;
         private ParticleSystem _particleSystem;
 
         private static ParticleTextSystem defaultInstance;
@@ -62,22 +64,23 @@ namespace ElementalWard
         {
             "",
             "K",
-            "M"
+            "M",
+            "B",
+            "T",
+            "Q"
         };
 
-        [ContextMenu("TestText")]
-        private void TestText()
-        {
-            var text = FormatDamage(10234, false);
-            Debug.Log($"Testing: \"{text}\"");
-            this.SpawnParticle(transform.position, text, Color.white);
-        }
         public static string FormatDamage(float damage, bool isHealing)
         {
-            int index = (int)Mathf.Clamp(0f, Mathf.Floor(Mathf.Log10(damage) / 3), (float)(magnitudeChars.Length - 1));
+            if(float.IsInfinity(damage))
+            {
+                return $"{(isHealing ? "+" : "-")}()!!!";
+            }
+            int index = (int)Mathf.Clamp(0f, Mathf.Floor(Mathf.Log10(damage) / 3), (float)(magnitudeChars.Length));
             string magnitude = magnitudeChars[index];
             float displayedValue = damage / Mathf.Pow(10f, index * 3);
-            return $"{(isHealing ? "+" : "-")}{displayedValue}{magnitude}";
+            string displayedValueAsString = displayedValue.ToString("#.#", CultureInfo.InvariantCulture);
+            return $"{(isHealing ? "+" : "-")}{displayedValueAsString}{magnitude}";
         }
         public static void SpawnParticle(Vector3 position, string message, Color color, ParticleTextSystem instance = null)
         {
@@ -132,7 +135,6 @@ namespace ElementalWard
         private void Awake()
         {
             _particleSystem = GetComponent<ParticleSystem>();
-            _particleSystemRenderer = GetComponent<ParticleSystemRenderer>();
         }
         //Vector2 array packing function with symbols' coordinates in "float" 
         private float PackFloat(Vector2[] vecs)

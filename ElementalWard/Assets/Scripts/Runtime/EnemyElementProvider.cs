@@ -2,18 +2,19 @@ using Nebula;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace ElementalWard
 {
     [RequireComponent(typeof(BuffController), typeof(HealthComponent))]
     public class EnemyElementProvider : MonoBehaviour, IElementProvider, IOnTakeDamage, IOnIncomingDamage
     {
+        private static BuffDef _buffDef;
+        private static GameObject _overloadEffect;
         public HealthComponent HealthComponent { get; private set; }
         public BuffController BuffController { get; private set; }
         public ElementDef Element { get => _element; set => _element = value; }
         [SerializeField] private ElementDef _element;
-        [SerializeField] private BuffDef _buffDef;
-        [SerializeField] private GameObject _overloadEffect;
         public bool canBeOverLoaded;
         public int amountRequiredForDeath;
 
@@ -23,6 +24,13 @@ namespace ElementalWard
         private GameObject _overloadEffectInstance;
         private ParticleSystemForceField _effectForceField;
         private float _currentForceFieldGravityStrength;
+
+        [SystemInitializer(typeof(BuffCatalog))]
+        private static void SystemInitializer()
+        {
+            _buffDef = BuffCatalog.GetBuffDef(BuffCatalog.FindBuffIndex("bdOverload"));
+            _overloadEffect = Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/ElementDefs/ElementOverload.prefab").WaitForCompletion();
+        }
         private void Awake()
         {
             BuffController = GetComponent<BuffController>();

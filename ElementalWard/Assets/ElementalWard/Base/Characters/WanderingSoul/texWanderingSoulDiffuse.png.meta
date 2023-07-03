@@ -118,7 +118,7 @@ TextureImporter:
         width: 52
         height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,7 +139,7 @@ TextureImporter:
         width: 36
         height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +160,7 @@ TextureImporter:
         width: 36
         height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
         width: 44
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
         width: 45
         height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -219,11 +219,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 324
-        y: 457
-        width: 53
-        height: 41
+        y: 466
+        width: 52
+        height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_6
       rect:
         serializedVersion: 2
-        x: 397
-        y: 454
+        x: 400
+        y: 464
         width: 36
-        height: 43
+        height: 35
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -260,12 +260,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_7
       rect:
         serializedVersion: 2
-        x: 461
-        y: 455
+        x: 463
+        y: 464
         width: 36
-        height: 42
+        height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_8
       rect:
         serializedVersion: 2
-        x: 11
-        y: 390
+        x: 8
+        y: 399
         width: 44
-        height: 44
+        height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,12 +302,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_9
       rect:
         serializedVersion: 2
-        x: 71
-        y: 392
+        x: 74
+        y: 399
         width: 45
-        height: 40
+        height: 35
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -323,12 +323,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_10
       rect:
         serializedVersion: 2
-        x: 133
-        y: 396
-        width: 52
-        height: 36
+        x: 132
+        y: 393
+        width: 53
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -344,12 +344,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_11
       rect:
         serializedVersion: 2
-        x: 197
-        y: 395
-        width: 52
-        height: 37
+        x: 205
+        y: 390
+        width: 36
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,15 +362,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: texWanderingSoulDiffuse_15
+      name: texWanderingSoulDiffuse_14
       rect:
         serializedVersion: 2
-        x: 389
-        y: 386
-        width: 52
-        height: 44
+        x: 391
+        y: 392
+        width: 45
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,15 +383,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: texWanderingSoulDiffuse_16
+      name: texWanderingSoulDiffuse_15
       rect:
         serializedVersion: 2
-        x: 452
-        y: 384
+        x: 453
+        y: 396
         width: 52
-        height: 40
+        height: 36
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,15 +404,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: texWanderingSoulDiffuse_18
+      name: texWanderingSoulDiffuse_16
       rect:
         serializedVersion: 2
-        x: 2
-        y: 320
+        x: 5
+        y: 331
         width: 52
-        height: 36
+        height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -428,12 +428,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_19
       rect:
         serializedVersion: 2
-        x: 67
-        y: 320
-        width: 51
-        height: 37
+        x: 69
+        y: 328
+        width: 52
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -449,12 +449,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_12
       rect:
         serializedVersion: 2
-        x: 261
-        y: 392
-        width: 52
-        height: 40
+        x: 269
+        y: 391
+        width: 36
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -470,12 +470,12 @@ TextureImporter:
       name: texWanderingSoulDiffuse_13
       rect:
         serializedVersion: 2
-        x: 325
-        y: 388
-        width: 53
-        height: 42
+        x: 331
+        y: 390
+        width: 44
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,6 +483,111 @@ TextureImporter:
       bones: []
       spriteID: 0a28528c37d8214429825f9a9eea4386
       internalID: 1362531976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texWanderingSoulDiffuse_18
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 324
+        width: 53
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0fcac708d2406841b066eb7cb7f4e56
+      internalID: 1154471598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texWanderingSoulDiffuse_119
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 322
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180a547b494386341a0b8f344a1aa748
+      internalID: -1884498128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texWanderingSoulDiffuse_20
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 320
+        width: 52
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9133709bf0d1f4a42b3cd6c6e09690a5
+      internalID: 2059841342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texWanderingSoulDiffuse_21
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 320
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cb73d6b2c90f642bd27cfc8930c406
+      internalID: 1223435867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texWanderingSoulDiffuse_22
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 320
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6c829199bd84f4cb63aa8a0ed29011
+      internalID: 1533820629
       vertices: []
       indices: 
       edges: []
@@ -504,15 +609,19 @@ TextureImporter:
       texWanderingSoulDiffuse_1: -1227017131
       texWanderingSoulDiffuse_10: -1721647208
       texWanderingSoulDiffuse_11: -1199602062
+      texWanderingSoulDiffuse_119: 1433651730
       texWanderingSoulDiffuse_12: 1633681716
       texWanderingSoulDiffuse_13: 1362531976
-      texWanderingSoulDiffuse_14: 1069660108
-      texWanderingSoulDiffuse_15: 1673368585
-      texWanderingSoulDiffuse_16: 845799141
-      texWanderingSoulDiffuse_17: 1433651730
-      texWanderingSoulDiffuse_18: 1083969727
+      texWanderingSoulDiffuse_14: 1673368585
+      texWanderingSoulDiffuse_15: 845799141
+      texWanderingSoulDiffuse_16: 1083969727
+      texWanderingSoulDiffuse_18: 1069660108
       texWanderingSoulDiffuse_19: -834726406
       texWanderingSoulDiffuse_2: -1234565607
+      texWanderingSoulDiffuse_20: 2059841342
+      texWanderingSoulDiffuse_21: 1223435867
+      texWanderingSoulDiffuse_22: 1533820629
+      texWanderingSoulDiffuse_23: -1725495228
       texWanderingSoulDiffuse_3: 1462199266
       texWanderingSoulDiffuse_4: -2094281226
       texWanderingSoulDiffuse_5: 1992612991

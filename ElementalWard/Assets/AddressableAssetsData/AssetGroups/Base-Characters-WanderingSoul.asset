@@ -17,13 +17,68 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 391d05268f7fb774a9e013e831b07427
   m_SerializeEntries:
+  - m_GUID: ce5167194439edb439eaa5bd7b89c457
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulAnimController.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e886b2afed797c44897b2a5ed864595
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_0.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddc74bb5205b05849b5f705f7e003680
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_1.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a91dc01da5694741b273afd02cfedfa
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulIdle_4.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1affcbdf616aa804bbb7d9ed799226c4
     m_Address: ElementalWard/Base/Characters/WanderingSoul/texWanderingSoulEmission.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5983052c077a3c84a897bcb236616bb0
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulIdle_2.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18d89bec0d2962540b87427be29dc139
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulIdle_3.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a60c2745dcbc06741b066400f9f68e2f
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_3.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 75340c595f3f9fe48a771b107eb89aaa
     m_Address: ElementalWard/Base/Characters/WanderingSoul/texWanderingSoulDiffuse.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74c150ddcfbb3074bb5065134e801726
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_4.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0488bc954c5f7d24a9d3d48e3c8d0053
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulIdle_1.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d35c22b7b02490f4bab37ffd3cbf5d89
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_2.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e274e48acd0eec042876746f6289b678
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulIdle_0.anim
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
