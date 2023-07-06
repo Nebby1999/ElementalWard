@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3775747226426235319}
   - component: {fileID: 3775747226426235318}
+  - component: {fileID: 3169269267638083133}
   - component: {fileID: -4341213335146336977}
   - component: {fileID: -7556436084046398385}
   - component: {fileID: 1757390674160115001}
@@ -84,6 +85,19 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &3169269267638083133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d223f84ee9c997243a61724cc5a4809e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultTeam: {fileID: 11400000, guid: 5f60cf8be3e00b04dbc78fb2486f8614, type: 2}
 --- !u!114 &-4341213335146336977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d13cc3dea8fc469daeddd2c3fdd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultMaxHealth: 100
 --- !u!114 &-7556436084046398385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,11 +125,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: Body
   initialState:
-    _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.GenericGroundedCharacterMain, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mainState:
-    _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.GenericGroundedCharacterMain, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &1757390674160115001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,13 +185,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3775747226426235317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3010f874a069e1d42a4bf98bb2a49122, type: 3}
+  m_Script: {fileID: 11500000, guid: c1e70c20687f44d44a803b007535fc21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultGravityCoefficient: 1
-  defaultDrag: 1
+  defaultDrag: 0.1
   characterVelocity: {x: 0, y: 0, z: 0}
-  characterRotation: {x: 0, y: 0, z: 0, w: 1}
+  characterRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &468388779112043098
 MonoBehaviour:
   m_ObjectHideFlags: 0

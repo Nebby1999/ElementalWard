@@ -11,6 +11,7 @@ namespace ElementalWard
         public float damageMultiplier = 1;
 
         public Collider TiedCollider { get; private set; }
+        public TeamIndex TeamIndex { get; set; } = TeamIndex.None;
 
         private Rigidbody _rigidBody;
         private void Awake()

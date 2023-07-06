@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f88e60eecee812c4ca4d5f5f58c25ac7
   m_currentHash:
     serializedVersion: 2
-    Hash: fe93755d78c5e7fbd293ed2ecd0b8b5f
+    Hash: dab2fc452fb85f989490c27c6f939235
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
     - EntityStateConfigurations
     - DotBuffDefs
     - BuffDefs
+    - TeamDefs
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 2df996069e2109d43843520f194e9ed8, type: 2}

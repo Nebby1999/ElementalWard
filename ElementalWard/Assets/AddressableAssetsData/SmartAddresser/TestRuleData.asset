@@ -311,6 +311,19 @@ MonoBehaviour:
               - rid: 4020664763838627844
         _labelProviderInternal:
           rid: 4020664763838627845
+      - _id: 1cdca798-318f-4a67-9408-6b022c77ba45
+        _name:
+          _value: TeamDefs
+        _assetGroups:
+          _internalList:
+          - _id: 1b5cc6df-a291-4590-8f51-d6929d0caf92
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 6975382160443441155
+        _labelProviderInternal:
+          rid: 6975382160443441154
     _versionRules:
       _internalList: []
   references:
@@ -385,7 +398,7 @@ MonoBehaviour:
         asm: SmartAddresser.Editor}
       data:
         _id: 81988fb3-72fd-42d5-8f79-101869f98cb6
-        _folderTargetingMode: 2
+        _folderTargetingMode: 0
         _object:
           _isListMode: 0
           _values:
@@ -495,6 +508,24 @@ MonoBehaviour:
           _isListMode: 0
           _values:
           - ase
+    - rid: 6975382160443441154
+      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules,
+        asm: SmartAddresser.Editor}
+      data:
+        _label: TeamDefs
+    - rid: 6975382160443441155
+      type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
+        asm: SmartAddresser.Editor}
+      data:
+        _id: 9efccfe9-d4eb-4ec1-a4cd-50766175f367
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: TeamDef
+            _fullName: ElementalWard.TeamDef
+            _assemblyQualifiedName: ElementalWard.TeamDef, ElementalWard, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedTypes: 1
     - rid: 7036998951873019904
       type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules,
         asm: SmartAddresser.Editor}

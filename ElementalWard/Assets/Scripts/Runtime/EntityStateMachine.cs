@@ -13,14 +13,14 @@ namespace ElementalWard
         {
             public readonly GameObject gameObject;
             public readonly Transform transform;
-            public readonly CharacterMovementController characterMovementController;
+            public readonly ICharacterMovementController characterMovementController;
             public readonly CharacterBody characterBody;
             public readonly CharacterInputBank inputBank;
             public CommonComponentLocator(GameObject go)
             {
                 gameObject = go;
                 transform = go.transform;
-                characterMovementController = go.GetComponent<CharacterMovementController>();
+                characterMovementController = go.GetComponent<ICharacterMovementController>();
                 characterBody = go.GetComponent<CharacterBody>();
                 inputBank = go.GetComponent<CharacterInputBank>();
             }

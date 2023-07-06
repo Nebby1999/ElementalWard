@@ -11,6 +11,7 @@ namespace ElementalWard
     {
         public GameObject gameObject;
         public CharacterBody characterBody;
+        public TeamIndex team;
         /// <summary>
         /// If provided, the BodyInfo will use this element, instead of the one provided by an IElementProvider
         /// </summary>
@@ -25,6 +26,7 @@ namespace ElementalWard
             gameObject = characterBody.gameObject;
             this.characterBody = characterBody;
             elementOverride = null;
+            team = TeamComponent.GetObjectTeamIndex(gameObject);
 
             _elementProvider = characterBody.GetComponent<IElementProvider>();
         }
@@ -34,6 +36,7 @@ namespace ElementalWard
             gameObject = bodyGameObject;
             this.characterBody = bodyGameObject.GetComponent<CharacterBody>();
             elementOverride = null;
+            team = TeamComponent.GetObjectTeamIndex(gameObject);
 
             _elementProvider = bodyGameObject.GetComponent<IElementProvider>();
         }

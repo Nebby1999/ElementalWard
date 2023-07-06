@@ -18,6 +18,7 @@ namespace ElementalWard
     }
     public static class ElementCatalog
     {
+        public const string ADDRESSABLE_LABEL = "ElementDefs";
         public static int ElementCount => elementDefs.Length;
         private static ElementDef[] elementDefs = Array.Empty<ElementDef>();
         private static Dictionary<string, ElementIndex> elementNameToIndex = new(StringComparer.OrdinalIgnoreCase);
@@ -56,7 +57,7 @@ namespace ElementalWard
         internal static IEnumerator Initialize()
         {
             int invalidNameTracker = 0;
-            var handle = Addressables.LoadAssetsAsync<ElementDef>("ElementDefs", EnsureNaming);
+            var handle = Addressables.LoadAssetsAsync<ElementDef>(ADDRESSABLE_LABEL, EnsureNaming);
             while(!handle.IsDone)
             {
                 yield return new WaitForEndOfFrame();

@@ -23,10 +23,22 @@ namespace ElementalWard
 
         public void OnImpact(ProjectileImpactInfo impactInfo)
         {
+            TryDealDamage(impactInfo);
+            Destroy(gameObject);
+        }
+
+        private void TryDealDamage(ProjectileImpactInfo impactInfo)
+        {
             var collider = impactInfo.collider;
             var hurtBox = collider.GetComponent<HurtBox>();
+
             if (!hurtBox)
                 return;
+
+            bool? canOwnerHarmThisEntity = TeamCatalog.GetTeamInteraction(_owner.team, hurtBox.TeamIndex);
+            if (!canOwnerHarmThisEntity == false)
+                return;
+
             var healthComponent = hurtBox.HealthComponent;
             if (!healthComponent)
                 return;
@@ -38,7 +50,7 @@ namespace ElementalWard
                 damageType = defaultDamageType,
             };
             damageInfo.damage *= DamageInfo.GetDamageModifier(hurtBox);
-            Destroy(gameObject);
+            healthComponent.TakeDamage(damageInfo);
         }
     }
 }

@@ -17,8 +17,14 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 48109965af42c2d478e73eaf9b9e79dc
   m_SerializeEntries:
+  - m_GUID: 5f60cf8be3e00b04dbc78fb2486f8614
+    m_Address: ElementalWard/Base/Core/Teams/PlayerTeam.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TeamDefs
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2fec3f90d671b8841900df2c89ab705d
-    m_Address: ElementalWard/Base/Core/DamageNumbers/texDamageNumbers.mat
+    m_Address: ElementalWard/Base/Core/DamageNumbers/matDamageNumbers.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -26,6 +32,17 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/Core/ElementalWardInput.inputactions
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d1f883c3f8f1ff4fb46339dc23fe430
+    m_Address: ElementalWard/Base/Core/DamageNumbers/texDamageNumbers.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b7dfd7da9d2f2b40b1709ab23ccdffc
+    m_Address: ElementalWard/Base/Core/Teams/MonsterTeam.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TeamDefs
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1a9e2141d3e0fa04290025009c28892c
     m_Address: ElementalWard/Base/Core/ElementalWardApplication.prefab
@@ -37,13 +54,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d743b0b1be6102a44a954386f98b235a
-    m_Address: ElementalWard/Base/Core
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 54dd3056bad5dc34bbff92b276d10656
-    m_Address: ElementalWard/Base/Core/DamageNumbers/texDamageNumbers.psd
+  - m_GUID: a39892892f75ca947a718c47888ec5a7
+    m_Address: ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

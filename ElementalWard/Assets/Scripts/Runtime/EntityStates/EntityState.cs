@@ -12,7 +12,7 @@ namespace EntityStates
     public class EntityState : EntityStateBase
     {
         public new EntityStateMachine outer => base.outer as EntityStateMachine;
-        public CharacterMovementController CharacterMovementController => outer.CommonComponents.characterMovementController;
+        public ICharacterMovementController ICharacterMovementController => outer.CommonComponents.characterMovementController;
         public CharacterBody CharacterBody => outer.CommonComponents.characterBody;
         public CharacterInputBank CharacterInputBank => outer.CommonComponents.inputBank;
         public Transform Transform => outer.CommonComponents.transform;

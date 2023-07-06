@@ -19,28 +19,7 @@ namespace Nebula
         public SerializableSystemType mainState;
 
         public EntityStateBase NewState { get; private set; }
-#if UNITY_EDITOR
-        public EntityStateBase CurrentState
-        {
-            get
-            {
-                if(_currentState == null)
-                {
-                    Debug.LogWarning("_currentState is null! forcing state to mainState!");
-                    _currentState = EntityStateCatalog.InstantiateState(mainState);
-                    _currentState.outer = this;
-                }
-                return _currentState;
-            }
-            set
-            {
-                _currentState = value;
-            }
-        }
-        private EntityStateBase _currentState;
-#else
         public EntityStateBase CurrentState { get; private set; }
-#endif
 
         protected virtual void Awake()
         {

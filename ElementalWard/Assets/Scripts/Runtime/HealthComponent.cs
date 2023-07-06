@@ -47,6 +47,7 @@ namespace ElementalWard
         private DamageReport _lastDamageSource;
         private CharacterDeathBehaviour _deathBehaviour;
         private IElementProvider _elementProvider;
+        private TeamComponent _teamComponent;
         private IOnTakeDamage[] _takeDamageReceivers = Array.Empty<IOnTakeDamage>();
         private IOnIncomingDamage[] _incomingDamageReceivers = Array.Empty<IOnIncomingDamage>();
         private bool _wasAlive;
@@ -57,16 +58,27 @@ namespace ElementalWard
             _takeDamageReceivers = GetComponents<IOnTakeDamage>();
             _incomingDamageReceivers = GetComponents<IOnIncomingDamage>();
             _deathBehaviour = GetComponent<CharacterDeathBehaviour>();
+            _teamComponent = GetComponent<TeamComponent>();
         }
 
         private void Start()
         {
             if(_healthProvider == null && CurrentHealth == 0)
                 CurrentHealth = _defaultMaxHealth;
+            _wasAlive = true;
         }
 
         public void TakeDamage(DamageInfo damageInfo)
         {
+            var selfTeamIndex = _teamComponent ? _teamComponent.CurrentTeamIndex : TeamIndex.None;
+            if(damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
+            {
+                bool? friendliness = TeamCatalog.GetTeamInteraction(damageInfo.attackerBody.team, selfTeamIndex);
+                if(friendliness == true)
+                {
+                    return;
+                }
+            }
             var attackerElement = damageInfo.attackerBody.Element;
             IElementEvents attackerElementEvents = ElementCatalog.GetElementEventsFor(attackerElement);
             IElementEvents selfElementEvents = ElementCatalog.GetElementEventsFor(CurrentElement);

@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 86a9b90d60e20d542976932b1b45962a
   m_SerializeEntries:
+  - m_GUID: ffa2199ad423f4748a3ad4122b82623a
+    m_Address: ElementalWard/Base/Characters/TestPlayer/TestFireState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af4585a4f5c732f47a62dc530283dd17
     m_Address: ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
     m_ReadOnly: 0
@@ -46,12 +52,6 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/Characters/TestPlayer
     m_ReadOnly: 0
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ffa2199ad423f4748a3ad4122b82623a
-    m_Address: ElementalWard/Base/Characters/TestPlayer/TestFireState.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

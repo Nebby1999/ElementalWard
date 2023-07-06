@@ -75,7 +75,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureAtlas:
-        m_Texture: {fileID: 2800000, guid: 54dd3056bad5dc34bbff92b276d10656, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d1f883c3f8f1ff4fb46339dc23fe430, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -103,7 +103,7 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cols: 4
-    - _Columns: 4
+    - _Columns: 5
     - _Cull: 2
     - _Cutoff: 0.5
     - _DecalMeshBiasType: 0
@@ -124,7 +124,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
-    - _Rows: 4
+    - _Rows: 5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
