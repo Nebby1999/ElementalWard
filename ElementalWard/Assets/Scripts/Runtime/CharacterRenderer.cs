@@ -137,7 +137,8 @@ namespace ElementalWard
 
             var position = _lookAtTransform.position;
             position.y = allowVerticalRotation ? position.y : transform.position.y;
-            transform.LookAt(position);
+            var rot = Quaternion.LookRotation(position.normalized, Vector3.up);
+            transform.localRotation = rot;
         }
 
         public void OnDeathStart(DamageReport killingDamageInfo)

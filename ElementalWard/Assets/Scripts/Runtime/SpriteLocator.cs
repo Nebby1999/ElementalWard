@@ -54,8 +54,7 @@ namespace ElementalWard
             if(SpriteTransform && _spriteParentTransform)
             {
                 Vector3 pos = _spriteParentTransform.position;
-                Quaternion rot = _spriteParentTransform.rotation;
-                SpriteTransform.SetPositionAndRotation(pos, rot);
+                SpriteTransform.position = pos;
             }
         }
     }

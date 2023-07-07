@@ -24,7 +24,7 @@ namespace ElementalWard
         public GameObject CurrentCharacterPrefab { get => _currentCharacterPrefab; }
         private GameObject _currentCharacterPrefab;
         public CharacterBody CurrentBody { get; private set; }
-        public Action<CharacterBody> OnBodySpawned;
+        public event Action<CharacterBody> OnBodySpawned;
         public static event Action<CharacterMaster> OnLevelUpGlobal;
         private void Start()
         {

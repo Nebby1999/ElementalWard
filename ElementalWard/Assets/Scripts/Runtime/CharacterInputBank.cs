@@ -98,7 +98,8 @@ namespace ElementalWard
         {
 
 #if DEBUG
-            Debug.DrawRay(AimOrigin, AimDirection * 5, Color.yellow, 0.01f);
+            //Debug.DrawRay(AimOrigin, AimDirection * 5, Color.yellow, 0.01f);
+            Debug.DrawRay(transform.position, moveVector * 10, Color.blue, 0.01f);
 #endif
         }
     }
