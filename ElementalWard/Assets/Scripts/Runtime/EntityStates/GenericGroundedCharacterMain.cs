@@ -23,8 +23,8 @@ namespace EntityStates
             if(HasICharacterMovementController && HasCharacterInputBank)
             {
                 var motor = ICharacterMovementController.Motor;
-                ICharacterMovementController.MovementDirection = motor.CharacterForward * moveVector.z + motor.CharacterRight * moveVector.x;
-                ICharacterMovementController.CharacterRotation = Quaternion.Euler(0, CharacterInputBank.LookRotation.eulerAngles.y, 0);
+                ICharacterMovementController.MovementDirection = moveVector;
+                ICharacterMovementController.CharacterRotation = CharacterInputBank.LookRotation;
             }
             ProcessJump();
             if(HasCharacterBody)

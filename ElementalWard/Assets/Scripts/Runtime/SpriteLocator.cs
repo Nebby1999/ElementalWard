@@ -20,23 +20,25 @@ namespace ElementalWard
         }
         [Header("Cached Sprite Values")]
         [SerializeField]
+        [Tooltip("The Transform that has the main sprite renderer for this object.")]
         private Transform _spriteTransform;
 
+        [Tooltip("Ideally the parent of the transform specified in _spriteTransform. if specified, this will be detached from the hierarchy")]
         public Transform spriteBaseTransform;
 
-        [Header("UpdateProperties")]
+        [Header("Update Properties")]
         public bool autoUpdateSpriteTransform = true;
         public bool dontDetatchFromParent = false;
         private Transform _spriteParentTransform;
 
         private void Start()
         {
-            if(SpriteTransform)
+            if(spriteBaseTransform)
             {
-                _spriteParentTransform = SpriteTransform.parent;
+                _spriteParentTransform = spriteBaseTransform.parent;
                 if(!dontDetatchFromParent)
                 {
-                    SpriteTransform.parent = null;
+                    spriteBaseTransform.parent = null;
                 }
             }
         }
@@ -51,10 +53,11 @@ namespace ElementalWard
 
         private void UpdateSpriteTransform(float deltaTime)
         {
-            if(SpriteTransform && _spriteParentTransform)
+            if(spriteBaseTransform && _spriteParentTransform)
             {
                 Vector3 pos = _spriteParentTransform.position;
-                SpriteTransform.position = pos;
+                spriteBaseTransform.position = pos;
+                spriteBaseTransform.rotation = _spriteParentTransform.rotation;
             }
         }
     }

@@ -93,7 +93,7 @@ namespace ElementalWard
                 rendererInfos[i] = info;
             }
         }
-        private void Update()
+        private void LateUpdate()
         {
             UpdateRenderers();
             if(lookAt)
@@ -137,8 +137,10 @@ namespace ElementalWard
 
             var position = _lookAtTransform.position;
             position.y = allowVerticalRotation ? position.y : transform.position.y;
-            var rot = Quaternion.LookRotation(position.normalized, Vector3.up);
-            transform.localRotation = rot;
+            Vector3 relativePos = position - transform.position;
+            transform.LookAt(position);
+/*            var rot = Quaternion.LookRotation(relativePos, Vector3.up);
+            transform.localRotation = rot;*/
         }
 
         public void OnDeathStart(DamageReport killingDamageInfo)

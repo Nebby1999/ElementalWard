@@ -30,6 +30,7 @@ namespace ElementalWard
         private CharacterInputBank _bodyInputBank;
         private ICharacterMovementController _iCharacterMovementController;
         private KinematicCharacterMotor _kinematicCharacterMotor;
+        private CapsuleCollider _motorCapsule;
         private NavMeshPath _currentPath;
         private float _stopwatch;
         private bool hasGroundedController;
@@ -57,6 +58,7 @@ namespace ElementalWard
             if(_iCharacterMovementController != null)
             {
                 _kinematicCharacterMotor = _iCharacterMovementController.Motor;
+                _motorCapsule = _iCharacterMovementController.Motor.Capsule;
                 hasFlyingController = _iCharacterMovementController is FlyingCharacterMovementController;
                 hasGroundedController = _iCharacterMovementController is GroundedCharacterMovementController;
             }
@@ -100,7 +102,9 @@ namespace ElementalWard
                 return;
             }
             if(hasGroundedController)
-            { 
+            {
+                GenerateNewPathForGroundedController();
+                return;
             }
             NavMesh.CalculatePath(CurrentPos, destination.position, ~0, _currentPath);
             if (_currentPath.status == NavMeshPathStatus.PathInvalid)
@@ -121,35 +125,90 @@ namespace ElementalWard
         {
             NavMesh.CalculatePath(_lastValidNavmeshPosition, _lastValidDestinationPosition, ~0, _currentPath);
             _pathCorners = _currentPath.corners;
+            _pathIndex = 0;
+            var maxIndex = _pathCorners.Length - 1;
+            //Offset path corners so it's on the air.
             for(int i = 0; i < _pathCorners.Length; i++)
             {
                 var orig = _pathCorners[i];
+                //Offset by capsule height
+                var capsuleHeight = _motorCapsule.height;
+                orig.y += capsuleHeight + CurrentPos.y - capsuleHeight;
+                //If we're getting close to the target, start moving vertically towards it.
+                if(i > maxIndex - 3)
+                {
+                    var destinationY = destination.position.y;
+                    float iAsFloat = i;
+                    float maxIndexAsFloat = maxIndex;
+                    float num = iAsFloat / maxIndexAsFloat;
+                    float dividend = 3 / num;
+                    destinationY /= dividend;
+                    orig.y += destinationY;
+                }
+                _pathCorners[i] = orig;
+            }
+
+            //Ensure the capsule's dimensions can go thru the desired path
+            for(int i = 0; i < _pathCorners.Length; i++)
+            {
+                var start = _pathCorners[i];
                 var nextIndex = i + 1;
-                if (nextIndex > _pathCorners.Length - 1)
+                if (nextIndex > maxIndex)
+                {
+                    nextIndex = maxIndex;
+                }
+                var dest = _pathCorners[nextIndex];
+                ModifyVector(ref start, i, ref dest, nextIndex);
+                _pathCorners[i] = start;
+                _pathCorners[nextIndex] = dest;
+            }
+        }
+
+        private void GenerateNewPathForGroundedController()
+        {
+            NavMesh.CalculatePath(_lastValidNavmeshPosition, _lastValidDestinationPosition, ~0, _currentPath);
+            _pathCorners = _currentPath.corners;
+            //Offset by half of capsule height
+            for(int i = 0; i < _pathCorners.Length; i++)
+            {
+                var orig = _pathCorners[i];
+                orig.y += _motorCapsule.height / 2;
+                _pathCorners[i] = orig;
+            }
+
+            for(int i = 0; i < _pathCorners.Length; i++)
+            {
+                var start = _pathCorners[i];
+                var nextIndex = i + 1;
+                if(nextIndex > _pathCorners.Length - 1)
                 {
                     nextIndex = _pathCorners.Length - 1;
                 }
-                ModifyVector(ref orig, _pathCorners[nextIndex]);
-                orig.y += _kinematicCharacterMotor.Capsule.height;
-                _pathCorners[i] = orig;
+                var dest = _pathCorners[nextIndex];
+                ModifyVector(ref start, i, ref dest, nextIndex);
+                _pathCorners[i] = start;
+                _pathCorners[nextIndex] = dest;
             }
             _pathIndex = 0;
         }
 
-        private void ModifyVector(ref Vector3 start, Vector3 dest)
+        private void ModifyVector(ref Vector3 start, int startIndex, ref Vector3 dest, int nextIndex)
         {
             var vector = dest - start;
             var normalized = vector.normalized;
             float distance = Vector3.Distance(start, dest);
             var capsule = _kinematicCharacterMotor.Capsule;
-            Vector3 point1 = start + capsule.center + Vector3.up * -capsule.height * 0.5f;
-            Vector3 point2 = point1 + Vector3.up * capsule.height;
-            Ray ray = new Ray(start, normalized);
-            if(Physics.CapsuleCast(point1, point2, capsule.radius, normalized, out var hit, distance, LayerIndex.world.Mask))
+            var capsuleRadius = capsule.radius * 1.1f;
+
+            Vector3 centerOfSphere1 = start + Vector3.up * (capsuleRadius + Physics.defaultContactOffset);
+            Vector3 centerOfSphere2 = start + Vector3.up * (capsule.height - capsuleRadius + Physics.defaultContactOffset);
+            if(Physics.CapsuleCast(centerOfSphere1, centerOfSphere2, capsuleRadius, normalized, out var hit, distance, LayerIndex.world.Mask))
             {
-                Debug.Log("Oops");
-                var obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-                obj.transform.position = hit.point;
+                var slack = hit.normal * capsuleRadius;
+                if(startIndex > 0)
+                    start += slack;
+                
+                dest += slack;
             }
         }
 
@@ -172,9 +231,7 @@ namespace ElementalWard
             {
                 _bodyInputBank.moveVector = _movementDirection;
                 var lookRot = Quaternion.LookRotation(_movementDirection, _kinematicCharacterMotor.CharacterUp);
-                var lookRotEuler = lookRot.eulerAngles;
-                var modified = Quaternion.Euler(0, lookRotEuler.y, 0);
-                _bodyInputBank.LookRotation = modified;
+                _bodyInputBank.LookRotation = lookRot;
             }
         }
         private void OnDrawGizmos()
@@ -185,10 +242,10 @@ namespace ElementalWard
                 for(int i = 0; i < _currentPath.corners.Length; i++)
                 {
                     Vector3 pos = _currentPath.corners[i];
-                    Gizmos.DrawWireSphere(pos, 1);
+                    Gizmos.DrawWireSphere(pos, 0.5f);
                 }
                 Gizmos.color = Color.green;
-                Gizmos.DrawCube(_currentDestination, Vector3.one);
+                Gizmos.DrawCube(_currentDestination, Vector3.one * 0.5f);
                 //Debug.DrawLine(CurrentPos, CurrentPos + (_movementDirection * 4), Color.red, 0.1f);
             }
         }

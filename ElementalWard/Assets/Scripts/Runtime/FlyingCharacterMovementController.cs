@@ -11,7 +11,17 @@ namespace ElementalWard
         public bool IgnoreInputUntilCollision { get; set; }
 
         public Vector3 MovementDirection { get; set; }
-        public Quaternion CharacterRotation { get => characterRotation; set => characterRotation = value; }
+        public Quaternion CharacterRotation
+        {
+            get
+            {
+                return characterRotation;
+            }
+            set
+            {
+                characterRotation = Quaternion.Euler(0, value.eulerAngles.y, 0);
+            }
+        }
 
 #if UNITY_EDITOR
         [Nebula.ReadOnly]

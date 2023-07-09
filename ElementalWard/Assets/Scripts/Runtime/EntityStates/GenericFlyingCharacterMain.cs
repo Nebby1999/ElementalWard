@@ -1,4 +1,4 @@
-using System.Numerics;
+using UnityEngine;
 
 namespace EntityStates
 {
@@ -16,9 +16,8 @@ namespace EntityStates
         {
             if(HasICharacterMovementController)
             {
-                var motor = ICharacterMovementController.Motor;
-                ICharacterMovementController.MovementDirection = motor.CharacterForward * moveVector.z + motor.CharacterRight * moveVector.x + motor.CharacterUp * moveVector.y;
-                //ICharacterMovementController.CharacterRotation = CharacterInputBank.LookRotation;
+                ICharacterMovementController.CharacterRotation = CharacterInputBank.LookRotation;
+                ICharacterMovementController.MovementDirection = moveVector;
             }
 
             if(HasCharacterBody)
