@@ -6,7 +6,7 @@ using UObject = UnityEngine.Object;
 using Nebula;
 namespace ElementalWard
 {
-    public class CharacterBody : MonoBehaviour, IHealthProvider
+    public class CharacterBody : MonoBehaviour, IHealthProvider, ILifeBehaviour
     {
         public LocalizedString bodyName;
 
@@ -110,6 +110,14 @@ namespace ElementalWard
                 _lvlHealth = _baseHealth * 0.2f;
                 _lvlRegen = _baseRegen * 0.1f;
                 _lvlDamage = _baseDamage * 0.15f;
+            }
+        }
+
+        public void OnDeathStart(DamageReport killingDamageInfo)
+        {
+            if(TiedMaster)
+            {
+                TiedMaster.BodyKilled(this);
             }
         }
     }

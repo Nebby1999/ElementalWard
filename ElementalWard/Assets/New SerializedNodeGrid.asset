@@ -1,0 +1,7410 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b176997a7710870488921a10d93aa068, type: 3}
+  m_Name: New SerializedNodeGrid
+  m_EditorClassIdentifier: 
+  gridWorldSize: {x: 22, y: 48}
+  gridSizeX: 22
+  gridSizeY: 48
+  serializedNodes:
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -1.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -0.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 0.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 1.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -14.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -13.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -12.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -11.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: 0.013999939
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: 0.013999939
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -0.6610173
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -0.6610173
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -0.6610173
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -0.6610173
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -4.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -3.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -2.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -0.78999996
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -0.78999996
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -1.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -0.78999996
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -0.40199947
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -0.40199947
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: -0.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -0.40199947
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -0.40199947
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 0.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -0.40199947
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -0.40199947
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -0.58799934
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 1.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -0.58799934
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -0.58799934
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -0.97599983
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 2.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -0.97599983
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -0.97599983
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 3.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 4.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 5.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 6.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 7.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 8.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 9.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 10.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 11.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 12.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 13.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 14.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 15.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 16.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 17.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 18.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 19.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 20.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 21.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 22.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 23.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 24.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 25.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 26.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 27.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 28.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 29.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -9.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -8.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -7.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -6.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -5.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -4.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -3.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -2.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -1.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: -0.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 0.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 1.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 2.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 3.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 4.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 5.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 6.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 7.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 8.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 1
+    isOpen: 1
+    worldPosition:
+      x: 9.5
+      y: -1.1099997
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 30.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -10.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -9.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -8.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -7.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -6.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -5.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -4.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -3.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -2.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -1.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: -0.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 0.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 1.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 2.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 3.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 4.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 5.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 6.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 7.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 8.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 9.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0
+  - isValidPosition: 0
+    isOpen: 0
+    worldPosition:
+      x: 10.5
+      y: 0
+      z: 31.5
+    movementPenalty: 0

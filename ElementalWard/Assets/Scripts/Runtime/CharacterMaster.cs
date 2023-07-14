@@ -25,6 +25,7 @@ namespace ElementalWard
         private GameObject _currentCharacterPrefab;
         public CharacterBody CurrentBody { get; private set; }
         public event Action<CharacterBody> OnBodySpawned;
+        public event Action OnBodyLost;
         public static event Action<CharacterMaster> OnLevelUpGlobal;
         private void Start()
         {
@@ -98,6 +99,14 @@ namespace ElementalWard
         private float CalculateExperienceForLevel(uint levelToCalculate)
         {
             return levelToCalculate * LEVEL_TO_XP_COEF / LEVEL_TO_XP_DIVISOR;
+        }
+
+        public void BodyKilled(CharacterBody body)
+        {
+            if(CurrentBody == body)
+            {
+                OnBodyLost?.Invoke();
+            }
         }
     }
 }

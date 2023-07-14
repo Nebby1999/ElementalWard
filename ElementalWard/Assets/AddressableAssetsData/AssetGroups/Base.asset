@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 2e729ad2d4394c84b9afa2822009077c
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 9c5c5bcbdfc9a084398eabe63e47707b
+    m_Address: ElementalWard/Base/New Node Graph.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:
