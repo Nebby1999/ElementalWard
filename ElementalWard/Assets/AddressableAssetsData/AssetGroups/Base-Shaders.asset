@@ -32,11 +32,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d6ea6d251e97f454abf24826d1a3d7af
-    m_Address: ElementalWard/Base/Shaders/DamageNumber.shadergraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 459dd43e205edcd49a1a80e5c7d8680f
     m_Address: ElementalWard/Base/Shaders/Includes/FragCalcs.hlsl
     m_ReadOnly: 0
@@ -49,6 +44,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c0a3a02bcd56a444eb0d4fbb197ff0cb
     m_Address: ElementalWard/Base/Shaders/SubGraphs/GetTextureColorAndAlpha.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c079017da74864d4b853c52142a6cf42
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/Mask.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb3e96108b1751d4a8e5effa8635c00c
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/RecolorRamp.shadersubgraph
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

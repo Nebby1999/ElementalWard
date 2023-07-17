@@ -1,6 +1,10 @@
 using Nebula;
 using System;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Jobs;
 using UnityEngine.Rendering;
 
 namespace ElementalWard
@@ -18,8 +22,6 @@ namespace ElementalWard
     {
         public CharacterBody body;
         [Header("Look at Settings")]
-        [Tooltip("If true, this CharacterModel will call LookAt() with the target set to the LookAtTransform property")]
-        public bool lookAt;
         [Tooltip("Wether the sprite renderer tied to this character model can rotate on the X axis")]
         public bool allowVerticalRotation;
 
@@ -46,6 +48,56 @@ namespace ElementalWard
         private new Transform transform;
         private Transform _lookAtTransform;
         private IElementProvider _elementProvider;
+        private static TransformAccessArray _accessArray;
+
+        [SystemInitializer]
+        private static void SystemInitializer()
+        {
+            _accessArray = new TransformAccessArray(0);
+            RenderPipelineManager.beginCameraRendering += LookAt;
+        }
+
+        private static void UpdateTransformAccessArray()
+        {
+            _accessArray.Dispose();
+            var instances = InstanceTracker.GetInstances<CharacterRenderer>();
+            var count = instances.Count;
+            _accessArray = new TransformAccessArray(count);
+            for(int i = 0; i < count; i++)
+            {
+                _accessArray.Add(instances[i].transform);
+            }
+        }
+
+        private static void LookAt(ScriptableRenderContext ctx, Camera cam)
+        {
+            var instances = InstanceTracker.GetInstances<CharacterRenderer>();
+            var count = instances.Count;
+            if (count == 0)
+                return;
+
+            NativeArray<bool> allowVerticalRotation = new NativeArray<bool>(count, Allocator.TempJob);
+            NativeArray<float3> lookAtPosition = new NativeArray<float3>(count, Allocator.TempJob);
+
+            for(int i = 0; i < count; i++)
+            {
+                allowVerticalRotation[i] = instances[i].allowVerticalRotation;
+                lookAtPosition[i] = instances[i].LookAtTransform.position;
+            }
+
+            var job = new LookAtJob()
+            {
+                allowVerticalRotation = allowVerticalRotation,
+                desiredLookPosition = lookAtPosition
+            };
+
+            JobHandle handle = job.Schedule(_accessArray);
+            handle.Complete();
+
+            allowVerticalRotation.Dispose();
+            lookAtPosition.Dispose();
+        }
+
         private void Awake()
         {
             propertyStorage = new MaterialPropertyBlock();
@@ -57,6 +109,17 @@ namespace ElementalWard
             PlayableCharacterMaster.OnPlayableBodySpawned += SetLookAtTransform;
         }
 
+        private void OnEnable()
+        {
+            InstanceTracker.Add(this);
+            UpdateTransformAccessArray();
+        }
+
+        private void OnDisable()
+        {
+            InstanceTracker.Remove(this);
+            UpdateTransformAccessArray();
+        }
         private void OnDestroy()
         {
             PlayableCharacterMaster.OnPlayableBodySpawned -= SetLookAtTransform;
@@ -96,10 +159,6 @@ namespace ElementalWard
         private void LateUpdate()
         {
             UpdateRenderers();
-            if(lookAt)
-            {
-                LookAtCamera();
-            }
         }
 
         private void UpdateRenderers()
@@ -129,18 +188,6 @@ namespace ElementalWard
                 }
                 renderer.SetPropertyBlock(propertyStorage);
             }
-        }
-        private void LookAtCamera()
-        {
-            if (!_lookAtTransform)
-                return;
-
-            var position = _lookAtTransform.position;
-            position.y = allowVerticalRotation ? position.y : transform.position.y;
-            Vector3 relativePos = position - transform.position;
-            transform.LookAt(position);
-/*            var rot = Quaternion.LookRotation(relativePos, Vector3.up);
-            transform.localRotation = rot;*/
         }
 
         public void OnDeathStart(DamageReport killingDamageInfo)

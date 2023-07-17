@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ElementalWard.Navigation
 {
-    [CreateAssetMenu(fileName = "New SerializedNodeGrid", menuName = "AStarTest/SerializedNodeGrid")]
+    [CreateAssetMenu(fileName = "New SerializedNodeGrid", menuName = "ElementalWard/Navigation/SerializedNodeGrid")]
     public class SerializedNodeGrid : ScriptableObject
     {
         public struct BakeParams
@@ -18,6 +18,9 @@ namespace ElementalWard.Navigation
         public Vector2 gridWorldSize;
         public int gridSizeX;
         public int gridSizeY;
+
+        public float minPenalty = float.MaxValue;
+        public float maxPenalty = float.MinValue;
 
         [SerializeField]
         private SerializedNode[] serializedNodes = Array.Empty<SerializedNode>();
@@ -36,67 +39,9 @@ namespace ElementalWard.Navigation
         }
         private PathNode[] _nodes = Array.Empty<PathNode>();
 
-        public void Bake(BakeParams bakeParams)
+        public void SetSerializedNodes(SerializedNode[] nodes)
         {
-            float nodeRadius = bakeParams.nodeRadius;
-            gridWorldSize = bakeParams.gridWorldSize;
-            Vector3 position = bakeParams.bakingPosition;
-
-            float nodeDiameter = nodeRadius * 2;
-            gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
-            gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
-
-            serializedNodes = new SerializedNode[gridSizeX * gridSizeY];
-            Vector3 worldBottomLeft = position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.y / 2;
-
-            for (int x = 0; x < gridSizeX; x++)
-            {
-                for (int y = 0; y < gridSizeY; y++)
-                {
-                    Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
-                    bool open = true;
-                    int penalty = 0;
-
-                    bool isValidGround = false;
-                    //Check if there's a ceiling.
-                    Ray ray = new Ray(worldPoint, Vector3.up);
-                    if (Physics.Raycast(ray, out var hit1, 100, LayerIndex.world.Mask))
-                    {
-                        //If so, raycast from it to find the node's y pos.
-                        Vector3 point = hit1.point;
-
-                        ray = new Ray(point, Vector3.down);
-                        if (Physics.Raycast(ray, out var hit2, 1024, LayerIndex.world.Mask))
-                        {
-                            worldPoint.y = hit2.point.y;
-                            isValidGround = true;
-                        }
-                    }
-                    else //There's no ceiling, shift by 100 units up and raycast down.
-                    {
-                        Vector3 point = new Vector3(worldPoint.x, position.y + 100, worldPoint.z);
-                        ray = new Ray(point, Vector3.down);
-                        if (Physics.Raycast(ray, out var hit2, 1024, LayerIndex.world.Mask))
-                        {
-                            worldPoint.y = hit2.point.y;
-                            isValidGround = true;
-                        }
-                    }
-
-
-                    RaycastHit[] hits;
-                    ray = new Ray(worldPoint, Vector3.down);
-                    hits = Physics.SphereCastAll(ray, nodeRadius, 1024, LayerIndex.world.Mask);
-
-                    serializedNodes[CalculateIndex(x, y)] = new SerializedNode
-                    {
-                        isValidPosition = isValidGround,
-                        isOpen = isValidGround ? open : false,
-                        movementPenalty = penalty,
-                        worldPosition = worldPoint,
-                    };
-                }
-            }
+            serializedNodes = nodes;
             UpdateRuntimeNodes();
             SetDirty();
         }
@@ -121,7 +66,8 @@ namespace ElementalWard.Navigation
                         hCost = 0,
                         isOpen = serialized.isOpen,
                         isValidPosition = serialized.isValidPosition,
-                        parentIndex = -1
+                        parentIndex = -1,
+                        movementPenalty = serialized.movementPenalty
                     };
 
                     _nodes[pathNode.nodeIndex] = pathNode;
@@ -162,7 +108,7 @@ namespace ElementalWard.Navigation
         public int GetNodeIndexFromPos(Vector3 worldPos)
         {
             //Absolute Fucking Cancer.
-            worldPos.z -= 6;
+            worldPos.z -= 8;
             float percentX = (worldPos.x + gridWorldSize.x / 2) / gridWorldSize.x;
             float percentY = (worldPos.z + gridWorldSize.y / 2) / gridWorldSize.y;
 

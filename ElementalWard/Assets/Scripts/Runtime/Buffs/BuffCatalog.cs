@@ -31,6 +31,8 @@ namespace ElementalWard
 
         //Fucking hack
         private static DotBehaviour currentlyLoadingBehaviour;
+        public static ResourceAvailability resourceAvailability = new ResourceAvailability(typeof(BuffCatalog));
+
         public static DotBehaviour InitializeDotBehaviour(DotBuffDef dotBuffDef) => dotBuffDef ? InitializeDotBehaviour(dotBuffDef.DotIndex) : null;
 
         public static DotBehaviour InitializeDotBehaviour(DotIndex dotIndex)

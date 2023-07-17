@@ -5,6 +5,8 @@ using Nebula;
 using UObject = UnityEngine.Object;
 using System.Threading.Tasks;
 
+[assembly: SearchableAttribute.OptIn]
+
 namespace ElementalWard
 {
     public class ElementalWardApplication : MainGameBehaviour<ElementalWardApplication>

@@ -383,10 +383,6 @@ namespace Unity.Collections {
             }
         }
 
-        public void SortUp(NativeHeapIndex index)
-        {
-
-        }
         /// <summary>
         /// Removes the element tied to this NativeHeapIndex from the container.  The NativeHeapIndex must be
         /// the result of a previous call to Insert on this container.  If the item has already been removed by

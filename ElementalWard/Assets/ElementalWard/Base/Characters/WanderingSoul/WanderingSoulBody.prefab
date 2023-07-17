@@ -103,7 +103,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 28ec0cd0eb321ac4eb5a53da567b9d29, type: 2}
+  - {fileID: 2100000, guid: 6528bf3bb449db946917ec75ff090767, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -169,11 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 6616821231843013767}
-  lookAt: 1
   allowVerticalRotation: 0
   rendererInfos:
   - renderer: {fileID: 8253633354894203804}
-    defaultMaterial: {fileID: 2100000, guid: 28ec0cd0eb321ac4eb5a53da567b9d29, type: 2}
+    defaultMaterial: {fileID: 2100000, guid: 6528bf3bb449db946917ec75ff090767, type: 2}
     defaultShadowCastingMode: 2
     defaultStaticShadowCaster: 0
     defaultRecieveShadows: 1

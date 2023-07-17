@@ -25,11 +25,13 @@ namespace ElementalWard
         private ParticleSystemForceField _effectForceField;
         private float _currentForceFieldGravityStrength;
 
-        [SystemInitializer(typeof(BuffCatalog))]
         private static void SystemInitializer()
         {
-            _buffDef = BuffCatalog.GetBuffDef(BuffCatalog.FindBuffIndex("bdOverload"));
-            _overloadEffect = Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/ElementDefs/ElementOverload.prefab").WaitForCompletion();
+            BuffCatalog.resourceAvailability.CallWhenAvailable(() =>
+            {
+                _buffDef = BuffCatalog.GetBuffDef(BuffCatalog.FindBuffIndex("bdOverload"));
+                _overloadEffect = Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/ElementDefs/ElementOverload.prefab").WaitForCompletion();
+            });
         }
         private void Awake()
         {

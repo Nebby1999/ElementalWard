@@ -6,9 +6,13 @@ namespace ElementalWard.Navigation
     public class AStarNodeGrid : MonoBehaviour
     {
         public const float NODE_RADIUS = 0.5f;
+        public NodeBaker baker;
         public SerializedNodeGrid grid;
-        public Grid gridComponent;
         [SerializeField] private Vector2 gridWorldSize;
+
+        [Header("Gizmo Settings")]
+        public bool drawGizmos;
+        public bool gizmosAsWireFrame;
 
         public PathNode[] RuntimeNodes
         {
@@ -33,16 +37,20 @@ namespace ElementalWard.Navigation
                 return;
             }
 
-            grid.Bake(new SerializedNodeGrid.BakeParams
+            baker.Bake(new NodeBaker.BakeParams
             {
                 gridWorldSize = gridWorldSize,
                 nodeRadius = NODE_RADIUS,
-                bakingPosition = transform.position
-            });
+                bakingPosition = transform.position,
+                bakingRequest = this
+            }, grid);
         }
 
         private void OnDrawGizmosSelected()
         {
+            if (!drawGizmos)
+                return;
+
             Gizmos.color = Color.white;
             Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, 1, gridWorldSize.y));
 
@@ -54,11 +62,20 @@ namespace ElementalWard.Navigation
             {
                 var node = runtimeNodes[i];
 
-                if (!node.isValidPosition)
-                    continue;
+                Gizmos.color = Color.Lerp(Color.white, Color.black, Mathf.InverseLerp(grid.minPenalty, grid.maxPenalty, node.movementPenalty));
+                Gizmos.color = node.Available ? Gizmos.color : Color.red;
 
-                Gizmos.color = node.isValidPosition ? Color.white : Color.black;
-                Gizmos.DrawWireCube(node.worldPosition, 2 * NODE_RADIUS * Vector3.one);
+                Vector3 worldPosition = node.worldPosition;
+                Vector3 nodeRadius = 2f * NODE_RADIUS * Vector3.one;
+
+                if(gizmosAsWireFrame)
+                {
+                    Gizmos.DrawWireCube(worldPosition, nodeRadius);
+                }
+                else
+                {
+                    Gizmos.DrawCube(worldPosition, nodeRadius);
+                }
             }
         }
     }
