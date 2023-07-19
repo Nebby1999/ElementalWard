@@ -48,55 +48,14 @@ namespace ElementalWard
         private new Transform transform;
         private Transform _lookAtTransform;
         private IElementProvider _elementProvider;
-        private static TransformAccessArray _accessArray;
+        private static GlobalCharacterRendererUpdater _globalUpdater;
 
         [SystemInitializer]
         private static void SystemInitializer()
         {
-            _accessArray = new TransformAccessArray(0);
-            RenderPipelineManager.beginCameraRendering += LookAt;
+            _globalUpdater = new GlobalCharacterRendererUpdater();
         }
 
-        private static void UpdateTransformAccessArray()
-        {
-            _accessArray.Dispose();
-            var instances = InstanceTracker.GetInstances<CharacterRenderer>();
-            var count = instances.Count;
-            _accessArray = new TransformAccessArray(count);
-            for(int i = 0; i < count; i++)
-            {
-                _accessArray.Add(instances[i].transform);
-            }
-        }
-
-        private static void LookAt(ScriptableRenderContext ctx, Camera cam)
-        {
-            var instances = InstanceTracker.GetInstances<CharacterRenderer>();
-            var count = instances.Count;
-            if (count == 0)
-                return;
-
-            NativeArray<bool> allowVerticalRotation = new NativeArray<bool>(count, Allocator.TempJob);
-            NativeArray<float3> lookAtPosition = new NativeArray<float3>(count, Allocator.TempJob);
-
-            for(int i = 0; i < count; i++)
-            {
-                allowVerticalRotation[i] = instances[i].allowVerticalRotation;
-                lookAtPosition[i] = instances[i].LookAtTransform.position;
-            }
-
-            var job = new LookAtJob()
-            {
-                allowVerticalRotation = allowVerticalRotation,
-                desiredLookPosition = lookAtPosition
-            };
-
-            JobHandle handle = job.Schedule(_accessArray);
-            handle.Complete();
-
-            allowVerticalRotation.Dispose();
-            lookAtPosition.Dispose();
-        }
 
         private void Awake()
         {
@@ -112,13 +71,13 @@ namespace ElementalWard
         private void OnEnable()
         {
             InstanceTracker.Add(this);
-            UpdateTransformAccessArray();
+            _globalUpdater.UpdateTransformAccessArray();
         }
 
         private void OnDisable()
         {
             InstanceTracker.Remove(this);
-            UpdateTransformAccessArray();
+            _globalUpdater.UpdateTransformAccessArray();
         }
         private void OnDestroy()
         {

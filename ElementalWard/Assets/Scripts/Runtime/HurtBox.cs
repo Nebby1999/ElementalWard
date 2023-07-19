@@ -11,6 +11,7 @@ namespace ElementalWard
         public float damageMultiplier = 1;
 
         public Collider TiedCollider { get; private set; }
+        public int ColliderID { get; private set; }
         public TeamIndex TeamIndex { get; set; } = TeamIndex.None;
 
         private Rigidbody _rigidBody;
@@ -18,6 +19,7 @@ namespace ElementalWard
         {
             TiedCollider = GetComponent<Collider>();
             TiedCollider.isTrigger = false;
+            ColliderID = TiedCollider.GetInstanceID();
 
             _rigidBody = this.EnsureComponent<Rigidbody>();
             _rigidBody.isKinematic = true;

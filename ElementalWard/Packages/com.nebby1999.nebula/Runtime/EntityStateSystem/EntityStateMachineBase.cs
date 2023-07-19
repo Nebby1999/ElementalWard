@@ -20,9 +20,11 @@ namespace Nebula
 
         public EntityStateBase NewState { get; private set; }
         public EntityStateBase CurrentState { get; private set; }
+        public int StateMachineId { get; private set; }
 
         protected virtual void Awake()
         {
+            StateMachineId = stateMachineName.GetHashCode();
             CurrentState = new Uninitialized();
             CurrentState.outer = this;
         }
@@ -76,6 +78,22 @@ namespace Nebula
         protected virtual void OnDestroy()
         {
             CurrentState.OnExit();
+        }
+
+        public static TESM FindEntityStateMachineByName<TESM>(GameObject obj, string name) where TESM : EntityStateMachineBase
+        {
+            int hashCode = name.GetHashCode();
+            return FindEntityStateMachineByHashCode<TESM>(obj, hashCode);
+        }
+        public static TESM FindEntityStateMachineByHashCode<TESM>(GameObject obj, int hashCode) where TESM : EntityStateMachineBase
+        {
+            var stateMachines = obj.GetComponents<TESM>();
+            foreach (var stateMachine in stateMachines)
+            {
+                if (stateMachine.StateMachineId == hashCode)
+                    return stateMachine;
+            }
+            return null;
         }
     }
 }

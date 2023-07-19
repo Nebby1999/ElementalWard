@@ -37,7 +37,7 @@ namespace ElementalWard.Navigation
             }, Allocator.Persistent);
         }
 
-        public FindPathJob RequestPath(AStarNodeGrid aStarNodeGrid, Vector3 start, Vector3 end, float actorHeight, float actorRadius, float actorJumpStrength)
+        public FindPathJob RequestPath(AStarNodeGrid aStarNodeGrid, Vector3 start, Vector3? end, float actorHeight, float actorRadius, float actorJumpStrength)
         {
             SerializedNodeGrid grid = aStarNodeGrid.grid;
             if (!grid)

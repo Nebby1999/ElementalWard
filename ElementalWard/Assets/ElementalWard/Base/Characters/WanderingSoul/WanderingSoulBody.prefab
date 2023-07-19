@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &763300564714583734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8987736761047858191}
+  m_Layer: 0
+  m_Name: camTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8987736761047858191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763300564714583734}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.136}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4687771136404633515}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4678658894973150073
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +134,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6528bf3bb449db946917ec75ff090767, type: 2}
+  - {fileID: 2100000, guid: f5908fb5cc54f1942a653c9da05fd6fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,7 +203,7 @@ MonoBehaviour:
   allowVerticalRotation: 0
   rendererInfos:
   - renderer: {fileID: 8253633354894203804}
-    defaultMaterial: {fileID: 2100000, guid: 6528bf3bb449db946917ec75ff090767, type: 2}
+    defaultMaterial: {fileID: 2100000, guid: f5908fb5cc54f1942a653c9da05fd6fd, type: 2}
     defaultShadowCastingMode: 2
     defaultStaticShadowCaster: 0
     defaultRecieveShadows: 1
@@ -312,7 +343,9 @@ GameObject:
   - component: {fileID: 5917711785724713918}
   - component: {fileID: 9177879273809039117}
   - component: {fileID: -2747894891459473032}
+  - component: {fileID: 8832952466864527598}
   - component: {fileID: 8972398675560155654}
+  - component: {fileID: 6794365482305020246}
   - component: {fileID: -2908713665425041059}
   - component: {fileID: -3563804340212239540}
   - component: {fileID: 6385374238828156273}
@@ -337,6 +370,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8987736761047858191}
   - {fileID: 2531424432156451055}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -365,7 +399,7 @@ MonoBehaviour:
   _baseHealth: 50
   _baseShield: 0
   _baseRegen: 0
-  _baseMovementSpeed: 8
+  _baseMovementSpeed: 4
   _baseAttackSpeed: 1
   _baseDamage: 10
   _baseArmor: 0
@@ -379,7 +413,7 @@ MonoBehaviour:
   _lvlDamage: 1.5
   _lvlArmor: 0
   aimOriginTransform: {fileID: 0}
-  sprintSpeedMultiplier: 1.5
+  sprintSpeedMultiplier: 3
   references:
     version: 2
     RefIds: []
@@ -463,7 +497,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ff2cf134e5f7d4ab2bd5e010f0e59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredCameraTransform: {fileID: 0}
+  desiredCameraTransform: {fileID: 8987736761047858191}
+--- !u!114 &8832952466864527598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2341f131e262124383ad590c173b240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill1:
+    stateType:
+      _assemblyQualifiedName: 
+    stateMachineName: Weapon
+    skillCooldown: 4
+  skill2:
+    stateType:
+      _assemblyQualifiedName: 
+    stateMachineName: 
+    skillCooldown: 0
+  skill3:
+    stateType:
+      _assemblyQualifiedName: 
+    stateMachineName: 
+    skillCooldown: 0
+  skill4:
+    stateType:
+      _assemblyQualifiedName: 
+    stateMachineName: 
+    skillCooldown: 0
 --- !u!114 &8972398675560155654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +549,25 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.GenericFlyingCharacterMain, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &6794365482305020246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41070830be8927548bab75a885f37c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachineName: Weapon
+  initialState:
+    _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  mainState:
+    _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &-2908713665425041059
 MonoBehaviour:
   m_ObjectHideFlags: 0

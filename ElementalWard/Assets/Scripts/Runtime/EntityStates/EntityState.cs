@@ -17,5 +17,6 @@ namespace EntityStates
         public CharacterInputBank CharacterInputBank => outer.CommonComponents.inputBank;
         public Transform Transform => outer.CommonComponents.transform;
         public GameObject GameObject => outer.CommonComponents.gameObject;
+        public BodySkillManager SkillManager => outer.CommonComponents.skillManager;
     }
 }

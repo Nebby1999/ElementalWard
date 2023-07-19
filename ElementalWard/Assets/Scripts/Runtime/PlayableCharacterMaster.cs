@@ -30,12 +30,15 @@ namespace ElementalWard
         private Vector2 _rawMovementInput;
         private Vector2 _rawScrollInput;
         private Vector2 _rawLookInput;
+        private bool isFlying;
         private void Awake()
         {
             ManagedMaster = GetComponent<CharacterMaster>();
             PlayerInput = GetComponent<PlayerInput>();
             if (PlayerInput)
                 PlayerInput.actions = Addressables.LoadAssetAsync<InputActionAsset>(INPUT_ACTION_ASSET_ADDRESS).WaitForCompletion();
+
+            isFlying = GetComponent<FlyingCharacterMovementController>();
         }
 
         private void OnEnable()
@@ -79,11 +82,7 @@ namespace ElementalWard
 
                 //Instead of doing fancy vector math, we can just take the actual camera's forward axis so we can properly decide the body's aim dections.
                 BodyInputs.LookRotation = _bodyCameraTransform.AsValidOrNull()?.rotation ?? Quaternion.identity;
-                
-                var y = BodyInputs.LookRotation.eulerAngles.y;
-                var modified = Quaternion.Euler(0, y, 0);
-                BodyInputs.moveVector = modified * moveVector;
-                
+                BodyInputs.moveVector = moveVector;
                 BodyInputs.AimDirection = _bodyCameraTransform.forward;
                 BodyInputs.elementAxis = _rawScrollInput.y;
             }

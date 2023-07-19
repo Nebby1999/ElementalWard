@@ -65,6 +65,10 @@ namespace ElementalWard
         public Button fireButton;
         public Button jumpButton;
         public Button sprintButton;
+        public Button skill1Button;
+        public Button skill2Button;
+        public Button skill3Button;
+        public Button skill4Button;
 
         public Vector3 AimDirection
         {

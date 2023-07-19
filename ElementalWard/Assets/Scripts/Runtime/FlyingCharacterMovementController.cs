@@ -19,7 +19,7 @@ namespace ElementalWard
             }
             set
             {
-                characterRotation = Quaternion.Euler(0, value.eulerAngles.y, 0);
+                characterRotation = value;
             }
         }
 

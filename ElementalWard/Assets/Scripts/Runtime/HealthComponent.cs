@@ -44,6 +44,8 @@ namespace ElementalWard
         [Tooltip("If the game object that has this health component doesnt have a component that implements IHealthProvider, use this value for health.")]
         [SerializeField] private float _defaultMaxHealth = 100;
 
+        public HurtBoxGroup HurtboxGroup { get; private set; }
+
         private DamageReport _lastDamageSource;
         private CharacterDeathBehaviour _deathBehaviour;
         private IElementProvider _elementProvider;
@@ -59,6 +61,7 @@ namespace ElementalWard
             _incomingDamageReceivers = GetComponents<IOnIncomingDamage>();
             _deathBehaviour = GetComponent<CharacterDeathBehaviour>();
             _teamComponent = GetComponent<TeamComponent>();
+            HurtboxGroup = GetComponentInChildren<HurtBoxGroup>();
         }
 
         private void Start()

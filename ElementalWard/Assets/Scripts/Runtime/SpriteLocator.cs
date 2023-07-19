@@ -53,11 +53,12 @@ namespace ElementalWard
 
         private void UpdateSpriteTransform(float deltaTime)
         {
-            if(spriteBaseTransform && _spriteParentTransform)
+            if (spriteBaseTransform && _spriteParentTransform)
             {
                 Vector3 pos = _spriteParentTransform.position;
                 spriteBaseTransform.position = pos;
-                spriteBaseTransform.rotation = _spriteParentTransform.rotation;
+                Quaternion quat = Quaternion.Euler(0, _spriteParentTransform.rotation.eulerAngles.y, 0);
+                spriteBaseTransform.rotation = quat;
             }
         }
     }

@@ -15,7 +15,7 @@ namespace ElementalWard.Navigation
         [Unity.Collections.ReadOnly]
         public NativeArray<int2> neighbourOffsets;
         public float3 startPos;
-        public float3 endPos;
+        public float3? endPos;
         public float actorHeight;
         public float actorRadius;
         public float actorJumpStrength;
@@ -30,7 +30,10 @@ namespace ElementalWard.Navigation
 
         public void Execute()
         {
+            if (!this.endPos.HasValue)
+                return;
 
+            var endPos = this.endPos.Value;
             var startNodeIndex = GetNodeIndexFromPos(startPos);
             PathNode startNode = nodes[startNodeIndex];
             startNode.gCost = 0;

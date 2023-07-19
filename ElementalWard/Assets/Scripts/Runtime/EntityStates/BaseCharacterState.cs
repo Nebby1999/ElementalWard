@@ -10,6 +10,7 @@ namespace EntityStates
 {
     public class BaseCharacterState : EntityState
     {
+        public bool HasSkillManager { get; private set; }
         public bool HasCharacterBody { get; private set; }
         public float attackSpeedStat;
         public float movementSpeedStat;
@@ -25,6 +26,7 @@ namespace EntityStates
                 movementSpeedStat = CharacterBody.MovementSpeed;
                 damageStat = CharacterBody.Damage;
             }
+            HasSkillManager = SkillManager;
         }
 
         protected Ray GetAimRay()

@@ -1,3 +1,4 @@
+using ElementalWard;
 using UnityEngine;
 
 namespace EntityStates
@@ -31,8 +32,23 @@ namespace EntityStates
 
         protected virtual void ProcessInputs()
         {
+            if(HasSkillManager)
+            {
+                HandleSkill(BodySkillManager.SkillEnum.skill1, ref CharacterInputBank.skill1Button);
+                HandleSkill(BodySkillManager.SkillEnum.skill2, ref CharacterInputBank.skill2Button);
+                HandleSkill(BodySkillManager.SkillEnum.skill3, ref CharacterInputBank.skill3Button);
+                HandleSkill(BodySkillManager.SkillEnum.skill4, ref CharacterInputBank.skill4Button);
+            }
             wantsToJump = false;
             wantsToSprint = false;
+        }
+
+        private void HandleSkill(BodySkillManager.SkillEnum skillEnum, ref CharacterInputBank.Button button)
+        {
+            if(button.IsPressed)
+            {
+                SkillManager.ExecuteSkill(skillEnum);
+            }
         }
     }
 }

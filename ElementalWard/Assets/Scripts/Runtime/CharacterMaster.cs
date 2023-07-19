@@ -14,6 +14,7 @@ namespace ElementalWard
 
         [SerializeField] private bool _spawnOnStart;
         [SerializeField, ForcePrefab] private GameObject _defaultBodyPrefab;
+        [SerializeField] private TeamDef _defaultTeam;
         [SerializeField] private uint _level;
         [SerializeField] private float _currentXP;
         [SerializeField] private float _neededXPForNextLevel;
@@ -67,6 +68,11 @@ namespace ElementalWard
             var go = Instantiate(CurrentCharacterPrefab, position, rotation);
             CurrentBody = go.GetComponent<CharacterBody>();
             CurrentBody.TiedMaster = this;
+
+            TeamComponent teamComponent = go.GetComponent<TeamComponent>();
+            if(teamComponent)
+                teamComponent.CurrentTeamIndex = _defaultTeam ? _defaultTeam.TeamIndex : TeamIndex.None;
+
             OnBodySpawned?.Invoke(CurrentBody);
         }
         public void SetCharacterPrefab(GameObject characterObject, bool forceRespawn = true)
