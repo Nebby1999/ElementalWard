@@ -35,7 +35,7 @@ namespace ElementalWard.Navigation
                     BakeNode(nodeGrid, nodeRadius, position, nodeDiameter, serializedNodes, worldBottomLeft, x, y);
                 }
             }
-            BlurPenaltyMap(ref serializedNodes, nodeGrid, 3);
+            //BlurPenaltyMap(ref serializedNodes, nodeGrid, 3);
             nodeGrid.SetSerializedNodes(serializedNodes);
         }
 

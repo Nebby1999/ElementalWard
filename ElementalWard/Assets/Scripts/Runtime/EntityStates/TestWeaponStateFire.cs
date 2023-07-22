@@ -121,6 +121,8 @@ namespace EntityStates
                 instantiationRotation = Quaternion.LookRotation(aimRay.direction, Vector3.up),
             };
             info.AddProperty(CommonProjectileProperties.MovementSpeed, projectileVelocity);
+            info.AddProperty(CommonProjectileProperties.ProjectileLifeTime, 10f);
+            info.AddProperty(CommonProjectileProperties.DamageCoefficient, 1f);
             ProjectileManager.SpawnProjectile(projectilePrefab, info);
         }
 

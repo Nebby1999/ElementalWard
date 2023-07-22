@@ -54,7 +54,6 @@ namespace ElementalWard
         private IOnTakeDamage[] _takeDamageReceivers = Array.Empty<IOnTakeDamage>();
         private IOnIncomingDamage[] _incomingDamageReceivers = Array.Empty<IOnIncomingDamage>();
         private bool _wasAlive;
-
         internal bool IsImmune { get; set; }
         private void Awake()
         {

@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultMaxHealth: 100
+  hurtBoxGroup: {fileID: 96326062932296070}
 --- !u!114 &-7556436084046398385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923534e12a443b940a08949051f86107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hurtBoxes: []
+  _hurtBoxes:
+  - {fileID: 1112184084863171788}
   _mainHurtBox: {fileID: 1112184084863171788}
 --- !u!1 &5848979200258604533
 GameObject:

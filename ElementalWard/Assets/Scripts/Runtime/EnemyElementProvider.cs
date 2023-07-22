@@ -43,6 +43,9 @@ namespace ElementalWard
 
         public void OnIncomingDamage(DamageInfo dinfo)
         {
+            if (!canBeOverLoaded)
+                return;
+
             if (_currentCount >= amountRequiredForDeath)
             {
                 dinfo.damage = HealthComponent.CurrentHealth * 10;
