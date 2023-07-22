@@ -1,4 +1,5 @@
 using Nebula;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,13 +65,14 @@ namespace ElementalWard
             BuffController.AddTimedBuff(_buffDef.BuffIndex, 3, 1, amountRequiredForDeath);
             if(!_overloadEffectInstance)
             {
-                _overloadEffectInstance = FXManager.SpawnVisualFX(_overloadEffect, new VFXData
+                var data = new VFXData
                 {
-                    vfxColor = _element.elementColor,
-                    scale = _body.AsValidOrNull()?.Radius ?? 1,
                     instantiationPosition = transform.position,
-                    instantiationRotation = transform.rotation,
-                });
+                    instantiationRotation = transform.rotation
+                };
+                data.AddProperty(CommonVFXProperties.Color, _element.elementColor);
+                data.AddProperty(CommonVFXProperties.Scale, _body.AsValidOrNull()?.Radius ?? 1);
+                _overloadEffectInstance = FXManager.SpawnVisualFX(_overloadEffect, data);
                 _overloadEffectInstance.transform.SetParent(transform);
                 _effectForceField = GetComponentInChildren<ParticleSystemForceField>();
             }

@@ -22,13 +22,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9e886b2afed797c44897b2a5ed864595
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_0.anim
+  - m_GUID: f2b692fb814a37c429abccb4caf97daa
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulAttack_0.anim
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ddc74bb5205b05849b5f705f7e003680
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_1.anim
+  - m_GUID: 589eb6ec8ad1324409f999a9c0dc8f02
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulAttack_2.anim
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -52,8 +52,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a60c2745dcbc06741b066400f9f68e2f
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_3.anim
+  - m_GUID: df38fba0dbea6c643872d433d547d95c
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulAttack_4.anim
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 74c150ddcfbb3074bb5065134e801726
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_4.anim
+  - m_GUID: 045de5cf97fe64547bf928c978809d8b
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulAttack_1.anim
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -72,8 +72,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d35c22b7b02490f4bab37ffd3cbf5d89
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulCharge_2.anim
+  - m_GUID: f8a7f1cea281d7a4eaab48f4581109e5
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoulAttack_3.anim
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -91,6 +91,62 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulMaster.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd99cca4e34a70f4dbf085ea47089823
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/WanderingSoulProjectile.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22c0e8cba7b73474987a8847773f36e0
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/BoneSpikeProjectile.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61eefbca6d6827e47a69db0d77994624
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/BoneSpikeProjectileAnimController.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 885d28af076604e41a34939d49f5c770
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/Fly_0.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dcde81309752a24d922e85bd5313cd6
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/Fly_1.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7863713b92c004448a214bef6966440
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/Fly_2.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: daa3ecb40010eec40b54ecd16ccdaa61
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/Fly_3.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df62b338aade0c24a8ee296fcc96a7c5
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/Fly_4.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ab4443cfe9f1ea4c81871ac21be803b
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoul_Death.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 145453f9457a785448c175221e39c529
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Animations/WanderingSoul_Corpse.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c27c989d45465d04db42e5ade20c7113
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Projectile/FireBone.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

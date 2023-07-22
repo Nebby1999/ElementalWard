@@ -1,3 +1,4 @@
+using Nebula;
 using System;
 using Unity.Collections;
 using Unity.Mathematics;
@@ -6,7 +7,7 @@ using UnityEngine;
 namespace ElementalWard.Navigation
 {
     [CreateAssetMenu(fileName = "New SerializedNodeGrid", menuName = "ElementalWard/Navigation/SerializedNodeGrid")]
-    public class SerializedNodeGrid : ScriptableObject
+    public class SerializedNodeGrid : NebulaScriptableObject
     {
         public struct BakeParams
         {

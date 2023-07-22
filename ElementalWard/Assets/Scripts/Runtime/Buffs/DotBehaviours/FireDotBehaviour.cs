@@ -34,12 +34,13 @@ namespace ElementalWard
             _damagePerTick = (totalDamage * DotStacks) / (TiedDotDef.secondsPerTick * dotInfo.fixedAgeDuration);
             if(!_onFireVFXInstance && _onFireVFX)
             {
-                _onFireVFXInstance = FXManager.SpawnVisualFX(_onFireVFX, new VFXData
+                var data = new VFXData
                 {
                     instantiationPosition = _victimTransform.position,
-                    instantiationRotation = Quaternion.identity,
-                    scale = inflictorBody ? inflictorBody.Radius : 1
-                });
+                    instantiationRotation = _victimTransform.rotation,
+                };
+                data.AddProperty(CommonVFXProperties.Scale, inflictorBody ? inflictorBody.Radius : 1);
+                _onFireVFXInstance = FXManager.SpawnVisualFX(_onFireVFX, data);
             }
         }
 

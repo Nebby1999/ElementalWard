@@ -6,7 +6,7 @@ using UnityEngine;
 namespace ElementalWard
 {
     [CreateAssetMenu(fileName = "New TeamDef", menuName = ElementalWardApplication.APP_NAME + "/TeamDef")]
-    public class TeamDef : ScriptableObject
+    public class TeamDef : NebulaScriptableObject
     {
         public TeamIndex TeamIndex { get; internal set; }
 
@@ -20,12 +20,12 @@ namespace ElementalWard
             for(int i = 0; i < friendlyTeams.Length; i++)
             {
                 TeamDef other = friendlyTeams[i];
-                _teamInteractions[(int)other.TeamIndex] = true;
+                _teamInteractions[(int)other.TeamIndex] = false;
             }
             for(int i = 0; i < enemyTeams.Length; i++)
             {
                 TeamDef other = enemyTeams[i];
-                _teamInteractions[(int)other.TeamIndex] = false;
+                _teamInteractions[(int)other.TeamIndex] = true;
             }
         }
 

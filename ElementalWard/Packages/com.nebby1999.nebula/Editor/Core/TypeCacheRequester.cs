@@ -83,9 +83,11 @@ namespace Nebula.Editor
         {
             if (!typeToDerivedTypeCollection.ContainsKey(type))
             {
-                typeToDerivedTypeCollection[type] = TypeCache.GetTypesDerivedFrom(type)
+                var arr = TypeCache.GetTypesDerivedFrom(type)
                     .OrderBy(t => t.FullName)
                     .ToArray();
+                ArrayUtils.Insert(ref arr, 0, type);
+                typeToDerivedTypeCollection[type] = arr;
             }
             return typeToDerivedTypeCollection[type].Where(t => allowAbstractTypes ? true : !t.IsAbstract).ToArray();
         }

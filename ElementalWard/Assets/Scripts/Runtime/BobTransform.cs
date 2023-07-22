@@ -1,3 +1,4 @@
+using Nebula;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,13 +24,13 @@ namespace ElementalWard
 
         private void OnEnable()
         {
-            _transform.position = _localPosAtAwake;
+            _transform.localPosition= _localPosAtAwake;
             _internalStopwatch = 0;
         }
 
         private void OnDisable()
         {
-            _transform.position = _localPosAtAwake;
+            _transform.localPosition = _localPosAtAwake;
         }
         // Update is called once per frame
         void Update()

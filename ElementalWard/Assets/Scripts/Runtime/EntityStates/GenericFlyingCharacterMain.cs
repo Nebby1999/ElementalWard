@@ -17,7 +17,7 @@ namespace EntityStates
             if(HasICharacterMovementController)
             {
                 ICharacterMovementController.CharacterRotation = CharacterInputBank.LookRotation;
-                ICharacterMovementController.MovementDirection = CharacterInputBank.LookRotation * moveVector;
+                ICharacterMovementController.MovementDirection = moveVector;
             }
 
             if(HasCharacterBody)

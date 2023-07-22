@@ -3,6 +3,7 @@ using Nebula;
 
 namespace ElementalWard
 {
+    [RequireComponent(typeof(ProjectileController))]
     public class ProjectileDamageSimple : MonoBehaviour, IProjectileImpact, IProjectileInitialization
     {
         public DamageType defaultDamageType;
@@ -10,10 +11,8 @@ namespace ElementalWard
         private BodyInfo _owner;
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
-            if (fireProjectileInfo.damageType.HasValue)
-                defaultDamageType = fireProjectileInfo.damageType.Value;
-            if (fireProjectileInfo.projectileDamageCoefficient.HasValue)
-                defaultDamageCoefficient = fireProjectileInfo.projectileDamageCoefficient.Value;
+            defaultDamageType = fireProjectileInfo.damageType;
+            fireProjectileInfo.TryGetProperty(CommonProjectileProperties.DamageCoefficient, out defaultDamageCoefficient);
 
             _owner = fireProjectileInfo.owner;
             var renderer = GetComponentInChildren<Renderer>();
@@ -36,7 +35,7 @@ namespace ElementalWard
                 return;
 
             bool? canOwnerHarmThisEntity = TeamCatalog.GetTeamInteraction(_owner.team, hurtBox.TeamIndex);
-            if (!canOwnerHarmThisEntity == false)
+            if (canOwnerHarmThisEntity == false)
                 return;
 
             var healthComponent = hurtBox.HealthComponent;

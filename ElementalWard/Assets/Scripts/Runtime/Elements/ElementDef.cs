@@ -12,7 +12,7 @@ using UnityEngine.Localization;
 namespace ElementalWard
 {
     [CreateAssetMenu(menuName = ElementalWardApplication.APP_NAME + "/ElementDef")]
-    public class ElementDef : ScriptableObject
+    public class ElementDef : NebulaScriptableObject
     {
         public LocalizedString elementName;
         public Texture2D elementRamp;

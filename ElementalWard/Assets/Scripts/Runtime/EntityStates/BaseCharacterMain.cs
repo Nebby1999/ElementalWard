@@ -25,8 +25,8 @@ namespace EntityStates
             {
                 moveVector = CharacterInputBank.moveVector;
                 aimDirection = CharacterInputBank.AimDirection;
-                wantsToJump = CharacterInputBank.jumpButton.WasPressedThisFrame;
-                wantsToSprint |= CharacterInputBank.sprintButton.IsPressed;
+                wantsToJump = CharacterInputBank.jumpButton.down;
+                wantsToSprint |= CharacterInputBank.sprintButton.down;
             }
         }
 
@@ -45,7 +45,7 @@ namespace EntityStates
 
         private void HandleSkill(BodySkillManager.SkillEnum skillEnum, ref CharacterInputBank.Button button)
         {
-            if(button.IsPressed)
+            if(button.down)
             {
                 SkillManager.ExecuteSkill(skillEnum);
             }

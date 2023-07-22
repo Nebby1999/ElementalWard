@@ -1,4 +1,3 @@
-using ElementalWard.AI;
 using ElementalWard.Navigation;
 using Nebula;
 using System.Collections.Generic;
@@ -17,7 +16,7 @@ namespace ElementalWard
         public List<T> Instances => InstanceTracker.GetInstances<T>();
     }
 
-    public class GlobalBaseAIUpdater : GlobalUpdater<BaseAI>
+    public class GlobalBaseAIUpdater : GlobalUpdater<CharacterMasterAI>
     {
         private float stopwatch;
         public GlobalBaseAIUpdater()
@@ -34,7 +33,7 @@ namespace ElementalWard
         private void OnGlobalFixedUpdate()
         {
             stopwatch += Time.fixedDeltaTime;
-            if(stopwatch > BaseAI.TIME_BETWEEN_AI_UPDATE)
+            if(stopwatch > CharacterMasterAI.TIME_BETWEEN_AI_UPDATE)
             {
                 stopwatch = 0;
                 UpdateGlobalAI();
@@ -87,13 +86,18 @@ namespace ElementalWard
         }
     }
 
-    public class GlobalCharacterRendererUpdater : GlobalUpdater<CharacterRenderer>
+    public class Global3DSpriteRendererUpdater : GlobalUpdater<SpriteRenderer3D>
     {
         private TransformAccessArray _accessArray;
-        public GlobalCharacterRendererUpdater()
+        public Global3DSpriteRendererUpdater()
         {
             _accessArray = new TransformAccessArray(0);
             RenderPipelineManager.beginCameraRendering += CharacterRendererLookAt;
+        }
+
+        ~Global3DSpriteRendererUpdater()
+        {
+            _accessArray.Dispose();
         }
 
         public void UpdateTransformAccessArray()

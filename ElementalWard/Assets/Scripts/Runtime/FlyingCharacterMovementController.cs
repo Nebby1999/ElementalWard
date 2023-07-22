@@ -1,5 +1,7 @@
 using KinematicCharacterController;
 using UnityEngine;
+using System;
+using Object = UnityEngine.Object;
 
 namespace ElementalWard
 {
@@ -19,10 +21,11 @@ namespace ElementalWard
             }
             set
             {
-                characterRotation = value;
+                _flyingDirection = value;
+                characterRotation = Quaternion.Euler(0, value.eulerAngles.y, 0);
             }
         }
-
+        private Quaternion _flyingDirection;
 #if UNITY_EDITOR
         [Nebula.ReadOnly]
 #else
@@ -55,9 +58,11 @@ namespace ElementalWard
                 MovementDirection = Vector3.zero;
             }
 
-            Vector3 movementVector = MovementDirection;
+            Vector3 movementVector = Body.IsAIControlled ? MovementDirection : _flyingDirection * MovementDirection;
             movementVector *= MovementSpeed;
             characterVelocity = Vector3.MoveTowards(characterVelocity, movementVector, 100);
+            if (movementVector.y > 0.1f)
+                Motor.ForceUnground();
         }
 
         public bool IsColliderValidForCollisions(Collider coll)

@@ -83,7 +83,7 @@ namespace ElementalWard
                 MovementDirection = Vector3.zero;
             }
 
-            Vector3 movementVector = MovementDirection;
+            Vector3 movementVector = Body.IsAIControlled ? MovementDirection : CharacterRotation * MovementDirection;
             movementVector *= MovementSpeed;
             movementVector.y = characterVelocity.y;
             characterVelocity = Vector3.MoveTowards(characterVelocity, movementVector, 100);

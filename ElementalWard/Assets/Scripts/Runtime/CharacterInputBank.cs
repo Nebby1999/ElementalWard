@@ -15,6 +15,38 @@ namespace ElementalWard
     {
         public struct Button
         {
+            public bool down;
+            public bool wasDown;
+            public bool hasPressBeenClaimed;
+            public bool JustReleased
+            {
+                get
+                {
+                    if (!down)
+                        return wasDown;
+                    return false;
+                }
+            }
+
+            public bool JustPressed
+            {
+                get
+                {
+                    if (down)
+                        return !down;
+                    return false;
+                }
+            }
+
+            public void PushState(bool newState)
+            {
+                hasPressBeenClaimed &= newState;
+                wasDown = down;
+                down = newState;
+            }
+        }
+        public struct ButtonOld
+        {
             public InputAction TiedAction
             {
                 get => _tiedAction;
@@ -44,7 +76,7 @@ namespace ElementalWard
             /// </summary>
             public bool IsPressed => _tiedAction?.inProgress ?? false;
 
-            public Button(InputAction action)
+            public ButtonOld(InputAction action)
             {
                 if (action.type != InputActionType.Button)
                     throw new ArgumentException($"The InputAction for a Button struct needs to be of type {nameof(InputActionType)}.{nameof(InputActionType.Button)}. Supplied Type: {action.type}.");
@@ -52,9 +84,9 @@ namespace ElementalWard
                 _tiedAction = action;
             }
 
-            public static implicit operator Button(InputAction action)
+            public static implicit operator ButtonOld(InputAction action)
             {
-                return new Button(action);
+                return new ButtonOld(action);
             }
         }
         public Vector3 moveVector;
@@ -62,7 +94,6 @@ namespace ElementalWard
         /// if this value is > 0, then go to the next element, otherwise, go back to the previous element
         /// </summary>
         public float elementAxis;
-        public Button fireButton;
         public Button jumpButton;
         public Button sprintButton;
         public Button skill1Button;
@@ -100,7 +131,6 @@ namespace ElementalWard
 
         private void Update()
         {
-
 #if DEBUG
             //Debug.DrawRay(AimOrigin, AimDirection * 5, Color.yellow, 0.01f);
             Debug.DrawRay(transform.position, moveVector * 10, Color.blue, 0.01f);

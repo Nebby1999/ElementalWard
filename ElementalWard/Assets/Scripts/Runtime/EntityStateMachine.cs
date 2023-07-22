@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UObject = UnityEngine.Object;
-using KinematicCharacterController;
 using Nebula;
 
 namespace ElementalWard
@@ -17,6 +13,10 @@ namespace ElementalWard
             public readonly CharacterBody characterBody;
             public readonly CharacterInputBank inputBank;
             public readonly BodySkillManager skillManager;
+            public readonly Rigidbody rigidBody;
+            public readonly TeamComponent teamComponent;
+            public readonly HealthComponent healthComponent;
+            public readonly SpriteLocator spriteLocator;
             public CommonComponentLocator(GameObject go)
             {
                 gameObject = go;
@@ -25,6 +25,10 @@ namespace ElementalWard
                 characterBody = go.GetComponent<CharacterBody>();
                 inputBank = go.GetComponent<CharacterInputBank>();
                 skillManager = go.GetComponent<BodySkillManager>();
+                rigidBody = go.GetComponent<Rigidbody>();
+                teamComponent = go.GetComponent<TeamComponent>();
+                healthComponent = go.GetComponent<HealthComponent>();
+                spriteLocator = go.GetComponent<SpriteLocator>();
             }
         }
 

@@ -92,7 +92,7 @@ namespace ElementalWard
             while (!handle.IsDone)
                 yield return new WaitForEndOfFrame();
 
-            var results = handle.Result.OrderBy(bd => bd.name).ToArray();
+            var results = handle.Result.OrderBy(bd => bd.cachedName).ToArray();
 
             buffDefs = new BuffDef[results.Length];
             for (int i = 0; i < results.Length; i++)
@@ -101,16 +101,16 @@ namespace ElementalWard
                 buffDefs[i] = buffDef;
                 BuffIndex buffIndex = (BuffIndex)i;
                 buffDef.BuffIndex = buffIndex;
-                buffNametoBuffIndex[buffDef.name] = buffIndex;
+                buffNametoBuffIndex[buffDef.cachedName] = buffIndex;
             }
 
             yield break;
 
             void EnsureNaming(BuffDef bd)
             {
-                if (bd.name.IsNullOrWhiteSpace())
+                if (bd.cachedName.IsNullOrWhiteSpace())
                 {
-                    bd.name = "BUFFDEF_" + invalidNameTracker;
+                    bd.cachedName = "BUFFDEF_" + invalidNameTracker;
                     invalidNameTracker++;
                 }
             }
@@ -124,7 +124,7 @@ namespace ElementalWard
             while (!handle.IsDone)
                 yield return new WaitForEndOfFrame();
 
-            var results = handle.Result.OrderBy(dbd => dbd.name).ToArray();
+            var results = handle.Result.OrderBy(dbd => dbd.cachedName).ToArray();
 
             dotDefs = new DotBuffDef[results.Length];
             dotBehaviours = new Type[results.Length];
@@ -136,7 +136,7 @@ namespace ElementalWard
                 DotIndex dotIndex = (DotIndex)i;
                 dotBuffDef.DotIndex = dotIndex;
                 dotDefs[i] = dotBuffDef;
-                dotNameToDotIndex[dotBuffDef.name] = dotIndex;
+                dotNameToDotIndex[dotBuffDef.cachedName] = dotIndex;
                 dotBuffIndices.Add(dotBuffDef.BuffIndex);
 
                 Type type = dotBuffDef.dotBehaviour;
@@ -155,9 +155,9 @@ namespace ElementalWard
 
             void EnsureNaming(DotBuffDef bd)
             {
-                if (bd.name.IsNullOrWhiteSpace())
+                if (bd.cachedName.IsNullOrWhiteSpace())
                 {
-                    bd.name = "DOTBUFFDEF_" + invalidNameTracker;
+                    bd.cachedName = "DOTBUFFDEF_" + invalidNameTracker;
                     invalidNameTracker++;
                 }
             }

@@ -25,9 +25,17 @@ namespace ElementalWard
         public GameObject CurrentCharacterPrefab { get => _currentCharacterPrefab; }
         private GameObject _currentCharacterPrefab;
         public CharacterBody CurrentBody { get; private set; }
+        public CharacterMasterAI CharacterMasterAI { get; private set; }
+        public PlayableCharacterMaster PlayableCharacterMaster { get; private set; }
         public event Action<CharacterBody> OnBodySpawned;
         public event Action OnBodyLost;
         public static event Action<CharacterMaster> OnLevelUpGlobal;
+
+        private void Awake()
+        {
+            CharacterMasterAI = GetComponent<CharacterMasterAI>();
+            PlayableCharacterMaster = GetComponent<PlayableCharacterMaster>();
+        }
         private void Start()
         {
             _currentCharacterPrefab = _defaultBodyPrefab;
@@ -63,7 +71,7 @@ namespace ElementalWard
         {
             if (CurrentBody)
             {
-                Destroy(CurrentBody);
+                Destroy(CurrentBody.gameObject);
             }
             var go = Instantiate(CurrentCharacterPrefab, position, rotation);
             CurrentBody = go.GetComponent<CharacterBody>();
@@ -74,6 +82,25 @@ namespace ElementalWard
                 teamComponent.CurrentTeamIndex = _defaultTeam ? _defaultTeam.TeamIndex : TeamIndex.None;
 
             OnBodySpawned?.Invoke(CurrentBody);
+        }
+
+        [ContextMenu("Respawn")]
+        private void Respawn()
+        {
+            if(!Application.isPlaying)
+            {
+                Debug.LogWarning("Cannot respawn outside of play mode");
+                return;
+            }
+
+            var pos = transform.position;
+            var rot = transform.rotation;
+            if(CurrentBody)
+            {
+                pos = CurrentBody.transform.position;
+                rot = CurrentBody.transform.rotation;
+            }
+            Spawn(pos, rot);
         }
         public void SetCharacterPrefab(GameObject characterObject, bool forceRespawn = true)
         {

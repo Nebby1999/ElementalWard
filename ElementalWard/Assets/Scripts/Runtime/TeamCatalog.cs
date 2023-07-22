@@ -52,7 +52,7 @@ namespace ElementalWard
             {
                 yield return new WaitForEndOfFrame();
             }
-            var results = handle.Result.OrderBy(td => td.name).ToArray();
+            var results = handle.Result.OrderBy(td => td.cachedName).ToArray();
 
             teamDefs = new TeamDef[results.Length];
 
@@ -61,7 +61,7 @@ namespace ElementalWard
                 TeamDef teamDef = results[i];
                 TeamIndex teamIndex = (TeamIndex)i;
                 teamDef.TeamIndex = teamIndex;
-                teamNameToIndex[teamDef.name] = teamIndex;
+                teamNameToIndex[teamDef.cachedName] = teamIndex;
                 teamDefs[i] = teamDef;
             }
             for(int i = 0; i < teamDefs.Length; i++)
@@ -74,9 +74,9 @@ namespace ElementalWard
 
             void EnsureNaming(TeamDef def)
             {
-                if(def.name.IsNullOrWhiteSpace())
+                if(def.cachedName.IsNullOrWhiteSpace())
                 {
-                    def.name = $"TEAMDEF_" + invalidNameTracker;
+                    def.cachedName = $"TEAMDEF_" + invalidNameTracker;
                     invalidNameTracker++;
                 }
             }

@@ -170,6 +170,72 @@
                     "action": "ElementScroll",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "469c7635-5972-4387-a954-3a0774fef4b4",
+                    "path": "<ElementalWardInput>/Move",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1371e03f-cef8-4c39-91f8-3d7bb033594b",
+                    "path": "<ElementalWardInput>/Look",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13d13d39-35d4-4c92-a5b5-e1c026bfe5e1",
+                    "path": "<ElementalWardInput>/Jump",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c060109b-4b10-4016-836e-1c39d822f5b3",
+                    "path": "<ElementalWardInput>/Sprint",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39280c42-2182-42a8-82a8-06e201a71c3a",
+                    "path": "<ElementalWardInput>/Fire",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11a84b5a-c2c2-48a0-b603-4e012c9baf92",
+                    "path": "<ElementalWardInput>/ElementScroll",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ElementScroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -585,6 +651,116 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "428ceb53-a9ed-4017-83e5-55c6f435a39e",
+                    "path": "<ElementalWardInput>/Navigate",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c075e42c-96e1-4a12-a215-edca98d9dcaf",
+                    "path": "<ElementalWardInput>/Submit",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "846b5a9d-b5d0-4e16-bf5f-9c65c5629dc6",
+                    "path": "<ElementalWardInput>/Cancel",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a35489b1-0383-41d3-946e-c6b4272d35b9",
+                    "path": "<ElementalWardInput>/Point",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a781320-6247-47ae-b58e-ffcc186ca564",
+                    "path": "<ElementalWardInput>/Click",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3f61787d-32da-447c-9c38-f950a938fbe0",
+                    "path": "<ElementalWardInput>/ScrollWheel",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7a0a066-46fa-4fd4-b98e-afb8ab60d80c",
+                    "path": "<ElementalWardInput>/MiddleClick",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MiddleClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a12f280e-fd7f-4e6c-974d-bd0592572ede",
+                    "path": "<ElementalWardInput>/RightClick",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fee75be3-e047-4341-9b5a-12f0b1e6411f",
+                    "path": "<ElementalWardInput>/TrackedDevicePosition",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackedDevicePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "47f2c36c-bdba-4168-a1f3-82e8241eba8d",
+                    "path": "<ElementalWardInput>/TrackedDeviceOrientation",
+                    "interactions": "AIInput",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

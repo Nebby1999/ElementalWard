@@ -3,17 +3,54 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public class ProjectileController : MonoBehaviour
+    public class ProjectileController : MonoBehaviour, IProjectileInitialization
     {
         public bool canImpactOnTrigger;
         public bool ignoreWorld;
         private IProjectileImpact[] _projectileImpacts = Array.Empty<IProjectileImpact>();
+        private Collider[] _projectileColliders;
         private Rigidbody _rigidBody;
+        private BodyInfo _owner;
         private void Awake()
         {
             _projectileImpacts = GetComponentsInChildren<IProjectileImpact>();
+            _projectileColliders = GetComponents<Collider>();
+            for(int i = 0; i < _projectileColliders.Length; i++)
+            {
+                _projectileColliders[i].enabled = false;
+            }
         }
 
+        private void Start()
+        {
+            for(int i = 0; i < _projectileColliders.Length; i++)
+            {
+                _projectileColliders[i].enabled = true;
+            }
+            IgnoreCollisionsWithOwner(true);
+        }
+
+        public void IgnoreCollisionsWithOwner(bool shouldIgnore)
+        {
+            if (!_owner)
+                return;
+            HealthComponent hc = _owner.GetComponent<HealthComponent>();
+            if (!hc)
+                return;
+            HurtBoxGroup hurtBoxGroup = hc.hurtBoxGroup;
+            if (!hurtBoxGroup)
+                return;
+            HurtBox[] hurtBoxes = hurtBoxGroup.HurtBoxes;
+            for(int i = 0; i < hurtBoxes.Length; i++)
+            {
+                var collider = hurtBoxes[i].TiedCollider;
+                for(int j = 0; j < _projectileColliders.Length; j++)
+                {
+                    var collider2 = _projectileColliders[j];
+                    Physics.IgnoreCollision(collider, collider2, shouldIgnore);
+                }
+            }
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (!canImpactOnTrigger)
@@ -57,6 +94,11 @@ namespace ElementalWard
             {
                 impact.OnImpact(info);
             }
+        }
+
+        public void Initialize(FireProjectileInfo fireProjectileInfo)
+        {
+            _owner = fireProjectileInfo.owner;
         }
     }
 }

@@ -11,12 +11,35 @@ namespace EntityStates
 {
     public class EntityState : EntityStateBase
     {
-        public new EntityStateMachine outer => base.outer as EntityStateMachine;
-        public ICharacterMovementController ICharacterMovementController => outer.CommonComponents.characterMovementController;
-        public CharacterBody CharacterBody => outer.CommonComponents.characterBody;
-        public CharacterInputBank CharacterInputBank => outer.CommonComponents.inputBank;
-        public Transform Transform => outer.CommonComponents.transform;
-        public GameObject GameObject => outer.CommonComponents.gameObject;
-        public BodySkillManager SkillManager => outer.CommonComponents.skillManager;
+        protected new EntityStateMachine outer => base.outer as EntityStateMachine;
+        protected ICharacterMovementController ICharacterMovementController => outer.CommonComponents.characterMovementController;
+        protected CharacterBody CharacterBody => outer.CommonComponents.characterBody;
+        protected CharacterInputBank CharacterInputBank => outer.CommonComponents.inputBank;
+        protected Transform Transform => outer.CommonComponents.transform;
+        protected GameObject GameObject => outer.CommonComponents.gameObject;
+        protected BodySkillManager SkillManager => outer.CommonComponents.skillManager;
+        protected Rigidbody RigidBody => outer.CommonComponents.rigidBody;
+        protected TeamComponent TeamComponent => outer.CommonComponents.teamComponent;
+        protected HealthComponent HealthComponent => outer.CommonComponents.healthComponent;
+        protected SpriteLocator SpriteLocator => outer.CommonComponents.spriteLocator;
+
+        protected Transform GetSpriteBaseTransform()
+        {
+            return SpriteLocator ? SpriteLocator.spriteBaseTransform : null;
+        }
+
+        protected Transform GetSpriteTransform()
+        {
+            return SpriteLocator ? SpriteLocator.SpriteTransform : null;
+        }
+
+        protected override Animator GetAnimator()
+        {
+            if(SpriteLocator && SpriteLocator.SpriteTransform)
+            {
+                return SpriteLocator.SpriteTransform.GetComponent<Animator>();
+            }
+            return null;
+        }
     }
 }

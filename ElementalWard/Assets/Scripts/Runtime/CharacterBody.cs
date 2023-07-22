@@ -6,7 +6,7 @@ using UObject = UnityEngine.Object;
 using Nebula;
 namespace ElementalWard
 {
-    public class CharacterBody : MonoBehaviour, IHealthProvider, ILifeBehaviour
+    public class CharacterBody : MonoBehaviour, IHealthProvider, ILifeBehaviour, IOnTakeDamage
     {
         public LocalizedString bodyName;
 
@@ -51,6 +51,16 @@ namespace ElementalWard
                     return;
                 _isSprinting = value;
                 RecalculateStats();
+            }
+        }
+        public bool IsAIControlled
+        {
+            get
+            {
+                if (!TiedMaster)
+                    return false;
+
+                return !TiedMaster.PlayableCharacterMaster && TiedMaster.CharacterMasterAI;
             }
         }
         public CharacterMaster TiedMaster { get; set; }
@@ -119,6 +129,17 @@ namespace ElementalWard
             {
                 TiedMaster.BodyKilled(this);
             }
+        }
+
+        public void OnTakeDamage(DamageReport report)
+        {
+            if (!TiedMaster)
+                return;
+
+            if (!IsAIControlled)
+                return;
+
+            TiedMaster.CharacterMasterAI.SetTargetFromDamageReport(report);
         }
     }
 }

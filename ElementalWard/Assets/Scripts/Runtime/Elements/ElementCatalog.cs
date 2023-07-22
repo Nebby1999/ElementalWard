@@ -62,7 +62,7 @@ namespace ElementalWard
             {
                 yield return new WaitForEndOfFrame();
             }
-            var results = handle.Result.OrderBy(ed => ed.name).ToArray();
+            var results = handle.Result.OrderBy(ed => ed.cachedName).ToArray();
 
             elementDefs = new ElementDef[results.Length];
             elementEvents = new IElementEvents[results.Length];
@@ -72,7 +72,7 @@ namespace ElementalWard
                 ElementDef elementDef = results[i];
                 ElementIndex elementIndex = (ElementIndex)i;
                 elementDef.ElementIndex = elementIndex;
-                elementNameToIndex[elementDef.name] = elementIndex;
+                elementNameToIndex[elementDef.cachedName] = elementIndex;
                 elementDefs[i] = elementDef;
                 Type type = elementDef.elementEvents;
                 if(type == null)
@@ -91,9 +91,9 @@ namespace ElementalWard
 
             void EnsureNaming(ElementDef ed)
             {
-                if(ed.name.IsNullOrWhiteSpace())
+                if(ed.cachedName.IsNullOrWhiteSpace())
                 {
-                    ed.name = "ELEMENTDEF_" + invalidNameTracker;
+                    ed.cachedName = "ELEMENTDEF_" + invalidNameTracker;
                     invalidNameTracker++;
                 }
             }

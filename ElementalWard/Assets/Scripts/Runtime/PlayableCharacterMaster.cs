@@ -9,6 +9,7 @@ using UnityEngine.AddressableAssets;
 using Cinemachine;
 using Nebula;
 using System.Linq.Expressions;
+using UnityEngine.UI;
 
 namespace ElementalWard
 {
@@ -27,65 +28,77 @@ namespace ElementalWard
         public static event Action<CharacterBody> OnPlayableBodySpawned;
 
         private Transform _bodyCameraTransform;
+        private InputAction jumpAction;
+        private InputAction sprintAction;
+        private InputAction skill1Action;
         private Vector2 _rawMovementInput;
         private Vector2 _rawScrollInput;
         private Vector2 _rawLookInput;
-        private bool isFlying;
+        private GameObject _cameraInstance;
         private void Awake()
         {
             ManagedMaster = GetComponent<CharacterMaster>();
             PlayerInput = GetComponent<PlayerInput>();
-            if (PlayerInput)
-                PlayerInput.actions = Addressables.LoadAssetAsync<InputActionAsset>(INPUT_ACTION_ASSET_ADDRESS).WaitForCompletion();
-
-            isFlying = GetComponent<FlyingCharacterMovementController>();
+            PlayerInput.actions = Addressables.LoadAssetAsync<InputActionAsset>(INPUT_ACTION_ASSET_ADDRESS).WaitForCompletion();
         }
 
         private void OnEnable()
         {
             ManagedMaster.OnBodySpawned += SpawnCamera;
+            var actions = PlayerInput.actions;
+            var map = actions.FindActionMap(ElementalWardInputGuids.playerGUID);
+            if (map == null)
+                return;
+
+            jumpAction = map.FindAction(ElementalWardInputGuids.Player.jumpGUID);
+            sprintAction = map.FindAction(ElementalWardInputGuids.Player.sprintGUID);
+            skill1Action = map.FindAction(ElementalWardInputGuids.Player.fireGUID);
         }
 
         private void SpawnCamera(CharacterBody body)
         {
-            var fpsVirtualCameraPrefab = Addressables.LoadAssetAsync<GameObject>(CAMERA_ADDRESS).WaitForCompletion();
-            var fpsVirtualCamera = Instantiate(fpsVirtualCameraPrefab).GetComponent<CinemachineVirtualCamera>();
+            if(!_cameraInstance)
+            {
+                var fpsVirtualCameraPrefab = Addressables.LoadAssetAsync<GameObject>(CAMERA_ADDRESS).WaitForCompletion();
+                _cameraInstance = Instantiate(fpsVirtualCameraPrefab);
+            }
+            var fpsVirtualCamera = _cameraInstance.GetComponent<CinemachineVirtualCamera>();
             PlayableCharacterCamera = body.GetComponent<CharacterCameraController>();
             if(PlayableCharacterCamera)
             {
                 PlayableCharacterCamera.VirtualCamera = fpsVirtualCamera;
                 _bodyCameraTransform = fpsVirtualCamera.transform;
             }
-            SetBodyInputs(body.InputBank);
+            BodyInputs = body.GetComponent<CharacterInputBank>();
             OnPlayableBodySpawned?.Invoke(body);
         }
 
-        private void SetBodyInputs(CharacterInputBank input)
-        {
-            BodyInputs = input;
-            if (!BodyInputs)
-                return;
-            var actions = PlayerInput.actions;
-            var map = actions.FindActionMap(ElementalWardInputGuids.playerGUID);
-            if (map == null)
-                return;
-
-            BodyInputs.fireButton = map.FindAction(ElementalWardInputGuids.Player.fireGUID);
-            BodyInputs.jumpButton = map.FindAction(ElementalWardInputGuids.Player.jumpGUID);
-            BodyInputs.sprintButton = map.FindAction(ElementalWardInputGuids.Player.sprintGUID);
-        }
         private void Update()
         {
             if(BodyInputs)
             {
-                var moveVector = new Vector3(_rawMovementInput.x, 0, _rawMovementInput.y);
-
-                //Instead of doing fancy vector math, we can just take the actual camera's forward axis so we can properly decide the body's aim dections.
+                PlayerInputs playerInputs = GeneratePlayerInputs();
                 BodyInputs.LookRotation = _bodyCameraTransform.AsValidOrNull()?.rotation ?? Quaternion.identity;
-                BodyInputs.moveVector = moveVector;
+                BodyInputs.moveVector = new Vector3(playerInputs.movementInput.x, 0, playerInputs.movementInput.y);
                 BodyInputs.AimDirection = _bodyCameraTransform.forward;
-                BodyInputs.elementAxis = _rawScrollInput.y;
+                BodyInputs.elementAxis = playerInputs.scrollInput.y;
+                BodyInputs.jumpButton.PushState(playerInputs.jumpPressed);
+                BodyInputs.sprintButton.PushState(playerInputs.sprintPressed);
+                BodyInputs.skill1Button.PushState(playerInputs.skill1Pressed);
             }
+        }
+
+        private PlayerInputs GeneratePlayerInputs()
+        {
+            return new PlayerInputs()
+            {
+                movementInput = _rawMovementInput,
+                lookInput = _rawLookInput,
+                scrollInput = _rawScrollInput,
+                jumpPressed = jumpAction.IsPressed(),
+                skill1Pressed = skill1Action.IsPressed(),
+                sprintPressed = sprintAction.IsPressed()
+            };
         }
 
         private void OnDisable()
@@ -106,6 +119,16 @@ namespace ElementalWard
         public void OnElementScroll(InputAction.CallbackContext ctx)
         {
             _rawScrollInput = ctx.ReadValue<Vector2>();
+        }
+
+        public struct PlayerInputs
+        {
+            public Vector2 movementInput;
+            public Vector2 lookInput;
+            public Vector2 scrollInput;
+            public bool jumpPressed;
+            public bool sprintPressed;
+            public bool skill1Pressed;
         }
     }
 }

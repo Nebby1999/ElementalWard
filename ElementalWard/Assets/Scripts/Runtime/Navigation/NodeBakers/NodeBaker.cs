@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nebula;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace ElementalWard.Navigation
 {
-    public abstract class NodeBaker : ScriptableObject
+    public abstract class NodeBaker : NebulaScriptableObject
     {
         public class BakeParams
         {

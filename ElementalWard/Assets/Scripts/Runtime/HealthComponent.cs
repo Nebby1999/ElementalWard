@@ -44,7 +44,8 @@ namespace ElementalWard
         [Tooltip("If the game object that has this health component doesnt have a component that implements IHealthProvider, use this value for health.")]
         [SerializeField] private float _defaultMaxHealth = 100;
 
-        public HurtBoxGroup HurtboxGroup { get; private set; }
+        public HurtBoxGroup hurtBoxGroup;
+        public event Action<HealthComponent> OnDeath;
 
         private DamageReport _lastDamageSource;
         private CharacterDeathBehaviour _deathBehaviour;
@@ -61,7 +62,6 @@ namespace ElementalWard
             _incomingDamageReceivers = GetComponents<IOnIncomingDamage>();
             _deathBehaviour = GetComponent<CharacterDeathBehaviour>();
             _teamComponent = GetComponent<TeamComponent>();
-            HurtboxGroup = GetComponentInChildren<HurtBoxGroup>();
         }
 
         private void Start()
@@ -76,8 +76,8 @@ namespace ElementalWard
             var selfTeamIndex = _teamComponent ? _teamComponent.CurrentTeamIndex : TeamIndex.None;
             if(damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
             {
-                bool? friendliness = TeamCatalog.GetTeamInteraction(damageInfo.attackerBody.team, selfTeamIndex);
-                if(friendliness == true)
+                bool? isEnemy = TeamCatalog.GetTeamInteraction(damageInfo.attackerBody.team, selfTeamIndex);
+                if(isEnemy == false)
                 {
                     return;
                 }
@@ -124,7 +124,8 @@ namespace ElementalWard
             if(!IsAlive && _wasAlive)
             {
                 _wasAlive = false;
-                _deathBehaviour?.OnDeath(_lastDamageSource);
+                _deathBehaviour.AsValidOrNull()?.OnDeath(_lastDamageSource);
+                OnDeath?.Invoke(this);
             }
         }
     }

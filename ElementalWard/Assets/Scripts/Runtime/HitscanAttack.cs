@@ -111,8 +111,8 @@ namespace ElementalWard
 
             if(tracerEffect)
             {
-                tracerData.origin = raycastOrigin;
-                tracerData.start = hitPos;
+                tracerData.AddProperty(CommonVFXProperties.Origin, raycastOrigin);
+                tracerData.AddProperty(CommonVFXProperties.Start, hitPos);
                 FXManager.SpawnVisualFX(tracerEffect, tracerData);
             }
         }

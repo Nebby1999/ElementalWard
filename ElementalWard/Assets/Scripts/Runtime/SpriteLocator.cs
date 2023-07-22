@@ -57,8 +57,7 @@ namespace ElementalWard
             {
                 Vector3 pos = _spriteParentTransform.position;
                 spriteBaseTransform.position = pos;
-                Quaternion quat = Quaternion.Euler(0, _spriteParentTransform.rotation.eulerAngles.y, 0);
-                spriteBaseTransform.rotation = quat;
+                spriteBaseTransform.rotation = _spriteParentTransform.rotation;
             }
         }
     }

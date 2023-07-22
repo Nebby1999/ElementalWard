@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763300564714583734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.136}
+  m_LocalPosition: {x: 0, y: 0, z: 0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -199,14 +199,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 310e1be0c71e05c49b662807a3d1e8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 6616821231843013767}
-  allowVerticalRotation: 0
   rendererInfos:
   - renderer: {fileID: 8253633354894203804}
     defaultMaterial: {fileID: 2100000, guid: f5908fb5cc54f1942a653c9da05fd6fd, type: 2}
     defaultShadowCastingMode: 2
     defaultStaticShadowCaster: 0
     defaultRecieveShadows: 1
+  allowVerticalRotation: 0
+  _lookAtTransform: {fileID: 0}
+  _eightDirectionalSpriteRendererAnimator: {fileID: 9177879273809039117}
+  body: {fileID: 6616821231843013767}
   disableOnDeath:
   - {fileID: 3033883238775562374}
 --- !u!114 &3033883238775562374
@@ -294,6 +296,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   bobDuration: 2
+  overlay: {fileID: 2100000, guid: 6b517542e853cac4c9e09781c57b694f, type: 2}
 --- !u!1 &5099703244236605032
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,9 +346,11 @@ GameObject:
   - component: {fileID: 5917711785724713918}
   - component: {fileID: 9177879273809039117}
   - component: {fileID: -2747894891459473032}
-  - component: {fileID: 8832952466864527598}
+  - component: {fileID: 6452892723494767529}
   - component: {fileID: 8972398675560155654}
   - component: {fileID: 6794365482305020246}
+  - component: {fileID: 8832952466864527598}
+  - component: {fileID: 5391966210485815897}
   - component: {fileID: -2908713665425041059}
   - component: {fileID: -3563804340212239540}
   - component: {fileID: 6385374238828156273}
@@ -399,7 +404,7 @@ MonoBehaviour:
   _baseHealth: 50
   _baseShield: 0
   _baseRegen: 0
-  _baseMovementSpeed: 4
+  _baseMovementSpeed: 2
   _baseAttackSpeed: 1
   _baseDamage: 10
   _baseArmor: 0
@@ -413,7 +418,7 @@ MonoBehaviour:
   _lvlDamage: 1.5
   _lvlArmor: 0
   aimOriginTransform: {fileID: 0}
-  sprintSpeedMultiplier: 3
+  sprintSpeedMultiplier: 1.5
   references:
     version: 2
     RefIds: []
@@ -430,6 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultMaxHealth: 100
+  hurtBoxGroup: {fileID: 3929800432298406685}
 --- !u!114 &1637553487392259605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desiredCameraTransform: {fileID: 8987736761047858191}
---- !u!114 &8832952466864527598
+--- !u!114 &6452892723494767529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,29 +513,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5338726505615578528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2341f131e262124383ad590c173b240, type: 3}
+  m_Script: {fileID: 11500000, guid: 947bfa0a91ad7084f853ee9825a0cac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill1:
-    stateType:
-      _assemblyQualifiedName: 
-    stateMachineName: Weapon
-    skillCooldown: 4
-  skill2:
-    stateType:
-      _assemblyQualifiedName: 
-    stateMachineName: 
-    skillCooldown: 0
-  skill3:
-    stateType:
-      _assemblyQualifiedName: 
-    stateMachineName: 
-    skillCooldown: 0
-  skill4:
-    stateType:
-      _assemblyQualifiedName: 
-    stateMachineName: 
-    skillCooldown: 0
+  deathStateMachine: {fileID: 8972398675560155654}
+  deathState:
+    _assemblyQualifiedName: EntityStates.GenericCharacterDeath, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  idleStateMachines:
+  - {fileID: 6794365482305020246}
 --- !u!114 &8972398675560155654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,6 +560,52 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &8832952466864527598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2341f131e262124383ad590c173b240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill1:
+    stateType:
+      _assemblyQualifiedName: EntityStates.WanderingSoul.FireBone, ElementalWard,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    stateMachineName: Weapon
+    skillCooldown: 2
+  skill2:
+    stateType:
+      _assemblyQualifiedName: 
+    stateMachineName: 
+    skillCooldown: 0
+  skill3:
+    stateType:
+      _assemblyQualifiedName: 
+    stateMachineName: 
+    skillCooldown: 0
+  skill4:
+    stateType:
+      _assemblyQualifiedName: 
+    stateMachineName: 
+    skillCooldown: 0
+--- !u!114 &5391966210485815897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d223f84ee9c997243a61724cc5a4809e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultTeam: {fileID: 11400000, guid: 4b7dfd7da9d2f2b40b1709ab23ccdffc, type: 2}
 --- !u!114 &-2908713665425041059
 MonoBehaviour:
   m_ObjectHideFlags: 0

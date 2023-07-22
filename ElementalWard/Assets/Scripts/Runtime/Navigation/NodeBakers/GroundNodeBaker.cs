@@ -35,7 +35,7 @@ namespace ElementalWard.Navigation
                     BakeNode(nodeGrid, nodeRadius, position, nodeDiameter, serializedNodes, worldBottomLeft, x, y);
                 }
             }
-            BlurPenaltyMap(ref serializedNodes, nodeGrid, 2);
+            BlurPenaltyMap(ref serializedNodes, nodeGrid, 3);
             nodeGrid.SetSerializedNodes(serializedNodes);
         }
 
@@ -78,7 +78,7 @@ namespace ElementalWard.Navigation
             bool gotCustomModifier = false;
             foreach(var hit in hits)
             {
-                if(hit.collider && hit.collider.TryGetComponent<NodeModifier>(out var modifier))
+                if(hit.collider && hit.collider.TryGetComponent<GroundNodeModifier>(out var modifier))
                 {
                     open = !modifier.isObstacle;
                     penalty = modifier.movementPenalty;

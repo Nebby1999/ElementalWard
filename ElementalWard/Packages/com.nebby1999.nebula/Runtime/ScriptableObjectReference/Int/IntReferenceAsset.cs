@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Nebula
 {
     [CreateAssetMenu(menuName = "Nebula/ValueReferences/IntReference", fileName = "New IntReference")]
-    public class IntReferenceAsset : ScriptableObject
+    public class IntReferenceAsset : NebulaScriptableObject
     {
         public int intValue;
     }
