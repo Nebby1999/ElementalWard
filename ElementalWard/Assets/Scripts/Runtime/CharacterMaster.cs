@@ -14,7 +14,6 @@ namespace ElementalWard
 
         [SerializeField] private bool _spawnOnStart;
         [SerializeField, ForcePrefab] private GameObject _defaultBodyPrefab;
-        [SerializeField] private TeamDef _defaultTeam;
         [SerializeField] private uint _level;
         [SerializeField] private float _currentXP;
         [SerializeField] private float _neededXPForNextLevel;
@@ -27,8 +26,11 @@ namespace ElementalWard
         public CharacterBody CurrentBody { get; private set; }
         public CharacterMasterAI CharacterMasterAI { get; private set; }
         public PlayableCharacterMaster PlayableCharacterMaster { get; private set; }
+        public MasterIndex MasterIndex { get; internal set; }
+        internal bool IsGod { get; set; }
         public event Action<CharacterBody> OnBodySpawned;
         public event Action OnBodyLost;
+        public TeamDef defaultTeam;
         public static event Action<CharacterMaster> OnLevelUpGlobal;
 
         private void Awake()
@@ -46,6 +48,10 @@ namespace ElementalWard
         }
         private void FixedUpdate()
         {
+            if(CurrentBody && CurrentBody.HealthComponent)
+            {
+                CurrentBody.HealthComponent.IsImmune = IsGod;
+            }
             if (_currentXP > _neededXPForNextLevel)
             {
                 _level++;
@@ -79,13 +85,12 @@ namespace ElementalWard
 
             TeamComponent teamComponent = go.GetComponent<TeamComponent>();
             if(teamComponent)
-                teamComponent.CurrentTeamIndex = _defaultTeam ? _defaultTeam.TeamIndex : TeamIndex.None;
+                teamComponent.CurrentTeamIndex = defaultTeam ? defaultTeam.TeamIndex : TeamIndex.None;
 
             OnBodySpawned?.Invoke(CurrentBody);
         }
 
-        [ContextMenu("Respawn")]
-        private void Respawn()
+        public void Respawn()
         {
             if(!Application.isPlaying)
             {

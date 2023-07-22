@@ -68,6 +68,7 @@ namespace ElementalWard
         private bool _isSprinting;
         public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
         private bool statsDirty;
+        public BodyIndex BodyIndex { get; internal set; }
         private void Awake()
         {
             InputBank = GetComponent<CharacterInputBank>();

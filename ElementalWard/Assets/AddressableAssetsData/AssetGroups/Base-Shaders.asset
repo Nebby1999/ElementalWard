@@ -22,31 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 672015b7ca7f2654f9e0ed73fdb7db7d
-    m_Address: ElementalWard/Base/Shaders/TextParticles.shadergraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 459dd43e205edcd49a1a80e5c7d8680f
-    m_Address: ElementalWard/Base/Shaders/Includes/FragCalcs.hlsl
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6420dc3fb2a7c66489576ec3e9342327
-    m_Address: ElementalWard/Base/Shaders/SubGraphs/Branch.shadersubgraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c0a3a02bcd56a444eb0d4fbb197ff0cb
-    m_Address: ElementalWard/Base/Shaders/SubGraphs/GetTextureColorAndAlpha.shadersubgraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c079017da74864d4b853c52142a6cf42
-    m_Address: ElementalWard/Base/Shaders/SubGraphs/Mask.shadersubgraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb3e96108b1751d4a8e5effa8635c00c
     m_Address: ElementalWard/Base/Shaders/SubGraphs/RecolorRamp.shadersubgraph
     m_ReadOnly: 0
@@ -62,13 +37,38 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 73f42b8782bc71b48990a19c26bb36c0
-    m_Address: ElementalWard/Base/Shaders/Shader Graphs_FX.mat
+  - m_GUID: 672015b7ca7f2654f9e0ed73fdb7db7d
+    m_Address: ElementalWard/Base/Shaders/TextParticles.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 459dd43e205edcd49a1a80e5c7d8680f
+    m_Address: ElementalWard/Base/Shaders/Includes/FragCalcs.hlsl
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 943eca1e99a09dd48ba817dfffe8a5ed
     m_Address: ElementalWard/Base/Shaders/SubGraphs/BlendSelection.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6420dc3fb2a7c66489576ec3e9342327
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/Branch.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 73f42b8782bc71b48990a19c26bb36c0
+    m_Address: ElementalWard/Base/Shaders/Shader Graphs_FX.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c079017da74864d4b853c52142a6cf42
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/Mask.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0a3a02bcd56a444eb0d4fbb197ff0cb
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/GetTextureColorAndAlpha.shadersubgraph
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

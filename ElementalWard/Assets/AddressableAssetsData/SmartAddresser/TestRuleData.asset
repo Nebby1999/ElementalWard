@@ -324,6 +324,34 @@ MonoBehaviour:
               - rid: 6975382160443441155
         _labelProviderInternal:
           rid: 6975382160443441154
+      - _id: b9140001-ac2d-49ba-b566-4a7a73d502b8
+        _name:
+          _value: CharacterMasters
+        _assetGroups:
+          _internalList:
+          - _id: 8570c493-47de-4fe8-9b9f-fe3ed4f882b9
+            _name:
+              _value: Group
+            _filters:
+              _internalList:
+              - rid: 6975382544470507527
+              - rid: 6975382544470507528
+        _labelProviderInternal:
+          rid: 6975382544470507522
+      - _id: 8edbf7b3-4dbd-4f56-9c6b-45879393acef
+        _name:
+          _value: CharacterBodies
+        _assetGroups:
+          _internalList:
+          - _id: 18c429b6-7c3d-48ad-b0b0-f293ad7ae2de
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 6975382544470507530
+              - rid: 6975382544470507531
+        _labelProviderInternal:
+          rid: 6975382544470507529
     _versionRules:
       _internalList: []
   references:
@@ -526,6 +554,86 @@ MonoBehaviour:
             _assemblyQualifiedName: ElementalWard.TeamDef, ElementalWard, Version=0.0.0.0,
               Culture=neutral, PublicKeyToken=null
         _matchWithDerivedTypes: 1
+    - rid: 6975382544470507522
+      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules,
+        asm: SmartAddresser.Editor}
+      data:
+        _label: CharacterMasters
+    - rid: 6975382544470507527
+      type: {class: IsPrefab, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
+        asm: ElementalWard.Editor}
+      data:
+        _id: 7521da33-7517-4fe3-bd28-8409b3d4da11
+        prefabPaths:
+        - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/TestBody.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/TestMaster.prefab
+        - Assets/ElementalWard/Base/Characters/WanderingSoul/Projectile/BoneSpikeProjectile.prefab
+        - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulBody.prefab
+        - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulMaster.prefab
+        - Assets/ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
+        - Assets/ElementalWard/Base/Core/ElementalWardApplication.prefab
+        - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
+        - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
+        - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
+        - Assets/Scripts/Editor/Assets/NewBossRoom.prefab
+        - Assets/Scripts/Editor/Assets/NewEntranceRoom.prefab
+        - Assets/Scripts/Editor/Assets/NewRoom.prefab
+    - rid: 6975382544470507528
+      type: {class: HasComponent, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
+        asm: ElementalWard.Editor}
+      data:
+        _id: 01adbf48-2c2a-4e03-bbfa-12f69f9bf997
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: CharacterMaster
+            _fullName: ElementalWard.CharacterMaster
+            _assemblyQualifiedName: ElementalWard.CharacterMaster, ElementalWard,
+              Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedComponents: 1
+    - rid: 6975382544470507529
+      type: {class: ConstantLabelProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.LabelRules,
+        asm: SmartAddresser.Editor}
+      data:
+        _label: CharacterBodies
+    - rid: 6975382544470507530
+      type: {class: IsPrefab, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
+        asm: ElementalWard.Editor}
+      data:
+        _id: 3b8969c9-80a1-4ac0-bbdf-d20887c3f925
+        prefabPaths:
+        - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/TestBody.prefab
+        - Assets/ElementalWard/Base/Characters/TestPlayer/TestMaster.prefab
+        - Assets/ElementalWard/Base/Characters/WanderingSoul/Projectile/BoneSpikeProjectile.prefab
+        - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulBody.prefab
+        - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulMaster.prefab
+        - Assets/ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
+        - Assets/ElementalWard/Base/Core/ElementalWardApplication.prefab
+        - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
+        - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
+        - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
+        - Assets/Scripts/Editor/Assets/NewBossRoom.prefab
+        - Assets/Scripts/Editor/Assets/NewEntranceRoom.prefab
+        - Assets/Scripts/Editor/Assets/NewRoom.prefab
+    - rid: 6975382544470507531
+      type: {class: HasComponent, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
+        asm: ElementalWard.Editor}
+      data:
+        _id: 24740f1b-e67d-473d-ad08-90ee9f763c31
+        _type:
+          _isListMode: 0
+          _values:
+          - _name: CharacterBody
+            _fullName: ElementalWard.CharacterBody
+            _assemblyQualifiedName: ElementalWard.CharacterBody, ElementalWard, Version=0.0.0.0,
+              Culture=neutral, PublicKeyToken=null
+        _matchWithDerivedComponents: 1
     - rid: 7036998951873019904
       type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules,
         asm: SmartAddresser.Editor}

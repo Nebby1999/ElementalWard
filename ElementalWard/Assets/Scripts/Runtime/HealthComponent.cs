@@ -54,6 +54,8 @@ namespace ElementalWard
         private IOnTakeDamage[] _takeDamageReceivers = Array.Empty<IOnTakeDamage>();
         private IOnIncomingDamage[] _incomingDamageReceivers = Array.Empty<IOnIncomingDamage>();
         private bool _wasAlive;
+
+        internal bool IsImmune { get; set; }
         private void Awake()
         {
             _elementProvider = GetComponent<IElementProvider>();
@@ -73,6 +75,9 @@ namespace ElementalWard
 
         public void TakeDamage(DamageInfo damageInfo)
         {
+            if (IsImmune)
+                return;
+
             var selfTeamIndex = _teamComponent ? _teamComponent.CurrentTeamIndex : TeamIndex.None;
             if(damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
             {

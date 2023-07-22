@@ -10,6 +10,7 @@ using Cinemachine;
 using Nebula;
 using System.Linq.Expressions;
 using UnityEngine.UI;
+using Nebula.Console;
 
 namespace ElementalWard
 {
@@ -119,6 +120,73 @@ namespace ElementalWard
         public void OnElementScroll(InputAction.CallbackContext ctx)
         {
             _rawScrollInput = ctx.ReadValue<Vector2>();
+        }
+
+        [ConsoleCommand("god", "Makes you immune to damage.")]
+        private static void CCGod(ConsoleCommandArgs args)
+        {
+            bool isGod = args.GetArgBool(0);
+
+            var masterInstance = FindObjectOfType<PlayableCharacterMaster>();
+            if (!masterInstance)
+            {
+                Debug.LogError("There is no playable character master instance");
+            }
+            if (!masterInstance.ManagedMaster)
+            {
+                Debug.LogError("The current playable character master instance is not managing any Character Master.");
+                return;
+            }
+            var currentValue = masterInstance.ManagedMaster.IsGod;
+            masterInstance.ManagedMaster.IsGod = !currentValue;
+
+            Debug.Log(masterInstance.ManagedMaster.IsGod ? $"{masterInstance} is now a God." : $"{masterInstance} is no longer a God.");
+        }
+
+        [ConsoleCommand("respawn", "Respawns you with your current body")]
+        private static void CCRespawn(ConsoleCommandArgs args)
+        {
+            args.CheckArgCount(0);
+            var masterInstance = FindObjectOfType<PlayableCharacterMaster>();
+            if (!masterInstance)
+            {
+                Debug.LogError("There is no playable character master isntance.");
+                return;
+            }
+            if (!masterInstance.ManagedMaster)
+            {
+                Debug.LogError("The current playable character master instance is not managing any Character Master.");
+                return;
+            }
+            Debug.Log($"Respawning {masterInstance}");
+            masterInstance.ManagedMaster.Respawn();
+        }
+
+        [ConsoleCommand("spawn_as", "Sets your body prefab to a new prefab and respawns you. Arg0=\"string, new body name.\"")]
+        private static void CCSpawnAs(ConsoleCommandArgs args)
+        {
+            args.CheckArgCount(1);
+            string bodyName = args.GetArgString(0);
+            var masterInstance = FindObjectOfType<PlayableCharacterMaster>();
+            BodyIndex index = BodyCatalog.FindBodyIndex(bodyName);
+            if (index == BodyIndex.None)
+            {
+                Debug.LogError($"There is no body prefab of name {bodyName}");
+                return;
+            }
+            GameObject bodyPrefab = BodyCatalog.GetBodyPrefab(index);
+            if (!masterInstance)
+            {
+                Debug.LogError("There is no playable character master isntance.");
+                return;
+            }
+            if (!masterInstance.ManagedMaster)
+            {
+                Debug.LogError("The current playable character master instance is not managing any Character Master.");
+                return;
+            }
+            Debug.Log($"Setting {masterInstance}'s prefab to {bodyPrefab} and respawning.");
+            masterInstance.ManagedMaster.SetCharacterPrefab(bodyPrefab, true);
         }
 
         public struct PlayerInputs

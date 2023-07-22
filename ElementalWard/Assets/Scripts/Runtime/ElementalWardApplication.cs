@@ -37,6 +37,8 @@ namespace ElementalWard
 
         private IEnumerator InitializeCatalogs()
         {
+            yield return MasterCatalog.Initialize();
+            yield return BodyCatalog.Initialize();
             yield return EntityStateCatalog.Initialize();
             yield return TeamCatalog.Initialize();
             yield return BuffCatalog.Initialize();

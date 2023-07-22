@@ -1,0 +1,44 @@
+using SmartAddresser.Editor.Core.Models.Shared.AssetGroups;
+using SmartAddresser.Editor.Core.Tools.Addresser.Shared;
+using SmartAddresser.Editor.Foundation.ListableProperty;
+using System;
+using UnityEditor.IMGUI.Controls;
+using UnityEditor;
+using UnityEngine;
+
+namespace ElementalWard.Editor.SmartAddresser
+{
+    public class CustomTypeReferenceListablePropertyGUI : ListablePropertyGUI<TypeReference>
+    {
+        private const string TempControlName = "CustomTypeReferenceListablePropertyGUI.TempControl";
+        public CustomTypeReferenceListablePropertyGUI(string displayName, ListableProperty<TypeReference> list)
+            : base(displayName, list, (rect, label, value, onValueChanged) =>
+            {
+                var buttonText = value.Name;
+                if (string.IsNullOrEmpty(buttonText))
+                    buttonText = "-";
+
+                var propertyRect = EditorGUI.PrefixLabel(rect, new GUIContent(label));
+                GUI.SetNextControlName(TempControlName);
+                if (EditorGUI.DropdownButton(propertyRect, new GUIContent(buttonText), FocusType.Passive))
+                {
+                    GUI.FocusControl(TempControlName);
+                    var dropdown = new ComponentSelectDropdown(new AdvancedDropdownState());
+
+                    void OnItemSelected(ComponentSelectDropdown.Item item)
+                    {
+                        value.Name = item.TypeName;
+                        value.FullName = item.FullName;
+                        value.AssemblyQualifiedName = item.AssemblyQualifiedName;
+                        onValueChanged(value);
+                        dropdown.OnItemSelected -= OnItemSelected;
+                    }
+
+                    dropdown.OnItemSelected += OnItemSelected;
+                    dropdown.Show(propertyRect);
+                }
+            }, () => new TypeReference())
+        {
+        }
+    }
+}

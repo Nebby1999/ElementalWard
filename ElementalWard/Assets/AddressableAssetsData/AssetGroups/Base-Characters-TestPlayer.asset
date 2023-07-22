@@ -31,7 +31,8 @@ MonoBehaviour:
   - m_GUID: fd67e06c4dac8744bb19ec472ef5350b
     m_Address: ElementalWard/Base/Characters/TestPlayer/TestBody.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - CharacterBodies
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc563c421bdb1bb4780b1ee355b6376b
     m_Address: ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
@@ -46,7 +47,8 @@ MonoBehaviour:
   - m_GUID: b4c34184ec23db44f8561c05e84cd6e4
     m_Address: ElementalWard/Base/Characters/TestPlayer/TestMaster.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - CharacterMasters
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b432ded47bcb1ec4682d4803e5f18adc
     m_Address: ElementalWard/Base/Characters/TestPlayer

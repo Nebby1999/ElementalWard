@@ -44,6 +44,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - TeamDefs
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa701dbcd51a4594b84139e4147c2d54
+    m_Address: ElementalWard/Base/Core/GroundNodeBaker.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1a9e2141d3e0fa04290025009c28892c
     m_Address: ElementalWard/Base/Core/ElementalWardApplication.prefab
     m_ReadOnly: 0
@@ -54,18 +59,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a39892892f75ca947a718c47888ec5a7
-    m_Address: ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: aa701dbcd51a4594b84139e4147c2d54
-    m_Address: ElementalWard/Base/Core/GroundNodeBaker.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 265f5c4bb1cccf6428f15bba3e297a17
     m_Address: ElementalWard/Base/Core/AirNodeBaker.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a39892892f75ca947a718c47888ec5a7
+    m_Address: ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
