@@ -33,7 +33,7 @@ namespace ElementalWard.Commands
             }
             GameObject masterPrefab = MasterCatalog.GetMasterPrefab(index);
             TeamIndex teamIndex = TeamCatalog.FindTeamIndex(teamDefName);
-            ElementIndex elementIndex = ElementCatalog.FindElementIndex(elementDefName);
+            ElementIndex elementIndex = elementDefName != null ? ElementCatalog.FindElementIndex(elementDefName) : ElementIndex.None;
             ElementDef elementDef = elementIndex == ElementIndex.None ? null : ElementCatalog.GetElementDef(elementIndex);
             TeamDef teamDef = teamIndex == TeamIndex.None ? null : TeamCatalog.GetTeamDef(teamIndex);
             Vector3 pos = Vector3.zero;
