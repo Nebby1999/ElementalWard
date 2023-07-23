@@ -34,6 +34,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterBodies
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d38ca9594b69134eabb66212758247f
+    m_Address: ElementalWard/Base/Characters/TestPlayer/TestMonsterMaster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterMasters
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc563c421bdb1bb4780b1ee355b6376b
     m_Address: ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
     m_ReadOnly: 0
@@ -54,12 +60,6 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/Characters/TestPlayer
     m_ReadOnly: 0
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4d38ca9594b69134eabb66212758247f
-    m_Address: ElementalWard/Base/Characters/TestPlayer/TestMonsterMaster.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - CharacterMasters
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

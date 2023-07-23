@@ -100,11 +100,11 @@ namespace ElementalWard
 
             var pos = transform.position;
             var rot = transform.rotation;
-            if(CurrentBody)
+            /*if(CurrentBody)
             {
                 pos = CurrentBody.transform.position;
                 rot = CurrentBody.transform.rotation;
-            }
+            }*/
             Spawn(pos, rot);
         }
         public void SetCharacterPrefab(GameObject characterObject, bool forceRespawn = true)
