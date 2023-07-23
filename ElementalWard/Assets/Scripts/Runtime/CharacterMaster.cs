@@ -72,7 +72,7 @@ namespace ElementalWard
             _neededXPForNextLevel = CalculateExperienceForLevel(_level + 1);
             OnLevelUpGlobal?.Invoke(this);
         }
-        public void SpawnHere() => Spawn(transform.position, Quaternion.identity);
+        public void SpawnHere() => Spawn(transform.position, transform.rotation);
         public void Spawn(Vector3 position, Quaternion rotation)
         {
             if (CurrentBody)

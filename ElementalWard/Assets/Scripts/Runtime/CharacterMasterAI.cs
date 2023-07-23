@@ -156,6 +156,7 @@ namespace ElementalWard
             if (_path.Count == 0)
             {
                 _pathfindingMovementVector = Vector3.zero;
+                _pathfindingLookRotation = CurrentBodyComponents.transform.rotation;
                 return;
             }
 
@@ -263,6 +264,7 @@ namespace ElementalWard
         private void GetBodyComponents(CharacterBody obj)
         {
             CurrentBodyComponents = new BodyComponents(obj.gameObject);
+            _pathfindingLookRotation = CurrentBodyComponents.transform.rotation;
             enabled = true;
         }
 

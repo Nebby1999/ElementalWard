@@ -42,6 +42,7 @@ namespace ElementalWard
 
         private void Awake()
         {
+            characterRotation = transform.rotation;
             Motor = GetComponent<KinematicCharacterMotor>();
             Motor.CharacterController = this;
             Body = GetComponent<CharacterBody>();

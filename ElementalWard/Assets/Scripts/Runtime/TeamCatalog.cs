@@ -1,8 +1,10 @@
 using Nebula;
+using Nebula.Console;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -80,6 +82,18 @@ namespace ElementalWard
                     invalidNameTracker++;
                 }
             }
+        }
+
+
+        [ConsoleCommand("list_teams", "Lists all the Teams available")]
+        private static void CCListTeams(ConsoleCommandArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var (teamName, teamIndex) in teamNameToIndex)
+            {
+                sb.AppendLine($"{teamName} ({teamIndex})");
+            }
+            Debug.Log(sb.ToString());
         }
     }
 }

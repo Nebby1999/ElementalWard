@@ -34,7 +34,7 @@ namespace Nebula.Console
             List<ConsoleCommandAttribute> attributes = new List<ConsoleCommandAttribute>();
             if (!SearchableAttribute.TryGetInstances<ConsoleCommandAttribute>(attributes))
                 return;
-
+            attributes = attributes.OrderBy(x => x.commandName).ToList();
             foreach(ConsoleCommandAttribute attribute in attributes)
             {
                 consoleCommands[attribute.commandName] = new ConsoleCommand

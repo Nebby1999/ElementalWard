@@ -56,6 +56,7 @@ namespace ElementalWard
         public bool IsGrounded => Motor.GroundingStatus.IsStableOnGround;
         private void Awake()
         {
+            characterRotation = transform.rotation;
             Motor = GetComponent<KinematicCharacterMotor>();
             Motor.CharacterController = this;
             Body = GetComponent<CharacterBody>();

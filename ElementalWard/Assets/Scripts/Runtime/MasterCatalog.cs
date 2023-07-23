@@ -1,8 +1,10 @@
 using Nebula;
+using Nebula.Console;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -67,6 +69,17 @@ namespace ElementalWard
                     invalidNameTracker++;
                 }
             }
+        }
+
+        [ConsoleCommand("list_masters", "Lists all the masters available.")]
+        private static void CCListMasters(ConsoleCommandArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var (masterName, masterIndex) in _masterNameToIndex)
+            {
+                sb.AppendLine($"{masterName} ({masterIndex})");
+            }
+            Debug.Log(sb.ToString());
         }
     }
 }

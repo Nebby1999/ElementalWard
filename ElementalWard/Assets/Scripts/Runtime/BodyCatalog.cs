@@ -1,8 +1,10 @@
 using Nebula;
+using Nebula.Console;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -67,6 +69,18 @@ namespace ElementalWard
                     invalidNameTracker++;
                 }
             }
+        }
+
+
+        [ConsoleCommand("list_bodies", "Lists all the bodies available.")]
+        private static void CCListBodies(ConsoleCommandArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var (bodyName, bodyIndex) in _bodyNameToIndex)
+            {
+                sb.AppendLine($"{bodyName} ({bodyIndex})");
+            }
+            Debug.Log(sb.ToString());
         }
     }
 }

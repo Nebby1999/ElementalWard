@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ElementalWard;
 using Nebula;
+using Nebula.Console;
 using Nebula.Serialization;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -97,6 +98,17 @@ namespace ElementalWard
                     invalidNameTracker++;
                 }
             }
+        }
+
+        [ConsoleCommand("list_elements", "Lists all the elements available.")]
+        private static void CCListElements(ConsoleCommandArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var (elementName, elementIndex) in elementNameToIndex)
+            {
+                sb.AppendLine($"{elementName} ({elementIndex})");
+            }
+            Debug.Log(sb.ToString());
         }
     }
 }

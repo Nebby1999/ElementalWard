@@ -1,8 +1,11 @@
 using Nebula;
+using Nebula.Console;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -161,6 +164,17 @@ namespace ElementalWard
                     invalidNameTracker++;
                 }
             }
+        }
+
+        [ConsoleCommand("list_buffs", "Lists all the buffs available.")]
+        private static void CCListBuffs(ConsoleCommandArgs args)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var (buffName, buffIndex) in buffNametoBuffIndex)
+            {
+                sb.AppendLine($"{buffName} ({buffIndex})");
+            }
+            Debug.Log(sb.ToString());
         }
     }
 }
