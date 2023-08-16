@@ -1,2 +1,2 @@
 # ElementalWard
- Epic
+This is Nebby Guerrero's thesis project, all rights reserved
