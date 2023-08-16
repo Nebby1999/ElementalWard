@@ -21,7 +21,7 @@ namespace EntityStates.WanderingSoul.AI
             else
             {
                 skill1Press = false;
-                aimDir = ICharacterMovementController != null ? ICharacterMovementController.Motor.CharacterForward : BodyTransform.forward;
+                aimDir = ICharacterMovementController != null && ICharacterMovementController.Motor ? ICharacterMovementController.Motor.CharacterForward : BodyTransform.forward;
             }
         }
 

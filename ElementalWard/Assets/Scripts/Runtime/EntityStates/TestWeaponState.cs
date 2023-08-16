@@ -8,23 +8,28 @@ namespace ElementalWard
 {
     public class TestWeaponState : BaseCharacterState
     {
-        public ElementIndex elementIndex = ElementIndex.None;
-        public ElementDef elementToFire;
+        public static ElementDef element;
+        public bool useFire;
         public override void OnEnter()
         {
             base.OnEnter();
         }
 
+        public override void Update()
+        {
+            ElementChange();
+        }
         public override void FixedUpdate()
         {
             base.FixedUpdate();
 
-            ElementChange();
-
             if(CharacterInputBank && CharacterInputBank.skill1Button.down)
             {
                 var fireState = new TestWeaponStateFire();
-                fireState.elementDef = elementToFire;
+
+                if(useFire)
+                    fireState.elementDef = element;
+
                 outer.SetNextState(fireState);
                 //Go to fire state and set elementDef;
             }
@@ -32,38 +37,9 @@ namespace ElementalWard
 
         public void ElementChange()
         {
-            if (CharacterInputBank.elementAxis == 0)
-                return;
-
-            if (CharacterInputBank.elementAxis > 0)
+            if(Input.GetKeyDown(KeyCode.Tab))
             {
-                ElementIndex newIndex = elementIndex + 1;
-                ElementDef newDef = ElementCatalog.GetElementDef(newIndex);
-                if (newDef)
-                {
-                    elementIndex = newIndex;
-                    elementToFire = newDef;
-                }
-                else
-                {
-                    elementIndex = ElementIndex.None;
-                    elementToFire = null;
-                }
-            }
-            else if (CharacterInputBank.elementAxis < 0)
-            {
-                ElementIndex newIndex = elementIndex - 1;
-                ElementDef newDef = ElementCatalog.GetElementDef(newIndex);
-                if (newDef)
-                {
-                    elementIndex = newIndex;
-                    elementToFire = newDef;
-                }
-                else
-                {
-                    elementIndex = ElementIndex.None;
-                    elementToFire = null;
-                }
+                useFire = !useFire;
             }
         }
 

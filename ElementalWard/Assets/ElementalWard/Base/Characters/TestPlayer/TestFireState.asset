@@ -29,7 +29,7 @@ MonoBehaviour:
     - fieldName: testType
       serializedValue:
         stringValue: '{"AssemblyQualifiedName":"EntityStates.TestWeaponStateFire+TestType,
-          ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","values":"Projectile"}'
+          ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","values":"Raycast"}'
         objectReferenceValue: {fileID: 0}
     - fieldName: explosionFX
       serializedValue:

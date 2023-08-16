@@ -136,8 +136,7 @@ namespace EntityStates
         {
             if(state is TestWeaponState testWeaponState)
             {
-                testWeaponState.elementIndex = elementDef.AsValidOrNull()?.ElementIndex ?? ElementIndex.None;
-                testWeaponState.elementToFire = elementDef;
+                testWeaponState.useFire = elementDef != null;
             }
         }
     }

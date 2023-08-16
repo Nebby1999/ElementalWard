@@ -76,7 +76,7 @@ namespace Nebula
                 {
                     ""name"": ""binding"",
                     ""id"": ""c55477c5-ff05-4b8f-81ce-ea559f18cf68"",
-                    ""path"": ""<Keyboard>/backquote"",
+                    ""path"": ""<Keyboard>/semicolon"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
