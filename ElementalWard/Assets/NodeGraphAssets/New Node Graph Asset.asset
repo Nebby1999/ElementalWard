@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f56a0ee95862ed4687fdfebf99de79e, type: 3}
+  m_Name: New Node Graph Asset
+  m_EditorClassIdentifier: 
+  serializedNodes:
+  - worldPosition: {x: 6.8191853, y: 1.545, z: -3.932012}
+    serializedPathNodeLinkIndices: 00000000
+  - worldPosition: {x: 5.0638366, y: 8.675636e-17, z: -3.907159}
+    serializedPathNodeLinkIndices: 
+  serializedLinks:
+  - nodeAIndex: 0
+    nodeBIndex: 1
+    distance: 2.338566
+    normal:
+      x: 0.750609
+      y: 0.6606612
+      z: -0.010627449

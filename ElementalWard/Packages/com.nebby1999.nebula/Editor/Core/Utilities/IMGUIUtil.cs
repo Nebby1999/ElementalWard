@@ -76,6 +76,27 @@ namespace Nebula.Editor
             return buttonVal;
         }
 
+        public static bool ConditionalButtonAction(Action action, bool condition, string text, string tooltip = null, Texture texture = null)
+        {
+            return ConditionalButtonAction(action, () => condition, text, tooltip, texture);
+        }
+        public static bool ConditionalButtonAction(Action action, bool condition, GUIContent content)
+        {
+            return ConditionalButtonAction(action, () => condition, content);
+        }
+
+        public static bool ConditionalButtonAction(Action action, Func<bool> condition, string text, string tooltip = null, Texture texture = null)
+        {
+            return ConditionalButtonAction(action, condition, new GUIContent(text, texture, tooltip));
+        }
+
+        public static bool ConditionalButtonAction(Action action, Func<bool> condition, GUIContent content)
+        {
+            var val = ConditionalButton(condition, content);
+            if (val)
+                action();
+            return val;
+        }
         public static bool ButtonAction(Action action, string text, string tooltip = null, Texture texture = null, params GUILayoutOption[] options) => ButtonAction(action, new GUIContent(text, texture, tooltip), options);
         
         public static bool ButtonAction(Action action, GUIContent label, params GUILayoutOption[] options)
