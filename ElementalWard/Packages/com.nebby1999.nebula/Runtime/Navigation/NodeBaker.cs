@@ -55,7 +55,7 @@ namespace Nebula.Navigation
             }
             finally
             {
-                //_mover?.Dispose();
+                _mover?.Dispose();
             }
         }
 
@@ -87,14 +87,26 @@ namespace Nebula.Navigation
                     continue;
 
                 _mover.SetMoverPosition(nodeA.worldPosition, true);
-                //throw new NullReferenceException("kek");
                 _mover.DestinationPosition = nodeB.worldPosition;
 
+                Physics.SyncTransforms();
                 _mover.Move();
-                if(_mover.MoverFeetPosition == _mover.DestinationPosition)
+               
+                if(_mover.MoverFeetPosition != _mover.DestinationPosition)
                 {
-                    Debug.Log($"Mover went from Node{nodeAIndex} ({nodeA.worldPosition}) to Node{nodeBIndex} ({nodeB.worldPosition})");
+                    continue;
                 }
+
+                SerializedPathNodeLink link = new()
+                {
+                    nodeAIndex = nodeAIndex,
+                    nodeBIndex = nodeBIndex,
+                    normal = nodeB.worldPosition - nodeA.worldPosition,
+                    slopeAngle = 0,
+                    distance = distance
+                };
+                NodeGraphAsset.serializedLinks.Add(link);
+                nodeA.serializedPathNodeLinkIndices.Add(NodeGraphAsset.serializedLinks.Count - 1);
             }
         }
 
@@ -127,7 +139,9 @@ namespace Nebula.Navigation
                     return feetPos;
                 }
             }
+            public GameObject MoverObject => _moverObject;
             private GameObject _moverObject;
+            public CharacterController MoverCharacterController => _moverCharacterController;
             private CharacterController _moverCharacterController;
             private Transform _transform;
 
@@ -139,11 +153,8 @@ namespace Nebula.Navigation
             public void Move()
             {
                 Vector3 motion = DestinationPosition - MoverPosition;
-                Vector3 fuck = _transform.position;
-                fuck.y += 2;
+                motion = _transform.TransformDirection(motion);
                 _moverCharacterController.Move(motion);
-                throw new NullReferenceException("Lol");
-                _transform.position = fuck;
             }
 
             public Mover()
@@ -151,7 +162,6 @@ namespace Nebula.Navigation
                 _moverObject = GameObject.CreatePrimitive(PrimitiveType.Capsule);
                 _moverObject.name = "MoverTester";
                 Component.DestroyImmediate(_moverObject.GetComponent<CapsuleCollider>(), true);
-                //_moverObject.hideFlags = HideFlags.HideInInspector | HideFlags.HideAndDontSave;
                 _moverCharacterController = _moverObject.AddComponent<CharacterController>();
                 _transform = _moverObject.transform;
             }
