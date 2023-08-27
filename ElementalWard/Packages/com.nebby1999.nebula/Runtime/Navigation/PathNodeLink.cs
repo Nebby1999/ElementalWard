@@ -23,6 +23,10 @@ namespace Nebula.Navigation
         /// </summary>
         public float distance = float.NaN;
         /// <summary>
+        /// The angle of this path node during baking calculation;
+        /// </summary>
+        public float slopeAngle = float.NaN;
+        /// <summary>
         /// The normal direction of the link, defaults to a float3 with XYZ components set to NAN
         /// </summary>
         public float3 normal = new float3(math.NAN, math.NAN, math.NAN);

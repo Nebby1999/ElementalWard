@@ -6,24 +6,11 @@ using UnityEngine;
 
 namespace Nebula.Navigation
 {
+    /// <summary>
+    /// Represents a graph of nodes on a scene, can also add and remove nodes from its nodeGraphAsset
+    /// </summary>
     public class NodeGraph : MonoBehaviour
-    {
-        private class Mover
-        {
-            public GameObject obj;
-            public CharacterController characterController;
-            public Mover()
-            {
-                obj = new GameObject("NodeBakerCharacterController");
-                characterController = obj.AddComponent<CharacterController>();
-
-
-            }
-        }
-        private class NodeBaking : MonoBehaviour
-        {
-            public int nodeIndex;
-        }
+    { 
         public NodeGraphAsset graphAsset;
 
         public void AddNewNode(Vector3 position, bool useOffset)
@@ -59,135 +46,22 @@ namespace Nebula.Navigation
 
         public void Bake()
         {
-            ClearLinks();
-            List<SerializedPathNode> nodes = GetSerializedNodes();
-            var colliders = CreateCollidersForCollision(nodes);
-            try
-            {
-                for(int i =  0; i < nodes.Count; i++)
-                {
-                    var node = nodes[i];
-                    BakeNode(node, i, nodes);
-                }
-            }
-            finally
-            {
-                foreach(Collider collider in colliders)
-                {
-                    DestroyImmediate(collider, true);
-                }
-            }
+            if (!graphAsset)
+                return;
+
+            var baker = graphAsset.GetBaker();
+            baker.BakeNodes();
         }
 
         public void Clear()
         {
-            graphAsset.serializedNodes.Clear();
-            graphAsset.serializedLinks.Clear();
+            if (!graphAsset)
+                return;
+
+            graphAsset.Clear();
         }
 
-        private Collider[] CreateCollidersForCollision(List<SerializedPathNode> nodes)
-        {
-            List<Collider> result = new List<Collider>();
-            for(int i = 0; i < nodes.Count; i++)
-            {
-                var node = nodes[i];
-                GameObject colliderObj = new GameObject("TempNodeCollider_"+i);
-                colliderObj.hideFlags = HideFlags.HideInInspector | HideFlags.HideAndDontSave;
-                colliderObj.transform.position = node.worldPosition;
-                var collider = colliderObj.AddComponent<BoxCollider>();
-                colliderObj.AddComponent<NodeBaking>().nodeIndex = i;
-                result.Add(collider);
-            }
-            return result.ToArray();
-        }
-
-        private void ClearLinks()
-        {
-            foreach (var node in GetSerializedNodes())
-            {
-                node.serializedPathNodeLinkIndices.Clear();
-            }
-            graphAsset.serializedLinks.Clear();
-        }
-
-        private void BakeNode(SerializedPathNode node, int nodeIndex, List<SerializedPathNode> nodes)
-        {
-            for(int i = 0; i < nodes.Count; i++)
-            {
-                var otherNodeIndex = i;
-                if (i == nodeIndex)
-                    continue;
-
-                var otherNode = nodes[i];
-
-                if (math.any(math.isnan(node.worldPosition)) || math.any(math.isnan(otherNode.worldPosition)))
-                    continue;
-
-                float distance = Vector3.Distance(node.worldPosition, otherNode.worldPosition);
-                if (distance > SerializedPathNode.MAX_DISTANCE)
-                    continue;
-
-                Vector3 direction = otherNode.worldPosition - node.worldPosition;
-                direction = direction.normalized;
-                var raycastHits = Physics.RaycastAll(node.worldPosition, direction, distance, Physics.AllLayers, QueryTriggerInteraction.Collide);
-                bool shouldContinue = false;
-                if (raycastHits.Length > 0)
-                {
-                    foreach(var hit in raycastHits)
-                    {
-                        //A wall was hit, dont build link
-                        if(!hit.collider.TryGetComponent<NodeBaking>(out var nodeBaking) && hit.collider.gameObject.layer == LayerMask.NameToLayer("World") && Vector3.Angle(hit.normal.normalized, direction) >= 90)
-                        {
-                            shouldContinue = true;
-                            break;
-                        }
-
-                        if (nodeBaking.nodeIndex == nodeIndex)
-                            continue;
-
-                        otherNode = nodes[nodeBaking.nodeIndex];
-                        otherNodeIndex = nodeBaking.nodeIndex;
-                        break;
-                    }
-                    if (shouldContinue)
-                        continue;
-                }
-
-                shouldContinue = false;
-                //the current node and "otherNode" are found, see if any existing links exists, if so, just reuse it.
-                for (int linkIndex = 0; linkIndex < graphAsset.serializedLinks.Count; linkIndex++)
-                {
-                    SerializedPathNodeLink link = graphAsset.serializedLinks[linkIndex];
-                    bool nodeAValid = link.nodeAIndex == nodeIndex || link.nodeAIndex == otherNodeIndex;
-                    bool nodeBValid = link.nodeBIndex == nodeIndex || link.nodeBIndex == otherNodeIndex;
-
-                    if (nodeAValid && nodeBValid)
-                    {
-                        if(!node.serializedPathNodeLinkIndices.Contains(linkIndex))
-                        {
-                            node.serializedPathNodeLinkIndices.Add(linkIndex);
-                        }
-                        shouldContinue = true;
-                        break;
-                    }
-                }
-                if (shouldContinue)
-                    continue;
-
-                var newLink = new SerializedPathNodeLink
-                {
-                    distance = math.distance(node.worldPosition, otherNode.worldPosition),
-                    normal = math.normalize(node.worldPosition - otherNode.worldPosition),
-                    nodeBIndex = otherNodeIndex,
-                    nodeAIndex = nodeIndex
-                };
-
-                graphAsset.serializedLinks.Add(newLink);
-                var newLinkIndex = graphAsset.serializedLinks.IndexOf(newLink);
-                node.serializedPathNodeLinkIndices.Add(newLinkIndex);
-            }
-        }
-
+        
         public void RemoveNearest(Vector3 position)
         {
             if (!graphAsset)
@@ -213,8 +87,93 @@ namespace Nebula.Navigation
 
                 nodes.RemoveAt(nearest);
                 if(node.serializedPathNodeLinkIndices.Count > 0)
-                    ClearLinks();
+                    graphAsset.ClearLinks();
             }
         }
+
+        /*/// <summary>
+        /// Represents a basic CharacterController that moves to nodes to check if they can be traversed or not.
+        /// </summary>
+        protected class GroundMover : IDisposable
+        {
+            public Vector3 StartPosition => startPositionNode.worldPosition;
+            public Vector3 StartPositionXZ => new(StartPosition.x, 0, StartPosition.z);
+            public SerializedPathNode StartPositionNode => startPositionNode;
+            public int StartPositionNodeIndex => startPositionNodeIndex;
+            protected SerializedPathNode startPositionNode;
+            protected int startPositionNodeIndex;
+
+            public Vector3 DestinationPosition => destinationNode.worldPosition;
+            public Vector3 DestinationPositionXZ => new(DestinationPosition.x, 0, DestinationPosition.z);
+            public SerializedPathNode DestinationPositionNode => destinationNode;
+            public int DestinationNodeIndex => destinationNodeIndex;
+            protected SerializedPathNode destinationNode;
+            protected int destinationNodeIndex;
+
+            public Vector3 MoverPosition => gameObject.transform.position;
+            public Vector3 MoverPositionXZ => new(MoverPosition.x, 0, MoverPosition.z);
+            protected GameObject gameObject;
+            protected CharacterController characterController;
+            protected List<SerializedPathNode> nodeCollection;
+
+            public virtual void SetNodeCollection(List<SerializedPathNode> nodeCollection)
+            {
+                this.nodeCollection = nodeCollection;
+            }
+            public virtual void SetPositionAndDestination(SerializedPathNode positionNode, int positionNodeIndex, SerializedPathNode destinationNode, int destinationNodeIndex)
+            {
+                this.startPositionNode = positionNode;
+                this.startPositionNodeIndex = positionNodeIndex;
+                this.destinationNode = destinationNode;
+                this.destinationNodeIndex = destinationNodeIndex;
+            }
+
+            /// <summary>
+            /// Returns true if the Mover has reached its destination."/>
+            /// </summary>
+            /// <returns></returns>
+            public virtual bool MoveToDestination()
+            {
+                return false;
+            }
+
+            /// <summary>
+            /// Wether the hit is a wall or not, returns true if the angle is considered a wall, false otherwise.
+            /// </summary>
+            public bool IsWall(RaycastHit hit, out float angle)
+            {
+                angle = Vector3.Angle(hit.normal, Vector3.up);
+                return Mathf.Approximately(angle, 90);
+            }
+
+            public void DoMove(Vector3 motion)
+            {
+                characterController.Move(motion);
+            }
+
+            public void SetIgnoreCollision(Collider[] colliders)
+            {
+                foreach (var collider in colliders)
+                {
+                    Physics.IgnoreCollision(characterController, collider, true);
+                }
+            }
+            public GroundMover()
+            {
+                gameObject = new GameObject("CharacterController");
+                characterController = gameObject.AddComponent<CharacterController>();
+                gameObject.hideFlags = HideFlags.HideAndDontSave | HideFlags.HideInInspector;
+            }
+
+            public void Dispose()
+            {
+                if (gameObject)
+                    DestroyImmediate(gameObject, true);
+            }
+        }
+        protected class HalfBakedNode : MonoBehaviour
+        {
+            public int nodeIndex;
+        }*/
     }
 }
