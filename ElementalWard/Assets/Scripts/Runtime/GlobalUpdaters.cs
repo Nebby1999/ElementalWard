@@ -1,4 +1,4 @@
-using ElementalWard.Navigation;
+//using ElementalWard.Navigation;
 using Nebula;
 using System.Collections.Generic;
 using Unity.Collections;
@@ -16,7 +16,7 @@ namespace ElementalWard
         public List<T> Instances => InstanceTracker.GetInstances<T>();
     }
 
-    public class GlobalBaseAIUpdater : GlobalUpdater<CharacterMasterAI>
+    /*public class GlobalBaseAIUpdater : GlobalUpdater<CharacterMasterAI>
     {
         private float stopwatch;
         public GlobalBaseAIUpdater()
@@ -84,7 +84,7 @@ namespace ElementalWard
             jobs.Dispose();
             jobHandles.Dispose();
         }
-    }
+    }*/
 
     public class Global3DSpriteRendererUpdater : GlobalUpdater<SpriteRenderer3D>
     {

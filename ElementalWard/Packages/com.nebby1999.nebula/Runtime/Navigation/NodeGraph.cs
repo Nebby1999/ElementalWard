@@ -9,91 +9,104 @@ namespace Nebula.Navigation
     /// <summary>
     /// Represents a graph of nodes on a scene, can also add and remove nodes from its nodeGraphAsset
     /// </summary>
-    public class NodeGraph : MonoBehaviour
+    public class NodeGraph : MonoBehaviour, IGraphProvider
     { 
-        public NodeGraphAsset graphAsset;
+        public NodeGraphAsset NodeGraphAsset => _graphAsset;
+        [SerializeField] private NodeGraphAsset _graphAsset;
 
-        public void AddNewNode(Vector3 position, bool useOffset)
+
+        public void AddNewNode(Vector3 position)
         {
-            if (!graphAsset)
+            if (!NodeGraphAsset)
                 return;
 
-            if (useOffset)
-                position += graphAsset.NodeOffset;
+                position += NodeGraphAsset.NodeOffset;
 
             var serializedNode = new SerializedPathNode
             {
                 worldPosition = position,
             };
 
-            graphAsset.serializedNodes.Add(serializedNode);
-        }
-
-        public List<SerializedPathNode> GetSerializedNodes()
-        {
-            return graphAsset ? graphAsset.serializedNodes : new List<SerializedPathNode>();
-        }
-
-        public List<SerializedPathNodeLink> GetSerializedPathNodeLinks()
-        {
-            return graphAsset ? graphAsset.serializedLinks : new List<SerializedPathNodeLink>();
-        }
-
-        public Vector3 GetNodeOffset()
-        {
-            return graphAsset ? graphAsset.NodeOffset : Vector3.zero;
+            NodeGraphAsset.serializedNodes.Add(serializedNode);
         }
 
         public void Bake()
         {
-            if (!graphAsset)
+            if (!NodeGraphAsset)
                 return;
 
-            var baker = graphAsset.GetBaker();
+            var baker = NodeGraphAsset.GetBaker();
             baker.BakeNodes();
             baker.CommitBakedNodes();
         }
 
         public void Clear()
         {
-            if (!graphAsset)
+            if (!NodeGraphAsset)
                 return;
 
-            graphAsset.Clear();
+            NodeGraphAsset.Clear();
         }
 
-        
-        public void RemoveNearest(Vector3 position)
+        public RuntimePathNodeLink[] GetRuntimePathNodeLinks()
         {
-            if (!graphAsset)
+            if (!NodeGraphAsset)
+                return Array.Empty<RuntimePathNodeLink>();
+
+            return NodeGraphAsset.RuntimeLinks;
+        }
+
+        public RuntimePathNode[] GetRuntimePathNodes()
+        {
+            if(!NodeGraphAsset)
+                return Array.Empty<RuntimePathNode>();
+
+            return NodeGraphAsset.RuntimeNodes;
+        }
+
+        public List<SerializedPathNodeLink> GetSerializedPathLinks()
+        {
+            if (!NodeGraphAsset)
+                return new List<SerializedPathNodeLink>();
+
+            return NodeGraphAsset.serializedLinks;
+        }
+
+        public List<SerializedPathNode> GetSerializedPathNodes()
+        {
+            if (!NodeGraphAsset)
+                return new List<SerializedPathNode>();
+
+            return NodeGraphAsset.serializedNodes;
+        }
+
+        public void RemoveNearestNode(Vector3 position)
+        {
+            if (!NodeGraphAsset)
                 return;
 
-            var nodes = GetSerializedNodes();
+            var nodes = GetSerializedPathNodes();
             int nearest = -1;
             float nearestDistance = float.MaxValue;
-            for(int i = 0; i <  nodes.Count; i++)
+            for (int i = 0; i < nodes.Count; i++)
             {
                 var node = nodes[i];
                 var dist = Vector3.Distance(node.worldPosition, position);
-                if(dist < nearestDistance)
+                if (dist < nearestDistance)
                 {
                     nearest = i;
                     nearestDistance = dist;
                 }
             }
 
-            if(nearest != -1)
+            if (nearest != -1)
             {
                 var node = nodes[nearest];
 
                 nodes.RemoveAt(nearest);
-                if(node.serializedPathNodeLinkIndices.Count > 0)
-                    graphAsset.ClearLinks();
+                if (node.serializedPathNodeLinkIndices.Count > 0)
+                    NodeGraphAsset.ClearLinks();
             }
-        }
-
-        public void OnDrawGizmos()
-        {
         }
     }
 }

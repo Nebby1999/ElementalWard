@@ -26,7 +26,12 @@ namespace Nebula
 
         private void AskForPath()
         {
-            var request = new NavigationSystem.PathRequest(transform.position, target.position, NavigationSystem.Instance.groundNodes);
+            var request = new NavigationSystem.PathRequest
+            {
+                start = transform.position,
+                end = target.position,
+                graphProvider = NavigationSystem.Instance.groundNodes,
+            };
 
             this.path.Clear();
             var path = NavigationSystem.Instance.RequestPath(request);

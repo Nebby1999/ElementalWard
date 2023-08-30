@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using ElementalWard.Navigation;
+//using ElementalWard.Navigation;
 using EntityStates;
 using KinematicCharacterController;
 using Nebula;
@@ -68,11 +68,11 @@ namespace ElementalWard
         private Vector3 _pathfindingMovementVector;
         private Quaternion _pathfindingLookRotation;
 
-        private static GlobalBaseAIUpdater globalUpdater;
+        //private static GlobalBaseAIUpdater globalUpdater;
         [SystemInitializer]
         private static void SystemInitialzer()
         {
-            globalUpdater = new GlobalBaseAIUpdater();
+            //globalUpdater = new GlobalBaseAIUpdater();
         }
         private void OnTargetDeath(HealthComponent hc)
         {
@@ -292,7 +292,7 @@ namespace ElementalWard
 
             UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, rotatedForward, awarenessAngle, awarenessRange);
 
-            if (!drawPath)
+            /*if (!drawPath)
                 return;
 
             var previousPos = Vector3.zero;
@@ -328,7 +328,7 @@ namespace ElementalWard
                 Gizmos.color = Color.cyan;
                 Gizmos.DrawLine(previousPos, pos);
                 previousPos = pos;
-            }
+            }*/
         }
 #endif
         public struct AIInputs

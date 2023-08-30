@@ -12,14 +12,14 @@ namespace Nebula.Editor
     public class NodeGraphInspector : IMGUIInspector<NodeGraph>
     {
         public List<SerializedPathNode> nodes;
-        protected bool HasGraphAsset => TargetType.graphAsset;
+        protected bool HasGraphAsset => TargetType.NodeGraphAsset;
         protected virtual int RaycastLayers => Physics.AllLayers;
         private Ray ray;
         protected RaycastHit hitInfo;
         private int controlID;
         protected override void DrawGUI()
         {
-            if(!TargetType.graphAsset)
+            if(!TargetType.NodeGraphAsset)
             {
                 EditorGUILayout.HelpBox("Select a valid Node Graph Asset", MessageType.Info);
             }
@@ -39,7 +39,7 @@ namespace Nebula.Editor
             if (!HasGraphAsset)
                 return;
 
-            nodes = TargetType.GetSerializedNodes();
+            nodes = TargetType.GetSerializedPathNodes();
             controlID = GUIUtility.GetControlID(FocusType.Keyboard | FocusType.Passive);
 
             Event evt = Event.current;
@@ -53,7 +53,7 @@ namespace Nebula.Editor
 
             if(Physics.Raycast(ray, out hitInfo, float.MaxValue, RaycastLayers, QueryTriggerInteraction.Collide))
             {
-                hitInfo.point += TargetType.GetNodeOffset();
+                hitInfo.point += TargetType.NodeGraphAsset ? TargetType.NodeGraphAsset.NodeOffset : Vector3.zero;
             }
             DrawNodes(evt);
             DrawSceneGUI(evt);
@@ -64,15 +64,15 @@ namespace Nebula.Editor
             switch(evt.keyCode)
             {
                 case KeyCode.B:
-                    TargetType.AddNewNode(hitInfo.point, true);
+                    TargetType.AddNewNode(hitInfo.point);
                     evt.Use();
                     break;
                 case KeyCode.N:
-                    TargetType.AddNewNode(Camera.current.transform.position, false);
+                    TargetType.AddNewNode(Camera.current.transform.position);
                     evt.Use();
                     break;
                 case KeyCode.M:
-                    TargetType.RemoveNearest(hitInfo.point);
+                    TargetType.RemoveNearestNode(hitInfo.point);
                     evt.Use();
                     break;
             }
@@ -153,7 +153,7 @@ namespace Nebula.Editor
 
                 Handles.color = Color.magenta;
 
-                var links = TargetType.GetSerializedPathNodeLinks();
+                var links = TargetType.GetSerializedPathLinks();
                 foreach(var linkIndex in node.serializedPathNodeLinkIndices)
                 {
                     var link = links[linkIndex];

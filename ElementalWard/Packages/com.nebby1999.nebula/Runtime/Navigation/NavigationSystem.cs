@@ -13,13 +13,16 @@ namespace Nebula.Navigation
         public NodeGraph groundNodes;
         public FindPathJob RequestPath(PathRequest pathRequest)
         {
-            if (!pathRequest.graph)
+            if (!pathRequest.IsValid())
+                return default;
+
+            if (pathRequest.graphProvider == null)
                 throw new NullReferenceException("No Graph Specified");
 
-            if (!pathRequest.graph.graphAsset)
+            if (!pathRequest.graphProvider.NodeGraphAsset)
                 throw new NullReferenceException("NodeGraph does not have a GraphAsset");
 
-            var graphAsset = pathRequest.graph.graphAsset;
+            var graphAsset = pathRequest.graphProvider.NodeGraphAsset;
             var runtimeNodes = new NativeArray<RuntimePathNode>(graphAsset.RuntimeNodes, Allocator.TempJob);
             var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graphAsset.RuntimeLinks, Allocator.TempJob);
             var closestStartNode = new NativeReference<int>(value: -1, AllocatorManager.TempJob);
@@ -28,14 +31,14 @@ namespace Nebula.Navigation
             FindClosestNodeIndexJob closestStartIndex = new FindClosestNodeIndexJob
             {
                 nodes = runtimeNodes,
-                position = pathRequest.start,
+                position = pathRequest.start.Value,
                 result = closestStartNode
             };
 
             FindClosestNodeIndexJob closestEndIndex = new FindClosestNodeIndexJob
             {
                 nodes = runtimeNodes,
-                position = pathRequest.end,
+                position = pathRequest.end.Value,
                 result = closestEndNode,
             };
 
@@ -46,14 +49,14 @@ namespace Nebula.Navigation
 
             FindPathJob findPathJob = new FindPathJob
             {
-                startPos = pathRequest.start,
+                startPos = pathRequest.start.Value,
                 startIndex = closestStartNode,
-                endPos = pathRequest.end,
+                endPos = pathRequest.end.Value,
                 endIndex = closestEndNode,
                 nodes = runtimeNodes,
                 links = runtimeLinks,
                 result = new NativeList<float3>(1024, AllocatorManager.TempJob),
-                actorHeight = pathRequest.actorHeight
+                actorHeight = pathRequest.actorHeight ?? 2
             };
 
             var findPathHandle = findPathJob.Schedule(dependencyHandle);
@@ -68,53 +71,19 @@ namespace Nebula.Navigation
             return findPathJob;
         }
 
-        public class PathRequest
+        public struct PathRequest
         {
-            public Vector3 start;
-            public Vector3 end;
-            public NodeGraph graph;
-            public float actorHeight;
+            public IGraphProvider graphProvider;
+            public Vector3? start;
+            public Vector3? end;
+            public float? actorHeight;
 
             public Vector3[] result;
-            public PathRequest(Vector3 startPosition, Vector3 endPosition, NodeGraph nodeGraph)
+
+            public bool IsValid()
             {
-                start = startPosition;
-                end = endPosition;
-                graph = nodeGraph;
+                return start is not null && end is not null;
             }
         }
     }
-    /*public class NavigationSystem : SingletonBehaviour<NavigationSystem>
-    {
-        public NodeGraph groundNodes;
-
-        public void RequestPath(NodeGraph nodes, Vector3 startPosition, Vector3 endPosition)
-        {
-            var asset = nodes.graphAsset;
-            if (!asset)
-                return default;
-
-            var handle = GetClosestNodeIndex(startPosition, asset);
-            await handle;
-            int endNodeIndex = GetClosestNodeIndex(startPosition, asset);
-            var job = new FindPathJob
-            {
-
-            };
-            return job;
-        }
-
-        private JobHandle GetClosestNodeIndex(float3 position,  NodeGraphAsset nodes)
-        {
-            var job = new FindClosestNodeIndexJob
-            {
-                nodes = new Unity.Collections.NativeArray<RuntimePathNode>(nodes.RuntimeNodes, Unity.Collections.Allocator.TempJob),
-                position = position,
-                result = -1,
-                _distance = float.MaxValue,
-                _bestIndex = -1
-            };
-            var handle = job.Schedule();
-        }
-    }*/
 }
