@@ -7,7 +7,7 @@ namespace Nebula
 {
     public class PathfindingDummy : MonoBehaviour
     {
-        public Transform target;
+        /*public Transform target;
         public float updateTimer;
 
         private float _stopwatch;
@@ -75,6 +75,6 @@ namespace Nebula
                 previousPos = pos;
 
             }
-        }
+        }*/
     }
 }

@@ -8,7 +8,7 @@ using Unity.Collections;
 
 namespace Nebula.Navigation
 {
-    public class NavigationSystem : SingletonBehaviour<NavigationSystem>
+    /*public class NavigationSystem : SingletonBehaviour<NavigationSystem>
     {
         public NodeGraph groundNodes;
         public FindPathJob RequestPath(PathRequest pathRequest)
@@ -19,10 +19,10 @@ namespace Nebula.Navigation
             if (pathRequest.graphProvider == null)
                 throw new NullReferenceException("No Graph Specified");
 
-            if (!pathRequest.graphProvider.NodeGraphAsset)
+            if (!pathRequest.graphProvider.NodeGraph)
                 throw new NullReferenceException("NodeGraph does not have a GraphAsset");
 
-            var graphAsset = pathRequest.graphProvider.NodeGraphAsset;
+            var graphAsset = pathRequest.graphProvider.NodeGraph;
             var runtimeNodes = new NativeArray<RuntimePathNode>(graphAsset.RuntimeNodes, Allocator.TempJob);
             var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graphAsset.RuntimeLinks, Allocator.TempJob);
             var closestStartNode = new NativeReference<int>(value: -1, AllocatorManager.TempJob);
@@ -85,5 +85,5 @@ namespace Nebula.Navigation
                 return start is not null && end is not null;
             }
         }
-    }
+    }*/
 }

@@ -14,7 +14,7 @@ namespace Nebula.Navigation
     /// <summary>
     /// Represents a NodeGraphAsset for Grounded travel, you can inherit this asset for different types of travel (IE: an "Air" Graph)
     /// </summary>
-    [CreateAssetMenu(menuName = "Nebula/Navigation/NodeGraphAsset")]
+    /*[CreateAssetMenu(menuName = "Nebula/Navigation/NodeGraphAsset")]
     public class NodeGraphAsset : NebulaScriptableObject
     {
         /// <summary>
@@ -120,5 +120,5 @@ namespace Nebula.Navigation
         {
             return new NodeBaker(this, SerializedPathNode.MAX_DISTANCE);
         }
-    }
+    }*/
 }

@@ -8,8 +8,8 @@ using Unity.Mathematics;
 
 namespace Nebula.Editor
 {
-    [CustomEditor(typeof(NodeGraph))]
-    public class NodeGraphInspector : IMGUIInspector<NodeGraph>
+    //[CustomEditor(typeof(NodeGraph))]
+    /*public class NodeGraphInspector : IMGUIInspector<NodeGraph>
     {
         public List<SerializedPathNode> nodes;
         protected bool HasGraphAsset => TargetType.NodeGraphAsset;
@@ -203,5 +203,5 @@ namespace Nebula.Editor
                 TargetType.Clear();
             }
         }
-    }
+    }*/
 }

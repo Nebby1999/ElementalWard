@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Nebula.Navigation
 {
-    /// <summary>
+    /*/// <summary>
     /// Represents a graph of nodes on a scene, can also add and remove nodes from its nodeGraphAsset
     /// </summary>
     public class NodeGraph : MonoBehaviour, IGraphProvider
@@ -108,5 +108,5 @@ namespace Nebula.Navigation
                     NodeGraphAsset.ClearLinks();
             }
         }
-    }
+    }*/
 }

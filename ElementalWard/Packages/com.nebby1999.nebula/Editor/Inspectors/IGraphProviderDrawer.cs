@@ -12,7 +12,7 @@ namespace Nebula.Editor.Inspectors
     {
         protected int WorldLayerIndex { get; init; }
         protected IGraphProvider GraphProvider { get; init; }
-        protected bool HasGraphAsset => GraphProvider.NodeGraphAsset;
+        protected bool HasGraphAsset => GraphProvider.NodeGraph != null;
         protected List<SerializedPathNode> nodes;
         protected int controlID;
         public void DrawIMGUIButtons()

@@ -11,9 +11,9 @@ namespace Nebula.Navigation
     /// </summary>
     public class NodeBaker
     {
-        public NodeGraphAsset NodeGraphAsset { get; private set; }
+        public INodeGraph NodeGraph { get; private set; }
 
-        private List<SerializedPathNode> PathNodes => NodeGraphAsset ? NodeGraphAsset.serializedNodes : new();
+        private List<SerializedPathNode> PathNodes => NodeGraph?.SerializedNodes ?? new List<SerializedPathNode>();
         private List<SerializedPathNodeLink> _nodeLinks = new();
         private List<Collider> _collidersForBaking = new();
         private float _maxNodeDistance;
@@ -22,7 +22,10 @@ namespace Nebula.Navigation
         public void PreBake()
         {
 #if UNITY_EDITOR
-            UnityEditor.Undo.RegisterCompleteObjectUndo(NodeGraphAsset, "Clear GraphNode Links");
+            if(NodeGraph is UnityEngine.Object obj)
+            {
+                UnityEditor.Undo.RegisterCompleteObjectUndo(obj, "Clear GraphNode Links");
+            }
 #endif
 
             for (int i = 0; i < PathNodes.Count; i++)
@@ -65,14 +68,17 @@ namespace Nebula.Navigation
 
         public void CommitBakedNodes()
         {
-            NodeGraphAsset.serializedLinks = _nodeLinks;
-            NodeGraphAsset.serializedNodes = PathNodes;
+            NodeGraph.SerializedLinks = _nodeLinks;
+            NodeGraph.SerializedNodes = PathNodes;
 
+            if(NodeGraph is UnityEngine.ScriptableObject sObj)
+            {
 #if UNITY_EDITOR
-            UnityEditor.EditorUtility.SetDirty(NodeGraphAsset);
+                UnityEditor.EditorUtility.SetDirty(sObj);
 #else
-            NodeGraphAsset.SetDirty();
+                sObj.SetDirty();
 #endif
+            }
         }
 
         private void BakeNode(SerializedPathNode nodeA, int nodeAIndex,  List<SerializedPathNode> pathNodes)
@@ -207,9 +213,9 @@ namespace Nebula.Navigation
             }
         }
 
-        public NodeBaker(NodeGraphAsset nodeGraphAsset, float maxDistance)
+        public NodeBaker(INodeGraph nodeGraph, float maxDistance)
         {
-            NodeGraphAsset = nodeGraphAsset;
+            NodeGraph = nodeGraph;
             _maxNodeDistance = maxDistance;
             _mover = new Mover();
         }

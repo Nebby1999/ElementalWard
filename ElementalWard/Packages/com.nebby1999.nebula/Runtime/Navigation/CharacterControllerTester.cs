@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Nebula
 {
-    [ExecuteAlways]
+    /*[ExecuteAlways]
     public class CharacterControllerTester : MonoBehaviour
     {
         public CharacterController controller;
-        public NodeGraphAsset fuck;
+        //public NodeGraphAsset fuck;
         [ContextMenu("Move")]
         public void Move()
         {
@@ -34,5 +34,5 @@ namespace Nebula
             {
             }
         }
-    }
+    }*/
 }

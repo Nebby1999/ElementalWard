@@ -3,10 +3,12 @@ using UnityEngine;
 
 namespace Nebula.Navigation
 {
-    //Provides a graph to a monobehaviour
+    /// <summary>
+    /// Provides a graph to a monobehaviour
+    /// </summary>
     public interface IGraphProvider
     {
-        public NodeGraphAsset NodeGraphAsset { get; }
+        public INodeGraph NodeGraph { get; }
 
         public RuntimePathNode[] GetRuntimePathNodes();
         public RuntimePathNodeLink[] GetRuntimePathNodeLinks();
