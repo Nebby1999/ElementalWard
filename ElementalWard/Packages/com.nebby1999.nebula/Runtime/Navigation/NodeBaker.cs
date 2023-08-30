@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Globalization;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -14,33 +14,33 @@ namespace Nebula.Navigation
         public NodeGraphAsset NodeGraphAsset { get; private set; }
 
         private List<SerializedPathNode> PathNodes => NodeGraphAsset ? NodeGraphAsset.serializedNodes : new();
-        private List<SerializedPathNodeLink> _nodeLinks = new List<SerializedPathNodeLink>();
+        private List<SerializedPathNodeLink> _nodeLinks = new();
+        private List<Collider> _collidersForBaking = new();
         private float _maxNodeDistance;
         private Mover _mover;
-        private bool HasPreBaked
-        {
-            get
-            {
-                foreach(SerializedPathNode pathNode in PathNodes)
-                {
-                    if (pathNode.serializedPathNodeLinkIndices.Count > 0)
-                        return false;
-                }
-                return true;
-            }
-        }
+
         public void PreBake()
         {
 #if UNITY_EDITOR
             UnityEditor.Undo.RegisterCompleteObjectUndo(NodeGraphAsset, "Clear GraphNode Links");
 #endif
-            foreach (SerializedPathNode pathNode in PathNodes)
+
+            for (int i = 0; i < PathNodes.Count; i++)
+            {
+                var pathNode = PathNodes[i];
                 pathNode.serializedPathNodeLinkIndices.Clear();
+
+                GameObject pathNodeObject = new("TempCollider_" + i);
+                pathNodeObject.transform.position = pathNode.worldPosition;
+                pathNodeObject.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
+                var collider = pathNodeObject.AddComponent<SphereCollider>();
+                Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
+                _collidersForBaking.Add(collider);
+            }
         }
         public void BakeNodes()
         {
-            if (!HasPreBaked)
-                PreBake();
+            PreBake();
 
             try
             {
@@ -55,6 +55,10 @@ namespace Nebula.Navigation
             }
             finally
             {
+                foreach(Collider collider in _collidersForBaking)
+                {
+                    Collider.DestroyImmediate(collider.gameObject, true);
+                }
                 _mover?.Dispose();
             }
         }
@@ -63,6 +67,12 @@ namespace Nebula.Navigation
         {
             NodeGraphAsset.serializedLinks = _nodeLinks;
             NodeGraphAsset.serializedNodes = PathNodes;
+
+#if UNITY_EDITOR
+            UnityEditor.EditorUtility.SetDirty(NodeGraphAsset);
+#else
+            NodeGraphAsset.SetDirty();
+#endif
         }
 
         private void BakeNode(SerializedPathNode nodeA, int nodeAIndex,  List<SerializedPathNode> pathNodes)
@@ -72,8 +82,9 @@ namespace Nebula.Navigation
                 return;
 
             _mover.StartPosition = nodeA.worldPosition;
-            for(int nodeBIndex = 0; nodeBIndex < pathNodes.Count; nodeBIndex++)
+            for(int i = 0; i < pathNodes.Count; i++)
             {
+                int nodeBIndex = i;
                 if (nodeBIndex == nodeAIndex)
                     continue;
 
@@ -86,27 +97,113 @@ namespace Nebula.Navigation
                 if (distance > _maxNodeDistance)
                     continue;
 
+
                 _mover.SetMoverPosition(nodeA.worldPosition, true);
                 _mover.DestinationPosition = nodeB.worldPosition;
 
+                bool hitWall = false;
+                float slopeAngle = 0;
+                RaycastHit[] raycastHits = _mover.TestCapsuleCast();
+                for(int j = 0; j < raycastHits.Length; j++)
+                {
+                    var hit = raycastHits[j];
+
+                    var hitName = hit.collider.name;
+                    //This is not a nodeCollider.
+                    if(!hitName.StartsWith("TempCollider_"))
+                    {
+                        //Check the angle, see if its either a wall or a slope.
+                        var hitAngle = Vector3.Angle(hit.normal, Vector3.up);
+                        if(hitAngle > 89 && hitAngle < 91)
+                        {
+                            //Its a wall
+                            hitWall = true;
+                            break;
+                        }
+                        else if(hitAngle < 89)
+                        {
+                            //Its a slope, save the angle and continue;
+                            slopeAngle = hitAngle;
+                            continue;
+                        }
+                        else if(hitAngle > 91)
+                        {
+                            //TODO: see what happens on obstuse angled slopes.
+                            continue;
+                        }
+                    }
+
+                    if(hitName.StartsWith("TempCollider_"))
+                    {
+                        var colliderNodeIndexAsString = hitName.Substring("TempCollider_".Length);
+                        var colliderNodeIndex = int.Parse(colliderNodeIndexAsString, CultureInfo.InvariantCulture);
+
+                        if (colliderNodeIndex == nodeAIndex)
+                            continue;
+
+                        //We found a node between nodeAIndex and nodeBIndex, use this node for baking
+                        if(colliderNodeIndex != nodeBIndex)
+                        {
+                            nodeBIndex = colliderNodeIndex;
+                            nodeB = pathNodes[nodeBIndex];
+                            break;
+                        }
+                    }
+                }
+
+                if (hitWall)
+                    continue;
+                _mover.DestinationPosition = nodeB.worldPosition;
+
                 Physics.SyncTransforms();
-                _mover.Move();
+                for(int j = 0; j < 5; j++)
+                {
+                    _mover.Move();
+                }
                
                 if(_mover.MoverFeetPosition != _mover.DestinationPosition)
                 {
                     continue;
                 }
 
-                SerializedPathNodeLink link = new()
+                bool linkAlreadyExists = false;
+                //Check if theres already a link that has the same nodes
+                for(int j = 0; j < _nodeLinks.Count; j++)
+                {
+                    var link = _nodeLinks[j];
+
+                    var nodeAValid = link.nodeAIndex == nodeAIndex || link.nodeBIndex == nodeAIndex;
+                    var nodeBValid = link.nodeAIndex == nodeBIndex || link.nodeBIndex == nodeBIndex;
+
+                    if(nodeAValid && nodeBValid)
+                    {
+                        if(!nodeA.serializedPathNodeLinkIndices.Contains(j))
+                        {
+                            nodeA.serializedPathNodeLinkIndices.Add(j);
+                        }
+                        linkAlreadyExists = true;
+                        break;
+                    }
+                }
+                if (linkAlreadyExists)
+                    continue;
+
+                if(nodeA.serializedPathNodeLinkIndices.Count >= 100)
+                {
+                    Debug.LogWarning($"PathNode of index {nodeAIndex} has reached it's max capacity of 100 links, cannot add more links.");
+                    continue;
+                }
+
+                SerializedPathNodeLink newLink = new()
                 {
                     nodeAIndex = nodeAIndex,
                     nodeBIndex = nodeBIndex,
-                    normal = nodeB.worldPosition - nodeA.worldPosition,
-                    slopeAngle = 0,
+                    normal = (nodeB.worldPosition - nodeA.worldPosition).normalized,
+                    slopeAngle = slopeAngle,
                     distance = distance
                 };
-                NodeGraphAsset.serializedLinks.Add(link);
-                nodeA.serializedPathNodeLinkIndices.Add(NodeGraphAsset.serializedLinks.Count - 1);
+                _nodeLinks.Add(newLink);
+                nodeA.serializedPathNodeLinkIndices.Add(_nodeLinks.Count - 1);
             }
         }
 
@@ -152,9 +249,34 @@ namespace Nebula.Navigation
 
             public void Move()
             {
-                Vector3 motion = DestinationPosition - MoverPosition;
-                motion = _transform.TransformDirection(motion);
+                var dest = DestinationPosition;
+                dest.y -= 10;
+                var start = MoverPosition;
+
+                Vector3 motion = dest - start;
                 _moverCharacterController.Move(motion);
+            }
+
+            public RaycastHit[] TestCapsuleCast()
+            {
+                var p1 = _transform.position + _moverCharacterController.center + (0.5f * _moverCharacterController.height - _moverCharacterController.radius) * Vector3.up;
+                var p2 = _transform.position + _moverCharacterController.center + (0.5f * _moverCharacterController.height - _moverCharacterController.radius) * Vector3.down;
+
+                var direction = DestinationPosition - StartPosition;
+                direction = direction.normalized;
+                var distance = Vector3.Distance(DestinationPosition, StartPosition);
+
+                List<RaycastHit> result = new();
+                var hits = Physics.CapsuleCastAll(p1, p2, _moverCharacterController.radius, direction, distance);
+                foreach(var hit in hits)
+                {
+                    if (hit.collider == _moverCharacterController)
+                        continue;
+
+                    result.Add(hit);
+                }
+
+                return result.ToArray();
             }
 
             public Mover()
@@ -164,6 +286,10 @@ namespace Nebula.Navigation
                 Component.DestroyImmediate(_moverObject.GetComponent<CapsuleCollider>(), true);
                 _moverCharacterController = _moverObject.AddComponent<CharacterController>();
                 _transform = _moverObject.transform;
+                //var tester = _moverObject.AddComponent<Tester>();
+
+                //tester.mover = this;
+                //tester.controller = _moverCharacterController;
             }
         }
     }

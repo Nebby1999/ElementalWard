@@ -27,13 +27,18 @@ namespace Nebula.Navigation
         /// </summary>
         public float slopeAngle = float.NaN;
         /// <summary>
-        /// The normal direction of the link, defaults to a float3 with XYZ components set to NAN
+        /// The normal direction of the link, This normal direction is calculated from <see cref="nodeAIndex"/> to <see cref="nodeBIndex"/>. defaults to a float3 with XYZ components set to NAN
         /// </summary>
         public float3 normal = new float3(math.NAN, math.NAN, math.NAN);
     }
 
     public struct RuntimePathNodeLink
     {
-
+        public int linkIndex;
+        public int nodeAIndex;
+        public int nodeBIndex;
+        public float distanceCost;
+        public float slopeAngle;
+        public float3 normal;
     }
 }

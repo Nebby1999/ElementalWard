@@ -51,6 +51,7 @@ namespace Nebula.Navigation
 
             var baker = graphAsset.GetBaker();
             baker.BakeNodes();
+            baker.CommitBakedNodes();
         }
 
         public void Clear()
@@ -91,89 +92,8 @@ namespace Nebula.Navigation
             }
         }
 
-        /*/// <summary>
-        /// Represents a basic CharacterController that moves to nodes to check if they can be traversed or not.
-        /// </summary>
-        protected class GroundMover : IDisposable
+        public void OnDrawGizmos()
         {
-            public Vector3 StartPosition => startPositionNode.worldPosition;
-            public Vector3 StartPositionXZ => new(StartPosition.x, 0, StartPosition.z);
-            public SerializedPathNode StartPositionNode => startPositionNode;
-            public int StartPositionNodeIndex => startPositionNodeIndex;
-            protected SerializedPathNode startPositionNode;
-            protected int startPositionNodeIndex;
-
-            public Vector3 DestinationPosition => destinationNode.worldPosition;
-            public Vector3 DestinationPositionXZ => new(DestinationPosition.x, 0, DestinationPosition.z);
-            public SerializedPathNode DestinationPositionNode => destinationNode;
-            public int DestinationNodeIndex => destinationNodeIndex;
-            protected SerializedPathNode destinationNode;
-            protected int destinationNodeIndex;
-
-            public Vector3 MoverPosition => gameObject.transform.position;
-            public Vector3 MoverPositionXZ => new(MoverPosition.x, 0, MoverPosition.z);
-            protected GameObject gameObject;
-            protected CharacterController characterController;
-            protected List<SerializedPathNode> nodeCollection;
-
-            public virtual void SetNodeCollection(List<SerializedPathNode> nodeCollection)
-            {
-                this.nodeCollection = nodeCollection;
-            }
-            public virtual void SetPositionAndDestination(SerializedPathNode positionNode, int positionNodeIndex, SerializedPathNode destinationNode, int destinationNodeIndex)
-            {
-                this.startPositionNode = positionNode;
-                this.startPositionNodeIndex = positionNodeIndex;
-                this.destinationNode = destinationNode;
-                this.destinationNodeIndex = destinationNodeIndex;
-            }
-
-            /// <summary>
-            /// Returns true if the Mover has reached its destination."/>
-            /// </summary>
-            /// <returns></returns>
-            public virtual bool MoveToDestination()
-            {
-                return false;
-            }
-
-            /// <summary>
-            /// Wether the hit is a wall or not, returns true if the angle is considered a wall, false otherwise.
-            /// </summary>
-            public bool IsWall(RaycastHit hit, out float angle)
-            {
-                angle = Vector3.Angle(hit.normal, Vector3.up);
-                return Mathf.Approximately(angle, 90);
-            }
-
-            public void DoMove(Vector3 motion)
-            {
-                characterController.Move(motion);
-            }
-
-            public void SetIgnoreCollision(Collider[] colliders)
-            {
-                foreach (var collider in colliders)
-                {
-                    Physics.IgnoreCollision(characterController, collider, true);
-                }
-            }
-            public GroundMover()
-            {
-                gameObject = new GameObject("CharacterController");
-                characterController = gameObject.AddComponent<CharacterController>();
-                gameObject.hideFlags = HideFlags.HideAndDontSave | HideFlags.HideInInspector;
-            }
-
-            public void Dispose()
-            {
-                if (gameObject)
-                    DestroyImmediate(gameObject, true);
-            }
         }
-        protected class HalfBakedNode : MonoBehaviour
-        {
-            public int nodeIndex;
-        }*/
     }
 }

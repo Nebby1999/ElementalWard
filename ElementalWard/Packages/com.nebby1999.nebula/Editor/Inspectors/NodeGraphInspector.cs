@@ -88,21 +88,24 @@ namespace Nebula.Editor
                     if (math.any(math.isnan(serializedNode.worldPosition)))
                         continue;
 
-                    var dist = Vector3.Distance(serializedNode.worldPosition, hitInfo.point);
-                    var dir = hitInfo.point - serializedNode.worldPosition;
-                    dir = dir.normalized;
-                    if(Physics.Raycast(serializedNode.worldPosition, dir, out var losHit, dist, RaycastLayers))
+                    if(hitInfo.collider != null)
                     {
-                        if (Vector3.Angle(hitInfo.normal, dir) >= 90)
-                            continue;
-                    }
+                        var dist = Vector3.Distance(serializedNode.worldPosition, hitInfo.point);
+                        var dir = hitInfo.point - serializedNode.worldPosition;
+                        dir = dir.normalized;
+                        if(Physics.Raycast(serializedNode.worldPosition, dir, out var losHit, dist, RaycastLayers))
+                        {
+                            if (Vector3.Angle(hitInfo.normal, dir) >= 90)
+                                continue;
+                        }
 
 
-                    if (Vector3.Distance(serializedNode.worldPosition, hitInfo.point) <= SerializedPathNode.MAX_DISTANCE)
-                    {
-                        Handles.color = Color.yellow;
-                        Handles.DrawLine(serializedNode.worldPosition, hitInfo.point, 2);
-                        inRange = true;
+                        if (Vector3.Distance(serializedNode.worldPosition, hitInfo.point) <= SerializedPathNode.MAX_DISTANCE)
+                        {
+                            Handles.color = Color.yellow;
+                            Handles.DrawLine(serializedNode.worldPosition, hitInfo.point, 2);
+                            inRange = true;
+                        }
                     }
                 }
                 Handles.color = inRange ? Color.yellow : Color.red;
@@ -135,6 +138,11 @@ namespace Nebula.Editor
                 }
                 float scale = 1f;
                 Handles.CylinderHandleCap(controlID, node.worldPosition, Quaternion.Euler(90, 0, 0), scale, EventType.Repaint);
+
+                var pos = node.worldPosition;
+                pos.y += 1;
+                Handles.color = Color.white;
+                Handles.Label(pos, i.ToString(), new GUIStyle(GUI.skin.GetStyle("SettingsHeader")));
 
                 var nodeXZ = new Vector3(node.worldPosition.x, 0, node.worldPosition.z);
                 var rayOriginXZ = new Vector3(ray.origin.x, 0, ray.origin.z);
