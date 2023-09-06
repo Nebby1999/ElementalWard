@@ -23,7 +23,7 @@ namespace ElementalWard
             get => _tiedObject;
             set
             {
-                if(_tiedObject != value)
+                if (_tiedObject != value)
                 {
                     _tiedObject = value;
                     behaviours = value.GetComponentsInChildren<ILifeBehaviour>();
@@ -39,15 +39,15 @@ namespace ElementalWard
 
         public void OnDeath(DamageReport killingDamageInfo)
         {
-            if(deathStateMachine)
+            if (deathStateMachine)
             {
                 deathStateMachine.SetNextState(EntityStateCatalog.InstantiateState(deathState));
             }
-            foreach(EntityStateMachine stateMachine in idleStateMachines)
+            foreach (EntityStateMachine stateMachine in idleStateMachines)
             {
                 stateMachine.SetNextState(new Idle());
             }
-            foreach(var behaviour in behaviours)
+            foreach (var behaviour in behaviours)
             {
                 behaviour.OnDeathStart(killingDamageInfo);
             }

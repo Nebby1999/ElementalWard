@@ -1,5 +1,3 @@
-using Nebula.Serialization;
-using System;
 using System.Collections;
 
 namespace ElementalWard
@@ -19,7 +17,7 @@ namespace ElementalWard
         /// Load assets asynchronously required for the Element Events here.
         /// </summary>
         public IEnumerator LoadAssets();
-        
+
         /// <summary>
         /// Called when an Entity is about to deal damage to another Characterbody with the element specified in <see cref="TiedElement"/>
         /// </summary>

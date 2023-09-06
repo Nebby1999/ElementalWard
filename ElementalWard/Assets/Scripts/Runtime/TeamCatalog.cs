@@ -50,7 +50,7 @@ namespace ElementalWard
         {
             int invalidNameTracker = 0;
             var handle = Addressables.LoadAssetsAsync<TeamDef>(ADDRESSABLE_LABEL, EnsureNaming);
-            while(!handle.IsDone)
+            while (!handle.IsDone)
             {
                 yield return new WaitForEndOfFrame();
             }
@@ -58,7 +58,7 @@ namespace ElementalWard
 
             teamDefs = new TeamDef[results.Length];
 
-            for(int i = 0; i < results.Length; i++)
+            for (int i = 0; i < results.Length; i++)
             {
                 TeamDef teamDef = results[i];
                 TeamIndex teamIndex = (TeamIndex)i;
@@ -66,7 +66,7 @@ namespace ElementalWard
                 teamNameToIndex[teamDef.cachedName] = teamIndex;
                 teamDefs[i] = teamDef;
             }
-            for(int i = 0; i < teamDefs.Length; i++)
+            for (int i = 0; i < teamDefs.Length; i++)
             {
                 teamDefs[i].UpdateTeamInteraction();
             }
@@ -76,7 +76,7 @@ namespace ElementalWard
 
             void EnsureNaming(TeamDef def)
             {
-                if(def.cachedName.IsNullOrWhiteSpace())
+                if (def.cachedName.IsNullOrWhiteSpace())
                 {
                     def.cachedName = $"TEAMDEF_" + invalidNameTracker;
                     invalidNameTracker++;

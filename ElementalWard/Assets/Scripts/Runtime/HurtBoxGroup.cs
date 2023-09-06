@@ -20,7 +20,7 @@ namespace ElementalWard
         private void UpdateHurtboxes(TeamDef def)
         {
             var index = def ? def.TeamIndex : TeamIndex.None;
-            for(int i = 0; i < _hurtBoxes.Length; i++)
+            for (int i = 0; i < _hurtBoxes.Length; i++)
             {
                 _hurtBoxes[i].TeamIndex = index;
             }

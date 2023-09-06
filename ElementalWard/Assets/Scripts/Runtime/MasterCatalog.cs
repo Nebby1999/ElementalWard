@@ -30,7 +30,7 @@ namespace ElementalWard
 
         public static MasterIndex FindMasterIndex(string masterPrefabName)
         {
-            if(_masterNameToIndex.TryGetValue(masterPrefabName, out MasterIndex value))
+            if (_masterNameToIndex.TryGetValue(masterPrefabName, out MasterIndex value))
             {
                 return value;
             }
@@ -51,7 +51,7 @@ namespace ElementalWard
 
             _masterPrefabs = new GameObject[results.Length];
 
-            for(int i = 0; i < results.Length; i++)
+            for (int i = 0; i < results.Length; i++)
             {
                 GameObject prefab = results[i];
                 MasterIndex index = (MasterIndex)i;
@@ -63,7 +63,7 @@ namespace ElementalWard
             yield break;
             void EnsureNaming(GameObject obj)
             {
-                if(obj.name.IsNullOrWhiteSpace())
+                if (obj.name.IsNullOrWhiteSpace())
                 {
                     obj.name = "MASTERPREFAB_" + invalidNameTracker;
                     invalidNameTracker++;

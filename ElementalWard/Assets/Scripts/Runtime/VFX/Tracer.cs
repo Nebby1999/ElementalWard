@@ -1,4 +1,3 @@
-using ElementalWard;
 using Nebula;
 using UnityEngine;
 
@@ -41,7 +40,7 @@ namespace ElementalWard
             Vector3 diff = destination - origin;
             totalDistance = diff.magnitude;
             distanceTraveled = 0;
-            if(totalDistance != 0)
+            if (totalDistance != 0)
             {
                 tracerDirection = diff * (1f / totalDistance);
                 base.transform.rotation = Quaternion.LookRotation(tracerDirection);
@@ -59,9 +58,9 @@ namespace ElementalWard
 
         private void Update()
         {
-            if(distanceTraveled > totalDistance)
+            if (distanceTraveled > totalDistance)
             {
-                if(destroyOnDestinationReach)
+                if (destroyOnDestinationReach)
                 {
                     Destroy(gameObject);
                 }
@@ -73,7 +72,7 @@ namespace ElementalWard
 
             if (tracerHead)
                 tracerHead.position = origin + headPos * tracerDirection;
-            if(tracerTail)
+            if (tracerTail)
                 tracerTail.position = origin + tailPos * tracerDirection;
 
             UpdateRenderer();

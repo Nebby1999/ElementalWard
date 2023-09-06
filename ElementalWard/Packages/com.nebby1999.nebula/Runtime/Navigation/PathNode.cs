@@ -18,9 +18,9 @@ namespace Nebula.Navigation
         public const float MAX_DISTANCE = 15f;
 
         /// <summary>
-        /// The world position of this path node, defaults to a Vector3 with XYZ components set to NAN
+        /// The local position of this node relative to it's graph's provider world position.
         /// </summary>
-        public Vector3 worldPosition = new Vector3(math.NAN, math.NAN, math.NAN);
+        public Vector3 position = new Vector3(math.NAN, math.NAN, math.NAN);
 
         /// <summary>
         /// represents an array of intergers that represent node links.
@@ -33,9 +33,6 @@ namespace Nebula.Navigation
     /// </summary>
     public struct RuntimePathNode : IEquatable<RuntimePathNode>
     {
-        /// <summary>
-        /// The world position of this path node, defaults to a float3 with XYZ components set to NAN
-        /// </summary>
         public int nodeIndex;
         public float3 worldPosition;
         public float gCost;

@@ -14,7 +14,7 @@ namespace EntityStates.WanderingSoul.AI
             if (!target.IsValid)
                 return;
 
-            if(target.HasLOS(CharacterBody, out aimDir, out _))
+            if (target.HasLOS(CharacterBody, out aimDir, out _))
             {
                 skill1Press = true;
             }

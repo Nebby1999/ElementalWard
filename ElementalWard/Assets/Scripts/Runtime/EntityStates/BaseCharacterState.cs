@@ -1,9 +1,4 @@
 ﻿using ElementalWard;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace EntityStates
@@ -20,7 +15,7 @@ namespace EntityStates
         {
             base.OnEnter();
             HasCharacterBody = CharacterBody;
-            if(HasCharacterBody)
+            if (HasCharacterBody)
             {
                 attackSpeedStat = CharacterBody.AttackSpeed;
                 movementSpeedStat = CharacterBody.MovementSpeed;
@@ -31,7 +26,7 @@ namespace EntityStates
 
         protected Ray GetAimRay()
         {
-            if(CharacterInputBank)
+            if (CharacterInputBank)
             {
                 return new Ray(CharacterInputBank.AimOrigin, CharacterInputBank.AimDirection);
             }

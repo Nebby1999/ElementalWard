@@ -106,7 +106,7 @@ namespace ElementalWard
             var instances = Instances;
             var count = instances.Count;
             _accessArray = new TransformAccessArray(count);
-            for(int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 _accessArray.Add(instances[i].transform);
             }

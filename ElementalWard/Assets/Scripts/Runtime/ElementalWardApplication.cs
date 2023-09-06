@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Nebula;
-using UObject = UnityEngine.Object;
-using System.Threading.Tasks;
+using System.Collections;
+using System.Runtime.CompilerServices;
 
 [assembly: SearchableAttribute.OptIn]
+[assembly: InternalsVisibleTo("ElementalWard.Editor", AllInternalsVisible = true)]
 
 namespace ElementalWard
 {

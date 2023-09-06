@@ -21,7 +21,7 @@ namespace EntityStates
 
         protected virtual void GatherInputs()
         {
-            if(HasCharacterInputBank)
+            if (HasCharacterInputBank)
             {
                 moveVector = CharacterInputBank.moveVector;
                 aimDirection = CharacterInputBank.AimDirection;
@@ -32,7 +32,7 @@ namespace EntityStates
 
         protected virtual void ProcessInputs()
         {
-            if(HasSkillManager)
+            if (HasSkillManager)
             {
                 HandleSkill(BodySkillManager.SkillEnum.skill1, ref CharacterInputBank.skill1Button);
                 HandleSkill(BodySkillManager.SkillEnum.skill2, ref CharacterInputBank.skill2Button);
@@ -45,7 +45,7 @@ namespace EntityStates
 
         private void HandleSkill(BodySkillManager.SkillEnum skillEnum, ref CharacterInputBank.Button button)
         {
-            if(button.down)
+            if (button.down)
             {
                 SkillManager.ExecuteSkill(skillEnum);
             }

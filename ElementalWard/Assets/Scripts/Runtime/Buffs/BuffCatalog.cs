@@ -4,7 +4,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -170,7 +169,7 @@ namespace ElementalWard
         private static void CCListBuffs(ConsoleCommandArgs args)
         {
             StringBuilder sb = new StringBuilder();
-            foreach(var (buffName, buffIndex) in buffNametoBuffIndex)
+            foreach (var (buffName, buffIndex) in buffNametoBuffIndex)
             {
                 sb.AppendLine($"{buffName} ({buffIndex})");
             }

@@ -1,6 +1,5 @@
 using Nebula;
 using System;
-using System.Collections.ObjectModel;
 using UnityEngine;
 
 namespace ElementalWard
@@ -17,12 +16,12 @@ namespace ElementalWard
         internal void UpdateTeamInteraction()
         {
             _teamInteractions = new bool?[TeamCatalog.TeamCount];
-            for(int i = 0; i < friendlyTeams.Length; i++)
+            for (int i = 0; i < friendlyTeams.Length; i++)
             {
                 TeamDef other = friendlyTeams[i];
                 _teamInteractions[(int)other.TeamIndex] = false;
             }
-            for(int i = 0; i < enemyTeams.Length; i++)
+            for (int i = 0; i < enemyTeams.Length; i++)
             {
                 TeamDef other = enemyTeams[i];
                 _teamInteractions[(int)other.TeamIndex] = true;

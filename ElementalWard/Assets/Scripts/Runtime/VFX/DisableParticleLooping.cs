@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ElementalWard
@@ -12,7 +10,7 @@ namespace ElementalWard
 
         public void DisableLooping()
         {
-            foreach(ParticleSystem system in systems)
+            foreach (ParticleSystem system in systems)
             {
                 var main = system.main;
                 if (changeDuration)

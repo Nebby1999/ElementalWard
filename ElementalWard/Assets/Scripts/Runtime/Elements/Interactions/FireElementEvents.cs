@@ -32,7 +32,7 @@ namespace ElementalWard
                 return;
 
             //Inflict DOT
-            if(!report.damageType.HasFlag(DamageType.DOT))
+            if (!report.damageType.HasFlag(DamageType.DOT))
             {
                 Debug.Log($"Inflicting DOT to {report.victimBody.gameObject}");
                 var victimBuffController = report.victimBody.GetComponent<BuffController>();
@@ -51,14 +51,14 @@ namespace ElementalWard
         public void OnIncomingDamage(DamageInfo incomingDamageInfo, HealthComponent selfHealthComponent)
         {
             var attackerElement = incomingDamageInfo.attackerBody.Element;
-            if(attackerElement == waterElement)
+            if (attackerElement == waterElement)
             {
 #if DEBUG
                 Debug.Log("Attacker is Water, multiplying damage by 2");
 #endif
                 incomingDamageInfo.damage *= 2;
             }
-            if(attackerElement == electricElement)
+            if (attackerElement == electricElement)
             {
 #if DEBUG
                 Debug.Log("Attacker is Electric, multiplying damage by 0.5");
@@ -72,11 +72,11 @@ namespace ElementalWard
             if (!report.attackerBody.Element || report.attackerBody.Element != TiedElement)
                 return;
 
-            if(report.attackerBody.Element == waterElement)
+            if (report.attackerBody.Element == waterElement)
             {
                 Debug.Log("Steam Bomb");
             }
-            if(report.attackerBody.Element == electricElement)
+            if (report.attackerBody.Element == electricElement)
             {
                 Debug.Log("Plasma Bomb");
             }

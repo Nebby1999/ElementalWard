@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using Nebula;
 using UnityEngine;
 using UnityEngine.Localization;
-using UObject = UnityEngine.Object;
-using Nebula;
 namespace ElementalWard
 {
     public class CharacterBody : MonoBehaviour, IHealthProvider, ILifeBehaviour, IOnTakeDamage
@@ -31,7 +28,7 @@ namespace ElementalWard
         [SerializeField] private Transform aimOriginTransform;
         [SerializeField] private float sprintSpeedMultiplier;
 
-        public float MaxHealth { get; private set;}
+        public float MaxHealth { get; private set; }
         public float MaxShield { get; private set; }
         public float Regen { get; private set; }
         public float MovementSpeed { get; private set; }
@@ -105,18 +102,18 @@ namespace ElementalWard
         }
         [ContextMenu("Recalculate Stats")]
         public void SetStatsDirty() => statsDirty = true;
-		private void FixedUpdate()
-		{
+        private void FixedUpdate()
+        {
             if (statsDirty)
             {
                 statsDirty = false;
                 RecalculateStats();
             }
-		}
+        }
 
-		private void OnValidate()
+        private void OnValidate()
         {
-            if(autoCalculateLevelStats)
+            if (autoCalculateLevelStats)
             {
                 _lvlHealth = _baseHealth * 0.2f;
                 _lvlRegen = _baseRegen * 0.1f;
@@ -126,7 +123,7 @@ namespace ElementalWard
 
         public void OnDeathStart(DamageReport killingDamageInfo)
         {
-            if(TiedMaster)
+            if (TiedMaster)
             {
                 TiedMaster.BodyKilled(this);
             }

@@ -18,7 +18,7 @@ namespace ElementalWard
         public override IEnumerator LoadAssetsOnInitialization()
         {
             handle = Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab");
-            while(!handle.IsDone)
+            while (!handle.IsDone)
                 yield return new WaitForEndOfFrame();
             _onFireVFX = (GameObject)handle.Result;
             yield break;
@@ -32,7 +32,7 @@ namespace ElementalWard
             var inflictorBody = dotInfo.inflictor.characterBody;
             var totalDamage = (inflictorBody ? inflictorBody.Damage : dotInfo.customDamageSource) * TiedDotDef.damageCoefficient;
             _damagePerTick = (totalDamage * DotStacks) / (TiedDotDef.secondsPerTick * dotInfo.fixedAgeDuration);
-            if(!_onFireVFXInstance && _onFireVFX)
+            if (!_onFireVFXInstance && _onFireVFX)
             {
                 var data = new VFXData
                 {
@@ -48,7 +48,7 @@ namespace ElementalWard
         {
             base.OnFixedUpdate(fixedDeltaTime);
             _stopWatch += fixedDeltaTime;
-            if(_stopWatch > TiedDotDef.secondsPerTick)
+            if (_stopWatch > TiedDotDef.secondsPerTick)
             {
                 _stopWatch = 0;
                 _victimHealthComponent.AsValidOrNull()?.TakeDamage(new DamageInfo
@@ -63,7 +63,7 @@ namespace ElementalWard
         public override void OnUpdate(float deltaTime)
         {
             base.OnUpdate(deltaTime);
-            if(_onFireVFXInstance)
+            if (_onFireVFXInstance)
             {
                 _onFireVFXInstance.transform.SetPositionAndRotation(_victimTransform.position, _victimTransform.rotation);
             }

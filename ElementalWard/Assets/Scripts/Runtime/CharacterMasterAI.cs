@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
 //using ElementalWard.Navigation;
 using EntityStates;
 using KinematicCharacterController;
 using Nebula;
 using Nebula.Serialization;
+using System;
+using System.Collections.Generic;
 using Unity.Collections;
-using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace ElementalWard
 {
@@ -50,7 +48,7 @@ namespace ElementalWard
                     _currentTarget.healthComponent.OnDeath -= OnTargetDeath;
                 _currentTarget = value;
                 if (_currentTarget.healthComponent)
-                    _currentTarget.healthComponent.OnDeath += OnTargetDeath; 
+                    _currentTarget.healthComponent.OnDeath += OnTargetDeath;
                 OnTargetChanged();
             }
         }
@@ -60,7 +58,7 @@ namespace ElementalWard
 #endif
         [Nebula.ReadOnly, SerializeField]
         private List<Vector3> _path = new List<Vector3>();
-        
+
         private int _pathIndex;
         private Vector3 _currentWaypoint;
         private float _distanceFromCurrentWaypoint;
@@ -82,7 +80,7 @@ namespace ElementalWard
         public void UpdatePath(NativeList<float3> result)
         {
             _path.Clear();
-            for(int i = 0; i < result.Length; i++)
+            for (int i = 0; i < result.Length; i++)
             {
                 _path.Add(result[i]);
             }
@@ -113,7 +111,7 @@ namespace ElementalWard
 
         private void Update()
         {
-            if(aiStateMachine.CurrentState is not BaseAIState)
+            if (aiStateMachine.CurrentState is not BaseAIState)
             {
                 BodyInputBank.LookRotation = _pathfindingLookRotation;
                 BodyInputBank.moveVector = _pathfindingMovementVector;
@@ -138,7 +136,7 @@ namespace ElementalWard
                 return;
             var deltaTime = Time.fixedDeltaTime;
             _updateStopwatch += deltaTime;
-            if(_updateStopwatch > TIME_BETWEEN_AI_UPDATE)
+            if (_updateStopwatch > TIME_BETWEEN_AI_UPDATE)
             {
                 _updateStopwatch = 0;
                 Tick(deltaTime);
@@ -150,7 +148,7 @@ namespace ElementalWard
             if (!CurrentTarget.IsValid && CurrentTarget.wasAlive)
                 CurrentTarget = AITarget.Invalid;
 
-            if(!CurrentTarget.IsValid)
+            if (!CurrentTarget.IsValid)
                 ScanForTargetNearby();
 
             if (_path.Count == 0)
@@ -184,7 +182,7 @@ namespace ElementalWard
                 if (!healthComponent.IsAlive)
                     continue;
 
-                if(healthComponent.hurtBoxGroup && !encounteredMainHurtboxes.Contains(healthComponent.hurtBoxGroup.MainHurtBox))
+                if (healthComponent.hurtBoxGroup && !encounteredMainHurtboxes.Contains(healthComponent.hurtBoxGroup.MainHurtBox))
                 {
                     encounteredMainHurtboxes.Add(healthComponent.hurtBoxGroup.MainHurtBox);
                 }
@@ -194,26 +192,26 @@ namespace ElementalWard
                 return;
 
             Vector3 bodyAimPosition = CurrentBodyComponents.body.AimOriginTransform.position;
-            foreach(var hurtBox in encounteredMainHurtboxes)
+            foreach (var hurtBox in encounteredMainHurtboxes)
             {
                 //Angle check should only be done if this instance has an awareness angle less than 360.
-                if(awarenessAngle < 360f)
+                if (awarenessAngle < 360f)
                 {
                     var aiPos = CurrentBodyComponents.transform.position;
                     var toHurtbox = hurtBox.transform.position - aiPos;
                     toHurtbox.y = 0;
 
                     var dot = Vector3.Dot(toHurtbox.normalized, CurrentBodyComponents.transform.forward);
-                    if(!(dot > Mathf.Cos(awarenessAngle * 0.5f * Mathf.Deg2Rad)))
+                    if (!(dot > Mathf.Cos(awarenessAngle * 0.5f * Mathf.Deg2Rad)))
                     {
                         continue;
                     }
                 }
 
                 var dir = hurtBox.transform.position - bodyAimPosition;
-                if(Physics.Raycast(bodyAimPosition, dir, out var hit, awarenessRange * 2, LayerIndex.CommonMasks.Bullet))
+                if (Physics.Raycast(bodyAimPosition, dir, out var hit, awarenessRange * 2, LayerIndex.CommonMasks.Bullet))
                 {
-                    if(hit.colliderInstanceID == hurtBox.ColliderID)
+                    if (hit.colliderInstanceID == hurtBox.ColliderID)
                     {
                         CurrentTarget = new AITarget(hurtBox.HealthComponent.gameObject);
                         return;
@@ -228,7 +226,7 @@ namespace ElementalWard
                 return;
 
             var attackerBody = damageReport.attackerBody;
-            
+
             //Do not set the target if the attacker is the target.
             if (CurrentTarget.IsValid && CurrentTarget.body == attackerBody)
                 return;
@@ -402,7 +400,7 @@ namespace ElementalWard
                     if (!healthComponent)
                         return false;
 
-                    if(!healthComponent.IsAlive)
+                    if (!healthComponent.IsAlive)
                     {
                         if (!wasAlive)
                             wasAlive = true;
@@ -443,7 +441,7 @@ namespace ElementalWard
                 mainHurtBox = hurtBoxGroup ? hurtBoxGroup.MainHurtBox : null;
             }
 
-            public static bool operator== (AITarget lhs, AITarget rhs)
+            public static bool operator ==(AITarget lhs, AITarget rhs)
             {
                 if (lhs is null || rhs is null)
                     return false;
@@ -454,14 +452,14 @@ namespace ElementalWard
                 return lhs.body == rhs.body;
             }
 
-            public static bool operator!= (AITarget lhs, AITarget rhs)
+            public static bool operator !=(AITarget lhs, AITarget rhs)
             {
                 return !(lhs == rhs);
             }
 
             public override bool Equals(object obj)
             {
-                if(obj is AITarget aiTarget)
+                if (obj is AITarget aiTarget)
                 {
                     return this == aiTarget;
                 }

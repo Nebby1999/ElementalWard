@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e8016564e83f84b95563afaa6337d3, type: 3}
+  m_Name: TestGroundGraph
+  m_EditorClassIdentifier: 
+  _serializedNodes:
+  - position: {x: 9.619873, y: -7.798238e-17, z: -7.024028}
+    serializedPathNodeLinkIndices: 
+  - position: {x: 9.397539, y: -1.0710172e-16, z: -9.646866}
+    serializedPathNodeLinkIndices: 
+  - position: {x: 9.473654, y: -0.0450449, z: -2.474951}
+    serializedPathNodeLinkIndices: 
+  - position: {x: 0.7278099, y: 2.268358e-18, z: 0.20431551}
+    serializedPathNodeLinkIndices: 
+  - position: {x: -0.2577629, y: -1.06270706e-16, z: -9.572014}
+    serializedPathNodeLinkIndices: 
+  - position: {x: -9.452694, y: -1.052458e-16, z: -9.479699}
+    serializedPathNodeLinkIndices: 
+  - position: {x: -9.105694, y: 1.0659365e-16, z: 9.601103}
+    serializedPathNodeLinkIndices: 
+  - position: {x: -9.42976, y: -1.4587977e-18, z: -0.13139682}
+    serializedPathNodeLinkIndices: 
+  - position: {x: 0.024692535, y: 1.10856926e-16, z: 9.985104}
+    serializedPathNodeLinkIndices: 
+  - position: {x: 9.6663885, y: 1.08084355e-16, z: 9.7353735}
+    serializedPathNodeLinkIndices: 
+  - position: {x: 9.324655, y: 1.2365661e-17, z: 1.7660179}
+    serializedPathNodeLinkIndices: 
+  - position: {x: -6.9409866, y: 1.07, z: -0.24465609}
+    serializedPathNodeLinkIndices: 
+  - position: {x: -6.754486, y: 1.07, z: 8.651663}
+    serializedPathNodeLinkIndices: 
+  - position: {x: -6.963936, y: 1.07, z: -8.352702}
+    serializedPathNodeLinkIndices: 
+  _serializedLinks: []

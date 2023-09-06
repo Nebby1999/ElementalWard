@@ -39,7 +39,7 @@ namespace EntityStates
             _duration = baseDuration / attackSpeedStat;
             _damage = damageStat;
 
-            switch(testType)
+            switch (testType)
             {
                 case TestType.Raycast:
                     HitscanTest();
@@ -132,7 +132,7 @@ namespace EntityStates
         }
         public override void ModifyNextState(EntityStateBase state)
         {
-            if(state is TestWeaponState testWeaponState)
+            if (state is TestWeaponState testWeaponState)
             {
                 testWeaponState.elementIndex = elementDef.AsValidOrNull()?.ElementIndex ?? ElementIndex.None;
                 testWeaponState.elementToFire = elementDef;

@@ -1,8 +1,5 @@
 using Nebula;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {

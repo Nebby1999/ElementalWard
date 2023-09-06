@@ -1,16 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UObject = UnityEngine.Object;
-using UnityEngine.InputSystem;
-using System;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.AddressableAssets;
 using Cinemachine;
 using Nebula;
-using System.Linq.Expressions;
-using UnityEngine.UI;
 using Nebula.Console;
+using System;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.InputSystem;
 
 namespace ElementalWard
 {
@@ -58,14 +52,14 @@ namespace ElementalWard
 
         private void SpawnCamera(CharacterBody body)
         {
-            if(!_cameraInstance)
+            if (!_cameraInstance)
             {
                 var fpsVirtualCameraPrefab = Addressables.LoadAssetAsync<GameObject>(CAMERA_ADDRESS).WaitForCompletion();
                 _cameraInstance = Instantiate(fpsVirtualCameraPrefab);
             }
             var fpsVirtualCamera = _cameraInstance.GetComponent<CinemachineVirtualCamera>();
             PlayableCharacterCamera = body.GetComponent<CharacterCameraController>();
-            if(PlayableCharacterCamera)
+            if (PlayableCharacterCamera)
             {
                 PlayableCharacterCamera.VirtualCamera = fpsVirtualCamera;
                 _bodyCameraTransform = fpsVirtualCamera.transform;
@@ -76,7 +70,7 @@ namespace ElementalWard
 
         private void Update()
         {
-            if(BodyInputs)
+            if (BodyInputs)
             {
                 PlayerInputs playerInputs = GeneratePlayerInputs();
                 BodyInputs.LookRotation = _bodyCameraTransform.AsValidOrNull()?.rotation ?? Quaternion.identity;

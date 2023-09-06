@@ -1,13 +1,8 @@
-using Nebula;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
-using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.LowLevel;
 
 namespace ElementalWard
 {
@@ -28,15 +23,15 @@ namespace ElementalWard
                 charDictionary = new Dictionary<char, Vector2>();
                 var cols = (int)material.GetFloat("_Columns");
                 var rows = (int)material.GetFloat("_Rows");
-                for(int i = 0; i < chars.Length; i++)
+                for (int i = 0; i < chars.Length; i++)
                 {
                     var c = char.ToLowerInvariant(chars[i]);
                     if (charDictionary.ContainsKey(c))
                         continue;
 
                     var x = i % cols;
-                    var y = (rows-1) - i / rows;
-                    var uv = new Vector2(x,y);
+                    var y = (rows - 1) - i / rows;
+                    var uv = new Vector2(x, y);
                     charDictionary.Add(c, uv);
                 }
             }
@@ -47,7 +42,7 @@ namespace ElementalWard
                 if (charDictionary == null)
                     Initialize();
 
-                if(charDictionary.TryGetValue(c, out Vector2 texCoord))
+                if (charDictionary.TryGetValue(c, out Vector2 texCoord))
                 {
                     return texCoord;
                 }
@@ -72,7 +67,7 @@ namespace ElementalWard
 
         public static string FormatDamage(float damage, bool isHealing)
         {
-            if(float.IsInfinity(damage))
+            if (float.IsInfinity(damage))
             {
                 return $"{(isHealing ? "+" : "-")}()!!!";
             }

@@ -1,5 +1,3 @@
-using Nebula;
-using System;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
@@ -57,7 +55,7 @@ namespace ElementalWard
         {
             Hit[] hits = CollectHits();
             HandleHits(hits);
-            if(explosionVFX)
+            if (explosionVFX)
                 FXManager.SpawnVisualFX(explosionVFX, explosionVFXData);
             return new Result
             {
@@ -70,7 +68,7 @@ namespace ElementalWard
         {
             _hitsBuffer.Clear();
             Collider[] colliders = Physics.OverlapSphere(explosionOrigin, explosionRadius, LayerIndex.entityPrecise.Mask);
-            for(int i = 0; i < colliders.Length; i++)
+            for (int i = 0; i < colliders.Length; i++)
             {
                 var collider = colliders[i];
                 HurtBox hurtBox = collider.GetComponent<HurtBox>();
@@ -79,7 +77,7 @@ namespace ElementalWard
                 HealthComponent healthComponent = hurtBox.HealthComponent;
                 if (!healthComponent)
                     continue;
-                if((healthComponent.gameObject == attacker.gameObject) && !hitSelf)
+                if ((healthComponent.gameObject == attacker.gameObject) && !hitSelf)
                     continue;
                 if (_encounteredHealthComponentsBuffer.Contains(healthComponent))
                     continue;
@@ -89,7 +87,7 @@ namespace ElementalWard
                 _hitsBuffer.Add(hit);
             }
             _encounteredHealthComponentsBuffer.Clear();
-            if(requireLineOfSight)
+            if (requireLineOfSight)
             {
                 CheckLineOfSight();
             }
@@ -98,7 +96,7 @@ namespace ElementalWard
 
         private void HandleHits(Hit[] hits)
         {
-            for(int i = 0; i < hits.Length; i++)
+            for (int i = 0; i < hits.Length; i++)
             {
                 var hit = hits[i];
                 if (!hit.passLos)
@@ -124,13 +122,13 @@ namespace ElementalWard
             NativeArray<RaycastCommand> commands = new NativeArray<RaycastCommand>(_hitsBuffer.Count, Allocator.TempJob);
             NativeArray<RaycastHit> results = new NativeArray<RaycastHit>(_hitsBuffer.Count, Allocator.TempJob);
             var queryParams = new QueryParameters(LayerIndex.world.Mask);
-            for(int i = 0; i <  _hitsBuffer.Count; i++)
+            for (int i = 0; i < _hitsBuffer.Count; i++)
             {
                 var hit = _hitsBuffer[i];
                 commands[i] = new RaycastCommand(explosionOrigin, hit.hitNormal, queryParams, Mathf.Sqrt(hit.distanceSqr));
             }
             RaycastCommand.ScheduleBatch(commands, results, 1).Complete();
-            for(int j = 0; j < _hitsBuffer.Count; j++)
+            for (int j = 0; j < _hitsBuffer.Count; j++)
             {
                 var hit = _hitsBuffer[j];
                 if (results[j].collider)

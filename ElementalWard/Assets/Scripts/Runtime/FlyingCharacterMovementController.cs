@@ -1,7 +1,5 @@
 using KinematicCharacterController;
 using UnityEngine;
-using System;
-using Object = UnityEngine.Object;
 
 namespace ElementalWard
 {
@@ -54,7 +52,7 @@ namespace ElementalWard
 
         public void BeforeCharacterUpdate(float deltaTime)
         {
-            if(IgnoreInputUntilCollision)
+            if (IgnoreInputUntilCollision)
             {
                 MovementDirection = Vector3.zero;
             }

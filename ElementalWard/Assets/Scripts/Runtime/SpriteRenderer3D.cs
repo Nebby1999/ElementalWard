@@ -50,7 +50,7 @@ namespace ElementalWard
 
         protected virtual void Start()
         {
-            foreach(var rendererInfo in rendererInfos)
+            foreach (var rendererInfo in rendererInfos)
             {
                 var renderer = rendererInfo.renderer;
                 renderer.material = rendererInfo.defaultMaterial;
@@ -95,7 +95,7 @@ namespace ElementalWard
 
         protected virtual void LateUpdate()
         {
-            foreach(RendererInfo info in rendererInfos)
+            foreach (RendererInfo info in rendererInfos)
             {
                 UpdateRendererInfo(info);
             }

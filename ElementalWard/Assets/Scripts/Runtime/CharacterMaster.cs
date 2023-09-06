@@ -1,9 +1,6 @@
 using Nebula;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {
@@ -48,7 +45,7 @@ namespace ElementalWard
         }
         private void FixedUpdate()
         {
-            if(CurrentBody && CurrentBody.HealthComponent)
+            if (CurrentBody && CurrentBody.HealthComponent)
             {
                 CurrentBody.HealthComponent.IsImmune = IsGod;
             }
@@ -84,7 +81,7 @@ namespace ElementalWard
             CurrentBody.TiedMaster = this;
 
             TeamComponent teamComponent = go.GetComponent<TeamComponent>();
-            if(teamComponent)
+            if (teamComponent)
                 teamComponent.CurrentTeamIndex = defaultTeam ? defaultTeam.TeamIndex : TeamIndex.None;
 
             OnBodySpawned?.Invoke(CurrentBody);
@@ -92,7 +89,7 @@ namespace ElementalWard
 
         public void Respawn()
         {
-            if(!Application.isPlaying)
+            if (!Application.isPlaying)
             {
                 Debug.LogWarning("Cannot respawn outside of play mode");
                 return;
@@ -100,7 +97,7 @@ namespace ElementalWard
 
             var pos = transform.position;
             var rot = transform.rotation;
-            if(CurrentBody)
+            if (CurrentBody)
             {
                 pos = CurrentBody.transform.position;
                 rot = CurrentBody.transform.rotation;
@@ -141,7 +138,7 @@ namespace ElementalWard
 
         public void BodyKilled(CharacterBody body)
         {
-            if(CurrentBody == body)
+            if (CurrentBody == body)
             {
                 OnBodyLost?.Invoke();
             }

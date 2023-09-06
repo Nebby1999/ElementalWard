@@ -1,10 +1,5 @@
-using Nebula;
 using System;
-using Unity.Collections;
-using Unity.Jobs;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Jobs;
 using UnityEngine.Rendering;
 
 namespace ElementalWard
@@ -56,7 +51,7 @@ namespace ElementalWard
 
         public void OnDeathStart(DamageReport killingDamageInfo)
         {
-            foreach(var behaviour in disableOnDeath)
+            foreach (var behaviour in disableOnDeath)
             {
                 behaviour.enabled = false;
             }

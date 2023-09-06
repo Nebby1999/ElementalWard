@@ -16,10 +16,10 @@ namespace ElementalWard
         public void SetData(VFXData data)
         {
             data.TryGetProperty(CommonVFXProperties.Color, out Color color);
-            if(affectAllMaterials)
+            if (affectAllMaterials)
             {
                 _materials = _renderer.materials;
-                foreach(var material in _materials)
+                foreach (var material in _materials)
                 {
                     material.SetColor("_BaseColor", color);
                 }
@@ -33,7 +33,7 @@ namespace ElementalWard
 
         private void OnDestroy()
         {
-            foreach(Material mat in _materials)
+            foreach (Material mat in _materials)
             {
                 Destroy(mat);
             }

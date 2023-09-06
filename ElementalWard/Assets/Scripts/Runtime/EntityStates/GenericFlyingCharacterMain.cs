@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace EntityStates
 {
     public class GenericFlyingCharacterMain : BaseFlyingCharacterMain
@@ -14,13 +12,13 @@ namespace EntityStates
 
         protected virtual void HandleMovement()
         {
-            if(HasICharacterMovementController)
+            if (HasICharacterMovementController)
             {
                 ICharacterMovementController.CharacterRotation = CharacterInputBank.LookRotation;
                 ICharacterMovementController.MovementDirection = moveVector;
             }
 
-            if(HasCharacterBody)
+            if (HasCharacterBody)
             {
                 bool shouldSprint = wantsToSprint;
                 if (moveVector.magnitude <= 0.5f)

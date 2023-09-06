@@ -1,9 +1,4 @@
-using ImGuiNET;
-using Nebula;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using UImGui;
 using UnityEngine;
 
 namespace ElementalWard
@@ -48,7 +43,7 @@ namespace ElementalWard
             if (index == BuffIndex.None)
                 return false;
 
-            if(BuffCatalog.IsBuffADot(index))
+            if (BuffCatalog.IsBuffADot(index))
             {
                 BuffDef def = BuffCatalog.GetBuffDef(index);
                 Debug.LogWarning($"{def} which has a buffdef index of {index} is a Dot, use \"HasDot(DotIndex)\" instead");
@@ -63,7 +58,7 @@ namespace ElementalWard
             if (!buffDef)
                 return;
 
-            if(BuffCatalog.IsBuffADot(buffDef))
+            if (BuffCatalog.IsBuffADot(buffDef))
             {
                 Debug.LogWarning($"{buffDef} is a Dot, use \"InflictDot(DotInflictInfo)\" instead");
                 return;
@@ -75,7 +70,7 @@ namespace ElementalWard
         public void AddTimedBuff(BuffIndex index, float time, int amount = 1, int maxStacks = 0)
         {
             var currentStacks = _buffs[(int)index];
-            if(buffToTimedBuff.TryGetValue(index, out var timedBuff))
+            if (buffToTimedBuff.TryGetValue(index, out var timedBuff))
             {
                 currentStacks = Mathf.Min(currentStacks + amount, maxStacks);
                 timedBuff.timeUntilExpiration = time;
@@ -100,7 +95,7 @@ namespace ElementalWard
             if (!buffDef)
                 return;
 
-            if(BuffCatalog.IsBuffADot(buffDef))
+            if (BuffCatalog.IsBuffADot(buffDef))
             {
                 Debug.LogWarning($"{buffDef} is a Dot, use \"InflictDot(DotInflictInfo)\" instead");
                 return;
@@ -114,7 +109,7 @@ namespace ElementalWard
             if (index == BuffIndex.None)
                 return;
 
-            if(BuffCatalog.IsBuffADot(index))
+            if (BuffCatalog.IsBuffADot(index))
             {
                 BuffDef def = BuffCatalog.GetBuffDef(index);
                 Debug.LogWarning($"{def} which has a buffdef index of {index} is a Dot, use \"InflictDot(DotInflictInfo)\" instead");
@@ -130,7 +125,7 @@ namespace ElementalWard
             if (!buffDef)
                 return;
 
-            if(BuffCatalog.IsBuffADot(buffDef))
+            if (BuffCatalog.IsBuffADot(buffDef))
             {
                 Debug.LogWarning($"{buffDef} is a Dot, use \"RemoveDot(DotBuffDef)\" instead");
                 return;
@@ -161,7 +156,7 @@ namespace ElementalWard
             if (!buffDef)
                 return 0;
 
-            if(BuffCatalog.IsBuffADot(buffDef))
+            if (BuffCatalog.IsBuffADot(buffDef))
             {
                 Debug.LogWarning($"{buffDef} is a Dot, use \"GetDotCount(DotBuffDef)\" instead");
                 return 0;
@@ -174,7 +169,7 @@ namespace ElementalWard
             if (index == BuffIndex.None)
                 return 0;
 
-            if(BuffCatalog.IsBuffADot(index))
+            if (BuffCatalog.IsBuffADot(index))
             {
                 BuffDef def = BuffCatalog.GetBuffDef(index);
                 Debug.LogWarning($"{def} which has a buffdef index of {index} is a Dot, use \"GetDotCount(DotIndex)\" instead");
@@ -214,7 +209,7 @@ namespace ElementalWard
 
             var behaviour = _dotBehaviours[dotI];
             //If a behaviour doesnt exist, create one and add it to the hashset
-            if(behaviour == null)
+            if (behaviour == null)
             {
                 SetBuffCount(def.BuffIndex, 1);
                 behaviour = BuffCatalog.InitializeDotBehaviour(def.DotIndex);
@@ -228,7 +223,7 @@ namespace ElementalWard
             }
 
             //If the behaviour can have more stacks, increase stacks and call on inflicted
-            if(behaviour.DotStacks < info.maxStacks)
+            if (behaviour.DotStacks < info.maxStacks)
             {
                 var buffStack = _buffs[buffI];
                 buffStack++;
@@ -267,9 +262,9 @@ namespace ElementalWard
 
         private void TimedBuffFixedUpdate(float fixedDeltaTime)
         {
-            if(timedBuffsToRemove.Count > 0)
+            if (timedBuffsToRemove.Count > 0)
             {
-                foreach(var index in timedBuffsToRemove)
+                foreach (var index in timedBuffsToRemove)
                 {
                     buffToTimedBuff.Remove(index);
                     SetBuffCount(index, 0);
@@ -277,7 +272,7 @@ namespace ElementalWard
                 timedBuffsToRemove.Clear();
             }
 
-            foreach(var (index, timedBuff) in buffToTimedBuff)
+            foreach (var (index, timedBuff) in buffToTimedBuff)
             {
                 Debug.Log($"{BuffCatalog.GetBuffDef(index)}: {GetBuffCount(index)}");
                 timedBuff.timeUntilExpiration -= fixedDeltaTime;
@@ -285,7 +280,7 @@ namespace ElementalWard
                     timedBuffsToRemove.Add(index);
 
                 timedBuff.stopwatch += fixedDeltaTime;
-                if(timedBuff.stopwatch > timedBuff.timeBetweenBuffStackLoss)
+                if (timedBuff.stopwatch > timedBuff.timeBetweenBuffStackLoss)
                 {
                     RemoveBuff(index, 1);
                     timedBuff.stopwatch = 0;

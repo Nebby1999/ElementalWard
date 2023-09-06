@@ -14,8 +14,8 @@ namespace Nebula.Navigation
 		public RuntimePathNode[] RuntimeNodes { get; }
 		public RuntimePathNodeLink[] RuntimeLinks { get; }
 		public void UpdateRuntimeNodesAndLinks();
-		public void Clear();
-		public void ClearLinks();
-		public NodeBaker GetBaker();
+		public void ClearSerializedNodesAndLinks();
+		public void ClearSerializedLinks();
+		public INodeBaker GetBaker();
 	}
 }

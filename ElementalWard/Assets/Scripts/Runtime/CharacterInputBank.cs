@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -105,7 +101,7 @@ namespace ElementalWard
         {
             get
             {
-                if(_aimDirection == Vector3.zero)
+                if (_aimDirection == Vector3.zero)
                 {
                     return transform.forward;
                 }

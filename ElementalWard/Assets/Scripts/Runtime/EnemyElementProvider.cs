@@ -1,7 +1,4 @@
 using Nebula;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -63,7 +60,7 @@ namespace ElementalWard
 
             _currentCount = BuffController.GetBuffCount(_buffDef.BuffIndex);
             BuffController.AddTimedBuff(_buffDef.BuffIndex, 3, 1, amountRequiredForDeath);
-            if(!_overloadEffectInstance)
+            if (!_overloadEffectInstance)
             {
                 var data = new VFXData
                 {
@@ -83,7 +80,7 @@ namespace ElementalWard
             if (!_effectForceField)
                 return;
             _currentCount = BuffController.GetBuffCount(_buffDef.BuffIndex);
-            if(_currentCount == 0 && _overloadEffectInstance)
+            if (_currentCount == 0 && _overloadEffectInstance)
             {
                 var disableParticleLooping = _overloadEffectInstance.GetComponentInChildren<DisableParticleLooping>();
                 disableParticleLooping.DisableLooping();

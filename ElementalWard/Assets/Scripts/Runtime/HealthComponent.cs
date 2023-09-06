@@ -1,9 +1,6 @@
 using Nebula;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {
@@ -29,10 +26,10 @@ namespace ElementalWard
             get => _healthProvider;
             set
             {
-                if(_healthProvider != value)
+                if (_healthProvider != value)
                 {
                     _healthProvider = value;
-                    if(CurrentHealth > _healthProvider.MaxHealth)
+                    if (CurrentHealth > _healthProvider.MaxHealth)
                     {
                         CurrentHealth = _healthProvider.MaxHealth;
                     }
@@ -68,7 +65,7 @@ namespace ElementalWard
 
         private void Start()
         {
-            if(_healthProvider == null && CurrentHealth == 0)
+            if (_healthProvider == null && CurrentHealth == 0)
                 CurrentHealth = _defaultMaxHealth;
             _wasAlive = true;
         }
@@ -79,10 +76,10 @@ namespace ElementalWard
                 return;
 
             var selfTeamIndex = _teamComponent ? _teamComponent.CurrentTeamIndex : TeamIndex.None;
-            if(damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
+            if (damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
             {
                 bool? isEnemy = TeamCatalog.GetTeamInteraction(damageInfo.attackerBody.team, selfTeamIndex);
-                if(isEnemy == false)
+                if (isEnemy == false)
                 {
                     return;
                 }
@@ -92,7 +89,7 @@ namespace ElementalWard
             IElementEvents selfElementEvents = ElementCatalog.GetElementEventsFor(CurrentElement);
 
             selfElementEvents?.OnIncomingDamage(damageInfo, this);
-            foreach(IOnIncomingDamage onIncomingDamage in _incomingDamageReceivers)
+            foreach (IOnIncomingDamage onIncomingDamage in _incomingDamageReceivers)
             {
                 onIncomingDamage.OnIncomingDamage(damageInfo);
             }
@@ -113,7 +110,7 @@ namespace ElementalWard
             };
             report.damageInfo = damageInfo;
 
-            foreach(IOnTakeDamage onTakeDamage in _takeDamageReceivers)
+            foreach (IOnTakeDamage onTakeDamage in _takeDamageReceivers)
             {
                 onTakeDamage.OnTakeDamage(report);
             }
@@ -126,7 +123,7 @@ namespace ElementalWard
 
         public void FixedUpdate()
         {
-            if(!IsAlive && _wasAlive)
+            if (!IsAlive && _wasAlive)
             {
                 _wasAlive = false;
                 _deathBehaviour.AsValidOrNull()?.OnDeath(_lastDamageSource);

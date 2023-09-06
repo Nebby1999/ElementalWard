@@ -32,13 +32,13 @@ namespace ElementalWard
         }
         private void Start()
         {
-            SetSpeed(desiredForwardSpeed);    
+            SetSpeed(desiredForwardSpeed);
         }
 
         private void FixedUpdate()
         {
             _stopwatch += Time.fixedDeltaTime;
-            if(_stopwatch > projectileLifetime)
+            if (_stopwatch > projectileLifetime)
             {
                 Destroy(gameObject);
             }
@@ -54,7 +54,7 @@ namespace ElementalWard
         }
         private void SetSpeed(float speed)
         {
-            if(enableVelocityOverLifetime)
+            if (enableVelocityOverLifetime)
             {
                 Rigidbody.velocity = speed * velocityOverLifetime.Evaluate(_stopwatch / projectileLifetime) * transform.forward;
             }

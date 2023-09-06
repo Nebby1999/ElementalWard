@@ -12,7 +12,7 @@ namespace ElementalWard
             }
             set
             {
-                if(_spriteTransform != value)
+                if (_spriteTransform != value)
                 {
                     _spriteTransform = value;
                 }
@@ -33,10 +33,10 @@ namespace ElementalWard
 
         private void Start()
         {
-            if(spriteBaseTransform)
+            if (spriteBaseTransform)
             {
                 _spriteParentTransform = spriteBaseTransform.parent;
-                if(!dontDetatchFromParent)
+                if (!dontDetatchFromParent)
                 {
                     spriteBaseTransform.parent = null;
                 }
@@ -45,7 +45,7 @@ namespace ElementalWard
 
         private void LateUpdate()
         {
-            if(autoUpdateSpriteTransform)
+            if (autoUpdateSpriteTransform)
             {
                 UpdateSpriteTransform(Time.deltaTime);
             }

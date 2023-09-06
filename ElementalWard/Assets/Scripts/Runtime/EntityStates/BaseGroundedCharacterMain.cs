@@ -1,10 +1,4 @@
 ﻿using ElementalWard;
-using EntityStates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityStates
 {
@@ -16,7 +10,7 @@ namespace EntityStates
         public override void OnEnter()
         {
             base.OnEnter();
-            if(ICharacterMovementController is GroundedCharacterMovementController groundedController)
+            if (ICharacterMovementController is GroundedCharacterMovementController groundedController)
             {
                 HasGroundedCharacterMovementController = groundedController;
                 GroundedCharacterMovementController = groundedController;

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,7 +17,7 @@ namespace ElementalWard
         {
             _projectileProperties ??= new Dictionary<string, object>();
 
-            if(_projectileProperties.ContainsKey(propName))
+            if (_projectileProperties.ContainsKey(propName))
             {
                 Debug.LogWarning($"FireProjectileInfo already contains a Property of name {propName}.");
                 return;
@@ -29,7 +28,7 @@ namespace ElementalWard
         public bool TryGetProperty<T>(string propName, out T value)
         {
             _projectileProperties ??= new Dictionary<string, object>();
-            if(_projectileProperties.TryGetValue(propName, out var val))
+            if (_projectileProperties.TryGetValue(propName, out var val))
             {
                 value = (T)val;
                 return true;
@@ -48,13 +47,13 @@ namespace ElementalWard
     {
         public static GameObject SpawnProjectile(GameObject projectilePrefab, FireProjectileInfo info)
         {
-            if(!projectilePrefab)
+            if (!projectilePrefab)
             {
                 Debug.LogWarning("projectilePrefab is null; cannot spawn vfx.", projectilePrefab);
                 return null;
             }
             var projectileController = projectilePrefab.GetComponent<ProjectileController>();
-            if(!projectileController)
+            if (!projectileController)
             {
                 Debug.LogWarning("A projectile prefab must have a \"ProjectileController\" component; cannot spawn projectile.", projectilePrefab);
                 return null;
@@ -63,7 +62,7 @@ namespace ElementalWard
             var instantiationPos = info.instantiationPosition;
             var instantiationRotation = info.instantiationRotation;
             var instance = Object.Instantiate(projectilePrefab, instantiationPos, instantiationRotation);
-            foreach(IProjectileInitialization initialization in instance.GetComponents<IProjectileInitialization>())
+            foreach (IProjectileInitialization initialization in instance.GetComponents<IProjectileInitialization>())
             {
                 initialization.Initialize(info);
             }

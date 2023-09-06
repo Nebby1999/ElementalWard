@@ -1,10 +1,4 @@
 ﻿using ElementalWard;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 
 namespace EntityStates
 {
@@ -20,14 +14,14 @@ namespace EntityStates
 
         protected virtual void HandleMovement()
         {
-            if(HasICharacterMovementController && HasCharacterInputBank)
+            if (HasICharacterMovementController && HasCharacterInputBank)
             {
                 var motor = ICharacterMovementController.Motor;
                 ICharacterMovementController.MovementDirection = moveVector;
                 ICharacterMovementController.CharacterRotation = CharacterInputBank.LookRotation;
             }
             ProcessJump();
-            if(HasCharacterBody)
+            if (HasCharacterBody)
             {
                 bool shouldSprint = wantsToSprint;
                 if (moveVector.magnitude <= 0.5f)
@@ -39,7 +33,7 @@ namespace EntityStates
 
         protected virtual void ProcessJump()
         {
-            if(wantsToJump && HasGroundedCharacterMovementController)
+            if (wantsToJump && HasGroundedCharacterMovementController)
             {
                 GroundedCharacterMovementController.Jump();
             }

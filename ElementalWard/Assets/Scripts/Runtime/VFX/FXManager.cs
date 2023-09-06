@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.VFX;
-using static UnityEngine.UI.GridLayoutGroup;
 
 namespace ElementalWard
 {
@@ -33,7 +31,7 @@ namespace ElementalWard
         {
             _vfxProperties ??= new Dictionary<string, object>();
 
-            if(_vfxProperties.ContainsKey(propName))
+            if (_vfxProperties.ContainsKey(propName))
             {
                 Debug.LogWarning($"VFXData already contains a Property of name {propName}.");
             }
@@ -43,7 +41,7 @@ namespace ElementalWard
         public bool TryGetProperty<T>(string propName, out T value)
         {
             _vfxProperties ??= new Dictionary<string, object>();
-            if(_vfxProperties.TryGetValue(propName, out var val))
+            if (_vfxProperties.TryGetValue(propName, out var val))
             {
                 value = (T)val;
                 return true;
@@ -68,7 +66,7 @@ namespace ElementalWard
             var instantiationRot = data.instantiationRotation;
             var instance = Object.Instantiate(vfxPrefab, instantiationPos, instantiationRot);
             IVisualEffect[] visualEffects = instance.GetComponentsInChildren<IVisualEffect>();
-            foreach(IVisualEffect visualEffect in visualEffects)
+            foreach (IVisualEffect visualEffect in visualEffects)
             {
                 visualEffect.SetData(data);
             }

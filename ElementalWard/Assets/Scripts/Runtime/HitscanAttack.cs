@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using Nebula;
 
 namespace ElementalWard
 {
@@ -47,8 +43,8 @@ namespace ElementalWard
             Vector3[] spreadArray = new Vector3[raycastCount];
             Vector3 up = Vector3.up;
             Vector3 axis = Vector3.Cross(up, raycastDirection);
-            
-            for(int i = 0; i < raycastCount; i++)
+
+            for (int i = 0; i < raycastCount; i++)
             {
                 float x = UnityEngine.Random.Range(minSpread, maxSpread);
                 float z = UnityEngine.Random.Range(0f, 360f);
@@ -70,7 +66,7 @@ namespace ElementalWard
         {
             Vector3 endPos = raycastOrigin + normal * raycastLength;
             List<BulletHit> bulletHit = new List<BulletHit>();
-            if(raycastRadius == 0)
+            if (raycastRadius == 0)
             {
                 _cachedHits = Physics.RaycastAll(raycastOrigin, normal, raycastLength, LayerIndex.CommonMasks.Bullet, QueryTriggerInteraction.UseGlobal);
             }
@@ -78,13 +74,13 @@ namespace ElementalWard
             {
                 _cachedHits = Physics.SphereCastAll(raycastOrigin, raycastRadius, normal, raycastLength, LayerIndex.CommonMasks.Bullet, QueryTriggerInteraction.UseGlobal);
             }
-            for(int i = 0; i < _cachedHits.Length; i++)
+            for (int i = 0; i < _cachedHits.Length; i++)
             {
                 BulletHit hit = default;
                 InitBulletHitFromRaycastHit(ref hit, raycastOrigin, normal, ref _cachedHits[i]);
             }
             Vector3 hitPos = Vector3.zero;
-            foreach(var hit in _cachedHits)
+            foreach (var hit in _cachedHits)
             {
                 Collider hitCollider = hit.collider;
                 if (!hitCollider)
@@ -109,7 +105,7 @@ namespace ElementalWard
             if (hitPos == Vector3.zero)
                 hitPos = endPos;
 
-            if(tracerEffect)
+            if (tracerEffect)
             {
                 tracerData.AddProperty(CommonVFXProperties.Origin, raycastOrigin);
                 tracerData.AddProperty(CommonVFXProperties.Start, hitPos);

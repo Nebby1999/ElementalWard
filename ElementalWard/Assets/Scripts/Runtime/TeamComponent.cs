@@ -25,7 +25,7 @@ namespace ElementalWard
 
         private void Start()
         {
-            if(_oldTeamIndex != CurrentTeamIndex)
+            if (_oldTeamIndex != CurrentTeamIndex)
             {
                 _oldTeamIndex = CurrentTeamIndex;
                 OnTeamChange?.Invoke(TeamDef);
@@ -33,7 +33,7 @@ namespace ElementalWard
         }
         public static TeamDef GetObjectTeam(GameObject obj)
         {
-            if(!obj)
+            if (!obj)
             {
                 return null;
             }

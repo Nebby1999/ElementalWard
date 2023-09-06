@@ -1,13 +1,10 @@
-﻿using System;
+﻿using Nebula;
+using Nebula.Console;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using ElementalWard;
-using Nebula;
-using Nebula.Console;
-using Nebula.Serialization;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -33,7 +30,7 @@ namespace ElementalWard
 
         public static ElementIndex FindElementIndex(string elementDefName)
         {
-            if(elementNameToIndex.TryGetValue(elementDefName, out ElementIndex val))
+            if (elementNameToIndex.TryGetValue(elementDefName, out ElementIndex val))
             {
                 return val;
             }
@@ -59,7 +56,7 @@ namespace ElementalWard
         {
             int invalidNameTracker = 0;
             var handle = Addressables.LoadAssetsAsync<ElementDef>(ADDRESSABLE_LABEL, EnsureNaming);
-            while(!handle.IsDone)
+            while (!handle.IsDone)
             {
                 yield return new WaitForEndOfFrame();
             }
@@ -68,7 +65,7 @@ namespace ElementalWard
             elementDefs = new ElementDef[results.Length];
             elementEvents = new IElementEvents[results.Length];
 
-            for(int i = 0; i < results.Length; i++)
+            for (int i = 0; i < results.Length; i++)
             {
                 ElementDef elementDef = results[i];
                 ElementIndex elementIndex = (ElementIndex)i;
@@ -76,7 +73,7 @@ namespace ElementalWard
                 elementNameToIndex[elementDef.cachedName] = elementIndex;
                 elementDefs[i] = elementDef;
                 Type type = elementDef.elementEvents;
-                if(type == null)
+                if (type == null)
                 {
                     Debug.LogWarning($"{elementDef} does not implement element events.", elementDef);
                     continue;
@@ -92,7 +89,7 @@ namespace ElementalWard
 
             void EnsureNaming(ElementDef ed)
             {
-                if(ed.cachedName.IsNullOrWhiteSpace())
+                if (ed.cachedName.IsNullOrWhiteSpace())
                 {
                     ed.cachedName = "ELEMENTDEF_" + invalidNameTracker;
                     invalidNameTracker++;

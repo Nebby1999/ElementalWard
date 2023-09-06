@@ -1,12 +1,6 @@
 ﻿using Cinemachine;
 using Nebula;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using UObject = UnityEngine.Object;
 
 namespace ElementalWard
 {
@@ -42,7 +36,7 @@ namespace ElementalWard
 
         private void Update()
         {
-            if(_brain)
+            if (_brain)
             {
                 VirtualCamera.transform.localRotation = _brain.transform.localRotation;
             }

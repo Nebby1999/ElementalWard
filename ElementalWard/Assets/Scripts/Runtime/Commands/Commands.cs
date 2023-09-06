@@ -8,7 +8,7 @@ namespace ElementalWard.Commands
         {
             get
             {
-                if(!_masterInstance)
+                if (!_masterInstance)
                     _masterInstance = Object.FindObjectOfType<PlayableCharacterMaster>();
                 return _masterInstance;
             }
@@ -26,7 +26,7 @@ namespace ElementalWard.Commands
             string teamDefName = args.TryGetArgString(1) ?? "MonsterTeam";
             string elementDefName = args.TryGetArgString(2);
             MasterIndex index = MasterCatalog.FindMasterIndex(masterName);
-            if(index == MasterIndex.None)
+            if (index == MasterIndex.None)
             {
                 Debug.LogError($"There is no master prefab of name {masterName}");
                 return;
@@ -37,7 +37,7 @@ namespace ElementalWard.Commands
             ElementDef elementDef = elementIndex == ElementIndex.None ? null : ElementCatalog.GetElementDef(elementIndex);
             TeamDef teamDef = teamIndex == TeamIndex.None ? null : TeamCatalog.GetTeamDef(teamIndex);
             Vector3 pos = Vector3.zero;
-            if(_MasterInstance && _MasterInstance.ManagedMaster && _MasterInstance.ManagedMaster.CurrentBody)
+            if (_MasterInstance && _MasterInstance.ManagedMaster && _MasterInstance.ManagedMaster.CurrentBody)
             {
                 pos = _MasterInstance.ManagedMaster.CurrentBody.transform.position;
             }

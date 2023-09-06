@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ElementalWard;
-using KinematicCharacterController;
+﻿using ElementalWard;
 using UnityEngine;
 
 namespace EntityStates
@@ -35,7 +29,7 @@ namespace EntityStates
 
         protected override Animator GetAnimator()
         {
-            if(SpriteLocator && SpriteLocator.SpriteTransform)
+            if (SpriteLocator && SpriteLocator.SpriteTransform)
             {
                 return SpriteLocator.SpriteTransform.GetComponent<Animator>();
             }

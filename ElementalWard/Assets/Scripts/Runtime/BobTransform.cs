@@ -1,6 +1,3 @@
-using Nebula;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ElementalWard
@@ -24,7 +21,7 @@ namespace ElementalWard
 
         private void OnEnable()
         {
-            _transform.localPosition= _localPosAtAwake;
+            _transform.localPosition = _localPosAtAwake;
             _internalStopwatch = 0;
         }
 

@@ -15,7 +15,7 @@ namespace ElementalWard
         {
             _projectileImpacts = GetComponentsInChildren<IProjectileImpact>();
             _projectileColliders = GetComponents<Collider>();
-            for(int i = 0; i < _projectileColliders.Length; i++)
+            for (int i = 0; i < _projectileColliders.Length; i++)
             {
                 _projectileColliders[i].enabled = false;
             }
@@ -23,7 +23,7 @@ namespace ElementalWard
 
         private void Start()
         {
-            for(int i = 0; i < _projectileColliders.Length; i++)
+            for (int i = 0; i < _projectileColliders.Length; i++)
             {
                 _projectileColliders[i].enabled = true;
             }
@@ -41,10 +41,10 @@ namespace ElementalWard
             if (!hurtBoxGroup)
                 return;
             HurtBox[] hurtBoxes = hurtBoxGroup.HurtBoxes;
-            for(int i = 0; i < hurtBoxes.Length; i++)
+            for (int i = 0; i < hurtBoxes.Length; i++)
             {
                 var collider = hurtBoxes[i].TiedCollider;
-                for(int j = 0; j < _projectileColliders.Length; j++)
+                for (int j = 0; j < _projectileColliders.Length; j++)
                 {
                     var collider2 = _projectileColliders[j];
                     Physics.IgnoreCollision(collider, collider2, shouldIgnore);
@@ -60,7 +60,7 @@ namespace ElementalWard
                 return;
 
             Vector3 normal = Vector3.zero;
-            if(_rigidBody)
+            if (_rigidBody)
                 normal = _rigidBody.velocity;
 
             ProjectileImpactInfo info = new()
@@ -69,7 +69,7 @@ namespace ElementalWard
                 estimatedImpactNormal = -normal.normalized,
                 estimatedImpactPosition = transform.position
             };
-            foreach(var impact in _projectileImpacts)
+            foreach (var impact in _projectileImpacts)
             {
                 impact.OnImpact(info);
             }
@@ -90,7 +90,7 @@ namespace ElementalWard
                 estimatedImpactNormal = normal,
                 estimatedImpactPosition = pointOfImpact
             };
-            foreach(var impact in _projectileImpacts)
+            foreach (var impact in _projectileImpacts)
             {
                 impact.OnImpact(info);
             }

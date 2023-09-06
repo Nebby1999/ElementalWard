@@ -6,7 +6,7 @@ using System;
 
 namespace Nebula
 {
-    public static class ListExtensions
+    /*public static class ListExtensions
     {
         public static bool TryGetRandomElement<T>(this IEnumerable<T> enumerable, out T element)
         {
@@ -49,5 +49,5 @@ namespace Nebula
                 list.Remove(element);
             }
         }
-    }
+    }*/
 }

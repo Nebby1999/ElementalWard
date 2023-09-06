@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using KinematicCharacterController;
-using UObject = UnityEngine.Object;
-using Nebula;
-using System;
+using UnityEngine;
 
 namespace ElementalWard
 {
@@ -64,7 +59,7 @@ namespace ElementalWard
 
         public void Jump()
         {
-            if(IsGrounded)
+            if (IsGrounded)
             {
                 Motor.ForceUnground();
                 var yVelocity = characterVelocity.y;

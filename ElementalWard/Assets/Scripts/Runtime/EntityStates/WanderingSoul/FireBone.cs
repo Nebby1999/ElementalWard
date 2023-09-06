@@ -24,7 +24,7 @@ namespace EntityStates.WanderingSoul
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if(FixedAge > duration)
+            if (FixedAge > duration)
             {
                 aimRay = GetAimRay();
                 FireProjectileInfo projectileInfo = new FireProjectileInfo()
