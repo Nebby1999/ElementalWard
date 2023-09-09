@@ -257,6 +257,20 @@ MonoBehaviour:
               - rid: 6975382074470432774
         _addressProviderInternal:
           rid: 6975382077004054539
+      - _id: 898d7c0b-f958-4564-a55c-3b27dd7f55ca
+        _addressableGroup: {fileID: 11400000, guid: 2737b8f4ff5143740be31d2467d44fcb,
+          type: 2}
+        _control:
+          _value: 0
+        _assetGroups:
+          _internalList:
+          - _id: 5c635192-8618-4052-9a0b-43dbece5bdda
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList: []
+        _addressProviderInternal:
+          rid: 1723081152090341378
     _labelRules:
       _internalList:
       - _id: 84e1125a-e22f-44a7-84f5-7243aab4eb27
@@ -357,6 +371,14 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1723081152090341378
+      type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules,
+        asm: SmartAddresser.Editor}
+      data:
+        _source: 2
+        _replaceWithRegex: 0
+        _pattern: 
+        _replacement: 
     - rid: 4020664763838627844
       type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
         asm: SmartAddresser.Editor}
@@ -576,6 +598,191 @@ MonoBehaviour:
       data:
         _id: 7521da33-7517-4fe3-bd28-8409b3d4da11
         prefabPaths:
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Amphora.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bag.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Empty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Full_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Full_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bone.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_Brown.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_DeepRed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Brown.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_DeepRed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Open.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_Brown.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_DeepRed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bottle.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bowl.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bowl_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bread.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bread_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bucket.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Carrot.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Empty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Small_Stand.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/CrystalBall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/CrystalBall_Stand.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Drinkinghorn.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Firewood.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/FirewoodStack.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Flask.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Flask_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Fork.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Goblet.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Inkwell.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Ivy_Branch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Ivy_Leaf.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jar_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jar_Empty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jar_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jug.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Key_Golden.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Key_Rusty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Key_Silver.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Knife.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Lock.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Meat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Mug.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Plant_Root.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Plate.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Plate_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potato.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potion_Blue.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potion_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potion_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Quill.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scales.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Elder.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Open.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Stack.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Shield.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Skull.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Spear.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Spoon.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Switch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/SwitchSecret.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Sword.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Tree_Branch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Wineglass.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Amphora_Stand.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Banner.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Barrel_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Barrel_Closed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Barrel_Open.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Bench.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Carpet_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Carpet_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Chair.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Chest.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/ChestSmall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/CoatHook.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/CoatHook_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Desk.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Fireplace.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Oven.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Shelf.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Shelf_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Stool_round.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Stool_square.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Table_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Table_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Throne.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/WeaponRack_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/WeaponRack_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick_Triple.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Chandelier.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Torch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Torch_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony_Post.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony_Railing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Passage.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Passage_Mix.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var3.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var4.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var3.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Basement_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Basement_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Iron_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Iron_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Wooden_Round_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Wooden_Round_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/DoorGate_Wooden_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/DoorGate_Wooden_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Passage.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_to_Custom.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Window.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_CornerCrossing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Arched.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Center.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Arched.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Flat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Inverted.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Center.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Center_Stairs.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner_Inverted.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage_Wood.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight.prefab
+        - "Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight_14\xB0.prefab"
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var3.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Window.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/FloorTIle.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Crossing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Curve_Long.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Curve_Short.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Double.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Quarter.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_TCrossing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_toStaircase_Bottom.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_toStaircase_Top.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Holefix_Double.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/HoleFix_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Holefix_Single.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Gate.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall_broken.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Pillar.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Portcullis_Metal.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Portcullis_Wood.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Staircase with Walls.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Staircase.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_High.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Low.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Platform.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
@@ -589,6 +796,9 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
         - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
         - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
+        - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0.prefab
+        - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1.prefab
+        - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/Scripts/Editor/Assets/NewBossRoom.prefab
         - Assets/Scripts/Editor/Assets/NewEntranceRoom.prefab
         - Assets/Scripts/Editor/Assets/NewRoom.prefab
@@ -616,6 +826,191 @@ MonoBehaviour:
       data:
         _id: 3b8969c9-80a1-4ac0-bbdf-d20887c3f925
         prefabPaths:
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Amphora.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bag.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Empty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Full_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Full_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Beaker_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bone.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_Brown.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_DeepRed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Big_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Brown.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_DeepRed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Open.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_Brown.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_DeepRed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Book_Small_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bottle.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bowl.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bowl_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bread.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bread_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Bucket.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Carrot.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Empty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Cauldron_Small_Stand.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/CrystalBall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/CrystalBall_Stand.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Drinkinghorn.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Firewood.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/FirewoodStack.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Flask.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Flask_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Fork.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Goblet.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Inkwell.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Ivy_Branch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Ivy_Leaf.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jar_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jar_Empty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jar_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Jug.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Key_Golden.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Key_Rusty.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Key_Silver.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Knife.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Lock.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Meat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Mug.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Plant_Root.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Plate.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Plate_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potato.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potion_Blue.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potion_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Potion_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Quill.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scales.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Elder.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Open.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Scroll_Stack.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Shield.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Skull.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Spear.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Spoon.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Switch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/SwitchSecret.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Sword.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Tree_Branch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Clutter/Wineglass.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Amphora_Stand.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Banner.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Barrel_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Barrel_Closed.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Barrel_Open.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Bench.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Carpet_Green.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Carpet_Red.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Chair.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Chest.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/ChestSmall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/CoatHook.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/CoatHook_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Desk.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Fireplace.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Oven.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Shelf.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Shelf_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Stool_round.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Stool_square.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Table_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Table_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/Throne.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/WeaponRack_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Furniture/WeaponRack_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick_Small.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick_Triple.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Candlestick_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Chandelier.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Torch.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Lamps/Torch_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony_Post.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Balcony_Railing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Passage.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Passage_Mix.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var3.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Var4.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Basement_Wall_Var3.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Basement_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Basement_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Iron_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Iron_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Wooden_Round_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Door_Wooden_Round_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/DoorGate_Wooden_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/DoorGate_Wooden_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Passage.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_to_Custom.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Big_Window.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_CornerCrossing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Arched.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Center.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Arched.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Flat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Inverted.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Center.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Center_Stairs.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner_Inverted.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage_Wood.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight.prefab
+        - "Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight_14\xB0.prefab"
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Straight_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var1.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var2.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Var3.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Wall_Window.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/FloorTIle.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Crossing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Curve_Long.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Curve_Short.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Double.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Full.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_Quarter.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_TCrossing.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_toStaircase_Bottom.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Hallway_toStaircase_Top.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Holefix_Double.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/HoleFix_Half.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Holefix_Single.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Left.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Door_Right.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Gate.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Jail_Wall_broken.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Pillar.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Portcullis_Metal.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Portcullis_Wood.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Staircase with Walls.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Staircase.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_High.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Low.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Platform.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
@@ -629,6 +1024,9 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
         - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
         - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
+        - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0.prefab
+        - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1.prefab
+        - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/Scripts/Editor/Assets/NewBossRoom.prefab
         - Assets/Scripts/Editor/Assets/NewEntranceRoom.prefab
         - Assets/Scripts/Editor/Assets/NewRoom.prefab

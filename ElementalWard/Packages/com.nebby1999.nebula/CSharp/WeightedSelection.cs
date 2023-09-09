@@ -4,6 +4,11 @@ namespace Nebula
 {
     public class WeightedSelection<T>
     {
+        public interface IWeightedSelectionEntry
+        {
+            public float Weight { get; }
+            public T Value { get; }
+        }
         private const int MIN_CAPACITY = 8;
         public struct ChoiceInformation
         {
@@ -139,6 +144,16 @@ namespace Nebula
         {
             if (index < 0 || Count <= index)
                 throw new ArgumentOutOfRangeException(paramName);
+        }
+
+        public static WeightedSelection<T> CreateFrom<TWeightedSelectionEntry>(TWeightedSelectionEntry[] entries) where TWeightedSelectionEntry : IWeightedSelectionEntry
+        {
+            var result = new WeightedSelection<T>();
+            foreach(var entry in entries)
+            {
+                result.AddChoice(entry.Value, entry.Weight);
+            }
+            return result;
         }
     }
 }

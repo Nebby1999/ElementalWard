@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c7096b63002f748b30277763539a6e, type: 3}
+  m_Name: New DungeonDeck
+  m_EditorClassIdentifier: 
+  entrywayCards:
+  - _prefab: {fileID: 6828253889382449943, guid: 53b996997155aa849930e3513f11f36d,
+      type: 3}
+    _weight: 1
+  - _prefab: {fileID: 6828253889382449943, guid: ca6480e143c29ca40a22f4652bd6a63c,
+      type: 3}
+    _weight: 1
+  - _prefab: {fileID: 6828253889382449943, guid: 68f467c92aefb6340bcfff9b586d1b12,
+      type: 3}
+    _weight: 1

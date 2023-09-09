@@ -5,7 +5,9 @@ using UnityEngine.Jobs;
 
 namespace ElementalWard
 {
+#if !UNITY_EDITOR
     [BurstCompile(OptimizeFor = OptimizeFor.Performance)]
+#endif
     public struct LookAtJob : IJobParallelForTransform
     {
         [ReadOnly]
