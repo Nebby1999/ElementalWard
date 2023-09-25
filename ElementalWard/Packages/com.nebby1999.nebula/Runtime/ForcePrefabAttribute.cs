@@ -17,9 +17,11 @@ namespace Nebula
             set
             {
                 if (value == typeof(GameObject) || value.IsAssignableFrom(typeof(Component)))
+                {
                     _forcedType = value;
-                else
-                    throw new ArgumentException("Forced Type must be of type GameObject or a type that's subclass of Component.");
+                    return;
+                }
+                throw new ArgumentException("Forced Type must be of type GameObject or a type that's subclass of Component.");
             }
         }
         private Type _forcedType;

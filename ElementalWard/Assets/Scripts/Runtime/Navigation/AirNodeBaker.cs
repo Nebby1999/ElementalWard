@@ -249,11 +249,6 @@ namespace ElementalWard.Navigation
                 _transform = _moverObject.transform;
             }
 
-            ~Mover()
-            {
-                Dispose();
-            }
-
         }
     }
 }

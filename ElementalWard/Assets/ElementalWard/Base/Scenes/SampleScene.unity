@@ -1846,7 +1846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1484586974}
   - component: {fileID: 1484586973}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DungeonDirector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,7 +1865,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402ec431c90cff6488bdd98511ca38fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: {fileID: 11400000, guid: dcd40f783df53244884d884470caa7f9, type: 2}
+  _dungeonDeck: {fileID: 11400000, guid: 89721bc0f2e9ae34e8964092245233d6, type: 2}
+  _dungeonFloor: 0
+  useCustomSeed: 1
+  _customSeed: 638311894894636188
 --- !u!4 &1484586974
 Transform:
   m_ObjectHideFlags: 0
@@ -1876,7 +1879,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

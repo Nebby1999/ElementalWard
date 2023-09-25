@@ -1,40 +1,43 @@
 using Nebula;
-using UnityEditor;
 using UnityEngine;
 
 namespace ElementalWard
 {
+    [DisallowMultipleComponent]
     public class Door : MonoBehaviour
     {
-        [SerializeField] private bool isOpen;
-        [Header("Wall Settings")]
-        [ForcePrefab, SerializeField] private GameObject wallPrefab;
-        [SerializeField] private Vector3 wallPositionOffset;
-        [SerializeField] private Quaternion wallRotationOffset;
+        public bool IsOpen
+        {
+            get => _isOpen;
+            set
+            {
+                _isOpen = value;
+                _wallChild.SetActive(!_isOpen);
+                _doorChild.SetActive(_isOpen);
+            }
+        }
+        [SerializeField] private bool _isOpen;
+        [SerializeField] private GameObject _wallChild;
+        [SerializeField] private GameObject _doorChild;
+        public Room ParentRoom { get; private set; }
+        public Door ConnectedDoor { get; set; }
+        public Room ConnectedRoom => HasConnection ? ConnectedDoor.ParentRoom : null;
+        public bool HasConnection => ConnectedDoor;
 
-        [SerializeField, HideInInspector] private GameObject wallInstance;
-
+        private void Awake()
+        {
+            ParentRoom = GetComponentInParent<Room>();
+        }
         private void OnValidate()
         {
-            if(!wallInstance && wallPrefab)
+            if(!_wallChild || !_doorChild)
             {
-                wallInstance = Instantiate(wallPrefab);
-                wallInstance.transform.localPosition += wallPositionOffset;
-                wallInstance.transform.localRotation = wallRotationOffset;
+                Debug.LogError($"Door component in {this} has a missing wall or door child", this);
+                return;
             }
 
-            if (!wallInstance)
-                return;
-
-            wallInstance.SetActive(!isOpen);
+            _wallChild.SetActive(!_isOpen);
+            _doorChild.SetActive(_isOpen);
         }
-
-#if UNITY_EDITOR
-        private void DestroyWall()
-        {
-            EditorApplication.update -= DestroyWall;
-            DestroyImmediate(wallInstance);
-        }
-#endif
     }
 }
