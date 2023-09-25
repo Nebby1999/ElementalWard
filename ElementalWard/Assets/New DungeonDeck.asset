@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c7096b63002f748b30277763539a6e, type: 3}
   m_Name: New DungeonDeck
   m_EditorClassIdentifier: 
-  entrywayCards:
-  - _prefab: {fileID: 6828253889382449943, guid: 53b996997155aa849930e3513f11f36d,
+  entrywayRoomCards:
+  - prefab: {fileID: 6828253889382449943, guid: 3b88b616ed17dee458623a606b95428f,
       type: 3}
-    _weight: 1
-  - _prefab: {fileID: 6828253889382449943, guid: ca6480e143c29ca40a22f4652bd6a63c,
-      type: 3}
-    _weight: 1
-  - _prefab: {fileID: 6828253889382449943, guid: 68f467c92aefb6340bcfff9b586d1b12,
-      type: 3}
-    _weight: 1
+    weight: 50
+    cardCost: 0
+  roomCards:
+  - name: Connectors
+    weight: 75
+    cards:
+    - prefab: {fileID: 7676756407846853414, guid: 4d7aea558d5aff841a73512a5c397041,
+        type: 3}
+      weight: 10
+      cardCost: 25
+  bossRoomCards: []

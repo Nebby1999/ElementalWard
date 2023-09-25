@@ -23,6 +23,11 @@ namespace Nebula
         public int Max => max;
         public int MinLimit => minLimit;
         public int MaxLimit => maxLimit;
+        public int GetRandomRange(Xoroshiro128Plus _rng)
+        {
+            return _rng.RangeInt(Min, Max + 1);
+        }
+        public int GetRandomRangeLimits(Xoroshiro128Plus _rng) => _rng.RangeInt(MinLimit, MaxLimit + 1);
         public int GetRandomRange() 
         {
             return UnityEngine.Random.Range(Min, Max);

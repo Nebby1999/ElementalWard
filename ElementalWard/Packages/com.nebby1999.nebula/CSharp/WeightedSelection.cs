@@ -1,14 +1,10 @@
 using System;
+using static UnityEditor.Experimental.GraphView.Port;
 
 namespace Nebula
 {
     public class WeightedSelection<T>
     {
-        public interface IWeightedSelectionEntry
-        {
-            public float Weight { get; }
-            public T Value { get; }
-        }
         private const int MIN_CAPACITY = 8;
         public struct ChoiceInformation
         {
@@ -39,6 +35,15 @@ namespace Nebula
         public WeightedSelection(int capacity = MIN_CAPACITY)
         {
             choices = new ChoiceInformation[capacity];
+        }
+
+        public WeightedSelection(WeightedSelection<T> orig)
+        {
+            choices = new ChoiceInformation[orig.Capacity];
+            for (int i = 0; i < orig.Count; i++)
+            {
+                AddChoice(orig.GetChoice(i));
+            }
         }
 
         public void AddChoice(T value, float choiceWeight)
@@ -105,13 +110,15 @@ namespace Nebula
         public T Evaluate(float normalizedIndex, int[] ignoredIndices)
         {
             int index = EvaluateToChoiceIndex(normalizedIndex, ignoredIndices);
+            if (index == -1)
+                return default;
             return choices[index].value;
         }
 
         public int EvaluateToChoiceIndex(float normalizedIndex, int[] ignoredIndices)
         {
             if (Count == 0)
-                throw new InvalidOperationException("Cannot evaluate without available choices.");
+                return -1;
 
             float evaluationTotalWeight = totalWeight;
             if(ignoredIndices != null)
@@ -144,16 +151,6 @@ namespace Nebula
         {
             if (index < 0 || Count <= index)
                 throw new ArgumentOutOfRangeException(paramName);
-        }
-
-        public static WeightedSelection<T> CreateFrom<TWeightedSelectionEntry>(TWeightedSelectionEntry[] entries) where TWeightedSelectionEntry : IWeightedSelectionEntry
-        {
-            var result = new WeightedSelection<T>();
-            foreach(var entry in entries)
-            {
-                result.AddChoice(entry.Value, entry.Weight);
-            }
-            return result;
         }
     }
 }

@@ -42,5 +42,35 @@ namespace Nebula
             key = kvp.Key;
             value = kvp.Value;
         }
+
+        public static ref T NextElementUniform<T>(this T[] array, Xoroshiro128Plus rng)
+        {
+            return ref rng.NextElementUniform(array);
+        }
+
+        public static T NextElementUniform<T>(this List<T> list, Xoroshiro128Plus rng)
+        {
+            return rng.NextElementUniform(list);
+        }
+
+        public static T NextElementUniform<T>(this IList<T> list, Xoroshiro128Plus rng)
+        {
+            return rng.NextElementUniform(list);
+        }
+
+        public static T RetrieveAndRemoveNextElementUniform<T>(this T[] array, Xoroshiro128Plus rng)
+        {
+            return rng.RetrieveAndRemoveNextElementUniform(array);
+        }
+
+        public static T RetrieveAndRemoveNextElementUniform<T>(this List<T> list, Xoroshiro128Plus rng)
+        {
+            return rng.RetrieveAndRemoveNextElementUniform(list);
+        }
+
+        public static T RetrieveAndRemoveNextElementUniform<T>(this IList<T> list, Xoroshiro128Plus rng)
+        {
+            return rng.RetrieveAndRemoveNextElementUniform(list);
+        }
     }
 }

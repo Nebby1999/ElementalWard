@@ -190,11 +190,6 @@ namespace ElementalWard.Navigation
             _mover = new Mover();
         }
 
-        ~GroundNodeBaker()
-        {
-            Dispose();
-        }
-
         private class Mover : IDisposable
         {
             public Vector3 CapsuleHalfHeight => new Vector3(0, (_moverCharacterController.height / 2) + _moverCharacterController.skinWidth, 0);
@@ -262,12 +257,6 @@ namespace ElementalWard.Navigation
 
                 //tester.mover = this;
                 //tester.controller = _moverCharacterController;
-            }
-
-            ~Mover()
-            {
-                if (_moverObject)
-                    GameObject.DestroyImmediate(_moverObject, true);
             }
         }
     }
