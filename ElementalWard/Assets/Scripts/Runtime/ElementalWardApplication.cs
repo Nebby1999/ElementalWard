@@ -1,6 +1,8 @@
 using Nebula;
+using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using UnityEngine;
 
 [assembly: SearchableAttribute.OptIn]
 [assembly: InternalsVisibleTo("ElementalWard.Editor", AllInternalsVisible = true)]
@@ -10,13 +12,19 @@ namespace ElementalWard
     public class ElementalWardApplication : MainGameBehaviour<ElementalWardApplication>
     {
         public const string APP_NAME = "ElementalWard";
-        public float distance;
+
+        private Xoroshiro128Plus _rng;
         protected override void Awake()
         {
             base.Awake();
 #if !UNITY_EDITOR
             Cursor.lockState = CursorLockMode.Locked;
 #endif
+        }
+
+        protected override void FixedUpdate()
+        {
+            base.FixedUpdate();
         }
         protected override void OnApplicationQuit()
         {

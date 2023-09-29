@@ -72,7 +72,7 @@ namespace ElementalWard
 
             _entrywayCards = _dungeonDeck.GenerateSelection(_dungeonDeck.entrywayRoomCards);
             _entrywayCards.SetSeed(_dungeonRNG.NextUlong);
-            _roomCards = _dungeonDeck.GenerateSelectionFromRoomPool(_dungeonDeck.roomCards);
+            _roomCards = _dungeonDeck.GenerateSelection(_dungeonDeck.roomCards[0].cards);
             _roomCards.SetSeed(_dungeonRNG.NextUlong);
 
             PlaceEntryway();
@@ -151,9 +151,6 @@ namespace ElementalWard
                 Destroy(instantiatedObject, 0.5f);
                 return false;
             }
-            
-
-
 
             //Connect Doors
             instantiatedDoor.ConnectedDoor = door;
@@ -172,7 +169,7 @@ namespace ElementalWard
             Collider[] colliders = Physics.OverlapBox(bounds.center, bounds.extents, Quaternion.identity, Physics.AllLayers);
 
             List<Room> rooms = colliders.Select(x => x.GetComponentInParent<Room>()).Where(r => r && r != roomToCheck && !roomsToIgnore.Contains(r)).Distinct().ToList();
-            Debug.Log(rooms.Count);
+            //Debug.Log(rooms.Count);
             return rooms.Count > 0;
         }
 

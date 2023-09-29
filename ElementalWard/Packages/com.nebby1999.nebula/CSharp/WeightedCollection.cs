@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using UnityEngine;
 using System.Linq;
 using System.Text;
 
@@ -25,8 +26,8 @@ namespace Nebula
         public bool IsReadOnly => false;
         public float TotalWeight { get; private set; }
         private List<WeightedValue> _items = new List<WeightedValue>();
-        internal Xoroshiro128Plus _rng;
-        internal ulong _seed;
+        internal Xoroshiro128Plus _rng = new Xoroshiro128Plus((ulong)DateTime.Now.Ticks);
+        internal ulong? _seed;
 
         public T Next()
         {
@@ -38,22 +39,24 @@ namespace Nebula
 
         public int NextIndex()
         {
-            float normalizedIndex = _rng.NextNormalizedFloat;
             if (Count == 0)
                 return -1;
 
-            float evaluationTotalWeight = TotalWeight;
-            float num = normalizedIndex * evaluationTotalWeight;
-            float num1 = 0;
-            for(int i = 0; i < Count; i++)
+            StringBuilder log = new StringBuilder();
+            float startWeight = _rng.RangeFloat(0, TotalWeight);
+            log.AppendLine(startWeight.ToString());
+            for(int i = 0; i < _items.Count; i++)
             {
-                num1 += _items[i].weight;
-                if(num1 < num)
+                startWeight -= _items[i].weight;
+                log.AppendLine($"{startWeight} : {i}");
+                if (startWeight <= 0)
                 {
+                    Debug.Log(log);
                     return i;
                 }
             }
-            return Count - 1;
+            Debug.Log(log);
+            return -1;
         }
 
         public void Add(T value, float weight)
@@ -169,7 +172,7 @@ namespace Nebula
             stringBuilder.Append(TotalWeight);
             stringBuilder.Append(", Count:");
             stringBuilder.Append(Count);
-            stringBuilder.Append(", {");
+            stringBuilder.Append(", {\n");
             for (int i = 0; i < Count; i++)
             {
                 string s = _items[i].ToString();
@@ -183,7 +186,7 @@ namespace Nebula
         public WeightedCollection()
         {
             _seed = (ulong)DateTime.Now.Ticks;
-            _rng = new Xoroshiro128Plus(_seed);
+            _rng = new Xoroshiro128Plus(_seed.Value);
         }
 
         public WeightedCollection(IEnumerable<WeightedValue> collection) : this()

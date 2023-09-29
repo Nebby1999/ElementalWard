@@ -23,43 +23,11 @@ namespace ElementalWard
             return selection;
         }
 
-        public WeightedCollection<Card> GenerateSelectionFromRoomPool(RoomPool[] roomPools)
-        {
-            WeightedCollection<Card> selection = new WeightedCollection<Card>();
-            for(int i = 0; i < roomPools.Length; i++)
-            {
-                RoomPool pool = roomPools[i];
-                float num = SumWeights(pool);
-                float num2 = pool.weight / num;
-                if(!(num > 0f))
-                {
-                    continue;
-                }
-
-                foreach(var card in pool.cards)
-                {
-                    float weight = card.weight / num2;
-                    selection.Add(card, Mathf.RoundToInt(weight));
-                }
-            }
-            return selection;
-
-            float SumWeights(RoomPool pool)
-            {
-                float num = 0f;
-                for(int i = 0; i < pool.cards.Length; i++)
-                {
-                    num += pool.cards[i].weight;
-                }
-                return num;
-            }
-        }
-
         [ContextMenu("Log Cards")]
         private void LogCards()
         {
             Debug.Log(GenerateSelection(entrywayRoomCards));
-            Debug.Log(GenerateSelectionFromRoomPool(roomCards));
+            Debug.Log(GenerateSelection(roomCards[0].cards));
         }
         [Serializable]
         public class RoomPool
