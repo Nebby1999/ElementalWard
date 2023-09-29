@@ -72,7 +72,7 @@ namespace ElementalWard
 
             _entrywayCards = _dungeonDeck.GenerateSelection(_dungeonDeck.entrywayRoomCards);
             _entrywayCards.SetSeed(_dungeonRNG.NextUlong);
-            _roomCards = _dungeonDeck.GenerateSelection(_dungeonDeck.roomCards[0].cards);
+            _roomCards = _dungeonDeck.GenerateSelectionFromPool(_dungeonDeck.roomCards);
             _roomCards.SetSeed(_dungeonRNG.NextUlong);
 
             PlaceEntryway();

@@ -16,8 +16,7 @@ namespace Nebula.Editor
             if(property.objectReferenceValue && !property.objectReferenceValue.GetType().IsAssignableFrom(forcedType))
             {
                 property.objectReferenceValue = null;
-                EditorGUI.EndProperty();
-                return;
+                goto End;
             }
             UnityEngine.Object newValue = EditorGUI.ObjectField(position, label, property.objectReferenceValue, forcedType, true);
             if(!newValue || !newValue.GetType().IsAssignableFrom(forcedType) || PrefabUtility.IsPartOfPrefabAsset(newValue))
@@ -27,12 +26,13 @@ namespace Nebula.Editor
                     Debug.LogError($"Field {label.text}'s value cannot be from or part of a prefab");
                 }
                 property.objectReferenceValue = null;
-                EditorGUI.EndProperty();
-                return;
+                goto End;
             }
 
             property.objectReferenceValue = newValue;
+        End:
             EditorGUI.EndProperty();
+            return;
         }
     }
 }
