@@ -701,7 +701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.149}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.09902954}
+  m_AnchoredPosition: {x: 0, y: -0.09899902}
   m_SizeDelta: {x: 0, y: 0.19799805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &625155502
@@ -852,7 +852,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.15276292}
-  m_AnchoredPosition: {x: 0.0009765625, y: -1.5800171}
+  m_AnchoredPosition: {x: 0.0009765625, y: -1.5800781}
   m_SizeDelta: {x: 0.19995117, y: -3.078003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &640207836
@@ -1867,8 +1867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dungeonDeck: {fileID: 11400000, guid: 89721bc0f2e9ae34e8964092245233d6, type: 2}
   _dungeonFloor: 0
-  useCustomSeed: 1
-  _customSeed: 638311894894636188
+  useCustomSeed: 0
+  _customSeed: 638314285933408162
 --- !u!4 &1484586974
 Transform:
   m_ObjectHideFlags: 0
@@ -2136,7 +2136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: -8.434387}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &1978408398

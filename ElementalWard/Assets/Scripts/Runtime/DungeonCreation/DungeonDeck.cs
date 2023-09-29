@@ -13,19 +13,19 @@ namespace ElementalWard
         public RoomPool[] roomCards = Array.Empty<RoomPool>();
         public Card[] bossRoomCards = Array.Empty<Card>();
 
-        public WeightedSelection<Card> GenerateSelection(Card[] cards)
+        public WeightedCollection<Card> GenerateSelection(Card[] cards)
         {
-            var selection = new WeightedSelection<Card>();
+            var selection = new WeightedCollection<Card>();
             foreach(var card in cards)
             {
-                selection.AddChoice(card, card.weight);
+                selection.Add(card, card.weight);
             }
             return selection;
         }
 
-        public WeightedSelection<Card> GenerateSelectionFromRoomPool(RoomPool[] roomPools)
+        public WeightedCollection<Card> GenerateSelectionFromRoomPool(RoomPool[] roomPools)
         {
-            WeightedSelection<Card> selection = new WeightedSelection<Card>();
+            WeightedCollection<Card> selection = new WeightedCollection<Card>();
             for(int i = 0; i < roomPools.Length; i++)
             {
                 RoomPool pool = roomPools[i];
@@ -39,7 +39,7 @@ namespace ElementalWard
                 foreach(var card in pool.cards)
                 {
                     float weight = card.weight / num2;
-                    selection.AddChoice(card, weight);
+                    selection.Add(card, Mathf.RoundToInt(weight));
                 }
             }
             return selection;
@@ -54,6 +54,13 @@ namespace ElementalWard
                 return num;
             }
         }
+
+        [ContextMenu("Log Cards")]
+        private void LogCards()
+        {
+            Debug.Log(GenerateSelection(entrywayRoomCards));
+            Debug.Log(GenerateSelectionFromRoomPool(roomCards));
+        }
         [Serializable]
         public class RoomPool
         {
@@ -66,9 +73,13 @@ namespace ElementalWard
         { 
             [ForcePrefab]
             public GameObject prefab;
-            public float weight;
+            public int weight;
             public float cardCost;
 
+            public override string ToString()
+            {
+                return $"{prefab} ({cardCost})";
+            }
         }
     }
 }

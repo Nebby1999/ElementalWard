@@ -18,7 +18,7 @@ namespace Nebula
 
         public static Bounds CalculateColliderBounds(GameObject obj, bool includeChildren = true)
         {
-            var colliders = includeChildren ? obj.GetComponentsInChildren<Collider>() : obj.GetComponents<Collider>();
+            var colliders = includeChildren ? obj.GetComponentsInChildren<Collider>(true) : obj.GetComponents<Collider>();
 
             var bounds = new Bounds(obj.transform.position, Vector3.one);
             if(colliders.Length == 0)
@@ -34,7 +34,7 @@ namespace Nebula
 
         public static Bounds CalculateRendererBounds(GameObject obj, bool includeChildren = true)
         {
-            var renderers = includeChildren ? obj.GetComponentsInChildren<Renderer>() : obj.GetComponents<Renderer>();
+            var renderers = includeChildren ? obj.GetComponentsInChildren<Renderer>(true) : obj.GetComponents<Renderer>();
 
             var bounds = new Bounds(obj.transform.position, Vector3.zero);
             if (renderers.Length == 0)

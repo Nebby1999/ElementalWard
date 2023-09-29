@@ -1,9 +1,10 @@
 using Nebula;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ElementalWard
 {
-    [DisallowMultipleComponent]
+    [RequireComponent(typeof(BoxCollider))]
     public class Door : MonoBehaviour
     {
         public bool IsOpen
@@ -12,32 +13,46 @@ namespace ElementalWard
             set
             {
                 _isOpen = value;
-                _wallChild.SetActive(!_isOpen);
-                _doorChild.SetActive(_isOpen);
+                OnValidate();
             }
         }
         [SerializeField] private bool _isOpen;
         [SerializeField] private GameObject _wallChild;
         [SerializeField] private GameObject _doorChild;
+        [SerializeField] private UnityEvent<CharacterBody> _onCharacterCross;
         public Room ParentRoom { get; private set; }
         public Door ConnectedDoor { get; set; }
         public Room ConnectedRoom => HasConnection ? ConnectedDoor.ParentRoom : null;
         public bool HasConnection => ConnectedDoor;
+        public BoxCollider TriggerCollider { get; private set; }
+
 
         private void Awake()
         {
             ParentRoom = GetComponentInParent<Room>();
+            TriggerCollider = GetComponent<BoxCollider>();
         }
         private void OnValidate()
         {
-            if(!_wallChild || !_doorChild)
+            if(_wallChild)
             {
-                Debug.LogError($"Door component in {this} has a missing wall or door child", this);
-                return;
+                _wallChild.SetActive(!_isOpen);
+            }
+            if(_doorChild)
+            {
+                _doorChild.SetActive(_isOpen);
             }
 
-            _wallChild.SetActive(!_isOpen);
-            _doorChild.SetActive(_isOpen);
+            GetComponent<BoxCollider>().isTrigger = true;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            var characterBody = other.GetComponent<CharacterBody>();
+            if(characterBody)
+            {
+                _onCharacterCross.Invoke(characterBody);
+            }
         }
     }
 }

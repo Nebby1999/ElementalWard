@@ -64,18 +64,20 @@ namespace ElementalWard
                 UnityEditor.EditorUtility.SetDirty(this);
 #endif
         }
-        
-        public Door GetFirstAvailableDoor()
+
+        public Door GetRandomAvailableDoor(Xoroshiro128Plus rng = null)
         {
-            foreach(var door in Doors)
+            List<Door> doors = new List<Door>();
+            foreach (var door in Doors)
             {
-                if(!door.HasConnection && door.IsOpen)
+                if (!door.HasConnection && door.IsOpen)
                 {
-                    return door;
+                    doors.Add(door);
                 }
             }
-            return null;
+            return rng?.NextElementUniform(doors) ?? doors[UnityEngine.Random.Range(0, doors.Count - 1)];
         }
+        
 
         private void OnDrawGizmos()
         {

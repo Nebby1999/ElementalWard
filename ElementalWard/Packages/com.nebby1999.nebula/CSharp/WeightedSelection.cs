@@ -1,156 +1,258 @@
 using System;
-using static UnityEditor.Experimental.GraphView.Port;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
 
 namespace Nebula
 {
-    public class WeightedSelection<T>
+    public class WeightedCollection<T> : IEnumerable<WeightedCollection<T>.WeightedValue>, ICollection<WeightedCollection<T>.WeightedValue>, IList<WeightedCollection<T>.WeightedValue>
+        where T : class
     {
-        private const int MIN_CAPACITY = 8;
-        public struct ChoiceInformation
+        public WeightedValue this[int index]
         {
-            public T value;
-            public float weight;
-        }
-
-        public ChoiceInformation[] choices;
-
-        public int Count { get; private set; }
-        public int Capacity
-        {
-            get => choices.Length;
+            get
+            {
+                return _items[index];
+            }
             set
             {
-                if(value < 8 || value < Count)
-                {
-                    throw new ArgumentOutOfRangeException("value");
-                }
-
-                ChoiceInformation[] currentChoices = choices;
-                choices = new ChoiceInformation[value];
-                Array.Copy(currentChoices, choices, Count);
+                _items[index] = value;
             }
         }
-        private float totalWeight;
+        public int Count => _items.Count;
+        public bool IsReadOnly => false;
+        public float TotalWeight { get; private set; }
+        private List<WeightedValue> _items = new List<WeightedValue>();
+        internal Xoroshiro128Plus _rng;
+        internal ulong _seed;
 
-        public WeightedSelection(int capacity = MIN_CAPACITY)
+        public T Next()
         {
-            choices = new ChoiceInformation[capacity];
-        }
-
-        public WeightedSelection(WeightedSelection<T> orig)
-        {
-            choices = new ChoiceInformation[orig.Capacity];
-            for (int i = 0; i < orig.Count; i++)
-            {
-                AddChoice(orig.GetChoice(i));
-            }
-        }
-
-        public void AddChoice(T value, float choiceWeight)
-        {
-            AddChoice(new ChoiceInformation
-            {
-                value = value,
-                weight = choiceWeight
-            });
-        }
-
-        public void AddChoice(ChoiceInformation choiceInfo)
-        {
-            if (Count == Capacity)
-                Capacity *= 2;
-
-            choices[Count++] = choiceInfo;
-            totalWeight += choiceInfo.weight;
-        }
-
-        public void RemoveChoice(int choiceIndex)
-        {
-            ThrowIfOutOfRange(choiceIndex, nameof(choiceIndex));
-            int i = choiceIndex;
-
-            for(int num = Count - 1; i < num; i++)
-            {
-                choices[i] = choices[i + 1];
-            }
-            choices[--Count] = default;
-            RecalculateTotalWeight();
-        }
-
-        public void ModifyChoiceWeight(int choiceIndex, float newWeight)
-        {
-            ThrowIfOutOfRange(choiceIndex, nameof(choiceIndex));
-            choices[choiceIndex].weight = newWeight;
-            RecalculateTotalWeight();
-        }
-
-        public void RecalculateTotalWeight()
-        {
-            totalWeight = 0;
-            for(int i = 0; i < Count; i++)
-            {
-                totalWeight += choices[i].weight;
-            }
-        }
-
-        public void Clear()
-        {
-            for(int i = 0; i < Count; i++)
-            {
-                choices[i] = default;
-            }
-            Count = 0;
-            totalWeight = 0;
-        }
-        public T Evaluate(float normalizedIndex)
-        {
-            return Evaluate(normalizedIndex, null);
-        }
-
-        public T Evaluate(float normalizedIndex, int[] ignoredIndices)
-        {
-            int index = EvaluateToChoiceIndex(normalizedIndex, ignoredIndices);
+            int index = NextIndex();
             if (index == -1)
                 return default;
-            return choices[index].value;
+            return _items[index].value;
         }
 
-        public int EvaluateToChoiceIndex(float normalizedIndex, int[] ignoredIndices)
+        public int NextIndex()
         {
+            float normalizedIndex = _rng.NextNormalizedFloat;
             if (Count == 0)
                 return -1;
 
-            float evaluationTotalWeight = totalWeight;
-            if(ignoredIndices != null)
-            {
-                foreach(int ignoredIndex in ignoredIndices)
-                {
-                    evaluationTotalWeight -= choices[ignoredIndex].weight;
-                }
-            }
-
+            float evaluationTotalWeight = TotalWeight;
             float num = normalizedIndex * evaluationTotalWeight;
             float num1 = 0;
             for(int i = 0; i < Count; i++)
             {
-                if(ignoredIndices == null || Array.IndexOf(ignoredIndices, i) == -1)
+                num1 += _items[i].weight;
+                if(num1 < num)
                 {
-                    num1 += choices[i].weight;
-                    if (num1 < num)
-                        return i;
+                    return i;
                 }
             }
             return Count - 1;
         }
 
-        public ChoiceInformation GetChoice(int i)
+        public void Add(T value, float weight)
         {
-            return choices[i];
+            AddInternal(new WeightedValue(value, weight));
+            RecalculateTotalWeight();
         }
-        private void ThrowIfOutOfRange(int index, string paramName)
+
+        public void Add(WeightedValue item)
         {
-            if (index < 0 || Count <= index)
-                throw new ArgumentOutOfRangeException(paramName);
+            AddInternal(item);
+            RecalculateTotalWeight();
+        }
+
+        public void Add(IEnumerable<WeightedValue> collection)
+        {
+            foreach(var value in collection)
+            {
+                AddInternal(value);
+            }
+            RecalculateTotalWeight();
+        }
+
+        public void SetSeed(ulong seed)
+        {
+            _rng.ResetSeed(seed);
+        }
+
+        private void AddInternal(WeightedValue item)
+        {
+            _items.Add(item);
+        }
+
+        private void RecalculateTotalWeight()
+        {
+            TotalWeight = 0;
+            for (int i = 0; i < Count; i++)
+            {
+                TotalWeight += this[i].weight;
+            }
+        }
+
+        public void Clear()
+        {
+            _items.Clear();
+            RecalculateTotalWeight();
+        }
+
+        public bool Contains(WeightedValue item)
+        {
+            return _items.Contains(item);
+        }
+
+        public void CopyTo(WeightedValue[] array, int arrayIndex)
+        {
+            _items.CopyTo(array, arrayIndex);
+        }
+
+        public IEnumerator<WeightedValue> GetEnumerator()
+        {
+            return _items.GetEnumerator();
+        }
+
+        public int IndexOf(WeightedValue item)
+        {
+            return _items.IndexOf(item);
+        }
+
+        public void Insert(int index, T value, float weight)
+        {
+            Insert(index, new WeightedValue(value, weight));
+        }
+
+        public void Insert(int index, WeightedValue item)
+        {
+            _items.Insert(index, item);
+            RecalculateTotalWeight();
+        }
+
+        public void InsertRange(int index, List<(T, float)> collection)
+        {
+            InsertRange(index, collection.Select(t => new WeightedValue(t.Item1, t.Item2)));
+        }
+
+        public void InsertRange(int index, IEnumerable<WeightedValue> collection)
+        {
+            _items.InsertRange(index, collection);
+            RecalculateTotalWeight();
+        }
+
+        public bool Remove(WeightedValue item)
+        {
+            return _items.Remove(item);
+        }
+
+        public void RemoveAt(int index)
+        {
+            _items.RemoveAt(index);
+            RecalculateTotalWeight();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return _items.GetEnumerator();
+        }
+
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("WeightedList<");
+            stringBuilder.Append(typeof(T).Name);
+            stringBuilder.Append(">: TotalWeight:");
+            stringBuilder.Append(TotalWeight);
+            stringBuilder.Append(", Count:");
+            stringBuilder.Append(Count);
+            stringBuilder.Append(", {");
+            for (int i = 0; i < Count; i++)
+            {
+                string s = _items[i].ToString();
+                s += i < Count - 1 ? "," : "";
+                stringBuilder.AppendLine(s);
+            }
+            stringBuilder.Append("}");
+            return stringBuilder.ToString();
+        }
+
+        public WeightedCollection()
+        {
+            _seed = (ulong)DateTime.Now.Ticks;
+            _rng = new Xoroshiro128Plus(_seed);
+        }
+
+        public WeightedCollection(IEnumerable<WeightedValue> collection) : this()
+        {
+            Add(collection);
+        }
+
+        public WeightedCollection(Xoroshiro128Plus rng)
+        {
+            _rng = new Xoroshiro128Plus(rng);
+        }
+
+        public WeightedCollection(IEnumerable<WeightedValue> collection, Xoroshiro128Plus rng)
+        {
+            Add(collection);
+            _rng = new Xoroshiro128Plus(rng);
+        }
+
+        public WeightedCollection(Xoroshiro128Plus rng, IEnumerable<WeightedValue> collection) : this(collection, rng) { }
+
+        public WeightedCollection(WeightedCollection<T> orig)
+        {
+            _rng = new Xoroshiro128Plus(orig._rng);
+            _seed = orig._seed;
+            Add(orig._items);
+        }
+
+        public struct WeightedValue : IEquatable<WeightedValue>
+        {
+            public T value;
+            public float weight;
+
+            public override bool Equals(object obj)
+            {
+                return obj is WeightedValue other && Equals(other);
+            }
+
+            public bool Equals(WeightedValue other)
+            {
+                return value == other.value;
+            }
+
+            public static bool operator ==(WeightedValue lhs, WeightedValue rhs)
+            {
+                return lhs.Equals(rhs);
+            }
+
+            public static bool operator !=(WeightedValue lhs, WeightedValue other)
+            {
+                return !(lhs == other);
+            }
+
+            public override int GetHashCode()
+            {
+                int num1 = value.GetHashCode() / 2;
+                int num2 = weight.GetHashCode() / 2;
+                return num1 + num2;
+            }
+
+            public override readonly string ToString()
+            {
+                return string.Format("{0} : {1}", weight, value);
+            }
+
+            public WeightedValue(T value, float weight)
+            {
+                this.value = value;
+                this.weight = weight;
+            }
         }
     }
 }

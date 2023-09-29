@@ -18,19 +18,17 @@ namespace ElementalWard
         public DungeonDirector DungeonDirector { get; init; }
         public bool IsComplete => doorToRooms.Count <= 0;
         public float Credits => DungeonDirector.Credits;
-        private Dictionary<Door, WeightedSelection<DungeonDeck.Card>> doorToRooms = new();
-        private Xoroshiro128Plus _rng;
+        private Dictionary<Door, WeightedCollection<DungeonDeck.Card>> doorToRooms = new();
         private Coroutine _coroutine;
-        public RoomPlacementRequest(Room room, DungeonDirector director, WeightedSelection<DungeonDeck.Card> rooms, ulong requesterSeed)
+        public RoomPlacementRequest(Room room, DungeonDirector director, WeightedCollection<DungeonDeck.Card> rooms)
         {
             Requester = room;
             DungeonDirector = director;
             foreach(var door in Requester.Doors)
             {
                 if(!door.HasConnection)
-                    doorToRooms.Add(door, new WeightedSelection<DungeonDeck.Card>(rooms));
+                    doorToRooms.Add(door, new WeightedCollection<DungeonDeck.Card>(rooms));
             }
-            _rng = new Xoroshiro128Plus(requesterSeed);
         }
 
         public void StartCoroutine()
@@ -56,19 +54,24 @@ namespace ElementalWard
                 {
                     var door = kvp.Key;
                     var roomCards = kvp.Value;
-                    yield return null;
-                    int choiceIndex = roomCards.EvaluateToChoiceIndex(_rng.NextNormalizedFloat, null);
+                    yield return new WaitForSeconds(1);
+                    if(door.HasConnection)
+                    {
+                        doors.Add(door);
+                        continue;
+                    }
+                    int choiceIndex = roomCards.NextIndex();
                     if(choiceIndex == -1)
                     {
                         door.IsOpen = false;
                         doors.Add(door);
                         continue;
                     }
-                    var room = roomCards.GetChoice(choiceIndex).value;
+                    var room = roomCards[choiceIndex];
 
-                    if(!DungeonDirector.TryPlaceRoom(room, door))
+                    if(!DungeonDirector.TryPlaceRoom(room.value, door))
                     {
-                        roomCards.RemoveChoice(choiceIndex);
+                        roomCards.RemoveAt(choiceIndex);
                     }
                     doors.Add(door);
                 }
