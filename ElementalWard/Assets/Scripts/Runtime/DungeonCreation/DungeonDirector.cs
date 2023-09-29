@@ -103,7 +103,7 @@ namespace ElementalWard
             var entryway = _entrywayCards.Next();
             var gameObject = Instantiate(entryway.prefab, transform);
             Room room = gameObject.GetComponent<Room>();
-            var request = new RoomPlacementRequest(room, this, _roomCards);
+            var request = new RoomPlacementRequest(room, this, _dungeonRNG.NextUlong, _roomCards);
             _placementRequestQueue.Enqueue(request);
         }
 
@@ -157,7 +157,7 @@ namespace ElementalWard
             door.ConnectedDoor = instantiatedDoor;
 
             //Create request for new room
-            RoomPlacementRequest request = new RoomPlacementRequest(instantiatedRoom, this, _roomCards);
+            RoomPlacementRequest request = new RoomPlacementRequest(instantiatedRoom, this, _dungeonRNG.NextUlong, _roomCards);
             _placementRequestQueue.Enqueue(request);
 
             return true;

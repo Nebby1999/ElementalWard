@@ -20,14 +20,19 @@ namespace ElementalWard
         public float Credits => DungeonDirector.Credits;
         private Dictionary<Door, WeightedCollection<DungeonDeck.Card>> doorToRooms = new();
         private Coroutine _coroutine;
-        public RoomPlacementRequest(Room room, DungeonDirector director, WeightedCollection<DungeonDeck.Card> rooms)
+        public RoomPlacementRequest(Room room, DungeonDirector director, ulong seed, WeightedCollection<DungeonDeck.Card> rooms)
         {
+            var temp = new Xoroshiro128Plus(seed);
             Requester = room;
             DungeonDirector = director;
             foreach(var door in Requester.Doors)
             {
                 if(!door.HasConnection)
-                    doorToRooms.Add(door, new WeightedCollection<DungeonDeck.Card>(rooms));
+                {
+                    var copy = new WeightedCollection<DungeonDeck.Card>(rooms);
+                    copy.SetSeed(temp.NextUlong);
+                    doorToRooms.Add(door, copy);
+                }
             }
         }
 

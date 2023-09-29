@@ -42,20 +42,15 @@ namespace Nebula
             if (Count == 0)
                 return -1;
 
-            StringBuilder log = new StringBuilder();
             float startWeight = _rng.RangeFloat(0, TotalWeight);
-            log.AppendLine(startWeight.ToString());
             for(int i = 0; i < _items.Count; i++)
             {
                 startWeight -= _items[i].weight;
-                log.AppendLine($"{startWeight} : {i}");
                 if (startWeight <= 0)
                 {
-                    Debug.Log(log);
                     return i;
                 }
             }
-            Debug.Log(log);
             return -1;
         }
 
@@ -82,6 +77,7 @@ namespace Nebula
 
         public void SetSeed(ulong seed)
         {
+            _seed = seed;
             _rng.ResetSeed(seed);
         }
 
@@ -194,23 +190,10 @@ namespace Nebula
             Add(collection);
         }
 
-        public WeightedCollection(Xoroshiro128Plus rng)
-        {
-            _rng = new Xoroshiro128Plus(rng);
-        }
-
-        public WeightedCollection(IEnumerable<WeightedValue> collection, Xoroshiro128Plus rng)
-        {
-            Add(collection);
-            _rng = new Xoroshiro128Plus(rng);
-        }
-
-        public WeightedCollection(Xoroshiro128Plus rng, IEnumerable<WeightedValue> collection) : this(collection, rng) { }
-
         public WeightedCollection(WeightedCollection<T> orig)
         {
-            _rng = new Xoroshiro128Plus(orig._rng);
             _seed = orig._seed;
+            _rng = orig._rng;
             Add(orig._items);
         }
 
