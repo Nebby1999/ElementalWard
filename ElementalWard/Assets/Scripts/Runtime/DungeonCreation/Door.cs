@@ -21,7 +21,15 @@ namespace ElementalWard
         [SerializeField] private GameObject _doorChild;
         [SerializeField] private UnityEvent<CharacterBody> _onCharacterCross;
         public Room ParentRoom { get; private set; }
-        public Door ConnectedDoor { get; set; }
+        public Door ConnectedDoor
+        {
+            get => _temp;
+            set
+            {
+                _temp = value;
+            }
+        }
+        private Door _temp;
         public Room ConnectedRoom => HasConnection ? ConnectedDoor.ParentRoom : null;
         public bool HasConnection => ConnectedDoor;
         public BoxCollider TriggerCollider { get; private set; }
@@ -53,6 +61,13 @@ namespace ElementalWard
             {
                 _onCharacterCross.Invoke(characterBody);
             }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Vector3 upOffset = Vector3.up;
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawRay(new Ray(transform.position + upOffset, transform.forward));
         }
     }
 }

@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 433764269203691697, guid: f8852af2272a1c44996da75ddc537373,
         type: 3}
       propertyPath: _isOpen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 433764269203691697, guid: f8852af2272a1c44996da75ddc537373,
         type: 3}
@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 2909119090789185410, guid: f8852af2272a1c44996da75ddc537373,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2951582142149648461, guid: f8852af2272a1c44996da75ddc537373,
         type: 3}
@@ -92,6 +92,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall-Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148655025952148518, guid: f8852af2272a1c44996da75ddc537373,
+        type: 3}
+      propertyPath: m_TagString
+      value: RoomBoundIgnore
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

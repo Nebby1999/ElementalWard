@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c7096b63002f748b30277763539a6e, type: 3}
   m_Name: New DungeonDeck
   m_EditorClassIdentifier: 
+  hallwayRoom: {fileID: 8455847111475833734, guid: db04be93382c5e0479826227ba0819dc,
+    type: 3}
   entrywayRoomCards:
   - prefab: {fileID: 6828253889382449943, guid: 53b996997155aa849930e3513f11f36d,
       type: 3}
@@ -47,21 +49,53 @@ MonoBehaviour:
       cardCost: 50
     - prefab: {fileID: 3759864638587765472, guid: 5a35b1f58ae577e4e909cdc78d9e7837,
         type: 3}
-      weight: 50
+      weight: 65.7
       cardCost: 50
+    - prefab: {fileID: 89782553331520438, guid: 2caa8af1a33928c47bde3660d3d9d944,
+        type: 3}
+      weight: 43.1
+      cardCost: 60
+    - prefab: {fileID: 8909476965420984780, guid: f93df525f3e6c4e4d9a52cca2dbc0b74,
+        type: 3}
+      weight: 40.9
+      cardCost: 60
   - name: Connector Rooms
-    weight: 90
+    weight: 75
     cards:
-    - prefab: {fileID: 4162049098968634087, guid: 6939c4192e010994cbf5b8015de65065,
+    - prefab: {fileID: 8455847111475833734, guid: db04be93382c5e0479826227ba0819dc,
+        type: 3}
+      weight: 66
+      cardCost: 10
+    - prefab: {fileID: 118666219494195987, guid: 98abf0e0bf176ac4989204a79e373f3c,
+        type: 3}
+      weight: 66
+      cardCost: 10
+    - prefab: {fileID: 342080378675847919, guid: 0151e42f541cd9d44b7b1f5a6ff1a950,
+        type: 3}
+      weight: 66
+      cardCost: 10
+    - prefab: {fileID: 4382900181705338503, guid: 6b557283d7c5c014390fc13355c43060,
+        type: 3}
+      weight: 66
+      cardCost: 10
+    - prefab: {fileID: 8455847111475833734, guid: 5938d503b9fcc0c4eb7d0ead16f5a3d8,
+        type: 3}
+      weight: 66
+      cardCost: 10
+    - prefab: {fileID: 9165564956430828898, guid: 92be7da3f806be3419b0d35f8aa07e31,
         type: 3}
       weight: 50
-      cardCost: 50
-    - prefab: {fileID: 7266970482371106344, guid: 35ea598fa6d6d9742a2fe99d0aee824d,
+      cardCost: 10
+    - prefab: {fileID: 3054767095753609112, guid: 3b10cc5e4ff160d479f623a07ea89187,
         type: 3}
       weight: 50
-      cardCost: 50
-    - prefab: {fileID: 3759864638587765472, guid: 5a35b1f58ae577e4e909cdc78d9e7837,
+      cardCost: 10
+    - prefab: {fileID: 7676756407846853414, guid: 86a5bc7a8bfdf1b4dba58235774ebc52,
         type: 3}
       weight: 50
-      cardCost: 50
-  bossRoomCards: []
+      cardCost: 10
+  bossRoomCards:
+  - prefab: {fileID: 1739021241340896043, guid: 2d6d20c2b311fa740b813fddc7871e21,
+      type: 3}
+    weight: 100
+    cardCost: 0

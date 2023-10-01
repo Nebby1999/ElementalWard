@@ -1,3 +1,4 @@
+using System;
 using System.Linq.Expressions;
 using UnityEngine;
 
@@ -16,8 +17,9 @@ namespace Nebula
         }
         private static Camera _mainCamera;
 
-        public static Bounds CalculateColliderBounds(GameObject obj, bool includeChildren = true)
+        public static Bounds CalculateColliderBounds(GameObject obj, bool includeChildren, Func<Collider, bool> ignorePredicate = null)
         {
+            Physics.SyncTransforms();
             var colliders = includeChildren ? obj.GetComponentsInChildren<Collider>(true) : obj.GetComponents<Collider>();
 
             var bounds = new Bounds(obj.transform.position, Vector3.one);
@@ -27,12 +29,13 @@ namespace Nebula
             foreach(var collider in colliders)
             {
                 var colliderBounds = collider.bounds;
-                bounds.Encapsulate(colliderBounds);
+                if (!ignorePredicate?.Invoke(collider) ?? true)
+                    bounds.Encapsulate(colliderBounds);
             }
             return bounds;
         }
 
-        public static Bounds CalculateRendererBounds(GameObject obj, bool includeChildren = true)
+        public static Bounds CalculateRendererBounds(GameObject obj, bool includeChildren, Func<Renderer, bool> ignorePredicate = null)
         {
             var renderers = includeChildren ? obj.GetComponentsInChildren<Renderer>(true) : obj.GetComponents<Renderer>();
 
@@ -42,7 +45,9 @@ namespace Nebula
 
             foreach (var renderer in renderers)
             {
-                bounds.Encapsulate(renderer.bounds);
+                var rendererBounds = renderer.bounds;
+                if(!ignorePredicate?.Invoke(renderer) ?? true)
+                    bounds.Encapsulate(rendererBounds);
             }
             return bounds;
         }

@@ -9,6 +9,8 @@ namespace ElementalWard
     [CreateAssetMenu(fileName = "New DungeonDeck", menuName = "ElementalWard/DungeonDeck")]
     public class DungeonDeck : NebulaScriptableObject
     {
+        [ForcePrefab, Tooltip("A generic, straight line hallway to use for this deck, used for extending hallways so special rooms can spawn properly.")]
+        public GameObject hallwayRoom;
         public Card[] entrywayRoomCards = Array.Empty<Card>();
         public RoomPool[] roomCards = Array.Empty<RoomPool>();
         public Card[] bossRoomCards = Array.Empty<Card>();

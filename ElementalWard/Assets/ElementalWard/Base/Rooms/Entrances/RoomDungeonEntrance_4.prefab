@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8352003451041050391
 Transform:
@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 6105861846175410780, guid: 5c582aa33048aaa428a9e969723d47dc,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -220,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -398,7 +398,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -482,7 +482,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -566,7 +566,7 @@ PrefabInstance:
     - target: {fileID: 6105861846175410780, guid: 5c582aa33048aaa428a9e969723d47dc,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -739,7 +739,7 @@ PrefabInstance:
     - target: {fileID: 6105861846175410780, guid: 5c582aa33048aaa428a9e969723d47dc,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -823,7 +823,7 @@ PrefabInstance:
     - target: {fileID: 6105861846175410780, guid: 5c582aa33048aaa428a9e969723d47dc,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -912,7 +912,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -941,7 +941,7 @@ PrefabInstance:
     - target: {fileID: 44960924284250719, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2731887442807469318, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
@@ -951,7 +951,7 @@ PrefabInstance:
     - target: {fileID: 2731887442807469318, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5219669016134424370, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
@@ -961,7 +961,7 @@ PrefabInstance:
     - target: {fileID: 5219669016134424370, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5438824050163424265, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
@@ -971,7 +971,7 @@ PrefabInstance:
     - target: {fileID: 5438824050163424265, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5487506896153575189, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
@@ -981,7 +981,7 @@ PrefabInstance:
     - target: {fileID: 5487506896153575189, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5549393789185519492, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
@@ -1046,7 +1046,7 @@ PrefabInstance:
     - target: {fileID: 5549393789185880996, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7656740022563683860, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
@@ -1056,7 +1056,7 @@ PrefabInstance:
     - target: {fileID: 7656740022563683860, guid: ffbae557e4ef8ad42ac5985991a85b22,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1145,7 +1145,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1244,7 +1244,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

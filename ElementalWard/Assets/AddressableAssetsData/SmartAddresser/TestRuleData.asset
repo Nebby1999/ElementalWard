@@ -744,6 +744,7 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner_Inverted.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Modified.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Left.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Right.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage.prefab
@@ -796,9 +797,23 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
         - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
         - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
-        - Assets/ElementalWard/Base/Rooms/EnemyRooms/Room.prefab
+        - Assets/ElementalWard/Base/Rooms/Boss_Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/BossRoomEntrance.prefab
+        - Assets/ElementalWard/Base/Rooms/BossRoomExit.prefab
+        - Assets/ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway++.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLarge.prefab
+        - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomPlus.prefab
+        - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomRectangular.prefab
+        - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomU.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
@@ -979,6 +994,7 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Corner_Inverted.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Modified.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Left.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Hall_Wall_Stairs_Right.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Passage.prefab
@@ -1031,9 +1047,23 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
         - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
         - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
-        - Assets/ElementalWard/Base/Rooms/EnemyRooms/Room.prefab
+        - Assets/ElementalWard/Base/Rooms/Boss_Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/BossRoomEntrance.prefab
+        - Assets/ElementalWard/Base/Rooms/BossRoomExit.prefab
+        - Assets/ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway++.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLarge.prefab
+        - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomPlus.prefab
+        - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomRectangular.prefab
+        - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomU.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab

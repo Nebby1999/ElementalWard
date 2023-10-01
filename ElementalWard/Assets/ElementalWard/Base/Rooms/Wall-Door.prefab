@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4006932704291015142}
   m_Layer: 3
   m_Name: Wall-Door
-  m_TagString: Untagged
+  m_TagString: RoomBoundIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4274333834954020364
 Transform:
@@ -150,7 +150,7 @@ PrefabInstance:
     - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 370700119056002103, guid: b89b3b3efb3070240952a3335d270247,
         type: 3}

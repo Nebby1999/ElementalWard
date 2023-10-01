@@ -45,7 +45,10 @@ namespace ElementalWard
         [ContextMenu("Calculate Bounds")]
         public void CalculateBounds()
         {
-            _roomBoundingBox = UnityUtil.CalculateColliderBounds(gameObject);
+            _roomBoundingBox = UnityUtil.CalculateColliderBounds(gameObject, true, c =>
+            {
+                return c.CompareTag(GameTags.roomBoundIgnore);
+            });
             _roomBoundingBox.center -= new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
             var size = _roomBoundingBox.size;

@@ -11,7 +11,7 @@
 
 namespace ElementalWard
 {
-    public static class GameTagscs
+    public static class GameTags
     {
         public static readonly string untagged = "Untagged";
         public static readonly string respawn = "Respawn";
@@ -20,5 +20,6 @@ namespace ElementalWard
         public static readonly string mainCamera = "MainCamera";
         public static readonly string player = "Player";
         public static readonly string gameController = "GameController";
+        public static readonly string roomBoundIgnore = "RoomBoundIgnore";
     }
 }

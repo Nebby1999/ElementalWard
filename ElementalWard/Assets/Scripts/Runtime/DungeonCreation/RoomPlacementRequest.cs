@@ -16,7 +16,13 @@ namespace ElementalWard
         /// The director, which we use to check if we have enough credits, we also start the coroutine from here.
         /// </summary>
         public DungeonDirector DungeonDirector { get; init; }
-        public bool IsComplete => doorToRooms.Count <= 0;
+        public bool IsComplete
+        {
+            get
+            {
+                return Credits <= 0 || doorToRooms.Count <= 0;
+            }
+        }
         public float Credits => DungeonDirector.Credits;
         private Dictionary<Door, WeightedCollection<DungeonDeck.Card>> doorToRooms = new();
         private Coroutine _coroutine;
@@ -54,31 +60,36 @@ namespace ElementalWard
                     yield break;
                 }
 
+                yield return null;
                 List<Door> doors = new List<Door>();
+                List<Door> doorsToRemoveBecauseWeRanOutOfRooms = new List<Door>();
                 foreach(var kvp in doorToRooms)
                 {
+#if DEBUG
+                    if(DungeonDirector.slowGeneration)
+                    {
+                        yield return new WaitForSeconds(DungeonDirector.slowGenerationWait);
+                    }
+#endif
                     var door = kvp.Key;
                     var roomCards = kvp.Value;
-                    yield return new WaitForSeconds(1);
+                    doors.Add(door);
                     if(door.HasConnection)
                     {
-                        doors.Add(door);
                         continue;
                     }
                     int choiceIndex = roomCards.NextIndex();
                     if(choiceIndex == -1)
                     {
-                        door.IsOpen = false;
-                        doors.Add(door);
+                        doorsToRemoveBecauseWeRanOutOfRooms.Add(door);
                         continue;
                     }
                     var room = roomCards[choiceIndex];
 
-                    if(!DungeonDirector.TryPlaceRoom(room.value, door))
+                    if(!DungeonDirector.TryPlaceRoom(room.value, door, true))
                     {
                         roomCards.RemoveAt(choiceIndex);
                     }
-                    doors.Add(door);
                 }
                 foreach(Door door in doors)
                 {
@@ -86,6 +97,10 @@ namespace ElementalWard
                     {
                         doorToRooms.Remove(door);
                     }
+                }
+                foreach(Door door in doorsToRemoveBecauseWeRanOutOfRooms)
+                {
+                    doorToRooms.Remove(door);
                 }
             }
             StopCoroutine();
