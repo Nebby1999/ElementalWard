@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d098419675bcb349a70f1e80e163c7b, type: 3}
+  m_Name: RoomRectangular_Air
+  m_EditorClassIdentifier: 
+  _serializedNodes:
+  - position: {x: -3.5, y: 1, z: 5}
+    serializedPathNodeLinkIndices: 00000000010000000200000003000000040000000500000006000000
+  - position: {x: -13, y: 1, z: 2}
+    serializedPathNodeLinkIndices: 000000000700000008000000090000000a0000000b0000000c000000
+  - position: {x: -8, y: 6, z: -5}
+    serializedPathNodeLinkIndices: 01000000070000000d0000000e000000
+  - position: {x: -13, y: 2, z: 5}
+    serializedPathNodeLinkIndices: 02000000080000000f000000100000001100000012000000
+  - position: {x: -13, y: 2, z: -5}
+    serializedPathNodeLinkIndices: 030000000900000013000000
+  - position: {x: -3, y: 2, z: -5}
+    serializedPathNodeLinkIndices: 040000000a0000001100000013000000
+  - position: {x: 0, y: 2, z: 2.5}
+    serializedPathNodeLinkIndices: 050000000b0000000d0000001200000014000000
+  - position: {x: 0, y: 7, z: -6}
+    serializedPathNodeLinkIndices: 15000000160000001700000018000000
+  - position: {x: 0, y: 2, z: 5}
+    serializedPathNodeLinkIndices: 060000000c0000000e0000001900000014000000
+  _serializedLinks:
+  - nodeAIndex: 0
+    nodeBIndex: 1
+    distance: 9.962429
+    slopeAngle: 0
+    normal:
+      x: -0.9535827
+      y: 0
+      z: -0.30113137
+  - nodeAIndex: 0
+    nodeBIndex: 2
+    distance: 12.0519705
+    slopeAngle: 0
+    normal:
+      x: -0.37338293
+      y: 0.4148699
+      z: -0.8297398
+  - nodeAIndex: 0
+    nodeBIndex: 3
+    distance: 9.552486
+    slopeAngle: 0
+    normal:
+      x: -0.99450547
+      y: 0.104684785
+      z: 0
+  - nodeAIndex: 0
+    nodeBIndex: 4
+    distance: 13.829317
+    slopeAngle: 0
+    normal:
+      x: -0.68694645
+      y: 0.07231015
+      z: -0.7231015
+  - nodeAIndex: 0
+    nodeBIndex: 5
+    distance: 10.062305
+    slopeAngle: 0
+    normal:
+      x: 0.049690403
+      y: 0.099380806
+      z: -0.99380803
+  - nodeAIndex: 0
+    nodeBIndex: 6
+    distance: 4.41588
+    slopeAngle: 0
+    normal:
+      x: 0.79259396
+      y: 0.22645542
+      z: -0.56613857
+  - nodeAIndex: 0
+    nodeBIndex: 8
+    distance: 3.640055
+    slopeAngle: 0
+    normal:
+      x: 0.96152395
+      y: 0.27472112
+      z: 0
+  - nodeAIndex: 1
+    nodeBIndex: 2
+    distance: 9.949874
+    slopeAngle: 0
+    normal:
+      x: 0.50251895
+      y: 0.50251895
+      z: -0.7035265
+  - nodeAIndex: 1
+    nodeBIndex: 3
+    distance: 3.1622777
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0.31622776
+      z: 0.94868326
+  - nodeAIndex: 1
+    nodeBIndex: 4
+    distance: 7.071068
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0.14142136
+      z: -0.98994946
+  - nodeAIndex: 1
+    nodeBIndex: 5
+    distance: 12.247449
+    slopeAngle: 0
+    normal:
+      x: 0.81649655
+      y: 0.08164965
+      z: -0.57154757
+  - nodeAIndex: 1
+    nodeBIndex: 6
+    distance: 13.047988
+    slopeAngle: 0
+    normal:
+      x: 0.9963222
+      y: 0.07664017
+      z: 0.038320083
+  - nodeAIndex: 1
+    nodeBIndex: 8
+    distance: 13.379088
+    slopeAngle: 0
+    normal:
+      x: 0.9716656
+      y: 0.07474351
+      z: 0.22423053
+  - nodeAIndex: 2
+    nodeBIndex: 6
+    distance: 11.672618
+    slopeAngle: 64.45997
+    normal:
+      x: 0.68536466
+      y: -0.34268233
+      z: 0.64252937
+  - nodeAIndex: 2
+    nodeBIndex: 8
+    distance: 13.416408
+    slopeAngle: 64.45997
+    normal:
+      x: 0.5962848
+      y: -0.2981424
+      z: 0.745356
+  - nodeAIndex: 3
+    nodeBIndex: 2
+    distance: 11.874342
+    slopeAngle: 0
+    normal:
+      x: 0.42107597
+      y: 0.33686078
+      z: -0.84215194
+  - nodeAIndex: 3
+    nodeBIndex: 4
+    distance: 10
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0
+      z: -1
+  - nodeAIndex: 3
+    nodeBIndex: 5
+    distance: 14.142136
+    slopeAngle: 0
+    normal:
+      x: 0.70710677
+      y: 0
+      z: -0.70710677
+  - nodeAIndex: 3
+    nodeBIndex: 6
+    distance: 13.238202
+    slopeAngle: 0
+    normal:
+      x: 0.9820065
+      y: 0
+      z: -0.1888474
+  - nodeAIndex: 4
+    nodeBIndex: 5
+    distance: 10
+    slopeAngle: 0
+    normal:
+      x: 1
+      y: 0
+      z: 0
+  - nodeAIndex: 6
+    nodeBIndex: 8
+    distance: 2.5
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0
+      z: 1
+  - nodeAIndex: 7
+    nodeBIndex: 0
+    distance: 13.009612
+    slopeAngle: 0
+    normal:
+      x: -0.26903185
+      y: -0.46119747
+      z: 0.84552866
+  - nodeAIndex: 7
+    nodeBIndex: 2
+    distance: 8.124039
+    slopeAngle: 0
+    normal:
+      x: -0.9847319
+      y: -0.12309149
+      z: 0.12309149
+  - nodeAIndex: 7
+    nodeBIndex: 6
+    distance: 9.861542
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: -0.5070201
+      z: 0.8619342
+  - nodeAIndex: 7
+    nodeBIndex: 8
+    distance: 12.083046
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: -0.41380295
+      z: 0.9103665
+  - nodeAIndex: 8
+    nodeBIndex: 3
+    distance: 13
+    slopeAngle: 0
+    normal:
+      x: -1
+      y: 0
+      z: 0

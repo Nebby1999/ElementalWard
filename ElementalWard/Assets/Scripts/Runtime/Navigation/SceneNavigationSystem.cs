@@ -27,6 +27,7 @@ namespace ElementalWard
             _groundGraphProvider.GraphName = _groundGraphProvider.name;
 
             graphObject = new GameObject("SceneNavigationSystem_AirGraph");
+            graphObject.transform.parent = _gameObject.transform;
             _airGraphProvider = graphObject.AddComponent<GraphProvider>();
             _airGraphProvider.GraphName = _airGraphProvider.name;
 
@@ -39,6 +40,24 @@ namespace ElementalWard
                 return;
 
             GameObject[] objects = arg0.GetRootGameObjects();
+
+            var director = objects.Select(g => g.GetComponent<DungeonDirector>()).Where(d => d).FirstOrDefault();
+            if (director)
+            {
+                Debug.Log("Director present, waiting for dungeon generation completion.");
+                director.OnDungeonGenerationComplete += Director_OnDungeonGenerationComplete;
+                return;
+            }
+
+            CreateGraphs(objects);
+            void Director_OnDungeonGenerationComplete(DungeonDirector director)
+            {
+                CreateGraphs(director.InstantiatedRooms.Select(r => r.gameObject).ToArray());
+            }
+        }
+
+        private static void CreateGraphs(GameObject[] objects)
+        {
             List<GraphProvider> allProviders = new List<GraphProvider>();
             allProviders.AddRange(objects.Where(o => o).SelectMany(o => o.GetComponentsInChildren<GraphProvider>()).Where(provider => provider));
 
@@ -50,6 +69,7 @@ namespace ElementalWard
 
             _groundGraphProvider.BakeSynchronously();
         }
+
 
         private static T CreateSceneGraph<T>(GraphProvider[] providers) where T : NodeGraphAsset
         {

@@ -19,7 +19,7 @@ namespace ElementalWard.Editor
             {
                 if(_drawer == null)
                 {
-                    _drawer = new GraphProviderDrawer(TargetType, LayerIndex.world.IntVal);
+                    _drawer = new GraphProviderDrawer(TargetType, LayerIndex.world.Mask);
                 }
                 return _drawer;
             }

@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d098419675bcb349a70f1e80e163c7b, type: 3}
+  m_Name: RoomStairsSmall_Air
+  m_EditorClassIdentifier: 
+  _serializedNodes:
+  - position: {x: -5, y: 2, z: 0}
+    serializedPathNodeLinkIndices: 00000000010000000200000003000000
+  - position: {x: -4, y: 2, z: -1}
+    serializedPathNodeLinkIndices: 0000000004000000050000000600000007000000
+  - position: {x: -4, y: 2, z: 1}
+    serializedPathNodeLinkIndices: 0100000008000000090000000a0000000b000000
+  - position: {x: -3, y: 3, z: 0}
+    serializedPathNodeLinkIndices: 0200000004000000080000000c000000
+  - position: {x: 0, y: 1, z: 1}
+    serializedPathNodeLinkIndices: 09000000050000000d0000000e000000
+  - position: {x: 1, y: 1, z: 0}
+    serializedPathNodeLinkIndices: 0f000000100000000e000000
+  - position: {x: 0, y: 1, z: -1}
+    serializedPathNodeLinkIndices: 060000000a0000001100000010000000
+  - position: {x: -0.5, y: 2, z: 0}
+    serializedPathNodeLinkIndices: 0c000000070000000b0000000d0000000f00000011000000
+  _serializedLinks:
+  - nodeAIndex: 0
+    nodeBIndex: 1
+    distance: 1.4142135
+    slopeAngle: 0
+    normal:
+      x: 0.70710677
+      y: 0
+      z: -0.70710677
+  - nodeAIndex: 0
+    nodeBIndex: 2
+    distance: 1.4142135
+    slopeAngle: 0
+    normal:
+      x: 0.70710677
+      y: 0
+      z: 0.70710677
+  - nodeAIndex: 0
+    nodeBIndex: 3
+    distance: 2.236068
+    slopeAngle: 0
+    normal:
+      x: 0.8944272
+      y: 0.4472136
+      z: 0
+  - nodeAIndex: 0
+    nodeBIndex: 7
+    distance: 6.0827627
+    slopeAngle: 6.5905285
+    normal:
+      x: 0.98639387
+      y: -0.16439898
+      z: 0
+  - nodeAIndex: 1
+    nodeBIndex: 3
+    distance: 1.7320508
+    slopeAngle: 0
+    normal:
+      x: 0.57735026
+      y: 0.57735026
+      z: 0.57735026
+  - nodeAIndex: 1
+    nodeBIndex: 4
+    distance: 4.582576
+    slopeAngle: 5.0217247
+    normal:
+      x: 0.8728715
+      y: -0.21821788
+      z: 0.43643576
+  - nodeAIndex: 1
+    nodeBIndex: 6
+    distance: 5.196152
+    slopeAngle: 0
+    normal:
+      x: 0.9622505
+      y: -0.19245009
+      z: 0.19245009
+  - nodeAIndex: 1
+    nodeBIndex: 7
+    distance: 3.640055
+    slopeAngle: 0
+    normal:
+      x: 0.96152395
+      y: 0
+      z: 0.27472112
+  - nodeAIndex: 2
+    nodeBIndex: 3
+    distance: 1.7320508
+    slopeAngle: 0
+    normal:
+      x: 0.57735026
+      y: 0.57735026
+      z: -0.57735026
+  - nodeAIndex: 2
+    nodeBIndex: 4
+    distance: 4.1231055
+    slopeAngle: 5.0215683
+    normal:
+      x: 0.97014254
+      y: -0.24253564
+      z: 0
+  - nodeAIndex: 2
+    nodeBIndex: 6
+    distance: 4.582576
+    slopeAngle: 5.0217247
+    normal:
+      x: 0.8728715
+      y: -0.21821788
+      z: -0.43643576
+  - nodeAIndex: 2
+    nodeBIndex: 7
+    distance: 3.640055
+    slopeAngle: 0
+    normal:
+      x: 0.96152395
+      y: 0
+      z: -0.27472112
+  - nodeAIndex: 3
+    nodeBIndex: 7
+    distance: 3.7416575
+    slopeAngle: 0
+    normal:
+      x: 0.8017837
+      y: -0.5345225
+      z: 0.26726124
+  - nodeAIndex: 4
+    nodeBIndex: 7
+    distance: 3.7416575
+    slopeAngle: 0
+    normal:
+      x: -0.8017837
+      y: 0.5345225
+      z: -0.26726124
+  - nodeAIndex: 4
+    nodeBIndex: 5
+    distance: 1.4142135
+    slopeAngle: 0
+    normal:
+      x: 0.70710677
+      y: 0
+      z: -0.70710677
+  - nodeAIndex: 5
+    nodeBIndex: 7
+    distance: 6.0827627
+    slopeAngle: 24.29745
+    normal:
+      x: -0.98639387
+      y: 0.16439898
+      z: 0
+  - nodeAIndex: 5
+    nodeBIndex: 6
+    distance: 5.196152
+    slopeAngle: 0
+    normal:
+      x: -0.9622505
+      y: 0.19245009
+      z: -0.19245009
+  - nodeAIndex: 6
+    nodeBIndex: 7
+    distance: 3.7416575
+    slopeAngle: 0
+    normal:
+      x: -0.8017837
+      y: 0.5345225
+      z: 0.26726124

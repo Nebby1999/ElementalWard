@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d098419675bcb349a70f1e80e163c7b, type: 3}
+  m_Name: RoomHallwayT_Air
+  m_EditorClassIdentifier: 
+  _serializedNodes:
+  - position: {x: 0, y: 1, z: 1}
+    serializedPathNodeLinkIndices: 00000000
+  - position: {x: 5, y: 1, z: -4}
+    serializedPathNodeLinkIndices: 01000000
+  - position: {x: -5, y: 1, z: -4}
+    serializedPathNodeLinkIndices: 02000000
+  - position: {x: 0, y: 2, z: -4}
+    serializedPathNodeLinkIndices: 000000000100000002000000
+  _serializedLinks:
+  - nodeAIndex: 0
+    nodeBIndex: 3
+    distance: 5
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0
+      z: -1
+  - nodeAIndex: 1
+    nodeBIndex: 3
+    distance: 10
+    slopeAngle: 0
+    normal:
+      x: -1
+      y: 0
+      z: 0
+  - nodeAIndex: 2
+    nodeBIndex: 3
+    distance: 10
+    slopeAngle: 0
+    normal:
+      x: 1
+      y: 0
+      z: 0

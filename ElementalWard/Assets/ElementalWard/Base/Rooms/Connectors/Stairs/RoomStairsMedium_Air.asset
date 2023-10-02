@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d098419675bcb349a70f1e80e163c7b, type: 3}
+  m_Name: RoomStairsMedium_Air
+  m_EditorClassIdentifier: 
+  _serializedNodes:
+  - position: {x: -1, y: 3.5, z: -4}
+    serializedPathNodeLinkIndices: 00000000010000000200000003000000
+  - position: {x: 0, y: 3.5, z: -5}
+    serializedPathNodeLinkIndices: 00000000040000000500000006000000
+  - position: {x: 1, y: 3.5, z: -4}
+    serializedPathNodeLinkIndices: 04000000070000000800000009000000
+  - position: {x: 0, y: 4.5, z: -3}
+    serializedPathNodeLinkIndices: 0100000005000000070000000a000000
+  - position: {x: 0, y: 1, z: 5}
+    serializedPathNodeLinkIndices: 0b0000000c0000000d000000
+  - position: {x: 1, y: 1, z: 4}
+    serializedPathNodeLinkIndices: 0e000000080000000d000000
+  - position: {x: -1, y: 1, z: 4}
+    serializedPathNodeLinkIndices: 020000000f0000000b000000
+  - position: {x: 0, y: 2, z: 3}
+    serializedPathNodeLinkIndices: 0300000006000000090000000a0000000c0000000e0000000f000000
+  _serializedLinks:
+  - nodeAIndex: 0
+    nodeBIndex: 1
+    distance: 1.4142135
+    slopeAngle: 0
+    normal:
+      x: 0.70710677
+      y: 0
+      z: -0.70710677
+  - nodeAIndex: 0
+    nodeBIndex: 3
+    distance: 1.7320508
+    slopeAngle: 0
+    normal:
+      x: 0.57735026
+      y: 0.57735026
+      z: 0.57735026
+  - nodeAIndex: 0
+    nodeBIndex: 6
+    distance: 9.394147
+    slopeAngle: 17.786024
+    normal:
+      x: 0.10644926
+      y: -0.26612315
+      z: 0.95804334
+  - nodeAIndex: 0
+    nodeBIndex: 7
+    distance: 8.616844
+    slopeAngle: 28.61888
+    normal:
+      x: 0.23210354
+      y: -0.29012942
+      z: 0.92841417
+  - nodeAIndex: 1
+    nodeBIndex: 2
+    distance: 1.4142135
+    slopeAngle: 0
+    normal:
+      x: 0.70710677
+      y: 0
+      z: 0.70710677
+  - nodeAIndex: 1
+    nodeBIndex: 3
+    distance: 2.236068
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0.4472136
+      z: 0.8944272
+  - nodeAIndex: 1
+    nodeBIndex: 7
+    distance: 10.307764
+    slopeAngle: 48.290627
+    normal:
+      x: 0
+      y: -0.24253562
+      z: 0.9701425
+  - nodeAIndex: 2
+    nodeBIndex: 3
+    distance: 1.7320508
+    slopeAngle: 0
+    normal:
+      x: -0.57735026
+      y: 0.57735026
+      z: 0.57735026
+  - nodeAIndex: 2
+    nodeBIndex: 5
+    distance: 9.394147
+    slopeAngle: 17.786024
+    normal:
+      x: -0.10644926
+      y: -0.26612315
+      z: 0.95804334
+  - nodeAIndex: 2
+    nodeBIndex: 7
+    distance: 8.616844
+    slopeAngle: 28.61888
+    normal:
+      x: -0.23210354
+      y: -0.29012942
+      z: 0.92841417
+  - nodeAIndex: 3
+    nodeBIndex: 7
+    distance: 8.732124
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: -0.40081885
+      z: 0.91615736
+  - nodeAIndex: 4
+    nodeBIndex: 6
+    distance: 9.394147
+    slopeAngle: 33.19774
+    normal:
+      x: -0.10644926
+      y: 0.26612315
+      z: -0.95804334
+  - nodeAIndex: 4
+    nodeBIndex: 7
+    distance: 10.307764
+    slopeAngle: 33.197723
+    normal:
+      x: 0
+      y: 0.24253562
+      z: -0.9701425
+  - nodeAIndex: 4
+    nodeBIndex: 5
+    distance: 9.394147
+    slopeAngle: 33.197727
+    normal:
+      x: 0.10644926
+      y: 0.26612315
+      z: -0.95804334
+  - nodeAIndex: 5
+    nodeBIndex: 7
+    distance: 8.616844
+    slopeAngle: 33.1977
+    normal:
+      x: -0.23210354
+      y: 0.29012942
+      z: -0.92841417
+  - nodeAIndex: 6
+    nodeBIndex: 7
+    distance: 8.616844
+    slopeAngle: 33.1977
+    normal:
+      x: 0.23210354
+      y: 0.29012942
+      z: -0.92841417

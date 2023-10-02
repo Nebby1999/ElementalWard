@@ -783,6 +783,9 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_High.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Platform.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_High.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
@@ -801,10 +804,10 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/BossRoomEntrance.prefab
         - Assets/ElementalWard/Base/Rooms/BossRoomExit.prefab
         - Assets/ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
-        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway++.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayPlusPlus.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab
@@ -1033,6 +1036,9 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_High.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Platform.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_High.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
@@ -1051,10 +1057,10 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/BossRoomEntrance.prefab
         - Assets/ElementalWard/Base/Rooms/BossRoomExit.prefab
         - Assets/ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
-        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway++.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL.prefab
+        - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayPlusPlus.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab

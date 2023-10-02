@@ -1,3 +1,4 @@
+using Nebula;
 using Nebula.Navigation;
 using System;
 using System.Collections.Generic;
@@ -100,8 +101,10 @@ namespace ElementalWard.Navigation
                     _mover.Move();
                 }
 
-                if (_mover.MoverPosition != _mover.DestinationPosition)
+                if (!_mover.ReachedDestination())
+                {
                     continue;
+                }
 
                 bool linkAlreadyExists = false;
                 for(int j = 0; j < BakedLinks.Count; j++)
@@ -237,6 +240,13 @@ namespace ElementalWard.Navigation
 
                 Vector3 motion = dest - start;
                 _moverCharacterController.Move(motion);
+            }
+
+            public bool ReachedDestination()
+            {
+                float distance = Vector3.Distance(MoverPosition, DestinationPosition);
+                Debug.Log(distance < 0.05f);
+                return distance < 0.05f;
             }
 
             public Mover()

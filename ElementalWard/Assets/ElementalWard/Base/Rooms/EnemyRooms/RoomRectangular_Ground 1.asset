@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e8016564e83f84b95563afaa6337d3, type: 3}
+  m_Name: RoomRectangular_Ground 1
+  m_EditorClassIdentifier: 
+  _serializedNodes:
+  - position: {x: -3.5, y: 0, z: 5}
+    serializedPathNodeLinkIndices: 000000000100000002000000030000000400000005000000
+  - position: {x: -13, y: 0, z: 2}
+    serializedPathNodeLinkIndices: 0000000006000000070000000800000009000000
+  - position: {x: -8, y: 5, z: -5}
+    serializedPathNodeLinkIndices: 0a000000
+  - position: {x: -13, y: 0, z: 5}
+    serializedPathNodeLinkIndices: 01000000060000000b0000000c000000
+  - position: {x: -13, y: 0, z: -5}
+    serializedPathNodeLinkIndices: 02000000070000000d000000
+  - position: {x: -3, y: 0, z: -5}
+    serializedPathNodeLinkIndices: 03000000080000000b0000000d000000
+  - position: {x: 0, y: 0, z: 2.5}
+    serializedPathNodeLinkIndices: 04000000090000000c0000000e000000
+  - position: {x: 0, y: 5, z: -6}
+    serializedPathNodeLinkIndices: 0f000000100000001100000012000000
+  - position: {x: 0, y: 0, z: 5}
+    serializedPathNodeLinkIndices: 050000000e000000
+  _serializedLinks:
+  - nodeAIndex: 0
+    nodeBIndex: 1
+    distance: 9.962429
+    slopeAngle: 0
+    normal:
+      x: -0.9535827
+      y: 0
+      z: -0.30113137
+  - nodeAIndex: 0
+    nodeBIndex: 3
+    distance: 9.5
+    slopeAngle: 0
+    normal:
+      x: -1
+      y: 0
+      z: 0
+  - nodeAIndex: 0
+    nodeBIndex: 4
+    distance: 13.793115
+    slopeAngle: 0
+    normal:
+      x: -0.68874943
+      y: 0
+      z: -0.7249994
+  - nodeAIndex: 0
+    nodeBIndex: 5
+    distance: 10.012492
+    slopeAngle: 0
+    normal:
+      x: 0.049937617
+      y: 0
+      z: -0.99875236
+  - nodeAIndex: 0
+    nodeBIndex: 6
+    distance: 4.3011627
+    slopeAngle: 0
+    normal:
+      x: 0.81373346
+      y: 0
+      z: -0.5812382
+  - nodeAIndex: 0
+    nodeBIndex: 8
+    distance: 3.5
+    slopeAngle: 0
+    normal:
+      x: 1
+      y: 0
+      z: 0
+  - nodeAIndex: 1
+    nodeBIndex: 3
+    distance: 3
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0
+      z: 1
+  - nodeAIndex: 1
+    nodeBIndex: 4
+    distance: 7
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0
+      z: -1
+  - nodeAIndex: 1
+    nodeBIndex: 5
+    distance: 12.206555
+    slopeAngle: 0
+    normal:
+      x: 0.8192319
+      y: 0
+      z: -0.57346237
+  - nodeAIndex: 1
+    nodeBIndex: 6
+    distance: 13.009612
+    slopeAngle: 0
+    normal:
+      x: 0.99926114
+      y: 0
+      z: 0.03843312
+  - nodeAIndex: 2
+    nodeBIndex: 0
+    distance: 12.0519705
+    slopeAngle: 0
+    normal:
+      x: 0.37338293
+      y: -0.4148699
+      z: 0.8297398
+  - nodeAIndex: 3
+    nodeBIndex: 5
+    distance: 14.142136
+    slopeAngle: 0
+    normal:
+      x: 0.70710677
+      y: 0
+      z: -0.70710677
+  - nodeAIndex: 3
+    nodeBIndex: 6
+    distance: 13.238202
+    slopeAngle: 0
+    normal:
+      x: 0.9820065
+      y: 0
+      z: -0.1888474
+  - nodeAIndex: 4
+    nodeBIndex: 5
+    distance: 10
+    slopeAngle: 0
+    normal:
+      x: 1
+      y: 0
+      z: 0
+  - nodeAIndex: 6
+    nodeBIndex: 8
+    distance: 2.5
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: 0
+      z: 1
+  - nodeAIndex: 7
+    nodeBIndex: 0
+    distance: 12.579745
+    slopeAngle: 0
+    normal:
+      x: -0.27822503
+      y: -0.39746433
+      z: 0.87442154
+  - nodeAIndex: 7
+    nodeBIndex: 2
+    distance: 8.062258
+    slopeAngle: 0
+    normal:
+      x: -0.99227786
+      y: 0
+      z: 0.12403473
+  - nodeAIndex: 7
+    nodeBIndex: 6
+    distance: 9.861542
+    slopeAngle: 19.800018
+    normal:
+      x: 0
+      y: -0.5070201
+      z: 0.8619342
+  - nodeAIndex: 7
+    nodeBIndex: 8
+    distance: 12.083046
+    slopeAngle: 0
+    normal:
+      x: 0
+      y: -0.41380295
+      z: 0.9103665

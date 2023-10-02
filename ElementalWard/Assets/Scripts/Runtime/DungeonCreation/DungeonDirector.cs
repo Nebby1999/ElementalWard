@@ -3,6 +3,7 @@ using Nebula;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
@@ -12,11 +13,13 @@ namespace ElementalWard
 {
     public class DungeonDirector : MonoBehaviour
     {
-        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(30, 60);
-        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(300, 600);
+        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(15, 30);//new FloatMinMax(30, 60);
+        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(100, 300);//new FloatMinMax(300, 600);
         public Bounds DungeonSize { get; private set; }
         public float Credits { get; private set; }
         public bool GenerationComplete { get; private set; }
+        public ReadOnlyCollection<Room> InstantiatedRooms => new ReadOnlyCollection<Room>(_instantiatedRooms);
+        public event Action<DungeonDirector> OnDungeonGenerationComplete;
         [SerializeField] private DungeonDeck _dungeonDeck;
         [SerializeField] private ulong _dungeonFloor;
 #if DEBUG
@@ -153,6 +156,7 @@ namespace ElementalWard
                 door.IsOpen = door.HasConnection;
             }
             GenerationComplete = true;
+            OnDungeonGenerationComplete?.Invoke(this);
         }
 
         public List<Door> GetDoorsWithNoConnections()
@@ -220,7 +224,6 @@ namespace ElementalWard
             {
                 foreach(var (doorA, doorB) in newConnections)
                 {
-                    Debug.Log(instantiatedObject, doorB);
                     doorA.ConnectedDoor = null;
                     doorB.ConnectedDoor = null;
                 }

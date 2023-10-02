@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2959565534735616676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5970713229242465410}
+  - component: {fileID: 4993942051129589336}
+  m_Layer: 3
+  m_Name: GroundGraph
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5970713229242465410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959565534735616676}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8352003451041050391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4993942051129589336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959565534735616676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe33f39d5a58c8e4e89136bcb8373dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _graphName: 
+  _nodeGraphAsset: {fileID: 11400000, guid: 4f20072c0cfa17047bdc1cb477f4a46e, type: 2}
 --- !u!1 &6828253889382449943
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +76,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5970713229242465410}
+  - {fileID: 3920362830733475272}
   - {fileID: 7189932003366385528}
   - {fileID: 5884128618679295786}
   - {fileID: 4528201857424114975}
@@ -61,6 +109,52 @@ MonoBehaviour:
   _roomBoundingBox:
     m_Center: {x: 1.8892789, y: 4.74136, z: 0.10263109}
     m_Extent: {x: 4.110722, y: 5.24136, z: 6.118811}
+--- !u!1 &7760380690618916869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3920362830733475272}
+  - component: {fileID: 4900217481839654235}
+  m_Layer: 3
+  m_Name: AirGraph
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3920362830733475272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760380690618916869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8352003451041050391}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4900217481839654235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7760380690618916869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe33f39d5a58c8e4e89136bcb8373dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _graphName: 
+  _nodeGraphAsset: {fileID: 11400000, guid: 91069c4cc21c1c04e8b36315f84b627f, type: 2}
 --- !u!1001 &13586946991897984
 PrefabInstance:
   m_ObjectHideFlags: 0

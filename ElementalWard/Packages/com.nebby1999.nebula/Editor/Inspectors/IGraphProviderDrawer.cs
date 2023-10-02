@@ -1,5 +1,6 @@
 using Nebula.Navigation;
 using System.Collections.Generic;
+using System.Reflection;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEditor.PackageManager;
@@ -20,6 +21,21 @@ namespace Nebula.Editor.Inspectors
                 return _transform ? _transform.position : Vector3.zero;
             }
         }
+        protected Vector3 GraphProviderScale
+        {
+            get
+            {
+                return _transform ? _transform.lossyScale : Vector3.zero;
+            }
+        }
+
+        protected Quaternion GraphProviderRotation
+        {
+            get
+            {
+                return _transform ? _transform.rotation : Quaternion.identity;
+            }
+        }
         protected IGraphProvider GraphProvider { get; init; }
         protected bool HasGraphAsset => GraphProvider.NodeGraph != null;
         protected List<SerializedPathNode> nodes;
@@ -27,6 +43,7 @@ namespace Nebula.Editor.Inspectors
         protected RaycastHit HitInfo { get; private set; }
         private Ray ray;
         private Transform _transform;
+
         public void DrawIMGUIButtons()
         {
             EditorGUILayout.BeginVertical();
@@ -55,8 +72,11 @@ namespace Nebula.Editor.Inspectors
             Vector2 guiPos = evt.mousePosition;
             ray = HandleUtility.GUIPointToWorldRay(guiPos);
 
-            if(Physics.Raycast(ray, out var hInfo, float.MaxValue, WorldLayerIndex, QueryTriggerInteraction.Collide))
+            Physics.SyncTransforms();
+            var hitSomething = Physics.Raycast(ray, out var hInfo, float.MaxValue, WorldLayerIndex);
+            if (hitSomething)
             {
+                hInfo.point = EditorMath.RoundToNearestGrid(hInfo.point);
                 hInfo.point += GraphProvider?.NodeGraph?.NodeOffset ?? Vector3.zero;
                 HitInfo = hInfo;
                 OnSceneGUIRaycastHit();
@@ -142,6 +162,8 @@ namespace Nebula.Editor.Inspectors
                 foreach(var serializedNode in nodes)
                 {
                     var worldPos = serializedNode.position + GraphProviderPos;
+                    worldPos = NebulaMath.MultiplyElementWise(worldPos, GraphProviderScale);
+                    worldPos = GraphProviderRotation * worldPos;
                     if (math.any(math.isnan(worldPos)) || math.any(math.isinf(worldPos)))
                         continue;
 
@@ -159,10 +181,10 @@ namespace Nebula.Editor.Inspectors
                             continue;
                     }
 
-                    if (Vector3.Distance(worldPos, HitInfo.point) <= SerializedPathNode.MAX_DISTANCE)
+                    if (Vector3.Distance(worldPos, HitInfo.point) <= SerializedPathNode.MAX_DISTANCE * NebulaMath.GetAverage(GraphProviderScale))
                     {
                         Handles.color = Color.yellow;
-                        Handles.DrawLine(worldPos, HitInfo.point, 5);
+                        Handles.DrawLine(worldPos, HitInfo.point, 3);
                         inRange = true;
                     }
                 }
@@ -175,13 +197,15 @@ namespace Nebula.Editor.Inspectors
 
             if(HitInfo.collider)
             {
-                Handles.CylinderHandleCap(ControlID, HitInfo.point, Quaternion.Euler(90, 0, 0), 1, EventType.Repaint);
+                Handles.CylinderHandleCap(ControlID, HitInfo.point, Quaternion.Euler(90, 0, 0), 0.5f, EventType.Repaint);
             }
 
             for(int i = 0; i < nodes.Count; i++)
             {
                 var node = nodes[i];
                 var worldPosition = node.position + GraphProviderPos;
+                worldPosition = NebulaMath.MultiplyElementWise(worldPosition, GraphProviderScale);
+                worldPosition = GraphProviderRotation * worldPosition;
                 if (math.any(math.isnan(worldPosition)) || math.any(math.isinf(worldPosition)))
                     continue;
 
@@ -190,7 +214,7 @@ namespace Nebula.Editor.Inspectors
                     continue;
 
                 Handles.color = node.serializedPathNodeLinkIndices.Count <= 0 ? Color.yellow : Color.green;
-                float scale = 1f;
+                float scale = 0.5f;
                 Handles.CylinderHandleCap(ControlID, worldPosition, Quaternion.Euler(90, 0, 0), scale, EventType.Repaint);
 
                 var pos = worldPosition;
@@ -204,7 +228,8 @@ namespace Nebula.Editor.Inspectors
                 if(Vector3.Distance(nodeXZ, rayOriginXZ) < 20)
                 {
                     worldPosition = Handles.PositionHandle(worldPosition, Quaternion.identity);
-                    node.position = worldPosition - GraphProviderPos;
+                    var temp = NebulaMath.DivideElementWise(worldPosition - GraphProviderPos, GraphProviderScale);
+                    node.position = EditorMath.RoundToNearestGrid(Quaternion.Inverse(GraphProviderRotation) * temp);
                 }
 
                 Handles.color = Color.magenta;
@@ -219,6 +244,8 @@ namespace Nebula.Editor.Inspectors
 
                     var endNode = nodes[link.nodeBIndex];
                     var endNodePosition = endNode.position + GraphProviderPos;
+                    endNodePosition = NebulaMath.MultiplyElementWise(endNodePosition, GraphProviderScale);
+                    endNodePosition = GraphProviderRotation * endNodePosition;
 
                     if (math.any(math.isnan(endNodePosition)) || math.any(math.isinf(endNodePosition)))
                         continue;

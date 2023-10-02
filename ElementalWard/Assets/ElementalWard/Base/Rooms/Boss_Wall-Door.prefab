@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618773038191271215}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WallChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 0
 --- !u!4 &618773038191271215
 Transform:
@@ -47,12 +47,12 @@ GameObject:
   - component: {fileID: 5563403210857448179}
   - component: {fileID: 1667419320870548304}
   - component: {fileID: 2778326818843001367}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boss_Wall-Door
   m_TagString: RoomBoundIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5563403210857448179
 Transform:
@@ -119,12 +119,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4002684143826824748}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DoorChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4002684143826824748
 Transform:
@@ -161,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dungeon_Hall_Wall_Modified
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161654591381885820, guid: c6af5dd90b854fe4aacc87aa51aa8478,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4161654591382310748, guid: c6af5dd90b854fe4aacc87aa51aa8478,
         type: 3}
@@ -286,6 +291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Big_Wall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7969972704443782057, guid: 3ef94e73d5607784fbcbba8de4155b1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -360,6 +370,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Big_Wall (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7969972704443782057, guid: 3ef94e73d5607784fbcbba8de4155b1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -383,6 +398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dungeon_Passage (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 370700119055577111, guid: b89b3b3efb3070240952a3335d270247,
         type: 3}
@@ -463,6 +483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Hall_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4161654591381885820, guid: c7af5921109b94141afd37e9fdd75443,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4161654591382310748, guid: c7af5921109b94141afd37e9fdd75443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -536,6 +561,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dungeon_Hall_Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161654591381885820, guid: c7af5921109b94141afd37e9fdd75443,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4161654591382310748, guid: c7af5921109b94141afd37e9fdd75443,
         type: 3}
@@ -611,6 +641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Hall_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 4161654591381885820, guid: c7af5921109b94141afd37e9fdd75443,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4161654591382310748, guid: c7af5921109b94141afd37e9fdd75443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -684,6 +719,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hallway_Double
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279846457461498817, guid: 7e2b134344aa7c0449b99d1a47be113a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5279846457461498817, guid: 7e2b134344aa7c0449b99d1a47be113a,
         type: 3}
@@ -824,6 +864,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Wall_Var1
       objectReference: {fileID: 0}
+    - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -908,6 +953,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon_Wall_Var1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 936655011711489263, guid: 5e10be2f5a748844dbd0b2b7e6fafd4a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -931,6 +981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dungeon_Hall_Wall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161654591381885820, guid: c7af5921109b94141afd37e9fdd75443,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4161654591382310748, guid: c7af5921109b94141afd37e9fdd75443,
         type: 3}
@@ -1005,6 +1060,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dungeon_Hall_Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161654591381885820, guid: c7af5921109b94141afd37e9fdd75443,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4161654591382310748, guid: c7af5921109b94141afd37e9fdd75443,
         type: 3}

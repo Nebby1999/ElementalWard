@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace ElementalWard.Navigation
@@ -123,5 +124,36 @@ namespace ElementalWard.Navigation
                 });
             }
         }
+
+
+#if UNITY_EDITOR
+        [Serializable]
+        private struct Intermediary
+        {
+            public List<SerializedPathNode> serializedNodes;
+            public List<SerializedPathNodeLink> serializedLinks;
+        }
+        [ContextMenu("Copy To JSON")]
+        private void CopyToJSON()
+        {
+            var intermediary = new Intermediary
+            {
+                serializedNodes = _serializedNodes,
+                serializedLinks = _serializedLinks
+            };
+            UnityEditor.EditorGUIUtility.systemCopyBuffer = JsonUtility.ToJson(intermediary);
+        }
+
+        [ContextMenu("Paste to JSON")]
+        private void PasteFromJSON()
+        {
+            UnityEditor.Undo.RegisterCompleteObjectUndo(this, "Paste from JSON");
+            var intermediary = JsonUtility.FromJson<Intermediary>(UnityEditor.EditorGUIUtility.systemCopyBuffer);
+            _serializedNodes = new List<SerializedPathNode>(intermediary.serializedNodes);
+            _serializedLinks = new List<SerializedPathNodeLink>(intermediary.serializedLinks);
+            EditorUtility.SetDirty(this);
+        }
+
+#endif
     }
 }

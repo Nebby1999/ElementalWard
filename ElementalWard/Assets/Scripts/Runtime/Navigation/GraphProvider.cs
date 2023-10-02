@@ -1,3 +1,4 @@
+using Nebula;
 using Nebula.Navigation;
 using System;
 using System.Collections;
@@ -18,6 +19,12 @@ namespace ElementalWard.Navigation
                 return;
 
             position -= transform.position;
+            
+            if(transform.lossyScale != Vector3.one)
+            {
+                position = NebulaMath.DivideElementWise(position, transform.lossyScale);
+            }
+
             var newNode = new SerializedPathNode
             {
                 position = position,

@@ -1,3 +1,4 @@
+using Nebula;
 using Nebula.Navigation;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,6 @@ namespace ElementalWard.Navigation
                 float distance = Vector3.Distance(nodeAPosition, nodeBPosition);
                 if (distance > SerializedPathNode.MAX_DISTANCE)
                     continue;
-
 
                 _mover.SetMoverPosition(nodeAPosition, true);
                 _mover.DestinationPosition = nodeBPosition;
@@ -104,9 +104,10 @@ namespace ElementalWard.Navigation
                 {
                     _mover.Move();
                 }
-
-                if (_mover.MoverFeetPosition != _mover.DestinationPosition)
+                
+                if (!_mover.ReachedDestination(out float dist))
                 {
+                    Debug.Log($"Failed to go from Node{nodeAIndex} to Node{nodeBIndex}. (Distance: {dist})");
                     continue;
                 }
 
@@ -244,6 +245,12 @@ namespace ElementalWard.Navigation
                 }
 
                 return result.ToArray();
+            }
+
+            public bool ReachedDestination(out float distance)
+            {
+                distance = Vector3.Distance(MoverFeetPosition, DestinationPosition);
+                return distance < 0.05f;
             }
 
             public Mover()
