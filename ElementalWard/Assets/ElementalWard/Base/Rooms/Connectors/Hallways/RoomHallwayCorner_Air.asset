@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: RoomHallwayCorner_Air
   m_EditorClassIdentifier: 
   _serializedNodes:
-  - position: {x: 0, y: 2, z: -1}
+  - position: {x: 1, y: 1, z: 0}
     serializedPathNodeLinkIndices: 00000000
-  - position: {x: 0, y: 2, z: 1}
+  - position: {x: 0, y: 1, z: 1}
     serializedPathNodeLinkIndices: 00000000
   _serializedLinks:
   - nodeAIndex: 0

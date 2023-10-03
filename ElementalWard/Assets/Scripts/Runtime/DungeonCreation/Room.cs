@@ -18,15 +18,10 @@ namespace ElementalWard
         {
             get
             {
-                Vector3 center = RawBoundingBox.center + transform.localPosition;
-                center.x *= transform.lossyScale.x;
-                center.y *= transform.lossyScale.y;
-                center.z *= transform.lossyScale.z;
+                Vector3 center = transform.TransformPoint(RawBoundingBox.center);
 
                 Vector3 size = RawBoundingBox.size;
-                size.x *= transform.lossyScale.x;
-                size.y *= transform.lossyScale.y;
-                size.z *= transform.lossyScale.z;
+                size = NebulaMath.MultiplyElementWise(size, transform.lossyScale);
 
                 return new Bounds(center, size);
             }

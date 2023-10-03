@@ -13,8 +13,8 @@ namespace ElementalWard
 {
     public class DungeonDirector : MonoBehaviour
     {
-        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(15, 30);//new FloatMinMax(30, 60);
-        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(100, 300);//new FloatMinMax(300, 600);
+        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(15, 30);
+        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(100, 300);
         public Bounds DungeonSize { get; private set; }
         public float Credits { get; private set; }
         public bool GenerationComplete { get; private set; }

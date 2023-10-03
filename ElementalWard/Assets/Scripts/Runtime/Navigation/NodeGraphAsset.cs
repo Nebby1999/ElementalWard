@@ -109,7 +109,7 @@ namespace ElementalWard.Navigation
             {
                 var provider = providers[i];
                 CopyOver(result, provider.NodeGraph as NodeGraphAsset, provider.transform.position);
-                Destroy(provider.gameObject);
+                //Destroy(provider.gameObject);
             }
             return result;
         }

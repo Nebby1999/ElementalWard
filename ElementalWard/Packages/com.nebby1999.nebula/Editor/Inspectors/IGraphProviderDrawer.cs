@@ -14,7 +14,7 @@ namespace Nebula.Editor.Inspectors
     public class GraphProviderDrawer
     {
         protected int WorldLayerIndex { get; init; }
-        protected Vector3 GraphProviderPos
+        protected Vector3 GraphProviderPosition
         {
             get
             {
@@ -60,30 +60,33 @@ namespace Nebula.Editor.Inspectors
             if (!HasGraphAsset)
                 return;
 
-            nodes = GraphProvider.GetSerializedPathNodes();
-            ControlID = GUIUtility.GetControlID(FocusType.Passive | FocusType.Keyboard);
-
             Event evt = Event.current;
-            if(evt.GetTypeForControl(ControlID) == EventType.KeyDown)
-            {
-                OnKeyDown(evt);
-            }
+            nodes = GraphProvider.GetSerializedPathNodes();
+            if(!EditorApplication.isPlaying)
+            { 
+                ControlID = GUIUtility.GetControlID(FocusType.Passive | FocusType.Keyboard);
 
-            Vector2 guiPos = evt.mousePosition;
-            ray = HandleUtility.GUIPointToWorldRay(guiPos);
+                if(evt.GetTypeForControl(ControlID) == EventType.KeyDown)
+                {
+                    OnKeyDown(evt);
+                }
 
-            Physics.SyncTransforms();
-            var hitSomething = Physics.Raycast(ray, out var hInfo, float.MaxValue, WorldLayerIndex);
-            if (hitSomething)
-            {
-                hInfo.point = EditorMath.RoundToNearestGrid(hInfo.point);
-                hInfo.point += GraphProvider?.NodeGraph?.NodeOffset ?? Vector3.zero;
-                HitInfo = hInfo;
-                OnSceneGUIRaycastHit();
-            }
-            else
-            {
-                HitInfo = default;
+                Vector2 guiPos = evt.mousePosition;
+                ray = HandleUtility.GUIPointToWorldRay(guiPos);
+
+                Physics.SyncTransforms();
+                var hitSomething = Physics.Raycast(ray, out var hInfo, float.MaxValue, WorldLayerIndex);
+                if (hitSomething)
+                {
+                    hInfo.point = EditorMath.RoundToNearestGrid(hInfo.point);
+                    hInfo.point += GraphProvider?.NodeGraph?.NodeOffset ?? Vector3.zero;
+                    HitInfo = hInfo;
+                    OnSceneGUIRaycastHit();
+                }
+                else
+                {
+                    HitInfo = default;
+                }
             }
 
             DrawNodes(evt);
@@ -161,9 +164,7 @@ namespace Nebula.Editor.Inspectors
                 bool inRange = false;
                 foreach(var serializedNode in nodes)
                 {
-                    var worldPos = serializedNode.position + GraphProviderPos;
-                    worldPos = NebulaMath.MultiplyElementWise(worldPos, GraphProviderScale);
-                    worldPos = GraphProviderRotation * worldPos;
+                    var worldPos = LocalToWorldPosition(serializedNode.position);
                     if (math.any(math.isnan(worldPos)) || math.any(math.isinf(worldPos)))
                         continue;
 
@@ -203,9 +204,7 @@ namespace Nebula.Editor.Inspectors
             for(int i = 0; i < nodes.Count; i++)
             {
                 var node = nodes[i];
-                var worldPosition = node.position + GraphProviderPos;
-                worldPosition = NebulaMath.MultiplyElementWise(worldPosition, GraphProviderScale);
-                worldPosition = GraphProviderRotation * worldPosition;
+                var worldPosition = LocalToWorldPosition(node.position);
                 if (math.any(math.isnan(worldPosition)) || math.any(math.isinf(worldPosition)))
                     continue;
 
@@ -225,11 +224,10 @@ namespace Nebula.Editor.Inspectors
                 var nodeXZ = new Vector3(worldPosition.x, 0, worldPosition.z);
                 var rayOriginXZ = new Vector3(ray.origin.x, 0, ray.origin.z);
 
-                if(Vector3.Distance(nodeXZ, rayOriginXZ) < 20)
+                if(!EditorApplication.isPlaying && Vector3.Distance(nodeXZ, rayOriginXZ) < 20)
                 {
-                    worldPosition = Handles.PositionHandle(worldPosition, Quaternion.identity);
-                    var temp = NebulaMath.DivideElementWise(worldPosition - GraphProviderPos, GraphProviderScale);
-                    node.position = EditorMath.RoundToNearestGrid(Quaternion.Inverse(GraphProviderRotation) * temp);
+                    //worldPosition = Handles.PositionHandle(worldPosition, Quaternion.identity);
+                    //node.position = WorldToLocalPosition(worldPosition);
                 }
 
                 Handles.color = Color.magenta;
@@ -243,9 +241,7 @@ namespace Nebula.Editor.Inspectors
                         continue;
 
                     var endNode = nodes[link.nodeBIndex];
-                    var endNodePosition = endNode.position + GraphProviderPos;
-                    endNodePosition = NebulaMath.MultiplyElementWise(endNodePosition, GraphProviderScale);
-                    endNodePosition = GraphProviderRotation * endNodePosition;
+                    var endNodePosition = LocalToWorldPosition(endNode.position);
 
                     if (math.any(math.isnan(endNodePosition)) || math.any(math.isinf(endNodePosition)))
                         continue;
@@ -255,9 +251,30 @@ namespace Nebula.Editor.Inspectors
             }
         }
 
+        protected virtual Vector3 LocalToWorldPosition(Vector3 localPos)
+        {
+            if(_transform)
+            {
+                localPos = _transform.TransformPoint(localPos);
+            }
+            return localPos;
+        }
+
+        protected virtual Vector3 WorldToLocalPosition(Vector3 worldPos)
+        {
+            if (_transform)
+            {
+                worldPos = _transform.InverseTransformPoint(worldPos);
+            }
+            return worldPos;
+        }
         protected virtual void DrawSceneGUI(Event currentEvent)
         {
             Handles.BeginGUI();
+            if(EditorApplication.isPlaying)
+            {
+                EditorGUI.BeginDisabledGroup(true);
+            }
             EditorGUILayout.BeginVertical("box", GUILayout.Width(400));
             EditorGUILayout.BeginVertical("box", GUILayout.Width(400));
             EditorGUILayout.BeginVertical("box", GUILayout.Width(400));
@@ -270,6 +287,10 @@ namespace Nebula.Editor.Inspectors
             EditorGUILayout.EndVertical();
             EditorGUILayout.EndVertical();
             EditorGUILayout.EndVertical();
+            if (EditorApplication.isPlaying)
+            {
+                EditorGUI.EndDisabledGroup();
+            }
             Handles.EndGUI();
         }
 

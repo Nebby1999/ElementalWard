@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoomHallwayCorner_Ground
   m_EditorClassIdentifier: 
   _serializedNodes:
-  - position: {x: 0, y: 0, z: -1}
+  - position: {x: 1, y: 0, z: 0}
     serializedPathNodeLinkIndices: 00000000
   - position: {x: 0, y: 0, z: 1}
     serializedPathNodeLinkIndices: 00000000
