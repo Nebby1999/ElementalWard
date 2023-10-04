@@ -1,21 +1,83 @@
 using ElementalWard.Navigation;
 using Nebula;
 using Nebula.Navigation;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Object = UnityEngine.Object;
 
 namespace ElementalWard
 {
     public static class SceneNavigationSystem
     {
+        public static bool HasGraphs => _airGraph && _groundGraph;
         public static IGraphProvider AirNodeProvider => _airGraphProvider;
         public static IGraphProvider GroundNodeProvider => _groundGraphProvider;
         private static GraphProvider _airGraphProvider;
         private static GraphProvider _groundGraphProvider;
+        private static AirNodeGraph _airGraph;
+        private static GroundNodeGraph _groundGraph;
         private static GameObject _gameObject;
+
+        public static PathRequestResult RequestPath(PathRequest request)
+        {
+            if (request.graphProvider == null)
+                throw new NullReferenceException("No GraphProvider Specified.");
+
+            if (request.graphProvider.NodeGraph == null)
+                throw new NullReferenceException("GraphProvider does not have a NodeGraph");
+
+            var graph = request.graphProvider.NodeGraph;
+            var runtimeNodes = new NativeArray<RuntimePathNode>(graph.RuntimeNodes, Allocator.TempJob);
+            var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graph.RuntimeLinks, Allocator.TempJob);
+            var closestStartIndex = new NativeReference<int>(-1, Allocator.TempJob);
+            var closestEndIndex = new NativeReference<int>(-1, Allocator.TempJob);
+
+            FindClosestNodeIndexJob findClosestStartIndexJob = new FindClosestNodeIndexJob
+            {
+                nodes = runtimeNodes,
+                position = request.start,
+                result = closestStartIndex
+            };
+
+            FindClosestNodeIndexJob findClosestEndIndexJob = new FindClosestNodeIndexJob
+            {
+                nodes = runtimeNodes,
+                position = request.end,
+                result = closestEndIndex,
+            };
+
+            FindPathJob findPathJob = new FindPathJob
+            {
+                startPos = request.start,
+                startIndex = closestStartIndex,
+                endPos = request.end,
+                endIndex = closestEndIndex,
+                nodes = runtimeNodes,
+                links = runtimeLinks,
+                actorHeight = request.actorHeight,
+                result = new NativeList<float3>(1024, Allocator.TempJob),
+            };
+
+            return new PathRequestResult
+            {
+                findClosestEndNodeIndexJob = findClosestEndIndexJob,
+                findClosestStartNodeIndexJob = findClosestStartIndexJob,
+                findPathJob = findPathJob,
+                closestEndIndex = closestEndIndex,
+                closestStartIndex = closestStartIndex,
+                findNodesJobHandles = new NativeArray<JobHandle>(2, Allocator.TempJob),
+                runtimeLinks = runtimeLinks,
+                runtimeNodes = runtimeNodes
+            };
+        }
+        
         [SystemInitializer]
         private static void Init()
         {
@@ -38,6 +100,17 @@ namespace ElementalWard
         {
             if (arg1 != LoadSceneMode.Single)
                 return;
+
+            if (_airGraph)
+            {
+                Object.Destroy(_airGraph);
+                _airGraph = null;
+            }
+            if (_groundGraph)
+            {
+                Object.Destroy(_groundGraph);
+                _groundGraph = null;
+            }
 
             GameObject[] objects = arg0.GetRootGameObjects();
 
@@ -64,16 +137,62 @@ namespace ElementalWard
             GraphProvider[] groundProviders = allProviders.Where(x => x.NodeGraph != null && x.NodeGraph is GroundNodeGraph).ToArray();
             GraphProvider[] airProviders = allProviders.Where(x => x.NodeGraph != null && x.NodeGraph is AirNodeGraph).ToArray();
 
-            _airGraphProvider.NodeGraph = CreateSceneGraph<AirNodeGraph>(airProviders);
-            _groundGraphProvider.NodeGraph = CreateSceneGraph<GroundNodeGraph>(groundProviders);
+            _groundGraph = CreateSceneGraph<GroundNodeGraph>(groundProviders);
+            _groundGraphProvider.NodeGraph = _groundGraph;
+            _groundGraphProvider.BakeAsynchronously(() =>
+            {
+                _groundGraphProvider.NodeGraph.UpdateRuntimeNodesAndLinks();
 
-            _groundGraphProvider.BakeSynchronously();
+
+                _airGraph = CreateSceneGraph<AirNodeGraph>(airProviders);
+                _airGraphProvider.NodeGraph = _airGraph;
+                _airGraphProvider.BakeAsynchronously(_airGraphProvider.NodeGraph.UpdateRuntimeNodesAndLinks);
+            });
+
         }
 
 
         private static T CreateSceneGraph<T>(GraphProvider[] providers) where T : NodeGraphAsset
         {
             return NodeGraphAsset.CreateFrom<T>(providers);
+        }
+
+        public struct PathRequest
+        {
+            public IGraphProvider graphProvider;
+            public Vector3 start;
+            public Vector3 end;
+            public float actorHeight;
+        }
+
+        public struct PathRequestResult : IDisposable
+        {
+            public FindClosestNodeIndexJob findClosestStartNodeIndexJob;
+            public FindClosestNodeIndexJob findClosestEndNodeIndexJob;
+            public FindPathJob findPathJob;
+
+            public NativeReference<int> closestStartIndex;
+            public NativeReference<int> closestEndIndex;
+            public NativeArray<RuntimePathNode> runtimeNodes;
+            public NativeArray<RuntimePathNodeLink> runtimeLinks;
+            public NativeArray<JobHandle> findNodesJobHandles;
+            public void Dispose()
+            {
+                closestStartIndex.Dispose();
+                closestEndIndex.Dispose();
+                runtimeNodes.Dispose();
+                runtimeLinks.Dispose();
+                findNodesJobHandles.Dispose();
+            }
+
+            public JobHandle ScheduleFindPathJob()
+            {
+                findNodesJobHandles[0] = findClosestStartNodeIndexJob.Schedule();
+                findNodesJobHandles[1] = findClosestEndNodeIndexJob.Schedule();
+
+                JobHandle dependencyHandle = JobHandle.CombineDependencies(findNodesJobHandles);
+                return findPathJob.Schedule(dependencyHandle);
+            }
         }
     }
 }

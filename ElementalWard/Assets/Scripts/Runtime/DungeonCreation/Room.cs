@@ -18,7 +18,8 @@ namespace ElementalWard
         {
             get
             {
-                Vector3 center = transform.TransformPoint(RawBoundingBox.center);
+                Vector3 center = RawBoundingBox.center + transform.localPosition;
+                center = NebulaMath.MultiplyElementWise(center, transform.lossyScale);
 
                 Vector3 size = RawBoundingBox.size;
                 size = NebulaMath.MultiplyElementWise(size, transform.lossyScale);
@@ -47,19 +48,12 @@ namespace ElementalWard
             });
             _roomBoundingBox.center -= new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            var size = _roomBoundingBox.size;
-            var x = size.x / transform.lossyScale.x;
-            var y = size.y / transform.lossyScale.y;
-            var z = size.z / transform.lossyScale.z;
-            _roomBoundingBox.size = new Vector3(x, y, z);
+            _roomBoundingBox.size = NebulaMath.DivideElementWise(_roomBoundingBox.size, transform.lossyScale);
 
-            var center = _roomBoundingBox.center;
-            x = center.x / transform.lossyScale.x;
-            y = center.y / transform.lossyScale.y;
-            z = center.z / transform.lossyScale.z;
-            _roomBoundingBox.center = new Vector3(x, y, z);
+            _roomBoundingBox.center = NebulaMath.DivideElementWise(_roomBoundingBox.center, transform.lossyScale);
+
 #if UNITY_EDITOR
-            if(!UnityEditor.EditorApplication.isPlaying)
+            if (!UnityEditor.EditorApplication.isPlaying)
                 UnityEditor.EditorUtility.SetDirty(this);
 #endif
         }

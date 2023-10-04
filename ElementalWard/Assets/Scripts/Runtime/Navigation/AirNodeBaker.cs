@@ -86,6 +86,7 @@ namespace ElementalWard.Navigation
                         {
                             nodeBIndex = colliderNodeIndex;
                             nodeB = PathNodes[nodeBIndex];
+                            nodeBPosition = nodeB.position;
                             break;
                         }
                     }
@@ -227,6 +228,9 @@ namespace ElementalWard.Navigation
                     if (hit.collider == _moverCharacterController)
                         continue;
 
+                    if (hit.collider.isTrigger)
+                        continue;
+
                     result.Add(hit);
                 }
 
@@ -245,7 +249,6 @@ namespace ElementalWard.Navigation
             public bool ReachedDestination()
             {
                 float distance = Vector3.Distance(MoverPosition, DestinationPosition);
-                Debug.Log(distance < 0.05f);
                 return distance < 0.05f;
             }
 

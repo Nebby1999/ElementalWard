@@ -31,5 +31,10 @@ namespace Nebula
                 throw new NotImplementedException();
             }
         }
+
+        protected virtual void Awake()
+        {
+            _cachedName = base.name;
+        }
     }
 }

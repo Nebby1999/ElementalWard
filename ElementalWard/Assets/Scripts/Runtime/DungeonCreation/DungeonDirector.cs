@@ -13,8 +13,8 @@ namespace ElementalWard
 {
     public class DungeonDirector : MonoBehaviour
     {
-        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(15, 30);
-        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(100, 300);
+        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(20, 40);
+        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(200, 400);
         public Bounds DungeonSize { get; private set; }
         public float Credits { get; private set; }
         public bool GenerationComplete { get; private set; }
@@ -41,33 +41,11 @@ namespace ElementalWard
 
         private void Awake()
         {
-            _seed = useCustomSeed ? _customSeed : (ulong)DateTime.Now.Ticks;
+            _seed = useCustomSeed ? _customSeed : ElementalWardApplication.rng.NextUlong;
             Debug.Log("Dungeon RNG Seed: " + _seed);
             _dungeonRNG = new Xoroshiro128Plus(_seed);
         }
 
-        [ContextMenu("Create with current seed")]
-        private void Regen()
-        {
-            foreach(Transform child in transform)
-            {
-                Destroy(child.gameObject);
-            }
-            _dungeonRNG.ResetSeed(_seed);
-            Start();
-        }
-
-
-        [ContextMenu("Create with random seed")]
-        private void RegenNew()
-        {
-            foreach (Transform child in transform)
-            {
-                Destroy(child.gameObject);
-            }
-            _dungeonRNG.ResetSeed((ulong)DateTime.Now.Ticks);
-            Start();
-        }
         private void Start()
         {
             float sizeMultiplier = 1 + (float)_dungeonFloor / 20;
@@ -185,6 +163,7 @@ namespace ElementalWard
             var b = room.RawBoundingBox;
             b.Expand(-1f);
             room.RawBoundingBox = b;
+            _instantiatedRooms.Add(room);
             var request = new RoomPlacementRequest(room, this, _dungeonRNG.NextUlong, _roomCards);
             _placementRequestQueue.Enqueue(request);
         }
@@ -214,6 +193,11 @@ namespace ElementalWard
             Physics.SyncTransforms();
             instantiatedRoom.CalculateBounds();
             var b = instantiatedRoom.RawBoundingBox;
+            b.Expand(-1f);
+            instantiatedRoom.RawBoundingBox = b;
+            Physics.SyncTransforms();
+            instantiatedRoom.CalculateBounds();
+            b = instantiatedRoom.RawBoundingBox;
             b.Expand(-1f);
             instantiatedRoom.RawBoundingBox = b;
 
@@ -271,6 +255,9 @@ namespace ElementalWard
 
             foreach(Room room in _instantiatedRooms)
             {
+                if (roomsToIgnore.Contains(room))
+                    continue;
+
                 if(room.WorldBoundingBox.Intersects(roomToCheck.WorldBoundingBox))
                 {
                     return true;

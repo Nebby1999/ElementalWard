@@ -39,7 +39,7 @@ namespace ElementalWard.Navigation
                     continue;
 
                 float distance = Vector3.Distance(nodeAPosition, nodeBPosition);
-                if (distance > SerializedPathNode.MAX_DISTANCE)
+                if (distance > SerializedPathNode.MAX_DISTANCE * 2) //times two because i cant be bothered to figure out how to make a runtime settings file.
                     continue;
 
                 _mover.SetMoverPosition(nodeAPosition, true);
@@ -90,6 +90,7 @@ namespace ElementalWard.Navigation
                         {
                             nodeBIndex = colliderNodeIndex;
                             nodeB = PathNodes[nodeBIndex];
+                            nodeBPosition = nodeB.position;
                             break;
                         }
                     }
@@ -107,7 +108,6 @@ namespace ElementalWard.Navigation
                 
                 if (!_mover.ReachedDestination(out float dist))
                 {
-                    Debug.Log($"Failed to go from Node{nodeAIndex} to Node{nodeBIndex}. (Distance: {dist})");
                     continue;
                 }
 
@@ -239,6 +239,9 @@ namespace ElementalWard.Navigation
                 foreach (var hit in hits)
                 {
                     if (hit.collider == _moverCharacterController)
+                        continue;
+
+                    if (hit.collider.isTrigger)
                         continue;
 
                     result.Add(hit);

@@ -27,12 +27,12 @@ namespace ElementalWard
         public CharacterMaster Master { get; private set; }
         public BodyComponents CurrentBodyComponents { get; private set; }
         public CharacterInputBank BodyInputBank => CurrentBodyComponents.inputBank;
-        public float BodyCapsuleHeight => CurrentBodyComponents.motorCapsule ? CurrentBodyComponents.motorCapsule.height : 1;
-        public float BodyCapsuleRadius => CurrentBodyComponents.motorCapsule ? CurrentBodyComponents.motorCapsule.radius : 0.5f;
+        public float BodyCapsuleHeight => CurrentBodyComponents.motorCapsule ? CurrentBodyComponents.motorCapsule.height : 2;
+        public float BodyCapsuleRadius => CurrentBodyComponents.motorCapsule ? CurrentBodyComponents.motorCapsule.radius : 1f;
         public float BodyJumpStrength => CurrentBodyComponents.body ? CurrentBodyComponents.body.JumpStrength : 0;
         public TeamIndex BodyTeamIndex => CurrentBodyComponents.teamComponent ? CurrentBodyComponents.teamComponent.CurrentTeamIndex : TeamIndex.None;
         public KinematicCharacterMotor BodyMotor => CurrentBodyComponents.motor;
-        public Vector3 BodyPosition => CurrentBodyComponents.motor ? CurrentBodyComponents.motor.InitialSimulationPosition : Vector3.zero;
+        public Vector3? BodyPosition => CurrentBodyComponents.IsValid ? CurrentBodyComponents.motor ? CurrentBodyComponents.motor.InitialSimulationPosition : Vector3.zero : null;
         public AITarget CurrentTarget
         {
             get
@@ -66,11 +66,11 @@ namespace ElementalWard
         private Vector3 _pathfindingMovementVector;
         private Quaternion _pathfindingLookRotation;
 
-        //private static GlobalBaseAIUpdater globalUpdater;
+        private static GlobalBaseAIUpdater globalUpdater;
         [SystemInitializer]
         private static void SystemInitialzer()
         {
-            //globalUpdater = new GlobalBaseAIUpdater();
+            globalUpdater = new GlobalBaseAIUpdater();
         }
         private void OnTargetDeath(HealthComponent hc)
         {
@@ -163,7 +163,7 @@ namespace ElementalWard
 
         private void ScanForTargetNearby()
         {
-            Collider[] potentialTargetHurtboxes = Physics.OverlapSphere(BodyPosition, awarenessRange, LayerIndex.entityPrecise.Mask);
+            Collider[] potentialTargetHurtboxes = Physics.OverlapSphere(BodyPosition.Value, awarenessRange, LayerIndex.entityPrecise.Mask);
 
             List<HurtBox> encounteredMainHurtboxes = new List<HurtBox>();
             foreach (Collider col in potentialTargetHurtboxes)
@@ -238,7 +238,7 @@ namespace ElementalWard
         private void ProcessPath()
         {
             _currentWaypoint = _path[_pathIndex];
-            _distanceFromCurrentWaypoint = Vector3.Distance(_currentWaypoint, BodyPosition);
+            _distanceFromCurrentWaypoint = Vector3.Distance(_currentWaypoint, BodyPosition.Value);
             if (_distanceFromCurrentWaypoint < 0.7f)
             {
                 _pathIndex++;
@@ -249,7 +249,7 @@ namespace ElementalWard
             }
 
             var vector = _currentWaypoint - BodyPosition;
-            var movementDir = vector.normalized;
+            var movementDir = vector.Value.normalized;
             _pathfindingMovementVector = movementDir;
             _pathfindingLookRotation = Quaternion.LookRotation(movementDir, BodyMotor ? BodyMotor.CharacterUp : Vector3.up);
         }
@@ -290,7 +290,7 @@ namespace ElementalWard
 
             UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, rotatedForward, awarenessAngle, awarenessRange);
 
-            /*if (!drawPath)
+            if (!drawPath)
                 return;
 
             var previousPos = Vector3.zero;
@@ -315,7 +315,7 @@ namespace ElementalWard
                     Gizmos.color = Color.black;
                 }
 
-                Gizmos.DrawSphere(_path[i], AStarNodeGrid.NODE_RADIUS);
+                Gizmos.DrawSphere(_path[i], 0.5f);
 
                 if (i == 0)
                 {
@@ -326,7 +326,7 @@ namespace ElementalWard
                 Gizmos.color = Color.cyan;
                 Gizmos.DrawLine(previousPos, pos);
                 previousPos = pos;
-            }*/
+            }
         }
 #endif
         public struct AIInputs

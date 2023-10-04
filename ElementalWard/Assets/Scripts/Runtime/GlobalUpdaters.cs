@@ -1,5 +1,6 @@
-//using ElementalWard.Navigation;
+using ElementalWard.Navigation;
 using Nebula;
+using Nebula.Navigation;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Jobs;
@@ -16,7 +17,7 @@ namespace ElementalWard
         public List<T> Instances => InstanceTracker.GetInstances<T>();
     }
 
-    /*public class GlobalBaseAIUpdater : GlobalUpdater<CharacterMasterAI>
+    public class GlobalBaseAIUpdater : GlobalUpdater<CharacterMasterAI>
     {
         private float stopwatch;
         public GlobalBaseAIUpdater()
@@ -44,33 +45,35 @@ namespace ElementalWard
         {
             var instanceCount = InstanceCount;
             var instances = Instances;
-            if (!PathfindingSystem.Instance || instanceCount == 0)
+            if (instanceCount == 0 || !SceneNavigationSystem.HasGraphs)
                 return;
 
             NativeArray<FindPathJob> jobs = new NativeArray<FindPathJob>(instanceCount, Allocator.Temp);
             NativeArray<JobHandle> jobHandles = new NativeArray<JobHandle>(instanceCount, Allocator.Temp);
+            SceneNavigationSystem.PathRequestResult[] requestResults = new SceneNavigationSystem.PathRequestResult[instanceCount];
 
             for (int i = 0; i < instanceCount; i++)
             {
                 var baseAIInstance = instances[i];
-                Vector3 bodyPos = baseAIInstance.BodyPosition;
-                Vector3? targetPos = baseAIInstance.CurrentTarget.Position;
+                Vector3 bodyPos = baseAIInstance.BodyPosition ?? Vector3.positiveInfinity;
+                Vector3 targetPos = baseAIInstance.CurrentTarget.Position ?? Vector3.positiveInfinity;
                 float capsuleHeight = baseAIInstance.BodyCapsuleHeight;
                 float capsuleRadius = baseAIInstance.BodyCapsuleRadius;
                 float jumpStrength = baseAIInstance.BodyJumpStrength;
 
-                if (baseAIInstance.CurrentBodyComponents.isFlying)
+                SceneNavigationSystem.PathRequest request = new SceneNavigationSystem.PathRequest
                 {
-                    jobs[i] = PathfindingSystem.Instance.RequestPath(PathfindingSystem.Instance.airNodes, bodyPos, targetPos, capsuleHeight, capsuleRadius, jumpStrength);
-                    jobHandles[i] = jobs[i].Schedule();
-                    continue;
-                }
-                if (baseAIInstance.CurrentBodyComponents.isGround)
-                {
-                    jobs[i] = PathfindingSystem.Instance.RequestPath(PathfindingSystem.Instance.groundNodes, bodyPos, targetPos, capsuleHeight, capsuleRadius, jumpStrength);
-                    jobHandles[i] = jobs[i].Schedule();
-                    continue;
-                }
+                    actorHeight = capsuleHeight,
+                    start = bodyPos,
+                    end = targetPos,
+                    graphProvider = baseAIInstance.CurrentBodyComponents.isFlying ? SceneNavigationSystem.AirNodeProvider : baseAIInstance.CurrentBodyComponents.isGround ? SceneNavigationSystem.GroundNodeProvider : null,
+                };
+
+                SceneNavigationSystem.PathRequestResult requestResult = SceneNavigationSystem.RequestPath(request);
+
+                requestResults[i] = requestResult;
+                jobs[i] = requestResult.findPathJob;
+                jobHandles[i] = requestResult.ScheduleFindPathJob();
             }
 
             JobHandle.CompleteAll(jobHandles);
@@ -80,11 +83,12 @@ namespace ElementalWard
                 var job = jobs[i];
                 instances[i].UpdatePath(job.result);
                 job.result.Dispose();
+                requestResults[i].Dispose();
             }
             jobs.Dispose();
             jobHandles.Dispose();
         }
-    }*/
+    }
 
     public class Global3DSpriteRendererUpdater : GlobalUpdater<SpriteRenderer3D>
     {

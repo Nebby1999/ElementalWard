@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 855fdb96ad8f83e40972aecb33055677
   m_SerializeEntries:
+  - m_GUID: aff15b80a0bbc50409ddc4acd62c0601
+    m_Address: ElementalWard/Base/ElementDefs/Gems.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3cdddd3025ac41949af10e9f2f53620f
     m_Address: ElementalWard/Base/ElementDefs/matGenericOverload.mat
     m_ReadOnly: 0
@@ -30,11 +35,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 70a542564ff00b64b8462a71e5b59c1b
     m_Address: ElementalWard/Base/ElementDefs/ElementOverload.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: aff15b80a0bbc50409ddc4acd62c0601
-    m_Address: ElementalWard/Base/ElementDefs/Gems.aseprite
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

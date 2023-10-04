@@ -19,6 +19,9 @@ namespace Nebula.Navigation
         public NativeList<float3> result;
         public void Execute()
         {
+            if (startIndex.Value == -1 || endIndex.Value == -1)
+                return;
+
             RuntimePathNode startNode = nodes[startIndex.Value];
             startNode.gCost = 0;
             nodes[startIndex.Value] = startNode;

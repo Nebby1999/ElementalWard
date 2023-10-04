@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roomBoundingBox:
-    m_Center: {x: -0.00000047683716, y: 2.2500005, z: 0}
-    m_Extent: {x: 2.0000014, y: 2.7500005, z: 2.1}
+    m_Center: {x: -0.00000047683716, y: 2.2500005, z: -0.000043153763}
+    m_Extent: {x: 2.0000014, y: 2.7500005, z: 2.0000436}
 --- !u!1001 &1128443695154943883
 PrefabInstance:
   m_ObjectHideFlags: 0

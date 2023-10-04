@@ -22,15 +22,17 @@ MonoBehaviour:
   - position: {x: -13, y: 0, z: 5}
     serializedPathNodeLinkIndices: 01000000060000000b0000000c000000
   - position: {x: -13, y: 0, z: -5}
-    serializedPathNodeLinkIndices: 02000000070000000d000000
+    serializedPathNodeLinkIndices: 02000000070000000d0000000e0000000f000000
   - position: {x: -3, y: 0, z: -5}
     serializedPathNodeLinkIndices: 03000000080000000b0000000d000000
   - position: {x: 0, y: 0, z: 2.5}
-    serializedPathNodeLinkIndices: 04000000090000000c0000000e000000
+    serializedPathNodeLinkIndices: 04000000090000000c0000000e00000010000000
   - position: {x: 0, y: 5, z: -6}
-    serializedPathNodeLinkIndices: 0f000000100000001100000012000000
+    serializedPathNodeLinkIndices: 11000000120000001300000014000000
   - position: {x: 0, y: 0, z: 5}
-    serializedPathNodeLinkIndices: 050000000e000000
+    serializedPathNodeLinkIndices: 050000000f00000010000000
+  - position: {x: 1.5, y: 5, z: 4}
+    serializedPathNodeLinkIndices: 1500000016000000170000001800000019000000
   _serializedLinks:
   - nodeAIndex: 0
     nodeBIndex: 1
@@ -144,6 +146,22 @@ MonoBehaviour:
       x: 1
       y: 0
       z: 0
+  - nodeAIndex: 4
+    nodeBIndex: 6
+    distance: 15.008331
+    slopeAngle: 84.268456
+    normal:
+      x: 0.86618555
+      y: 0
+      z: 0.49972245
+  - nodeAIndex: 4
+    nodeBIndex: 8
+    distance: 16.40122
+    slopeAngle: 0
+    normal:
+      x: 0.79262394
+      y: 0
+      z: 0.60971075
   - nodeAIndex: 6
     nodeBIndex: 8
     distance: 2.5
@@ -184,3 +202,43 @@ MonoBehaviour:
       x: 0
       y: -0.41380295
       z: 0.9103665
+  - nodeAIndex: 9
+    nodeBIndex: 0
+    distance: 7.1414285
+    slopeAngle: 45.561756
+    normal:
+      x: -0.70014006
+      y: -0.70014006
+      z: 0.14002801
+  - nodeAIndex: 9
+    nodeBIndex: 1
+    distance: 15.467709
+    slopeAngle: 71.14017
+    normal:
+      x: -0.9374369
+      y: -0.32325408
+      z: -0.12930164
+  - nodeAIndex: 9
+    nodeBIndex: 3
+    distance: 15.370426
+    slopeAngle: 71.01624
+    normal:
+      x: -0.94337004
+      y: -0.32530004
+      z: 0.065060005
+  - nodeAIndex: 9
+    nodeBIndex: 6
+    distance: 5.4313903
+    slopeAngle: 30.956915
+    normal:
+      x: -0.27617237
+      y: -0.9205746
+      z: -0.27617237
+  - nodeAIndex: 9
+    nodeBIndex: 8
+    distance: 5.315073
+    slopeAngle: 30.956852
+    normal:
+      x: -0.28221625
+      y: -0.94072086
+      z: 0.18814418

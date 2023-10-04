@@ -1,0 +1,364 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Rooms
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Rooms
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2a159c9cdd61c4542bd131bb8af2ec89
+  m_SerializeEntries:
+  - m_GUID: bf7f2ba2205d4da4b886792859e92236
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fee49a9b2108d2458b73d3cc2b28021
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f20072c0cfa17047bdc1cb477f4a46e
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe34b11677b528a43ada9e3a1add3ee0
+    m_Address: ElementalWard/Base/Rooms/Wall-Open.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce0ad7b5d11330b46a8f74dede857c67
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bef0cc3231fabe84d804c74095dbd4ae
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e061ef9bebd5dd4b8d5c4432c22de9f
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd51da38200df8c45b3c32208c023228
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8db7117aaa5910d47b6ee884b9d82a2b
+    m_Address: ElementalWard/Base/Rooms/BossRoomEntrance.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d6d20c2b311fa740b813fddc7871e21
+    m_Address: ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc6c114d12729f143816ed34ddeeb209
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc743e0e3e82f1c4da6d35cfab4b1af4
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc012f47a62cebe4c82f609e7902bcb7
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomRectangular_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc0ffa10b448a2f44a70998e29268204
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayPlusPlus_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cd556b48ffb2d14f957618bb5620402
+    m_Address: ElementalWard/Base/Rooms
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cc7462858ff8d14b9f503b164fce0b6
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2caa8af1a33928c47bde3660d3d9d944
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomU.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ce181d4b8d696c418efb599325b4f07
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db04be93382c5e0479826227ba0819dc
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb37b0ce054166f48b8f5ec806a95028
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b9edb5190c15a743ababf2b4f9663bd
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomPlus_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bb53d6ea1fd5f74389af7e965229df3
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b557283d7c5c014390fc13355c43060
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b724f7d5b21d3846bb6a92dc4735302
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayPlusPlus_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b88b616ed17dee458623a606b95428f
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b10cc5e4ff160d479f623a07ea89187
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cab7c76d4ed3a5a419ee9b49c20b94f8
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6afc0d88c78d182489788769dfae0ab6
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a35b1f58ae577e4e909cdc78d9e7837
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomRectangular.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f93df525f3e6c4e4d9a52cca2dbc0b74
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79a845e351977194c90638cee8ea9e20
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomPlus_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6939c4192e010994cbf5b8015de65065
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomPlus.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5938d503b9fcc0c4eb7d0ead16f5a3d8
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8852af2272a1c44996da75ddc537373
+    m_Address: ElementalWard/Base/Rooms/Wall-Door.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98abf0e0bf176ac4989204a79e373f3c
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayPlusPlus.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68cc10ad277257046b4471099646171a
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68aaeea0ddb9fc74db033862badc03be
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomRectangular_Ground 1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97da96876e73b2546a7dc1f96dbd305e
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLarge_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47aba74ec8dc1ce45a6b08e0314e5d68
+    m_Address: ElementalWard/Base/Rooms/Boss_Wall-Door.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6293123842adc94ea03f69d220505b8
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d61ba501a6040b445b3f38065415d50f
+    m_Address: ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96fb65f434a27c44e9b3ae694ebc3c5f
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomRectangular_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86a5bc7a8bfdf1b4dba58235774ebc52
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 564daed316d557a4b936612e8787d6a6
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomU_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36de1b38faa37c442ba776faa756a9bc
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 066928a9ad0f86b4ab8bfab640746356
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomU_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c58b750c2a9c9ee4dacc8295784dfb70
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 453592bddd3e27742833f167d9343377
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35ea598fa6d6d9742a2fe99d0aee824d
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLarge.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 94bdcec5eafb68a459b3c3a6bc6ff1d0
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84c788ad41ae1e14ab9652a2d8535599
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53b996997155aa849930e3513f11f36d
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23f6842ff9fdc5c42aa030f15c7119d4
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2da6485bf831604a9a59b50c55c0a20
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2dae35786f6ed84f8fa649bba908a04
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLarge_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92be7da3f806be3419b0d35f8aa07e31
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92e15ff48bc461347a1ddc101be5d8b6
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 824c96dc9775fa34181451a5fa7e9b9e
+    m_Address: ElementalWard/Base/Rooms/BossRoomExit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1752aa10d19b0a449d00b7b056e980c
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91069c4cc21c1c04e8b36315f84b627f
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7102cbdf9511b70488db7a64b2169f53
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0151e42f541cd9d44b7b1f5a6ff1a950
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 900a126f4aca6294e84f2461ecaea582
+    m_Address: ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10da5fa3e4598b540981204b171e8e8d
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c0eee22358f17604dbd3c4a2b68a2755, type: 2}
+    - {fileID: 11400000, guid: 40baa5157c74d5041864a18568e9d567, type: 2}

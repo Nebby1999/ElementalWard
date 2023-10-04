@@ -226,8 +226,8 @@ namespace Nebula.Editor.Inspectors
 
                 if(!EditorApplication.isPlaying && Vector3.Distance(nodeXZ, rayOriginXZ) < 20)
                 {
-                    //worldPosition = Handles.PositionHandle(worldPosition, Quaternion.identity);
-                    //node.position = WorldToLocalPosition(worldPosition);
+                    worldPosition = Handles.PositionHandle(worldPosition, Quaternion.identity);
+                    node.position = WorldToLocalPosition(worldPosition);
                 }
 
                 Handles.color = Color.magenta;

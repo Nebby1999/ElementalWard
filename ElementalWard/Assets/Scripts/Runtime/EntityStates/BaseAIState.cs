@@ -41,7 +41,7 @@ namespace EntityStates
 
         public CharacterMasterAI.AITarget GetTarget()
         {
-            return CharacterMasterAI ? CharacterMasterAI.CurrentTarget : default;
+            return CharacterMasterAI ? CharacterMasterAI.CurrentTarget : CharacterMasterAI.AITarget.Invalid;
         }
     }
 }

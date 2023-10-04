@@ -84,7 +84,11 @@ namespace ElementalWard.Navigation
                 for (int i = 0; i < NodeGraph.SerializedNodes.Count; i++)
                 {
                     baker.BakeNode(NodeGraph.SerializedNodes[i], i);
-                    yield return new WaitForEndOfFrame();
+                    Debug.Log(i);
+                    if(i % 2 == 0)
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
                 }
                 NodeGraph.SerializedLinks = baker.BakedLinks;
             }

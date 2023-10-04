@@ -108,19 +108,19 @@ namespace ElementalWard.Navigation
             for(int i = 0; i < providers.Length; i++)
             {
                 var provider = providers[i];
-                CopyOver(result, provider.NodeGraph as NodeGraphAsset, provider.transform.position);
-                //Destroy(provider.gameObject);
+                CopyOver(result, provider.NodeGraph as NodeGraphAsset, provider.transform);
+                Destroy(provider.gameObject);
             }
             return result;
         }
 
-        public static void CopyOver(NodeGraphAsset destination, NodeGraphAsset source, Vector3 sourcePosition)
+        public static void CopyOver(NodeGraphAsset destination, NodeGraphAsset source, Transform providerTransform)
         {
             foreach(SerializedPathNode nodeSource in source.SerializedNodes )
             {
                 destination.SerializedNodes.Add(new SerializedPathNode
                 {
-                    position = nodeSource.position + sourcePosition,
+                    position = providerTransform.TransformPoint(nodeSource.position)
                 });
             }
         }

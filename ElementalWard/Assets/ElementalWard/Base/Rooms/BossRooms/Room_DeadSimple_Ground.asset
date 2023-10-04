@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room_DeadSimple_Ground
   m_EditorClassIdentifier: 
   _serializedNodes:
-  - position: {x: -22, y: 2.5, z: 22}
+  - position: {x: -22, y: 4.5, z: 22}
     serializedPathNodeLinkIndices: 0000000001000000
   - position: {x: -2, y: 2.5, z: 22}
     serializedPathNodeLinkIndices: 020000000300000004000000050000000600000007000000
@@ -95,7 +95,7 @@ MonoBehaviour:
     serializedPathNodeLinkIndices: 7800000022000000790000006b000000760000007a0000007b0000007c000000
   - position: {x: -7, y: 2.5, z: -3}
     serializedPathNodeLinkIndices: 7d0000007e0000004a0000004e000000580000006c000000770000007a0000007f00000080000000
-  - position: {x: -13, y: 2.5, z: -3}
+  - position: {x: -13, y: 4.5, z: -3}
     serializedPathNodeLinkIndices: 81000000820000004b0000004f0000007b0000007f00000083000000
   - position: {x: -13, y: 2.5, z: -9}
     serializedPathNodeLinkIndices: 1c0000002300000084000000850000007c0000008000000083000000

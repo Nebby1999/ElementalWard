@@ -13,7 +13,7 @@ namespace ElementalWard
     {
         public const string APP_NAME = "ElementalWard";
 
-        private Xoroshiro128Plus _rng;
+        public static Xoroshiro128Plus rng = new Xoroshiro128Plus((ulong)DateTime.Now.Ticks);
         protected override void Awake()
         {
             base.Awake();
