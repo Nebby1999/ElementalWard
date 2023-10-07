@@ -11,7 +11,7 @@ namespace EntityStates
         protected CharacterInputBank CharacterInputBank => outer.CommonComponents.inputBank;
         protected Transform Transform => outer.CommonComponents.transform;
         protected GameObject GameObject => outer.CommonComponents.gameObject;
-        protected BodySkillManager SkillManager => outer.CommonComponents.skillManager;
+        //protected BodySkillManager SkillManager => outer.CommonComponents.skillManager;
         protected Rigidbody RigidBody => outer.CommonComponents.rigidBody;
         protected TeamComponent TeamComponent => outer.CommonComponents.teamComponent;
         protected HealthComponent HealthComponent => outer.CommonComponents.healthComponent;

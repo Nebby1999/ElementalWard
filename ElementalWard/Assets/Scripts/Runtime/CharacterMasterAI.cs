@@ -14,7 +14,7 @@ namespace ElementalWard
     [RequireComponent(typeof(CharacterMaster))]
     public class CharacterMasterAI : MonoBehaviour
     {
-        public const float TIME_BETWEEN_AI_UPDATE = 0.2f;
+        public const float TIME_BETWEEN_AI_UPDATE = 0.25f;
 
         public EntityStateMachine aiStateMachine;
 
@@ -79,12 +79,19 @@ namespace ElementalWard
         }
         public void UpdatePath(NativeList<float3> result)
         {
+            Vector3? previousTargetPos = _pathIndex < 0 || _pathIndex > _path.Count - 1 ? null : _path[_pathIndex];
+            int pathIndexToSet = 0;
             _path.Clear();
             for (int i = 0; i < result.Length; i++)
             {
-                _path.Add(result[i]);
+                Vector3 resultPos = result[i];
+                _path.Add(resultPos);
+                if(previousTargetPos.HasValue && resultPos == previousTargetPos)
+                {
+                    pathIndexToSet = i;
+                }
             }
-            _pathIndex = 1;
+            _pathIndex = pathIndexToSet;
             if (_pathIndex > result.Length - 1)
                 _pathIndex = result.Length - 1;
         }
@@ -281,15 +288,17 @@ namespace ElementalWard
         }
 
 #if UNITY_EDITOR
-        private void OnDrawGizmos()
+        private void OnDrawGizmosSelected()
         {
-            Color c = Color.red;
-            UnityEditor.Handles.color = c;
+            UnityEditor.Handles.color = Color.red;
 
             Vector3 rotatedForward = Quaternion.Euler(0, -awarenessAngle * 0.5f, 0) * transform.forward;
 
             UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, rotatedForward, awarenessAngle, awarenessRange);
+        }
 
+        private void OnDrawGizmos()
+        {
             if (!drawPath)
                 return;
 

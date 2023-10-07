@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763300564714583734}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4687771136404633515}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4678658894973150073
 GameObject:
@@ -55,6 +55,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4678658894973150073}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -62,7 +63,6 @@ Transform:
   m_Children:
   - {fileID: 8167401569282735225}
   m_Father: {fileID: 2531424432156451055}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3929800432298406685
 MonoBehaviour:
@@ -106,13 +106,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4791574985747771706}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2531424432156451055}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8253633354894203804
 SpriteRenderer:
@@ -296,7 +296,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   bobDuration: 2
-  overlay: {fileID: 2100000, guid: 6b517542e853cac4c9e09781c57b694f, type: 2}
 --- !u!1 &5099703244236605032
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +319,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5099703244236605032}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -328,7 +328,6 @@ Transform:
   - {fileID: 5077010551823842647}
   - {fileID: 2307862752718487626}
   m_Father: {fileID: 4687771136404633515}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5338726505615578528
 GameObject:
@@ -349,7 +348,6 @@ GameObject:
   - component: {fileID: 6452892723494767529}
   - component: {fileID: 8972398675560155654}
   - component: {fileID: 6794365482305020246}
-  - component: {fileID: 8832952466864527598}
   - component: {fileID: 5391966210485815897}
   - component: {fileID: -2908713665425041059}
   - component: {fileID: -3563804340212239540}
@@ -370,6 +368,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5338726505615578528}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -378,7 +377,6 @@ Transform:
   - {fileID: 8987736761047858191}
   - {fileID: 2531424432156451055}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6616821231843013767
 MonoBehaviour:
@@ -404,7 +402,7 @@ MonoBehaviour:
   _baseHealth: 50
   _baseShield: 0
   _baseRegen: 0
-  _baseMovementSpeed: 2
+  _baseMovementSpeed: 7
   _baseAttackSpeed: 1
   _baseDamage: 10
   _baseArmor: 0
@@ -560,39 +558,6 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &8832952466864527598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5338726505615578528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2341f131e262124383ad590c173b240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skill1:
-    stateType:
-      _assemblyQualifiedName: EntityStates.WanderingSoul.FireBone, ElementalWard,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-    stateMachineName: Weapon
-    skillCooldown: 2
-  skill2:
-    stateType:
-      _assemblyQualifiedName: 
-    stateMachineName: 
-    skillCooldown: 0
-  skill3:
-    stateType:
-      _assemblyQualifiedName: 
-    stateMachineName: 
-    skillCooldown: 0
-  skill4:
-    stateType:
-      _assemblyQualifiedName: 
-    stateMachineName: 
-    skillCooldown: 0
 --- !u!114 &5391966210485815897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,13 +718,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8608590041353323998}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5077010551823842647}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1101494920393729458
 BoxCollider:

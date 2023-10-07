@@ -36,6 +36,12 @@ namespace ElementalWard
             var graph = request.graphProvider.NodeGraph;
             var runtimeNodes = new NativeArray<RuntimePathNode>(graph.RuntimeNodes, Allocator.TempJob);
             var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graph.RuntimeLinks, Allocator.TempJob);
+
+            var reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.start).ExecuteRaycasts();
+            var reachableStartIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
+
+            reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.end).ExecuteRaycasts();
+            var reachableEndIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
             var closestStartIndex = new NativeReference<int>(-1, Allocator.TempJob);
             var closestEndIndex = new NativeReference<int>(-1, Allocator.TempJob);
 
@@ -43,7 +49,7 @@ namespace ElementalWard
             {
                 nodes = runtimeNodes,
                 position = request.start,
-                result = closestStartIndex
+                result = closestStartIndex,
             };
 
             FindClosestNodeIndexJob findClosestEndIndexJob = new FindClosestNodeIndexJob
@@ -67,14 +73,21 @@ namespace ElementalWard
 
             return new PathRequestResult
             {
-                findClosestEndNodeIndexJob = findClosestEndIndexJob,
-                findClosestStartNodeIndexJob = findClosestStartIndexJob,
-                findPathJob = findPathJob,
-                closestEndIndex = closestEndIndex,
-                closestStartIndex = closestStartIndex,
-                findNodesJobHandles = new NativeArray<JobHandle>(2, Allocator.TempJob),
                 runtimeLinks = runtimeLinks,
-                runtimeNodes = runtimeNodes
+                runtimeNodes = runtimeNodes,
+
+                findClosestEndNodeIndexJob = findClosestEndIndexJob,
+                endPos = request.end,
+                reachableEndIndices = reachableEndIndices,
+                closestEndIndex = closestEndIndex,
+
+                findClosestStartNodeIndexJob = findClosestStartIndexJob,
+                startPos = request.start,
+                reachableStartIndices = reachableStartIndices,
+                closestStartIndex = closestStartIndex,
+
+                findNodesJobHandles = new NativeArray<JobHandle>(2, Allocator.TempJob),
+                findPathJob = findPathJob
             };
         }
         
@@ -114,7 +127,7 @@ namespace ElementalWard
 
             GameObject[] objects = arg0.GetRootGameObjects();
 
-            var director = objects.Select(g => g.GetComponent<DungeonDirector>()).Where(d => d).FirstOrDefault();
+            var director = objects.Select(g => g.GetComponent<DungeonDirector>()).Where(d => d && d.isActiveAndEnabled).FirstOrDefault();
             if (director)
             {
                 Debug.Log("Director present, waiting for dungeon generation completion.");
@@ -165,28 +178,38 @@ namespace ElementalWard
             public float actorHeight;
         }
 
-        public struct PathRequestResult : IDisposable
+        public class PathRequestResult : IDisposable
         {
             public FindClosestNodeIndexJob findClosestStartNodeIndexJob;
             public FindClosestNodeIndexJob findClosestEndNodeIndexJob;
             public FindPathJob findPathJob;
 
+            public NativeArray<int> reachableStartIndices;
             public NativeReference<int> closestStartIndex;
+            public NativeArray<int> reachableEndIndices;
             public NativeReference<int> closestEndIndex;
             public NativeArray<RuntimePathNode> runtimeNodes;
             public NativeArray<RuntimePathNodeLink> runtimeLinks;
             public NativeArray<JobHandle> findNodesJobHandles;
+            public float3 startPos;
+            public float3 endPos;
+
             public void Dispose()
             {
+                reachableStartIndices.Dispose();
                 closestStartIndex.Dispose();
+                reachableEndIndices.Dispose();
                 closestEndIndex.Dispose();
                 runtimeNodes.Dispose();
                 runtimeLinks.Dispose();
                 findNodesJobHandles.Dispose();
             }
 
+
             public JobHandle ScheduleFindPathJob()
             {
+                findClosestStartNodeIndexJob.reachableIndices = reachableStartIndices;
+                findClosestEndNodeIndexJob.reachableIndices = reachableEndIndices;
                 findNodesJobHandles[0] = findClosestStartNodeIndexJob.Schedule();
                 findNodesJobHandles[1] = findClosestEndNodeIndexJob.Schedule();
 

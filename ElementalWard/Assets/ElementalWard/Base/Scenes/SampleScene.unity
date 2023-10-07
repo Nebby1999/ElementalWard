@@ -183,6 +183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2282280824151324375, guid: 3476b448f5a42144da1f8ab3d3b3b814,
         type: 3}
+      propertyPath: awarenessAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282280824151324375, guid: 3476b448f5a42144da1f8ab3d3b3b814,
+        type: 3}
       propertyPath: awarenessRange
       value: 5
       objectReference: {fileID: 0}
@@ -903,11 +908,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dungeonDeck: {fileID: 11400000, guid: 89721bc0f2e9ae34e8964092245233d6, type: 2}
-  _dungeonFloor: 0
+  _dungeonFloor: 1
   slowGeneration: 0
   slowGenerationWait: 0
   useCustomSeed: 1
-  _customSeed: 638317235484452451
+  _customSeed: 20074433001031999
 --- !u!4 &1484586974
 Transform:
   m_ObjectHideFlags: 0

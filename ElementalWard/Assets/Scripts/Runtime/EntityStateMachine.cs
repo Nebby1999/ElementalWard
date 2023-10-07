@@ -12,7 +12,7 @@ namespace ElementalWard
             public readonly ICharacterMovementController characterMovementController;
             public readonly CharacterBody characterBody;
             public readonly CharacterInputBank inputBank;
-            public readonly BodySkillManager skillManager;
+            //public readonly BodySkillManager skillManager;
             public readonly Rigidbody rigidBody;
             public readonly TeamComponent teamComponent;
             public readonly HealthComponent healthComponent;
@@ -24,7 +24,7 @@ namespace ElementalWard
                 characterMovementController = go.GetComponent<ICharacterMovementController>();
                 characterBody = go.GetComponent<CharacterBody>();
                 inputBank = go.GetComponent<CharacterInputBank>();
-                skillManager = go.GetComponent<BodySkillManager>();
+                //skillManager = go.GetComponent<BodySkillManager>();
                 rigidBody = go.GetComponent<Rigidbody>();
                 teamComponent = go.GetComponent<TeamComponent>();
                 healthComponent = go.GetComponent<HealthComponent>();

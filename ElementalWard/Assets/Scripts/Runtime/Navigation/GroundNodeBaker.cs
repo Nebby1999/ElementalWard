@@ -82,6 +82,12 @@ namespace ElementalWard.Navigation
                         var colliderNodeIndexAsString = hitName.Substring("TempCollider_".Length);
                         var colliderNodeIndex = int.Parse(colliderNodeIndexAsString, CultureInfo.InvariantCulture);
 
+                        if(colliderNodeIndex < 0 || colliderNodeIndex > PathNodes.Count)
+                        {
+                            Debug.Log($"{hit.collider}'s TempCollider ID is out of range (0 - {PathNodes.Count}), Collider ID={colliderNodeIndex}");
+                            continue;
+                        }
+
                         if (colliderNodeIndex == nodeAIndex)
                             continue;
 
@@ -170,9 +176,12 @@ namespace ElementalWard.Navigation
                 pathNodeObject.transform.position = pathNode.position + ProviderPosition;
                 pathNodeObject.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
                 var collider = pathNodeObject.AddComponent<SphereCollider>();
+                collider.radius = 2;
                 Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
                 _collidersForBaking.Add(collider);
             }
+
+            Debug.Log("Ground Prebake Complete");
         }
 
         public void Dispose()

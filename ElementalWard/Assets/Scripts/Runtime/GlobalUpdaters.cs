@@ -81,9 +81,23 @@ namespace ElementalWard
             for (int i = 0; i < instanceCount; i++)
             {
                 var job = jobs[i];
-                instances[i].UpdatePath(job.result);
-                job.result.Dispose();
-                requestResults[i].Dispose();
+#if DEBUG
+                try
+                {
+#endif
+                    instances[i].UpdatePath(job.result);
+#if DEBUG
+                }
+                catch(System.Exception e)
+                {
+                    Debug.LogError(e);
+                }
+                finally
+                {
+                    job.result.Dispose();
+                    requestResults[i].Dispose();
+                }
+#endif
             }
             jobs.Dispose();
             jobHandles.Dispose();

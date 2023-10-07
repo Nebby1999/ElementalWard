@@ -182,7 +182,9 @@ namespace Nebula.Editor.Inspectors
                             continue;
                     }
 
-                    if (Vector3.Distance(worldPos, HitInfo.point) <= SerializedPathNode.MAX_DISTANCE * NebulaMath.GetAverage(GraphProviderScale))
+                    float distance = Vector3.Distance(worldPos, HitInfo.point);
+
+                    if(distance <= SerializedPathNode.MAX_DISTANCE * NebulaMath.GetAverage(GraphProviderScale))
                     {
                         Handles.color = Color.yellow;
                         Handles.DrawLine(worldPos, HitInfo.point, 3);

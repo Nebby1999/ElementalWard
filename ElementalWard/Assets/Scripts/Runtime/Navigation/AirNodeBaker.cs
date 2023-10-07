@@ -40,7 +40,7 @@ namespace ElementalWard.Navigation
                     continue;
 
                 float distance = Vector3.Distance(nodeAPosition, nodeBPosition);
-                if (distance > SerializedPathNode.MAX_DISTANCE)
+                if (distance > SerializedPathNode.MAX_DISTANCE * 2) //times two because i cant be bothered to figure out how to make a runtime settings file.
                     continue;
 
                 _mover.SetMoverPosition(nodeAPosition, false);
@@ -78,6 +78,12 @@ namespace ElementalWard.Navigation
                     {
                         var colliderNodeIndexAsString = hitName.Substring("TempCollider_".Length);
                         var colliderNodeIndex = int.Parse(colliderNodeIndexAsString, CultureInfo.InvariantCulture);
+                        if (colliderNodeIndex < 0 || colliderNodeIndex > PathNodes.Count- 1)
+                        {
+                            Debug.Log($"{hit.collider}'s TempCollider ID is out of range (0 - {PathNodes.Count}), Collider ID={colliderNodeIndex}");
+                            UnityEngine.Object.Destroy(hit.collider.gameObject);
+                            continue;
+                        }
 
                         if (colliderNodeIndex == nodeAIndex)
                             continue;
@@ -175,9 +181,13 @@ namespace ElementalWard.Navigation
                 pathNodeObject.transform.position = pathNode.position;
                 pathNodeObject.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
                 var collider = pathNodeObject.AddComponent<SphereCollider>();
+                collider.radius = 2;
                 Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
                 _collidersForBaking.Add(collider);
             }
+            Physics.SyncTransforms();
+
+            Debug.Log("Air Prebake Complete");
         }
 
         public AirNodeBaker(AirNodeGraph graph)
