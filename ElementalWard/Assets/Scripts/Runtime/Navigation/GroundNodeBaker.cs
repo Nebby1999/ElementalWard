@@ -10,6 +10,7 @@ namespace ElementalWard.Navigation
 {
     public class GroundNodeBaker : IElementalWardBaker
     {
+        public float ProviderScale { get; set; } = 1f;
         public Vector3 ProviderPosition { get; set; } = Vector3.zero;
         public INodeGraph NodeGraph => _nodeGraph;
         private GroundNodeGraph _nodeGraph;
@@ -39,7 +40,7 @@ namespace ElementalWard.Navigation
                     continue;
 
                 float distance = Vector3.Distance(nodeAPosition, nodeBPosition);
-                if (distance > SerializedPathNode.MAX_DISTANCE * 2) //times two because i cant be bothered to figure out how to make a runtime settings file.
+                if (distance > SerializedPathNode.MAX_DISTANCE * ProviderScale) //times two because i cant be bothered to figure out how to make a runtime settings file.
                     continue;
 
                 _mover.SetMoverPosition(nodeAPosition, true);
@@ -82,7 +83,7 @@ namespace ElementalWard.Navigation
                         var colliderNodeIndexAsString = hitName.Substring("TempCollider_".Length);
                         var colliderNodeIndex = int.Parse(colliderNodeIndexAsString, CultureInfo.InvariantCulture);
 
-                        if(colliderNodeIndex < 0 || colliderNodeIndex > PathNodes.Count)
+                        if(colliderNodeIndex < 0 || colliderNodeIndex > PathNodes.Count - 1)
                         {
                             Debug.Log($"{hit.collider}'s TempCollider ID is out of range (0 - {PathNodes.Count}), Collider ID={colliderNodeIndex}");
                             continue;
@@ -175,8 +176,10 @@ namespace ElementalWard.Navigation
                 GameObject pathNodeObject = new("TempCollider_" + i);
                 pathNodeObject.transform.position = pathNode.position + ProviderPosition;
                 pathNodeObject.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
-                var collider = pathNodeObject.AddComponent<SphereCollider>();
-                collider.radius = 2;
+                var collider = pathNodeObject.AddComponent<CapsuleCollider>();
+                collider.radius = 0.5f * ProviderScale;
+                collider.height = 2 * ProviderScale;
+                collider.center = Vector3.up * ProviderScale;
                 Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
                 _collidersForBaking.Add(collider);
             }

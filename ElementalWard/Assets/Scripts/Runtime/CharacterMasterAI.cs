@@ -79,19 +79,12 @@ namespace ElementalWard
         }
         public void UpdatePath(NativeList<float3> result)
         {
-            Vector3? previousTargetPos = _pathIndex < 0 || _pathIndex > _path.Count - 1 ? null : _path[_pathIndex];
-            int pathIndexToSet = 0;
             _path.Clear();
             for (int i = 0; i < result.Length; i++)
             {
-                Vector3 resultPos = result[i];
-                _path.Add(resultPos);
-                if(previousTargetPos.HasValue && resultPos == previousTargetPos)
-                {
-                    pathIndexToSet = i;
-                }
+                _path.Add(result[i]);
             }
-            _pathIndex = pathIndexToSet;
+            _pathIndex = 1;
             if (_pathIndex > result.Length - 1)
                 _pathIndex = result.Length - 1;
         }

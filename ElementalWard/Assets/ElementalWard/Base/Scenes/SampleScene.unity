@@ -908,11 +908,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dungeonDeck: {fileID: 11400000, guid: 89721bc0f2e9ae34e8964092245233d6, type: 2}
-  _dungeonFloor: 1
+  _dungeonFloor: 0
   slowGeneration: 0
   slowGenerationWait: 0
   useCustomSeed: 1
-  _customSeed: 20074433001031999
+  _customSeed: 3710527389465177771
 --- !u!4 &1484586974
 Transform:
   m_ObjectHideFlags: 0

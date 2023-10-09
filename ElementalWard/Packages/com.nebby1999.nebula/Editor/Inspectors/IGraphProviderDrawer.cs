@@ -187,7 +187,7 @@ namespace Nebula.Editor.Inspectors
                     if(distance <= SerializedPathNode.MAX_DISTANCE * NebulaMath.GetAverage(GraphProviderScale))
                     {
                         Handles.color = Color.yellow;
-                        Handles.DrawLine(worldPos, HitInfo.point, 3);
+                        Handles.DrawLine(worldPos, HitInfo.point);
                         inRange = true;
                     }
                 }
@@ -248,7 +248,7 @@ namespace Nebula.Editor.Inspectors
                     if (math.any(math.isnan(endNodePosition)) || math.any(math.isinf(endNodePosition)))
                         continue;
 
-                    Handles.DrawLine(worldPosition, endNodePosition, 5);
+                    Handles.DrawLine(worldPosition, endNodePosition);
                 }
             }
         }

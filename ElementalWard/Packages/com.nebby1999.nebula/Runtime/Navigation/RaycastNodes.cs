@@ -41,7 +41,7 @@ namespace Nebula.Navigation
             {
                 var node = nodes[i];
                 var distance = math.distance(node.worldPosition, originPosition);
-                var direction = math.normalize(originPosition - node.worldPosition);
+                var direction = math.normalize(node.worldPosition - originPosition);
                 var command = new RaycastCommand(originPosition, direction, queryParams, distance);
                 commands[i] = command;
             }
@@ -50,18 +50,15 @@ namespace Nebula.Navigation
             handle.Complete();
 
             List<int> reachableIndices = new List<int>();
-            StringBuilder help = new StringBuilder();
             for(int i = 0; i < hits.Length; i++)
             {
                 var hit = hits[i];
 
                 if(!hit.collider)
                 {
-                    help.AppendLine($"NodeIndex{i} - {hit.collider}");
                     reachableIndices.Add(i);
                 }
             }
-            Debug.Log(help);
 
             commands.Dispose();
             hits.Dispose();

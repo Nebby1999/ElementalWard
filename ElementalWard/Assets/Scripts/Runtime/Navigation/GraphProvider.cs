@@ -13,6 +13,13 @@ namespace ElementalWard.Navigation
         [SerializeField] internal string _graphName;
         public INodeGraph NodeGraph { get => _nodeGraphAsset; set => _nodeGraphAsset = (NodeGraphAsset)value; }
         [SerializeField] internal NodeGraphAsset _nodeGraphAsset;
+        public float providerScale = 1f;
+
+        public void SetProviderScaleToTransformScale()
+        {
+            providerScale = NebulaMath.GetAverage(transform.lossyScale);
+        }
+
         public void AddNewNode(Vector3 position)
         {
             if (!_nodeGraphAsset)

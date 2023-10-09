@@ -135,9 +135,13 @@ namespace ElementalWard
                 return;
             }
 
+            _airGraphProvider.providerScale = 1f;
+            _groundGraphProvider.providerScale = 1f;
             CreateGraphs(objects);
             void Director_OnDungeonGenerationComplete(DungeonDirector director)
             {
+                _airGraphProvider.providerScale = NebulaMath.GetAverage(director.transform.lossyScale);
+                _groundGraphProvider.providerScale = NebulaMath.GetAverage(director.transform.lossyScale);
                 CreateGraphs(director.InstantiatedRooms.Select(r => r.gameObject).ToArray());
             }
         }

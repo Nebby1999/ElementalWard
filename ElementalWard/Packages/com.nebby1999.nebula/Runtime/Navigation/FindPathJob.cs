@@ -120,7 +120,7 @@ namespace Nebula.Navigation
                 currentNode = parentNode;
             }
             result.Add(currentNode.worldPosition);
-            result.Add(startPos);
+            //result.Add(startPos);
 
             var length = result.Length;
             var index1 = 0;

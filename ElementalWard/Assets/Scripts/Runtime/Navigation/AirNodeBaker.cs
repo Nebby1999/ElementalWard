@@ -10,6 +10,7 @@ namespace ElementalWard.Navigation
 {
     public class AirNodeBaker : IElementalWardBaker
     {
+        public float ProviderScale { get; set; } = 1f;
         public Vector3 ProviderPosition { get; set; } = Vector3.zero;
         public INodeGraph NodeGraph => _nodeGraph;
         private AirNodeGraph _nodeGraph;
@@ -40,7 +41,7 @@ namespace ElementalWard.Navigation
                     continue;
 
                 float distance = Vector3.Distance(nodeAPosition, nodeBPosition);
-                if (distance > SerializedPathNode.MAX_DISTANCE * 2) //times two because i cant be bothered to figure out how to make a runtime settings file.
+                if (distance > SerializedPathNode.MAX_DISTANCE * ProviderScale)
                     continue;
 
                 _mover.SetMoverPosition(nodeAPosition, false);
@@ -78,9 +79,9 @@ namespace ElementalWard.Navigation
                     {
                         var colliderNodeIndexAsString = hitName.Substring("TempCollider_".Length);
                         var colliderNodeIndex = int.Parse(colliderNodeIndexAsString, CultureInfo.InvariantCulture);
-                        if (colliderNodeIndex < 0 || colliderNodeIndex > PathNodes.Count- 1)
+                        if (colliderNodeIndex < 0 || colliderNodeIndex > PathNodes.Count - 1)
                         {
-                            Debug.Log($"{hit.collider}'s TempCollider ID is out of range (0 - {PathNodes.Count}), Collider ID={colliderNodeIndex}");
+                            Debug.Log($"{hit.collider}'s TempCollider ID is out of range (0 - {PathNodes.Count - 1}), Collider ID={colliderNodeIndex}");
                             UnityEngine.Object.Destroy(hit.collider.gameObject);
                             continue;
                         }
@@ -180,8 +181,9 @@ namespace ElementalWard.Navigation
                 GameObject pathNodeObject = new("TempCollider_" + i);
                 pathNodeObject.transform.position = pathNode.position;
                 pathNodeObject.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
-                var collider = pathNodeObject.AddComponent<SphereCollider>();
-                collider.radius = 2;
+                var collider = pathNodeObject.AddComponent<CapsuleCollider>();
+                collider.radius = 0.5f * ProviderScale;
+                collider.height = 2 * ProviderScale;
                 Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
                 _collidersForBaking.Add(collider);
             }
