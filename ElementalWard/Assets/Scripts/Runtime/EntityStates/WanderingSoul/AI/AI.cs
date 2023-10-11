@@ -6,7 +6,7 @@ namespace EntityStates.WanderingSoul.AI
     public class AI : BaseAIState
     {
         private Vector3 aimDir;
-        private bool skill1Press;
+        private bool primaryPressed;
         public override void Update()
         {
             base.Update();
@@ -16,11 +16,11 @@ namespace EntityStates.WanderingSoul.AI
 
             if (target.HasLOS(CharacterBody, out aimDir, out _))
             {
-                skill1Press = true;
+                primaryPressed = true;
             }
             else
             {
-                skill1Press = false;
+                primaryPressed = false;
                 aimDir = ICharacterMovementController != null ? ICharacterMovementController.Motor.CharacterForward : BodyTransform.forward;
             }
         }
@@ -29,7 +29,7 @@ namespace EntityStates.WanderingSoul.AI
         {
             return new CharacterMasterAI.AIInputs
             {
-                skill1Pressed = skill1Press,
+                primaryPressed = primaryPressed,
                 aimDir = aimDir,
             };
         }

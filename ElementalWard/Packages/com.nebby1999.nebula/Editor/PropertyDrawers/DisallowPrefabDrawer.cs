@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace Nebula.Editor
+namespace Nebula.Editor.PropertyDrawers
 {
     [CustomPropertyDrawer(typeof(DisallowPrefabAttribute))]
     public class DisallowPrefabDrawer : IMGUIPropertyDrawer

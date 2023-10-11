@@ -15,8 +15,8 @@ namespace EntityStates
         protected GameObject BodyGameObject => CharacterMasterAI ? CharacterMasterAI.CurrentBodyComponents.gameObject : null;
         protected new TeamComponent TeamComponent => CharacterMasterAI ? CharacterMasterAI.CurrentBodyComponents.teamComponent : null;
 
-        /*[Obsolete("This member is not valid on a BaseAIState inheriting State", true)]
-        protected new BodySkillManager SkillManager => throw new NotImplementedException();*/
+        [Obsolete("This member is not valid on a BaseAIState inheriting State", true)]
+        protected new SkillManager SkillManager => CharacterMasterAI.CurrentBodyComponents.skillManager;
 
         [Obsolete("This member is not valid on a BaseAIState inheriting State", true)]
         protected new Rigidbody RigidBody => throw new NotImplementedException();

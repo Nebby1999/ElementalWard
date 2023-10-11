@@ -23,7 +23,10 @@ namespace ElementalWard
             public static readonly Guid lookGUID = Guid.Parse("f765e2fe-57bb-4f7d-96f0-745b10c49fac");
             public static readonly Guid jumpGUID = Guid.Parse("bc938039-836b-4bc8-bc60-56b806693359");
             public static readonly Guid sprintGUID = Guid.Parse("e4637507-4466-4625-bf18-5c38c76eed38");
-            public static readonly Guid fireGUID = Guid.Parse("b6a69f30-2f02-407d-9e46-93a072e375ce");
+            public static readonly Guid primaryGUID = Guid.Parse("b6a69f30-2f02-407d-9e46-93a072e375ce");
+            public static readonly Guid secondaryGUID = Guid.Parse("2129ef95-3094-4cff-8881-d4ef852dc179");
+            public static readonly Guid utilityGUID = Guid.Parse("8ee2999a-7f17-4ab3-9d2e-779034fe09f4");
+            public static readonly Guid specialGUID = Guid.Parse("4055a09a-f132-44d5-966d-a092ffa26753");
             public static readonly Guid elementScrollGUID = Guid.Parse("90496791-75a5-486f-a739-1442f5dcf45d");
             private Player() {}
         }

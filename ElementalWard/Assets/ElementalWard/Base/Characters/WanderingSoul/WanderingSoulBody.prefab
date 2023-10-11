@@ -348,6 +348,8 @@ GameObject:
   - component: {fileID: 6452892723494767529}
   - component: {fileID: 8972398675560155654}
   - component: {fileID: 6794365482305020246}
+  - component: {fileID: 3315064807260594586}
+  - component: {fileID: 6391504964950985722}
   - component: {fileID: 5391966210485815897}
   - component: {fileID: -2908713665425041059}
   - component: {fileID: -3563804340212239540}
@@ -558,6 +560,36 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &3315064807260594586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22c40572ac2dd0a4aaeb3ca5f54fe6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _primary: {fileID: 6391504964950985722}
+  _secondary: {fileID: 0}
+  _utility: {fileID: 0}
+  _special: {fileID: 0}
+--- !u!114 &6391504964950985722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa9eb97d89447b4bb98333055a599c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  genericSkillName: FireBone
+  _defaultSkill: {fileID: 11400000, guid: e0b20fea812facd4b92cc0732961bcab, type: 2}
 --- !u!114 &5391966210485815897
 MonoBehaviour:
   m_ObjectHideFlags: 0

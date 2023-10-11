@@ -117,7 +117,7 @@ namespace ElementalWard
                 BodyInputBank.moveVector = _pathfindingMovementVector;
                 BodyInputBank.jumpButton.PushState(false);
                 BodyInputBank.sprintButton.PushState(false);
-                BodyInputBank.skill1Button.PushState(false);
+                BodyInputBank.primaryButton.PushState(false);
                 return;
             }
             BaseAIState aiState = aiStateMachine.CurrentState as BaseAIState;
@@ -127,7 +127,10 @@ namespace ElementalWard
             BodyInputBank.AimDirection = inputs.aimDir;
             BodyInputBank.jumpButton.PushState(inputs.jumpPressed);
             BodyInputBank.sprintButton.PushState(inputs.sprintPressed);
-            BodyInputBank.skill1Button.PushState(inputs.skill1Pressed);
+            BodyInputBank.primaryButton.PushState(inputs.primaryPressed);
+            BodyInputBank.secondaryButton.PushState(inputs.secondaryPressed);
+            BodyInputBank.utilityButton.PushState(inputs.utilityPressed);
+            BodyInputBank.specialButton.PushState(inputs.specialPressed);
         }
 
         private void FixedUpdate()
@@ -338,7 +341,10 @@ namespace ElementalWard
             public Vector2 scrollInput;
             public bool jumpPressed;
             public bool sprintPressed;
-            public bool skill1Pressed;
+            public bool primaryPressed;
+            public bool secondaryPressed;
+            public bool utilityPressed;
+            public bool specialPressed;
         }
 
         public readonly struct BodyComponents
@@ -353,6 +359,7 @@ namespace ElementalWard
             public readonly ICharacterMovementController characterMovementController;
             public readonly KinematicCharacterMotor motor;
             public readonly CapsuleCollider motorCapsule;
+            public readonly SkillManager skillManager;
             public readonly bool isGround;
             public readonly bool isFlying;
 
@@ -363,6 +370,7 @@ namespace ElementalWard
                 transform = body.transform;
                 teamComponent = obj.GetComponent<TeamComponent>();
                 inputBank = obj.GetComponent<CharacterInputBank>();
+                skillManager = obj.GetComponent<SkillManager>();
                 characterMovementController = obj.GetComponent<ICharacterMovementController>();
                 motor = characterMovementController == null ? null : characterMovementController.Motor;
                 motorCapsule = motor ? motor.Capsule : null;

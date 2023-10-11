@@ -23,9 +23,12 @@ namespace ElementalWard
         public static event Action<CharacterBody> OnPlayableBodySpawned;
 
         private Transform _bodyCameraTransform;
-        private InputAction jumpAction;
-        private InputAction sprintAction;
-        private InputAction skill1Action;
+        private InputAction _jumpAction;
+        private InputAction _sprintAction;
+        private InputAction _primaryAction;
+        private InputAction _secondaryAction;
+        private InputAction _utilityAction;
+        private InputAction _specialAction;
         private Vector2 _rawMovementInput;
         private Vector2 _rawScrollInput;
         private Vector2 _rawLookInput;
@@ -45,9 +48,12 @@ namespace ElementalWard
             if (map == null)
                 return;
 
-            jumpAction = map.FindAction(ElementalWardInputGuids.Player.jumpGUID);
-            sprintAction = map.FindAction(ElementalWardInputGuids.Player.sprintGUID);
-            skill1Action = map.FindAction(ElementalWardInputGuids.Player.fireGUID);
+            _jumpAction = map.FindAction(ElementalWardInputGuids.Player.jumpGUID);
+            _sprintAction = map.FindAction(ElementalWardInputGuids.Player.sprintGUID);
+            _primaryAction = map.FindAction(ElementalWardInputGuids.Player.primaryGUID);
+            _secondaryAction = map.FindAction(ElementalWardInputGuids.Player.secondaryGUID);
+            _utilityAction = map.FindAction(ElementalWardInputGuids.Player.utilityGUID);
+            _specialAction = map.FindAction(ElementalWardInputGuids.Player.specialGUID);
         }
 
         private void SpawnCamera(CharacterBody body)
@@ -79,7 +85,10 @@ namespace ElementalWard
                 BodyInputs.elementAxis = playerInputs.scrollInput.y;
                 BodyInputs.jumpButton.PushState(playerInputs.jumpPressed);
                 BodyInputs.sprintButton.PushState(playerInputs.sprintPressed);
-                BodyInputs.skill1Button.PushState(playerInputs.skill1Pressed);
+                BodyInputs.primaryButton.PushState(playerInputs.primaryPressed);
+                BodyInputs.secondaryButton.PushState(playerInputs.secondaryPressed);
+                BodyInputs.utilityButton.PushState(playerInputs.utilityPressed);
+                BodyInputs.specialButton.PushState(playerInputs.specialPressed);
             }
         }
 
@@ -90,9 +99,12 @@ namespace ElementalWard
                 movementInput = _rawMovementInput,
                 lookInput = _rawLookInput,
                 scrollInput = _rawScrollInput,
-                jumpPressed = jumpAction.IsPressed(),
-                skill1Pressed = skill1Action.IsPressed(),
-                sprintPressed = sprintAction.IsPressed()
+                jumpPressed = _jumpAction?.IsPressed() ?? false,
+                sprintPressed = _sprintAction?.IsPressed() ?? false,
+                primaryPressed = _primaryAction?.IsPressed() ?? false,
+                secondaryPressed = _secondaryAction?.IsPressed() ?? false,
+                utilityPressed = _utilityAction?.IsPressed() ?? false,
+                specialPressed = _utilityAction?.IsPressed() ?? false
             };
         }
 
@@ -190,7 +202,10 @@ namespace ElementalWard
             public Vector2 scrollInput;
             public bool jumpPressed;
             public bool sprintPressed;
-            public bool skill1Pressed;
+            public bool primaryPressed;
+            public bool secondaryPressed;
+            public bool utilityPressed;
+            public bool specialPressed;
         }
     }
 }

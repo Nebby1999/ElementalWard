@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: TestFireState
+  m_Name: EntityStates.TestWeaponStateFire
   m_EditorClassIdentifier: 
   targetType:
     _assemblyQualifiedName: EntityStates.TestWeaponStateFire, ElementalWard, Version=0.0.0.0,

@@ -10,45 +10,6 @@ namespace ElementalWard
     [RequireComponent(typeof(ParticleSystem))]
     public class ParticleTextSystem : MonoBehaviour
     {
-        [Serializable]
-        public struct SymbolsTextureData
-        {
-            public Material material;
-            public char[] chars;
-
-            private Dictionary<char, Vector2> charDictionary;
-
-            public void Initialize()
-            {
-                charDictionary = new Dictionary<char, Vector2>();
-                var cols = (int)material.GetFloat("_Columns");
-                var rows = (int)material.GetFloat("_Rows");
-                for (int i = 0; i < chars.Length; i++)
-                {
-                    var c = char.ToLowerInvariant(chars[i]);
-                    if (charDictionary.ContainsKey(c))
-                        continue;
-
-                    var x = i % cols;
-                    var y = (rows - 1) - i / rows;
-                    var uv = new Vector2(x, y);
-                    charDictionary.Add(c, uv);
-                }
-            }
-
-            public Vector2 GetTextureCoordinates(char c)
-            {
-                c = char.ToLowerInvariant(c);
-                if (charDictionary == null)
-                    Initialize();
-
-                if (charDictionary.TryGetValue(c, out Vector2 texCoord))
-                {
-                    return texCoord;
-                }
-                return Vector2.zero;
-            }
-        }
         public const string DEFAULT_PREFAB_ADDRESS = "ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab";
 
         [SerializeField] private SymbolsTextureData symbols;
@@ -64,6 +25,14 @@ namespace ElementalWard
             "T",
             "Q"
         };
+
+        [ContextMenu("Test")]
+        private void Test()
+        {
+            _particleSystem = GetComponent<ParticleSystem>();
+            SpawnParticle(transform.position, "100k", Color.red);
+            _particleSystem = null;
+        }
 
         public static string FormatDamage(float damage, bool isHealing)
         {
@@ -166,6 +135,46 @@ namespace ElementalWard
                 if (i < 4) data[i] = PackFloat(vecs) + 0.1f;
             }
             return data;
+        }
+
+        [Serializable]
+        public struct SymbolsTextureData
+        {
+            public Material material;
+            public char[] chars;
+
+            private Dictionary<char, Vector2> charDictionary;
+
+            public void Initialize()
+            {
+                charDictionary = new Dictionary<char, Vector2>();
+                var cols = (int)material.GetFloat("_Columns");
+                var rows = (int)material.GetFloat("_Rows");
+                for (int i = 0; i < chars.Length; i++)
+                {
+                    var c = char.ToLowerInvariant(chars[i]);
+                    if (charDictionary.ContainsKey(c))
+                        continue;
+
+                    var x = i % cols;
+                    var y = (rows - 1) - i / rows;
+                    var uv = new Vector2(x, y);
+                    charDictionary.Add(c, uv);
+                }
+            }
+
+            public Vector2 GetTextureCoordinates(char c)
+            {
+                c = char.ToLowerInvariant(c);
+                if (charDictionary == null)
+                    Initialize();
+
+                if (charDictionary.TryGetValue(c, out Vector2 texCoord))
+                {
+                    return texCoord;
+                }
+                return Vector2.zero;
+            }
         }
     }
 }

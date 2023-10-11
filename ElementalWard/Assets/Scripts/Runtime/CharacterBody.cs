@@ -28,6 +28,7 @@ namespace ElementalWard
         [SerializeField] private Transform aimOriginTransform;
         [SerializeField] private float sprintSpeedMultiplier;
 
+        public float SprintSpeedMultiplier => sprintSpeedMultiplier;
         public float MaxHealth { get; private set; }
         public float MaxShield { get; private set; }
         public float Regen { get; private set; }
