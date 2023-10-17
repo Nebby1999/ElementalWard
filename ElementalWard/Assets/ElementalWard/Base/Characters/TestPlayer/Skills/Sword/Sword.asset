@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5433bb9b67b03c844975d99859f37586, type: 3}
-  m_Name: AirNodeBaker
+  m_Script: {fileID: 11500000, guid: 031c10f2da8bc8b43a958aa0bf8d12c6, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
+  _primarySkill: {fileID: 11400000, guid: e89f90f7998407b409562bc2e7c55bf9, type: 2}
+  _secondarySkill: {fileID: 0}

@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 86a9b90d60e20d542976932b1b45962a
   m_SerializeEntries:
   - m_GUID: ffa2199ad423f4748a3ad4122b82623a
-    m_Address: ElementalWard/Base/Characters/TestPlayer/EntityStates.TestWeaponStateFire.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EntityStates.TestWeaponStateFire.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
@@ -56,13 +56,28 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ccd86b3fc48a4b4d956646380574401
-    m_Address: ElementalWard/Base/Characters/TestPlayer/EntityStates.Player.DashState.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EntityStates.Player.DashState.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7bad0fba08cc7448994ba72072a3152
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Dash.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Dash.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87bf319d6ae3b554bb7bf47f6071f674
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/FireLaser.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d94fe3107559be1449f36f8de1b26f79
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/Sword.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e89f90f7998407b409562bc2e7c55bf9
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/SwingSword.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

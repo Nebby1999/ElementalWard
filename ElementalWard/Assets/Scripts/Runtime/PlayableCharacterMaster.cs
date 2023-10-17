@@ -29,6 +29,10 @@ namespace ElementalWard
         private InputAction _secondaryAction;
         private InputAction _utilityAction;
         private InputAction _specialAction;
+        private InputAction _weapon1Action;
+        private InputAction _weapon2Action;
+        private InputAction _weapon3Action;
+        private InputAction _weapon4Action;
         private Vector2 _rawMovementInput;
         private Vector2 _rawScrollInput;
         private Vector2 _rawLookInput;
@@ -54,6 +58,10 @@ namespace ElementalWard
             _secondaryAction = map.FindAction(ElementalWardInputGuids.Player.secondaryGUID);
             _utilityAction = map.FindAction(ElementalWardInputGuids.Player.utilityGUID);
             _specialAction = map.FindAction(ElementalWardInputGuids.Player.specialGUID);
+            _weapon1Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot1GUID);
+            _weapon2Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot2GUID);
+            _weapon3Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot3GUID);
+            _weapon4Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot4GUID);
         }
 
         private void SpawnCamera(CharacterBody body)
@@ -89,6 +97,10 @@ namespace ElementalWard
                 BodyInputs.secondaryButton.PushState(playerInputs.secondaryPressed);
                 BodyInputs.utilityButton.PushState(playerInputs.utilityPressed);
                 BodyInputs.specialButton.PushState(playerInputs.specialPressed);
+                BodyInputs.weaponSlot1.PushState(playerInputs.weapon1Pressed);
+                BodyInputs.weaponSlot2.PushState(playerInputs.weapon2Pressed);
+                BodyInputs.weaponSlot3.PushState(playerInputs.weapon3Pressed);
+                BodyInputs.weaponSlot4.PushState(playerInputs.weapon4Pressed);
             }
         }
 
@@ -104,7 +116,11 @@ namespace ElementalWard
                 primaryPressed = _primaryAction?.IsPressed() ?? false,
                 secondaryPressed = _secondaryAction?.IsPressed() ?? false,
                 utilityPressed = _utilityAction?.IsPressed() ?? false,
-                specialPressed = _utilityAction?.IsPressed() ?? false
+                specialPressed = _specialAction?.IsPressed() ?? false,
+                weapon1Pressed = _weapon1Action?.IsPressed() ?? false,
+                weapon2Pressed = _weapon2Action?.IsPressed() ?? false,
+                weapon3Pressed = _weapon3Action?.IsPressed() ?? false,
+                weapon4Pressed = _weapon4Action?.IsPressed() ?? false,
             };
         }
 
@@ -206,6 +222,10 @@ namespace ElementalWard
             public bool secondaryPressed;
             public bool utilityPressed;
             public bool specialPressed;
+            public bool weapon1Pressed;
+            public bool weapon2Pressed;
+            public bool weapon3Pressed;
+            public bool weapon4Pressed;
         }
     }
 }

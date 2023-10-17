@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    [CreateAssetMenu(fileName = "New SkillDef", menuName = ElementalWardApplication.APP_NAME + "/SkillDef")]
+    [CreateAssetMenu(fileName = "New SkillDef", menuName = ElementalWardApplication.APP_NAME + "/Skills/SkillDef")]
     public class SkillDef : NebulaScriptableObject
     {
         public float baseCooldown;
@@ -13,10 +13,15 @@ namespace ElementalWard
         public string entityStateMachineName;
         [SerializableSystemType.RequiredBaseType(typeof(EntityState))]
         public SerializableSystemType stateType;
+        public InterruptPriority interruptStrength = InterruptPriority.Any;
 
         public bool CanExecute(GenericSkill skillSlot)
         {
-            return skillSlot.Stock >= requiredStock && skillSlot.CooldownTimer <= 0;
+            if(skillSlot.Stock >= requiredStock && skillSlot.CooldownTimer <= 0)
+            {
+                return skillSlot.CachedStateMachine.CanInterruptState(interruptStrength);
+            }
+            return false;
         }
 
         public void Execute(GenericSkill skillSlot)
@@ -24,7 +29,7 @@ namespace ElementalWard
             if (!skillSlot)
                 return;
 
-            var stateMachine = EntityStateMachine.FindEntityStateMachineByName<EntityStateMachine>(skillSlot.gameObject, entityStateMachineName);
+            var stateMachine = skillSlot.CachedStateMachine ? skillSlot.CachedStateMachine : EntityStateMachine.FindEntityStateMachineByName<EntityStateMachine>(skillSlot.gameObject, entityStateMachineName);
 
             if(!stateMachine)
             {
@@ -41,5 +46,14 @@ namespace ElementalWard
         {
             skillSlot.TickRecharge(Time.fixedDeltaTime);
         }
+    }
+
+    public enum InterruptPriority
+    {
+        Any = 0,
+        Skill = 1,
+        PrioritySkill = 2,
+        Stun = 3,
+        Death = 4
     }
 }

@@ -23,13 +23,13 @@ namespace ElementalWard
         public Room ParentRoom { get; private set; }
         public Door ConnectedDoor
         {
-            get => _temp;
+            get => _connectedDoor;
             set
             {
-                _temp = value;
+                _connectedDoor = value;
             }
         }
-        private Door _temp;
+        private Door _connectedDoor;
         public Room ConnectedRoom => HasConnection ? ConnectedDoor.ParentRoom : null;
         public bool HasConnection => ConnectedDoor;
         public BoxCollider TriggerCollider { get; private set; }

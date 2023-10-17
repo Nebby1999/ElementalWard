@@ -12,6 +12,7 @@ namespace ElementalWard
         None = 0,
         DOT = 1,
         InstaKill = 2,
+        AOE = 4,
         Everything = ~None,
     }
 }

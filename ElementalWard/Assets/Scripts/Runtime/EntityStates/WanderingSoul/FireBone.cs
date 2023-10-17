@@ -42,5 +42,10 @@ namespace EntityStates.WanderingSoul
                 outer.SetNextStateToMain();
             }
         }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.Skill;
+        }
     }
 }

@@ -19,15 +19,15 @@ MonoBehaviour:
     serializedFields:
     - fieldName: duration
       serializedValue:
-        stringValue: 0.4
+        stringValue: 0.1
         objectReferenceValue: {fileID: 0}
     - fieldName: baseDashSpeed
       serializedValue:
-        stringValue: 10
+        stringValue: 5
         objectReferenceValue: {fileID: 0}
     - fieldName: maxDashSpeedCoefficient
       serializedValue:
-        stringValue: 1.5
+        stringValue: 1.25
         objectReferenceValue: {fileID: 0}
     - fieldName: onAirMaxSpeed
       serializedValue:

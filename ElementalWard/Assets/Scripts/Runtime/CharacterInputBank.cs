@@ -24,10 +24,10 @@ namespace ElementalWard
         public Button utilityButton;
         public Button specialButton;
         public Button weaponWheelButton;
-        public Button weaponSlotMelee;
         public Button weaponSlot1;
         public Button weaponSlot2;
         public Button weaponSlot3;
+        public Button weaponSlot4;
 
         public Vector3 AimDirection
         {

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 176d1b6e5fab60147ba268c3e7266674, type: 3}
-  m_Name: FireBoneSkill
+  m_Name: SwingSword
   m_EditorClassIdentifier: 
   baseCooldown: 0
   requiredStock: 0
   entityStateMachineName: Weapon
   stateType:
-    _assemblyQualifiedName: EntityStates.WanderingSoul.FireBone, ElementalWard, Version=0.0.0.0,
+    _assemblyQualifiedName: EntityStates.Player.SwingSwordState, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

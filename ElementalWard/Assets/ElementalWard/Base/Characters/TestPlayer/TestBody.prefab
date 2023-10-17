@@ -134,7 +134,9 @@ GameObject:
   - component: {fileID: 1757390674160115001}
   - component: {fileID: 3928320551998439186}
   - component: {fileID: 8935639939692739358}
+  - component: {fileID: 8702344386401552821}
   - component: {fileID: 1286282380650877729}
+  - component: {fileID: 7371166282373555331}
   - component: {fileID: 3900817627430093398}
   - component: {fileID: 6144592808034582868}
   - component: {fileID: 6211735034298263058}
@@ -192,7 +194,7 @@ MonoBehaviour:
   _baseAttackSpeed: 1
   _baseDamage: 10
   _baseArmor: 0
-  _jumpStrength: 9
+  _jumpStrength: 15
   autoCalculateLevelStats: 1
   _lvlHealth: 20
   _lvlShield: 0
@@ -266,10 +268,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: Weapon
   initialState:
-    _assemblyQualifiedName: ElementalWard.TestWeaponState, ElementalWard, Version=0.0.0.0,
+    _assemblyQualifiedName: EntityStates.Player.IdleWeaponState, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   mainState:
-    _assemblyQualifiedName: ElementalWard.TestWeaponState, ElementalWard, Version=0.0.0.0,
+    _assemblyQualifiedName: EntityStates.Player.IdleWeaponState, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &3928320551998439186
 MonoBehaviour:
@@ -284,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _primary: {fileID: 8935639939692739358}
-  _secondary: {fileID: 0}
+  _secondary: {fileID: 8702344386401552821}
   _utility: {fileID: 1286282380650877729}
   _special: {fileID: 0}
 --- !u!114 &8935639939692739358
@@ -299,7 +301,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa9eb97d89447b4bb98333055a599c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  genericSkillName: FireGun
+  genericSkillName: PrimaryFire
+  _defaultSkill: {fileID: 0}
+--- !u!114 &8702344386401552821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa9eb97d89447b4bb98333055a599c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  genericSkillName: AltAttack
   _defaultSkill: {fileID: 0}
 --- !u!114 &1286282380650877729
 MonoBehaviour:
@@ -315,6 +331,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genericSkillName: Dash
   _defaultSkill: {fileID: 11400000, guid: a7bad0fba08cc7448994ba72072a3152, type: 2}
+--- !u!114 &7371166282373555331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b0b011c6e4112448c36cc59b0c530c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon1: {fileID: 11400000, guid: d94fe3107559be1449f36f8de1b26f79, type: 2}
+  _weapon2: {fileID: 0}
+  _weapon3: {fileID: 0}
+  _weapon4: {fileID: 0}
 --- !u!114 &3900817627430093398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultGravityCoefficient: 1
-  defaultDrag: 0.1
+  defaultDrag: 3
   characterVelocity: {x: 0, y: 0, z: 0}
   characterRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &468388779112043098

@@ -1,3 +1,4 @@
+using EntityStates;
 using Nebula;
 using UnityEngine;
 
@@ -38,6 +39,12 @@ namespace ElementalWard
         {
             base.Awake();
             CommonComponents = new CommonComponentLocator(gameObject);
+        }
+
+        public bool CanInterruptState(InterruptPriority priority)
+        {
+            EntityState state = (EntityState)(NewState ?? CurrentState);
+            return state.GetMinimumInterruptPriority() <= priority;
         }
     }
 }

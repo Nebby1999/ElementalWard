@@ -6,36 +6,6 @@ namespace ElementalWard
 {
     public class ExplosiveAttack
     {
-        public struct Hit
-        {
-            public HurtBox hurtBox;
-            public Vector3 hitPos;
-            public Vector3 hitNormal;
-            public float distanceSqr;
-            public bool passLos;
-
-            public static Hit FromHurtBox(HurtBox hurtBox, ExplosiveAttack explosiveAttack)
-            {
-                var initialHitPos = hurtBox.transform.position;
-                var initialHitNormal = explosiveAttack.explosionOrigin - initialHitPos;
-                var initialDistanceSqr = initialHitNormal.sqrMagnitude;
-
-                var flag = (hurtBox.TiedCollider.Raycast(new Ray(explosiveAttack.explosionOrigin, -initialHitNormal), out var hitInfo, explosiveAttack.explosionRadius));
-                Hit result = default;
-                result.hurtBox = hurtBox;
-                result.distanceSqr = flag ? (explosiveAttack.explosionOrigin - hitInfo.point).sqrMagnitude : initialDistanceSqr;
-                result.hitPos = flag ? hitInfo.point : initialHitPos;
-                result.hitNormal = flag ? -hitInfo.normal : initialHitNormal;
-                result.passLos = explosiveAttack.requireLineOfSight;
-                return result;
-            }
-        }
-
-        public struct Result
-        {
-            public int hitCount;
-            public Hit[] hits;
-        }
         public delegate float FalloffCalculateDelegate(float distance, float explosionRadius);
         public BodyInfo attacker;
         public DamageType damageType;
@@ -112,7 +82,6 @@ namespace ElementalWard
                     damage = baseDamage * damageCoefFromFalloff,
                     damageType = damageType,
                 };
-                damageInfo.damage *= DamageInfo.GetDamageModifier(hit.hurtBox);
                 healthComponent.TakeDamage(damageInfo);
             }
         }
@@ -152,6 +121,37 @@ namespace ElementalWard
         public static float SweetspotFalloffCalculation(float distance, float explosionRadius)
         {
             return 1f - ((distance > explosionRadius / 2f) ? 0.75f : 0f);
+        }
+
+        public struct Hit
+        {
+            public HurtBox hurtBox;
+            public Vector3 hitPos;
+            public Vector3 hitNormal;
+            public float distanceSqr;
+            public bool passLos;
+
+            public static Hit FromHurtBox(HurtBox hurtBox, ExplosiveAttack explosiveAttack)
+            {
+                var initialHitPos = hurtBox.transform.position;
+                var initialHitNormal = explosiveAttack.explosionOrigin - initialHitPos;
+                var initialDistanceSqr = initialHitNormal.sqrMagnitude;
+
+                var flag = (hurtBox.TiedCollider.Raycast(new Ray(explosiveAttack.explosionOrigin, -initialHitNormal), out var hitInfo, explosiveAttack.explosionRadius));
+                Hit result = default;
+                result.hurtBox = hurtBox;
+                result.distanceSqr = flag ? (explosiveAttack.explosionOrigin - hitInfo.point).sqrMagnitude : initialDistanceSqr;
+                result.hitPos = flag ? hitInfo.point : initialHitPos;
+                result.hitNormal = flag ? -hitInfo.normal : initialHitNormal;
+                result.passLos = explosiveAttack.requireLineOfSight;
+                return result;
+            }
+        }
+
+        public struct Result
+        {
+            public int hitCount;
+            public Hit[] hits;
         }
     }
 }

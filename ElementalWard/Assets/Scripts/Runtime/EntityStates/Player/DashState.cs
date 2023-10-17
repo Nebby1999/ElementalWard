@@ -20,10 +20,10 @@ namespace EntityStates.Player
         {
             base.OnEnter();
 
-            if(HasCharacterInputBank)
+            if(HasCharacterInputBank && HasGroundedCharacterMovementController)
             {
                 var quaternion = Quaternion.Euler(0, CharacterInputBank.LookRotation.eulerAngles.y, 0);
-                _forwardDirection = quaternion * CharacterInputBank.moveVector;
+                _forwardDirection = GroundedCharacterMovementController.CharacterRotation * CharacterInputBank.moveVector;
             }
             else
             {

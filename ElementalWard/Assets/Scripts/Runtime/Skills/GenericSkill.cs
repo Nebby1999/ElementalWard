@@ -1,3 +1,4 @@
+using Nebula;
 using UnityEngine;
 
 namespace ElementalWard
@@ -22,6 +23,8 @@ namespace ElementalWard
         public float CooldownTimer { get; set; }
         public uint MaxStock { get; private set; }
         public uint Stock { get; set; }
+
+        public EntityStateMachine CachedStateMachine { get; private set; }
 
         private void Awake()
         {
@@ -56,6 +59,7 @@ namespace ElementalWard
         {
             Stock = SkillDef ? SkillDef.requiredStock : 0;
             MaxStock = Stock;
+            CachedStateMachine = SkillDef ? EntityStateMachineBase.FindEntityStateMachineByName<EntityStateMachine>(gameObject, SkillDef.entityStateMachineName) : null;
         }
 
         private void ExecuteSkill()

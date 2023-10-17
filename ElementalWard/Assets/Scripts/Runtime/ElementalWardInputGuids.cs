@@ -28,6 +28,10 @@ namespace ElementalWard
             public static readonly Guid utilityGUID = Guid.Parse("8ee2999a-7f17-4ab3-9d2e-779034fe09f4");
             public static readonly Guid specialGUID = Guid.Parse("4055a09a-f132-44d5-966d-a092ffa26753");
             public static readonly Guid elementScrollGUID = Guid.Parse("90496791-75a5-486f-a739-1442f5dcf45d");
+            public static readonly Guid weaponSlot1GUID = Guid.Parse("d7558ea7-0f10-4d94-baa2-d3149fdcea36");
+            public static readonly Guid weaponSlot2GUID = Guid.Parse("c8e3a332-d3e6-4c3b-b46b-02d32dff73c3");
+            public static readonly Guid weaponSlot3GUID = Guid.Parse("cd5465ea-f1df-4374-9636-4935d0a9feff");
+            public static readonly Guid weaponSlot4GUID = Guid.Parse("4f40e776-391f-4d2f-b287-490193a1cf07");
             private Player() {}
         }
         // UI
