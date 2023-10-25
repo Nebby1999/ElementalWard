@@ -1,4 +1,5 @@
 using ElementalWard;
+using ElementalWard.Projectiles;
 using UnityEngine;
 
 namespace EntityStates.WanderingSoul

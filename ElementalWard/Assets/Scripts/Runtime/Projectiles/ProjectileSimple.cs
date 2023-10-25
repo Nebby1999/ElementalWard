@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ElementalWard
+namespace ElementalWard.Projectiles
 {
     [RequireComponent(typeof(Rigidbody))]
     public class ProjectileSimple : MonoBehaviour, IProjectileInitialization
@@ -9,12 +9,14 @@ namespace ElementalWard
         public GameObject lifetimeExpiredEffect;
         [Header("Velocity")]
         public float desiredForwardSpeed;
+        public bool updateAfterFiring = true;
         public bool enableVelocityOverLifetime;
         public AnimationCurve velocityOverLifetime;
 
         public Rigidbody Rigidbody { get; private set; }
         private float _stopwatch;
         private Transform _transform;
+        private Vector3 forwardSpeed;
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody>();
@@ -37,6 +39,10 @@ namespace ElementalWard
 
         private void FixedUpdate()
         {
+            if(updateAfterFiring || enableVelocityOverLifetime)
+            {
+                SetSpeed(desiredForwardSpeed);
+            }
             _stopwatch += Time.fixedDeltaTime;
             if (_stopwatch > projectileLifetime)
             {
@@ -65,8 +71,14 @@ namespace ElementalWard
         }
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
-            fireProjectileInfo.TryGetProperty(CommonProjectileProperties.MovementSpeed, out desiredForwardSpeed);
-            fireProjectileInfo.TryGetProperty(CommonProjectileProperties.ProjectileLifeTime, out projectileLifetime);
+            if(fireProjectileInfo.TryGetProperty<float>(CommonProjectileProperties.MovementSpeed, out var desiredForwardSpeed))
+            {
+                this.desiredForwardSpeed = desiredForwardSpeed;
+            }
+            if(fireProjectileInfo.TryGetProperty<float>(CommonProjectileProperties.ProjectileLifeTime, out var projectileLifetime))
+            {
+                this.projectileLifetime = projectileLifetime;
+            }
         }
     }
 }

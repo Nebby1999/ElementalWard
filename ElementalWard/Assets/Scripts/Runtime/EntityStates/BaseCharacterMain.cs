@@ -1,12 +1,14 @@
 using ElementalWard;
+using KinematicCharacterController;
 using UnityEngine;
 
 namespace EntityStates
 {
     public class BaseCharacterMain : BaseCharacterState
     {
-        public bool HasICharacterMovementController { get; private set; }
         public bool HasCharacterInputBank { get; private set; }
+        public bool HasCharacterController { get; private set; }
+        public bool IsGrounded => HasCharacterController && CharacterController.IsGrounded;
 
         protected Vector3 moveVector;
         protected Vector3 aimDirection;
@@ -15,7 +17,7 @@ namespace EntityStates
         public override void OnEnter()
         {
             base.OnEnter();
-            HasICharacterMovementController = ICharacterMovementController != null;
+            HasCharacterController = CharacterController;
             HasCharacterInputBank = CharacterInputBank;
         }
 

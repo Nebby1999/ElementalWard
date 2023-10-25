@@ -40,11 +40,11 @@ namespace ElementalWard
 
         public void OnIncomingDamage(DamageInfo dinfo)
         {
-            if (_currentCount >= amountRequiredForDeath)
+            /*if (_currentCount >= amountRequiredForDeath)
             {
                 dinfo.damage = HealthComponent.CurrentHealth * 10;
                 dinfo.damageType |= DamageType.InstaKill;
-            }
+            }*/
         }
 
         public void OnTakeDamage(DamageReport report)

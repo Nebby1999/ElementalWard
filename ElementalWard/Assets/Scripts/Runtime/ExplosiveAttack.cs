@@ -1,3 +1,4 @@
+using Nebula;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
@@ -23,6 +24,12 @@ namespace ElementalWard
         private float _damage;
         public Result Fire()
         {
+#if DEBUG
+            GlobalGizmos.EnqueueGizmoDrawing(() =>
+            {
+                Gizmos.DrawWireSphere(explosionOrigin, explosionRadius);
+            });
+#endif
             Hit[] hits = CollectHits();
             HandleHits(hits);
             if (explosionVFX)

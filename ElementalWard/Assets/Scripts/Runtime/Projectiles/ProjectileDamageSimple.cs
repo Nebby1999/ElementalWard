@@ -1,14 +1,16 @@
 using Nebula;
 using UnityEngine;
 
-namespace ElementalWard
+namespace ElementalWard.Projectiles
 {
     [RequireComponent(typeof(ProjectileController))]
     public class ProjectileDamageSimple : MonoBehaviour, IProjectileImpact, IProjectileInitialization
     {
+        public int maxImpacts = 1;
         public DamageType defaultDamageType;
         public float defaultDamageCoefficient;
         private BodyInfo _owner;
+        private int impacts = 0;
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
             defaultDamageType = fireProjectileInfo.damageType;
@@ -22,8 +24,10 @@ namespace ElementalWard
 
         public void OnImpact(ProjectileImpactInfo impactInfo)
         {
+            impacts++;
             TryDealDamage(impactInfo);
-            Destroy(gameObject);
+            if(impacts >= maxImpacts)
+                Destroy(gameObject);
         }
 
         private void TryDealDamage(ProjectileImpactInfo impactInfo)

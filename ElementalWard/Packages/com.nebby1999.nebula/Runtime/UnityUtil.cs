@@ -17,6 +17,19 @@ namespace Nebula
         }
         private static Camera _mainCamera;
 
+#if UNITY_EDITOR
+        public static Camera SceneCamera
+        {
+            get
+            {
+                if (!_sceneCamera)
+                    _sceneCamera = UnityEditor.SceneView.currentDrawingSceneView.camera;
+                return _sceneCamera;
+            }
+        }
+        private static Camera _sceneCamera;
+#endif
+
         public static Bounds CalculateColliderBounds(GameObject obj, bool includeChildren, Func<Collider, bool> ignorePredicate = null)
         {
             Physics.SyncTransforms();

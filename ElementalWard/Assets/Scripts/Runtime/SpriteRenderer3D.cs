@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ElementalWard
 {
+
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteRenderer3D : MonoBehaviour
     {
@@ -20,6 +21,7 @@ namespace ElementalWard
             {
                 if (!_lookAtTransform)
                     _lookAtTransform = UnityUtil.MainCamera.transform;
+
                 return _lookAtTransform;
             }
             set
@@ -84,13 +86,15 @@ namespace ElementalWard
         protected virtual void OnEnable()
         {
             InstanceTracker.Add(this);
-            _globalUpdater.UpdateTransformAccessArray();
+
+            _globalUpdater?.UpdateTransformAccessArray();
         }
 
         protected virtual void OnDisable()
         {
             InstanceTracker.Remove(this);
-            _globalUpdater.UpdateTransformAccessArray();
+
+            _globalUpdater?.UpdateTransformAccessArray();
         }
 
         protected virtual void LateUpdate()

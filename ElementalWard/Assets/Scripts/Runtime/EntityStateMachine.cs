@@ -1,4 +1,5 @@
 using EntityStates;
+using KinematicCharacterController;
 using Nebula;
 using UnityEngine;
 
@@ -10,7 +11,8 @@ namespace ElementalWard
         {
             public readonly GameObject gameObject;
             public readonly Transform transform;
-            public readonly ICharacterMovementController characterMovementController;
+            public readonly CharacterMotorController characterController;
+            public readonly KinematicCharacterMotor characterMotor;
             public readonly CharacterBody characterBody;
             public readonly CharacterInputBank inputBank;
             public readonly SkillManager skillManager;
@@ -22,7 +24,8 @@ namespace ElementalWard
             {
                 gameObject = go;
                 transform = go.transform;
-                characterMovementController = go.GetComponent<ICharacterMovementController>();
+                characterController = go.GetComponent<CharacterMotorController>();
+                characterMotor = go.GetComponent<KinematicCharacterMotor>();
                 characterBody = go.GetComponent<CharacterBody>();
                 inputBank = go.GetComponent<CharacterInputBank>();
                 skillManager = go.GetComponent<SkillManager>();

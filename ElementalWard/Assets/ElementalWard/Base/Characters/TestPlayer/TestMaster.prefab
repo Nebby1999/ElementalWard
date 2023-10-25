@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7637794846450996916}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.3788357, y: 0.48713112, z: 2.5211792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7637794846450996917
 MonoBehaviour:
@@ -49,11 +49,11 @@ MonoBehaviour:
   _spawnOnStart: 1
   _defaultBodyPrefab: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
     type: 3}
-  _defaultTeam: {fileID: 11400000, guid: 5f60cf8be3e00b04dbc78fb2486f8614, type: 2}
-  _level: 0
-  _currentXP: 462.6
-  _neededXPForNextLevel: 54.616386
+  _level: 1
+  _currentXP: 0
+  _neededXPForNextLevel: 109.23277
   _autoCalculateNextLevelRequirement: 1
+  defaultTeam: {fileID: 0}
 --- !u!114 &7342703876500854070
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ElementalWard
+namespace ElementalWard.Projectiles
 {
     public struct ProjectileImpactInfo
     {

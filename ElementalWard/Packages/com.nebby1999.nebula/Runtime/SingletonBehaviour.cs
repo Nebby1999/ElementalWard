@@ -18,7 +18,9 @@ namespace Nebula
 
                 if (DestroyIfDuplicate)
                 {
-                    Destroy(this);
+#if UNITY_EDITOR
+                    DestroyImmediate(this);
+#endif
                     return;
                 }
             }

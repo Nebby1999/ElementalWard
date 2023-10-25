@@ -3,7 +3,7 @@ using ElementalWard;
 
 namespace EntityStates.Player
 {
-    public class DashState : BaseGroundedCharacterMain
+    public class DashState : GenericCharacterMain
     {
         public static float duration;
         public static float baseDashSpeed;
@@ -20,25 +20,17 @@ namespace EntityStates.Player
         {
             base.OnEnter();
 
-            if(HasCharacterInputBank && HasGroundedCharacterMovementController)
-            {
-                var quaternion = Quaternion.Euler(0, CharacterInputBank.LookRotation.eulerAngles.y, 0);
-                _forwardDirection = GroundedCharacterMovementController.CharacterRotation * CharacterInputBank.moveVector;
-            }
-            else
-            {
-                _forwardDirection = Transform.forward;
-            }
+            _forwardDirection = (HasCharacterInputBank && HasCharacterController) ? CharacterController.characterRotation * CharacterInputBank.moveVector : Transform.forward;
             _forwardDirection = _forwardDirection.normalized;
 
             CalculateDashSpeed();
 
-            if(GroundedCharacterMovementController)
+            if(HasCharacterController)
             {
-                var controllerVelocity = GroundedCharacterMovementController.characterVelocity;
-                GroundedCharacterMovementController.Motor.ForceUnground();
+                var controllerVelocity = CharacterController.characterVelocity;
+                CharacterController.Motor.ForceUnground();
                 Vector3 newVelocityXZ = _forwardDirection * _dashSpeed;
-                GroundedCharacterMovementController.characterVelocity = new Vector3(newVelocityXZ.x, controllerVelocity.y, newVelocityXZ.z);
+                CharacterController.characterVelocity = new Vector3(newVelocityXZ.x, controllerVelocity.y, newVelocityXZ.z);
             }
         }
 
@@ -60,9 +52,9 @@ namespace EntityStates.Player
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (!IsGrounded && HasGroundedCharacterMovementController)
+            if (!IsGrounded && HasCharacterController)
             {
-                Vector3 currentVelocity = GroundedCharacterMovementController.characterVelocity;
+                Vector3 currentVelocity = CharacterController.characterVelocity;
                 bool xNegative = currentVelocity.x < 0;
                 bool zNegative = currentVelocity.z < 0;
                 float x = Mathf.Abs(currentVelocity.x);
@@ -77,7 +69,7 @@ namespace EntityStates.Player
                     float newZ = Mathf.SmoothDamp(z, onAirMaxSpeed.z, ref _currentZVelocity, 0.1f);
                     currentVelocity.z = zNegative ? -newZ : newZ;
                 }
-                GroundedCharacterMovementController.characterVelocity = currentVelocity;
+                CharacterController.characterVelocity = currentVelocity;
             }
             if (FixedAge >= duration)
             {

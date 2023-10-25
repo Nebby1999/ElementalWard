@@ -1,12 +1,14 @@
 ﻿using ElementalWard;
+using KinematicCharacterController;
 using UnityEngine;
 
 namespace EntityStates
 {
     public class EntityState : EntityStateBase
     {
-        protected new EntityStateMachine outer => base.outer as EntityStateMachine;
-        protected ICharacterMovementController ICharacterMovementController => outer.CommonComponents.characterMovementController;
+        protected new EntityStateMachine outer;
+        protected CharacterMotorController CharacterController => outer.CommonComponents.characterController;
+        protected KinematicCharacterMotor CharacterMotor => outer.CommonComponents.characterMotor;
         protected CharacterBody CharacterBody => outer.CommonComponents.characterBody;
         protected CharacterInputBank CharacterInputBank => outer.CommonComponents.inputBank;
         protected Transform Transform => outer.CommonComponents.transform;
@@ -17,6 +19,11 @@ namespace EntityStates
         protected HealthComponent HealthComponent => outer.CommonComponents.healthComponent;
         protected SpriteLocator SpriteLocator => outer.CommonComponents.spriteLocator;
 
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            outer = base.outer as EntityStateMachine;
+        }
         protected Transform GetSpriteBaseTransform()
         {
             return SpriteLocator ? SpriteLocator.spriteBaseTransform : null;
@@ -38,7 +45,7 @@ namespace EntityStates
 
         public virtual InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.Any;
+            return InterruptPriority.None;
         }
     }
 }

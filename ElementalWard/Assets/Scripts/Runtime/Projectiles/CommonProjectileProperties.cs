@@ -1,4 +1,4 @@
-namespace ElementalWard
+namespace ElementalWard.Projectiles
 {
     public static class CommonProjectileProperties
     {

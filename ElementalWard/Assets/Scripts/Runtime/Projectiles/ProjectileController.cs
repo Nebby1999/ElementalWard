@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace ElementalWard
+namespace ElementalWard.Projectiles
 {
     public class ProjectileController : MonoBehaviour, IProjectileInitialization
     {

@@ -13,7 +13,7 @@ namespace ElementalWard
         public string entityStateMachineName;
         [SerializableSystemType.RequiredBaseType(typeof(EntityState))]
         public SerializableSystemType stateType;
-        public InterruptPriority interruptStrength = InterruptPriority.Any;
+        public InterruptPriority interruptStrength = InterruptPriority.None;
 
         public bool CanExecute(GenericSkill skillSlot)
         {
@@ -50,6 +50,7 @@ namespace ElementalWard
 
     public enum InterruptPriority
     {
+        None = -1,
         Any = 0,
         Skill = 1,
         PrioritySkill = 2,

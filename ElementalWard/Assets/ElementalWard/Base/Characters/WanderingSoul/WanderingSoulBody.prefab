@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 3315064807260594586}
   - component: {fileID: 6391504964950985722}
   - component: {fileID: 5391966210485815897}
-  - component: {fileID: -2908713665425041059}
+  - component: {fileID: 635903774530696919}
   - component: {fileID: -3563804340212239540}
   - component: {fileID: 6385374238828156273}
   - component: {fileID: -3459156510547728091}
@@ -536,11 +536,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: Body
   initialState:
-    _assemblyQualifiedName: EntityStates.GenericFlyingCharacterMain, ElementalWard,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   mainState:
-    _assemblyQualifiedName: EntityStates.GenericFlyingCharacterMain, ElementalWard,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &6794365482305020246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultTeam: {fileID: 11400000, guid: 4b7dfd7da9d2f2b40b1709ab23ccdffc, type: 2}
---- !u!114 &-2908713665425041059
+--- !u!114 &635903774530696919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,9 +612,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5338726505615578528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59691f0d55754ce469b05412af6ebe08, type: 3}
+  m_Script: {fileID: 11500000, guid: 594d602870125564f9e5546bf828f417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isFlying: 1
+  _defaultGravity: 0
+  _defaultDrag: 5
   characterVelocity: {x: 0, y: 0, z: 0}
   characterRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &-3563804340212239540
@@ -793,3 +796,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthComponent: {fileID: 4782624858085695039}
   damageMultiplier: 1
+  isBullseye: 1

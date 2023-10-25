@@ -32,5 +32,10 @@ namespace EntityStates
             }
             return new Ray(Transform.position, Transform.forward);
         }
+
+        protected HitBoxGroup GetHitBoxGroup(string groupName)
+        {
+            return HitBoxGroup.FindHitBoxGroup(GetSpriteBaseTransform().gameObject, groupName);
+        }
     }
 }

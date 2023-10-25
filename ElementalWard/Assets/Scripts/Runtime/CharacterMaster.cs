@@ -59,6 +59,10 @@ namespace ElementalWard
 
         private void OnValidate()
         {
+            if(_level < 1)
+            {
+                _level = 1;
+            }
             if (_autoCalculateNextLevelRequirement)
             {
                 _neededXPForNextLevel = CalculateExperienceForLevel(_level + 1);

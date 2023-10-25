@@ -1,6 +1,7 @@
 using ElementalWard;
 using Nebula;
 using UnityEngine;
+using ElementalWard.Projectiles;
 
 namespace EntityStates
 {

@@ -66,7 +66,7 @@ namespace ElementalWard
                     actorHeight = capsuleHeight,
                     start = bodyPos,
                     end = targetPos,
-                    graphProvider = baseAIInstance.CurrentBodyComponents.isFlying ? SceneNavigationSystem.AirNodeProvider : baseAIInstance.CurrentBodyComponents.isGround ? SceneNavigationSystem.GroundNodeProvider : null,
+                    graphProvider = baseAIInstance.CurrentBodyComponents.characterMotorController.IsFlying ? SceneNavigationSystem.AirNodeProvider : SceneNavigationSystem.GroundNodeProvider
                 };
 
                 SceneNavigationSystem.PathRequestResult requestResult = SceneNavigationSystem.RequestPath(request);

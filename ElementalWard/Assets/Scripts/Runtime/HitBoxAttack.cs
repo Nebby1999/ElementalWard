@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nebula;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace ElementalWard
         public DamageType damageType;
         public float baseDamage;
         public HitBoxGroup hitBoxGroup;
+        public Quaternion hitboxRotation;
 
         private static List<Hit> _hitsBuffer = new List<Hit>(256);
         private static List<HealthComponent> _encounteredHealthComponentsBuffer = new List<HealthComponent>(64);
@@ -33,6 +35,14 @@ namespace ElementalWard
                 Vector3 position = transform.position;
                 Vector3 halfExtents = transform.lossyScale * 0.5f;
                 Quaternion rotation = transform.rotation;
+
+#if DEBUG
+                GlobalGizmos.EnqueueGizmoDrawing(() =>
+                {
+                    var mesh = Resources.GetBuiltinResource<Mesh>("Cube.fbx");
+                    Gizmos.DrawWireMesh(mesh, position, rotation, halfExtents * 2);
+                });
+#endif
 
                 CollectHits(position, halfExtents, rotation);
             }

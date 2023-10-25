@@ -10,12 +10,32 @@ namespace EntityStates.Player
     public class SwingSwordState : BaseCharacterState
     {
         public static float damageCoefficient;
+        public static string hitBoxGroup;
 
         private HitBoxAttack attack;
 
         public override void OnEnter()
         {
             base.OnEnter();
+
+            var damage = damageStat * damageCoefficient;
+            var locator = GetSpriteBaseTransform();
+            attack = new HitBoxAttack
+            {
+                attacker = new BodyInfo(CharacterBody),
+                baseDamage = damage,
+                damageType = DamageType.None,
+                hitBoxGroup = HitBoxGroup.FindHitBoxGroup(locator.gameObject, hitBoxGroup),
+                hitboxRotation = CharacterInputBank.LookRotation,
+            };
+
+            attack.Fire();
+            outer.SetNextStateToMain();
+        }
+
+        public override InterruptPriority GetMinimumInterruptPriority()
+        {
+            return InterruptPriority.Skill;
         }
     }
 }

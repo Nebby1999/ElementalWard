@@ -27,12 +27,12 @@ namespace ElementalWard
         public CharacterMaster Master { get; private set; }
         public BodyComponents CurrentBodyComponents { get; private set; }
         public CharacterInputBank BodyInputBank => CurrentBodyComponents.inputBank;
-        public float BodyCapsuleHeight => CurrentBodyComponents.motorCapsule ? CurrentBodyComponents.motorCapsule.height : 2;
-        public float BodyCapsuleRadius => CurrentBodyComponents.motorCapsule ? CurrentBodyComponents.motorCapsule.radius : 1f;
+        public float BodyCapsuleHeight => CurrentBodyComponents.characterMotorController ? CurrentBodyComponents.characterMotorController.MotorCapsule.height : 2;
+        public float BodyCapsuleRadius => CurrentBodyComponents.characterMotorController ? CurrentBodyComponents.characterMotorController.MotorCapsule.radius : 1f;
         public float BodyJumpStrength => CurrentBodyComponents.body ? CurrentBodyComponents.body.JumpStrength : 0;
         public TeamIndex BodyTeamIndex => CurrentBodyComponents.teamComponent ? CurrentBodyComponents.teamComponent.CurrentTeamIndex : TeamIndex.None;
-        public KinematicCharacterMotor BodyMotor => CurrentBodyComponents.motor;
-        public Vector3? BodyPosition => CurrentBodyComponents.IsValid ? CurrentBodyComponents.motor ? CurrentBodyComponents.motor.InitialSimulationPosition : Vector3.zero : null;
+        public KinematicCharacterMotor BodyMotor => CurrentBodyComponents.characterMotorController.Motor;
+        public Vector3? BodyPosition => CurrentBodyComponents.IsValid ? CurrentBodyComponents.characterMotorController.Motor ? CurrentBodyComponents.characterMotorController.Motor.InitialSimulationPosition : Vector3.zero : null;
         public AITarget CurrentTarget
         {
             get
@@ -356,12 +356,8 @@ namespace ElementalWard
             public readonly Transform transform;
             public readonly TeamComponent teamComponent;
             public readonly CharacterInputBank inputBank;
-            public readonly ICharacterMovementController characterMovementController;
-            public readonly KinematicCharacterMotor motor;
-            public readonly CapsuleCollider motorCapsule;
+            public readonly CharacterMotorController characterMotorController;
             public readonly SkillManager skillManager;
-            public readonly bool isGround;
-            public readonly bool isFlying;
 
             public BodyComponents(GameObject obj)
             {
@@ -371,11 +367,7 @@ namespace ElementalWard
                 teamComponent = obj.GetComponent<TeamComponent>();
                 inputBank = obj.GetComponent<CharacterInputBank>();
                 skillManager = obj.GetComponent<SkillManager>();
-                characterMovementController = obj.GetComponent<ICharacterMovementController>();
-                motor = characterMovementController == null ? null : characterMovementController.Motor;
-                motorCapsule = motor ? motor.Capsule : null;
-                isGround = characterMovementController is GroundedCharacterMovementController;
-                isFlying = characterMovementController is FlyingCharacterMovementController;
+                characterMotorController = obj.GetComponent<CharacterMotorController>();
             }
         }
         public class AITarget

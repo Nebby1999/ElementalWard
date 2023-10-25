@@ -81,6 +81,55 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b577eb7a8cb28a542b49b23389f38afa
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.SwingSwordState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db3ebba2bda71474198a42497ec3efe4
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/SwordSpin.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dae103542439e24fbe311d875bcf877
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.SwordSpinState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07f2422b65378584f82adcf2e8bb12d8
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.SwordPlungeState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58cfc6c2f07a6284c9227dd9c13974cc
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/CrossBow.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5803f07f7cc92f041a9e8f6a930386cc
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/FireBolt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4257d03ff5bfba46923e79c7094140b
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/HomingBolt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22c9a685575bcbc439c6da1fa43d6c35
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/BouncingBolt.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e99048e14b027744ea9059f5a2d07867
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.FireBolt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

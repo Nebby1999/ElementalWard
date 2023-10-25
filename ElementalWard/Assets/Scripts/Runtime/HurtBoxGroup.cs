@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace ElementalWard
@@ -43,6 +44,24 @@ namespace ElementalWard
         private void AutoPopulateArray()
         {
             _hurtBoxes = GetComponentsInChildren<HurtBox>();
+#if UNITY_EDITOR
+            UnityEditor.EditorUtility.SetDirty(this);
+#endif
+        }
+
+        private void OnValidate()
+        {
+            if(_hurtBoxes.Length == 0)
+            {
+                Debug.LogWarning($"HurtBoxGroup {this} has no HurtBoxes", this);
+                return;
+            }
+
+            if(!_hurtBoxes.Any(x => x.isBullseye))
+            {
+                Debug.LogWarning($"HurtBoxGroup {this} has no HurtBox marked as a Bullseye hurtbox!");
+                return;
+            }
         }
     }
 }

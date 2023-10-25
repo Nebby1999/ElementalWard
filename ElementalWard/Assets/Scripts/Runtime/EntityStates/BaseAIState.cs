@@ -9,7 +9,7 @@ namespace EntityStates
         protected CharacterMaster Master { get; private set; }
         protected CharacterMasterAI CharacterMasterAI { get; private set; }
         protected new CharacterBody CharacterBody => Master.CurrentBody;
-        protected new ICharacterMovementController ICharacterMovementController => CharacterMasterAI ? CharacterMasterAI.CurrentBodyComponents.characterMovementController : null;
+        protected new ICharacterMovementController ICharacterMovementController => CharacterMasterAI ? CharacterMasterAI.CurrentBodyComponents.characterMotorController : null;
         protected new CharacterInputBank CharacterInputBank => CharacterMasterAI ? CharacterMasterAI.CurrentBodyComponents.inputBank : null;
         protected Transform BodyTransform => CharacterMasterAI ? CharacterMasterAI.CurrentBodyComponents.transform : null;
         protected GameObject BodyGameObject => CharacterMasterAI ? CharacterMasterAI.CurrentBodyComponents.gameObject : null;

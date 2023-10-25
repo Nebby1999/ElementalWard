@@ -11,7 +11,7 @@ namespace ElementalWard
     {
         public float damageModifier;
 
-        public void OnDrawGizmos()
+        public void OnDrawGizmosSelected()
         {
             var mesh = Resources.GetBuiltinResource<Mesh>("Cube.fbx");
             Gizmos.color = Color.red;

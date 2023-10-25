@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   _primarySkill: {fileID: 11400000, guid: e89f90f7998407b409562bc2e7c55bf9, type: 2}
-  _secondarySkill: {fileID: 0}
+  _secondarySkill: {fileID: 11400000, guid: db3ebba2bda71474198a42497ec3efe4, type: 2}
