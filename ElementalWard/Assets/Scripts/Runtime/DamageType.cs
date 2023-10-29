@@ -9,10 +9,11 @@ namespace ElementalWard
     [Flags]
     public enum DamageType : uint
     {
-        None = 0,
-        DOT = 1,
-        InstaKill = 2,
-        AOE = 4,
+        None = 0u,
+        DOT = 1u,
+        InstaKill = 2u,
+        AOE = 4u,
+        FriendlyFire = 8u,
         Everything = ~None,
     }
 }

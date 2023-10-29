@@ -12,6 +12,10 @@ namespace ElementalWard.Projectiles
     {
         public bool3 axisConstraint;
         public float rotationSpeed;
+        [Header("Speed Increases")]
+        public bool increaseSpeedWithTarget;
+        [Tooltip("When a target is found, this value will be added to the rotation speed per second.")]
+        public float rpsToAddWithTarget;
 
         public ProjectileTarget ProjectileTarget { get; private set; }
 
@@ -24,6 +28,10 @@ namespace ElementalWard.Projectiles
 
         private void FixedUpdate()
         {
+            if (!ProjectileTarget.Target)
+                return;
+
+            rotationSpeed += rpsToAddWithTarget * Time.fixedDeltaTime;
             SteerTowardsTarget();
         }
 

@@ -45,7 +45,7 @@ namespace EntityStates
 
         public virtual InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.None;
+            return InterruptPriority.Any;
         }
     }
 }

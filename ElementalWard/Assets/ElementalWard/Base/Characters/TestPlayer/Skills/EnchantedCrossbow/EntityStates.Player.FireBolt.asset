@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EntityStates.Player.FireBolt
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.FireBolt, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Crossbow.FireBolt, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
     - fieldName: projectilePrefab
@@ -24,5 +24,13 @@ MonoBehaviour:
           type: 3}
     - fieldName: projectileVelocity
       serializedValue:
-        stringValue: 10
+        stringValue: 20
+        objectReferenceValue: {fileID: 0}
+    - fieldName: baseDuration
+      serializedValue:
+        stringValue: 1
+        objectReferenceValue: {fileID: 0}
+    - fieldName: damageCoefficient
+      serializedValue:
+        stringValue: 1
         objectReferenceValue: {fileID: 0}

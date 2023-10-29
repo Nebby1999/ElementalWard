@@ -7,7 +7,6 @@ namespace ElementalWard
 {
     public class ExplosiveAttack
     {
-        public delegate float FalloffCalculateDelegate(float distance, float explosionRadius);
         public BodyInfo attacker;
         public DamageType damageType;
         public float baseDamage;
@@ -129,6 +128,15 @@ namespace ElementalWard
         {
             return 1f - ((distance > explosionRadius / 2f) ? 0.75f : 0f);
         }
+
+        public enum DefaultFalloffCalculationMethod
+        {
+            Default,
+            Linear,
+            Sweetspot,
+            Custom
+        };
+        public delegate float FalloffCalculateDelegate(float distance, float explosionRadius);
 
         public struct Hit
         {

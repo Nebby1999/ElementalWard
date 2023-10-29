@@ -20,7 +20,7 @@ namespace ElementalWard.Projectiles
 
             if (_projectileProperties.ContainsKey(propName))
             {
-                Debug.LogWarning($"FireProjectileInfo already contains a Property of name {propName}.");
+                _projectileProperties[propName] = value;
                 return;
             }
             _projectileProperties.Add(propName, value);

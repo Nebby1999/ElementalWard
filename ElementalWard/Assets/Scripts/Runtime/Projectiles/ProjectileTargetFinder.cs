@@ -12,9 +12,10 @@ namespace ElementalWard.Projectiles
     public class ProjectileTargetFinder : MonoBehaviour, IProjectileInitialization
     {
         public float lookRange;
+        [Range(0, 180)]
         public float lookCone;
         public float searchInterval;
-        public UnityEvent<HurtBox> OnNewTargetfound;
+        public UnityEvent<HurtBox> OnNewTargetFound;
         public UnityEvent OnTargetLost;
         public bool HasTarget => ProjectileTarget.Target;
         public ProjectileTarget ProjectileTarget { get; private set; }
@@ -25,7 +26,6 @@ namespace ElementalWard.Projectiles
         private float _searchTimer;
         private bool _hadTargetLastUpdate;
         private HurtBox _targetHurtBox;
-        private Transform _target;
 
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
@@ -48,7 +48,7 @@ namespace ElementalWard.Projectiles
 
         private void FixedUpdate()
         {
-            if (!_target)
+            if (ProjectileTarget.Target)
                 return;
 
             _searchTimer += Time.fixedDeltaTime;
@@ -62,7 +62,7 @@ namespace ElementalWard.Projectiles
             {
                 if(HasTarget)
                 {
-                    OnNewTargetfound?.Invoke(_targetHurtBox);
+                    OnNewTargetFound?.Invoke(_targetHurtBox);
                 }
                 else
                 {
@@ -81,7 +81,7 @@ namespace ElementalWard.Projectiles
             HurtBox[] source = _search.GetResults();
             HurtBox target = source.FirstOrDefault();
 
-            _target = target ? target.transform : null;
+            ProjectileTarget.Target = target ? target.transform : null;
             _targetHurtBox = target;
         }
 

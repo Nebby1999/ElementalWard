@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3399891196350533088}
   - component: {fileID: 7701345570486764282}
   - component: {fileID: 4867083786280728268}
+  - component: {fileID: 4536059011271266600}
+  - component: {fileID: 8888921569243584804}
   - component: {fileID: 8366591406831404384}
   - component: {fileID: 7512247859305194354}
   - component: {fileID: 5390679306193877240}
@@ -81,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileLifetime: 10
   lifetimeExpiredEffect: {fileID: 0}
-  desiredForwardSpeed: 30
+  desiredForwardSpeed: 20
   updateAfterFiring: 1
   enableVelocityOverLifetime: 0
   velocityOverLifetime:
@@ -90,6 +92,39 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4536059011271266600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746857431103575078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca30c81df3939dd469d205c9718eab69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8888921569243584804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746857431103575078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a71bc74943eb3446ab6b03ade4be25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookRange: 30
+  lookCone: 90
+  searchInterval: 0.5
+  OnNewTargetFound:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTargetLost:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8366591406831404384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,20 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6523951f0550a84c9530e6dc4c251fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRange: 30
-  lookCone: 90
-  searchInterval: 0.5
-  OnNewTargetFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTargetLost:
-    m_PersistentCalls:
-      m_Calls: []
   axisConstraint:
     x: 0
     y: 0
     z: 0
-  rotationSpeed: 45
+  rotationSpeed: 60
+  rpsToAddWithTarget: 10
 --- !u!54 &7512247859305194354
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using Nebula;
+using System;
 using UnityEngine;
 
 namespace ElementalWard
@@ -14,7 +15,15 @@ namespace ElementalWard
             {
                 if (_skillDef != value)
                 {
+                    if(_skillDef)
+                    {
+                        _skillDef.OnUnassign(this);
+                    }
                     _skillDef = value;
+                    if (_skillDef)
+                    {
+                        _skillDef.OnAssign(this);
+                    }
                     OnSkillChanged();
                 }
             }
@@ -23,7 +32,7 @@ namespace ElementalWard
         public float CooldownTimer { get; set; }
         public uint MaxStock { get; private set; }
         public uint Stock { get; set; }
-
+        public ISkillBehaviourCallback[] SkillBehaviourCallbacks { get; set; } = Array.Empty<ISkillBehaviourCallback>();
         public EntityStateMachine CachedStateMachine { get; private set; }
 
         private void Awake()

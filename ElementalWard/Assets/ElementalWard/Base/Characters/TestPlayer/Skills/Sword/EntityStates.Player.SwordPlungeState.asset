@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EntityStates.Player.SwordPlungeState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.SwordPlungeState, ElementalWard,
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwordPlungeState, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:

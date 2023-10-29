@@ -33,7 +33,8 @@ namespace ElementalWard
 
             if (_vfxProperties.ContainsKey(propName))
             {
-                Debug.LogWarning($"VFXData already contains a Property of name {propName}.");
+                _vfxProperties[propName] = value;
+                return;
             }
             _vfxProperties.Add(propName, value);
         }

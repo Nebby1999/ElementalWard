@@ -16,6 +16,7 @@ MonoBehaviour:
   requiredStock: 1
   entityStateMachineName: Weapon
   stateType:
-    _assemblyQualifiedName: EntityStates.Player.SwordSpinState, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwordSpinState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  skillBehaviourCallbacks: []
   interruptStrength: 1

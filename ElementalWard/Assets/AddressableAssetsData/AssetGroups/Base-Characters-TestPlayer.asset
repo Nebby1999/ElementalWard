@@ -120,12 +120,88 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 22c9a685575bcbc439c6da1fa43d6c35
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/PiercingBolt.prefab
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/ExplodingBoltProjectile.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e99048e14b027744ea9059f5a2d07867
     m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.FireBolt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7696a15075706c4f809b07ba5971364
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/ChargeExplodingBolt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e964f8975421f3b46a5ffd2517423d82
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.ChargeExplodingBolt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5dfab19514b59145b167037f04c6224
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.FireExplodingBolt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0df220f365d7b3468b96ca3f9acaf5b
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/Staff.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d722e610bfd0b614fb61e7a5b2846c05
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.FireBurst.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ea46d27e3aad3f4fb7c859f3ad08503
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/FireBurst.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf3a7a56ef71ddf4790e8e02b49b2a81
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.ChargeShotgun.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa99e475645df1b4aa07b02d60bf8b72
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.FireShotgun.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5081b21b9b6182249800bd48efd4004f
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/ChargeShotgun.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9ee06d4678564042aa46843056cfeb5
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Book/ExplodingOrb.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11906938f0512ce498b3756c26361400
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Book/Book.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f206b648bc65cca44bb9d128866b8a7b
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Book/CastExplodingOrb.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bfc91a3dbaf0004b96f0f1c9b3d95d4
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Book/DetonateOrbs.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc6c67b12865d3049900a75adaec1337
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Book/EntityStates.Player.Weapon.Book.FireExplodingOrb.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nebula;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,17 +7,6 @@ namespace ElementalWard
 {
     public class HitscanAttack
     {
-        private struct BulletHit
-        {
-            public Vector3 direction;
-            public Vector3 hitPoint;
-            public Vector3 surfaceNormal;
-            public float distance;
-            public Collider collider;
-            public GameObject entityObject;
-            public HurtBox? hurtBox;
-        }
-        public delegate float FalloffCalculateDelegate(float distance);
         public BodyInfo attacker;
         public DamageType damageType;
         public Vector3 raycastOrigin;
@@ -32,9 +22,11 @@ namespace ElementalWard
         public bool smartCollision;
         public GameObject tracerEffect;
         public VFXData tracerData;
+        public LayerMask hitMask = LayerIndex.CommonMasks.Bullet;
+        public LayerMask stopperMask = LayerIndex.CommonMasks.Bullet;
 
         public FalloffCalculateDelegate falloffCalculation = DefaultFalloffCalculation;
-
+        public HitCallback hitCallback = DefaultHitCallback;
 
         private RaycastHit[] _cachedHits;
         private HashSet<GameObject> _smartCollisionSet = new HashSet<GameObject>();
@@ -65,55 +57,47 @@ namespace ElementalWard
         private void FireSingle(Vector3 normal)
         {
             Vector3 endPos = raycastOrigin + normal * raycastLength;
-            List<BulletHit> bulletHit = new List<BulletHit>();
+            List<Hit> bulletHit = new List<Hit>();
             if (raycastRadius == 0)
             {
-                _cachedHits = Physics.RaycastAll(raycastOrigin, normal, raycastLength, LayerIndex.CommonMasks.Bullet, QueryTriggerInteraction.UseGlobal);
+                _cachedHits = Physics.RaycastAll(raycastOrigin, normal, raycastLength, hitMask, QueryTriggerInteraction.UseGlobal);
             }
             else
             {
-                _cachedHits = Physics.SphereCastAll(raycastOrigin, raycastRadius, normal, raycastLength, LayerIndex.CommonMasks.Bullet, QueryTriggerInteraction.UseGlobal);
+                _cachedHits = Physics.SphereCastAll(raycastOrigin, raycastRadius, normal, raycastLength, hitMask, QueryTriggerInteraction.UseGlobal);
             }
             for (int i = 0; i < _cachedHits.Length; i++)
             {
-                BulletHit hit = default;
+                Hit hit = default;
                 InitBulletHitFromRaycastHit(ref hit, raycastOrigin, normal, ref _cachedHits[i]);
-            }
-            Vector3 hitPos = Vector3.zero;
-            foreach (var hit in _cachedHits)
-            {
-                Collider hitCollider = hit.collider;
-                if (!hitCollider)
+                
+                if (hit.hurtBox && hit.hurtBox.TeamIndex == attacker.team)
                     continue;
-
-                var hurtBox = hitCollider.GetComponent<HurtBox>();
-                if (!hurtBox || !hurtBox.HealthComponent)
-                    continue;
-
-                var falloffFactor = falloffCalculation(hit.distance);
-                var damageInfo = new DamageInfo
+     
+                if(hitCallback(this, ref hit))
                 {
-                    attackerBody = attacker,
-                    damage = baseDamage * falloffFactor,
-                    damageType = damageType,
-                };
-                damageInfo.damage *= DamageInfo.GetDamageModifier(hurtBox);
-
-                hurtBox.HealthComponent.TakeDamage(damageInfo);
-                hitPos = hit.point;
+                    endPos = hit.hitPoint;
+                    break;
+                }
             }
-            if (hitPos == Vector3.zero)
-                hitPos = endPos;
+#if DEBUG && UNITY_EDITOR
+            GlobalGizmos.EnqueueGizmoDrawing(() =>
+            {
+                UnityEditor.Handles.color = Color.red;
+                UnityEditor.Handles.DrawLine(raycastOrigin, endPos, 10);
+            });
+#endif
 
             if (tracerEffect)
             {
-                tracerData.AddProperty(CommonVFXProperties.Origin, raycastOrigin);
-                tracerData.AddProperty(CommonVFXProperties.Start, hitPos);
-                FXManager.SpawnVisualFX(tracerEffect, tracerData);
+                var data = tracerData;
+                data.AddProperty(CommonVFXProperties.Origin, raycastOrigin);
+                data.AddProperty(CommonVFXProperties.Start, endPos);
+                FXManager.SpawnVisualFX(tracerEffect, data);
             }
         }
 
-        private void InitBulletHitFromRaycastHit(ref BulletHit bulletHit, Vector3 rayOrigin, Vector3 rayDirection, ref RaycastHit raycastHit)
+        private void InitBulletHitFromRaycastHit(ref Hit bulletHit, Vector3 rayOrigin, Vector3 rayDirection, ref RaycastHit raycastHit)
         {
             bulletHit.collider = raycastHit.collider;
             bulletHit.hurtBox = raycastHit.collider.GetComponent<HurtBox>();
@@ -131,12 +115,51 @@ namespace ElementalWard
 
         public static float BuckshotFalloffCalculation(float distance)
         {
-            throw new NotImplementedException();
+            return 0.25f + Mathf.Clamp01(Mathf.InverseLerp(25f, 7f, distance)) * 0.75f;
         }
 
         public static float BulletFalloffCalculation(float distance)
         {
-            throw new NotImplementedException();
+            return 0.5f + Mathf.Clamp01(Mathf.InverseLerp(60f, 25f, distance)) * 0.5f;
+        }
+
+        public static bool DefaultHitCallback(HitscanAttack attack, ref Hit hit)
+        {
+            bool isInStopperMask = attack.stopperMask.Contains(hit.entityObject.layer);
+            Vector3 hitPos = Vector3.zero;
+            Collider hitCollider = hit.collider;
+            if (!hitCollider)
+                return isInStopperMask;
+
+            var hurtBox = hitCollider.GetComponent<HurtBox>();
+            if (!hurtBox || !hurtBox.HealthComponent)
+                return isInStopperMask;
+
+            var falloffFactor = attack.falloffCalculation(hit.distance);
+            var damageInfo = new DamageInfo
+            {
+                attackerBody = attack.attacker,
+                damage = attack.baseDamage * falloffFactor,
+                damageType = attack.damageType,
+            };
+            damageInfo.damage *= DamageInfo.GetDamageModifier(hurtBox);
+
+            hurtBox.HealthComponent.TakeDamage(damageInfo);
+
+            return isInStopperMask;
+        }
+
+        public delegate float FalloffCalculateDelegate(float distance);
+        public delegate bool HitCallback(HitscanAttack attack, ref Hit hit);
+        public struct Hit
+        {
+            public Vector3 direction;
+            public Vector3 hitPoint;
+            public Vector3 surfaceNormal;
+            public float distance;
+            public Collider collider;
+            public GameObject entityObject;
+            public HurtBox? hurtBox;
         }
     }
 }

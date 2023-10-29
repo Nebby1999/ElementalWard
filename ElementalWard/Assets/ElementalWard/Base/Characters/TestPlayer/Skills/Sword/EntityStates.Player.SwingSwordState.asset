@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: EntityStates.Player.SwingSwordState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.SwingSwordState, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwingSwordState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
     - fieldName: damageCoefficient

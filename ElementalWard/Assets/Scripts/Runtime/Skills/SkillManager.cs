@@ -7,6 +7,14 @@ using UnityEngine;
 
 namespace ElementalWard
 {
+    public enum SkillSlot
+    {
+        None,
+        Primary,
+        Secondary,
+        Utility,
+        Special,
+    }
     public class SkillManager : MonoBehaviour
     {
         public GenericSkill Primary => _primary;
@@ -26,6 +34,26 @@ namespace ElementalWard
         private void Awake()
         {
             _allSkills = GetComponents<GenericSkill>();
+        }
+
+        public SkillSlot FindSkillSlot(GenericSkill genericSkill)
+        {
+            if (!genericSkill)
+                return SkillSlot.None;
+            
+            if (genericSkill == _primary)
+                return SkillSlot.Primary;
+            
+            if (genericSkill == _secondary)
+                return SkillSlot.Secondary;
+            
+            if (genericSkill == _utility)
+                return SkillSlot.Utility;
+            
+            if (genericSkill == _special)
+                return SkillSlot.Special;
+
+            return SkillSlot.None;
         }
 
         public int GetSkillIndex(GenericSkill skill)

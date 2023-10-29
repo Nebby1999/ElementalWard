@@ -75,13 +75,16 @@ namespace ElementalWard
             if (IsImmune)
                 return;
 
-            var selfTeamIndex = _teamComponent ? _teamComponent.CurrentTeamIndex : TeamIndex.None;
-            if (damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
+            if(!damageInfo.damageType.HasFlag(DamageType.FriendlyFire))
             {
-                bool? isEnemy = TeamCatalog.GetTeamInteraction(damageInfo.attackerBody.team, selfTeamIndex);
-                if (isEnemy == false)
+                var selfTeamIndex = _teamComponent ? _teamComponent.CurrentTeamIndex : TeamIndex.None;
+                if (damageInfo.attackerBody.team != TeamIndex.None || selfTeamIndex != TeamIndex.None)
                 {
-                    return;
+                    bool? isEnemy = TeamCatalog.GetTeamInteraction(damageInfo.attackerBody.team, selfTeamIndex);
+                    if (isEnemy == false)
+                    {
+                        return;
+                    }
                 }
             }
             var attackerElement = damageInfo.attackerBody.Element;

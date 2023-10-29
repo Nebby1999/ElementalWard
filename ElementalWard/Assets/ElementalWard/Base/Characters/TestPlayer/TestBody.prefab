@@ -148,6 +148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2525960900767664063}
   - {fileID: 3222358596884483156}
   - {fileID: 5863076016117954468}
   - {fileID: 3775747228327262241}
@@ -195,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 3775747226426235317}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3788357, y: 0.48713112, z: 2.5211792}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -239,7 +240,7 @@ MonoBehaviour:
   _lvlAttackSpeed: 0
   _lvlDamage: 1.5
   _lvlArmor: 0
-  aimOriginTransform: {fileID: 0}
+  aimOriginTransform: {fileID: 2525960900767664063}
   sprintSpeedMultiplier: 1.5
   references:
     version: 2
@@ -304,11 +305,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: Weapon
   initialState:
-    _assemblyQualifiedName: EntityStates.Player.IdleWeaponState, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.IdleWeaponState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   mainState:
-    _assemblyQualifiedName: EntityStates.Player.IdleWeaponState, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.IdleWeaponState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &3928320551998439186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,8 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapon1: {fileID: 11400000, guid: d94fe3107559be1449f36f8de1b26f79, type: 2}
   _weapon2: {fileID: 11400000, guid: 58cfc6c2f07a6284c9227dd9c13974cc, type: 2}
-  _weapon3: {fileID: 0}
-  _weapon4: {fileID: 0}
+  _weapon3: {fileID: 11400000, guid: e0df220f365d7b3468b96ca3f9acaf5b, type: 2}
+  _weapon4: {fileID: 11400000, guid: 11906938f0512ce498b3756c26361400, type: 2}
 --- !u!114 &3900817627430093398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,3 +796,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageModifier: 0
+--- !u!1 &7822531520948620492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2525960900767664063}
+  m_Layer: 0
+  m_Name: AimOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2525960900767664063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822531520948620492}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4651689963122426556}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

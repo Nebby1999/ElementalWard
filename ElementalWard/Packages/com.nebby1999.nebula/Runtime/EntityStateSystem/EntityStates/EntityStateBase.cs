@@ -46,6 +46,8 @@ namespace EntityStates
         protected T GetComponent<T>() => outer.GetComponent<T>();
         protected Component GetComponent(Type type) => outer.GetComponent(type);
         protected Component GetComponent(string name) => outer.GetComponent(name);
+        protected bool TryGetComponent<T>(out T component) => outer.TryGetComponent<T>(out component);
+        protected bool TryGetComponent(Type type, out Component component) => outer.TryGetComponent(type, out component);
 
         protected void PlayAnimation(string layerName, string animationStateName, string playbackRateParam, float duration)
         {

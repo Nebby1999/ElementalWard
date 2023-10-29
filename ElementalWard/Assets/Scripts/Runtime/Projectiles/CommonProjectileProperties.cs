@@ -6,5 +6,6 @@ namespace ElementalWard.Projectiles
         public static string ProjectileLifeTime => "lifetime";
         public static string DamageType => "damageType";
         public static string DamageCoefficient => "damageCoefficient";
+        public static string TargetHurtBox => "targetHurtBox";
     }
 }

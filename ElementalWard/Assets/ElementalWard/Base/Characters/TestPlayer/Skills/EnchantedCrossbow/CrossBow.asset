@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CrossBow
   m_EditorClassIdentifier: 
   _primarySkill: {fileID: 11400000, guid: 5803f07f7cc92f041a9e8f6a930386cc, type: 2}
-  _secondarySkill: {fileID: 0}
+  _secondarySkill: {fileID: 11400000, guid: b7696a15075706c4f809b07ba5971364, type: 2}
