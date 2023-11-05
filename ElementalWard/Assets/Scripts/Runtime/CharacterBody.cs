@@ -1,4 +1,5 @@
 using Nebula;
+using System;
 using UnityEngine;
 using UnityEngine.Localization;
 namespace ElementalWard
@@ -67,6 +68,7 @@ namespace ElementalWard
         public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
         private bool statsDirty;
         public BodyIndex BodyIndex { get; internal set; }
+        private IBodyStatModifier[] bodyStatModifiers = Array.Empty<IBodyStatModifier>();
         private void Awake()
         {
             InputBank = GetComponent<CharacterInputBank>();
@@ -74,6 +76,8 @@ namespace ElementalWard
 
             var collider1 = GetComponent<CapsuleCollider>();
             Radius = collider1 ? collider1.radius : 1;
+
+            bodyStatModifiers = GetComponents<IBodyStatModifier>();
         }
         private void Start()
         {
@@ -84,22 +88,61 @@ namespace ElementalWard
 
         public void RecalculateStats()
         {
+            var args = new StatModifierArgs();
+            for(int i = 0; i < bodyStatModifiers.Length; i++)
+            {
+                var modifier = bodyStatModifiers[i];
+                modifier.PreStatRecalculation(this);
+                modifier.GetStatCoefficients(args, this);
+            }
             uint levelMinusOne = Level - 1;
-            MaxHealth = _baseHealth + _lvlHealth * levelMinusOne;
-            Regen = _baseRegen + _lvlRegen * levelMinusOne;
-            MaxShield = _baseShield + _lvlShield * levelMinusOne;
 
-            var movementSpeed = _baseMovementSpeed;
-            var lvlMovementSpeed = _lvlMovementSpeed * levelMinusOne;
-            var finalMovementSpeed = movementSpeed + lvlMovementSpeed;
+            float baseStat = _baseHealth + args.baseHealthAdd;
+            float levelStat = _lvlHealth * levelMinusOne;
+            float finalStat = (baseStat + levelStat) * (1 + args.healthMultAdd);
+            MaxHealth = finalStat;
+
+            baseStat = _baseRegen + args.baseRegenAdd;
+            levelStat = _lvlRegen * levelMinusOne;
+            finalStat = (baseStat + levelStat) * (1 + args.regenMultAdd);
+            Regen = finalStat;
+
+            baseStat = _baseShield + args.baseShieldAdd;
+            levelStat = _lvlShield * levelMinusOne;
+            finalStat = (baseStat + levelStat) * (1 + args.shieldMultAdd);
+            MaxShield = finalStat;
+
+            baseStat = _baseMovementSpeed + args.baseMovementSpeedAdd;
+            levelStat = _lvlMovementSpeed * levelMinusOne;
+            finalStat = (baseStat + levelStat) * (1 + args.movementSpeedMultAdd);
             if (IsSprinting)
-                finalMovementSpeed *= sprintSpeedMultiplier;
-            MovementSpeed = finalMovementSpeed;
+                finalStat *= sprintSpeedMultiplier;
+            MovementSpeed = finalStat;
 
-            AttackSpeed = _baseAttackSpeed + _lvlAttackSpeed * levelMinusOne;
-            Damage = _baseDamage + _lvlDamage * levelMinusOne;
-            Armor = _baseArmor + _lvlArmor * levelMinusOne;
-            JumpStrength = _jumpStrength;
+            baseStat = _baseAttackSpeed + args.baseAttackSpeedAdd;
+            levelStat = _lvlAttackSpeed * levelMinusOne;
+            finalStat = (baseStat + levelStat) * (1 + args.attackSpeedMultAdd);
+            AttackSpeed = finalStat;
+
+            baseStat = _baseDamage + args.baseDamageAdd;
+            levelStat = _lvlDamage * levelMinusOne;
+            finalStat = (baseStat + levelStat) * (1 + args.damageMultAdd);
+            Damage = finalStat;
+
+            baseStat = _baseArmor;
+            levelStat = _lvlArmor * levelMinusOne;
+            finalStat = (baseStat + levelStat) + args.baseArmorAdd;
+            Armor = finalStat;
+
+            baseStat = _jumpStrength;
+            finalStat = baseStat + args.baseJumpStrengthAdd;
+            JumpStrength = finalStat;
+
+            for (int i = 0; i < bodyStatModifiers.Length; i++)
+            {
+                var modifier = bodyStatModifiers[i];
+                modifier.PostStatRecalculation(this);
+            }
         }
         [ContextMenu("Recalculate Stats")]
         public void SetStatsDirty() => statsDirty = true;
@@ -140,5 +183,39 @@ namespace ElementalWard
 
             TiedMaster.CharacterMasterAI.SetTargetFromDamageReport(report);
         }
+    }
+
+    public interface IBodyStatModifier
+    {
+        public void PreStatRecalculation(CharacterBody body);
+
+        public void PostStatRecalculation(CharacterBody body);
+
+        public void GetStatCoefficients(StatModifierArgs args, CharacterBody body);
+    }
+
+    public class StatModifierArgs
+    {
+        public float baseHealthAdd = 0;
+        public float healthMultAdd = 0;
+
+        public float baseShieldAdd = 0;
+        public float shieldMultAdd = 0;
+
+        public float baseRegenAdd = 0;
+        public float regenMultAdd = 0;
+
+        public float baseMovementSpeedAdd = 0;
+        public float movementSpeedMultAdd = 0;
+
+        public float baseAttackSpeedAdd = 0;
+        public float attackSpeedMultAdd = 0;
+
+        public float baseDamageAdd = 0;
+        public float damageMultAdd = 0;
+
+        public float baseArmorAdd = 0;
+
+        public float baseJumpStrengthAdd = 0;
     }
 }

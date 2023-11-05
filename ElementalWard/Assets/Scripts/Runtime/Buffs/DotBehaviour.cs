@@ -21,6 +21,10 @@ namespace ElementalWard
         /// </summary>
         public DotBuffDef dotDef;
         /// <summary>
+        /// The base damage type of this DOT, the flag <see cref="DamageType.DOT"/> is added to this automatically when dealing damage.
+        /// </summary>
+        public DamageType baseDamageType;
+        /// <summary>
         /// How long the dot lasts
         /// </summary>
         public float fixedAgeDuration;
@@ -32,6 +36,13 @@ namespace ElementalWard
         /// If <see cref="inflictor"/>'s <see cref="BodyInfo.characterBody"/> is null, use this value as the Damage value instead of <see cref="CharacterBody.Damage"/>
         /// </summary>
         public float customDamageSource;
+        /// <summary>
+        /// Proc coefficient of each DOT tick.
+        /// </summary>
+        public float procCoefficient;
+        /// <summary>
+        /// Damage multiplier applied to the inflictor's damage.
+        /// </summary>
         public float damageMultiplier;
     }
 

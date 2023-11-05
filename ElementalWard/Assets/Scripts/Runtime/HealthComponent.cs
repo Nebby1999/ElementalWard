@@ -37,7 +37,7 @@ namespace ElementalWard
             }
         }
         private IHealthProvider _healthProvider;
-        public ElementDef CurrentElement => _elementProvider?.Element;
+        public ElementDef CurrentElement => _elementProvider?.ElementDef;
         [Tooltip("If the game object that has this health component doesnt have a component that implements IHealthProvider, use this value for health.")]
         [SerializeField] private float _defaultMaxHealth = 100;
 
@@ -87,11 +87,7 @@ namespace ElementalWard
                     }
                 }
             }
-            var attackerElement = damageInfo.attackerBody.Element;
-            IElementEvents attackerElementEvents = ElementCatalog.GetElementEventsFor(attackerElement);
-            IElementEvents selfElementEvents = ElementCatalog.GetElementEventsFor(CurrentElement);
 
-            selfElementEvents?.OnIncomingDamage(damageInfo, this);
             foreach (IOnIncomingDamage onIncomingDamage in _incomingDamageReceivers)
             {
                 onIncomingDamage.OnIncomingDamage(damageInfo);
@@ -117,14 +113,26 @@ namespace ElementalWard
             {
                 onTakeDamage.OnTakeDamage(report);
             }
-            selfElementEvents?.OnDamageTaken(report);
-            attackerElementEvents?.OnDamageDealt(report);
+            if(damageInfo.attackerBody.TryGetComponents<IOnDamageDealt>(out var damageDealts))
+            {
+                foreach(IOnDamageDealt onDamageDealt in damageDealts)
+                {
+                    onDamageDealt?.OnDamageDealt(report);
+                }
+            }
             _lastDamageSource = report;
 
-            ParticleTextSystem.SpawnParticle(transform.position, ParticleTextSystem.FormatDamage(damageInfo.damage, false), damageInfo.attackerBody.Element.AsValidOrNull()?.elementColor ?? Color.white);
+            ParticleTextSystem.SpawnParticle(transform.position, ParticleTextSystem.FormatDamage(damageInfo.damage, false), damageInfo.attackerBody.ElementDef?.elementColor ?? Color.white);
         }
 
-        public void FixedUpdate()
+        public void Heal(float amount)
+        {
+            CurrentHealth += amount;
+            if (CurrentHealth > HealthProvider.MaxHealth)
+                CurrentHealth = HealthProvider.MaxHealth;
+        }
+
+        private void FixedUpdate()
         {
             if (!IsAlive && _wasAlive)
             {

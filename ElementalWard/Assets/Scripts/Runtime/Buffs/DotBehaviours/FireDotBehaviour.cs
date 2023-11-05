@@ -28,7 +28,7 @@ namespace ElementalWard
         {
             base.OnInflicted(dotInfo);
             _victimTransform = dotInfo.victim.gameObject.transform;
-            _victimHealthComponent = dotInfo.victim.GetComponent<HealthComponent>();
+            dotInfo.victim.TryGetComponent<HealthComponent>(out _victimHealthComponent);
             var inflictorBody = dotInfo.inflictor.characterBody;
             var totalDamage = (inflictorBody ? inflictorBody.Damage : dotInfo.customDamageSource) * TiedDotDef.damageCoefficient;
             _damagePerTick = (totalDamage * DotStacks) / (TiedDotDef.secondsPerTick * dotInfo.fixedAgeDuration);

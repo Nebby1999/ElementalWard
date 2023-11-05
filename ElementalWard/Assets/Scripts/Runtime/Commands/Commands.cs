@@ -56,15 +56,15 @@ namespace ElementalWard.Commands
             {
                 _master = master;
                 _elementDef = element;
-                _master.OnBodySpawned += _master_OnBodySpawned;
+                _master.OnBodySpawned += _Master_OnBodySpawned;
             }
 
-            private void _master_OnBodySpawned(CharacterBody obj)
+            private void _Master_OnBodySpawned(CharacterBody obj)
             {
                 IElementProvider provider = obj.GetComponent<IElementProvider>();
                 if (provider != null)
-                    provider.Element = _elementDef;
-                _master.OnBodySpawned -= _master_OnBodySpawned;
+                    provider.ElementDef = _elementDef;
+                _master.OnBodySpawned -= _Master_OnBodySpawned;
             }
         }
     }

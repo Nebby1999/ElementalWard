@@ -34,8 +34,7 @@ namespace ElementalWard.Projectiles
         {
             if (!_owner)
                 return;
-            HealthComponent hc = _owner.GetComponent<HealthComponent>();
-            if (!hc)
+            if (!_owner.TryGetComponent<HealthComponent>(out var hc))
                 return;
             HurtBoxGroup hurtBoxGroup = hc.hurtBoxGroup;
             if (!hurtBoxGroup)

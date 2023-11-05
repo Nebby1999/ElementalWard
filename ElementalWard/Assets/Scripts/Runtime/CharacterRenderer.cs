@@ -36,7 +36,7 @@ namespace ElementalWard
             var renderer = info.renderer;
             var material = renderer.material;
             Texture texture = null;
-            var elementDef = _elementProvider.Element;
+            var elementDef = _elementProvider.ElementDef;
             if (elementDef)
                 texture = elementDef.elementRamp;
             int num = ((int?)_elementProvider?.ElementIndex) ?? -1;

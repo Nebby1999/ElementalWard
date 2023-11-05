@@ -19,7 +19,7 @@ namespace ElementalWard.Projectiles
             _owner = fireProjectileInfo.owner;
             var renderer = GetComponentInChildren<Renderer>();
             if (renderer && renderer.material)
-                renderer.material.color = _owner.Element.AsValidOrNull()?.elementColor ?? Color.white;
+                renderer.material.color = _owner.ElementDef?.elementColor ?? Color.white;
         }
 
         public void OnImpact(ProjectileImpactInfo impactInfo)

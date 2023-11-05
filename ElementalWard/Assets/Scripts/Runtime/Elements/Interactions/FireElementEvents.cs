@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using UnityEngine;
 
 namespace ElementalWard
@@ -27,7 +27,7 @@ namespace ElementalWard
 
         public void OnDamageDealt(DamageReport report)
         {
-            var victimElement = report.victimBody.Element;
+            var victimElement = report.victimBody.elementProvider;
             if (victimElement == waterElement || victimElement == TiedElement)
                 return;
 
@@ -82,4 +82,4 @@ namespace ElementalWard
             }
         }
     }
-}
+}*/

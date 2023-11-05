@@ -11,8 +11,9 @@ namespace ElementalWard
         public LocalizedString elementName;
         public Texture2D elementRamp;
         public Color elementColor;
-        [SerializableSystemType.RequiredBaseType(typeof(IElementEvents))]
-        public SerializableSystemType elementEvents;
-        public ElementIndex ElementIndex { get; set; } = ElementIndex.None;
+        [SerializableSystemType.RequiredBaseType(typeof(IElementInteraction))]
+        public SerializableSystemType elementInteractions;
+        public ElementIndex ElementIndex { get; internal set; } = ElementIndex.None;
+        public IElementInteraction ElementalInteraction { get; internal set; }
     }
 }

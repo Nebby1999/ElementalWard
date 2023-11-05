@@ -1,4 +1,4 @@
-using Nebula;
+/*using Nebula;
 using UnityEngine;
 
 namespace ElementalWard
@@ -17,3 +17,4 @@ namespace ElementalWard
         [SerializeField] private ElementDef _element;
     }
 }
+*/

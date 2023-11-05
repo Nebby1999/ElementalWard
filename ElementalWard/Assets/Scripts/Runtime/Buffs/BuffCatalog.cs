@@ -31,7 +31,7 @@ namespace ElementalWard
         private static HashSet<BuffIndex> dotBuffIndices = new HashSet<BuffIndex>();
         private static Type[] dotBehaviours = Array.Empty<Type>();
 
-        //Fucking hack
+        //Fucking ugly hack.
         private static DotBehaviour currentlyLoadingBehaviour;
         public static ResourceAvailability resourceAvailability = new ResourceAvailability(typeof(BuffCatalog));
 
@@ -83,6 +83,7 @@ namespace ElementalWard
         {
             yield return InitBuffs();
             yield return InitDots();
+            resourceAvailability.MakeAvailable(typeof(BuffCatalog));
             yield break;
         }
 

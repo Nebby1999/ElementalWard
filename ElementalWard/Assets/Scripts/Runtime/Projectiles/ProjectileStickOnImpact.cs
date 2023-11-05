@@ -88,7 +88,7 @@ namespace ElementalWard.Projectiles
         public void Initialize(FireProjectileInfo info)
         {
             info.TryGetProperty("normalValue", out Vector3 normal);
-            var hb = info.target.GetComponent<HurtBox>();
+            info.target.TryGetComponent<HurtBox>(out var hb);
 
             if(hb)
             {

@@ -1,4 +1,4 @@
-using Nebula;
+/*using Nebula;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -38,13 +38,13 @@ namespace ElementalWard
             _body = GetComponent<CharacterBody>();
         }
 
-        public void OnIncomingDamage(DamageInfo dinfo)
+        public void OnIncomingDamage(DamageInfo dinfo)am,e
         {
             /*if (_currentCount >= amountRequiredForDeath)
             {
                 dinfo.damage = HealthComponent.CurrentHealth * 10;
                 dinfo.damageType |= DamageType.InstaKill;
-            }*/
+            }
         }
 
         public void OnTakeDamage(DamageReport report)
@@ -99,4 +99,4 @@ namespace ElementalWard
                 Destroy(_overloadEffectInstance);
         }
     }
-}
+}*/

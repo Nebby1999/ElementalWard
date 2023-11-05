@@ -6,42 +6,74 @@ namespace ElementalWard
     {
         public GameObject gameObject;
         public CharacterBody characterBody;
+        public ElementDef ElementDef => _elementProvider?.ElementDef ?? fallbackElement;
+        public ElementDef fallbackElement;
         public TeamIndex team;
-        /// <summary>
-        /// If provided, the BodyInfo will use this element, instead of the one provided by an IElementProvider
-        /// </summary>
-        public ElementDef elementOverride;
-        public ElementDef Element => elementOverride ? elementOverride : _elementProvider?.Element;
-        private readonly IElementProvider _elementProvider;
-        public T GetComponent<T>() => gameObject ? gameObject.GetComponent<T>() : default(T);
+        public bool TryGetComponent<T>(out T component)
+        {
+            if (gameObject)
+                return gameObject.TryGetComponent<T>(out component);
+            component = default;
+            return false;
+        }
 
-        public static implicit operator bool(BodyInfo info) => info.gameObject;
+        public bool TryGetComponents<T>(out T[] components)
+        {
+            if(gameObject)
+            {
+                components = gameObject.GetComponents<T>();
+                return components.Length > 0;
+            }
+            components = null;
+            return false;
+        }
+
+        public bool IsValid()
+        {
+            return gameObject || ElementDef;
+        }
+
+        private IElementProvider _elementProvider;
+
+        public static implicit operator bool(BodyInfo info) => info.IsValid();
         public BodyInfo(CharacterBody characterBody)
         {
             gameObject = characterBody.gameObject;
             this.characterBody = characterBody;
-            elementOverride = null;
             team = TeamComponent.GetObjectTeamIndex(gameObject);
 
             _elementProvider = characterBody.GetComponent<IElementProvider>();
+            fallbackElement = null;
         }
 
         public BodyInfo(GameObject bodyGameObject)
         {
             gameObject = bodyGameObject;
             this.characterBody = bodyGameObject.GetComponent<CharacterBody>();
-            elementOverride = null;
             team = TeamComponent.GetObjectTeamIndex(gameObject);
 
             _elementProvider = bodyGameObject.GetComponent<IElementProvider>();
+            fallbackElement = null;
+        }
+
+        public BodyInfo(TeamIndex team, ElementDef element = null)
+        {
+            gameObject = null;
+            characterBody = null;
+            _elementProvider = null;
+
+            this.team = team;
+            fallbackElement = element;
         }
     }
     public class DamageInfo
     {
+        public BodyInfo attackerBody;
         public DamageType damageType = DamageType.None;
         public float damage;
+        public float procCoefficient;
+
         public bool rejected = false;
-        public BodyInfo attackerBody;
 
         public static float GetDamageModifier(HurtBox hurtBox)
         {
@@ -51,10 +83,11 @@ namespace ElementalWard
 
     public class DamageReport
     {
-        public DamageType damageType = DamageType.None;
-        public float damage;
+        public DamageInfo damageInfo;
         public BodyInfo attackerBody;
         public BodyInfo victimBody;
-        public DamageInfo damageInfo;
+        public DamageType damageType = DamageType.None;
+        public float damage;
+        public float procCoefficient;
     }
 }

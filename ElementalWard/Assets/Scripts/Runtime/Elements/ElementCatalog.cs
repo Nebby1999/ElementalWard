@@ -21,7 +21,6 @@ namespace ElementalWard
         private static ElementDef[] elementDefs = Array.Empty<ElementDef>();
         private static Dictionary<string, ElementIndex> elementNameToIndex = new(StringComparer.OrdinalIgnoreCase);
 
-        private static IElementEvents[] elementEvents = Array.Empty<IElementEvents>();
         public static ResourceAvailability resourceAvailability = new ResourceAvailability(typeof(ElementCatalog));
         public static ElementDef GetElementDef(ElementIndex index)
         {
@@ -40,18 +39,6 @@ namespace ElementalWard
             return ElementIndex.None;
         }
 
-        public static IElementEvents GetElementEventsFor(ElementDef elementDef)
-        {
-            if (elementDef)
-                return GetElementEventsFor(elementDef.ElementIndex);
-            return null;
-        }
-
-        public static IElementEvents GetElementEventsFor(ElementIndex elementIndex)
-        {
-            return ArrayUtils.GetSafe(ref elementEvents, (int)elementIndex);
-        }
-
         internal static IEnumerator Initialize()
         {
             int invalidNameTracker = 0;
@@ -63,7 +50,6 @@ namespace ElementalWard
             var results = handle.Result.OrderBy(ed => ed.cachedName).ToArray();
 
             elementDefs = new ElementDef[results.Length];
-            elementEvents = new IElementEvents[results.Length];
 
             for (int i = 0; i < results.Length; i++)
             {
@@ -72,17 +58,17 @@ namespace ElementalWard
                 elementDef.ElementIndex = elementIndex;
                 elementNameToIndex[elementDef.cachedName] = elementIndex;
                 elementDefs[i] = elementDef;
-                Type type = elementDef.elementEvents;
+                Type type = elementDef.elementInteractions;
                 if (type == null)
                 {
-                    Debug.LogWarning($"{elementDef} does not implement element events.", elementDef);
+                    Debug.LogWarning($"{elementDef} does not implement element interactions.", elementDef);
                     continue;
                 }
 
-                IElementEvents elementEvent = (IElementEvents)Activator.CreateInstance(type);
-                elementEvent.TiedElement = elementDef;
-                yield return elementEvent.LoadAssets();
-                elementEvents[i] = elementEvent;
+                IElementInteraction elementInteraction = (IElementInteraction)Activator.CreateInstance(type);
+                elementInteraction.SelfElement = elementDef;
+                yield return elementInteraction.LoadAssetsAsync();
+                elementDef.ElementalInteraction = elementInteraction;
             }
             resourceAvailability.MakeAvailable(typeof(ElementCatalog));
             yield break;
