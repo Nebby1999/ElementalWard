@@ -116,5 +116,14 @@ namespace Nebula
             Debug.DrawLine(position - Vector3.up * radius, position + Vector3.up * radius, color, duration);
             Debug.DrawLine(position - Vector3.forward * radius, position + Vector3.forward * radius, color, duration);
         }
+        public static bool AnimatorParamExists(int paramHash, Animator animator)
+        {
+            for(int i = 0; i < animator.parameterCount; i++)
+            {
+                if (animator.GetParameter(i).nameHash == paramHash)
+                    return true;
+            }
+            return false;
+        }
     }
 }

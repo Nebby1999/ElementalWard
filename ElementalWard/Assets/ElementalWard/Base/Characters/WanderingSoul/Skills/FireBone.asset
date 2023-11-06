@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FireBone
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.WanderingSoul.FireBone, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.WanderingSoul.Weapon.FireBone, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
     - fieldName: projectilePrefab

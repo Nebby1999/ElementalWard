@@ -2,7 +2,7 @@ using ElementalWard;
 using ElementalWard.Projectiles;
 using UnityEngine;
 
-namespace EntityStates.WanderingSoul
+namespace EntityStates.WanderingSoul.Weapon
 {
     public class FireBone : BaseCharacterState
     {
@@ -20,7 +20,7 @@ namespace EntityStates.WanderingSoul
         {
             base.OnEnter();
             duration = baseDuration / 2;
-            PlayAnimation("Base", animationName, playbackRateParam, duration);
+            PlayAnimation("Base", animationName, "attackSpeed", duration);
         }
         public override void FixedUpdate()
         {

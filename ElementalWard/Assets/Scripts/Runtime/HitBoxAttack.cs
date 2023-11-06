@@ -14,7 +14,6 @@ namespace ElementalWard
         public DamageType damageType;
         public float baseDamage;
         public HitBoxGroup hitBoxGroup;
-        public Quaternion hitboxRotation;
 
         private static List<Hit> _hitsBuffer = new List<Hit>(256);
         private static List<HealthComponent> _encounteredHealthComponentsBuffer = new List<HealthComponent>(64);

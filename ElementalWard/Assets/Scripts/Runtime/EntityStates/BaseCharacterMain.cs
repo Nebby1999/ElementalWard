@@ -14,11 +14,39 @@ namespace EntityStates
         protected Vector3 aimDirection;
         protected bool wantsToJump;
         protected bool wantsToSprint;
+
+        private Animator _animator;
+        private CharacterAnimatorParamAvailability _paramAvailability;
         public override void OnEnter()
         {
             base.OnEnter();
             HasCharacterController = CharacterController;
             HasCharacterInputBank = CharacterInputBank;
+            _animator = GetAnimator();
+            _paramAvailability = new CharacterAnimatorParamAvailability(_animator);
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            if(Time.deltaTime <= 0f)
+            {
+                return;
+            }
+            if (_animator)
+            {
+                UpdateAnimationParams();                
+            }
+        }
+
+        protected virtual void UpdateAnimationParams()
+        {
+            Vector3 movementVector = CharacterInputBank ? CharacterInputBank.moveVector : Vector3.zero;
+            bool isMoving = movementVector != Vector3.zero && CharacterBody.MovementSpeed > Mathf.Epsilon;
+            if(_paramAvailability.isMoving)
+            {
+                _animator.SetBool(AnimationParameters.isMoving, isMoving);
+            }
         }
 
         protected virtual void GatherInputs()

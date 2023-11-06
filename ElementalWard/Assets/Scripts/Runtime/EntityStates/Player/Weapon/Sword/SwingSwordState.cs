@@ -25,8 +25,7 @@ namespace EntityStates.Player.Weapon.Sword
                 attacker = new BodyInfo(CharacterBody),
                 baseDamage = damage,
                 damageType = DamageType.None,
-                hitBoxGroup = HitBoxGroup.FindHitBoxGroup(locator.gameObject, hitBoxGroup),
-                hitboxRotation = CharacterInputBank.LookRotation,
+                hitBoxGroup = HitBoxGroup.FindHitBoxGroup(locator.gameObject, hitBoxGroup)
             };
 
             attack.Fire();
