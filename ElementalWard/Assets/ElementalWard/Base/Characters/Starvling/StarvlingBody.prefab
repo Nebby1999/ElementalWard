@@ -536,7 +536,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groupName: Bite
-  hitboxes: []
+  hitboxes:
+  - {fileID: 6673264740366955408}
 --- !u!1 &8608590041353323998
 GameObject:
   m_ObjectHideFlags: 0

@@ -133,9 +133,23 @@ MonoBehaviour:
             _filters:
               _internalList:
               - rid: 6975382074470432785
-              - rid: 6975382076635742209
         _addressProviderInternal:
           rid: 6975382077004054533
+      - _id: 006552b5-e859-472b-b3f5-1bf1065ddc0f
+        _addressableGroup: {fileID: 11400000, guid: 9e775e4bd86a66947ac1f1f036305c96,
+          type: 2}
+        _control:
+          _value: 1
+        _assetGroups:
+          _internalList:
+          - _id: a6f27a5d-917d-4037-b20d-9a14e69d0980
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 3044500568237932545
+        _addressProviderInternal:
+          rid: 3044500568237932546
       - _id: b81a43ba-16b0-4f9e-b934-d95c776b997e
         _addressableGroup: {fileID: 11400000, guid: cb8673a988a953d4093fcf678d6c2819,
           type: 2}
@@ -408,6 +422,20 @@ MonoBehaviour:
         _replaceWithRegex: 0
         _pattern: 
         _replacement: 
+    - rid: 3044500568237932545
+      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
+        asm: SmartAddresser.Editor}
+      data:
+        _id: a3c4cf2e-55f8-4cbe-b858-b5a89a125de7
+        _folderTargetingMode: 0
+        _object:
+          _isListMode: 0
+          _values:
+          - {fileID: 102900000, guid: 875803854e9f4a64294fee916f036bb2, type: 3}
+    - rid: 3044500568237932546
+      type: {class: SimplifiedAssetPath, ns: ElementalWard.Editor.SmartAddresser.AddressProviders,
+        asm: ElementalWard.Editor}
+      data: 
     - rid: 4020664763838627844
       type: {class: TypeBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
         asm: SmartAddresser.Editor}
@@ -519,15 +547,6 @@ MonoBehaviour:
         _id: 1bca23fc-15fa-4dfc-84b9-df17a38029b9
         _folderAsset: {fileID: 102900000, guid: 80c54d70da83b5343ac88b2fe2793aeb,
           type: 3}
-    - rid: 6975382076635742209
-      type: {class: ExcludeExtension, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
-        asm: ElementalWard.Editor}
-      data:
-        _id: 35d53f63-0cd5-4c19-8629-26b16b464335
-        excludedExtensions:
-          _isListMode: 0
-          _values:
-          - ase
     - rid: 6975382076635742210
       type: {class: NonFolderAssetsInFolder, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
         asm: ElementalWard.Editor}

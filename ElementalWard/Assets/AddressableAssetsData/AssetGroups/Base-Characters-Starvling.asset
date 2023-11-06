@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Characters-Starvling
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Characters-Starvling
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c5daaf5b2214a6b45a398e4003a95174
+  m_SerializeEntries:
+  - m_GUID: 7bdfeca22eeedfb4b83f232794054e25
+    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingAnimController.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa355f54aab9a474fa4cf7e969d51921
+    m_Address: ElementalWard/Base/Characters/Starvling/texStarvlingDiffuse.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a7ac8d67ccb4654a83217b11c1e9c69
+    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingBody.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterBodies
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06d8b060158e73a4b91acdc92b6794ea
+    m_Address: ElementalWard/Base/Characters/Starvling/Skills/EntityStates.Starvling.Bite.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d42d13a09f90e2f4193d1937d8850d9b
+    m_Address: ElementalWard/Base/Characters/Starvling/Skills/Bite.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40aa3f826501d164c90151e56e993184
+    m_Address: ElementalWard/Base/Characters/Starvling/texStarvlingEmissive.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f18d2c51d33c811488e8189156b8c363, type: 2}
+    - {fileID: 11400000, guid: cb49c466e53bf09499371503b5b67aa9, type: 2}

@@ -5,6 +5,7 @@ using Unity.Mathematics;
 namespace Nebula.Navigation
 {
 #if !UNITY_EDITOR
+    using Unity.Burst;
     [BurstCompile(OptimizeFor = OptimizeFor.Performance)]
 #endif
     public struct FindPathJob : IJob
