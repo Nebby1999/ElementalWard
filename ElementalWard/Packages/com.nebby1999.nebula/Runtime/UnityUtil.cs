@@ -118,6 +118,9 @@ namespace Nebula
         }
         public static bool AnimatorParamExists(int paramHash, Animator animator)
         {
+            if (!animator)
+                return false;
+
             for(int i = 0; i < animator.parameterCount; i++)
             {
                 if (animator.GetParameter(i).nameHash == paramHash)

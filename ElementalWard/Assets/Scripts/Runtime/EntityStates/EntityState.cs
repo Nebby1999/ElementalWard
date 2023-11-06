@@ -34,6 +34,14 @@ namespace EntityStates
             return SpriteLocator ? SpriteLocator.SpriteTransform : null;
         }
 
+        protected SpriteRenderer3D GetSpriteRenderer()
+        {
+            return SpriteLocator ? SpriteLocator.SpriteTransform.GetComponent<SpriteRenderer3D>() : null;
+        }
+        protected CharacterAnimationEvents GetAnimationEvents()
+        {
+            return SpriteLocator ? SpriteLocator.SpriteTransform.GetComponent<CharacterAnimationEvents>() : null;
+        }
         protected override Animator GetAnimator()
         {
             if (SpriteLocator && SpriteLocator.SpriteTransform)

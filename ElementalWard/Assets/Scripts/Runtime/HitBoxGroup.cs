@@ -12,6 +12,7 @@ namespace ElementalWard
         public string groupName;
         public HitBox[] hitboxes = Array.Empty<HitBox>();
 
+        public bool updateRotation = true;
         private CharacterInputBank _bank;
         [ContextMenu("Autopopulate array")]
         private void AutoPopulateArray()
@@ -26,7 +27,7 @@ namespace ElementalWard
 
         private void Update()
         {
-            if(_bank)
+            if(_bank && updateRotation)
                 transform.rotation = _bank.LookRotation;
         }
         public static HitBoxGroup FindHitBoxGroup(GameObject obj, string groupName)

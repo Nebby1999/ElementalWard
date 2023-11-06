@@ -301,8 +301,7 @@ MonoBehaviour:
   deathState:
     _assemblyQualifiedName: EntityStates.GenericCharacterDeath, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  idleStateMachines:
-  - {fileID: 0}
+  idleStateMachines: []
 --- !u!114 &8972398675560155654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,6 +537,7 @@ MonoBehaviour:
   groupName: Bite
   hitboxes:
   - {fileID: 6673264740366955408}
+  updateRotation: 1
 --- !u!1 &8608590041353323998
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +733,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 86759848053195364}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: fa355f54aab9a474fa4cf7e969d51921,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3729851691110532596}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: fa355f54aab9a474fa4cf7e969d51921,
     type: 3}
 --- !u!1 &3587049209411269308 stripped
@@ -764,6 +768,18 @@ MonoBehaviour:
   _eightDirectionalSpriteRendererAnimator: {fileID: 9177879273809039117}
   body: {fileID: 6616821231843013767}
   disableOnDeath: []
+--- !u!114 &3729851691110532596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587049209411269308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb225d9d59fe7c4c9ee9e3fbf973998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4335340055834548953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: fa355f54aab9a474fa4cf7e969d51921,

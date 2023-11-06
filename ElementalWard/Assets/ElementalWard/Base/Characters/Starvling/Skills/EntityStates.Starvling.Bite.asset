@@ -23,17 +23,13 @@ MonoBehaviour:
         objectReferenceValue: {fileID: 0}
     - fieldName: baseDuration
       serializedValue:
-        stringValue: 0.5
-        objectReferenceValue: {fileID: 0}
-    - fieldName: baseBiteTime
-      serializedValue:
-        stringValue: 0.4
+        stringValue: 0.81
         objectReferenceValue: {fileID: 0}
     - fieldName: animationName
       serializedValue:
         stringValue: Bite
         objectReferenceValue: {fileID: 0}
-    - fieldName: hitboxGroup
+    - fieldName: hitboxGroupName
       serializedValue:
         stringValue: Bite
         objectReferenceValue: {fileID: 0}

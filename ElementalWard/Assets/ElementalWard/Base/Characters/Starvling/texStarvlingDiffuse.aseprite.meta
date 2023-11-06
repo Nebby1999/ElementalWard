@@ -1559,6 +1559,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 504, y: 335}
+  - name: Diffuse_Frame_72
+    originalName: 
+    pivot: {x: 0.49230772, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 578
+      y: 335
+      width: 65
+      height: 8
+    spriteID: f5684c8c2dcf9b74ba2e7a1b691db332
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 578, y: 335}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -2144,6 +2164,14 @@ ScriptedImporter:
         width: 65
         height: 8
       spriteId: 9b15303e9ec3c254fa104bf619972efb
+    - name: Diffuse_Frame_72
+      frameIndex: 72
+      cellRect:
+        x: 1
+        y: 0
+        width: 65
+        height: 8
+      spriteId: f5684c8c2dcf9b74ba2e7a1b691db332
     linkedCells: []
     parentIndex: -1
   platformSettings:
