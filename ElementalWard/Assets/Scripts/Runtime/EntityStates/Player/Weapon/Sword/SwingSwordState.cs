@@ -10,6 +10,7 @@ namespace EntityStates.Player.Weapon.Sword
     public class SwingSwordState : BaseCharacterState
     {
         public static float damageCoefficient;
+        public static float procCoefficient;
         public static string hitBoxGroup;
 
         private HitBoxAttack attack;
@@ -24,6 +25,7 @@ namespace EntityStates.Player.Weapon.Sword
             {
                 attacker = new BodyInfo(CharacterBody),
                 baseDamage = damage,
+                procCoefficient = procCoefficient,
                 damageType = DamageType.None,
                 hitBoxGroup = HitBoxGroup.FindHitBoxGroup(locator.gameObject, hitBoxGroup)
             };

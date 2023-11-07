@@ -11,33 +11,42 @@ namespace ElementalWard.Projectiles
         public BodyInfo target;
         public Vector3 instantiationPosition;
         public Quaternion instantiationRotation;
-        public DamageType damageType;
-        private Dictionary<string, object> _projectileProperties;
 
-        public void AddProperty(string propName, object value)
+        private Dictionary<int, object> _projectileProperties;
+
+        public bool HasProperty(int propertyHash)
         {
-            _projectileProperties ??= new Dictionary<string, object>();
-
-            if (_projectileProperties.ContainsKey(propName))
-            {
-                _projectileProperties[propName] = value;
-                return;
-            }
-            _projectileProperties.Add(propName, value);
+            EnsureDictionary();
+            return _projectileProperties.ContainsKey(propertyHash);
         }
 
-        public bool TryGetProperty<T>(string propName, out T value)
+        public void SetProperty(int propertyHash, object value)
         {
-            _projectileProperties ??= new Dictionary<string, object>();
-            if (_projectileProperties.TryGetValue(propName, out var val))
+            EnsureDictionary();
+            _projectileProperties[propertyHash] = value;
+        }
+
+        public T GetProperty<T>(int propertyHash)
+        {
+            EnsureDictionary();
+            return (T)_projectileProperties[propertyHash];
+        }
+
+        public bool TryGetProperty<T>(int propertyHash, out T value, T defaultValue = default)
+        {
+            EnsureDictionary();
+            if (_projectileProperties.TryGetValue(propertyHash, out object val))
             {
                 value = (T)val;
                 return true;
             }
-            List<string> validProperties = _projectileProperties.Select(k => $"Key=\"{k.Key}\"-Value=\"{k.Value}\"").ToList();
-            Debug.LogError($"FireProjectileInfo does not have a projectile property of name \"{propName}\". Owner=\"{owner.gameObject}\", valid projectile properties=\"{string.Join("\n", validProperties)}\"");
-            value = default;
+            value = defaultValue;
             return false;
+        }
+
+        private void EnsureDictionary()
+        {
+            _projectileProperties ??= new Dictionary<int, object>();
         }
     }
     public interface IProjectileInitialization

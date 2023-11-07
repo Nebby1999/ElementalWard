@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: EntityStates.Player.SwordPlungeState
+  m_Name: EntityStates.Player.Weapon.Crossbow.FireExplodingBolt
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwordPlungeState, ElementalWard,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Crossbow.FireExplodingBolt,
+      ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: damageCoefficient
+    - fieldName: boltPrefab
       serializedValue:
-        stringValue: 2
-        objectReferenceValue: {fileID: 0}
+        stringValue: 
+        objectReferenceValue: {fileID: 746857431103575078, guid: 22c9a685575bcbc439c6da1fa43d6c35,
+          type: 3}
     - fieldName: radius
       serializedValue:
-        stringValue: 3
+        stringValue: 1
         objectReferenceValue: {fileID: 0}

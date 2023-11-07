@@ -8,7 +8,7 @@ namespace ElementalWard
     {
         private int[] _buffs = Array.Empty<int>();
         private DotBehaviour[] _dotBehaviours = Array.Empty<DotBehaviour>();
-        private Dictionary<BuffIndex, TimedBuff> _timedBuffs = new Dictionary<BuffIndex, TimedBuff>();
+        private List<TimedBuff> _timedBuffs = new List<TimedBuff>();
 
         private void Awake()
         {
@@ -32,42 +32,119 @@ namespace ElementalWard
         {
             if (BuffCatalog.IsBuffADot(index))
             {
-                Debug.LogWarning("Cannot add buffs with AddBuffs that come from DotDefs! use AddDOT instead.");
+                Debug.LogWarning("Cannot add buffs that come from DotDefs! use AddDOT instead.");
                 return;
             }
 
-            if(_timedBuffs.ContainsKey(index))
+            for (int i = 0; i < _timedBuffs.Count; i++)
             {
-                AddTimedBuff(index, count, 0);
-                return;
+                var timedBuff = _timedBuffs[i];
+                if (timedBuff.buffIndex == index)
+                {
+                    AddTimedBuffInternal(index, GetBuffCount(index + count), -1, timedBuff);
+                    return;
+                }
             }
 
-            SetBuffCount(index, count);
+            SetBuffCount(index, GetBuffCount(index) + count);
         }
-
         public void AddTimedBuff(BuffDef buffDef, int count = 1, float time = 1) => AddTimedBuff(buffDef.BuffIndex, count, time);
-
         public void AddTimedBuff(BuffIndex buffIndex, int count = 1, float time = 1)
         {
-            if(!_timedBuffs.TryGetValue(buffIndex, out var timedBuff))
+            AddTimedBuffInternal(buffIndex, count, time);
+        }
+
+        public void RemoveBuff(BuffDef buffDef) => RemoveBuff(buffDef.BuffIndex);
+        public void RemoveBuff(BuffIndex buffIndex) => RemoveBuff(buffIndex, GetBuffCount(buffIndex));
+        public void RemoveBuff(BuffDef buffDef, int count) => RemoveBuff(buffDef.BuffIndex, count);
+        public void RemoveBuff(BuffIndex buffIndex, int count)
+        {
+            if (BuffCatalog.IsBuffADot(buffIndex))
             {
-                timedBuff = new TimedBuff();
-                timedBuff.buffIndex = buffIndex;
-                timedBuff.Initialize(count, time);
-                SetBuffCount(buffIndex, count);
-                _timedBuffs[buffIndex] = timedBuff;
+                Debug.LogWarning("Cannot remove buffs that come from DotDefs! use ClearDOT instead.");
                 return;
             }
-            timedBuff.buffIndex = buffIndex;
+            int abs = Mathf.Abs(count);
+            SetBuffCount(buffIndex, GetBuffCount(buffIndex) -abs);
+        }
+
+
+        public void AddDOT(DotInflictInfo info)
+        {
+            DotBuffDef dotDef = info.dotDef;
+            if (!dotDef || dotDef.DotIndex == DotIndex.None)
+                return;
+
+            info.victim ??= new BodyInfo(gameObject);
+            int dotIndex = (int)dotDef.DotIndex;
+            int buffIndex = (int)dotDef.BuffIndex;
+
+            var behaviour = _dotBehaviours[dotIndex];
+            if (behaviour == null)
+            {
+                SetBuffCount(dotDef.BuffIndex, 1);
+                behaviour = BuffCatalog.InitializeDotBehaviour(dotDef.DotIndex);
+                behaviour.Controller = this;
+                behaviour.OnInflicted(info);
+                behaviour.DotStacks = 1;
+                _dotBehaviours[dotIndex] = behaviour;
+                return;
+            }
+
+            if (behaviour.DotStacks < info.maxStacks)
+            {
+                var buffStack = _buffs[buffIndex];
+                buffStack++;
+                SetBuffCount(dotDef.BuffIndex, buffStack);
+                behaviour.DotStacks = buffStack;
+                if (dotDef.resetFixedAgeOnAdd)
+                    behaviour.fixedAge = 0;
+            }
+        }
+
+        public void ClearDOT(DotBuffDef dotDef) => ClearDOT(dotDef.DotIndex);
+        public void ClearDOT(DotIndex dotIndex)
+        {
+            int index = (int)dotIndex;
+            if (dotIndex == DotIndex.None || _dotBehaviours[index] == null)
+                return;
+
+            var behaviour = _dotBehaviours[index];
+            SetBuffCount(behaviour.TiedDotDef.BuffIndex, 0);
+            _dotBehaviours[index] = null;
+            behaviour.OnRemoved(behaviour.Info);
+        }
+        private void AddTimedBuffInternal(BuffIndex buffIndex, int count = 1, float time = 1, TimedBuff targetTimedBuff = null)
+        {
+            if(targetTimedBuff != null)
+            {
+                SetBuffCount(buffIndex, count);
+                targetTimedBuff.Initialize(GetBuffCount(buffIndex), time);
+                return;
+            }
+
+            for (int i = 0; i < _timedBuffs.Count; i++)
+            {
+                if (_timedBuffs[i].buffIndex == buffIndex)
+                {
+                    SetBuffCount(buffIndex, count);
+                    _timedBuffs[i].Initialize(GetBuffCount(buffIndex), time);
+                    return;
+                }
+            }
+
+            var newTimedBuff = new TimedBuff();
+            newTimedBuff.buffIndex = buffIndex;
+            newTimedBuff.origTimeDuration = time;
+            newTimedBuff.Initialize(count, time);
             SetBuffCount(buffIndex, count);
-            timedBuff.Initialize(GetBuffCount(buffIndex), time);
+            _timedBuffs.Add(newTimedBuff);
         }
 
         private void SetBuffCount(BuffIndex index, int count)
         {
             int intIndex = (int)index;
-            int currentCount = _buffs[intIndex];
-            int nextCount = currentCount + count;
+            int nextCount = count;
             
             if(nextCount < 0)
             {
@@ -80,28 +157,81 @@ namespace ElementalWard
             }
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
-            UpdateTimedBuffs();
+            float deltaTime = Time.fixedDeltaTime;
+            TimedBuffFixedUpdate(deltaTime);
+            DotBehaviourFixedUpdate(deltaTime);
         }
 
-        private void UpdateTimedBuffs()
+        private void TimedBuffFixedUpdate(float deltaTime)
         {
-            float deltaTime = Time.deltaTime;
+            for(int i = _timedBuffs.Count - 1; i >= 0; i--)
+            {
+                TimedBuff timedBuff = _timedBuffs[i];
+                int buffCount = GetBuffCount(timedBuff.buffIndex);
+                if(buffCount <= 0)
+                {
+                    _timedBuffs.RemoveAt(i);
+                    continue;
+                }
+
+                timedBuff.stopwatch += deltaTime;
+                if(timedBuff.stopwatch > timedBuff.timeBetweenBuffStackLoss)
+                {
+                    timedBuff.stopwatch -= timedBuff.timeBetweenBuffStackLoss;
+                    SetBuffCount(timedBuff.buffIndex, buffCount - 1);
+                }
+            }
+        }
+
+        private void DotBehaviourFixedUpdate(float deltaTime)
+        {
+            for(int i = _dotBehaviours.Length - 1; i >= 0; i--)
+            {
+                DotBehaviour behaviour = _dotBehaviours[i];
+                if (behaviour == null)
+                    continue;
+
+                behaviour.OnFixedUpdate(deltaTime);
+                if(behaviour.fixedAge > behaviour.Info.fixedAgeDuration)
+                {
+                    SetBuffCount(behaviour.TiedDotDef.BuffIndex, behaviour.DotStacks - 1);
+                    behaviour.DotStacks--;
+                    behaviour.fixedAge -= behaviour.Info.fixedAgeDuration;
+                    if(behaviour.DotStacks == 0)
+                    {
+                        _dotBehaviours[i] = null;
+                        behaviour.OnRemoved(behaviour.Info);
+                    }
+                }
+            }
+        }
+
+        private void Update()
+        {
+            DotBehaviourUpdate(Time.deltaTime);
+        }
+
+        private void DotBehaviourUpdate(float deltaTime)
+        {
+            foreach(DotBehaviour behaviour in _dotBehaviours)
+            {
+                behaviour?.OnUpdate(deltaTime);
+            }
         }
 
         private class TimedBuff
         {
             public BuffIndex buffIndex;
-            public float timeUntilExpiration;
             public float timeBetweenBuffStackLoss;
+            public float origTimeDuration;
             public float stopwatch;
 
             public void Initialize(int count, float time)
             {
                 stopwatch = 0;
-                timeUntilExpiration = time;
-                timeBetweenBuffStackLoss = time / count;
+                timeBetweenBuffStackLoss = (time <= 0 ? origTimeDuration : time) / count;
             }
         }
     }

@@ -10,35 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: EntityStates.Player.FireBurst
+  m_Name: EntityStates.Player.Weapon.Sword.SwordPlungeState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.Weapon.Staff.FireBurst, ElementalWard,
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwordPlungeState, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: fireCount
-      serializedValue:
-        stringValue: 5
-        objectReferenceValue: {fileID: 0}
     - fieldName: damageCoefficient
       serializedValue:
-        stringValue: 1
+        stringValue: 2
         objectReferenceValue: {fileID: 0}
-    - fieldName: baseDuration
+    - fieldName: radius
+      serializedValue:
+        stringValue: 3
+        objectReferenceValue: {fileID: 0}
+    - fieldName: procCoefficient
       serializedValue:
         stringValue: 1
         objectReferenceValue: {fileID: 0}
-    - fieldName: bulletRadius
-      serializedValue:
-        stringValue: 1
-        objectReferenceValue: {fileID: 0}
-    - fieldName: bulletRange
-      serializedValue:
-        stringValue: 1024
-        objectReferenceValue: {fileID: 0}
-    - fieldName: tracerPrefab
-      serializedValue:
-        stringValue: 
-        objectReferenceValue: {fileID: 182470382763900211, guid: dc563c421bdb1bb4780b1ee355b6376b,
-          type: 3}

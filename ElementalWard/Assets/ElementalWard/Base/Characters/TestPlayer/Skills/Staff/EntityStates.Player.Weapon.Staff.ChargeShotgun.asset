@@ -10,18 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: EntityStates.Player.SwordSpinState
+  m_Name: EntityStates.Player.Weapon.Staff.ChargeShotgun
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwordSpinState, ElementalWard,
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Staff.ChargeShotgun, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: damageCoefficient
+    - fieldName: baseBulletCount
       serializedValue:
-        stringValue: 1
+        stringValue: 5
         objectReferenceValue: {fileID: 0}
-    - fieldName: spinRadius
+    - fieldName: maxBulletCount
       serializedValue:
-        stringValue: 4
+        stringValue: 20
+        objectReferenceValue: {fileID: 0}
+    - fieldName: bulletsGainedPerSecond
+      serializedValue:
+        stringValue: 5
+        objectReferenceValue: {fileID: 0}
+    - fieldName: graceTime
+      serializedValue:
+        stringValue: 2
         objectReferenceValue: {fileID: 0}

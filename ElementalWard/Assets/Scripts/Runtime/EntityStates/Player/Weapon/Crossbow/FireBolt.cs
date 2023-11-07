@@ -7,8 +7,6 @@ namespace EntityStates.Player.Weapon.Crossbow
     public class FireBolt : BaseCharacterState
     {
         public static float baseDuration;
-        public static float damageCoefficient;
-        public static float projectileVelocity;
         public static GameObject projectilePrefab;
 
         private float _duration;
@@ -25,8 +23,6 @@ namespace EntityStates.Player.Weapon.Crossbow
                 instantiationPosition = aimRay.origin,
                 instantiationRotation = Quaternion.LookRotation(aimRay.direction, Vector3.up)
             };
-            info.AddProperty(CommonProjectileProperties.MovementSpeed, projectileVelocity);
-            info.AddProperty(CommonProjectileProperties.DamageCoefficient, damageCoefficient);
             ProjectileManager.SpawnProjectile(projectilePrefab, info);
         }
 

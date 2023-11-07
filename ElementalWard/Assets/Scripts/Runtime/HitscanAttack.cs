@@ -18,6 +18,7 @@ namespace ElementalWard
         public float raycastLength;
         public float raycastRadius;
         public float baseDamage;
+        public float procCoefficient;
         public int raycastCount;
         public bool smartCollision;
         public GameObject tracerEffect;
@@ -141,6 +142,7 @@ namespace ElementalWard
                 attackerBody = attack.attacker,
                 damage = attack.baseDamage * falloffFactor,
                 damageType = attack.damageType,
+                procCoefficient = attack.procCoefficient,
             };
             damageInfo.damage *= DamageInfo.GetDamageModifier(hurtBox);
 

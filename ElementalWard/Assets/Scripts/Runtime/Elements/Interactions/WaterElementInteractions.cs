@@ -12,7 +12,7 @@ namespace ElementalWard
             yield break;
         }
 
-        public void OnDamageDealt(DamageReport damageReport)
+        public void OnElementalDamageDealt(DamageReport damageReport)
         {
             var attacker = damageReport.attackerBody;
             if(!attacker.TryGetComponent(out HealthComponent component))
@@ -21,9 +21,6 @@ namespace ElementalWard
             }
 
             var victim = damageReport.victimBody;
-            if(victim && victim.TryGetComponent(out BuffController b))
-            {
-            }
         }
 
         public void ModifyIncomingDamage(DamageInfo damageInfo, GameObject self)

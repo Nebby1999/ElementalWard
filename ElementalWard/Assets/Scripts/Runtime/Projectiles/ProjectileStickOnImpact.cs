@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace ElementalWard.Projectiles
 {
-    public class ProjectileStickOnImpact : MonoBehaviour, IProjectileImpact, IProjectileInitialization
+    public class ProjectileStickOnImpact : MonoBehaviour, IProjectileImpact
     {
         public bool ignoreCharacters;
         public bool ignoreWorld;
@@ -83,17 +83,6 @@ namespace ElementalWard.Projectiles
         public void Unstick()
         {
             StuckObject = null;
-        }
-
-        public void Initialize(FireProjectileInfo info)
-        {
-            info.TryGetProperty("normalValue", out Vector3 normal);
-            info.target.TryGetComponent<HurtBox>(out var hb);
-
-            if(hb)
-            {
-                Stick(hb.gameObject, normal);
-            }
         }
     }
 }

@@ -25,7 +25,6 @@ namespace EntityStates.Player.Weapon.Crossbow
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            Debug.Log(_charge);
             if (!IsSkillDown())
             {
                 outer.SetNextState(new FireExplodingBolt());

@@ -24,7 +24,7 @@ MonoBehaviour:
     - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf3a7a56ef71ddf4790e8e02b49b2a81
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.ChargeShotgun.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.Weapon.Staff.ChargeShotgun.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
@@ -46,7 +46,7 @@ MonoBehaviour:
     - CharacterBodies
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9dae103542439e24fbe311d875bcf877
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.SwordSpinState.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.Weapon.Sword.SwordSpinState.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: aa99e475645df1b4aa07b02d60bf8b72
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.FireShotgun.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.Weapon.Staff.FireShotgun.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
@@ -95,13 +95,13 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e964f8975421f3b46a5ffd2517423d82
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.ChargeExplodingBolt.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.Weapon.Crossbow.ChargeExplodingBolt.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e99048e14b027744ea9059f5a2d07867
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.FireBolt.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.Weapon.Crossbow.FireBolt.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
@@ -127,7 +127,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d722e610bfd0b614fb61e7a5b2846c05
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.FireBurst.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/EntityStates.Player.Weapon.Staff.FireBurst.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
@@ -148,19 +148,19 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 07f2422b65378584f82adcf2e8bb12d8
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.SwordPlungeState.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.Weapon.Sword.SwordPlungeState.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b5dfab19514b59145b167037f04c6224
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.FireExplodingBolt.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/EntityStates.Player.Weapon.Crossbow.FireExplodingBolt.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b577eb7a8cb28a542b49b23389f38afa
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.SwingSwordState.asset
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.Weapon.Sword.SwingSwordState.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - EntityStateConfigurations

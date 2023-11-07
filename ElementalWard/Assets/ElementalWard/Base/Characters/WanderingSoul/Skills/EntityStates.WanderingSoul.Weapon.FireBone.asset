@@ -40,5 +40,9 @@ MonoBehaviour:
         objectReferenceValue: {fileID: 0}
     - fieldName: damageCoefficient
       serializedValue:
-        stringValue: 1
+        stringValue: 0
+        objectReferenceValue: {fileID: 0}
+    - fieldName: procCoefficient
+      serializedValue:
+        stringValue: 0
         objectReferenceValue: {fileID: 0}

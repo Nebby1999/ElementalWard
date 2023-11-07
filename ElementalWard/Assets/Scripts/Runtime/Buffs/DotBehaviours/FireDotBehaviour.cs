@@ -11,10 +11,6 @@ namespace ElementalWard
         private static GameObject _onFireVFX;
         private static AsyncOperationHandle handle;
         private GameObject _onFireVFXInstance;
-        private Transform _victimTransform;
-        private HealthComponent _victimHealthComponent;
-        private float _damagePerTick;
-        private float _stopWatch;
         public override IEnumerator LoadAssetsOnInitialization()
         {
             handle = Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab");
@@ -27,11 +23,6 @@ namespace ElementalWard
         public override void OnInflicted(DotInflictInfo dotInfo)
         {
             base.OnInflicted(dotInfo);
-            _victimTransform = dotInfo.victim.gameObject.transform;
-            dotInfo.victim.TryGetComponent<HealthComponent>(out _victimHealthComponent);
-            var inflictorBody = dotInfo.inflictor.characterBody;
-            var totalDamage = (inflictorBody ? inflictorBody.Damage : dotInfo.customDamageSource) * TiedDotDef.damageCoefficient;
-            _damagePerTick = (totalDamage * DotStacks) / (TiedDotDef.secondsPerTick * dotInfo.fixedAgeDuration);
             if (!_onFireVFXInstance && _onFireVFX)
             {
                 var data = new VFXData
@@ -39,24 +30,8 @@ namespace ElementalWard
                     instantiationPosition = _victimTransform.position,
                     instantiationRotation = _victimTransform.rotation,
                 };
-                data.AddProperty(CommonVFXProperties.Scale, inflictorBody ? inflictorBody.Radius : 1);
+                data.AddProperty(CommonVFXProperties.Scale, _victimCharacterBody ? _victimCharacterBody.Radius : 1);
                 _onFireVFXInstance = FXManager.SpawnVisualFX(_onFireVFX, data);
-            }
-        }
-
-        public override void OnFixedUpdate(float fixedDeltaTime)
-        {
-            base.OnFixedUpdate(fixedDeltaTime);
-            _stopWatch += fixedDeltaTime;
-            if (_stopWatch > TiedDotDef.secondsPerTick)
-            {
-                _stopWatch = 0;
-                _victimHealthComponent.AsValidOrNull()?.TakeDamage(new DamageInfo
-                {
-                    damageType = DamageType.DOT,
-                    attackerBody = Info.inflictor,
-                    damage = _damagePerTick,
-                });
             }
         }
 

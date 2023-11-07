@@ -45,6 +45,8 @@ namespace ElementalWard
             DotBuffDef dotBuffDef = GetDotDef(dotIndex);
             var instance = (DotBehaviour)Activator.CreateInstance(dotBehaviours[(int)dotIndex]);
             instance.TiedDotDef = dotBuffDef;
+            instance.age = 0;
+            instance.fixedAge = 0;
             return instance;
         }
         public static bool IsBuffADot(BuffDef buffDef) => buffDef ? dotBuffIndices.Contains(buffDef.BuffIndex) : false;

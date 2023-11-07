@@ -70,6 +70,7 @@ MonoBehaviour:
   hitSelf: 1
   explosionRadius: 5
   explosionDamageCoefficient: 1
+  explosionProcCoefficient: 1
   damageType: 8
   falloffCalculation: 1
 --- !u!114 &128125758933950745

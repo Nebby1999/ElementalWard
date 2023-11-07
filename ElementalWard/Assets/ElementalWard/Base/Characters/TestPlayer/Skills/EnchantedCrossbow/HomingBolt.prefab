@@ -67,8 +67,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxImpacts: 1
-  defaultDamageType: 0
-  defaultDamageCoefficient: 1
+  damageType: 0
+  damageCoefficient: 1
+  procCoefficient: 1
 --- !u!114 &4867083786280728268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +143,7 @@ MonoBehaviour:
     y: 0
     z: 0
   rotationSpeed: 60
+  increaseSpeedWithTarget: 1
   rpsToAddWithTarget: 10
 --- !u!54 &7512247859305194354
 Rigidbody:

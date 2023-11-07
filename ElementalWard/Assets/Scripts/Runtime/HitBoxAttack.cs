@@ -13,6 +13,7 @@ namespace ElementalWard
         public BodyInfo attacker;
         public DamageType damageType;
         public float baseDamage;
+        public float procCoefficient;
         public HitBoxGroup hitBoxGroup;
 
         private static List<Hit> _hitsBuffer = new List<Hit>(256);
@@ -94,6 +95,7 @@ namespace ElementalWard
                     attackerBody = attacker,
                     damage = baseDamage,
                     damageType = damageType,
+                    procCoefficient = procCoefficient,
                 };
                 healthComponent.TakeDamage(damageInfo);
             }

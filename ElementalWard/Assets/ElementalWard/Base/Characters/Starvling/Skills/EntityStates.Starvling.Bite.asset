@@ -33,3 +33,7 @@ MonoBehaviour:
       serializedValue:
         stringValue: Bite
         objectReferenceValue: {fileID: 0}
+    - fieldName: procCoefficient
+      serializedValue:
+        stringValue: 1
+        objectReferenceValue: {fileID: 0}

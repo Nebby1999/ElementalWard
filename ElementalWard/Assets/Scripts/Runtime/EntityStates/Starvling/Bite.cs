@@ -5,6 +5,7 @@ namespace EntityStates.Starvling
     public class Bite : BaseCharacterState
     {
         public static float damageCoefficient;
+        public static float procCoefficient;
         public static float baseDuration;
         public static string animationName;
         public static string hitboxGroupName;
@@ -33,7 +34,8 @@ namespace EntityStates.Starvling
             {
                 attacker = new BodyInfo(GameObject),
                 baseDamage = _damage,
-                hitBoxGroup = _hitboxGroup
+                hitBoxGroup = _hitboxGroup,
+                procCoefficient = procCoefficient
             };
 
             _characterAnimEvents = GetAnimationEvents();

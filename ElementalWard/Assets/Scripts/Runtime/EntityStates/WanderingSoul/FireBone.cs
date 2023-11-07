@@ -11,9 +11,6 @@ namespace EntityStates.WanderingSoul.Weapon
 
         [Header("Projectile Settings")]
         public static GameObject projectilePrefab;
-        public static float movementSpeed;
-        public static float projectileLifetime;
-        public static float damageCoefficient;
 
         private float _duration;
         private bool _hasFired;
@@ -61,12 +58,8 @@ namespace EntityStates.WanderingSoul.Weapon
             {
                 instantiationPosition = _aimRay.origin,
                 instantiationRotation = Quaternion.LookRotation(_aimRay.direction, Vector3.up),
-                damageType = DamageType.None,
                 owner = new BodyInfo(GameObject),
             };
-            projectileInfo.AddProperty(CommonProjectileProperties.MovementSpeed, movementSpeed);
-            projectileInfo.AddProperty(CommonProjectileProperties.ProjectileLifeTime, projectileLifetime);
-            projectileInfo.AddProperty(CommonProjectileProperties.DamageCoefficient, damageCoefficient);
 
             ProjectileManager.SpawnProjectile(projectilePrefab, projectileInfo);
         }

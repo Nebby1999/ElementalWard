@@ -7,16 +7,15 @@ namespace ElementalWard.Projectiles
     public class ProjectileDamageSimple : MonoBehaviour, IProjectileImpact, IProjectileInitialization
     {
         public int maxImpacts = 1;
-        public DamageType defaultDamageType;
-        public float defaultDamageCoefficient;
+        public DamageType damageType;
+        public float damageCoefficient;
+        public float procCoefficient;
         private BodyInfo _owner;
         private int impacts = 0;
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
-            defaultDamageType = fireProjectileInfo.damageType;
-            fireProjectileInfo.TryGetProperty(CommonProjectileProperties.DamageCoefficient, out defaultDamageCoefficient);
-
             _owner = fireProjectileInfo.owner;
+            fireProjectileInfo.TryGetProperty(ProjectileProperties.DamageCoefficientOverride, out damageCoefficient, damageCoefficient);
             var renderer = GetComponentInChildren<Renderer>();
             if (renderer && renderer.material)
                 renderer.material.color = _owner.ElementDef?.elementColor ?? Color.white;
@@ -49,8 +48,9 @@ namespace ElementalWard.Projectiles
             var damageInfo = new DamageInfo
             {
                 attackerBody = _owner,
-                damage = _owner.characterBody.Damage * defaultDamageCoefficient,
-                damageType = defaultDamageType,
+                damage = _owner.characterBody.Damage * damageCoefficient,
+                procCoefficient = procCoefficient,
+                damageType = damageType,
             };
             damageInfo.damage *= DamageInfo.GetDamageModifier(hurtBox);
             healthComponent.TakeDamage(damageInfo);

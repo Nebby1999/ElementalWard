@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public class ElementalAffinityController : MonoBehaviour, IElementProvider, IOnIncomingDamage, IBodyStatModifier
+    public class ElementalAffinityController : MonoBehaviour, IElementProvider, IOnIncomingDamage, IOnDamageDealt, IBodyStatModifier
     {
         public ElementDef ElementDef { get => _elementDef; set => _elementDef = value; }
         [SerializeField]private ElementDef _elementDef;
@@ -31,6 +31,14 @@ namespace ElementalWard
                 return;
 
             _elementDef.ElementalInteraction.ModifyStatArguments(args, body);
+        }
+
+        public void OnDamageDealt(DamageReport report)
+        {
+            if (!_elementDef)
+                return;
+
+            _elementDef.ElementalInteraction.OnElementalDamageDealt(report);
         }
     }
 }

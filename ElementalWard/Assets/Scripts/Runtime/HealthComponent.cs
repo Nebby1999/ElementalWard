@@ -105,6 +105,7 @@ namespace ElementalWard
                 damageType = damageInfo.damageType,
                 attackerBody = damageInfo.attackerBody,
                 victimBody = new BodyInfo(gameObject),
+                procCoefficient = damageInfo.procCoefficient,
                 damage = damageInfo.damage,
             };
             report.damageInfo = damageInfo;

@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: EntityStates.Player.SwingSwordState
+  m_Name: EntityStates.Player.Weapon.Crossbow.FireBolt
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwingSwordState, ElementalWard,
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Crossbow.FireBolt, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: damageCoefficient
+    - fieldName: projectilePrefab
+      serializedValue:
+        stringValue: 
+        objectReferenceValue: {fileID: 746857431103575078, guid: e4257d03ff5bfba46923e79c7094140b,
+          type: 3}
+    - fieldName: baseDuration
       serializedValue:
         stringValue: 1
-        objectReferenceValue: {fileID: 0}
-    - fieldName: hitBoxGroup
-      serializedValue:
-        stringValue: Sword
         objectReferenceValue: {fileID: 0}

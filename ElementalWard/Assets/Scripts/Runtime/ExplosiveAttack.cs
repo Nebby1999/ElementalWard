@@ -10,6 +10,7 @@ namespace ElementalWard
         public BodyInfo attacker;
         public DamageType damageType;
         public float baseDamage;
+        public float baseProcCoefficient;
         public Vector3 explosionOrigin;
         public float explosionRadius;
         public bool hitSelf;
@@ -79,13 +80,14 @@ namespace ElementalWard
                     continue;
 
                 float distance = Mathf.Sqrt(hit.distanceSqr);
-                float damageCoefFromFalloff = falloffCalculation(distance, explosionRadius);
+                float coefficientFromFalloff = falloffCalculation(distance, explosionRadius);
                 HealthComponent healthComponent = hit.hurtBox.HealthComponent;
 
                 DamageInfo damageInfo = new DamageInfo
                 {
                     attackerBody = attacker,
-                    damage = baseDamage * damageCoefFromFalloff,
+                    damage = baseDamage * coefficientFromFalloff,
+                    procCoefficient = baseProcCoefficient * coefficientFromFalloff,
                     damageType = damageType,
                 };
                 healthComponent.TakeDamage(damageInfo);

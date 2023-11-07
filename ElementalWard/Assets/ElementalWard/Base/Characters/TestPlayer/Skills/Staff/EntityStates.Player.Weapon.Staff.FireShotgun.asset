@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: EntityStates.Player.FireShotgun
+  m_Name: EntityStates.Player.Weapon.Staff.FireShotgun
   m_EditorClassIdentifier: 
   targetType:
     _assemblyQualifiedName: EntityStates.Player.Weapon.Staff.FireShotgun, ElementalWard,
@@ -38,3 +38,7 @@ MonoBehaviour:
         stringValue: 
         objectReferenceValue: {fileID: 182470382763900211, guid: dc563c421bdb1bb4780b1ee355b6376b,
           type: 3}
+    - fieldName: procCoefficient
+      serializedValue:
+        stringValue: 0.5
+        objectReferenceValue: {fileID: 0}

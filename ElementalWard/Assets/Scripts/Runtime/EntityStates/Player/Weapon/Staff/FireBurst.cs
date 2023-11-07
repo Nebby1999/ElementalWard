@@ -9,6 +9,7 @@ namespace EntityStates.Player.Weapon.Staff
     {
         public static int fireCount;
         public static float damageCoefficient;
+        public static float procCoefficient;
         public static float baseDuration;
         public static float bulletRadius;
         public static float bulletRange;
@@ -28,6 +29,7 @@ namespace EntityStates.Player.Weapon.Staff
             {
                 attacker = new BodyInfo(GameObject),
                 baseDamage = damageStat * damageCoefficient,
+                procCoefficient = procCoefficient,
                 falloffCalculation = HitscanAttack.BulletFalloffCalculation,
                 maxSpread = 0,
                 minSpread = 0,

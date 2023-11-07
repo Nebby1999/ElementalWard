@@ -6,6 +6,7 @@ namespace EntityStates.Player.Weapon.Sword
     public class SwordSpinState : BaseCharacterState
     {
         public static float damageCoefficient;
+        public static float procCoefficient;
         public static float spinRadius;
 
         private ExplosiveAttack attack;
@@ -27,6 +28,7 @@ namespace EntityStates.Player.Weapon.Sword
             {
                 attacker = new BodyInfo(GameObject),
                 baseDamage = damageStat * damageCoefficient,
+                baseProcCoefficient = procCoefficient,
                 explosionOrigin = Transform.position,
                 explosionRadius = spinRadius,
                 hitSelf = false,

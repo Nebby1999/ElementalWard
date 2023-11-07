@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: EntityStates.TestWeaponStateFire
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.TestWeaponStateFire, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: 
   fieldCollection:
     serializedFields:
     - fieldName: tracerFX

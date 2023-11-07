@@ -10,27 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: EntityStates.Player.FireBolt
+  m_Name: EntityStates.Player.Weapon.Crossbow.ChargeExplodingBolt
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.Weapon.Crossbow.FireBolt, ElementalWard,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Crossbow.ChargeExplodingBolt,
+      ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: projectilePrefab
+    - fieldName: baseDamageCoefficient
       serializedValue:
-        stringValue: 
-        objectReferenceValue: {fileID: 746857431103575078, guid: e4257d03ff5bfba46923e79c7094140b,
-          type: 3}
-    - fieldName: projectileVelocity
-      serializedValue:
-        stringValue: 20
+        stringValue: 2
         objectReferenceValue: {fileID: 0}
-    - fieldName: baseDuration
+    - fieldName: maxDamageCoefficient
       serializedValue:
-        stringValue: 1
+        stringValue: 6
         objectReferenceValue: {fileID: 0}
-    - fieldName: damageCoefficient
+    - fieldName: baseDamageCoefficientGain
       serializedValue:
-        stringValue: 1
+        stringValue: 1.5
+        objectReferenceValue: {fileID: 0}
+    - fieldName: graceTime
+      serializedValue:
+        stringValue: 2
         objectReferenceValue: {fileID: 0}

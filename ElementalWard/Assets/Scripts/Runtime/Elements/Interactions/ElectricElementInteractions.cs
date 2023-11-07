@@ -39,5 +39,9 @@ namespace ElementalWard
             args.movementSpeedMultAdd += 0.25f;
             args.attackSpeedMultAdd += 0.25f;
         }
+
+        public void OnElementalDamageDealt(DamageReport damageReport)
+        {
+        }
     }
 }

@@ -10,26 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: EntityStates.Player.ChargeExplodingBolt
+  m_Name: EntityStates.Player.Weapon.Sword.SwingSwordState
   m_EditorClassIdentifier: 
   targetType:
-    _assemblyQualifiedName: EntityStates.Player.Weapon.Crossbow.ChargeExplodingBolt,
-      ElementalWard, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.Player.Weapon.Sword.SwingSwordState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: baseDamageCoefficient
+    - fieldName: damageCoefficient
       serializedValue:
-        stringValue: 2
+        stringValue: 1
         objectReferenceValue: {fileID: 0}
-    - fieldName: maxDamageCoefficient
+    - fieldName: hitBoxGroup
       serializedValue:
-        stringValue: 6
+        stringValue: Sword
         objectReferenceValue: {fileID: 0}
-    - fieldName: baseDamageCoefficientGain
+    - fieldName: procCoefficient
       serializedValue:
-        stringValue: 1.5
-        objectReferenceValue: {fileID: 0}
-    - fieldName: graceTime
-      serializedValue:
-        stringValue: 2
+        stringValue: 1
         objectReferenceValue: {fileID: 0}

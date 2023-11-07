@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace ElementalWard
@@ -15,7 +16,7 @@ namespace ElementalWard
         /// <summary>
         /// The object that recieves the dot, this is usually set automatically by the Buffcontroller
         /// </summary>
-        public BodyInfo victim;
+        public BodyInfo? victim;
         /// <summary>
         /// The dotdef to use
         /// </summary>
@@ -63,7 +64,22 @@ namespace ElementalWard
         /// <summary>
         /// How many stacks of this DOT the entity has
         /// </summary>
-        public int DotStacks { get; internal set; }
+        public int DotStacks
+        {
+            get
+            {
+                return _dotStacks;
+            }
+            internal set
+            {
+                if(_dotStacks != value)
+                {
+                    _dotStacks = value;
+                    OnDotStacksChanged();
+                }
+            }
+        }
+        private int _dotStacks;
         /// <summary>
         /// The info that caused this DotBehaviour to be applied
         /// </summary>
@@ -82,6 +98,12 @@ namespace ElementalWard
         /// The age of the dot behaviour, incremented automatically by the BuffController's Update method
         /// </summary>
         public float age;
+
+        protected Transform _victimTransform;
+        protected HealthComponent _victimHealthComponent;
+        protected CharacterBody _victimCharacterBody;
+        protected float _damagePerTick;
+        protected float _stopwatch;
         internal IEnumerator Initialize()
         {
             if (Initialized)
@@ -99,7 +121,13 @@ namespace ElementalWard
         /// Called whenever this DOT behaviour is inflicted onto a BuffController, may be called multiple times whenever a new stack is added or the timer gets refreshed
         /// </summary>
         /// <param name="dotInfo"></param>
-        public virtual void OnInflicted(DotInflictInfo dotInfo) => Info = dotInfo;
+        public virtual void OnInflicted(DotInflictInfo dotInfo)
+        {
+            Info = dotInfo;
+            _victimTransform = dotInfo.victim.Value.gameObject.transform;
+            dotInfo.victim.Value.TryGetComponent(out _victimHealthComponent);
+            _victimCharacterBody = dotInfo.victim.Value.characterBody;
+        }
         /// <summary>
         /// Called when the BuffController removes this behaviour
         /// </summary>
@@ -113,6 +141,21 @@ namespace ElementalWard
         public virtual void OnFixedUpdate(float fixedDeltaTime)
         {
             fixedAge += fixedDeltaTime;
+            _stopwatch += fixedDeltaTime;
+            if(_stopwatch > TiedDotDef.secondsPerTick)
+            {
+                _stopwatch -= TiedDotDef.secondsPerTick;
+                if(_victimHealthComponent)
+                {
+                    _victimHealthComponent.TakeDamage(new DamageInfo
+                    {
+                        damageType = DamageType.DOT,
+                        attackerBody = Info.inflictor,
+                        damage = _damagePerTick,
+                        procCoefficient = Info.procCoefficient
+                    });
+                }
+            }
         }
         /// <summary>
         /// Called by <see cref="BuffController"/>'s FixedUpdate method.
@@ -122,6 +165,13 @@ namespace ElementalWard
         public virtual void OnUpdate(float deltaTime)
         {
             age += deltaTime;
+        }
+
+        public virtual void OnDotStacksChanged()
+        {
+            var inflictorBody = Info.inflictor.characterBody;
+            var totalDamage = (inflictorBody ? inflictorBody.Damage : Info.customDamageSource) * TiedDotDef.damageCoefficient;
+            _damagePerTick = (totalDamage * DotStacks) / (TiedDotDef.secondsPerTick * Info.fixedAgeDuration);
         }
 
         public static void Destroy(GameObject obj)

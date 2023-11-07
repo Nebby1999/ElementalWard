@@ -8,6 +8,7 @@ namespace EntityStates.Player.Weapon.Staff
         public static float bulletRadius;
         public static float bulletRange;
         public static float damageCoefficient;
+        public static float procCoefficient;
         public static float baseSpread;
         public static GameObject tracerPrefab;
 
@@ -39,7 +40,8 @@ namespace EntityStates.Player.Weapon.Staff
                 raycastLength = bulletRange,
                 raycastRadius = bulletRadius,
                 tracerData = data,
-                tracerEffect = tracerPrefab
+                tracerEffect = tracerPrefab,
+                procCoefficient = procCoefficient
             }.Fire();
             outer.SetNextStateToMain();
         }

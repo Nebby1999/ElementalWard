@@ -6,6 +6,7 @@ namespace EntityStates.Player.Weapon.Sword
     public class SwordPlungeState : BaseCharacterState
     {
         public static float damageCoefficient;
+        public static float procCoefficient;
         public static float radius;
 
         private float origGravityCoefficient;
@@ -26,6 +27,7 @@ namespace EntityStates.Player.Weapon.Sword
             {
                 attacker = new BodyInfo(GameObject),
                 baseDamage = damageStat * damageCoefficient,
+                baseProcCoefficient = procCoefficient,
                 explosionRadius = radius,
                 falloffCalculation = ExplosiveAttack.SweetspotFalloffCalculation,
                 hitSelf = false,

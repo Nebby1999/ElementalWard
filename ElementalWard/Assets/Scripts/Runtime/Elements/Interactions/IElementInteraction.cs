@@ -10,5 +10,7 @@ namespace ElementalWard
         public IEnumerator LoadAssetsAsync();
 		public void ModifyIncomingDamage(DamageInfo damageInfo, GameObject self);
         public void ModifyStatArguments(StatModifierArgs args, CharacterBody body);
-	}
+        public void OnElementalDamageDealt(DamageReport damageReport);
+
+    }
 }

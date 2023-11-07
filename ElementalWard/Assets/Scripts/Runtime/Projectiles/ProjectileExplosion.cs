@@ -10,6 +10,7 @@ namespace ElementalWard.Projectiles
         public bool hitSelf;
         public float explosionRadius;
         public float explosionDamageCoefficient;
+        public float explosionProcCoefficient;
         public DamageType damageType;
         public ExplosiveAttack.DefaultFalloffCalculationMethod falloffCalculation;
 
@@ -55,6 +56,7 @@ namespace ElementalWard.Projectiles
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
             owner = fireProjectileInfo.owner;
+            fireProjectileInfo.TryGetProperty(ProjectileProperties.DamageCoefficientOverride, out explosionDamageCoefficient, explosionDamageCoefficient);
         }
 
         public void OnImpact(ProjectileImpactInfo impactInfo)

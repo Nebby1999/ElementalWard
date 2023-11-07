@@ -20,7 +20,7 @@ namespace EntityStates.Player.Weapon.Crossbow
                 falloffCalculation = HitscanAttack.DefaultFalloffCalculation,
                 hitCallback = HitCallback,
                 damageType = DamageType.None,
-                baseDamage = damageStat * charge,
+                baseDamage = 0,
                 maxSpread = 0,
                 minSpread = 0,
                 spreadYawScale = 0,
@@ -44,7 +44,6 @@ namespace EntityStates.Player.Weapon.Crossbow
                     instantiationPosition = hit.hitPoint,
                     instantiationRotation = Quaternion.LookRotation(hit.surfaceNormal, hit.entityObject.transform.up),
                 };
-                info.AddProperty("normalValue", hit.surfaceNormal);
                 ProjectileManager.SpawnProjectile(boltPrefab, info);
             }
             return true;

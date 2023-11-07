@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace ElementalWard.Projectiles
 {
-    [RequireComponent(typeof(Rigidbody))]
-    public class ProjectileSimple : MonoBehaviour, IProjectileInitialization
+    [RequireComponent(typeof(Rigidbody), typeof(ProjectileController))]
+    public class ProjectileSimple : MonoBehaviour
     {
         public float projectileLifetime = 5;
         public GameObject lifetimeExpiredEffect;
@@ -67,17 +67,6 @@ namespace ElementalWard.Projectiles
             else
             {
                 Rigidbody.velocity = speed * transform.forward;
-            }
-        }
-        public void Initialize(FireProjectileInfo fireProjectileInfo)
-        {
-            if(fireProjectileInfo.TryGetProperty<float>(CommonProjectileProperties.MovementSpeed, out var desiredForwardSpeed))
-            {
-                this.desiredForwardSpeed = desiredForwardSpeed;
-            }
-            if(fireProjectileInfo.TryGetProperty<float>(CommonProjectileProperties.ProjectileLifeTime, out var projectileLifetime))
-            {
-                this.projectileLifetime = projectileLifetime;
             }
         }
     }

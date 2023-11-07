@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8244a21468592354397195f39b7033c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _elementDef: {fileID: 0}
+  _elementDef: {fileID: 11400000, guid: 9ce85ac5506aef942beb4eeedb885921, type: 2}
 --- !u!114 &3169269267638083133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +765,7 @@ MonoBehaviour:
   groupName: Sword
   hitboxes:
   - {fileID: 2630238930534475826}
+  updateRotation: 0
 --- !u!1 &7475562833050368859
 GameObject:
   m_ObjectHideFlags: 0
