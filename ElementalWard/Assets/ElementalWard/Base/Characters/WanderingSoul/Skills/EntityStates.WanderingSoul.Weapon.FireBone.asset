@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
-  m_Name: FireBone
+  m_Name: EntityStates.WanderingSoul.Weapon.FireBone
   m_EditorClassIdentifier: 
   targetType:
     _assemblyQualifiedName: EntityStates.WanderingSoul.Weapon.FireBone, ElementalWard,
@@ -24,15 +24,11 @@ MonoBehaviour:
           type: 3}
     - fieldName: baseDuration
       serializedValue:
-        stringValue: 2
+        stringValue: 0.385
         objectReferenceValue: {fileID: 0}
     - fieldName: animationName
       serializedValue:
         stringValue: Attack
-        objectReferenceValue: {fileID: 0}
-    - fieldName: playbackRateParam
-      serializedValue:
-        stringValue: attackSpeed
         objectReferenceValue: {fileID: 0}
     - fieldName: movementSpeed
       serializedValue:

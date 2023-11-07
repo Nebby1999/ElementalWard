@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -80,7 +80,7 @@ ScriptedImporter:
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
-    addSortingGroup: 1
+    addSortingGroup: 0
     addShadowCasters: 0
   asepriteImporterSettings:
     fileImportMode: 1
@@ -92,10 +92,10 @@ ScriptedImporter:
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
-    addSortingGroup: 1
+    addSortingGroup: 0
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638349065408074246
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: WanderingSoulProjectile
     originalName: 
-    pivot: {x: 0.44827586, y: -0.8695652}
+    pivot: {x: 0.5, y: -0.8333334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 87
-      height: 46
+      x: 44
+      y: 28
+      width: 14
+      height: 12
     spriteID: 88150473880cd9c4faada458faddab51
     spriteBone: []
     spriteOutline: []
@@ -138,7 +138,87 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    uvTransform: {x: 44, y: 28}
+  - name: WanderingSoulProjectile_Frame_1
+    originalName: 
+    pivot: {x: 0.53333336, y: -0.75}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 48
+      width: 30
+      height: 12
+    spriteID: 5b2d0778c1fcc7a4aa8cf7bf2cf29cea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 48}
+  - name: WanderingSoulProjectile_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 32
+      height: 12
+    spriteID: 28d91cdbcf4ab4d4ab232fb412911f0f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28}
+  - name: WanderingSoulProjectile_Frame_3
+    originalName: 
+    pivot: {x: 0.516129, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 31
+      height: 16
+    spriteID: baf4ef08066e29242ab28efc4375f2f3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: WanderingSoulProjectile_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.8333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 42
+      y: 48
+      width: 14
+      height: 12
+    spriteID: 08aa367ad916e964eb0649b39916d683
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 42, y: 48}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,17 +228,85 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: WanderingSoulProjectile
+    - name: WanderingSoulProjectile_Frame_0
       frameIndex: 0
       cellRect:
         x: 9
-        y: 40
-        width: 87
-        height: 46
+        y: 10
+        width: 14
+        height: 12
       spriteId: 88150473880cd9c4faada458faddab51
+    - name: WanderingSoulProjectile_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 9
+        width: 30
+        height: 12
+      spriteId: 5b2d0778c1fcc7a4aa8cf7bf2cf29cea
+    - name: WanderingSoulProjectile_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 10
+        width: 32
+        height: 12
+      spriteId: 28d91cdbcf4ab4d4ab232fb412911f0f
+    - name: WanderingSoulProjectile_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 8
+        width: 31
+        height: 16
+      spriteId: baf4ef08066e29242ab28efc4375f2f3
+    - name: WanderingSoulProjectile_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 9
+        y: 10
+        width: 14
+        height: 12
+      spriteId: 08aa367ad916e964eb0649b39916d683
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 96, y: 96}
+  canvasSize: {x: 32, y: 32}

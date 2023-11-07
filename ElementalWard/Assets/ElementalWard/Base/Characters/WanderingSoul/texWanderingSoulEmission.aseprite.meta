@@ -1,0 +1,1432 @@
+fileFormatVersion: 2
+guid: da016e1265975d549a05d00b62a5cd02
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638349054002154529
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: texWanderingSoulEmission_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.4054054}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 56
+      width: 52
+      height: 37
+    spriteID: 448faefb3dfda5048af98d7619dbc03b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 56}
+  - name: texWanderingSoulEmission_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.36842105}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 305
+      y: 4
+      width: 52
+      height: 38
+    spriteID: a55858accbf521d4f94ce5a5ffe4f760
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 305, y: 4}
+  - name: texWanderingSoulEmission_Frame_2
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.34210527}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 347
+      y: 201
+      width: 36
+      height: 38
+    spriteID: f5c134b66a0037843ab697fbe70e5646
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 347, y: 201}
+  - name: texWanderingSoulEmission_Frame_3
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.30769232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 215
+      y: 201
+      width: 36
+      height: 39
+    spriteID: ba6968ed7464fc9418d4c6a9020569cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 215, y: 201}
+  - name: texWanderingSoulEmission_Frame_4
+    originalName: 
+    pivot: {x: 0.47222224, y: -0.35135135}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 180
+      y: 248
+      width: 36
+      height: 37
+    spriteID: 7c2bd22c9cd7e774db80c3df6bbde3bd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 180, y: 248}
+  - name: texWanderingSoulEmission_Frame_5
+    originalName: 
+    pivot: {x: 0.47222224, y: -0.31578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 391
+      y: 201
+      width: 36
+      height: 38
+    spriteID: 591a75f00e5362746b4ca9fc60ad7047
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 391, y: 201}
+  - name: texWanderingSoulEmission_Frame_6
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.3}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 213
+      y: 152
+      width: 44
+      height: 40
+    spriteID: d14b758aa9d38364fb8517efdd6b9886
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 213, y: 152}
+  - name: texWanderingSoulEmission_Frame_7
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.26829267}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 152
+      width: 44
+      height: 41
+    spriteID: baceb289b8ba5cf4aa214d409e166b47
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 152}
+  - name: texWanderingSoulEmission_Frame_8
+    originalName: 
+    pivot: {x: 0.4888889, y: -0.31578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 201
+      width: 45
+      height: 38
+    spriteID: c4f257408e28bf84ea31b190507c2876
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 201}
+  - name: texWanderingSoulEmission_Frame_9
+    originalName: 
+    pivot: {x: 0.4888889, y: -0.2820513}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 152
+      width: 45
+      height: 39
+    spriteID: 66b64e3a1b191844b87fdfc9ddd2603d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 317, y: 152}
+  - name: texWanderingSoulEmission_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.4054054}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 116
+      y: 56
+      width: 52
+      height: 37
+    spriteID: 97a89dc94103edd469f9e5a72b8ad481
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 116, y: 56}
+  - name: texWanderingSoulEmission_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.36842105}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 365
+      y: 4
+      width: 52
+      height: 38
+    spriteID: 6042976f009fc8d41abe77c4d423e878
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 365, y: 4}
+  - name: texWanderingSoulEmission_Frame_12
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.34210527}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 435
+      y: 201
+      width: 36
+      height: 38
+    spriteID: 4a6d6d065b0ec3e44bebdd038d52f236
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 435, y: 201}
+  - name: texWanderingSoulEmission_Frame_13
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.30769232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 259
+      y: 201
+      width: 36
+      height: 39
+    spriteID: f927bc50e21330549b9e12d2d2770f58
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 259, y: 201}
+  - name: texWanderingSoulEmission_Frame_14
+    originalName: 
+    pivot: {x: 0.47222224, y: -0.35135135}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 248
+      width: 36
+      height: 37
+    spriteID: e6f3c35fb3b664f4097128ad00e6df56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 224, y: 248}
+  - name: texWanderingSoulEmission_Frame_15
+    originalName: 
+    pivot: {x: 0.47222224, y: -0.31578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 92
+      y: 248
+      width: 36
+      height: 38
+    spriteID: 4ff34c11ae07fcc40af5ad4b8d04be70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 92, y: 248}
+  - name: texWanderingSoulEmission_Frame_16
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.3}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 265
+      y: 152
+      width: 44
+      height: 40
+    spriteID: c8fa5688d4269fa4cb4c7849d018439c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 265, y: 152}
+  - name: texWanderingSoulEmission_Frame_17
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.26829267}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
+      y: 152
+      width: 44
+      height: 41
+    spriteID: 7b46c2a9c5631d542a885459fe79cf7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 56, y: 152}
+  - name: texWanderingSoulEmission_Frame_18
+    originalName: 
+    pivot: {x: 0.4888889, y: -0.31578946}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 109
+      y: 201
+      width: 45
+      height: 38
+    spriteID: 9b1f194f855605740aafc914eee7504c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 109, y: 201}
+  - name: texWanderingSoulEmission_Frame_19
+    originalName: 
+    pivot: {x: 0.4888889, y: -0.2820513}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 370
+      y: 152
+      width: 45
+      height: 39
+    spriteID: 0ab2f742e9c3e7d4b8a2a4b9858601e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 370, y: 152}
+  - name: texWanderingSoulEmission_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: -0.44444445}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 414
+      y: 56
+      width: 52
+      height: 36
+    spriteID: c53a4c13de0458349b4091d29521694e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 414, y: 56}
+  - name: texWanderingSoulEmission_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: -0.34210527}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 425
+      y: 4
+      width: 52
+      height: 38
+    spriteID: f8494db879cc5c744bba4232abe7469f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 425, y: 4}
+  - name: texWanderingSoulEmission_Frame_22
+    originalName: 
+    pivot: {x: 0.5, y: -0.2195122}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 125
+      y: 4
+      width: 52
+      height: 41
+    spriteID: 914fb01f427e7b4418189238717c25ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 125, y: 4}
+  - name: texWanderingSoulEmission_Frame_23
+    originalName: 
+    pivot: {x: 0.44444445, y: -0.41666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 268
+      y: 248
+      width: 36
+      height: 36
+    spriteID: 508d131d480336d4580b429f682ea76e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 268, y: 248}
+  - name: texWanderingSoulEmission_Frame_24
+    originalName: 
+    pivot: {x: 0.47222224, y: -0.2820513}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 303
+      y: 201
+      width: 36
+      height: 39
+    spriteID: 184e3c608b7b17642b4a8d24b72398f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 303, y: 201}
+  - name: texWanderingSoulEmission_Frame_25
+    originalName: 
+    pivot: {x: 0.5277778, y: -0.13953489}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 248
+      width: 36
+      height: 43
+    spriteID: dd0d180741fc3bd41a5998288e7720e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 248}
+  - name: texWanderingSoulEmission_Frame_26
+    originalName: 
+    pivot: {x: 0.47222224, y: -0.3888889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 312
+      y: 248
+      width: 36
+      height: 36
+    spriteID: e097652e6f2c8aa4ab1cbc356dc89414
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 312, y: 248}
+  - name: texWanderingSoulEmission_Frame_27
+    originalName: 
+    pivot: {x: 0.5, y: -0.28947368}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 136
+      y: 248
+      width: 36
+      height: 38
+    spriteID: d89538de62732a644be653bc092c234b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 136, y: 248}
+  - name: texWanderingSoulEmission_Frame_28
+    originalName: 
+    pivot: {x: 0.5277778, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 48
+      y: 248
+      width: 36
+      height: 42
+    spriteID: 5df8ac71793031c41aac4339c51a2fb5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 48, y: 248}
+  - name: texWanderingSoulEmission_Frame_29
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 201
+      width: 44
+      height: 39
+    spriteID: 30be886fd7f16524bad230689e65dbd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 201}
+  - name: texWanderingSoulEmission_Frame_30
+    originalName: 
+    pivot: {x: 0.5227273, y: -0.24390243}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 108
+      y: 152
+      width: 44
+      height: 41
+    spriteID: 71973a90ff7f5eb41a5ac56fde4a2e1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 108, y: 152}
+  - name: texWanderingSoulEmission_Frame_31
+    originalName: 
+    pivot: {x: 0.5, y: -0.13636364}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 56
+      width: 44
+      height: 44
+    spriteID: 9aa45a74dfd3f1d44957e69cb5c907fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 56}
+  - name: texWanderingSoulEmission_Frame_32
+    originalName: 
+    pivot: {x: 0.4888889, y: -0.3888889}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 162
+      y: 201
+      width: 45
+      height: 36
+    spriteID: d8b17f30e8042f24ea601539346a53b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 162, y: 201}
+  - name: texWanderingSoulEmission_Frame_33
+    originalName: 
+    pivot: {x: 0.4888889, y: -0.25641027}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 423
+      y: 152
+      width: 45
+      height: 39
+    spriteID: 8d26a6ccdd06b934b94ad5f63673e29f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 423, y: 152}
+  - name: texWanderingSoulEmission_Frame_34
+    originalName: 
+    pivot: {x: 0.4888889, y: -0.175}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 152
+      width: 45
+      height: 40
+    spriteID: 53591bbdc6b5c7e44bcce1609f17a9dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 160, y: 152}
+  - name: texWanderingSoulEmission_Frame_35
+    originalName: 
+    pivot: {x: 0.5, y: -0.4054054}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 56
+      width: 52
+      height: 37
+    spriteID: 92b4429303e840b42861dacdb147361b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 176, y: 56}
+  - name: texWanderingSoulEmission_Frame_36
+    originalName: 
+    pivot: {x: 0.5, y: -0.41666666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 108
+      width: 52
+      height: 36
+    spriteID: 369f5b7a87e77d348a1a2afeb00e854d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 108}
+  - name: texWanderingSoulEmission_Frame_37
+    originalName: 
+    pivot: {x: 0.5, y: -0.3783784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 236
+      y: 56
+      width: 52
+      height: 37
+    spriteID: 01cc4dca57b243c49982cf76d5d376ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 236, y: 56}
+  - name: texWanderingSoulEmission_Frame_38
+    originalName: 
+    pivot: {x: 0.5, y: -0.275}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 185
+      y: 4
+      width: 52
+      height: 40
+    spriteID: 19376e9922ff1f6458d91ab5d5a42073
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 185, y: 4}
+  - name: texWanderingSoulEmission_Frame_39
+    originalName: 
+    pivot: {x: 0.509434, y: -0.16666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 4
+      width: 53
+      height: 42
+    spriteID: 2aa46668802cac44c8094e240236a1d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 4}
+  - name: texWanderingSoulEmission_Frame_40
+    originalName: 
+    pivot: {x: 0.5192308, y: -0.045454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 52
+      height: 44
+    spriteID: f07facee3ca5b7e49905bac3054476a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: texWanderingSoulEmission_Frame_41
+    originalName: 
+    pivot: {x: 0.5192308, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 245
+      y: 4
+      width: 52
+      height: 40
+    spriteID: 943e6e962f062914bab48b6fffdbbd00
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 245, y: 4}
+  - name: texWanderingSoulEmission_Frame_42
+    originalName: 
+    pivot: {x: 0.5192308, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 108
+      width: 52
+      height: 36
+    spriteID: cd453279bda1f6d419a5a4798b2d206a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 64, y: 108}
+  - name: texWanderingSoulEmission_Frame_43
+    originalName: 
+    pivot: {x: 0.5686275, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 56
+      width: 51
+      height: 37
+    spriteID: 826768e9e253c2c43975b5d0a9e6a422
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 296, y: 56}
+  - name: texWanderingSoulEmission_Frame_44
+    originalName: 
+    pivot: {x: 0.5686275, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 355
+      y: 56
+      width: 51
+      height: 37
+    spriteID: f692f8be8c2a87546b0dfe0cb792b538
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 355, y: 56}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1460444950
+    name: texWanderingSoulEmission
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: texWanderingSoulEmission_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 6
+        y: 15
+        width: 52
+        height: 37
+      spriteId: 448faefb3dfda5048af98d7619dbc03b
+    - name: texWanderingSoulEmission_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 6
+        y: 14
+        width: 52
+        height: 38
+      spriteId: a55858accbf521d4f94ce5a5ffe4f760
+    - name: texWanderingSoulEmission_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 16
+        y: 13
+        width: 36
+        height: 38
+      spriteId: f5c134b66a0037843ab697fbe70e5646
+    - name: texWanderingSoulEmission_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 16
+        y: 12
+        width: 36
+        height: 39
+      spriteId: ba6968ed7464fc9418d4c6a9020569cc
+    - name: texWanderingSoulEmission_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 15
+        y: 13
+        width: 36
+        height: 37
+      spriteId: 7c2bd22c9cd7e774db80c3df6bbde3bd
+    - name: texWanderingSoulEmission_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 15
+        y: 12
+        width: 36
+        height: 38
+      spriteId: 591a75f00e5362746b4ca9fc60ad7047
+    - name: texWanderingSoulEmission_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 8
+        y: 12
+        width: 44
+        height: 40
+      spriteId: d14b758aa9d38364fb8517efdd6b9886
+    - name: texWanderingSoulEmission_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 8
+        y: 11
+        width: 44
+        height: 41
+      spriteId: baceb289b8ba5cf4aa214d409e166b47
+    - name: texWanderingSoulEmission_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 10
+        y: 12
+        width: 45
+        height: 38
+      spriteId: c4f257408e28bf84ea31b190507c2876
+    - name: texWanderingSoulEmission_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 10
+        y: 11
+        width: 45
+        height: 39
+      spriteId: 66b64e3a1b191844b87fdfc9ddd2603d
+    - name: texWanderingSoulEmission_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 6
+        y: 15
+        width: 52
+        height: 37
+      spriteId: 97a89dc94103edd469f9e5a72b8ad481
+    - name: texWanderingSoulEmission_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 6
+        y: 14
+        width: 52
+        height: 38
+      spriteId: 6042976f009fc8d41abe77c4d423e878
+    - name: texWanderingSoulEmission_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 16
+        y: 13
+        width: 36
+        height: 38
+      spriteId: 4a6d6d065b0ec3e44bebdd038d52f236
+    - name: texWanderingSoulEmission_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 16
+        y: 12
+        width: 36
+        height: 39
+      spriteId: f927bc50e21330549b9e12d2d2770f58
+    - name: texWanderingSoulEmission_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 15
+        y: 13
+        width: 36
+        height: 37
+      spriteId: e6f3c35fb3b664f4097128ad00e6df56
+    - name: texWanderingSoulEmission_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 15
+        y: 12
+        width: 36
+        height: 38
+      spriteId: 4ff34c11ae07fcc40af5ad4b8d04be70
+    - name: texWanderingSoulEmission_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 8
+        y: 12
+        width: 44
+        height: 40
+      spriteId: c8fa5688d4269fa4cb4c7849d018439c
+    - name: texWanderingSoulEmission_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 8
+        y: 11
+        width: 44
+        height: 41
+      spriteId: 7b46c2a9c5631d542a885459fe79cf7b
+    - name: texWanderingSoulEmission_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 10
+        y: 12
+        width: 45
+        height: 38
+      spriteId: 9b1f194f855605740aafc914eee7504c
+    - name: texWanderingSoulEmission_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 10
+        y: 11
+        width: 45
+        height: 39
+      spriteId: 0ab2f742e9c3e7d4b8a2a4b9858601e2
+    - name: texWanderingSoulEmission_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 6
+        y: 16
+        width: 52
+        height: 36
+      spriteId: c53a4c13de0458349b4091d29521694e
+    - name: texWanderingSoulEmission_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 6
+        y: 13
+        width: 52
+        height: 38
+      spriteId: f8494db879cc5c744bba4232abe7469f
+    - name: texWanderingSoulEmission_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 6
+        y: 9
+        width: 52
+        height: 41
+      spriteId: 914fb01f427e7b4418189238717c25ed
+    - name: texWanderingSoulEmission_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 16
+        y: 15
+        width: 36
+        height: 36
+      spriteId: 508d131d480336d4580b429f682ea76e
+    - name: texWanderingSoulEmission_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 15
+        y: 11
+        width: 36
+        height: 39
+      spriteId: 184e3c608b7b17642b4a8d24b72398f8
+    - name: texWanderingSoulEmission_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 13
+        y: 6
+        width: 36
+        height: 43
+      spriteId: dd0d180741fc3bd41a5998288e7720e8
+    - name: texWanderingSoulEmission_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 15
+        y: 14
+        width: 36
+        height: 36
+      spriteId: e097652e6f2c8aa4ab1cbc356dc89414
+    - name: texWanderingSoulEmission_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 14
+        y: 11
+        width: 36
+        height: 38
+      spriteId: d89538de62732a644be653bc092c234b
+    - name: texWanderingSoulEmission_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 13
+        y: 6
+        width: 36
+        height: 42
+      spriteId: 5df8ac71793031c41aac4339c51a2fb5
+    - name: texWanderingSoulEmission_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 8
+        y: 13
+        width: 44
+        height: 39
+      spriteId: 30be886fd7f16524bad230689e65dbd0
+    - name: texWanderingSoulEmission_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 9
+        y: 10
+        width: 44
+        height: 41
+      spriteId: 71973a90ff7f5eb41a5ac56fde4a2e1e
+    - name: texWanderingSoulEmission_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 10
+        y: 6
+        width: 44
+        height: 44
+      spriteId: 9aa45a74dfd3f1d44957e69cb5c907fa
+    - name: texWanderingSoulEmission_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 10
+        y: 14
+        width: 45
+        height: 36
+      spriteId: d8b17f30e8042f24ea601539346a53b9
+    - name: texWanderingSoulEmission_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 10
+        y: 10
+        width: 45
+        height: 39
+      spriteId: 8d26a6ccdd06b934b94ad5f63673e29f
+    - name: texWanderingSoulEmission_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 10
+        y: 7
+        width: 45
+        height: 40
+      spriteId: 53591bbdc6b5c7e44bcce1609f17a9dc
+    - name: texWanderingSoulEmission_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 6
+        y: 15
+        width: 52
+        height: 37
+      spriteId: 92b4429303e840b42861dacdb147361b
+    - name: texWanderingSoulEmission_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 6
+        y: 15
+        width: 52
+        height: 36
+      spriteId: 369f5b7a87e77d348a1a2afeb00e854d
+    - name: texWanderingSoulEmission_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 6
+        y: 14
+        width: 52
+        height: 37
+      spriteId: 01cc4dca57b243c49982cf76d5d376ed
+    - name: texWanderingSoulEmission_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 6
+        y: 11
+        width: 52
+        height: 40
+      spriteId: 19376e9922ff1f6458d91ab5d5a42073
+    - name: texWanderingSoulEmission_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 5
+        y: 7
+        width: 53
+        height: 42
+      spriteId: 2aa46668802cac44c8094e240236a1d6
+    - name: texWanderingSoulEmission_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 5
+        y: 2
+        width: 52
+        height: 44
+      spriteId: f07facee3ca5b7e49905bac3054476a5
+    - name: texWanderingSoulEmission_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 5
+        y: 0
+        width: 52
+        height: 40
+      spriteId: 943e6e962f062914bab48b6fffdbbd00
+    - name: texWanderingSoulEmission_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 5
+        y: 0
+        width: 52
+        height: 36
+      spriteId: cd453279bda1f6d419a5a4798b2d206a
+    - name: texWanderingSoulEmission_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 3
+        y: 0
+        width: 51
+        height: 37
+      spriteId: 826768e9e253c2c43975b5d0a9e6a422
+    - name: texWanderingSoulEmission_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 3
+        y: 0
+        width: 51
+        height: 37
+      spriteId: f692f8be8c2a87546b0dfe0cb792b538
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}

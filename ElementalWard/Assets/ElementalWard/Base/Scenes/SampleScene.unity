@@ -755,7 +755,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _defaultBodyPrefab
       value: 
-      objectReference: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
+      objectReference: {fileID: 5338726505615578528, guid: d8b67eb11d51fad4787fe80e04c659b1,
         type: 3}
     - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
@@ -1015,6 +1015,21 @@ PrefabInstance:
       propertyPath: idleStateMachines.Array.data[0]
       value: 
       objectReference: {fileID: 369782691}
+    - target: {fileID: 7145761455307044144, guid: 0a7ac8d67ccb4654a83217b11c1e9c69,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145761455307044144, guid: 0a7ac8d67ccb4654a83217b11c1e9c69,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145761455307044144, guid: 0a7ac8d67ccb4654a83217b11c1e9c69,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

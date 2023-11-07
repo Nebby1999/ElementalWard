@@ -9,7 +9,8 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 885d28af076604e41a34939d49f5c770, type: 2}
+    m_Motion: {fileID: 8618492759471452794, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -17,7 +18,8 @@ BlendTree:
     m_DirectBlendParameter: spriteRotationIndex
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5dcde81309752a24d922e85bd5313cd6, type: 2}
+    m_Motion: {fileID: -7178916395070724709, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -25,7 +27,8 @@ BlendTree:
     m_DirectBlendParameter: spriteRotationIndex
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c7863713b92c004448a214bef6966440, type: 2}
+    m_Motion: {fileID: -6518491703109817462, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 2
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -33,7 +36,8 @@ BlendTree:
     m_DirectBlendParameter: spriteRotationIndex
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: daa3ecb40010eec40b54ecd16ccdaa61, type: 2}
+    m_Motion: {fileID: -8722041273688761092, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 3
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -41,7 +45,8 @@ BlendTree:
     m_DirectBlendParameter: spriteRotationIndex
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: df62b338aade0c24a8ee296fcc96a7c5, type: 2}
+    m_Motion: {fileID: 3253936337251633953, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 4
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -49,7 +54,8 @@ BlendTree:
     m_DirectBlendParameter: spriteRotationIndex
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: daa3ecb40010eec40b54ecd16ccdaa61, type: 2}
+    m_Motion: {fileID: -8722041273688761092, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -57,7 +63,8 @@ BlendTree:
     m_DirectBlendParameter: spriteRotationIndex
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c7863713b92c004448a214bef6966440, type: 2}
+    m_Motion: {fileID: -6518491703109817462, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 6
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -65,7 +72,8 @@ BlendTree:
     m_DirectBlendParameter: spriteRotationIndex
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 5dcde81309752a24d922e85bd5313cd6, type: 2}
+    m_Motion: {fileID: -7178916395070724709, guid: f63eab86efba3d34a9ade46d068d3868,
+      type: 3}
     m_Threshold: 7
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -93,7 +101,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
