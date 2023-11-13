@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public class HurtBoxGroup : MonoBehaviour, ILifeBehaviour
+    public class HurtBoxGroup : MonoBehaviour, ILifeBehaviour, ITeamProvider
     {
         public HurtBox[] HurtBoxes => _hurtBoxes;
         [SerializeField] private HurtBox[] _hurtBoxes = Array.Empty<HurtBox>();
         public HurtBox MainHurtBox => _mainHurtBox;
+
+        public TeamIndex TeamIndex { get; set; }
+
         [SerializeField] private HurtBox _mainHurtBox;
 
         private void Awake()
@@ -21,6 +24,7 @@ namespace ElementalWard
         private void UpdateHurtboxes(TeamDef def)
         {
             var index = def ? def.TeamIndex : TeamIndex.None;
+            TeamIndex = index;
             for (int i = 0; i < _hurtBoxes.Length; i++)
             {
                 _hurtBoxes[i].TeamIndex = index;

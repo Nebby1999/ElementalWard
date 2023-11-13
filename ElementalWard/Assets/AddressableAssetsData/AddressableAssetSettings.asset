@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f88e60eecee812c4ca4d5f5f58c25ac7
   m_currentHash:
     serializedVersion: 2
-    Hash: 98f918da747f05be0b5af176b3a24bec
+    Hash: fd3a166fabfa792b0d07b185b25dad78
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
     - CharacterMasters
     - CharacterBodies
     - Rooms
+    - ProcAssets
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 2df996069e2109d43843520f194e9ed8, type: 2}

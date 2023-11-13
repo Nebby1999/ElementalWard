@@ -38,7 +38,8 @@ namespace ElementalWard.Projectiles
             ExplosiveAttack attack = new ExplosiveAttack()
             {
                 attacker = owner,
-                baseDamage = explosionDamageCoefficient,
+                baseDamage = owner.characterBody.Damage * explosionDamageCoefficient,
+                baseProcCoefficient = explosionProcCoefficient,
                 explosionOrigin = transform.position,
                 explosionRadius = explosionRadius,
                 requireLineOfSight = requireLOS,

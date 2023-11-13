@@ -6,7 +6,7 @@ namespace ElementalWard
     {
         private bool[] mask;
 
-        public static TeamMask None;
+        public static TeamMask none;
         public static TeamMask allButNeutral;
         public static TeamMask all;
 

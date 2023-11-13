@@ -47,6 +47,7 @@ namespace ElementalWard
             yield return BodyCatalog.Initialize();
             yield return EntityStateCatalog.Initialize();
             yield return TeamCatalog.Initialize();
+            yield return ProcCatalog.Initialize();
             yield return BuffCatalog.Initialize();
             yield return ElementCatalog.Initialize();
         }

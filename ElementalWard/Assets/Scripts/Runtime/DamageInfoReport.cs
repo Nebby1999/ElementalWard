@@ -70,6 +70,7 @@ namespace ElementalWard
     {
         public BodyInfo attackerBody;
         public DamageType damageType = DamageType.None;
+        public ProcMask procMask;
         public float damage;
         public float procCoefficient;
 
@@ -87,6 +88,7 @@ namespace ElementalWard
         public BodyInfo attackerBody;
         public BodyInfo victimBody;
         public DamageType damageType = DamageType.None;
+        public ProcMask procMask;
         public float damage;
         public float procCoefficient;
     }

@@ -66,18 +66,20 @@ namespace ElementalWard
         public float Radius { get; internal set; }
         private bool _isSprinting;
         public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
-        private bool statsDirty;
+        private bool _statsDirty;
         public BodyIndex BodyIndex { get; internal set; }
-        private IBodyStatModifier[] bodyStatModifiers = Array.Empty<IBodyStatModifier>();
+        private IBodyStatModifier[] _bodyStatModifiers = Array.Empty<IBodyStatModifier>();
+        private BuffController _buffController;
         private void Awake()
         {
             InputBank = GetComponent<CharacterInputBank>();
             HealthComponent = GetComponent<HealthComponent>();
+            _buffController = GetComponent<BuffController>();
 
             var collider1 = GetComponent<CapsuleCollider>();
             Radius = collider1 ? collider1.radius : 1;
 
-            bodyStatModifiers = GetComponents<IBodyStatModifier>();
+            _bodyStatModifiers = GetComponents<IBodyStatModifier>();
         }
         private void Start()
         {
@@ -89,13 +91,15 @@ namespace ElementalWard
         public void RecalculateStats()
         {
             var args = new StatModifierArgs();
-            for(int i = 0; i < bodyStatModifiers.Length; i++)
+            for(int i = 0; i < _bodyStatModifiers.Length; i++)
             {
-                var modifier = bodyStatModifiers[i];
+                var modifier = _bodyStatModifiers[i];
                 modifier.PreStatRecalculation(this);
                 modifier.GetStatCoefficients(args, this);
             }
             uint levelMinusOne = Level - 1;
+
+            int waterloggedCount = _buffController.AsValidOrNull()?.GetBuffCount(StaticElementReferences.Waterlogged) ?? 0;
 
             float baseStat = _baseHealth + args.baseHealthAdd;
             float levelStat = _lvlHealth * levelMinusOne;
@@ -117,11 +121,24 @@ namespace ElementalWard
             finalStat = (baseStat + levelStat) * (1 + args.movementSpeedMultAdd);
             if (IsSprinting)
                 finalStat *= sprintSpeedMultiplier;
+
+            var movementSpeedReduction = 1f;
+            if(waterloggedCount > 0)
+            {
+                movementSpeedReduction *= NebulaMath.InverseHyperbolicScaling(9f, 0.1f, 1f, waterloggedCount) / 10;
+            }
+            finalStat *= movementSpeedReduction;
             MovementSpeed = finalStat;
 
             baseStat = _baseAttackSpeed + args.baseAttackSpeedAdd;
             levelStat = _lvlAttackSpeed * levelMinusOne;
             finalStat = (baseStat + levelStat) * (1 + args.attackSpeedMultAdd);
+            var attackSpeedReduction = 1f;
+            if(waterloggedCount > 0)
+            {
+                attackSpeedReduction *= NebulaMath.InverseHyperbolicScaling(5f, 0.1f, 5f, waterloggedCount) / 10;
+            }
+            finalStat *= attackSpeedReduction;
             AttackSpeed = finalStat;
 
             baseStat = _baseDamage + args.baseDamageAdd;
@@ -138,19 +155,19 @@ namespace ElementalWard
             finalStat = baseStat + args.baseJumpStrengthAdd;
             JumpStrength = finalStat;
 
-            for (int i = 0; i < bodyStatModifiers.Length; i++)
+            for (int i = 0; i < _bodyStatModifiers.Length; i++)
             {
-                var modifier = bodyStatModifiers[i];
+                var modifier = _bodyStatModifiers[i];
                 modifier.PostStatRecalculation(this);
             }
         }
         [ContextMenu("Recalculate Stats")]
-        public void SetStatsDirty() => statsDirty = true;
+        public void SetStatsDirty() => _statsDirty = true;
         private void FixedUpdate()
         {
-            if (statsDirty)
+            if (_statsDirty)
             {
-                statsDirty = false;
+                _statsDirty = false;
                 RecalculateStats();
             }
         }

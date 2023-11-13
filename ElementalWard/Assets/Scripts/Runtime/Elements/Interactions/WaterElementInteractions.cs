@@ -21,6 +21,10 @@ namespace ElementalWard
             }
 
             var victim = damageReport.victimBody;
+            if(victim.TryGetComponent<BuffController>(out var bc))
+            {
+                bc.AddTimedBuff(StaticElementReferences.Waterlogged, 1, 5 * damageReport.procCoefficient);
+            }
         }
 
         public void ModifyIncomingDamage(DamageInfo damageInfo, GameObject self)

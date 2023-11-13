@@ -3,8 +3,9 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public class TeamComponent : MonoBehaviour
+    public class TeamComponent : MonoBehaviour, ITeamProvider
     {
+        TeamIndex ITeamProvider.TeamIndex { get => CurrentTeamIndex; set => CurrentTeamIndex = value; }
         public TeamIndex CurrentTeamIndex
         {
             get
@@ -19,6 +20,8 @@ namespace ElementalWard
             }
         }
         public TeamDef? TeamDef => _defaultTeam;
+
+
         [SerializeField] private TeamDef? _defaultTeam;
         private TeamIndex _oldTeamIndex = TeamIndex.None;
         public event Action<TeamDef?> OnTeamChange;

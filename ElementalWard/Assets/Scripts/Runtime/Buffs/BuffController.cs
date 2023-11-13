@@ -9,11 +9,12 @@ namespace ElementalWard
         private int[] _buffs = Array.Empty<int>();
         private DotBehaviour[] _dotBehaviours = Array.Empty<DotBehaviour>();
         private List<TimedBuff> _timedBuffs = new List<TimedBuff>();
-
+        private CharacterBody _body;
         private void Awake()
         {
             _buffs = new int[BuffCatalog.BuffCount];
             _dotBehaviours = new DotBehaviour[BuffCatalog.DotCount];
+            _body = GetComponent<CharacterBody>();
         }
 
         public bool HasBuff(BuffDef buffDef) => HasBuff(buffDef.BuffIndex);
@@ -118,7 +119,7 @@ namespace ElementalWard
         {
             if(targetTimedBuff != null)
             {
-                SetBuffCount(buffIndex, count);
+                SetBuffCount(buffIndex, GetBuffCount(buffIndex) + count);
                 targetTimedBuff.Initialize(GetBuffCount(buffIndex), time);
                 return;
             }
@@ -127,7 +128,7 @@ namespace ElementalWard
             {
                 if (_timedBuffs[i].buffIndex == buffIndex)
                 {
-                    SetBuffCount(buffIndex, count);
+                    SetBuffCount(buffIndex, GetBuffCount(buffIndex) + count);
                     _timedBuffs[i].Initialize(GetBuffCount(buffIndex), time);
                     return;
                 }
@@ -137,24 +138,23 @@ namespace ElementalWard
             newTimedBuff.buffIndex = buffIndex;
             newTimedBuff.origTimeDuration = time;
             newTimedBuff.Initialize(count, time);
-            SetBuffCount(buffIndex, count);
+            SetBuffCount(buffIndex, GetBuffCount(buffIndex) + count);
             _timedBuffs.Add(newTimedBuff);
         }
 
         private void SetBuffCount(BuffIndex index, int count)
         {
+            if (index == BuffIndex.None)
+                return;
+
             int intIndex = (int)index;
             int nextCount = count;
-            
-            if(nextCount < 0)
-            {
-                _buffs[intIndex] = 0;
-                return;
-            }
-            else
-            {
-                _buffs[intIndex] = nextCount;
-            }
+            BuffDef bd = BuffCatalog.GetBuffDef(index);
+            nextCount = nextCount > 1 && !bd.canStack ? 1 : nextCount;
+
+            _buffs[intIndex] = (nextCount < 0) ? 0 : nextCount;
+            if (_body)
+                _body.RecalculateStats();
         }
 
         private void FixedUpdate()

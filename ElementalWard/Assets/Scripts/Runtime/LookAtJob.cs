@@ -1,4 +1,3 @@
-using Unity.Burst;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine.Jobs;
@@ -6,6 +5,7 @@ using UnityEngine.Jobs;
 namespace ElementalWard
 {
 #if !UNITY_EDITOR
+using Unity.Burst;
     [BurstCompile(OptimizeFor = OptimizeFor.Performance)]
 #endif
     public struct LookAtJob : IJobParallelForTransform

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace ElementalWard
 {
     [RequireComponent(typeof(Collider))]
-    public class HurtBox : MonoBehaviour
+    public class HurtBox : MonoBehaviour, ITeamProvider
     {
         public static ReadOnlyCollection<HurtBox> EnabledBullseyeHurtBoxes => _enabledBullseyeHurtBoxes.AsReadOnly();
         private static List<HurtBox> _enabledBullseyeHurtBoxes = new List<HurtBox>();

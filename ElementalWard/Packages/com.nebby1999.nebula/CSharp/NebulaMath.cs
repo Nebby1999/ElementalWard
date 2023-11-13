@@ -66,5 +66,10 @@ namespace Nebula
         {
             return outMin + (value - inMin) / (inMax - inMin) * (outMax - outMin);
         }
+
+        public static float InverseHyperbolicScaling(float baseValue, float additionalValue, float maxValue, int count)
+        {
+            return baseValue + maxValue - baseValue * (1 - 1 / (1 + additionalValue * (count - 1)));
+        }
     }
 }

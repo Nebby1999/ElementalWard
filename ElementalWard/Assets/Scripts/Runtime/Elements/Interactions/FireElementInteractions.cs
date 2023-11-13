@@ -6,13 +6,8 @@ namespace ElementalWard
     public class FireElementInteractions : IElementInteraction
     {
         public ElementDef SelfElement { get; set; }
-        private DotBuffDef onFire;
         public IEnumerator LoadAssetsAsync()
         {
-            BuffCatalog.resourceAvailability.CallWhenAvailable(() =>
-            {
-                onFire = BuffCatalog.GetDotDef(BuffCatalog.FindDotIndex("OnFireDot"));
-            });
             yield break;
         }
 
@@ -62,7 +57,7 @@ namespace ElementalWard
                     {
                         fixedAgeDuration = 5 * damageReport.procCoefficient,
                         inflictor = damageReport.attackerBody,
-                        dotDef = onFire,
+                        dotDef = StaticElementReferences.OnFireDot,
                         maxStacks = 5,
                         damageMultiplier = 1
                     });

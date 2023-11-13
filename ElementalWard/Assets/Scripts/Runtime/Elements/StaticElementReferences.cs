@@ -5,10 +5,12 @@ namespace ElementalWard
     public static class StaticElementReferences
     {
         public static ElementDef WaterDef { get; private set; }
+        public static BuffDef Waterlogged { get; private set; }
         public static ElementDef FireDef { get; private set; }
         public static DotBuffDef OnFireDot { get; private set; }
         public static ElementDef ElectricDef { get; private set; }
-
+        public static BuffDef Charged { get; private set; }
+        public static ProcAsset ChargedJumpProc { get; private set; }
 
         [SystemInitializer]
         private static void SystemInit()
@@ -22,7 +24,14 @@ namespace ElementalWard
 
             BuffCatalog.resourceAvailability.CallWhenAvailable(() =>
             {
-                OnFireDot = BuffCatalog.GetDotDef(BuffCatalog.FindDotIndex("OnFireDot"));
+                OnFireDot = BuffCatalog.GetDotDef(BuffCatalog.FindDotIndex("dotOnFire"));
+                Charged = BuffCatalog.GetBuffDef(BuffCatalog.FindBuffIndex("bdCharged"));
+                Waterlogged = BuffCatalog.GetBuffDef(BuffCatalog.FindBuffIndex("bdWaterlogged"));
+            });
+
+            ProcCatalog.resourceAvailability.CallWhenAvailable(() =>
+            {
+                ChargedJumpProc = ProcCatalog.GetProcAsset(ProcCatalog.FindProcType("ChargedJumpProc"));
             });
         }
     }

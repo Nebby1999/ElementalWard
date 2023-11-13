@@ -22,7 +22,7 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   elementRamp: {fileID: 2800000, guid: 50f9ca3a2d1bde445a3e0e2ba2371cdf, type: 3}
-  elementColor: {r: 1, g: 1, b: 1, a: 1}
+  elementColor: {r: 0.91188633, g: 1, b: 0, a: 1}
   elementInteractions:
     _assemblyQualifiedName: ElementalWard.ElectricElementInteractions, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
