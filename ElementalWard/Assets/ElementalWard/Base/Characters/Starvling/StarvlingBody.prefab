@@ -316,7 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: Body
   initialState:
-    _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
+    _assemblyQualifiedName: EntityStates.GenericSpawnState, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   mainState:
     _assemblyQualifiedName: EntityStates.GenericCharacterMain, ElementalWard, Version=0.0.0.0,
