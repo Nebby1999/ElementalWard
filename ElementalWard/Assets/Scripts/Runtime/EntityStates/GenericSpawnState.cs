@@ -10,7 +10,7 @@ namespace EntityStates
         public override void OnEnter()
         {
             base.OnEnter();
-            PlayAnimation("base", "Spawn");
+            PlayAnimation("Base", "Spawn");
 
             var events = GetAnimationEvents();
             events.OnAnimationEvent += OnSpawnEnd;

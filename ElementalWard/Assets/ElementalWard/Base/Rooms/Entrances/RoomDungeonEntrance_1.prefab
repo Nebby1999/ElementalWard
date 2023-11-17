@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _graphName: 
   _nodeGraphAsset: {fileID: 11400000, guid: 4f20072c0cfa17047bdc1cb477f4a46e, type: 2}
+  providerScale: 1
 --- !u!1 &6828253889382449943
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _graphName: 
   _nodeGraphAsset: {fileID: 11400000, guid: 91069c4cc21c1c04e8b36315f84b627f, type: 2}
+  providerScale: 1
 --- !u!1001 &13586946991897984
 PrefabInstance:
   m_ObjectHideFlags: 0
