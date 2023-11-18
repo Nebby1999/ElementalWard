@@ -57,13 +57,13 @@ namespace ElementalWard
                 var baseAIInstance = instances[i];
                 Vector3 bodyPos = baseAIInstance.BodyPosition ?? Vector3.positiveInfinity;
                 Vector3 targetPos = baseAIInstance.CurrentTarget.Position ?? Vector3.positiveInfinity;
-                float capsuleHeight = baseAIInstance.BodyCapsuleHeight;
+                float capsuleHeight = baseAIInstance.CurrentBodyComponents.characterMotorController.IsFlying ? 1 : baseAIInstance.BodyCapsuleHeight;
                 float capsuleRadius = baseAIInstance.BodyCapsuleRadius;
                 float jumpStrength = baseAIInstance.BodyJumpStrength;
 
                 SceneNavigationSystem.PathRequest request = new SceneNavigationSystem.PathRequest
                 {
-                    actorHeight = capsuleHeight,
+                    actorHeightHalved = capsuleHeight / 2,
                     start = bodyPos,
                     end = targetPos,
                     graphProvider = baseAIInstance.CurrentBodyComponents.characterMotorController.IsFlying ? SceneNavigationSystem.AirNodeProvider : SceneNavigationSystem.GroundNodeProvider

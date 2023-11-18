@@ -13,16 +13,17 @@ namespace Nebula.Navigation
     /// </summary>
     public class RaycastNodes
     {
-        public int worldLayerMask;
-        public NativeArray<RuntimePathNode> nodes;
-        public float3 originPosition;
+        private int _worldLayerMask;
+        private NativeArray<RuntimePathNode> _nodes;
+        private float3 _originPosition;
+        private float _agentHeight;
 
         public int[] ExecuteRaycasts()
         {
-            if(math.any(math.isinf(originPosition)))
+            if(math.any(math.isinf(_originPosition)))
                 return Array.Empty<int>();
 
-            int nodesLength = nodes.Length;
+            int nodesLength = _nodes.Length;
             if (nodesLength == 0)
                 return Array.Empty<int>();
 
@@ -33,16 +34,17 @@ namespace Nebula.Navigation
             {
                 hitBackfaces = true,
                 hitMultipleFaces = true,
-                layerMask = worldLayerMask,
+                layerMask = _worldLayerMask,
                 hitTriggers = QueryTriggerInteraction.Ignore
             };
 
             for(int i = 0; i < nodesLength; i++)
             {
-                var node = nodes[i];
-                var distance = math.distance(node.worldPosition, originPosition);
-                var direction = math.normalize(node.worldPosition - originPosition);
-                var command = new RaycastCommand(originPosition, direction, queryParams, distance);
+                var node = _nodes[i];
+                var nodePos = node.worldPosition + math.up() * _agentHeight;
+                var distance = math.distance(node.worldPosition, _originPosition);
+                var direction = math.normalize(node.worldPosition - _originPosition);
+                var command = new RaycastCommand(_originPosition, direction, queryParams, distance);
                 commands[i] = command;
             }
 
@@ -66,11 +68,12 @@ namespace Nebula.Navigation
             return reachableIndices.ToArray();
         }
 
-        public RaycastNodes(int worldLayerMask, NativeArray<RuntimePathNode> nodes, float3 originPosition)
+        public RaycastNodes(int worldLayerMask, NativeArray<RuntimePathNode> nodes, float3 originPosition, float agentHeight)
         {
-            this.worldLayerMask = worldLayerMask;
-            this.nodes = nodes;
-            this.originPosition = originPosition;
+            _worldLayerMask = worldLayerMask;
+            _nodes = nodes;
+            _originPosition = originPosition;
+            _agentHeight = agentHeight;
         }
     }
 }

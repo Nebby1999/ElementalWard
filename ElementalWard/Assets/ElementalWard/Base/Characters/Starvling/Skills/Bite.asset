@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176d1b6e5fab60147ba268c3e7266674, type: 3}
   m_Name: Bite
   m_EditorClassIdentifier: 
-  baseCooldown: 0
-  requiredStock: 0
+  baseCooldown: 1
+  requiredStock: 1
   entityStateMachineName: Body
   stateType:
     _assemblyQualifiedName: EntityStates.Starvling.Bite, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   skillBehaviourCallbacks: []
-  interruptStrength: 0
+  interruptStrength: 1

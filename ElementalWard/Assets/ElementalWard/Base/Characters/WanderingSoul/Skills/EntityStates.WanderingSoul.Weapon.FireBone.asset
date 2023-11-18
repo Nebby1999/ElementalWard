@@ -30,19 +30,3 @@ MonoBehaviour:
       serializedValue:
         stringValue: Attack
         objectReferenceValue: {fileID: 0}
-    - fieldName: movementSpeed
-      serializedValue:
-        stringValue: 20
-        objectReferenceValue: {fileID: 0}
-    - fieldName: projectileLifetime
-      serializedValue:
-        stringValue: 20
-        objectReferenceValue: {fileID: 0}
-    - fieldName: damageCoefficient
-      serializedValue:
-        stringValue: 0
-        objectReferenceValue: {fileID: 0}
-    - fieldName: procCoefficient
-      serializedValue:
-        stringValue: 0
-        objectReferenceValue: {fileID: 0}

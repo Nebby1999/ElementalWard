@@ -32,7 +32,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 32
@@ -73,7 +73,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 0
+    layerImportMode: 1
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -85,7 +85,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 0
+    layerImportMode: 1
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 0
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638347773834853208
+  platformSettingsDirtyTick: 638359077695994706
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,7 +119,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Diffuse_Frame_0
+  - name: texStarvlingDiffuse_Frame_0
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 4
       width: 66
       height: 62
-    spriteID: cc2243918773f9a4994e00920c56a9a3
+    spriteID: 54028de8e38d6b34691ea9e8c52edc45
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,7 +139,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 4}
-  - name: Diffuse_Frame_1
+  - name: texStarvlingDiffuse_Frame_1
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -150,7 +150,7 @@ ScriptedImporter:
       y: 74
       width: 66
       height: 62
-    spriteID: 0a8136795dd318643b0960f7830ed473
+    spriteID: 3adcd783cd8b38e48a9939b3cc85c092
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -159,7 +159,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 74}
-  - name: Diffuse_Frame_2
+  - name: texStarvlingDiffuse_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -170,7 +170,7 @@ ScriptedImporter:
       y: 144
       width: 66
       height: 62
-    spriteID: 36dfb338c2b18c74498f4f213c4c6c07
+    spriteID: c4166c7ba2ae8734eba245e0045097cd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -179,7 +179,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 144}
-  - name: Diffuse_Frame_3
+  - name: texStarvlingDiffuse_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -190,7 +190,7 @@ ScriptedImporter:
       y: 214
       width: 66
       height: 62
-    spriteID: c44ba5ca1861abe499702ccd588419af
+    spriteID: 0e25d1574ae779446bf08f3928584220
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -199,7 +199,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 214}
-  - name: Diffuse_Frame_4
+  - name: texStarvlingDiffuse_Frame_4
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -210,7 +210,7 @@ ScriptedImporter:
       y: 417
       width: 65
       height: 60
-    spriteID: 920141149b7bc9d4e988d6b0742a2e5e
+    spriteID: 93af0c2c08fee4c4197be4c88c5fa701
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -219,7 +219,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 417}
-  - name: Diffuse_Frame_5
+  - name: texStarvlingDiffuse_Frame_5
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -230,7 +230,7 @@ ScriptedImporter:
       y: 485
       width: 65
       height: 60
-    spriteID: d9461e0381e73bf44b4dce0fa2694f26
+    spriteID: db732993cb9d40944ba45b4fdd04a305
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -239,7 +239,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 485}
-  - name: Diffuse_Frame_6
+  - name: texStarvlingDiffuse_Frame_6
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -250,7 +250,7 @@ ScriptedImporter:
       y: 553
       width: 65
       height: 60
-    spriteID: a42a0680cb5f1824aa30f9e9a0e42326
+    spriteID: a023e8747f346da40aa9abaf0bb81c8b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -259,7 +259,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 553}
-  - name: Diffuse_Frame_7
+  - name: texStarvlingDiffuse_Frame_7
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -270,7 +270,7 @@ ScriptedImporter:
       y: 4
       width: 66
       height: 60
-    spriteID: 10afaf449e45a3d4b827f750fe0b5168
+    spriteID: 62af727ad45f9e24b9244043723597cb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -279,7 +279,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 4}
-  - name: Diffuse_Frame_8
+  - name: texStarvlingDiffuse_Frame_8
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -290,7 +290,7 @@ ScriptedImporter:
       y: 824
       width: 63
       height: 61
-    spriteID: 97aec1034be78eb479e9ebfd79c1f918
+    spriteID: 794eb2c782fb5d24aaa35dff11f8b663
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -299,7 +299,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 824}
-  - name: Diffuse_Frame_9
+  - name: texStarvlingDiffuse_Frame_9
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -310,7 +310,7 @@ ScriptedImporter:
       y: 893
       width: 63
       height: 61
-    spriteID: f242ac506a3eb944c8a2c01909fe2c1c
+    spriteID: 705050394a01f244ea8384860f88ca56
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -319,7 +319,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 893}
-  - name: Diffuse_Frame_10
+  - name: texStarvlingDiffuse_Frame_10
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -330,7 +330,7 @@ ScriptedImporter:
       y: 145
       width: 63
       height: 61
-    spriteID: edea7ef6499cccf41909839af853804b
+    spriteID: 4bd55c3a588c31a4da7d5a4fcd88f5c4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -339,7 +339,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 145}
-  - name: Diffuse_Frame_11
+  - name: texStarvlingDiffuse_Frame_11
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -350,7 +350,7 @@ ScriptedImporter:
       y: 214
       width: 63
       height: 61
-    spriteID: 41df28bb6215ee64f840f5a50fc87f16
+    spriteID: ff3a9799afcfee24eabf8fd57723e83f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -359,7 +359,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 214}
-  - name: Diffuse_Frame_12
+  - name: texStarvlingDiffuse_Frame_12
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -370,7 +370,7 @@ ScriptedImporter:
       y: 774
       width: 65
       height: 62
-    spriteID: 34a2b36757790ca41ae624fda0852a9d
+    spriteID: 52ac47800e7ebbf4f8ff6486220ee778
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -379,7 +379,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 774}
-  - name: Diffuse_Frame_13
+  - name: texStarvlingDiffuse_Frame_13
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -390,7 +390,7 @@ ScriptedImporter:
       y: 954
       width: 65
       height: 63
-    spriteID: bd8aba98e0437634daa4eedd27e6342d
+    spriteID: 71f4bd2573ca94f47ade8599916118bb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -399,7 +399,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 954}
-  - name: Diffuse_Frame_14
+  - name: texStarvlingDiffuse_Frame_14
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -410,7 +410,7 @@ ScriptedImporter:
       y: 844
       width: 65
       height: 62
-    spriteID: b8d8048a338190749ac92ee527803f53
+    spriteID: b3064fd862dd7b34cb28a443edf4fcdc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -419,7 +419,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 844}
-  - name: Diffuse_Frame_15
+  - name: texStarvlingDiffuse_Frame_15
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -430,7 +430,7 @@ ScriptedImporter:
       y: 914
       width: 65
       height: 62
-    spriteID: 37100c1978160554a995b8689d6c7057
+    spriteID: 4a45ed7ae8ca6c24eb8c170983a43dff
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -439,7 +439,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 914}
-  - name: Diffuse_Frame_16
+  - name: texStarvlingDiffuse_Frame_16
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -450,7 +450,7 @@ ScriptedImporter:
       y: 284
       width: 66
       height: 62
-    spriteID: 4cead06cd09d73844ac7ef520046ec55
+    spriteID: 67a682aa53ed5aa4ba9f15e160525628
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -459,7 +459,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 284}
-  - name: Diffuse_Frame_17
+  - name: texStarvlingDiffuse_Frame_17
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -470,7 +470,7 @@ ScriptedImporter:
       y: 354
       width: 66
       height: 62
-    spriteID: a7f6e1d91f59e3a4186a41f9d7cd526f
+    spriteID: fc524ed2712825e42b0f72d9fdc4525c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -479,7 +479,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 354}
-  - name: Diffuse_Frame_18
+  - name: texStarvlingDiffuse_Frame_18
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -490,7 +490,7 @@ ScriptedImporter:
       y: 424
       width: 66
       height: 62
-    spriteID: 6f6d73786306b8d4da16dd1a02df0ecf
+    spriteID: d229bac62d265b04c8c21e07ad64d49d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -499,7 +499,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 424}
-  - name: Diffuse_Frame_19
+  - name: texStarvlingDiffuse_Frame_19
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -510,7 +510,7 @@ ScriptedImporter:
       y: 494
       width: 66
       height: 62
-    spriteID: 415ff3f41e91200408aacfadfb1cf53f
+    spriteID: 4a02f7a9cb491544a8a1c23a8fa262e5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -519,7 +519,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 494}
-  - name: Diffuse_Frame_20
+  - name: texStarvlingDiffuse_Frame_20
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -530,7 +530,7 @@ ScriptedImporter:
       y: 564
       width: 66
       height: 62
-    spriteID: 38520bf28854ffa4bbe571b755e1543f
+    spriteID: 6ce17b7b4219b3f4fa3b96a37da9b10f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -539,7 +539,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 564}
-  - name: Diffuse_Frame_21
+  - name: texStarvlingDiffuse_Frame_21
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -550,7 +550,7 @@ ScriptedImporter:
       y: 72
       width: 66
       height: 60
-    spriteID: c0bf0d791a3d8dc448a497a057995c68
+    spriteID: 905ab4a6422c6a64593fe8bd21b064be
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -559,7 +559,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 72}
-  - name: Diffuse_Frame_22
+  - name: texStarvlingDiffuse_Frame_22
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -570,7 +570,7 @@ ScriptedImporter:
       y: 962
       width: 66
       height: 58
-    spriteID: 41e14853558559443bb25b7b4d6bb9e0
+    spriteID: 11341266bca76104cbb18d627dc438be
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -579,7 +579,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 962}
-  - name: Diffuse_Frame_23
+  - name: texStarvlingDiffuse_Frame_23
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -590,7 +590,7 @@ ScriptedImporter:
       y: 70
       width: 66
       height: 56
-    spriteID: 4a118375f4f16c6468832aafccc81e55
+    spriteID: f6f86b65e105c2645bd97ec7aae0eaca
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -599,7 +599,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 70}
-  - name: Diffuse_Frame_24
+  - name: texStarvlingDiffuse_Frame_24
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -610,7 +610,7 @@ ScriptedImporter:
       y: 621
       width: 65
       height: 60
-    spriteID: 37fe8acf2ca6ead46bc179f1bc33b7b2
+    spriteID: 98d6c3fdc4a1b4345a1ea9d1c1877c86
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -619,7 +619,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 621}
-  - name: Diffuse_Frame_25
+  - name: texStarvlingDiffuse_Frame_25
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -630,7 +630,7 @@ ScriptedImporter:
       y: 686
       width: 63
       height: 57
-    spriteID: b9709edd184b44248b0c77b9c13910e4
+    spriteID: a0cb18e3af3f0644dac6bf5aea3e7781
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -639,7 +639,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 686}
-  - name: Diffuse_Frame_26
+  - name: texStarvlingDiffuse_Frame_26
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -650,7 +650,7 @@ ScriptedImporter:
       y: 816
       width: 63
       height: 56
-    spriteID: ed21a13a96c523a4096060be612517d3
+    spriteID: b07766002cd8ae34898a1580e777e5c9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -659,7 +659,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 816}
-  - name: Diffuse_Frame_27
+  - name: texStarvlingDiffuse_Frame_27
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -670,7 +670,7 @@ ScriptedImporter:
       y: 134
       width: 66
       height: 55
-    spriteID: a13a28eb970984f4795ce87b038e7dae
+    spriteID: 1731c072b74e2764494289266f56fc2f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -679,7 +679,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 134}
-  - name: Diffuse_Frame_28
+  - name: texStarvlingDiffuse_Frame_28
     originalName: 
     pivot: {x: 0.484375, y: 0}
     alignment: 9
@@ -690,7 +690,7 @@ ScriptedImporter:
       y: 348
       width: 64
       height: 61
-    spriteID: eba61255ca4d61f4aa814f66beefb9c5
+    spriteID: 3d46611156bab794582ed64399ceb7e6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -699,7 +699,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 348}
-  - name: Diffuse_Frame_29
+  - name: texStarvlingDiffuse_Frame_29
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -710,7 +710,7 @@ ScriptedImporter:
       y: 352
       width: 65
       height: 59
-    spriteID: 3816254e0f1bc684aa2b8f6a81c9060c
+    spriteID: a1e85c95d05488541b07d6d13219dc43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -719,7 +719,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 352}
-  - name: Diffuse_Frame_30
+  - name: texStarvlingDiffuse_Frame_30
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -730,7 +730,7 @@ ScriptedImporter:
       y: 751
       width: 63
       height: 57
-    spriteID: 4fa35ce34f61f3a4ab02470a01cece67
+    spriteID: ea955b092f73b514e8abf4bf3a60f84c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -739,7 +739,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 751}
-  - name: Diffuse_Frame_31
+  - name: texStarvlingDiffuse_Frame_31
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -750,7 +750,7 @@ ScriptedImporter:
       y: 880
       width: 63
       height: 55
-    spriteID: 4c01f1e7caceb2f42bc0743bb3fd4607
+    spriteID: 2230211e2e71374459952ac69ee3015a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -759,7 +759,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 880}
-  - name: Diffuse_Frame_32
+  - name: texStarvlingDiffuse_Frame_32
     originalName: 
     pivot: {x: 0.49206352, y: 0}
     alignment: 9
@@ -770,7 +770,7 @@ ScriptedImporter:
       y: 486
       width: 63
       height: 60
-    spriteID: 236170ec3950cbc4c83f94cd75604407
+    spriteID: 023be471d2945df4e96dba0bc2fb17af
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -779,7 +779,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 486}
-  - name: Diffuse_Frame_33
+  - name: texStarvlingDiffuse_Frame_33
     originalName: 
     pivot: {x: 0.47540984, y: 0}
     alignment: 9
@@ -790,7 +790,7 @@ ScriptedImporter:
       y: 619
       width: 61
       height: 59
-    spriteID: 5ab060ce8a0751f4488e0be180153a6b
+    spriteID: 8aa048e2b9fe7134bbd4daf88ec23294
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -799,7 +799,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 619}
-  - name: Diffuse_Frame_34
+  - name: texStarvlingDiffuse_Frame_34
     originalName: 
     pivot: {x: 0.45762715, y: 0}
     alignment: 9
@@ -810,7 +810,7 @@ ScriptedImporter:
       y: 318
       width: 59
       height: 55
-    spriteID: 7f2f5d229a891354aa36cf81199b87f4
+    spriteID: ff2093439fceb6f458956ace7fcd8e24
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -819,7 +819,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 318}
-  - name: Diffuse_Frame_35
+  - name: texStarvlingDiffuse_Frame_35
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -830,7 +830,7 @@ ScriptedImporter:
       y: 4
       width: 65
       height: 62
-    spriteID: 114871fbc00bab3458c3da7207af7a8c
+    spriteID: 43499146c9079e44db6bb93d10302350
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -839,7 +839,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 4}
-  - name: Diffuse_Frame_36
+  - name: texStarvlingDiffuse_Frame_36
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -850,7 +850,7 @@ ScriptedImporter:
       y: 634
       width: 66
       height: 62
-    spriteID: adc4844b5e710694990f4f37761961b5
+    spriteID: 5a987d9192c3c1e48bb1c37f83ce7d41
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -859,7 +859,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 634}
-  - name: Diffuse_Frame_37
+  - name: texStarvlingDiffuse_Frame_37
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -870,7 +870,7 @@ ScriptedImporter:
       y: 140
       width: 66
       height: 60
-    spriteID: 55759b704ba606645bf902581791b620
+    spriteID: ba9c8b2c0e6052a428ac7d67dcdf1451
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -879,7 +879,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 140}
-  - name: Diffuse_Frame_38
+  - name: texStarvlingDiffuse_Frame_38
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -890,7 +890,7 @@ ScriptedImporter:
       y: 4
       width: 66
       height: 58
-    spriteID: 82a542e4154173747afb6c58bee20909
+    spriteID: 9559ba524c214f1498a96329febe5bf9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -899,7 +899,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 4}
-  - name: Diffuse_Frame_39
+  - name: texStarvlingDiffuse_Frame_39
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -910,7 +910,7 @@ ScriptedImporter:
       y: 757
       width: 66
       height: 59
-    spriteID: 219f1cd7639161944917ab5e7e891ba8
+    spriteID: 46d6d272f33502340927ad1093fe597a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -919,7 +919,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 757}
-  - name: Diffuse_Frame_40
+  - name: texStarvlingDiffuse_Frame_40
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -930,7 +930,7 @@ ScriptedImporter:
       y: 599
       width: 66
       height: 40
-    spriteID: 8196e35387b3e5741a8ef49e9bbcc1c7
+    spriteID: ee0a32cfb4733304b8bbbd1f2fa4624a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -939,7 +939,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 599}
-  - name: Diffuse_Frame_41
+  - name: texStarvlingDiffuse_Frame_41
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -950,7 +950,7 @@ ScriptedImporter:
       y: 4
       width: 66
       height: 66
-    spriteID: 749c96882c43efb4f83723067f8c5787
+    spriteID: 65d28ab3046be1d40af9842b76d9b803
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -959,7 +959,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Diffuse_Frame_42
+  - name: texStarvlingDiffuse_Frame_42
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -970,7 +970,7 @@ ScriptedImporter:
       y: 738
       width: 66
       height: 63
-    spriteID: a83a9fb4663d13541ab8707081dd3ef7
+    spriteID: 9746d6d97478d4d4d9e6375b11e76038
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -979,7 +979,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 738}
-  - name: Diffuse_Frame_43
+  - name: texStarvlingDiffuse_Frame_43
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -990,7 +990,7 @@ ScriptedImporter:
       y: 984
       width: 66
       height: 32
-    spriteID: 3a8c0dc32d9fb1f4a9d008a28133241e
+    spriteID: d2babf336bb61554ab35fb9746cf2cf8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -999,7 +999,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 78, y: 984}
-  - name: Diffuse_Frame_44
+  - name: texStarvlingDiffuse_Frame_44
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1010,7 +1010,7 @@ ScriptedImporter:
       y: 840
       width: 65
       height: 38
-    spriteID: 5b01f0758c518a943b479dff9da6a0d1
+    spriteID: 2cc705b6b99d1044e94bafa5e00d253e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1019,7 +1019,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 840}
-  - name: Diffuse_Frame_45
+  - name: texStarvlingDiffuse_Frame_45
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1030,7 +1030,7 @@ ScriptedImporter:
       y: 152
       width: 65
       height: 66
-    spriteID: 0fca5ab5324760e4faba9f0b774c9c0e
+    spriteID: 9824ffe728345aa44bf0da3fd77c04f8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1039,7 +1039,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 152}
-  - name: Diffuse_Frame_46
+  - name: texStarvlingDiffuse_Frame_46
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1050,7 +1050,7 @@ ScriptedImporter:
       y: 374
       width: 65
       height: 65
-    spriteID: fddbeb3c5426ece49835dcccbbf6fed1
+    spriteID: 702892a8f5bca6047aa5de81e8051004
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1059,7 +1059,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 374}
-  - name: Diffuse_Frame_47
+  - name: texStarvlingDiffuse_Frame_47
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1070,7 +1070,7 @@ ScriptedImporter:
       y: 746
       width: 66
       height: 39
-    spriteID: 8f14e529820bb0241993064869a841ec
+    spriteID: 5f22566e134f2c64da955dbe65431fb1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1079,7 +1079,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 746}
-  - name: Diffuse_Frame_48
+  - name: texStarvlingDiffuse_Frame_48
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -1090,7 +1090,7 @@ ScriptedImporter:
       y: 546
       width: 63
       height: 45
-    spriteID: 26a07af4248d68d438e4551c87043e0d
+    spriteID: 577c86434a3f6bb49bbc215da3e59e84
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1099,7 +1099,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 546}
-  - name: Diffuse_Frame_49
+  - name: texStarvlingDiffuse_Frame_49
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -1110,7 +1110,7 @@ ScriptedImporter:
       y: 809
       width: 63
       height: 66
-    spriteID: 1d9fabd170638304186223d6d57e19c2
+    spriteID: dfbd09491299db34eadf7e021ddc2c00
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1119,7 +1119,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 809}
-  - name: Diffuse_Frame_50
+  - name: texStarvlingDiffuse_Frame_50
     originalName: 
     pivot: {x: 0.47619048, y: 0}
     alignment: 9
@@ -1130,7 +1130,7 @@ ScriptedImporter:
       y: 283
       width: 63
       height: 61
-    spriteID: 0f731de6ace5a6d4aafc97d65467c991
+    spriteID: 310b5f72b2e0f144ba38d14285876d77
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1139,7 +1139,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 283}
-  - name: Diffuse_Frame_51
+  - name: texStarvlingDiffuse_Frame_51
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1150,7 +1150,7 @@ ScriptedImporter:
       y: 438
       width: 65
       height: 46
-    spriteID: b00831d7b1508b54da7d57907c27bbff
+    spriteID: a5e2228b34067a94fab10a1199fe2a48
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1159,7 +1159,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 438}
-  - name: Diffuse_Frame_52
+  - name: texStarvlingDiffuse_Frame_52
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -1170,7 +1170,7 @@ ScriptedImporter:
       y: 793
       width: 65
       height: 39
-    spriteID: 3a7417d2132d5c643bba76866332c6d6
+    spriteID: 7c060019e7bed0f4fb5fc1afbc1e734f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1179,7 +1179,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 793}
-  - name: Diffuse_Frame_53
+  - name: texStarvlingDiffuse_Frame_53
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -1190,7 +1190,7 @@ ScriptedImporter:
       y: 447
       width: 65
       height: 65
-    spriteID: ca4e5679fac04524abc6dc0a99607f4a
+    spriteID: 2f41f9941a1f20d4fb078ddf877bb685
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1199,7 +1199,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 447}
-  - name: Diffuse_Frame_54
+  - name: texStarvlingDiffuse_Frame_54
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -1210,7 +1210,7 @@ ScriptedImporter:
       y: 226
       width: 65
       height: 66
-    spriteID: 0478c25d0b0864848bf44d673802ef46
+    spriteID: 89782e44947e7c647bf74d5f244d99bb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1219,7 +1219,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 226}
-  - name: Diffuse_Frame_55
+  - name: texStarvlingDiffuse_Frame_55
     originalName: 
     pivot: {x: 0.50769234, y: 0}
     alignment: 9
@@ -1230,7 +1230,7 @@ ScriptedImporter:
       y: 554
       width: 65
       height: 57
-    spriteID: 5758cb03d71ad8b4597c56cafd14014b
+    spriteID: f8d619100f99c8b43aecb07521b43aa0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1239,7 +1239,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 554}
-  - name: Diffuse_Frame_56
+  - name: texStarvlingDiffuse_Frame_56
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1250,7 +1250,7 @@ ScriptedImporter:
       y: 647
       width: 66
       height: 40
-    spriteID: 7ec44cbd006fc384b9bee922e14e4791
+    spriteID: e14d52b6ca18230439694be95fbaa3d0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1259,7 +1259,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 647}
-  - name: Diffuse_Frame_57
+  - name: texStarvlingDiffuse_Frame_57
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1270,7 +1270,7 @@ ScriptedImporter:
       y: 78
       width: 66
       height: 66
-    spriteID: 73932c5045a960944b7c529b1c807b05
+    spriteID: f77cf19607ec070419e563088fce2c56
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1279,7 +1279,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 78}
-  - name: Diffuse_Frame_58
+  - name: texStarvlingDiffuse_Frame_58
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1290,7 +1290,7 @@ ScriptedImporter:
       y: 883
       width: 66
       height: 63
-    spriteID: 6d9bb22a9b422ed4aa2d191b444f5eaa
+    spriteID: 15d7aea02797f5944805d6b824e9a138
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1299,7 +1299,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 883}
-  - name: Diffuse_Frame_59
+  - name: texStarvlingDiffuse_Frame_59
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1310,7 +1310,7 @@ ScriptedImporter:
       y: 886
       width: 66
       height: 32
-    spriteID: 483d87067e85c1f4d87698c60fbccd4d
+    spriteID: de69bbc6e39959944abef4d4f7d54e04
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1319,7 +1319,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 886}
-  - name: Diffuse_Frame_60
+  - name: texStarvlingDiffuse_Frame_60
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1330,7 +1330,7 @@ ScriptedImporter:
       y: 259
       width: 66
       height: 51
-    spriteID: 34bd2779ce14b04438379d750f66bd8a
+    spriteID: f166c4d8ee6f4b743b1f787b882a8eea
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1339,7 +1339,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 259}
-  - name: Diffuse_Frame_61
+  - name: texStarvlingDiffuse_Frame_61
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1350,7 +1350,7 @@ ScriptedImporter:
       y: 197
       width: 66
       height: 54
-    spriteID: 2e5e47cfe930031478b6bc647ec17944
+    spriteID: cb3a22757ed8532439a4c7077623f908
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1359,7 +1359,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 197}
-  - name: Diffuse_Frame_62
+  - name: texStarvlingDiffuse_Frame_62
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1370,7 +1370,7 @@ ScriptedImporter:
       y: 689
       width: 65
       height: 60
-    spriteID: f8512287d28bd574b8962f88d169a01a
+    spriteID: 7d3f900708373b84fb71196e124319aa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1379,7 +1379,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 689}
-  - name: Diffuse_Frame_63
+  - name: texStarvlingDiffuse_Frame_63
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1390,7 +1390,7 @@ ScriptedImporter:
       y: 520
       width: 65
       height: 65
-    spriteID: c1fce3e673e185946ae1b12096edd786
+    spriteID: 4e1ac8aab3554694fb7615a6d773e051
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1399,7 +1399,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 520}
-  - name: Diffuse_Frame_64
+  - name: texStarvlingDiffuse_Frame_64
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1410,7 +1410,7 @@ ScriptedImporter:
       y: 300
       width: 65
       height: 66
-    spriteID: b5a4ed5c6c42cc340a74650a7162010c
+    spriteID: 7fb88af7dac783f43b8c2ed16e831407
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1419,7 +1419,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 300}
-  - name: Diffuse_Frame_65
+  - name: texStarvlingDiffuse_Frame_65
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1430,7 +1430,7 @@ ScriptedImporter:
       y: 666
       width: 65
       height: 64
-    spriteID: 36aaa8a4005747d498768e1bc54fe0a7
+    spriteID: 07b787415b9893c40a99706ac68cb949
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1439,7 +1439,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 666}
-  - name: Diffuse_Frame_66
+  - name: texStarvlingDiffuse_Frame_66
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1450,7 +1450,7 @@ ScriptedImporter:
       y: 593
       width: 65
       height: 65
-    spriteID: 0840c7aadd3d1ce4aa8278fa5bbb6045
+    spriteID: e3d61aab710d8e847b8df97d57b0fca6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1459,7 +1459,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 593}
-  - name: Diffuse_Frame_67
+  - name: texStarvlingDiffuse_Frame_67
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1470,7 +1470,7 @@ ScriptedImporter:
       y: 419
       width: 65
       height: 59
-    spriteID: ab71af44461ed2041b9822aacfca4402
+    spriteID: 968f6f02ae4ffd34f8348aa6d48afbe2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1479,7 +1479,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 419}
-  - name: Diffuse_Frame_68
+  - name: texStarvlingDiffuse_Frame_68
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1490,7 +1490,7 @@ ScriptedImporter:
       y: 492
       width: 65
       height: 46
-    spriteID: 8e7aabf7a9aa5e24d92adf655a8e6f83
+    spriteID: ccec7b58558a2b241bcfa14404db7217
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1499,7 +1499,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 492}
-  - name: Diffuse_Frame_69
+  - name: texStarvlingDiffuse_Frame_69
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1510,7 +1510,7 @@ ScriptedImporter:
       y: 967
       width: 65
       height: 30
-    spriteID: 624e284bfdb87914ab02f709910003a3
+    spriteID: 31fc5d5df3faf7f44ae071c467a5da43
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1519,7 +1519,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 967}
-  - name: Diffuse_Frame_70
+  - name: texStarvlingDiffuse_Frame_70
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1530,7 +1530,7 @@ ScriptedImporter:
       y: 1005
       width: 65
       height: 15
-    spriteID: 076bcf522850af147aa261735c7474ff
+    spriteID: 342194e197233574f8a770a37e623a3d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1539,7 +1539,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 1005}
-  - name: Diffuse_Frame_71
+  - name: texStarvlingDiffuse_Frame_71
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1550,7 +1550,7 @@ ScriptedImporter:
       y: 183
       width: 65
       height: 8
-    spriteID: 9b15303e9ec3c254fa104bf619972efb
+    spriteID: a724f4286f924164eaeaa8627ad0374e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1559,7 +1559,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 183}
-  - name: Diffuse_Frame_72
+  - name: texStarvlingDiffuse_Frame_72
     originalName: 
     pivot: {x: 0.49230772, y: 0}
     alignment: 9
@@ -1570,7 +1570,7 @@ ScriptedImporter:
       y: 199
       width: 65
       height: 8
-    spriteID: f5684c8c2dcf9b74ba2e7a1b691db332
+    spriteID: 8dab5aa608b64d6469301d421bc31491
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1579,7 +1579,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 199}
-  - name: Diffuse_Frame_73
+  - name: texStarvlingDiffuse_Frame_73
     originalName: 
     pivot: {x: 0.50793654, y: 0}
     alignment: 9
@@ -1590,7 +1590,7 @@ ScriptedImporter:
       y: 231
       width: 63
       height: 5
-    spriteID: d936aefaf191f3841968019702c29d71
+    spriteID: f82fe128e49068b458156dd782b8935d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1599,7 +1599,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 231}
-  - name: Diffuse_Frame_74
+  - name: texStarvlingDiffuse_Frame_74
     originalName: 
     pivot: {x: 0.52542377, y: 0}
     alignment: 9
@@ -1610,7 +1610,7 @@ ScriptedImporter:
       y: 215
       width: 59
       height: 8
-    spriteID: 4765948cb25a83040b1e26afaab8db54
+    spriteID: 5a5522e0f122c86438ced0709dc3f572
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1619,7 +1619,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 215}
-  - name: Diffuse_Frame_75
+  - name: texStarvlingDiffuse_Frame_75
     originalName: 
     pivot: {x: 0.52380955, y: 0}
     alignment: 9
@@ -1630,7 +1630,7 @@ ScriptedImporter:
       y: 1006
       width: 63
       height: 12
-    spriteID: 939514b35ad96d744a52de43a2fcad0e
+    spriteID: da333d19c28e3bb4d991341435ee80b3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1639,7 +1639,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 1006}
-  - name: Diffuse_Frame_76
+  - name: texStarvlingDiffuse_Frame_76
     originalName: 
     pivot: {x: 0.51785713, y: 0}
     alignment: 9
@@ -1650,7 +1650,7 @@ ScriptedImporter:
       y: 155
       width: 56
       height: 20
-    spriteID: cc9b8237aca94eb4e953e2e81eb45062
+    spriteID: 3d803405b87b954449c07ba3fb7e3bf0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1659,7 +1659,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 155}
-  - name: Diffuse_Frame_77
+  - name: texStarvlingDiffuse_Frame_77
     originalName: 
     pivot: {x: 0.5087719, y: 0}
     alignment: 9
@@ -1670,7 +1670,7 @@ ScriptedImporter:
       y: 4
       width: 57
       height: 27
-    spriteID: c5088084496db0444a385c099f251320
+    spriteID: 20cc7595c9fa4754390cdb3e2e453dfd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1679,7 +1679,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 373, y: 4}
-  - name: Diffuse_Frame_78
+  - name: texStarvlingDiffuse_Frame_78
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1690,7 +1690,7 @@ ScriptedImporter:
       y: 4
       width: 64
       height: 23
-    spriteID: e752d891e8dd72144817ac7cef829c45
+    spriteID: 79aebfbc575aa904e92e4ae2b1df277b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1699,7 +1699,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 4}
-  - name: Diffuse_Frame_79
+  - name: texStarvlingDiffuse_Frame_79
     originalName: 
     pivot: {x: 0.55172414, y: 0}
     alignment: 9
@@ -1710,7 +1710,7 @@ ScriptedImporter:
       y: 98
       width: 58
       height: 21
-    spriteID: baad136e9dcde5f499f877daab93444a
+    spriteID: 8790d54c21d72f945b0c1c5caac2ca1d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1719,7 +1719,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 98}
-  - name: Diffuse_Frame_80
+  - name: texStarvlingDiffuse_Frame_80
     originalName: 
     pivot: {x: 0.4745763, y: 0}
     alignment: 9
@@ -1730,7 +1730,7 @@ ScriptedImporter:
       y: 127
       width: 59
       height: 20
-    spriteID: e7e05b2d582b5524c8e591499808ffd9
+    spriteID: 3f3afd3a5a9d7434394d452c9a2a9ab9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1739,7 +1739,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 127}
-  - name: Diffuse_Frame_81
+  - name: texStarvlingDiffuse_Frame_81
     originalName: 
     pivot: {x: 0.45762715, y: 0}
     alignment: 9
@@ -1750,7 +1750,7 @@ ScriptedImporter:
       y: 35
       width: 59
       height: 24
-    spriteID: 636f49f787d015240b7c36211c3b5da7
+    spriteID: da176a9f3b0804d45bd9e3be20924f7b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1759,7 +1759,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 35}
-  - name: Diffuse_Frame_82
+  - name: texStarvlingDiffuse_Frame_82
     originalName: 
     pivot: {x: 0.45762715, y: 0}
     alignment: 9
@@ -1770,7 +1770,7 @@ ScriptedImporter:
       y: 67
       width: 59
       height: 23
-    spriteID: d4775a7f6ed7a574a9f6795c281c9ef2
+    spriteID: 48771e572b7342947bcbfcee34757cb8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1779,7 +1779,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 438, y: 67}
-  - name: Diffuse_Frame_83
+  - name: texStarvlingDiffuse_Frame_83
     originalName: 
     pivot: {x: 0.47540984, y: 0}
     alignment: 9
@@ -1790,7 +1790,7 @@ ScriptedImporter:
       y: 926
       width: 61
       height: 33
-    spriteID: d2398fd650a6fd949bb780161fba2cbf
+    spriteID: fd82a369fb78f9b4d9a433b19bb8f3e2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1799,7 +1799,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 926}
-  - name: Diffuse_Frame_84
+  - name: texStarvlingDiffuse_Frame_84
     originalName: 
     pivot: {x: 0.4666667, y: 0}
     alignment: 9
@@ -1810,7 +1810,7 @@ ScriptedImporter:
       y: 695
       width: 60
       height: 43
-    spriteID: e4d74e9b52b770141a2dbc893fed692c
+    spriteID: 19594b56968cb1541b43a227621e7a3a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1819,7 +1819,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 695}
-  - name: Diffuse_Frame_85
+  - name: texStarvlingDiffuse_Frame_85
     originalName: 
     pivot: {x: 0.49206352, y: 0}
     alignment: 9
@@ -1830,7 +1830,7 @@ ScriptedImporter:
       y: 381
       width: 63
       height: 49
-    spriteID: ccd57964c64ad3648a7ba43e9e466a24
+    spriteID: 032c6e006874a7d49bcc76de5803a26e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1839,7 +1839,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 299, y: 381}
-  - name: Diffuse_Frame_86
+  - name: texStarvlingDiffuse_Frame_86
     originalName: 
     pivot: {x: 0.49206352, y: 0}
     alignment: 9
@@ -1850,7 +1850,7 @@ ScriptedImporter:
       y: 943
       width: 63
       height: 55
-    spriteID: 0494fce1007a9b54c9dad9827fd511a0
+    spriteID: 08ec59b5f03ee6b48a4cc65dc00e5aa4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1859,7 +1859,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 943}
-  - name: Diffuse_Frame_87
+  - name: texStarvlingDiffuse_Frame_87
     originalName: 
     pivot: {x: 0.49206352, y: 0}
     alignment: 9
@@ -1870,7 +1870,7 @@ ScriptedImporter:
       y: 74
       width: 63
       height: 63
-    spriteID: be8dd38105159bb49a0306951ef1f0db
+    spriteID: 14078f8b4c39e0647819fc43f5821c18
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1879,7 +1879,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 152, y: 74}
-  - name: Diffuse_Frame_88
+  - name: texStarvlingDiffuse_Frame_88
     originalName: 
     pivot: {x: 0.49206352, y: 0}
     alignment: 9
@@ -1890,7 +1890,7 @@ ScriptedImporter:
       y: 208
       width: 63
       height: 62
-    spriteID: a0f130c706e23544eb6af3e510d804b7
+    spriteID: aaea37265db2c0c4aaa418a382e295a2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1899,7 +1899,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 208}
-  - name: Diffuse_Frame_89
+  - name: texStarvlingDiffuse_Frame_89
     originalName: 
     pivot: {x: 0.49206352, y: 0}
     alignment: 9
@@ -1910,7 +1910,7 @@ ScriptedImporter:
       y: 278
       width: 63
       height: 62
-    spriteID: 0ef0057ff6013814b9a5247466bba479
+    spriteID: ee8a996a139cf7d499c74e239e9559d2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1919,7 +1919,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 225, y: 278}
-  - name: Diffuse_Frame_90
+  - name: texStarvlingDiffuse_Frame_90
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -1930,7 +1930,7 @@ ScriptedImporter:
       y: 704
       width: 66
       height: 62
-    spriteID: 726487efd3c357a408a4e80fdd64af56
+    spriteID: bf0cee963d08e3143af0fb552649837b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1942,740 +1942,740 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1191123812
-    name: Diffuse
-    layerFlags: 3
+    guid: 223535561
+    name: texStarvlingDiffuse
+    layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Diffuse_Frame_0
+    - name: texStarvlingDiffuse_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: cc2243918773f9a4994e00920c56a9a3
-    - name: Diffuse_Frame_1
+      spriteId: 54028de8e38d6b34691ea9e8c52edc45
+    - name: texStarvlingDiffuse_Frame_1
       frameIndex: 1
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: 0a8136795dd318643b0960f7830ed473
-    - name: Diffuse_Frame_2
+      spriteId: 3adcd783cd8b38e48a9939b3cc85c092
+    - name: texStarvlingDiffuse_Frame_2
       frameIndex: 2
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: 36dfb338c2b18c74498f4f213c4c6c07
-    - name: Diffuse_Frame_3
+      spriteId: c4166c7ba2ae8734eba245e0045097cd
+    - name: texStarvlingDiffuse_Frame_3
       frameIndex: 3
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: c44ba5ca1861abe499702ccd588419af
-    - name: Diffuse_Frame_4
+      spriteId: 0e25d1574ae779446bf08f3928584220
+    - name: texStarvlingDiffuse_Frame_4
       frameIndex: 4
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 60
-      spriteId: 920141149b7bc9d4e988d6b0742a2e5e
-    - name: Diffuse_Frame_5
+      spriteId: 93af0c2c08fee4c4197be4c88c5fa701
+    - name: texStarvlingDiffuse_Frame_5
       frameIndex: 5
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 60
-      spriteId: d9461e0381e73bf44b4dce0fa2694f26
-    - name: Diffuse_Frame_6
+      spriteId: db732993cb9d40944ba45b4fdd04a305
+    - name: texStarvlingDiffuse_Frame_6
       frameIndex: 6
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 60
-      spriteId: a42a0680cb5f1824aa30f9e9a0e42326
-    - name: Diffuse_Frame_7
+      spriteId: a023e8747f346da40aa9abaf0bb81c8b
+    - name: texStarvlingDiffuse_Frame_7
       frameIndex: 7
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 60
-      spriteId: 10afaf449e45a3d4b827f750fe0b5168
-    - name: Diffuse_Frame_8
+      spriteId: 62af727ad45f9e24b9244043723597cb
+    - name: texStarvlingDiffuse_Frame_8
       frameIndex: 8
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 61
-      spriteId: 97aec1034be78eb479e9ebfd79c1f918
-    - name: Diffuse_Frame_9
+      spriteId: 794eb2c782fb5d24aaa35dff11f8b663
+    - name: texStarvlingDiffuse_Frame_9
       frameIndex: 9
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 61
-      spriteId: f242ac506a3eb944c8a2c01909fe2c1c
-    - name: Diffuse_Frame_10
+      spriteId: 705050394a01f244ea8384860f88ca56
+    - name: texStarvlingDiffuse_Frame_10
       frameIndex: 10
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 61
-      spriteId: edea7ef6499cccf41909839af853804b
-    - name: Diffuse_Frame_11
+      spriteId: 4bd55c3a588c31a4da7d5a4fcd88f5c4
+    - name: texStarvlingDiffuse_Frame_11
       frameIndex: 11
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 61
-      spriteId: 41df28bb6215ee64f840f5a50fc87f16
-    - name: Diffuse_Frame_12
+      spriteId: ff3a9799afcfee24eabf8fd57723e83f
+    - name: texStarvlingDiffuse_Frame_12
       frameIndex: 12
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 62
-      spriteId: 34a2b36757790ca41ae624fda0852a9d
-    - name: Diffuse_Frame_13
+      spriteId: 52ac47800e7ebbf4f8ff6486220ee778
+    - name: texStarvlingDiffuse_Frame_13
       frameIndex: 13
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 63
-      spriteId: bd8aba98e0437634daa4eedd27e6342d
-    - name: Diffuse_Frame_14
+      spriteId: 71f4bd2573ca94f47ade8599916118bb
+    - name: texStarvlingDiffuse_Frame_14
       frameIndex: 14
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 62
-      spriteId: b8d8048a338190749ac92ee527803f53
-    - name: Diffuse_Frame_15
+      spriteId: b3064fd862dd7b34cb28a443edf4fcdc
+    - name: texStarvlingDiffuse_Frame_15
       frameIndex: 15
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 62
-      spriteId: 37100c1978160554a995b8689d6c7057
-    - name: Diffuse_Frame_16
+      spriteId: 4a45ed7ae8ca6c24eb8c170983a43dff
+    - name: texStarvlingDiffuse_Frame_16
       frameIndex: 16
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: 4cead06cd09d73844ac7ef520046ec55
-    - name: Diffuse_Frame_17
+      spriteId: 67a682aa53ed5aa4ba9f15e160525628
+    - name: texStarvlingDiffuse_Frame_17
       frameIndex: 17
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: a7f6e1d91f59e3a4186a41f9d7cd526f
-    - name: Diffuse_Frame_18
+      spriteId: fc524ed2712825e42b0f72d9fdc4525c
+    - name: texStarvlingDiffuse_Frame_18
       frameIndex: 18
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: 6f6d73786306b8d4da16dd1a02df0ecf
-    - name: Diffuse_Frame_19
+      spriteId: d229bac62d265b04c8c21e07ad64d49d
+    - name: texStarvlingDiffuse_Frame_19
       frameIndex: 19
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: 415ff3f41e91200408aacfadfb1cf53f
-    - name: Diffuse_Frame_20
+      spriteId: 4a02f7a9cb491544a8a1c23a8fa262e5
+    - name: texStarvlingDiffuse_Frame_20
       frameIndex: 20
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: 38520bf28854ffa4bbe571b755e1543f
-    - name: Diffuse_Frame_21
+      spriteId: 6ce17b7b4219b3f4fa3b96a37da9b10f
+    - name: texStarvlingDiffuse_Frame_21
       frameIndex: 21
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 60
-      spriteId: c0bf0d791a3d8dc448a497a057995c68
-    - name: Diffuse_Frame_22
+      spriteId: 905ab4a6422c6a64593fe8bd21b064be
+    - name: texStarvlingDiffuse_Frame_22
       frameIndex: 22
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 58
-      spriteId: 41e14853558559443bb25b7b4d6bb9e0
-    - name: Diffuse_Frame_23
+      spriteId: 11341266bca76104cbb18d627dc438be
+    - name: texStarvlingDiffuse_Frame_23
       frameIndex: 23
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 56
-      spriteId: 4a118375f4f16c6468832aafccc81e55
-    - name: Diffuse_Frame_24
+      spriteId: f6f86b65e105c2645bd97ec7aae0eaca
+    - name: texStarvlingDiffuse_Frame_24
       frameIndex: 24
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 60
-      spriteId: 37fe8acf2ca6ead46bc179f1bc33b7b2
-    - name: Diffuse_Frame_25
+      spriteId: 98d6c3fdc4a1b4345a1ea9d1c1877c86
+    - name: texStarvlingDiffuse_Frame_25
       frameIndex: 25
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 57
-      spriteId: b9709edd184b44248b0c77b9c13910e4
-    - name: Diffuse_Frame_26
+      spriteId: a0cb18e3af3f0644dac6bf5aea3e7781
+    - name: texStarvlingDiffuse_Frame_26
       frameIndex: 26
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 56
-      spriteId: ed21a13a96c523a4096060be612517d3
-    - name: Diffuse_Frame_27
+      spriteId: b07766002cd8ae34898a1580e777e5c9
+    - name: texStarvlingDiffuse_Frame_27
       frameIndex: 27
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 55
-      spriteId: a13a28eb970984f4795ce87b038e7dae
-    - name: Diffuse_Frame_28
+      spriteId: 1731c072b74e2764494289266f56fc2f
+    - name: texStarvlingDiffuse_Frame_28
       frameIndex: 28
       cellRect:
         x: 2
         y: 0
         width: 64
         height: 61
-      spriteId: eba61255ca4d61f4aa814f66beefb9c5
-    - name: Diffuse_Frame_29
+      spriteId: 3d46611156bab794582ed64399ceb7e6
+    - name: texStarvlingDiffuse_Frame_29
       frameIndex: 29
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 59
-      spriteId: 3816254e0f1bc684aa2b8f6a81c9060c
-    - name: Diffuse_Frame_30
+      spriteId: a1e85c95d05488541b07d6d13219dc43
+    - name: texStarvlingDiffuse_Frame_30
       frameIndex: 30
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 57
-      spriteId: 4fa35ce34f61f3a4ab02470a01cece67
-    - name: Diffuse_Frame_31
+      spriteId: ea955b092f73b514e8abf4bf3a60f84c
+    - name: texStarvlingDiffuse_Frame_31
       frameIndex: 31
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 55
-      spriteId: 4c01f1e7caceb2f42bc0743bb3fd4607
-    - name: Diffuse_Frame_32
+      spriteId: 2230211e2e71374459952ac69ee3015a
+    - name: texStarvlingDiffuse_Frame_32
       frameIndex: 32
       cellRect:
         x: 2
         y: 0
         width: 63
         height: 60
-      spriteId: 236170ec3950cbc4c83f94cd75604407
-    - name: Diffuse_Frame_33
+      spriteId: 023be471d2945df4e96dba0bc2fb17af
+    - name: texStarvlingDiffuse_Frame_33
       frameIndex: 33
       cellRect:
         x: 4
         y: 0
         width: 61
         height: 59
-      spriteId: 5ab060ce8a0751f4488e0be180153a6b
-    - name: Diffuse_Frame_34
+      spriteId: 8aa048e2b9fe7134bbd4daf88ec23294
+    - name: texStarvlingDiffuse_Frame_34
       frameIndex: 34
       cellRect:
         x: 6
         y: 0
         width: 59
         height: 55
-      spriteId: 7f2f5d229a891354aa36cf81199b87f4
-    - name: Diffuse_Frame_35
+      spriteId: ff2093439fceb6f458956ace7fcd8e24
+    - name: texStarvlingDiffuse_Frame_35
       frameIndex: 35
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 62
-      spriteId: 114871fbc00bab3458c3da7207af7a8c
-    - name: Diffuse_Frame_36
+      spriteId: 43499146c9079e44db6bb93d10302350
+    - name: texStarvlingDiffuse_Frame_36
       frameIndex: 36
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: adc4844b5e710694990f4f37761961b5
-    - name: Diffuse_Frame_37
+      spriteId: 5a987d9192c3c1e48bb1c37f83ce7d41
+    - name: texStarvlingDiffuse_Frame_37
       frameIndex: 37
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 60
-      spriteId: 55759b704ba606645bf902581791b620
-    - name: Diffuse_Frame_38
+      spriteId: ba9c8b2c0e6052a428ac7d67dcdf1451
+    - name: texStarvlingDiffuse_Frame_38
       frameIndex: 38
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 58
-      spriteId: 82a542e4154173747afb6c58bee20909
-    - name: Diffuse_Frame_39
+      spriteId: 9559ba524c214f1498a96329febe5bf9
+    - name: texStarvlingDiffuse_Frame_39
       frameIndex: 39
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 59
-      spriteId: 219f1cd7639161944917ab5e7e891ba8
-    - name: Diffuse_Frame_40
+      spriteId: 46d6d272f33502340927ad1093fe597a
+    - name: texStarvlingDiffuse_Frame_40
       frameIndex: 40
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 40
-      spriteId: 8196e35387b3e5741a8ef49e9bbcc1c7
-    - name: Diffuse_Frame_41
+      spriteId: ee0a32cfb4733304b8bbbd1f2fa4624a
+    - name: texStarvlingDiffuse_Frame_41
       frameIndex: 41
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 66
-      spriteId: 749c96882c43efb4f83723067f8c5787
-    - name: Diffuse_Frame_42
+      spriteId: 65d28ab3046be1d40af9842b76d9b803
+    - name: texStarvlingDiffuse_Frame_42
       frameIndex: 42
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 63
-      spriteId: a83a9fb4663d13541ab8707081dd3ef7
-    - name: Diffuse_Frame_43
+      spriteId: 9746d6d97478d4d4d9e6375b11e76038
+    - name: texStarvlingDiffuse_Frame_43
       frameIndex: 43
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 32
-      spriteId: 3a8c0dc32d9fb1f4a9d008a28133241e
-    - name: Diffuse_Frame_44
+      spriteId: d2babf336bb61554ab35fb9746cf2cf8
+    - name: texStarvlingDiffuse_Frame_44
       frameIndex: 44
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 38
-      spriteId: 5b01f0758c518a943b479dff9da6a0d1
-    - name: Diffuse_Frame_45
+      spriteId: 2cc705b6b99d1044e94bafa5e00d253e
+    - name: texStarvlingDiffuse_Frame_45
       frameIndex: 45
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 66
-      spriteId: 0fca5ab5324760e4faba9f0b774c9c0e
-    - name: Diffuse_Frame_46
+      spriteId: 9824ffe728345aa44bf0da3fd77c04f8
+    - name: texStarvlingDiffuse_Frame_46
       frameIndex: 46
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 65
-      spriteId: fddbeb3c5426ece49835dcccbbf6fed1
-    - name: Diffuse_Frame_47
+      spriteId: 702892a8f5bca6047aa5de81e8051004
+    - name: texStarvlingDiffuse_Frame_47
       frameIndex: 47
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 39
-      spriteId: 8f14e529820bb0241993064869a841ec
-    - name: Diffuse_Frame_48
+      spriteId: 5f22566e134f2c64da955dbe65431fb1
+    - name: texStarvlingDiffuse_Frame_48
       frameIndex: 48
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 45
-      spriteId: 26a07af4248d68d438e4551c87043e0d
-    - name: Diffuse_Frame_49
+      spriteId: 577c86434a3f6bb49bbc215da3e59e84
+    - name: texStarvlingDiffuse_Frame_49
       frameIndex: 49
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 66
-      spriteId: 1d9fabd170638304186223d6d57e19c2
-    - name: Diffuse_Frame_50
+      spriteId: dfbd09491299db34eadf7e021ddc2c00
+    - name: texStarvlingDiffuse_Frame_50
       frameIndex: 50
       cellRect:
         x: 3
         y: 0
         width: 63
         height: 61
-      spriteId: 0f731de6ace5a6d4aafc97d65467c991
-    - name: Diffuse_Frame_51
+      spriteId: 310b5f72b2e0f144ba38d14285876d77
+    - name: texStarvlingDiffuse_Frame_51
       frameIndex: 51
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 46
-      spriteId: b00831d7b1508b54da7d57907c27bbff
-    - name: Diffuse_Frame_52
+      spriteId: a5e2228b34067a94fab10a1199fe2a48
+    - name: texStarvlingDiffuse_Frame_52
       frameIndex: 52
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 39
-      spriteId: 3a7417d2132d5c643bba76866332c6d6
-    - name: Diffuse_Frame_53
+      spriteId: 7c060019e7bed0f4fb5fc1afbc1e734f
+    - name: texStarvlingDiffuse_Frame_53
       frameIndex: 53
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 65
-      spriteId: ca4e5679fac04524abc6dc0a99607f4a
-    - name: Diffuse_Frame_54
+      spriteId: 2f41f9941a1f20d4fb078ddf877bb685
+    - name: texStarvlingDiffuse_Frame_54
       frameIndex: 54
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 66
-      spriteId: 0478c25d0b0864848bf44d673802ef46
-    - name: Diffuse_Frame_55
+      spriteId: 89782e44947e7c647bf74d5f244d99bb
+    - name: texStarvlingDiffuse_Frame_55
       frameIndex: 55
       cellRect:
         x: 0
         y: 0
         width: 65
         height: 57
-      spriteId: 5758cb03d71ad8b4597c56cafd14014b
-    - name: Diffuse_Frame_56
+      spriteId: f8d619100f99c8b43aecb07521b43aa0
+    - name: texStarvlingDiffuse_Frame_56
       frameIndex: 56
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 40
-      spriteId: 7ec44cbd006fc384b9bee922e14e4791
-    - name: Diffuse_Frame_57
+      spriteId: e14d52b6ca18230439694be95fbaa3d0
+    - name: texStarvlingDiffuse_Frame_57
       frameIndex: 57
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 66
-      spriteId: 73932c5045a960944b7c529b1c807b05
-    - name: Diffuse_Frame_58
+      spriteId: f77cf19607ec070419e563088fce2c56
+    - name: texStarvlingDiffuse_Frame_58
       frameIndex: 58
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 63
-      spriteId: 6d9bb22a9b422ed4aa2d191b444f5eaa
-    - name: Diffuse_Frame_59
+      spriteId: 15d7aea02797f5944805d6b824e9a138
+    - name: texStarvlingDiffuse_Frame_59
       frameIndex: 59
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 32
-      spriteId: 483d87067e85c1f4d87698c60fbccd4d
-    - name: Diffuse_Frame_60
+      spriteId: de69bbc6e39959944abef4d4f7d54e04
+    - name: texStarvlingDiffuse_Frame_60
       frameIndex: 60
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 51
-      spriteId: 34bd2779ce14b04438379d750f66bd8a
-    - name: Diffuse_Frame_61
+      spriteId: f166c4d8ee6f4b743b1f787b882a8eea
+    - name: texStarvlingDiffuse_Frame_61
       frameIndex: 61
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 54
-      spriteId: 2e5e47cfe930031478b6bc647ec17944
-    - name: Diffuse_Frame_62
+      spriteId: cb3a22757ed8532439a4c7077623f908
+    - name: texStarvlingDiffuse_Frame_62
       frameIndex: 62
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 60
-      spriteId: f8512287d28bd574b8962f88d169a01a
-    - name: Diffuse_Frame_63
+      spriteId: 7d3f900708373b84fb71196e124319aa
+    - name: texStarvlingDiffuse_Frame_63
       frameIndex: 63
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 65
-      spriteId: c1fce3e673e185946ae1b12096edd786
-    - name: Diffuse_Frame_64
+      spriteId: 4e1ac8aab3554694fb7615a6d773e051
+    - name: texStarvlingDiffuse_Frame_64
       frameIndex: 64
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 66
-      spriteId: b5a4ed5c6c42cc340a74650a7162010c
-    - name: Diffuse_Frame_65
+      spriteId: 7fb88af7dac783f43b8c2ed16e831407
+    - name: texStarvlingDiffuse_Frame_65
       frameIndex: 65
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 64
-      spriteId: 36aaa8a4005747d498768e1bc54fe0a7
-    - name: Diffuse_Frame_66
+      spriteId: 07b787415b9893c40a99706ac68cb949
+    - name: texStarvlingDiffuse_Frame_66
       frameIndex: 66
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 65
-      spriteId: 0840c7aadd3d1ce4aa8278fa5bbb6045
-    - name: Diffuse_Frame_67
+      spriteId: e3d61aab710d8e847b8df97d57b0fca6
+    - name: texStarvlingDiffuse_Frame_67
       frameIndex: 67
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 59
-      spriteId: ab71af44461ed2041b9822aacfca4402
-    - name: Diffuse_Frame_68
+      spriteId: 968f6f02ae4ffd34f8348aa6d48afbe2
+    - name: texStarvlingDiffuse_Frame_68
       frameIndex: 68
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 46
-      spriteId: 8e7aabf7a9aa5e24d92adf655a8e6f83
-    - name: Diffuse_Frame_69
+      spriteId: ccec7b58558a2b241bcfa14404db7217
+    - name: texStarvlingDiffuse_Frame_69
       frameIndex: 69
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 30
-      spriteId: 624e284bfdb87914ab02f709910003a3
-    - name: Diffuse_Frame_70
+      spriteId: 31fc5d5df3faf7f44ae071c467a5da43
+    - name: texStarvlingDiffuse_Frame_70
       frameIndex: 70
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 15
-      spriteId: 076bcf522850af147aa261735c7474ff
-    - name: Diffuse_Frame_71
+      spriteId: 342194e197233574f8a770a37e623a3d
+    - name: texStarvlingDiffuse_Frame_71
       frameIndex: 71
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 8
-      spriteId: 9b15303e9ec3c254fa104bf619972efb
-    - name: Diffuse_Frame_72
+      spriteId: a724f4286f924164eaeaa8627ad0374e
+    - name: texStarvlingDiffuse_Frame_72
       frameIndex: 72
       cellRect:
         x: 1
         y: 0
         width: 65
         height: 8
-      spriteId: f5684c8c2dcf9b74ba2e7a1b691db332
-    - name: Diffuse_Frame_73
+      spriteId: 8dab5aa608b64d6469301d421bc31491
+    - name: texStarvlingDiffuse_Frame_73
       frameIndex: 73
       cellRect:
         x: 1
         y: 0
         width: 63
         height: 5
-      spriteId: d936aefaf191f3841968019702c29d71
-    - name: Diffuse_Frame_74
+      spriteId: f82fe128e49068b458156dd782b8935d
+    - name: texStarvlingDiffuse_Frame_74
       frameIndex: 74
       cellRect:
         x: 2
         y: 0
         width: 59
         height: 8
-      spriteId: 4765948cb25a83040b1e26afaab8db54
-    - name: Diffuse_Frame_75
+      spriteId: 5a5522e0f122c86438ced0709dc3f572
+    - name: texStarvlingDiffuse_Frame_75
       frameIndex: 75
       cellRect:
         x: 0
         y: 0
         width: 63
         height: 12
-      spriteId: 939514b35ad96d744a52de43a2fcad0e
-    - name: Diffuse_Frame_76
+      spriteId: da333d19c28e3bb4d991341435ee80b3
+    - name: texStarvlingDiffuse_Frame_76
       frameIndex: 76
       cellRect:
         x: 4
         y: 0
         width: 56
         height: 20
-      spriteId: cc9b8237aca94eb4e953e2e81eb45062
-    - name: Diffuse_Frame_77
+      spriteId: 3d803405b87b954449c07ba3fb7e3bf0
+    - name: texStarvlingDiffuse_Frame_77
       frameIndex: 77
       cellRect:
         x: 4
         y: 0
         width: 57
         height: 27
-      spriteId: c5088084496db0444a385c099f251320
-    - name: Diffuse_Frame_78
+      spriteId: 20cc7595c9fa4754390cdb3e2e453dfd
+    - name: texStarvlingDiffuse_Frame_78
       frameIndex: 78
       cellRect:
         x: 1
         y: 0
         width: 64
         height: 23
-      spriteId: e752d891e8dd72144817ac7cef829c45
-    - name: Diffuse_Frame_79
+      spriteId: 79aebfbc575aa904e92e4ae2b1df277b
+    - name: texStarvlingDiffuse_Frame_79
       frameIndex: 79
       cellRect:
         x: 1
         y: 0
         width: 58
         height: 21
-      spriteId: baad136e9dcde5f499f877daab93444a
-    - name: Diffuse_Frame_80
+      spriteId: 8790d54c21d72f945b0c1c5caac2ca1d
+    - name: texStarvlingDiffuse_Frame_80
       frameIndex: 80
       cellRect:
         x: 5
         y: 0
         width: 59
         height: 20
-      spriteId: e7e05b2d582b5524c8e591499808ffd9
-    - name: Diffuse_Frame_81
+      spriteId: 3f3afd3a5a9d7434394d452c9a2a9ab9
+    - name: texStarvlingDiffuse_Frame_81
       frameIndex: 81
       cellRect:
         x: 6
         y: 0
         width: 59
         height: 24
-      spriteId: 636f49f787d015240b7c36211c3b5da7
-    - name: Diffuse_Frame_82
+      spriteId: da176a9f3b0804d45bd9e3be20924f7b
+    - name: texStarvlingDiffuse_Frame_82
       frameIndex: 82
       cellRect:
         x: 6
         y: 0
         width: 59
         height: 23
-      spriteId: d4775a7f6ed7a574a9f6795c281c9ef2
-    - name: Diffuse_Frame_83
+      spriteId: 48771e572b7342947bcbfcee34757cb8
+    - name: texStarvlingDiffuse_Frame_83
       frameIndex: 83
       cellRect:
         x: 4
         y: 0
         width: 61
         height: 33
-      spriteId: d2398fd650a6fd949bb780161fba2cbf
-    - name: Diffuse_Frame_84
+      spriteId: fd82a369fb78f9b4d9a433b19bb8f3e2
+    - name: texStarvlingDiffuse_Frame_84
       frameIndex: 84
       cellRect:
         x: 5
         y: 0
         width: 60
         height: 43
-      spriteId: e4d74e9b52b770141a2dbc893fed692c
-    - name: Diffuse_Frame_85
+      spriteId: 19594b56968cb1541b43a227621e7a3a
+    - name: texStarvlingDiffuse_Frame_85
       frameIndex: 85
       cellRect:
         x: 2
         y: 0
         width: 63
         height: 49
-      spriteId: ccd57964c64ad3648a7ba43e9e466a24
-    - name: Diffuse_Frame_86
+      spriteId: 032c6e006874a7d49bcc76de5803a26e
+    - name: texStarvlingDiffuse_Frame_86
       frameIndex: 86
       cellRect:
         x: 2
         y: 0
         width: 63
         height: 55
-      spriteId: 0494fce1007a9b54c9dad9827fd511a0
-    - name: Diffuse_Frame_87
+      spriteId: 08ec59b5f03ee6b48a4cc65dc00e5aa4
+    - name: texStarvlingDiffuse_Frame_87
       frameIndex: 87
       cellRect:
         x: 2
         y: 0
         width: 63
         height: 63
-      spriteId: be8dd38105159bb49a0306951ef1f0db
-    - name: Diffuse_Frame_88
+      spriteId: 14078f8b4c39e0647819fc43f5821c18
+    - name: texStarvlingDiffuse_Frame_88
       frameIndex: 88
       cellRect:
         x: 2
         y: 0
         width: 63
         height: 62
-      spriteId: a0f130c706e23544eb6af3e510d804b7
-    - name: Diffuse_Frame_89
+      spriteId: aaea37265db2c0c4aaa418a382e295a2
+    - name: texStarvlingDiffuse_Frame_89
       frameIndex: 89
       cellRect:
         x: 2
         y: 0
         width: 63
         height: 62
-      spriteId: 0ef0057ff6013814b9a5247466bba479
-    - name: Diffuse_Frame_90
+      spriteId: ee8a996a139cf7d499c74e239e9559d2
+    - name: texStarvlingDiffuse_Frame_90
       frameIndex: 90
       cellRect:
         x: 0
         y: 0
         width: 66
         height: 62
-      spriteId: 726487efd3c357a408a4e80fdd64af56
+      spriteId: bf0cee963d08e3143af0fb552649837b
     linkedCells: []
     parentIndex: -1
   platformSettings:

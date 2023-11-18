@@ -33,7 +33,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterBodies
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 06d8b060158e73a4b91acdc92b6794ea
+  - m_GUID: 52d51d72699dc584c9da352f5dfb2119
     m_Address: ElementalWard/Base/Characters/Starvling/Skills/EntityStates.Starvling.Bite.asset
     m_ReadOnly: 0
     m_SerializedLabels:
@@ -48,6 +48,12 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/Characters/Starvling/texStarvlingEmissive.aseprite
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57aba9fe325f0bf498005c907511d27f
+    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterMasters
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

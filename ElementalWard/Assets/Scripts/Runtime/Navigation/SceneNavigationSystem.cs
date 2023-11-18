@@ -37,10 +37,10 @@ namespace ElementalWard
             var runtimeNodes = new NativeArray<RuntimePathNode>(graph.RuntimeNodes, Allocator.TempJob);
             var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graph.RuntimeLinks, Allocator.TempJob);
 
-            var reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.start).ExecuteRaycasts();
+            var reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.start, request.actorHeightHalved).ExecuteRaycasts();
             var reachableStartIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
 
-            reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.end).ExecuteRaycasts();
+            reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.end, request.actorHeightHalved).ExecuteRaycasts();
             var reachableEndIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
             var closestStartIndex = new NativeReference<int>(-1, Allocator.TempJob);
             var closestEndIndex = new NativeReference<int>(-1, Allocator.TempJob);
@@ -67,7 +67,7 @@ namespace ElementalWard
                 endIndex = closestEndIndex,
                 nodes = runtimeNodes,
                 links = runtimeLinks,
-                actorHeight = request.actorHeight,
+                actorHeight = request.actorHeightHalved,
                 result = new NativeList<float3>(1024, Allocator.TempJob),
             };
 
@@ -179,7 +179,7 @@ namespace ElementalWard
             public IGraphProvider graphProvider;
             public Vector3 start;
             public Vector3 end;
-            public float actorHeight;
+            public float actorHeightHalved;
         }
 
         public class PathRequestResult : IDisposable

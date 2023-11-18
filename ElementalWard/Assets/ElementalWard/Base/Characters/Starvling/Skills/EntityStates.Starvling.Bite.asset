@@ -21,9 +21,13 @@ MonoBehaviour:
       serializedValue:
         stringValue: 1
         objectReferenceValue: {fileID: 0}
+    - fieldName: procCoefficient
+      serializedValue:
+        stringValue: 1
+        objectReferenceValue: {fileID: 0}
     - fieldName: baseDuration
       serializedValue:
-        stringValue: 0.81
+        stringValue: 0.71
         objectReferenceValue: {fileID: 0}
     - fieldName: animationName
       serializedValue:
@@ -32,8 +36,4 @@ MonoBehaviour:
     - fieldName: hitboxGroupName
       serializedValue:
         stringValue: Bite
-        objectReferenceValue: {fileID: 0}
-    - fieldName: procCoefficient
-      serializedValue:
-        stringValue: 1
         objectReferenceValue: {fileID: 0}
