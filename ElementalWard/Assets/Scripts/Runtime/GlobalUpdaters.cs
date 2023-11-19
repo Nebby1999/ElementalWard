@@ -20,15 +20,15 @@ namespace ElementalWard
     public class GlobalBaseAIUpdater : GlobalUpdater<CharacterMasterAI>
     {
         private float stopwatch;
+        private Coroutine coroutineSelf;
         public GlobalBaseAIUpdater()
         {
-            ElementalWardApplication.OnFixedUpdate -= OnGlobalFixedUpdate;
-            ElementalWardApplication.OnFixedUpdate += OnGlobalFixedUpdate;
+            coroutineSelf = ElementalWardApplication.Instance.StartCoroutine("UpdateGlobalAIAsync");
         }
 
         ~GlobalBaseAIUpdater()
         {
-            ElementalWardApplication.OnFixedUpdate -= OnGlobalFixedUpdate;
+            ElementalWardApplication.Instance.StopCoroutine(coroutineSelf);
         }
 
         private void OnGlobalFixedUpdate()
@@ -41,12 +41,28 @@ namespace ElementalWard
             }
         }
 
+        private void UpdateGlobalAIAsync()
+        {
+
+        }
         private void UpdateGlobalAI()
         {
             var instanceCount = InstanceCount;
             var instances = Instances;
             if (instanceCount == 0 || !SceneNavigationSystem.HasGraphs)
                 return;
+
+            List<CharacterMasterAI> aisThatWantPaths = new List<CharacterMasterAI>();
+            for(int i = 0; i < instanceCount; i++)
+            {
+                var instance = Instances[i];
+                if (instance.AskForPath)
+                {
+                    aisThatWantPaths.Add(instance);
+                }
+            }
+            instanceCount = aisThatWantPaths.Count;
+            instances = aisThatWantPaths;
 
             NativeArray<FindPathJob> jobs = new NativeArray<FindPathJob>(instanceCount, Allocator.Temp);
             NativeArray<JobHandle> jobHandles = new NativeArray<JobHandle>(instanceCount, Allocator.Temp);

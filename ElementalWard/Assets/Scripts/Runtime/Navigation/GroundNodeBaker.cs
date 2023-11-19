@@ -176,10 +176,8 @@ namespace ElementalWard.Navigation
                 GameObject pathNodeObject = new("TempCollider_" + i);
                 pathNodeObject.transform.position = pathNode.position + ProviderPosition;
                 pathNodeObject.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
-                var collider = pathNodeObject.AddComponent<CapsuleCollider>();
-                collider.radius = 0.5f * ProviderScale;
-                collider.height = 2 * ProviderScale;
-                collider.center = Vector3.up * ProviderScale;
+                var collider = pathNodeObject.AddComponent<BoxCollider>();
+                collider.size = Vector3.one * 1.5f * ProviderScale;
                 Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
                 _collidersForBaking.Add(collider);
             }

@@ -53,6 +53,8 @@ namespace ElementalWard
             }
         }
         private AITarget _currentTarget;
+        public bool AskForPath { get; set; }
+
 #if UNITY_EDITOR
         public bool drawPath;
 #endif
@@ -113,6 +115,7 @@ namespace ElementalWard
         {
             if (aiStateMachine.CurrentState is not BaseAIState)
             {
+                AskForPath = false;
                 BodyInputBank.LookRotation = _pathfindingLookRotation;
                 BodyInputBank.moveVector = _pathfindingMovementVector;
                 BodyInputBank.jumpButton.PushState(false);
@@ -121,6 +124,7 @@ namespace ElementalWard
                 return;
             }
             BaseAIState aiState = aiStateMachine.CurrentState as BaseAIState;
+            AskForPath = aiState.AskForNewPath;
             AIInputs inputs = aiState.GenerateInputs();
             BodyInputBank.LookRotation = _pathfindingLookRotation;
             BodyInputBank.moveVector = _pathfindingMovementVector;

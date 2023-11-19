@@ -27,6 +27,7 @@ namespace EntityStates
         [Obsolete("This member is not valid on a BaseAIState inheriting State", true)]
         protected new SpriteLocator SpriteLocator => outer.CommonComponents.spriteLocator;
 
+        public bool AskForNewPath { get; protected set; }
         public override void OnEnter()
         {
             base.OnEnter();
