@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Unity.Collections;
+using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -15,20 +17,46 @@ namespace Nebula.Navigation
     {
         private int _worldLayerMask;
         private NativeArray<RuntimePathNode> _nodes;
+        private NativeArray<RaycastCommand> _commands;
+        private NativeArray<RaycastHit> _hits;
         private float3 _originPosition;
         private float _agentHeight;
 
-        public int[] ExecuteRaycasts()
+        public int[] results = Array.Empty<int>();
+
+        public IEnumerator ExecuteRaycastsAsync()
         {
-            if(math.any(math.isinf(_originPosition)))
-                return Array.Empty<int>();
+            var handle = CreateHandle();
+            if (!handle.HasValue)
+                yield break;
+
+            while (!handle.Value.IsCompleted)
+                yield return null;
+
+            ProcessHits();
+            yield break;
+        }
+        public void ExecuteRaycasts()
+        {
+            var handle = CreateHandle();
+            if (!handle.HasValue)
+                return;
+
+            handle.Value.Complete();
+            ProcessHits();
+        }
+
+        private JobHandle? CreateHandle()
+        {
+            if (math.any(math.isinf(_originPosition)))
+                return null;
 
             int nodesLength = _nodes.Length;
             if (nodesLength == 0)
-                return Array.Empty<int>();
+                return null;
 
-            NativeArray<RaycastCommand> commands = new NativeArray<RaycastCommand>(nodesLength, Allocator.TempJob);
-            NativeArray<RaycastHit> hits = new NativeArray<RaycastHit>(nodesLength, Allocator.TempJob);
+            _commands = new NativeArray<RaycastCommand>(nodesLength, Allocator.TempJob);
+            _hits = new NativeArray<RaycastHit>(nodesLength, Allocator.TempJob);
 
             QueryParameters queryParams = new QueryParameters
             {
@@ -38,34 +66,38 @@ namespace Nebula.Navigation
                 hitTriggers = QueryTriggerInteraction.Ignore
             };
 
-            for(int i = 0; i < nodesLength; i++)
+            for (int i = 0; i < nodesLength; i++)
             {
                 var node = _nodes[i];
                 var nodePos = node.worldPosition + math.up() * _agentHeight;
-                var distance = math.distance(node.worldPosition, _originPosition);
-                var direction = math.normalize(node.worldPosition - _originPosition);
+                var distance = math.distance(nodePos, _originPosition);
+                var direction = math.normalize(nodePos - _originPosition);
                 var command = new RaycastCommand(_originPosition, direction, queryParams, distance);
-                commands[i] = command;
+                _commands[i] = command;
             }
+            return RaycastCommand.ScheduleBatch(_commands, _hits, 100, 1);
+        }
 
-            var handle = RaycastCommand.ScheduleBatch(commands, hits, 100, 1);
-            handle.Complete();
+        public JobHandle Schedule()
+        {
+            return CreateHandle().GetValueOrDefault();
+        }
 
+        private void ProcessHits()
+        {
             List<int> reachableIndices = new List<int>();
-            for(int i = 0; i < hits.Length; i++)
+            for(int i = 0; i < _hits.Length; i++)
             {
-                var hit = hits[i];
+                var hit = _hits[i];
 
                 if(!hit.collider)
                 {
                     reachableIndices.Add(i);
                 }
             }
-
-            commands.Dispose();
-            hits.Dispose();
-
-            return reachableIndices.ToArray();
+            _commands.Dispose();
+            _hits.Dispose();
+            results = reachableIndices.ToArray();
         }
 
         public RaycastNodes(int worldLayerMask, NativeArray<RuntimePathNode> nodes, float3 originPosition, float agentHeight)

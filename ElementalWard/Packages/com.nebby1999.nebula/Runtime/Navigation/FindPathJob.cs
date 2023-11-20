@@ -37,7 +37,7 @@ namespace Nebula.Navigation
             RuntimePathNode endNode = nodes[endIndex.Value];
 
             NativeList<int> openList = new NativeList<int>(1024, Allocator.Temp);
-            NativeHashSet<int> closedSet = new NativeHashSet<int>(4096, Allocator.Temp);
+            NativeParallelHashSet<int> closedSet = new NativeParallelHashSet<int>(4096, Allocator.Temp);
 
             openList.Add(startNode.nodeIndex);
             while(openList.Length > 0)

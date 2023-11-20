@@ -1,6 +1,7 @@
 using ElementalWard.Navigation;
 using Nebula;
 using Nebula.Navigation;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Jobs;
@@ -13,110 +14,60 @@ namespace ElementalWard
 {
     public abstract class GlobalUpdater<T> where T : MonoBehaviour
     {
-        public int InstanceCount => Instances.Count;
+        public int Count => Instances.Count;
         public List<T> Instances => InstanceTracker.GetInstances<T>();
     }
 
-    public class GlobalBaseAIUpdater : GlobalUpdater<CharacterMasterAI>
+    public class GlobalNavigationAgentUpdater : GlobalUpdater<NavigationAgent>
     {
         private float stopwatch;
-        private Coroutine coroutineSelf;
-        public GlobalBaseAIUpdater()
+
+        public GlobalNavigationAgentUpdater()
         {
-            coroutineSelf = ElementalWardApplication.Instance.StartCoroutine("UpdateGlobalAIAsync");
+            ElementalWardApplication.OnFixedUpdate -= OnGlobalFixedUpdate;
+            ElementalWardApplication.OnFixedUpdate += OnGlobalFixedUpdate;
         }
 
-        ~GlobalBaseAIUpdater()
+        ~GlobalNavigationAgentUpdater()
         {
-            ElementalWardApplication.Instance.StopCoroutine(coroutineSelf);
+            ElementalWardApplication.OnFixedUpdate -= OnGlobalFixedUpdate;
         }
 
         private void OnGlobalFixedUpdate()
         {
             stopwatch += Time.fixedDeltaTime;
-            if(stopwatch > CharacterMasterAI.TIME_BETWEEN_AI_UPDATE)
+            if(stopwatch > NavigationAgent.TIME_BETWEEN_NAVIGATION_UPDATE)
             {
-                stopwatch = 0;
-                UpdateGlobalAI();
+                stopwatch -= NavigationAgent.TIME_BETWEEN_NAVIGATION_UPDATE;
+                UpdateNavigation();
             }
         }
 
-        private void UpdateGlobalAIAsync()
+        private void UpdateNavigation()
         {
-
-        }
-        private void UpdateGlobalAI()
-        {
-            var instanceCount = InstanceCount;
+            var instanceCount = Count;
             var instances = Instances;
+
             if (instanceCount == 0 || !SceneNavigationSystem.HasGraphs)
                 return;
 
-            List<CharacterMasterAI> aisThatWantPaths = new List<CharacterMasterAI>();
-            for(int i = 0; i < instanceCount; i++)
+            for(int i = 0; i < Count; i++)
             {
-                var instance = Instances[i];
-                if (instance.AskForPath)
-                {
-                    aisThatWantPaths.Add(instance);
-                }
+                UpdatePathIndividual(instances[i]);
             }
-            instanceCount = aisThatWantPaths.Count;
-            instances = aisThatWantPaths;
+        }
 
-            NativeArray<FindPathJob> jobs = new NativeArray<FindPathJob>(instanceCount, Allocator.Temp);
-            NativeArray<JobHandle> jobHandles = new NativeArray<JobHandle>(instanceCount, Allocator.Temp);
-            SceneNavigationSystem.PathRequestResult[] requestResults = new SceneNavigationSystem.PathRequestResult[instanceCount];
-
-            for (int i = 0; i < instanceCount; i++)
+        private void UpdatePathIndividual(NavigationAgent agent)
+        {
+            var dataProvider = agent.NavigationDataProvider;
+            SceneNavigationSystem.PathRequest request = new SceneNavigationSystem.PathRequest
             {
-                var baseAIInstance = instances[i];
-                Vector3 bodyPos = baseAIInstance.BodyPosition ?? Vector3.positiveInfinity;
-                Vector3 targetPos = baseAIInstance.CurrentTarget.Position ?? Vector3.positiveInfinity;
-                float capsuleHeight = baseAIInstance.CurrentBodyComponents.characterMotorController.IsFlying ? 1 : baseAIInstance.BodyCapsuleHeight;
-                float capsuleRadius = baseAIInstance.BodyCapsuleRadius;
-                float jumpStrength = baseAIInstance.BodyJumpStrength;
-
-                SceneNavigationSystem.PathRequest request = new SceneNavigationSystem.PathRequest
-                {
-                    actorHeightHalved = capsuleHeight / 2,
-                    start = bodyPos,
-                    end = targetPos,
-                    graphProvider = baseAIInstance.CurrentBodyComponents.characterMotorController.IsFlying ? SceneNavigationSystem.AirNodeProvider : SceneNavigationSystem.GroundNodeProvider
-                };
-
-                SceneNavigationSystem.PathRequestResult requestResult = SceneNavigationSystem.RequestPath(request);
-
-                requestResults[i] = requestResult;
-                jobs[i] = requestResult.findPathJob;
-                jobHandles[i] = requestResult.ScheduleFindPathJob();
-            }
-
-            JobHandle.CompleteAll(jobHandles);
-
-            for (int i = 0; i < instanceCount; i++)
-            {
-                var job = jobs[i];
-#if DEBUG
-                try
-                {
-#endif
-                    instances[i].UpdatePath(job.result);
-#if DEBUG
-                }
-                catch(System.Exception e)
-                {
-                    Debug.LogError(e);
-                }
-                finally
-                {
-                    job.result.Dispose();
-                    requestResults[i].Dispose();
-                }
-#endif
-            }
-            jobs.Dispose();
-            jobHandles.Dispose();
+                actorHeightHalved = dataProvider.AgentHeight / 2,
+                start = dataProvider.Start,
+                end = dataProvider.Target,
+                graphProvider = dataProvider.IsAgentFlying ? SceneNavigationSystem.AirNodeProvider : SceneNavigationSystem.GroundNodeProvider
+            };
+            agent.StartCoroutine(agent.C_GetNavigationResults(request));
         }
     }
 

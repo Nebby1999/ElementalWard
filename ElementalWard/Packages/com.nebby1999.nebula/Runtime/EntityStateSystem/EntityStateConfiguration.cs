@@ -132,8 +132,9 @@ namespace Nebula
             }
         }
 
-        public void Awake()
+        public new void Awake()
         {
+            base.Awake();
             fieldCollection.PurgeUnityPseudoNull();
         }
     }

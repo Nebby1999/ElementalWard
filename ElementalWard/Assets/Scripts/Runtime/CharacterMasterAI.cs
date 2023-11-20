@@ -1,4 +1,5 @@
 //using ElementalWard.Navigation;
+using ElementalWard.Navigation;
 using EntityStates;
 using KinematicCharacterController;
 using Nebula;
@@ -12,7 +13,7 @@ using UnityEngine;
 namespace ElementalWard
 {
     [RequireComponent(typeof(CharacterMaster))]
-    public class CharacterMasterAI : MonoBehaviour
+    public class CharacterMasterAI : MonoBehaviour, INavigationAgentDataProvider
     {
         public const float TIME_BETWEEN_AI_UPDATE = 0.25f;
 
@@ -27,12 +28,9 @@ namespace ElementalWard
         public CharacterMaster Master { get; private set; }
         public BodyComponents CurrentBodyComponents { get; private set; }
         public CharacterInputBank BodyInputBank => CurrentBodyComponents.inputBank;
-        public float BodyCapsuleHeight => CurrentBodyComponents.characterMotorController ? CurrentBodyComponents.characterMotorController.MotorCapsule.height : 2;
-        public float BodyCapsuleRadius => CurrentBodyComponents.characterMotorController ? CurrentBodyComponents.characterMotorController.MotorCapsule.radius : 1f;
         public float BodyJumpStrength => CurrentBodyComponents.body ? CurrentBodyComponents.body.JumpStrength : 0;
         public TeamIndex BodyTeamIndex => CurrentBodyComponents.teamComponent ? CurrentBodyComponents.teamComponent.CurrentTeamIndex : TeamIndex.None;
         public KinematicCharacterMotor BodyMotor => CurrentBodyComponents.characterMotorController.Motor;
-        public Vector3? BodyPosition => CurrentBodyComponents.IsValid ? CurrentBodyComponents.characterMotorController.Motor ? CurrentBodyComponents.characterMotorController.Motor.InitialSimulationPosition : Vector3.zero : null;
         public AITarget CurrentTarget
         {
             get
@@ -53,42 +51,19 @@ namespace ElementalWard
             }
         }
         private AITarget _currentTarget;
-        public bool AskForPath { get; set; }
+        public float AgentHeight => BodyMotor ? BodyMotor.Capsule.height : 2;
+        public float AgentRadius => BodyMotor ? BodyMotor.Capsule.radius : 0.5f;
+        public Vector3 Target => CurrentTarget?.Position ?? Vector3.positiveInfinity;
+        public Vector3 Start => BodyMotor ? BodyMotor.TransientPosition : Vector3.positiveInfinity;
 
-#if UNITY_EDITOR
-        public bool drawPath;
-#endif
-        [Nebula.ReadOnly, SerializeField]
-        private List<Vector3> _path = new List<Vector3>();
+        public bool IsAgentFlying => CurrentBodyComponents.characterMotorController ? CurrentBodyComponents.characterMotorController.IsFlying : false;
 
-        private int _pathIndex;
-        private Vector3 _currentWaypoint;
-        private float _distanceFromCurrentWaypoint;
         private float _updateStopwatch;
-        private Vector3 _pathfindingMovementVector;
-        private Quaternion _pathfindingLookRotation;
 
-        private static GlobalBaseAIUpdater globalUpdater;
-        [SystemInitializer]
-        private static void SystemInitialzer()
-        {
-            globalUpdater = new GlobalBaseAIUpdater();
-        }
         private void OnTargetDeath(HealthComponent hc)
         {
             if (CurrentTarget.healthComponent && _currentTarget.healthComponent == hc)
                 CurrentTarget = AITarget.Invalid;
-        }
-        public void UpdatePath(NativeList<float3> result)
-        {
-            _path.Clear();
-            for (int i = 0; i < result.Length; i++)
-            {
-                _path.Add(result[i]);
-            }
-            _pathIndex = 1;
-            if (_pathIndex > result.Length - 1)
-                _pathIndex = result.Length - 1;
         }
 
         private void Awake()
@@ -113,7 +88,7 @@ namespace ElementalWard
 
         private void Update()
         {
-            if (aiStateMachine.CurrentState is not BaseAIState)
+            /*if (aiStateMachine.CurrentState is not BaseAIState)
             {
                 AskForPath = false;
                 BodyInputBank.LookRotation = _pathfindingLookRotation;
@@ -134,7 +109,7 @@ namespace ElementalWard
             BodyInputBank.primaryButton.PushState(inputs.primaryPressed);
             BodyInputBank.secondaryButton.PushState(inputs.secondaryPressed);
             BodyInputBank.utilityButton.PushState(inputs.utilityPressed);
-            BodyInputBank.specialButton.PushState(inputs.specialPressed);
+            BodyInputBank.specialButton.PushState(inputs.specialPressed);*/
         }
 
         private void FixedUpdate()
@@ -158,19 +133,19 @@ namespace ElementalWard
             if (!CurrentTarget.IsValid)
                 ScanForTargetNearby();
 
-            if (_path.Count == 0)
+            /*if (_path.Count == 0)
             {
-                _pathfindingMovementVector = Vector3.zero;
+                /*_pathfindingMovementVector = Vector3.zero;
                 _pathfindingLookRotation = CurrentBodyComponents.transform.rotation;
                 return;
-            }
+            }*/
 
             ProcessPath();
         }
 
         private void ScanForTargetNearby()
         {
-            Collider[] potentialTargetHurtboxes = Physics.OverlapSphere(BodyPosition.Value, awarenessRange, LayerIndex.entityPrecise.Mask);
+            Collider[] potentialTargetHurtboxes = Physics.OverlapSphere(Start, awarenessRange, LayerIndex.entityPrecise.Mask);
 
             List<HurtBox> encounteredMainHurtboxes = new List<HurtBox>();
             foreach (Collider col in potentialTargetHurtboxes)
@@ -244,7 +219,7 @@ namespace ElementalWard
 
         private void ProcessPath()
         {
-            _currentWaypoint = _path[_pathIndex];
+            /*_currentWaypoint = _path[_pathIndex];
             _distanceFromCurrentWaypoint = Vector3.Distance(_currentWaypoint, BodyPosition.Value);
             if (_distanceFromCurrentWaypoint < 0.7f)
             {
@@ -257,19 +232,15 @@ namespace ElementalWard
 
             var vector = _currentWaypoint - BodyPosition;
             var movementDir = vector.Value.normalized;
-            _pathfindingMovementVector = movementDir;
-            _pathfindingLookRotation = Quaternion.LookRotation(movementDir, BodyMotor ? BodyMotor.CharacterUp : Vector3.up);
+            /*_pathfindingMovementVector = movementDir;
+            _pathfindingLookRotation = Quaternion.LookRotation(movementDir, BodyMotor ? BodyMotor.CharacterUp : Vector3.up);*/
         }
 
-        private void OnDisable()
-        {
-            InstanceTracker.Remove(this);
-        }
 
         private void GetBodyComponents(CharacterBody obj)
         {
             CurrentBodyComponents = new BodyComponents(obj.gameObject);
-            _pathfindingLookRotation = CurrentBodyComponents.transform.rotation;
+            //_pathfindingLookRotation = CurrentBodyComponents.transform.rotation;
             enabled = true;
         }
 
@@ -295,47 +266,6 @@ namespace ElementalWard
             Vector3 rotatedForward = Quaternion.Euler(0, -awarenessAngle * 0.5f, 0) * transform.forward;
 
             UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, rotatedForward, awarenessAngle, awarenessRange);
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (!drawPath)
-                return;
-
-            var previousPos = Vector3.zero;
-            int pathCount = _path.Count;
-            for (int i = 0; i < pathCount; i++)
-            {
-                var pos = _path[i];
-                if (i == 0)
-                {
-                    Gizmos.color = Color.red;
-                }
-                else if (i == pathCount - 1)
-                {
-                    Gizmos.color = Color.green;
-                }
-                else if(i == _pathIndex)
-                {
-                    Gizmos.color = Color.white;
-                }
-                else
-                {
-                    Gizmos.color = Color.black;
-                }
-
-                Gizmos.DrawSphere(_path[i], 0.5f);
-
-                if (i == 0)
-                {
-                    previousPos = pos;
-                    continue;
-                }
-
-                Gizmos.color = Color.cyan;
-                Gizmos.DrawLine(previousPos, pos);
-                previousPos = pos;
-            }
         }
 #endif
         public struct AIInputs

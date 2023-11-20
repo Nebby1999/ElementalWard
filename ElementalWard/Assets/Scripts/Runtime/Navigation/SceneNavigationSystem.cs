@@ -25,6 +25,71 @@ namespace ElementalWard
         private static GroundNodeGraph _groundGraph;
         private static GameObject _gameObject;
 
+        public static IEnumerator RequestPathAsync(PathRequest request, PathRequestResult in_Result)
+        {
+            if (request.graphProvider == null)
+                throw new NullReferenceException("No GraphProvider Specified.");
+
+            if (request.graphProvider.NodeGraph == null)
+                throw new NullReferenceException("GraphProvider does not have a NodeGraph");
+
+            var graph = request.graphProvider.NodeGraph;
+            var runtimeNodes = new NativeArray<RuntimePathNode>(graph.RuntimeNodes, Allocator.TempJob);
+            var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graph.RuntimeLinks, Allocator.TempJob);
+
+            var raycastNodes = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.start, request.actorHeightHalved);
+            yield return raycastNodes.ExecuteRaycastsAsync();
+
+            var reachableIndices = raycastNodes.results;
+            var reachableStartIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
+
+            raycastNodes = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.end, request.actorHeightHalved);
+            yield return raycastNodes.ExecuteRaycastsAsync();
+
+            reachableIndices = raycastNodes.results;
+            var reachableEndIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
+            var closestStartIndex = new NativeReference<int>(-1, Allocator.TempJob);
+            var closestEndIndex = new NativeReference<int>(-1, Allocator.TempJob);
+
+            FindClosestNodeIndexJob findClosestStartIndexJob = new FindClosestNodeIndexJob
+            {
+                nodes = runtimeNodes,
+                position = request.start,
+                result = closestStartIndex,
+            };
+
+            FindClosestNodeIndexJob findClosestEndIndexJob = new FindClosestNodeIndexJob
+            {
+                nodes = runtimeNodes,
+                position = request.end,
+                result = closestEndIndex,
+            };
+
+            FindPathJob findPathJob = new FindPathJob
+            {
+                startPos = request.start,
+                startIndex = closestStartIndex,
+                endPos = request.end,
+                endIndex = closestEndIndex,
+                nodes = runtimeNodes,
+                links = runtimeLinks,
+                actorHeight = request.actorHeightHalved,
+                result = new NativeList<float3>(1024, Allocator.TempJob),
+            };
+
+            in_Result.runtimeLinks = runtimeLinks;
+            in_Result.runtimeNodes = runtimeNodes;
+            in_Result.findClosestEndNodeIndexJob = findClosestEndIndexJob;
+            in_Result.endPos = request.end;
+            in_Result.reachableEndIndices = reachableEndIndices;
+            in_Result.closestEndIndex = closestEndIndex;
+            in_Result.findClosestStartNodeIndexJob = findClosestStartIndexJob;
+            in_Result.startPos = request.start;
+            in_Result.reachableStartIndices = reachableStartIndices;
+            in_Result.closestStartIndex = closestStartIndex;
+            in_Result.findNodesJobHandles = new NativeArray<JobHandle>(2, Allocator.TempJob);
+            in_Result.findPathJob = findPathJob;
+        }
         public static PathRequestResult RequestPath(PathRequest request)
         {
             if (request.graphProvider == null)
@@ -37,10 +102,14 @@ namespace ElementalWard
             var runtimeNodes = new NativeArray<RuntimePathNode>(graph.RuntimeNodes, Allocator.TempJob);
             var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graph.RuntimeLinks, Allocator.TempJob);
 
-            var reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.start, request.actorHeightHalved).ExecuteRaycasts();
+            var raycastNodes = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.start, request.actorHeightHalved);
+            raycastNodes.ExecuteRaycasts();
+            var reachableIndices = raycastNodes.results;
             var reachableStartIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
 
-            reachableIndices = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.end, request.actorHeightHalved).ExecuteRaycasts();
+            raycastNodes = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.end, request.actorHeightHalved);
+            raycastNodes.ExecuteRaycasts();
+            reachableIndices = raycastNodes.results;
             var reachableEndIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
             var closestStartIndex = new NativeReference<int>(-1, Allocator.TempJob);
             var closestEndIndex = new NativeReference<int>(-1, Allocator.TempJob);
