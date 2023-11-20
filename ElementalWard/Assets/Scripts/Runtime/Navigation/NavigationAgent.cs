@@ -81,15 +81,21 @@ namespace ElementalWard.Navigation
 
         public IEnumerator C_GetNavigationResults(SceneNavigationSystem.PathRequest pathRequest)
         {
+            InstanceTracker.Remove(this);
             var requestResult = new SceneNavigationSystem.PathRequestResult();
-            SceneNavigationSystem.RequestPathAsync(pathRequest, requestResult);
-
+            Debug.Log("Requesting Path");
+            yield return SceneNavigationSystem.RequestPathAsync(pathRequest, requestResult);
+            Debug.Log("Path Requested");
             var findPathJob = requestResult.findPathJob;
+            Debug.Log("Scheduling");
             var handle = requestResult.ScheduleFindPathJob();
             
             while (!handle.IsCompleted)
+            {
+                Debug.Log("Find path job not completed, waiting.");
                 yield return null;
-
+            }
+            handle.Complete();
             try
             {
                 UpdatePath(findPathJob.result);
@@ -103,6 +109,7 @@ namespace ElementalWard.Navigation
                 findPathJob.result.Dispose();
                 requestResult.Dispose();
             }
+            InstanceTracker.Add(this);
             yield break;
         }
 
