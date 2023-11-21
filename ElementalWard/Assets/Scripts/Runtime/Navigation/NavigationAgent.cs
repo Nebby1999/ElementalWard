@@ -12,14 +12,19 @@ namespace ElementalWard.Navigation
 {
     public class NavigationAgent : MonoBehaviour
     {
-        public const float TIME_BETWEEN_NAVIGATION_UPDATE = 0.1f;
+        public const float TIME_BETWEEN_NAVIGATION_UPDATE = 0.175f;
         public static List<NavigationAgent> _activeAgents { get; private set; }
+        public Vector3 TargetPos => _targetOverride ?? NavigationDataProvider.Target;
+        private Vector3? _targetOverride;
         public INavigationAgentDataProvider NavigationDataProvider { get; private set; }
         public Vector3 CurrentPathfindingMovementVector { get; private set; }
         public Quaternion CurrentPathfindingLookRotation { get; private set; }
         public bool AskForPath
         {
-            get => _askForPath;
+            get
+            {
+                return _navigationCoroutine == null && _askForPath;
+            }
             set
             {
                 _askForPath = value;
@@ -46,7 +51,9 @@ namespace ElementalWard.Navigation
         private int _pathIndex;
         private Vector3 _currentWaypoint;
         private float _distanceFromCurrentWaypoint;
+        private bool _isStopped;
         private static GlobalNavigationAgentUpdater _updater;
+        private Coroutine _navigationCoroutine;
 
         public void UpdatePath(NativeList<float3> newPath)
         {
@@ -79,20 +86,67 @@ namespace ElementalWard.Navigation
             AskForPath = false;
         }
 
-        public IEnumerator C_GetNavigationResults(SceneNavigationSystem.PathRequest pathRequest)
+        public void StartNavigationCoroutine(SceneNavigationSystem.PathRequest pathRequest)
         {
-            InstanceTracker.Remove(this);
+            _navigationCoroutine = StartCoroutine(C_GetNavigationResults(pathRequest));
+        }
+
+        public void UpdateFromAI(float deltaTime)
+        {
+
+        }
+
+        public void CancelCurrentPath()
+        {
+            _path.Clear();
+            _pathIndex = -1;
+        }
+
+        public void Stop() => _isStopped = true;
+        public void Resume() => _isStopped = false;
+        private void Update()
+        {
+            if(_path.Count == 0)
+            {
+                CurrentPathfindingMovementVector = Vector3.zero;
+                CurrentPathfindingLookRotation = NavigationDataProvider?.AgentTransform ? NavigationDataProvider.AgentTransform.rotation : Quaternion.identity;
+            }
+
+            if (!NavigationDataProvider.AgentTransform)
+                return;
+
+            if(!_isStopped)
+                ProcessPath();
+        }
+
+        private void ProcessPath()
+        {
+            _currentWaypoint = _path[_pathIndex];
+            _distanceFromCurrentWaypoint = math.distancesq(_currentWaypoint, NavigationDataProvider.AgentTransform.position);
+            if(_distanceFromCurrentWaypoint < 0.35f)
+            {
+                _pathIndex++;
+                var num = _path.Count - 1;
+                if (_pathIndex >= num)
+                    _pathIndex = num;
+                return;
+            }
+
+            var vector = _currentWaypoint - NavigationDataProvider.AgentTransform.position;
+            var movementDirection = vector.normalized;
+            CurrentPathfindingMovementVector = movementDirection;
+            CurrentPathfindingLookRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+        }
+
+        private IEnumerator C_GetNavigationResults(SceneNavigationSystem.PathRequest pathRequest)
+        {
             var requestResult = new SceneNavigationSystem.PathRequestResult();
-            Debug.Log("Requesting Path");
             yield return SceneNavigationSystem.RequestPathAsync(pathRequest, requestResult);
-            Debug.Log("Path Requested");
             var findPathJob = requestResult.findPathJob;
-            Debug.Log("Scheduling");
             var handle = requestResult.ScheduleFindPathJob();
             
             while (!handle.IsCompleted)
             {
-                Debug.Log("Find path job not completed, waiting.");
                 yield return null;
             }
             handle.Complete();
@@ -109,7 +163,7 @@ namespace ElementalWard.Navigation
                 findPathJob.result.Dispose();
                 requestResult.Dispose();
             }
-            InstanceTracker.Add(this);
+            _navigationCoroutine = null;
             yield break;
         }
 
@@ -162,7 +216,8 @@ namespace ElementalWard.Navigation
         public float AgentHeight { get; }
         public float AgentRadius { get; }
         public Vector3 Target { get; }
-        public Vector3 Start { get; }
-        public bool IsAgentFlying { get; }
+        public Vector3 StartPosition { get; }
+        public Transform AgentTransform { get; }
+        public bool IsFlying { get; }
     }
 }

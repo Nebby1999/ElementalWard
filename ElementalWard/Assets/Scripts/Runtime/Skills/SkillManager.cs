@@ -66,6 +66,17 @@ namespace ElementalWard
             return ArrayUtils.GetSafe(ref _allSkills, index);
         }
 
+        public GenericSkill GetSkillBySkillSlot(SkillSlot slot)
+        {
+            switch(slot)
+            {
+                case SkillSlot.Primary: return Primary;
+                case SkillSlot.Secondary: return Secondary;
+                case SkillSlot.Utility: return Utility;
+                case SkillSlot.Special: return Special;
+            }
+            return null;
+        }
         public GenericSkill GetSkill(string name)
         {
             for(int i = 0; i < _allSkills.Length; i++)

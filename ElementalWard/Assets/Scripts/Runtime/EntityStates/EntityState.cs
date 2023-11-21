@@ -7,9 +7,9 @@ namespace EntityStates
     public class EntityState : EntityStateBase
     {
         protected new EntityStateMachine outer;
+        protected CharacterBody CharacterBody => outer.CommonComponents.characterBody;
         protected CharacterMotorController CharacterController => outer.CommonComponents.characterController;
         protected KinematicCharacterMotor CharacterMotor => outer.CommonComponents.characterMotor;
-        protected CharacterBody CharacterBody => outer.CommonComponents.characterBody;
         protected CharacterInputBank CharacterInputBank => outer.CommonComponents.inputBank;
         protected Transform Transform => outer.CommonComponents.transform;
         protected GameObject GameObject => outer.CommonComponents.gameObject;

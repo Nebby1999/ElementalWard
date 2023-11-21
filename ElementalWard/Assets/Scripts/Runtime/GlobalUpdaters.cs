@@ -59,15 +59,18 @@ namespace ElementalWard
 
         private void UpdatePathIndividual(NavigationAgent agent)
         {
+            if (!agent.AskForPath)
+                return;
+
             var dataProvider = agent.NavigationDataProvider;
             SceneNavigationSystem.PathRequest request = new SceneNavigationSystem.PathRequest
             {
                 actorHeightHalved = dataProvider.AgentHeight / 2,
-                start = dataProvider.Start,
-                end = dataProvider.Target,
-                graphProvider = dataProvider.IsAgentFlying ? SceneNavigationSystem.AirNodeProvider : SceneNavigationSystem.GroundNodeProvider
+                start = dataProvider.StartPosition,
+                end = agent.TargetPos,
+                graphProvider = dataProvider.IsFlying ? SceneNavigationSystem.AirNodeProvider : SceneNavigationSystem.GroundNodeProvider
             };
-            agent.StartCoroutine(agent.C_GetNavigationResults(request));
+            agent.StartNavigationCoroutine(request);
         }
     }
 

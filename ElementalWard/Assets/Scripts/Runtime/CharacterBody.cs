@@ -64,17 +64,20 @@ namespace ElementalWard
         }
         public CharacterMaster TiedMaster { get; set; }
         public float Radius { get; internal set; }
-        private bool _isSprinting;
-        public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
-        private bool _statsDirty;
         public BodyIndex BodyIndex { get; internal set; }
+        public TeamIndex TeamIndex => _teamComponent.CurrentTeamIndex;
+        public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
+        private bool _isSprinting;
+        private bool _statsDirty;
         private IBodyStatModifier[] _bodyStatModifiers = Array.Empty<IBodyStatModifier>();
         private BuffController _buffController;
+        private TeamComponent _teamComponent;
         private void Awake()
         {
             InputBank = GetComponent<CharacterInputBank>();
             HealthComponent = GetComponent<HealthComponent>();
             _buffController = GetComponent<BuffController>();
+            _teamComponent = GetComponent<TeamComponent>();
 
             var collider1 = GetComponent<CapsuleCollider>();
             Radius = collider1 ? collider1.radius : 1;
