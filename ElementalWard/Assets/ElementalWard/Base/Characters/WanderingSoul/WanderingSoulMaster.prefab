@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1742405643752014462}
   - component: {fileID: 7573758394598244162}
   - component: {fileID: 2282280824151324375}
+  - component: {fileID: 2862673813397746836}
   - component: {fileID: 1486930625785504728}
   m_Layer: 0
   m_Name: WanderingSoulMaster
@@ -53,7 +54,7 @@ MonoBehaviour:
   _currentXP: 0
   _neededXPForNextLevel: 109.23277
   _autoCalculateNextLevelRequirement: 1
-  defaultTeam: {fileID: 0}
+  defaultTeam: {fileID: 11400000, guid: 4b7dfd7da9d2f2b40b1709ab23ccdffc, type: 2}
 --- !u!114 &2282280824151324375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,12 +67,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ba9b7ba0d02b048802f29dd66bbbc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aiDriverData: []
-  aiStateMachine: {fileID: 0}
+  _aiDriverData:
+  - {fileID: 11400000, guid: f62b3378755d3364f988452e2de61b2a, type: 2}
+  - {fileID: 11400000, guid: b3bff69488b43f44d9fec6c6d0a98fa3, type: 2}
+  - {fileID: 11400000, guid: bfa34d08d02988849b573fc8a35c3ad3, type: 2}
+  aiStateMachine: {fileID: 1486930625785504728}
   aiState:
-    _assemblyQualifiedName: 
-  awarenessAngle: 0
-  awarenessRange: 0
+    _assemblyQualifiedName: EntityStates.CharacterAI.AIGuardState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  awarenessAngle: 90
+  awarenessRange: 5
+--- !u!114 &2862673813397746836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031859106440330407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236203aca05d5c341ac5c9ff1dee60be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _askForPath: 0
+  _drawPath: 1
+  _path: []
 --- !u!114 &1486930625785504728
 MonoBehaviour:
   m_ObjectHideFlags: 0

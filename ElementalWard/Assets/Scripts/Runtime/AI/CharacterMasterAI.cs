@@ -63,6 +63,12 @@ namespace ElementalWard
         private void Start()
         {
             AIDrivers = _aiDriverData.Select(x => x.CreateDriver()).ToArray();
+            DriverEvaluation = new AIDriverEvaluation
+            {
+                aimTarget = AITarget.Invalid,
+                target = AITarget.Invalid,
+                dominantDriver = null,
+            };
         }
 
         private void OnEnable()
@@ -121,7 +127,7 @@ namespace ElementalWard
         private void BeginAIDriver(AIDriverEvaluation newDriver)
         {
             DriverEvaluation = newDriver;
-            DriverEvaluation.dominantDriver.OnSelected();
+            DriverEvaluation.dominantDriver?.OnSelected();
         }
 
         private AIDriverEvaluation EvaluateDrivers(float deltaTime)
@@ -145,7 +151,7 @@ namespace ElementalWard
         }
         private AIDriverEvaluation? EvaluateDriverSingle(in AIDriverEvaluation currentEvaluation, AIDriver driver)
         {
-            if (!Body || BodySkillManager)
+            if (!Body || !BodySkillManager)
                 return null;
 
             if (driver.NoRepeat && currentEvaluation.dominantDriver == driver)
@@ -174,7 +180,7 @@ namespace ElementalWard
                     movementTarget = TargetPassesDriverFilters(_friendlyTarget, driver);
                     break;
             }
-            if (movementTarget == null)
+            if (!movementTarget.IsValid)
                 return null;
 
             AITarget aimTarget = null;
@@ -209,19 +215,19 @@ namespace ElementalWard
         private AITarget TargetPassesDriverFilters(AITarget targetToCheck, AIDriver driver)
         {
             if (!targetToCheck.IsValid)
-                return null;
+                return AITarget.Invalid;
 
             Vector3 aimPoint = BodyInputBank ? BodyInputBank.AimOrigin : AgentTransform.position;
             Vector3? targetPos = targetToCheck.Position;
             if (!targetPos.HasValue)
-                return null;
+                return AITarget.Invalid;
             var distance = Vector3.Distance(aimPoint, targetPos.Value);
             if (distance < driver.MinDistance || distance > driver.MaxDistance)
-                return null;
+                return AITarget.Invalid;
 
             if(driver.SelectionRequiresLOS && !targetToCheck.HasLOS(Body, out var _))
             {
-                return null;
+                return AITarget.Invalid;
             }
             return targetToCheck;
         }
@@ -241,8 +247,10 @@ namespace ElementalWard
                 BodyInputBank.specialButton.PushState(_aiInputs.specialPressed);
                 BodyInputBank.jumpButton.PushState(_aiInputs.jumpPressed);
                 BodyInputBank.sprintButton.PushState(_aiInputs.sprintPressed);
-                BodyInputBank.moveVector = new Vector3(_aiInputs.movementInput.x, 0, _aiInputs.movementInput.y);
+                BodyInputBank.moveVector = _aiInputs.movementInput;
                 BodyInputBank.elementAxis = _aiInputs.scrollInput;
+                BodyInputBank.AimDirection = _aiInputs.aimDir;
+                BodyInputBank.LookRotation = _aiInputs.lookRotation ?? UnityUtil.SafeLookRotation(BodyInputBank.AimDirection);
             }
         }
         private HurtBox ScanForTargetNearby(float minDistance, float maxDistance, bool filterByLos)
@@ -283,6 +291,7 @@ namespace ElementalWard
             BodyInputBank = obj.InputBank;
             BodyCharacterMotor = obj.GetComponent<KinematicCharacterMotor>();
             BodyMotorController = obj.GetComponent<CharacterMotorController>();
+            BodySkillManager = obj.GetComponent<SkillManager>();
             enabled = true;
             Type type = (Type)aiState;
             if(aiStateMachine && type != null)
@@ -297,6 +306,7 @@ namespace ElementalWard
             BodyInputBank = null;
             BodyCharacterMotor = null;
             BodyMotorController = null;
+            BodySkillManager = null;
             enabled = false;
             if(aiStateMachine)
             {
@@ -322,8 +332,9 @@ namespace ElementalWard
 #endif
         public struct AIInputs
         {
-            public Vector2 movementInput;
+            public Vector3 movementInput;
             public Vector3 aimDir;
+            public Quaternion? lookRotation;
             public float scrollInput;
             public bool jumpPressed;
             public bool sprintPressed;
@@ -361,7 +372,7 @@ namespace ElementalWard
                     if (!IsAlive)
                         return null;
 
-                    return _motor ? _motor.TransientPosition : bodyTransform.position;
+                    return bodyTransform.position;
                 }
             }
             public readonly HealthComponent healthComponent;
@@ -383,13 +394,14 @@ namespace ElementalWard
             }
             public bool wasAlive;
             public readonly HurtBox mainHurtBox;
-            private readonly KinematicCharacterMotor _motor;
 
             public bool HasLOS(CharacterBody aiBody, out RaycastHit raycastHit)
             {
                 var origin = aiBody.AimOriginTransform.position;
-                var aimDirection = origin - Position.Value;
+                var aimDirection = Position.Value - origin;
+                aimDirection.Normalize();
 
+                Debug.DrawLine(origin, aimDirection * 10, Color.magenta, 1);
                 if (Physics.Raycast(origin, aimDirection, out raycastHit, 1024, LayerIndex.CommonMasks.Bullet))
                 {
                     return mainHurtBox ? mainHurtBox.ColliderID == raycastHit.colliderInstanceID : false;
@@ -400,7 +412,7 @@ namespace ElementalWard
             public bool HasAimLOS(CharacterBody aiBody, out Vector3 aimDirection, out RaycastHit hit)
             {
                 var origin = aiBody.AimOriginTransform.position;
-                aimDirection = (origin - Position.Value).normalized;
+                aimDirection = (Position.Value - origin).normalized;
 
                 if (Physics.Raycast(origin, aimDirection, out hit, 1024, LayerIndex.CommonMasks.Bullet))
                 {
@@ -420,7 +432,6 @@ namespace ElementalWard
                 bodyTransform = body.transform;
                 healthComponent = body.HealthComponent;
                 wasAlive = false;
-                _motor = targetGameObject.GetComponent<KinematicCharacterMotor>();
 
                 var hurtBoxGroup = healthComponent.hurtBoxGroup;
                 mainHurtBox = hurtBoxGroup ? hurtBoxGroup.MainHurtBox : null;
@@ -428,6 +439,9 @@ namespace ElementalWard
 
             public static bool operator ==(AITarget lhs, AITarget rhs)
             {
+                if (lhs is null && rhs is null)
+                    return true;
+
                 if (lhs is null || rhs is null)
                     return false;
 

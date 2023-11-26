@@ -70,6 +70,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f62b3378755d3364f988452e2de61b2a
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/FireBones.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bfa34d08d02988849b573fc8a35c3ad3
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/PathfindToEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3bff69488b43f44d9fec6c6d0a98fa3
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/MoveTowardsEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

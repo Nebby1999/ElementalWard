@@ -50,6 +50,7 @@ namespace ElementalWard.AI
                 SelectionRequiresAimTarget = _selectionRequiresAimTarget,
                 ShouldSprint = _shouldSprint,
                 TargetType = _targetType,
+                IsAvailable = true
             };
         }
         public enum TargetType

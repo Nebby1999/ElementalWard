@@ -66,7 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileLifetime: 5
   lifetimeExpiredEffect: {fileID: 0}
-  desiredForwardSpeed: 0
+  desiredForwardSpeed: 3
   updateAfterFiring: 1
   enableVelocityOverLifetime: 0
   velocityOverLifetime:
@@ -88,8 +88,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxImpacts: 1
-  defaultDamageType: 0
-  defaultDamageCoefficient: 1
+  damageType: 0
+  damageCoefficient: 1
+  procCoefficient: 1
 --- !u!114 &3540225396655922531
 MonoBehaviour:
   m_ObjectHideFlags: 0

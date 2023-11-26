@@ -43,9 +43,69 @@ namespace EntityStates.CharacterAI
                 {
                     pressType = _dominantAIDriver.ButtonPressType;
                 }
-
+                bool wasPressed = false;
+                switch(_currentSkillSlot)
+                {
+                    case SkillSlot.Primary:
+                        wasPressed = previousInputs.primaryPressed;
+                        break;
+                    case SkillSlot.Secondary:
+                        wasPressed = previousInputs.secondaryPressed;
+                        break;
+                    case SkillSlot.Utility:
+                        wasPressed = previousInputs.utilityPressed;
+                        break;
+                    case SkillSlot.Special:
+                        wasPressed = previousInputs.specialPressed;
+                        break;
+                }
+                bool shouldPress = _currentSkillMeetsActivationConditions;
+                switch(pressType)
+                {
+                    case AIDriverData.ButtonPressType.Abstain:
+                        shouldPress = false;
+                        break;
+                    case AIDriverData.ButtonPressType.TapContinuous:
+                        shouldPress = shouldPress && !wasPressed;
+                        break;
+                }
+                switch(_currentSkillSlot)
+                {
+                    case SkillSlot.Primary:
+                        pressPrimary = shouldPress;
+                        break;
+                    case SkillSlot.Secondary:
+                        pressSecondary = shouldPress;
+                        break;
+                    case SkillSlot.Utility:
+                        pressUtility = shouldPress;
+                        break;
+                    case SkillSlot.Special:
+                        pressSpecial = shouldPress;
+                        break;
+                }
             }
-            throw new System.Exception();
+            aiInputs.primaryPressed = pressPrimary;
+            aiInputs.secondaryPressed = pressSecondary;
+            aiInputs.utilityPressed = pressUtility;
+            aiInputs.specialPressed = pressSpecial;
+            aiInputs.sprintPressed = false;
+            aiInputs.aimDir = Vector3.zero;
+            if(_dominantAIDriver != null)
+            {
+                aiInputs.sprintPressed = _dominantAIDriver.ShouldSprint;
+                var aimType = _dominantAIDriver.AimType;
+                CharacterMasterAI.AITarget aimTarget = AI.DriverEvaluation.aimTarget;
+                if(aimType == AIDriverData.AimType.MoveDirection)
+                {
+                    AimInDirection(ref aiInputs, CharacterInputBank.moveVector);
+                }
+                if(aimTarget != null)
+                {
+                    AimAt(ref aiInputs, aimTarget);
+                }
+            }
+            return aiInputs;
         }
 
         private void UpdateAI(float deltaTime)

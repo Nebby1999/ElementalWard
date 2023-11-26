@@ -93,7 +93,20 @@ namespace ElementalWard.Navigation
 
         public void UpdateFromAI(float deltaTime)
         {
+            if (_path.Count == 0)
+            {
+                CurrentPathfindingMovementVector = Vector3.zero;
+                CurrentPathfindingLookRotation = NavigationDataProvider?.AgentTransform ? NavigationDataProvider.AgentTransform.rotation : Quaternion.identity;
+            }
 
+            if (!NavigationDataProvider.AgentTransform)
+                return;
+
+            if (_pathIndex < 0)
+                return;
+
+            if (!_isStopped)
+                ProcessPath();
         }
 
         public void CancelCurrentPath()
@@ -104,23 +117,10 @@ namespace ElementalWard.Navigation
 
         public void Stop() => _isStopped = true;
         public void Resume() => _isStopped = false;
-        private void Update()
-        {
-            if(_path.Count == 0)
-            {
-                CurrentPathfindingMovementVector = Vector3.zero;
-                CurrentPathfindingLookRotation = NavigationDataProvider?.AgentTransform ? NavigationDataProvider.AgentTransform.rotation : Quaternion.identity;
-            }
-
-            if (!NavigationDataProvider.AgentTransform)
-                return;
-
-            if(!_isStopped)
-                ProcessPath();
-        }
 
         private void ProcessPath()
         {
+
             _currentWaypoint = _path[_pathIndex];
             _distanceFromCurrentWaypoint = math.distancesq(_currentWaypoint, NavigationDataProvider.AgentTransform.position);
             if(_distanceFromCurrentWaypoint < 0.35f)

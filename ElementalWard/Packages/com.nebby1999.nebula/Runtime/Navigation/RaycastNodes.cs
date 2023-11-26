@@ -26,18 +26,15 @@ namespace Nebula.Navigation
 
         public IEnumerator ExecuteRaycastsAsync()
         {
-            Debug.Log("Creating Handle");
             var handle = CreateHandle();
             if (!handle.HasValue)
                 yield break;
 
             while (!handle.Value.IsCompleted)
             {
-                Debug.Log("Raycast Commands not completed, waiting.");
                 yield return null;
             }
             handle?.Complete();
-            Debug.Log("Processing Hits");
             ProcessHits();
             yield break;
         }

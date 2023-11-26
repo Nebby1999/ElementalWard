@@ -37,18 +37,14 @@ namespace ElementalWard
             var runtimeNodes = new NativeArray<RuntimePathNode>(graph.RuntimeNodes, Allocator.TempJob);
             var runtimeLinks = new NativeArray<RuntimePathNodeLink>(graph.RuntimeLinks, Allocator.TempJob);
 
-            Debug.Log("Raycasting for available start nodes.");
             var raycastNodes = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.start, request.actorHeightHalved);
             yield return raycastNodes.ExecuteRaycastsAsync();
-            Debug.Log("Got available start nodes");
 
             var reachableIndices = raycastNodes.results;
             var reachableStartIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
 
             raycastNodes = new RaycastNodes(LayerIndex.world.Mask, runtimeNodes, request.end, request.actorHeightHalved);
-            Debug.Log("Raycasting for available end nodes.");
             yield return raycastNodes.ExecuteRaycastsAsync();
-            Debug.Log("Got available end nodes");
 
             reachableIndices = raycastNodes.results;
             var reachableEndIndices = new NativeArray<int>(reachableIndices, Allocator.TempJob);
