@@ -93,6 +93,15 @@ namespace ElementalWard.Navigation
 
         public void UpdateFromAI(float deltaTime)
         {
+            if(AskForPath)
+            {
+                UpdateNodePath();
+            }
+            else
+            {
+                UpdateNormalPath();
+            }
+            /*
             if (_path.Count == 0)
             {
                 CurrentPathfindingMovementVector = Vector3.zero;
@@ -106,7 +115,47 @@ namespace ElementalWard.Navigation
                 return;
 
             if (!_isStopped)
+            { 
                 ProcessPath();
+            }*/
+        }
+
+        private void UpdateNodePath()
+        {
+            if (_path.Count == 0)
+            {
+                CurrentPathfindingMovementVector = Vector3.zero;
+                CurrentPathfindingLookRotation = NavigationDataProvider?.AgentTransform ? NavigationDataProvider.AgentTransform.rotation : Quaternion.identity;
+            }
+
+            if (!NavigationDataProvider.AgentTransform)
+                return;
+
+            if (_pathIndex < 0)
+                return;
+
+            if (!_isStopped)
+            {
+                ProcessPath();
+            }
+        }
+
+        private void UpdateNormalPath()
+        {
+            if (!NavigationDataProvider.AgentTransform)
+                return;
+
+            if (_isStopped)
+            {
+                CurrentPathfindingMovementVector = Vector3.zero;
+                CurrentPathfindingLookRotation = NavigationDataProvider?.AgentTransform ? NavigationDataProvider.AgentTransform.rotation : Quaternion.identity;
+                return;
+            }
+
+            var vector = NavigationDataProvider.Target - NavigationDataProvider.AgentTransform.position;
+            var movementDirection = vector.normalized;
+            CurrentPathfindingMovementVector = movementDirection;
+            CurrentPathfindingLookRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
         }
 
         public void CancelCurrentPath()

@@ -43,7 +43,11 @@ namespace ElementalWard
         public bool IsFlying => BodyMotorController ? BodyMotorController.IsFlying : false;
         public AIDriver[] AIDrivers { get; private set; }
         public AIDriverEvaluation DriverEvaluation { get; private set; }
-
+        public string CurrentDriverName => _currentDriverName;
+#if UNITY_EDITOR
+        [SerializeField, Nebula.ReadOnly]
+#endif
+        private string _currentDriverName;
         private float _updateStopwatch;
         private BullseyeSearch _enemySearch;
         private AITarget _enemyTarget;
@@ -128,6 +132,7 @@ namespace ElementalWard
         {
             DriverEvaluation = newDriver;
             DriverEvaluation.dominantDriver?.OnSelected();
+            _currentDriverName = DriverEvaluation.dominantDriver?.DriverName ?? "None";
         }
 
         private AIDriverEvaluation EvaluateDrivers(float deltaTime)

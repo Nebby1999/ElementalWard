@@ -34,6 +34,7 @@ namespace ElementalWard.AI
         {
             return new AIDriver
             {
+                DriverName = cachedName,
                 ActivationRequiresTargetLOS = _activationRequiresTargetLOS,
                 ActivationRequiresAimTargetLOS = _activationRequiresAimTargetLOS,
                 AimType = _aimType,
@@ -84,6 +85,7 @@ namespace ElementalWard.AI
 
     public class AIDriver
     {
+        public string DriverName { get; init; }
         public SkillSlot RequiredSkillSlot { get; init; }
         public bool RequireSkillReady { get; init; }
         public float MinDistance { get; init; }

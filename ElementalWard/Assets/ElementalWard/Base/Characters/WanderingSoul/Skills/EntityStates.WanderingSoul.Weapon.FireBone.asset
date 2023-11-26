@@ -17,11 +17,6 @@ MonoBehaviour:
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   fieldCollection:
     serializedFields:
-    - fieldName: projectilePrefab
-      serializedValue:
-        stringValue: 
-        objectReferenceValue: {fileID: 6979397864291786525, guid: 22c0e8cba7b73474987a8847773f36e0,
-          type: 3}
     - fieldName: baseDuration
       serializedValue:
         stringValue: 0.385
@@ -30,3 +25,8 @@ MonoBehaviour:
       serializedValue:
         stringValue: Attack
         objectReferenceValue: {fileID: 0}
+    - fieldName: projectilePrefab
+      serializedValue:
+        stringValue: 
+        objectReferenceValue: {fileID: 6979397864291786525, guid: 22c0e8cba7b73474987a8847773f36e0,
+          type: 3}
