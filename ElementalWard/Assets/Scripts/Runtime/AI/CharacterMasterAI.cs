@@ -261,14 +261,15 @@ namespace ElementalWard
         private HurtBox ScanForTargetNearby(float minDistance, float maxDistance, bool filterByLos)
         {
             _enemySearch.viewer = Body.gameObject;
-            _enemySearch.teamFilter = TeamMask.allButNeutral;
-            _enemySearch.teamFilter.RemoveTeam(CurrentTeam);
-            _enemySearch.SortBy = BullseyeSearch.SortByDistance;
+            _enemySearch.searchOrigin = Body.transform.position;
+            _enemySearch.teamMaskFilter = TeamMask.allButNeutral;
+            _enemySearch.teamMaskFilter.RemoveTeam(CurrentTeam);
+            _enemySearch.sortMode = BullseyeSearch.SortMode.Distance;
             _enemySearch.minDistanceFilter = minDistance;
             _enemySearch.maxDistanceFilter = maxDistance;
             _enemySearch.searchDirection = BodyInputBank.AimDirection;
-            _enemySearch.MaxAngleFilter = awarenessRange / 2;
-            _enemySearch.filterByLOS = filterByLos;
+            _enemySearch.MaxAngleFilter = awarenessAngle / 2;
+            _enemySearch.filterByLoS = filterByLos;
             _enemySearch.RefreshCandidates();
             HurtBox enemy = _enemySearch.GetResults().FirstOrDefault();
             return enemy;

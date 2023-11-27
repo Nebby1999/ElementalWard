@@ -49,12 +49,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterMasters
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c27c989d45465d04db42e5ade20c7113
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/EntityStates.WanderingSoul.Weapon.FireBone.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EntityStateConfigurations
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 22c0e8cba7b73474987a8847773f36e0
     m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/BoneSpikeProjectile.prefab
     m_ReadOnly: 0
@@ -82,6 +76,17 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3bff69488b43f44d9fec6c6d0a98fa3
     m_Address: ElementalWard/Base/Characters/WanderingSoul/MoveTowardsEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa8910d5d022e724c934afc2b9c1270b
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/EntityStates.WanderingSoul.Weapon.FireBone.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0672db4a11c35b94baad525fd6dc7c9e
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulSpawnCard.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

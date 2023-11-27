@@ -30,8 +30,8 @@ namespace ElementalWard.Projectiles
         public void Initialize(FireProjectileInfo fireProjectileInfo)
         {
             _teamIndex = fireProjectileInfo.owner.team;
-            _search.teamFilter = TeamMask.allButNeutral;
-            _search.teamFilter.RemoveTeam(_teamIndex);
+            _search.teamMaskFilter = TeamMask.allButNeutral;
+            _search.teamMaskFilter.RemoveTeam(_teamIndex);
         }
 
         private void Awake()
@@ -39,9 +39,9 @@ namespace ElementalWard.Projectiles
             transform = base.transform;
             _searchTimer = 0f;
             _search.maxDistanceFilter = lookRange;
-            _search.SortBy = BullseyeSearch.SortByDistance;
+            _search.sortMode = BullseyeSearch.SortMode.Distance;
             _search.viewer = gameObject;
-            _search.filterByLOS = true;
+            _search.filterByLoS = true;
             
             ProjectileTarget = GetComponent<ProjectileTarget>();
         }
@@ -78,8 +78,7 @@ namespace ElementalWard.Projectiles
             _search.searchDirection = transform.forward;
             _search.MaxAngleFilter = lookCone;
             _search.RefreshCandidates();
-            HurtBox[] source = _search.GetResults();
-            HurtBox target = source.FirstOrDefault();
+            HurtBox target = _search.GetResults().FirstOrDefault();
 
             ProjectileTarget.Target = target ? target.transform : null;
             _targetHurtBox = target;

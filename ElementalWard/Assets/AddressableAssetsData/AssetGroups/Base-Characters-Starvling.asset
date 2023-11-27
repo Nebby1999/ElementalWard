@@ -55,6 +55,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterMasters
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20b8d68e818e0c34d82da8e302b7a2a4
+    m_Address: ElementalWard/Base/Characters/Starvling/Bite.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02e5bdc4a12c161408221ac92d1e2807
+    m_Address: ElementalWard/Base/Characters/Starvling/MoveTowardsEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45b47d45d395f39489877238cfb2e606
+    m_Address: ElementalWard/Base/Characters/Starvling/PathfindToEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 365119dd81c352c449a3637dc0c22f0a
+    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingSpawnCard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

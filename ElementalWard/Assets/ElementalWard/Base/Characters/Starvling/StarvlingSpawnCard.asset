@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b068768d3d2d854386dabca17151527, type: 3}
+  m_Name: StarvlingSpawnCard
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7031859106440330407, guid: 57aba9fe325f0bf498005c907511d27f, type: 3}
+  spawnOnNodeGraph: 1
+  useAirNodesForSpawning: 0

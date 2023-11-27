@@ -14,6 +14,7 @@ namespace ElementalWard
         public const string APP_NAME = "ElementalWard";
 
         public static Xoroshiro128Plus rng = new Xoroshiro128Plus((ulong)DateTime.Now.Ticks);
+        public static readonly LoadGameAsyncArgs loadGameAsyncArgs = new LoadGameAsyncArgs();
         protected override void Awake()
         {
             base.Awake();
@@ -36,20 +37,20 @@ namespace ElementalWard
 
         protected override IEnumerator LoadGameContent()
         {
-            yield return InitializeCatalogs();
-            SystemInitializerAttribute.Execute();
+            yield return InitializeCatalogs(loadGameAsyncArgs);
+            yield return SystemInitializerAttribute.ExecuteAsync(loadGameAsyncArgs);
             yield break;
         }
 
-        private IEnumerator InitializeCatalogs()
+        private IEnumerator InitializeCatalogs(LoadGameAsyncArgs loadGameAsyncArgs)
         {
-            yield return MasterCatalog.Initialize();
-            yield return BodyCatalog.Initialize();
+            yield return MasterCatalog.Initialize(loadGameAsyncArgs);
+            yield return BodyCatalog.Initialize(loadGameAsyncArgs);
             yield return EntityStateCatalog.Initialize();
-            yield return TeamCatalog.Initialize();
-            yield return ProcCatalog.Initialize();
-            yield return BuffCatalog.Initialize();
-            yield return ElementCatalog.Initialize();
+            yield return TeamCatalog.Initialize(loadGameAsyncArgs);
+            yield return ProcCatalog.Initialize(loadGameAsyncArgs);
+            yield return BuffCatalog.Initialize(loadGameAsyncArgs);
+            yield return ElementCatalog.Initialize(loadGameAsyncArgs);
         }
     }
 }

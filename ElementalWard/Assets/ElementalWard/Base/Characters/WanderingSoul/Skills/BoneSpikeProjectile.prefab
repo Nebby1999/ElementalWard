@@ -66,7 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileLifetime: 5
   lifetimeExpiredEffect: {fileID: 0}
-  desiredForwardSpeed: 3
+  desiredForwardSpeed: 6
   updateAfterFiring: 1
   enableVelocityOverLifetime: 0
   velocityOverLifetime:

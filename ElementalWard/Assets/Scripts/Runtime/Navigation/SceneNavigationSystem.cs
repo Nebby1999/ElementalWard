@@ -159,6 +159,31 @@ namespace ElementalWard
                 findPathJob = findPathJob
             };
         }
+
+        public static Vector3 FindClosestPositionUsingNodeGraph(Vector3 position, IGraphProvider graphProvider)
+        {
+            NativeArray<RuntimePathNode> runtimeNodes = new NativeArray<RuntimePathNode>(graphProvider.GetRuntimePathNodes(), Allocator.TempJob);
+            NativeReference<int> result = new NativeReference<int>(-1, Allocator.TempJob);
+            FindClosestNodeIndexJob job = new FindClosestNodeIndexJob
+            {
+                nodes = runtimeNodes,
+                position = position,
+                reachableIndices = default,
+                result = result
+            };
+            job.Schedule().Complete();
+
+            if(result.Value == -1)
+            {
+                result.Dispose();
+                runtimeNodes.Dispose();
+                return Vector3.zero;
+            }
+            Vector3 resultPosition = runtimeNodes[result.Value].worldPosition;
+            result.Dispose();
+            runtimeNodes.Dispose();
+            return resultPosition;
+        }
         
         [SystemInitializer]
         private static void Init()

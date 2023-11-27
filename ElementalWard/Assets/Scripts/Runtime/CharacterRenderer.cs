@@ -18,6 +18,7 @@ namespace ElementalWard
         public CharacterBody body;
 
         [Header("Other")]
+        public bool leaveCorpseOnDeath = true;
         public Behaviour[] disableOnDeath = Array.Empty<Behaviour>();
         private MaterialPropertyBlock propertyStorage;
         private IElementProvider _elementProvider;
@@ -55,6 +56,20 @@ namespace ElementalWard
             {
                 behaviour.enabled = false;
             }
+            if(leaveCorpseOnDeath)
+            {
+                TurnIntoCorpse();
+            }
+        }
+
+        private void TurnIntoCorpse()
+        {
+            transform.parent = null;
+            GameObject newParent = new GameObject("Corpse");
+            transform.parent = newParent.transform;
+            var corpseRigidbody = newParent.AddComponent<Rigidbody>();
+            corpseRigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            newParent.layer = LayerIndex.decoration.Mask;
         }
     }
 }

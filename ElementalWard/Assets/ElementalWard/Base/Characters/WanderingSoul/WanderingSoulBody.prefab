@@ -187,7 +187,7 @@ MonoBehaviour:
   _baseHealth: 50
   _baseShield: 0
   _baseRegen: 0
-  _baseMovementSpeed: 7
+  _baseMovementSpeed: 5
   _baseAttackSpeed: 1
   _baseDamage: 10
   _baseArmor: 0
@@ -709,6 +709,7 @@ MonoBehaviour:
   _lookAtTransform: {fileID: 0}
   _eightDirectionalSpriteRendererAnimator: {fileID: 9177879273809039117}
   body: {fileID: 6616821231843013767}
+  leaveCorpseOnDeath: 1
   disableOnDeath:
   - {fileID: 2998914646910736701}
 --- !u!114 &2998914646910736701

@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1742405643752014462}
   - component: {fileID: 7573758394598244162}
-  - component: {fileID: 2282280824151324375}
   - component: {fileID: 1486930625785504728}
+  - component: {fileID: 8320696453838848100}
+  - component: {fileID: 1069393598150896109}
   m_Layer: 0
   m_Name: StarvlingMaster
   m_TagString: Untagged
@@ -53,27 +54,7 @@ MonoBehaviour:
   _currentXP: 0
   _neededXPForNextLevel: 109.23277
   _autoCalculateNextLevelRequirement: 1
-  defaultTeam: {fileID: 0}
---- !u!114 &2282280824151324375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7031859106440330407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71dd9347b0d33348a8f58d856ae2379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aiStateMachine: {fileID: 1486930625785504728}
-  targetFoundState:
-    _assemblyQualifiedName: EntityStates.Starvling.AI.AI, ElementalWard, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  awarenessAngle: 120
-  awarenessRange: 5
-  drawPath: 0
-  _path: []
+  defaultTeam: {fileID: 11400000, guid: 4b7dfd7da9d2f2b40b1709ab23ccdffc, type: 2}
 --- !u!114 &1486930625785504728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,3 +74,41 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &8320696453838848100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031859106440330407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236203aca05d5c341ac5c9ff1dee60be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _askForPath: 0
+  _drawPath: 0
+  _path: []
+--- !u!114 &1069393598150896109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031859106440330407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ba9b7ba0d02b048802f29dd66bbbc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiDriverData:
+  - {fileID: 11400000, guid: 20b8d68e818e0c34d82da8e302b7a2a4, type: 2}
+  - {fileID: 11400000, guid: 02e5bdc4a12c161408221ac92d1e2807, type: 2}
+  - {fileID: 11400000, guid: 45b47d45d395f39489877238cfb2e606, type: 2}
+  aiStateMachine: {fileID: 1486930625785504728}
+  aiState:
+    _assemblyQualifiedName: EntityStates.CharacterAI.AIGuardState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  awarenessAngle: 106
+  awarenessRange: 5.91
+  _currentDriverName: 

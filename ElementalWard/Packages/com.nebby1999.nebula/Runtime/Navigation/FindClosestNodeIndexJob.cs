@@ -1,5 +1,6 @@
 using System;
 using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Nebula.Navigation
         [Unity.Collections.ReadOnly]
         public NativeArray<RuntimePathNode> nodes;
         [Unity.Collections.ReadOnly]
+        [NativeDisableContainerSafetyRestriction]
         public NativeArray<int> reachableIndices;
         public NativeReference<int> result;
 
@@ -28,6 +30,20 @@ namespace Nebula.Navigation
                 return;
             }
             _distance = float.MaxValue;
+            if (!reachableIndices.IsCreated)
+            {
+                for(int i = 0; i < nodes.Length; i++)
+                {
+                    var node = nodes[i];
+                    var distanceBetween = math.distancesq(node.worldPosition, position);
+                    if (distanceBetween > _distance)
+                        continue;
+
+                    _distance = distanceBetween;
+                    result.Value = i;
+                }
+                return;
+            }
             foreach(int index in reachableIndices)
             {
                 var node = nodes[index];

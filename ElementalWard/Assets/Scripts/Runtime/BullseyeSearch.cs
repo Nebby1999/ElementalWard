@@ -1,180 +1,226 @@
+
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using ElementalWard;
 using UnityEngine;
-using static ElementalWard.BullseyeSearch;
 
-namespace ElementalWard
+public class BullseyeSearch
 {
-    public class BullseyeSearch
+    private struct CandidateInfo
     {
-
-        public GameObject viewer;
-        public Vector3 searchOrigin;
-        public Vector3 searchDirection;
-        public float minDistanceFilter;
-        public float maxDistanceFilter = float.PositiveInfinity;
-        public bool filterByLOS = true;
-        public bool filterByDistinctEntity;
-        public SortDelegate SortBy;
-        public TeamMask teamFilter;
-        public QueryTriggerInteraction queryTriggerInteraction;
-
-        public float MinAngleFilter
+        [StructLayout(LayoutKind.Sequential, Size = 1)]
+        public struct EntityEqualityComparer : IEqualityComparer<CandidateInfo>
         {
-            get => _minAngleFilter;
-            set
+            public bool Equals(CandidateInfo a, CandidateInfo b)
             {
-                _minAngleFilter = value;
-                var thetaDot = Mathf.Cos(Mathf.Clamp(value, 0f, 180f) * ((float)Mathf.PI / 180f));
-                _maxThetaDot = thetaDot;
-            }
-        }
-        private float _minAngleFilter;
-        private float _maxThetaDot = 1f;
-
-        public float MaxAngleFilter
-        {
-            get => _maxAngleFilter;
-            set
-            {
-                _maxAngleFilter = value;
-                var thetaDot = Mathf.Cos(Mathf.Clamp(value, 0f, 180f) * ((float)Mathf.PI / 180f));
-                _minThetaDot = thetaDot;
-            }
-        }
-        private float _maxAngleFilter;
-        private float _minThetaDot = -1f;
-
-        private bool FilterByDistance
-        {
-            get
-            {
-                if(!(minDistanceFilter > 0f) && !(maxDistanceFilter < float.PositiveInfinity))
-                {
-                    return false;
-                }
-                return true;
-            }
-        }
-        private bool FilterByAngle
-        {
-            get
-            {
-                if (!(_minThetaDot > -1f))
-                {
-                    return _maxThetaDot < 1f;
-                }
-                return true;
-            }
-        }
-        private IEnumerable<CandidateInfo> _candidates;
-
-
-        public void RefreshCandidates()
-        {
-            var selector = GetSelector();
-            _candidates = HurtBox.EnabledBullseyeHurtBoxes.Where(h => teamFilter.HasTeam(h.TeamIndex)).Select(selector);
-
-            if(FilterByAngle)
-            {
-                _candidates = _candidates.Where(DotOkay);
+                return (object)a.hurtBox.HealthComponent == b.hurtBox.HealthComponent;
             }
 
-            if(FilterByDistance)
+            public int GetHashCode(CandidateInfo obj)
             {
-                _candidates = _candidates.Where(DistanceOkay);
-            }
-
-            if(filterByDistinctEntity)
-            {
-                _candidates = _candidates.Distinct(default(CandidateInfo.EntityEqualityComparer));
-            }
-
-            var sorter = SortBy;
-            if (sorter != null)
-            {
-                _candidates = _candidates.OrderBy((x) => sorter(x));
+                return obj.hurtBox.HealthComponent.GetHashCode();
             }
         }
 
-        private bool DotOkay(CandidateInfo info)
+        public HurtBox hurtBox;
+
+        public Vector3 position;
+
+        public float dot;
+
+        public float distanceSqr;
+    }
+
+    public enum SortMode
+    {
+        None = 0,
+        Distance = 1,
+        Angle = 2,
+        DistanceAndAngle = 3
+    }
+
+    private delegate CandidateInfo Selector(HurtBox hurtBox);
+
+    public GameObject viewer;
+
+    public Vector3 searchOrigin;
+
+    public Vector3 searchDirection;
+
+    private float minThetaDot = -1f;
+
+    private float maxThetaDot = 1f;
+
+    public float minDistanceFilter;
+
+    public float maxDistanceFilter = float.PositiveInfinity;
+
+    public TeamMask teamMaskFilter = TeamMask.allButNeutral;
+
+    public bool filterByLoS = true;
+
+    public bool filterByDistinctEntity;
+
+    public QueryTriggerInteraction queryTriggerInteraction;
+
+    public SortMode sortMode = SortMode.Distance;
+
+    private IEnumerable<CandidateInfo> candidatesEnumerable;
+
+    public float MinAngleFilter
+    {
+        set
         {
-            if (_minThetaDot <= info.dot)
+            maxThetaDot = Mathf.Cos(Mathf.Clamp(value, 0f, 180f) * ((float)Math.PI / 180f));
+        }
+    }
+
+    public float MaxAngleFilter
+    {
+        set
+        {
+            minThetaDot = Mathf.Cos(Mathf.Clamp(value, 0f, 180f) * ((float)Math.PI / 180f));
+        }
+    }
+
+    private bool FilterByDistance
+    {
+        get
+        {
+            if (!(minDistanceFilter > 0f) && !(maxDistanceFilter < float.PositiveInfinity))
             {
-                return info.dot <= _maxThetaDot;
+                return false;
+            }
+            return true;
+        }
+    }
+
+    private bool FilterByAngle
+    {
+        get
+        {
+            if (!(minThetaDot > -1f))
+            {
+                return maxThetaDot < 1f;
+            }
+            return true;
+        }
+    }
+
+    private Func<HurtBox, CandidateInfo> GetSelector()
+    {
+        bool getDot = FilterByAngle;
+        bool getDistanceSqr = FilterByDistance;
+        getDistanceSqr |= sortMode == SortMode.Distance || sortMode == SortMode.DistanceAndAngle;
+        getDot |= sortMode == SortMode.Angle || sortMode == SortMode.DistanceAndAngle;
+        bool getDifference = getDot || getDistanceSqr;
+        bool getPosition = getDot || getDistanceSqr || filterByLoS;
+        return delegate (HurtBox hurtBox)
+        {
+            CandidateInfo candidateInfo = default;
+            candidateInfo.hurtBox = hurtBox;
+            CandidateInfo result = candidateInfo;
+            if (getPosition)
+            {
+                result.position = hurtBox.transform.position;
+            }
+            Vector3 vector = default;
+            if (getDifference)
+            {
+                vector = result.position - searchOrigin;
+            }
+            if (getDot)
+            {
+                result.dot = Vector3.Dot(searchDirection, vector.normalized);
+            }
+            if (getDistanceSqr)
+            {
+                result.distanceSqr = vector.sqrMagnitude;
+            }
+            return result;
+        };
+    }
+
+    public void RefreshCandidates()
+    {
+        Func<HurtBox, CandidateInfo> selector = GetSelector();
+        candidatesEnumerable = HurtBox.EnabledBullseyeHurtBoxes.Where((HurtBox hurtBox) => teamMaskFilter.HasTeam(hurtBox.TeamIndex)).Select(selector);
+        if (FilterByAngle)
+        {
+            candidatesEnumerable = candidatesEnumerable.Where(DotOkay);
+        }
+        float minDistanceSqr;
+        float maxDistanceSqr;
+        if (FilterByDistance)
+        {
+            float num = maxDistanceFilter;
+            minDistanceSqr = minDistanceFilter * minDistanceFilter;
+            maxDistanceSqr = num * num;
+            candidatesEnumerable = candidatesEnumerable.Where(DistanceOkay);
+        }
+        if (filterByDistinctEntity)
+        {
+            candidatesEnumerable = candidatesEnumerable.Distinct(default(CandidateInfo.EntityEqualityComparer));
+        }
+        Func<CandidateInfo, float> sorter = GetSorter();
+        if (sorter != null)
+        {
+            candidatesEnumerable = candidatesEnumerable.OrderBy(sorter);
+        }
+        bool DistanceOkay(CandidateInfo candidateInfo)
+        {
+            if (candidateInfo.distanceSqr >= minDistanceSqr)
+            {
+                return candidateInfo.distanceSqr <= maxDistanceSqr;
             }
             return false;
         }
-
-        private bool DistanceOkay(CandidateInfo info)
+        bool DotOkay(CandidateInfo candidateInfo)
         {
-            float minDistanceSqr = Mathf.Pow(minDistanceFilter, 2);
-            float maxDistanceSqr = Mathf.Pow(maxDistanceFilter, 2);
-            if (info.distanceSqr >= minDistanceSqr)
+            if (minThetaDot <= candidateInfo.dot)
             {
-                return info.distanceSqr <= maxDistanceSqr;
+                return candidateInfo.dot <= maxThetaDot;
             }
             return false;
         }
-        public HurtBox[] GetResults()
+    }
+
+    private Func<CandidateInfo, float> GetSorter()
+    {
+        return sortMode switch
         {
-            if(filterByLOS)
-            {
-                _candidates = _candidates.Where(c => CheckLOS(c.position));
-            }
-            return _candidates.Select(c => c.hurtBox).ToArray();
-        }
+            SortMode.Distance => (CandidateInfo candidateInfo) => candidateInfo.distanceSqr,
+            SortMode.Angle => (CandidateInfo candidateInfo) => 0f - candidateInfo.dot,
+            SortMode.DistanceAndAngle => (CandidateInfo candidateInfo) => (0f - candidateInfo.dot) * candidateInfo.distanceSqr,
+            _ => null,
+        };
+    }
 
-        private bool CheckLOS(Vector3 position)
+    public void FilterOutGameObject(GameObject gameObject)
+    {
+        candidatesEnumerable = candidatesEnumerable.Where((CandidateInfo v) => v.hurtBox.HealthComponent.gameObject != gameObject);
+    }
+
+    public IEnumerable<HurtBox> GetResults()
+    {
+        IEnumerable<CandidateInfo> source = candidatesEnumerable;
+        if (filterByLoS)
         {
-            Vector3 direction = position - searchOrigin;
-            return !Physics.Raycast(searchOrigin, direction, out _, direction.magnitude, LayerIndex.world.Mask, queryTriggerInteraction);
+            source = source.Where((CandidateInfo candidateInfo) => CheckLoS(candidateInfo.position));
         }
-
-        public Func<HurtBox, CandidateInfo> GetSelector()
+        if ((bool)viewer)
         {
-            return (HurtBox h) =>
-            {
-                CandidateInfo info = default;
-                info.hurtBox = h;
-                info.position = h.transform.position;
-                Vector3 difference = info.position - searchOrigin;
-                info.dot = Vector3.Dot(searchDirection, difference.normalized);
-                info.distanceSqr = difference.sqrMagnitude;
-                return info;
-            };
+            //source = source.Where((CandidateInfo candidateInfo) => CheckVisible(candidateInfo.hurtBox.HealthComponent.gameObject));
         }
-        public static float SortByDistance(CandidateInfo info) => info.distanceSqr;
-        public static float SortByAngle(CandidateInfo info) => info.dot;
-        public static float SortByDistanceAndAngle(CandidateInfo info) => (0f - info.dot) * info.distanceSqr;
-        public delegate float SortDelegate(CandidateInfo info);
-        public struct CandidateInfo
-        {
-            [StructLayout(LayoutKind.Sequential, Size = 1)]
-            public struct EntityEqualityComparer : IEqualityComparer<CandidateInfo>
-            {
-                public bool Equals(CandidateInfo a, CandidateInfo b)
-                {
-                    return (object)a.hurtBox.HealthComponent == b.hurtBox.HealthComponent;
-                }
+        return source.Select((CandidateInfo candidateInfo) => candidateInfo.hurtBox);
+    }
 
-                public int GetHashCode(CandidateInfo obj)
-                {
-                    return obj.hurtBox.HealthComponent.GetHashCode();
-                }
-            }
-
-            public HurtBox hurtBox;
-
-            public Vector3 position;
-
-            public float dot;
-
-            public float distanceSqr;
-        }
+    private bool CheckLoS(Vector3 targetPosition)
+    {
+        Vector3 direction = targetPosition - searchOrigin;
+        RaycastHit hitInfo;
+        return !Physics.Raycast(searchOrigin, direction, out hitInfo, direction.magnitude, LayerIndex.world.Mask, queryTriggerInteraction);
     }
 }

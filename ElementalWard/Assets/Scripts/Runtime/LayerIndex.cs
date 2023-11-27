@@ -37,6 +37,7 @@ namespace ElementalWard
         public static readonly LayerIndex uI = GetLayerIndex("UI");
         public static readonly LayerIndex entityPrecise = GetLayerIndex("EntityPrecise");
         public static readonly LayerIndex projectile = GetLayerIndex("Projectile");
+        public static readonly LayerIndex decoration = GetLayerIndex("Decoration");
         private static readonly LayerMask[] _collisionMasks = CalcCollisionMasks();
         private static LayerIndex GetLayerIndex(string layerName)
         {

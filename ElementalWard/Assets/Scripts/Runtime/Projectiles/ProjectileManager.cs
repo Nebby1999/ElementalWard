@@ -11,7 +11,7 @@ namespace ElementalWard
         {
             if (!projectilePrefab)
             {
-                Debug.LogWarning("projectilePrefab is null; cannot spawn vfx.", projectilePrefab);
+                Debug.LogWarning("projectilePrefab is null; cannot spawn prefab.", projectilePrefab);
                 return null;
             }
             var projectileController = projectilePrefab.GetComponent<ProjectileController>();
