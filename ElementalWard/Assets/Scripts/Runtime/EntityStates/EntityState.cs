@@ -18,6 +18,7 @@ namespace EntityStates
         protected TeamComponent TeamComponent => outer.CommonComponents.teamComponent;
         protected HealthComponent HealthComponent => outer.CommonComponents.healthComponent;
         protected SpriteLocator SpriteLocator => outer.CommonComponents.spriteLocator;
+        protected IElementProvider ElementProvider => outer.CommonComponents.elementProvider;
 
         public override void OnEnter()
         {

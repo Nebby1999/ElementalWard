@@ -12,9 +12,12 @@ namespace EntityStates
 
         protected Vector3 moveVector;
         protected Vector3 aimDirection;
+        protected int elementalScroll;
         protected bool wantsToJump;
         protected bool wantsToSprint;
+        protected bool wantsToChangeElement;
 
+        private int _previousElementalScrollValue;
         private Animator _animator;
         private CharacterAnimatorParamAvailability _paramAvailability;
         public override void OnEnter()
@@ -57,6 +60,8 @@ namespace EntityStates
                 aimDirection = CharacterInputBank.AimDirection;
                 wantsToJump = CharacterInputBank.jumpButton.down;
                 wantsToSprint |= CharacterInputBank.sprintButton.down;
+                elementalScroll = CharacterInputBank.elementalScroll;
+                wantsToChangeElement = elementalScroll != _previousElementalScrollValue;
             }
         }
 
@@ -69,6 +74,8 @@ namespace EntityStates
                 HandleSkill(SkillManager.Utility, ref CharacterInputBank.utilityButton);
                 HandleSkill(SkillManager.Special, ref CharacterInputBank.specialButton);
             }
+            _previousElementalScrollValue = elementalScroll;
+            elementalScroll = 0;
             wantsToJump = false;
             wantsToSprint = false;
         }

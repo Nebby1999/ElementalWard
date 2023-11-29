@@ -13,7 +13,7 @@ namespace ElementalWard
         /// <summary>
         /// if this value is > 0, then go to the next element, otherwise, go back to the previous element
         /// </summary>
-        public float elementAxis;
+        public int elementalScroll;
         public Button jumpButton;
         public Button sprintButton;
         public Button inventoryButton;

@@ -21,6 +21,8 @@ namespace ElementalWard
         public CharacterInputBank BodyInputs { get; private set; }
         public CharacterCameraController PlayableCharacterCamera { get; private set; }
         public static event Action<CharacterBody> OnPlayableBodySpawned;
+        public static event Action<PlayableCharacterMaster> OnPlayableCharacterMasterEnabled;
+        public static event Action<PlayableCharacterMaster> OnPlayableCharacterMasterDisabled;
 
         private Transform _bodyCameraTransform;
         private InputAction _jumpAction;
@@ -34,8 +36,8 @@ namespace ElementalWard
         private InputAction _weapon3Action;
         private InputAction _weapon4Action;
         private Vector2 _rawMovementInput;
-        private Vector2 _rawScrollInput;
         private Vector2 _rawLookInput;
+        private int _rawScrollInput;
         private GameObject _cameraInstance;
         private void Awake()
         {
@@ -62,6 +64,7 @@ namespace ElementalWard
             _weapon2Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot2GUID);
             _weapon3Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot3GUID);
             _weapon4Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot4GUID);
+            OnPlayableCharacterMasterEnabled?.Invoke(this);
         }
 
         private void SpawnCamera(CharacterBody body)
@@ -90,7 +93,7 @@ namespace ElementalWard
                 BodyInputs.LookRotation = _bodyCameraTransform.AsValidOrNull()?.rotation ?? Quaternion.identity;
                 BodyInputs.moveVector = new Vector3(playerInputs.movementInput.x, 0, playerInputs.movementInput.y);
                 BodyInputs.AimDirection = _bodyCameraTransform.forward;
-                BodyInputs.elementAxis = playerInputs.scrollInput.y;
+                BodyInputs.elementalScroll = playerInputs.scrollInput;
                 BodyInputs.jumpButton.PushState(playerInputs.jumpPressed);
                 BodyInputs.sprintButton.PushState(playerInputs.sprintPressed);
                 BodyInputs.primaryButton.PushState(playerInputs.primaryPressed);
@@ -127,6 +130,7 @@ namespace ElementalWard
         private void OnDisable()
         {
             ManagedMaster.OnBodySpawned -= SpawnCamera;
+            OnPlayableCharacterMasterDisabled?.Invoke(this);
         }
 
         public void OnMove(InputAction.CallbackContext ctx)
@@ -141,7 +145,19 @@ namespace ElementalWard
 
         public void OnElementScroll(InputAction.CallbackContext ctx)
         {
-            _rawScrollInput = ctx.ReadValue<Vector2>();
+            var y = ctx.ReadValue<Vector2>().y;
+            if(y > 0)
+            {
+                _rawScrollInput = 1;
+            }
+            else if(y < 0)
+            {
+                _rawScrollInput = -1;
+            }
+            else
+            {
+                _rawScrollInput = 0;
+            }
         }
 
         [ConsoleCommand("god", "Makes you immune to damage.")]
@@ -215,7 +231,7 @@ namespace ElementalWard
         {
             public Vector2 movementInput;
             public Vector2 lookInput;
-            public Vector2 scrollInput;
+            public int scrollInput;
             public bool jumpPressed;
             public bool sprintPressed;
             public bool primaryPressed;

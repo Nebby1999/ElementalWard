@@ -253,7 +253,7 @@ namespace ElementalWard
                 BodyInputBank.jumpButton.PushState(_aiInputs.jumpPressed);
                 BodyInputBank.sprintButton.PushState(_aiInputs.sprintPressed);
                 BodyInputBank.moveVector = _aiInputs.movementInput;
-                BodyInputBank.elementAxis = _aiInputs.scrollInput;
+                BodyInputBank.elementalScroll = _aiInputs.scrollInput;
                 BodyInputBank.AimDirection = _aiInputs.aimDir;
                 BodyInputBank.LookRotation = _aiInputs.lookRotation ?? UnityUtil.SafeLookRotation(BodyInputBank.AimDirection);
             }
@@ -341,7 +341,7 @@ namespace ElementalWard
             public Vector3 movementInput;
             public Vector3 aimDir;
             public Quaternion? lookRotation;
-            public float scrollInput;
+            public int scrollInput;
             public bool jumpPressed;
             public bool sprintPressed;
             public bool primaryPressed;

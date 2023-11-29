@@ -14,6 +14,11 @@ namespace ElementalWard
             _healthComponent = GetComponent<HealthComponent>();
         }
 
+        public virtual void ChangeElement(int scrollValue)
+        {
+
+        }
+
         public void OnIncomingDamage(DamageInfo info)
         {
             if (!_elementDef)

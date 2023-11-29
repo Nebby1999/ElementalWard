@@ -2,9 +2,9 @@ using System;
 
 namespace Nebula
 {
-    public class Heap<T> where T : Heap<T>.IHeapItem<T>
+    public class Heap<T> where T : Heap<T>.IHeapItem
     {
-        public interface IHeapItem<T> : IComparable<T>
+        public interface IHeapItem : IComparable<T>
         {
             int HeapIndex { get; set; }
         }

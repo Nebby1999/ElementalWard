@@ -20,7 +20,7 @@ namespace ElementalWard
         public float baseDamage;
         public float procCoefficient;
         public int raycastCount;
-        public bool smartCollision;
+        public bool smartCollision = true;
         public GameObject tracerEffect;
         public VFXData tracerData;
         public LayerMask hitMask = LayerIndex.CommonMasks.Bullet;
@@ -59,7 +59,7 @@ namespace ElementalWard
         {
             Vector3 endPos = raycastOrigin + normal * raycastLength;
             List<Hit> bulletHit = new List<Hit>();
-            if (raycastRadius == 0)
+            if (raycastRadius == 0 || smartCollision)
             {
                 _cachedHits = Physics.RaycastAll(raycastOrigin, normal, raycastLength, hitMask, QueryTriggerInteraction.UseGlobal);
             }

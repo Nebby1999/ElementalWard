@@ -7,6 +7,9 @@ namespace EntityStates
     {
         public bool HasSkillManager { get; private set; }
         public bool HasCharacterBody { get; private set; }
+        public bool HasElementProvider { get; private set; }
+        public ElementalInfusionController ElementalInfusionController { get; private set; }
+        public ElementalAffinityController ElementalAffinityController { get; private set; }
         public float attackSpeedStat;
         public float movementSpeedStat;
         public float damageStat;
@@ -22,6 +25,12 @@ namespace EntityStates
                 damageStat = CharacterBody.Damage;
             }
             HasSkillManager = SkillManager;
+            HasElementProvider = ElementProvider != null;
+            if(HasElementProvider)
+            {
+                ElementalInfusionController = ElementProvider as ElementalInfusionController;
+                ElementalAffinityController = ElementProvider as ElementalAffinityController;
+            }
         }
 
         protected Ray GetAimRay()

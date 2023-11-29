@@ -15,8 +15,8 @@ Material:
   m_ValidKeywords:
   - _ALPHAPREMULTIPLY_ON
   - _ALPHATEST_ON
-  - _BLEND
-  - _BLENDMODE_EXCLUSION
+  - _BLENDMODE_DARKEN
+  - _DISABLEREMAPPING
   - _RECEIVE_SHADOWS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords:
@@ -47,11 +47,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cloud_1:
-        m_Texture: {fileID: 2800000, guid: 2c4d1caca64ea8748ae49c761f9fbbd1, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 11.78, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorRemapRamp:
-        m_Texture: {fileID: 2800000, guid: 2f4705644bcf976499bf6bb4994399f2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1c561bb468991e642b115ab9a9b5e9cc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -87,7 +87,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RGB_Texture_A_Mask:
-        m_Texture: {fileID: 2800000, guid: d6759403637f20847ad3563c53d686e4, type: 3}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -108,24 +108,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaBoost: 1.76
+    - _AlphaBoost: 1
     - _AlphaClip: 1
-    - _AlphaClipping: 0
+    - _AlphaClipping: 0.281
     - _AlphaToMask: 0
-    - _BLEND: 1
+    - _BLEND: 0
     - _BLENDCLOUDS: 1
-    - _BLENDMODE: 7
+    - _BLENDMODE: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _BlendOpacity: 0.753
-    - _BrightnessBoost: 20
+    - _BlendOpacity: 0.171
+    - _BrightnessBoost: 10
     - _BumpScale: 1
     - _CastShadows: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 0
     - _Cutoff: 0.5
-    - _DISABLEREMAPPING: 0
+    - _DISABLEREMAPPING: 1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
@@ -140,7 +140,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
-    - _Smoothness: 0
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -156,7 +156,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2265330147509053679
 MonoBehaviour:

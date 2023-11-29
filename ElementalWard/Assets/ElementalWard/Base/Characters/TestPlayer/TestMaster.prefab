@@ -165,19 +165,7 @@ MonoBehaviour:
     m_ActionId: 494c5cda-6ce7-45de-81e6-4e83583b833b
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7342703876500854070}
-        m_TargetAssemblyTypeName: ElementalWard.PlayableCharacterMaster, ElementalWard
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: bc938039-836b-4bc8-bc60-56b806693359
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
@@ -189,7 +177,19 @@ MonoBehaviour:
     m_ActionId: b6a69f30-2f02-407d-9e46-93a072e375ce
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7342703876500854070}
+        m_TargetAssemblyTypeName: ElementalWard.PlayableCharacterMaster, ElementalWard
+        m_MethodName: OnElementScroll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 90496791-75a5-486f-a739-1442f5dcf45d
     m_ActionName: Player/ElementScroll[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0

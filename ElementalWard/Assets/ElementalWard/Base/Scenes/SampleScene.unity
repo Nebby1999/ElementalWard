@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 399343969}
   - component: {fileID: 399343968}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: DungeonDirector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399343967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402ec431c90cff6488bdd98511ca38fb, type: 3}
   m_Name: 
@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &703047835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ PrefabInstance:
     - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: _spawnOnStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
@@ -493,17 +493,17 @@ PrefabInstance:
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.91
+      value: 2.34
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.63
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
@@ -539,6 +539,81 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: 2129ef95-3094-4cff-8881-d4ef852dc179
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: 8ee2999a-7f17-4ab3-9d2e-779034fe09f4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionId
+      value: 4055a09a-f132-44d5-966d-a092ffa26753
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
+      value: d7558ea7-0f10-4d94-baa2-d3149fdcea36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionId
+      value: c8e3a332-d3e6-4c3b-b46b-02d32dff73c3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionId
+      value: cd5465ea-f1df-4374-9636-4935d0a9feff
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionId
+      value: 4f40e776-391f-4d2f-b287-490193a1cf07
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player/Secondary[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player/Utility[/Keyboard/leftShift]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: Player/Special[/Keyboard/r]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
+      value: Player/WeaponSlot1[/Keyboard/1]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[20].m_ActionName
+      value: Player/WeaponSlot2[/Keyboard/2]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[21].m_ActionName
+      value: Player/WeaponSlot3[/Keyboard/3]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925966596371757928, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[22].m_ActionName
+      value: Player/WeaponSlot4[/Keyboard/4]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -870,7 +945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1302145148
 Transform:
   m_ObjectHideFlags: 0
@@ -1021,7 +1096,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675747522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b09a1723ca55a044699031fc17355b09, type: 3}
   m_Name: 
@@ -1266,7 +1341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1889292539
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1371,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2101468559
 BoxCollider:
   m_ObjectHideFlags: 0

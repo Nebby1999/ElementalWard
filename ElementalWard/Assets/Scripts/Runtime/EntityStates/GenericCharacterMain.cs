@@ -37,6 +37,10 @@ namespace EntityStates
             {
                 CharacterController.Jump();
             }
+            if(wantsToChangeElement && elementalScroll != 0)
+            {
+                ElementProvider.ChangeElement(elementalScroll);
+            }
         }
     }
 }
