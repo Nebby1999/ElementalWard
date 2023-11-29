@@ -24,9 +24,9 @@ namespace ElementalWard
             }
         }
         public float Credits => DungeonDirector.Credits;
-        private Dictionary<Door, WeightedCollection<DungeonDeck.Card>> doorToRooms = new();
+        private Dictionary<Door, WeightedCollection<DirectorCard>> doorToRooms = new();
         private Coroutine _coroutine;
-        public RoomPlacementRequest(Room room, DungeonDirector director, ulong seed, WeightedCollection<DungeonDeck.Card> rooms)
+        public RoomPlacementRequest(Room room, DungeonDirector director, ulong seed, WeightedCollection<DirectorCard> rooms)
         {
             var temp = new Xoroshiro128Plus(seed);
             Requester = room;
@@ -35,7 +35,7 @@ namespace ElementalWard
             {
                 if(!door.HasConnection)
                 {
-                    var copy = new WeightedCollection<DungeonDeck.Card>(rooms);
+                    var copy = new WeightedCollection<DirectorCard>(rooms);
                     copy.SetSeed(temp.NextUlong);
                     doorToRooms.Add(door, copy);
                 }

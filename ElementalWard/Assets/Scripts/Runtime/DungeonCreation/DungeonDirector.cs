@@ -13,15 +13,26 @@ namespace ElementalWard
 {
     public class DungeonDirector : MonoBehaviour
     {
-        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(15, 30);//new FloatMinMax(20, 40);
-        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(75, 150);//new FloatMinMax(200, 400);
+        private static readonly FloatMinMax DUNGEON_BASE_SIZE = new FloatMinMax(20, 40);
+        private static readonly FloatMinMax DUNGEON_BASE_CREDITS = new FloatMinMax(100, 200);
         public Bounds DungeonSize { get; private set; }
         public float Credits { get; private set; }
         public bool GenerationComplete { get; private set; }
         public ReadOnlyCollection<Room> InstantiatedRooms => new ReadOnlyCollection<Room>(_instantiatedRooms);
         public event Action<DungeonDirector> OnDungeonGenerationComplete;
-        [SerializeField] private DungeonDeck _dungeonDeck;
-        [SerializeField] private ulong _dungeonFloor;
+        [SerializeField] private DungeonCardDeck _dungeonDeck;
+        public ulong DungeonFloor
+        {
+            get => _dungeonFloor;
+            private set
+            {
+                _dungeonFloor = value;
+            }
+        }
+#if UNITY_EDITOR
+        [SerializeField]
+#endif
+        private ulong _dungeonFloor;
 #if DEBUG
         public bool slowGeneration;
         [Range(0, 10)]
@@ -31,9 +42,9 @@ namespace ElementalWard
         [SerializeField] private ulong _customSeed;
 
         private Xoroshiro128Plus _dungeonRNG;
-        private WeightedCollection<DungeonDeck.Card> _entrywayCards;
-        private WeightedCollection<DungeonDeck.Card> _roomCards;
-        private WeightedCollection<DungeonDeck.Card> _bossRoomCards;
+        private WeightedCollection<DirectorCard> _entrywayCards;
+        private WeightedCollection<DirectorCard> _roomCards;
+        private WeightedCollection<DirectorCard> _bossRoomCards;
         private Queue<RoomPlacementRequest> _placementRequestQueue = new Queue<RoomPlacementRequest>();
         private RoomPlacementRequest _currentRequest;
         private ulong _seed;
@@ -48,6 +59,7 @@ namespace ElementalWard
 
         private void Start()
         {
+            DungeonFloor = DungeonManager.Instance ? DungeonManager.Instance.DungeonFloor : _dungeonFloor;
             float sizeMultiplier = 1 + (float)_dungeonFloor / 20;
             float creditMultiplier = 1 + (float)_dungeonFloor / 10;
 
@@ -78,7 +90,7 @@ namespace ElementalWard
 
             _entrywayCards = _dungeonDeck.GenerateSelection(_dungeonDeck.entrywayRoomCards);
             _entrywayCards.SetSeed(_dungeonRNG.NextUlong);
-            _roomCards = _dungeonDeck.GenerateSelectionFromPool(_dungeonDeck.roomCards);
+            _roomCards = _dungeonDeck.GenerateSelectionFromPools(_dungeonDeck.roomCards);
             _roomCards.SetSeed(_dungeonRNG.NextUlong);
             _bossRoomCards = _dungeonDeck.GenerateSelection(_dungeonDeck.bossRoomCards);
             _bossRoomCards.SetSeed(_dungeonRNG.NextUlong);
@@ -156,7 +168,10 @@ namespace ElementalWard
         private void PlaceEntryway()
         {
             var entryway = _entrywayCards.Next();
-            var gameObject = Instantiate(entryway.prefab, transform);
+            var gameObject = entryway.spawnCard.Spawn(transform.position, transform.rotation);
+            Transform instantiatedTransform = gameObject.transform;
+            instantiatedTransform.parent = transform;
+            instantiatedTransform.localScale = Vector3.one;
             Room room = gameObject.GetComponent<Room>();
             Physics.SyncTransforms();
             room.CalculateBounds();
@@ -169,9 +184,12 @@ namespace ElementalWard
         }
 
 
-        public GameObject TryPlaceRoom(DungeonDeck.Card card, Door door, bool respectBoundary)
+        public GameObject TryPlaceRoom(DirectorCard card, Door door, bool respectBoundary)
         {
-            GameObject instantiatedObject = Instantiate(card.prefab, door.ParentRoom.transform.position, door.ParentRoom.transform.rotation, transform);
+            GameObject instantiatedObject = card.spawnCard.Spawn(door.ParentRoom.transform.position, door.ParentRoom.transform.rotation);
+            Transform instantiatedTransform = instantiatedObject.transform;
+            instantiatedTransform.parent = transform;
+            instantiatedTransform.localScale = Vector3.one;
             instantiatedObject.transform.position = door.ParentRoom.transform.position;
             Room instantiatedRoom = instantiatedObject.GetComponent<Room>();
             Door instantiatedDoor = instantiatedRoom.GetRandomAvailableDoor(_dungeonRNG);

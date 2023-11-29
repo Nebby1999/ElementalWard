@@ -8,10 +8,17 @@ namespace Nebula
     [ExecuteAlways]
     public class GlobalGizmos : SingletonBehaviour<GlobalGizmos>
     {
-        public override bool DestroyIfDuplicate => true;
         private static List<DrawRequest> drawRequests = new List<DrawRequest>();
         private static List<DrawRequest> expiredCalls = new List<DrawRequest>();
 
+        protected override void DestroySelf()
+        {
+#if UNITY_EDITOR
+            DestroyImmediate(gameObject);
+#else
+            Destroy(gameObject);
+#endif
+        }
         public static void EnqueueGizmoDrawing(Action action, int drawCalls = 60)
         {
             if(!Instance)

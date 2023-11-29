@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e1b1481720aa345a114ecbdbf02225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnOnStart: 1
+  _spawnOnStart: 0
   _defaultBodyPrefab: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
     type: 3}
   _level: 1

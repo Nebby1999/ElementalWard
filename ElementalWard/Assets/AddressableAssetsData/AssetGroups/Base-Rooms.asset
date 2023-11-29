@@ -351,6 +351,101 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 160b7c5686259664c9dfdbfd67940e94
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_0_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3ea7e94e201d8e4cb43c58edada78d3
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_1_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 782072b1a072daf48948db98c13c3472
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f598f6262591024da08929c26ab0460
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a65f9347e8a7df43a874997b46736de
+    m_Address: ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49245046e7162ea4c8d0112f36f25165
+    m_Address: ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9cf70f35c9a4804e8c701b1355f1cde
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLarge_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9b2aeb798f97c6498da091fa2802406
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 451a2731cf4ea1a4ab16320c24c4e5cb
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomPlus_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ef9dffa6d02aab47987094e46958d91
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomRectangular_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab12e3a2f0321c44296f37ec483a801d
+    m_Address: ElementalWard/Base/Rooms/EnemyRooms/RoomU_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 855cec64b8c571844bacf7925cb7b9d7
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c56f5e9f80445d4d94a8f2a7a6b1833
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 850c130e000510949a39b91506848d6f
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayL_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbb31e3e8f12def438fb6cac6d186052
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayPlusPlus_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8f64720eaa1e2340af02e853ffc514c
+    m_Address: ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayT_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7aea709a080e02d4195453aa6d8195ad
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfd836991f4fdfe4395d7b7ac09d55d0
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d27969a983428434bb45da20509b1708
+    m_Address: ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

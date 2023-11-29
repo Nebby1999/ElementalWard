@@ -4,15 +4,27 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public class GameManager : MonoBehaviour
+    public class DungeonManager : SingletonBehaviour<DungeonManager>
     {
-        [SerializeField] DungeonDirector _dungeonDirector;
+        public ulong DungeonFloor => _dungeonFloor;
+        [SerializeField] private ulong _dungeonFloor;
+        [SerializeField] private DungeonDirector _dungeonDirector;
+        [SerializeField] private CombatDirector _combatDirector;
         [SerializeField] private PlayableCharacterMaster _playableCharacterMaster;
 
 
         private void Start()
         {
             StartCoroutine(WaitForEverythingToBeSetUp());   
+        }
+
+        protected override void DestroySelf()
+        {
+#if UNITY_EDITOR
+            DestroyImmediate(gameObject);
+#else
+            Destroy(gameObject);
+#endif
         }
         private IEnumerator WaitForEverythingToBeSetUp()
         {
@@ -23,6 +35,8 @@ namespace ElementalWard
 
             while(!SceneNavigationSystem.HasGraphs)
                 yield return null;
+
+
 
             if(_playableCharacterMaster)
             {

@@ -7,24 +7,21 @@ namespace Nebula
     public abstract class SingletonBehaviour<T> : MonoBehaviour where T: SingletonBehaviour<T>
     {
         public static T Instance { get; protected set; }
-        public virtual bool DestroyIfDuplicate { get; } = false;
+
         public virtual void OnEnable()
         {
             if (Instance != null && Instance != this)
             {
                 Debug.LogWarning($"An instance of the singleton {typeof(T).Name} already exists! " +
-                    $"Only a single instance should exist at a time! " +
-                    (DestroyIfDuplicate ? "Destroying Duplicate" : $"Replacing instance with new one."));
-
-                if (DestroyIfDuplicate)
-                {
-#if UNITY_EDITOR
-                    DestroyImmediate(this);
-#endif
-                    return;
-                }
+                    $"Only a single instance should exist at a time! ");
+                DestroySelf();
             }
             Instance = this as T;
+        }
+
+        protected virtual void DestroySelf()
+        {
+
         }
 
         public virtual void OnDisable()
