@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d355a1596d7c8f543a17f87e0d992a13, type: 3}
-  m_Name: WanderingSoulSpawnCard
+  m_Name: WanderingSoulSpawnCard_Elemental
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7031859106440330407, guid: 3476b448f5a42144da1f8ab3d3b3b814, type: 3}
-  canUseElements: 0
-  minDistance: 0
+  prefab: {fileID: 7031859106440330407, guid: 57aba9fe325f0bf498005c907511d27f, type: 3}
+  canUseElements: 1

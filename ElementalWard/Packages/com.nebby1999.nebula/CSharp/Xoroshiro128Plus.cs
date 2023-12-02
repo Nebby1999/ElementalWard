@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 using System.Runtime.CompilerServices;
+using Random = UnityEngine.Random;
 
 namespace Nebula
 {
@@ -193,6 +195,33 @@ namespace Nebula
                 ++num;
             }
             return num;
+        }
+
+        public Vector2 InsideUnitCircle()
+        {
+            var previousState = Random.state;
+            Random.InitState(NextInt);
+            Vector2 result = Random.insideUnitCircle;
+            Random.state = previousState;
+            return result;
+        }
+
+        public Vector3 InsideUnitSphere()
+        {
+            var previousState = Random.state;
+            Random.InitState(NextInt);
+            Vector3 result = Random.insideUnitSphere;
+            Random.state = previousState;
+            return result;
+        }
+
+        public Vector3 OnUnitSphere()
+        {
+            var previousState = Random.state;
+            Random.InitState(NextInt);
+            Vector3 result = Random.onUnitSphere;
+            Random.state = previousState;
+            return result;
         }
 
         public ref T NextElementUniform<T>(T[] array) => ref array[this.RangeInt(0, array.Length)];

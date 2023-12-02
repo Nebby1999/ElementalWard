@@ -8,10 +8,24 @@ namespace ElementalWard
     {
         public GameObject prefab;
 
-        public virtual GameObject Spawn(Vector3 position, Quaternion rotation)
+        public virtual bool TrySpawn(Vector3 position, Quaternion rotation, out SpawnResult spawnResult)
         {
             var instance = Instantiate(prefab, position, rotation);
-            return instance;
+            spawnResult = new SpawnResult
+            {
+                position = position,
+                rotation = rotation,
+                spawnedInstance = instance,
+                success = instance
+            };
+            return spawnResult.success;
+        }
+        public class SpawnResult
+        {
+            public GameObject spawnedInstance;
+            public Vector3 position;
+            public Quaternion rotation;
+            public bool success;
         }
     }
 }

@@ -168,7 +168,11 @@ namespace ElementalWard
         private void PlaceEntryway()
         {
             var entryway = _entrywayCards.Next();
-            var gameObject = entryway.spawnCard.Spawn(transform.position, transform.rotation);
+            if(!entryway.spawnCard.TrySpawn(transform.position, transform.rotation, out var result))
+            {
+                return;
+            }
+            var gameObject = result.spawnedInstance;
             Transform instantiatedTransform = gameObject.transform;
             instantiatedTransform.parent = transform;
             instantiatedTransform.localScale = Vector3.one;
@@ -186,7 +190,11 @@ namespace ElementalWard
 
         public GameObject TryPlaceRoom(DirectorCard card, Door door, bool respectBoundary)
         {
-            GameObject instantiatedObject = card.spawnCard.Spawn(door.ParentRoom.transform.position, door.ParentRoom.transform.rotation);
+            if (!card.spawnCard.TrySpawn(door.ParentRoom.transform.position, door.ParentRoom.transform.rotation, out var result))
+            {
+                return null;
+            }
+            GameObject instantiatedObject = result.spawnedInstance;
             Transform instantiatedTransform = instantiatedObject.transform;
             instantiatedTransform.parent = transform;
             instantiatedTransform.localScale = Vector3.one;

@@ -85,8 +85,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0672db4a11c35b94baad525fd6dc7c9e
+  - m_GUID: c70caa8f7ada52e4fb37fa27c0dcaacf
     m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulSpawnCard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f776d2d98ea20f24ebe3c907de8d318d
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulSpawnCard_Elemental.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

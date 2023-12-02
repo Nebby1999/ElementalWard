@@ -41,14 +41,14 @@ namespace ElementalWard
             ElementDef element = Util.CheckRoll(elementalChance, _rng) ? ElementCatalog.GetElementDef((ElementIndex)_rng.RangeInt(0, ElementCatalog.ElementCount)) : null;
             Vector3 position = _playerBody ? _playerBody.transform.position : Vector3.zero;
 
-            var gameObjectInstance = chosenCard.Spawn(position, Quaternion.identity);
+            /*var gameObjectInstance = chosenCard.Spawn(position, Quaternion.identity);
             var masterInstance = gameObjectInstance.GetComponent<CharacterMaster>();
             masterInstance.OnBodySpawned += (body) =>
             {
                 var elementProvider = body.GetComponent<IElementProvider>();
                 if(elementProvider != null)
                     elementProvider.ElementDef = element;
-            };
+            };*/
         }
 
         private void OnDestroy()

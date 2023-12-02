@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    [CreateAssetMenu(fileName = "New DungeonCardDeck", menuName = "ElementalWard/DungeonDecks/DungeonCardDeck")]
+    [CreateAssetMenu(fileName = "New DungeonCardDeck", menuName = "ElementalWard/DirectorCardDecks/DungeonCardDeck")]
     public class DungeonCardDeck : DirectorCardDeck
     {
         public CardPool entrywayRoomCards;

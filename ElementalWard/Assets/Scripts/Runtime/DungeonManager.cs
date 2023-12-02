@@ -7,6 +7,13 @@ namespace ElementalWard
     public class DungeonManager : SingletonBehaviour<DungeonManager>
     {
         public ulong DungeonFloor => _dungeonFloor;
+        public float DifficultyCoefficient
+        {
+            get
+            {
+                return 1 + (_dungeonFloor / 10);
+            }
+        }    
         [SerializeField] private ulong _dungeonFloor;
         [SerializeField] private DungeonDirector _dungeonDirector;
         [SerializeField] private CombatDirector _combatDirector;

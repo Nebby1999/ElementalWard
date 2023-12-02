@@ -6,7 +6,7 @@ namespace ElementalWard
 
     public class RoomSpawnCard : SpawnCard
     {
-        public void OnValidate()
+        private void OnValidate()
         {
             if(prefab && !prefab.TryGetComponent<Room>(out _))
             {

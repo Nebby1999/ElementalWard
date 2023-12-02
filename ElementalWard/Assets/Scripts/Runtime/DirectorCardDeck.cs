@@ -50,9 +50,12 @@ namespace ElementalWard
         }
 
         [ContextMenu("Log Cards")]
-        protected virtual void LogCards()
+        private void LogCardsInternal()
         {
+            LogCards();
         }
+
+        protected virtual void LogCards() { }
     }
     [Serializable]
     public class CardPool
@@ -66,6 +69,7 @@ namespace ElementalWard
     public class DirectorCard
     {
         public SpawnCard spawnCard;
+        public float minimumSpawnDistance;
         [Range(0, 100)]
         public float weight;
         public float cardCost;

@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b068768d3d2d854386dabca17151527, type: 3}
+  m_Script: {fileID: 11500000, guid: d355a1596d7c8f543a17f87e0d992a13, type: 3}
   m_Name: StarvlingSpawnCard
   m_EditorClassIdentifier: 
   prefab: {fileID: 7031859106440330407, guid: 57aba9fe325f0bf498005c907511d27f, type: 3}
-  spawnOnNodeGraph: 1
-  useAirNodesForSpawning: 0
+  canUseElements: 0

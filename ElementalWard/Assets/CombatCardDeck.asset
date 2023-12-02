@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2adb1f01df757d46ad4778ab3f81d23, type: 3}
+  m_Name: CombatCardDeck
+  m_EditorClassIdentifier: 
+  categories:
+  - poolName: Enemies
+    weight: 100
+    cards:
+    - spawnCard: {fileID: 11400000, guid: c70caa8f7ada52e4fb37fa27c0dcaacf, type: 2}
+      minimumSpawnDistance: 0
+      weight: 50
+      cardCost: 100
+    - spawnCard: {fileID: 11400000, guid: 5e09f10885aa90149ac556b3bc91ebd5, type: 2}
+      minimumSpawnDistance: 0
+      weight: 40
+      cardCost: 150
+  - poolName: ElementalEnemies
+    weight: 25
+    cards:
+    - spawnCard: {fileID: 11400000, guid: f776d2d98ea20f24ebe3c907de8d318d, type: 2}
+      minimumSpawnDistance: 0
+      weight: 25
+      cardCost: 150
+    - spawnCard: {fileID: 11400000, guid: 8541ea0cc84e3e14a81e71da37a79af7, type: 2}
+      minimumSpawnDistance: 0
+      weight: 12
+      cardCost: 200

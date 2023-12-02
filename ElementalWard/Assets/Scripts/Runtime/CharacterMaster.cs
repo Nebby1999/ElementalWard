@@ -18,7 +18,7 @@ namespace ElementalWard
         public uint Level => _level;
         public float CurrentXP => _currentXP;
         public float NeededXPForNextLevel => _neededXPForNextLevel;
-        public GameObject CurrentCharacterPrefab { get => _currentCharacterPrefab; }
+        public GameObject CurrentCharacterPrefab { get => _currentCharacterPrefab ? _currentCharacterPrefab : _defaultBodyPrefab; }
         private GameObject _currentCharacterPrefab;
         public CharacterBody CurrentBody { get; private set; }
         public CharacterMasterAI CharacterMasterAI { get; private set; }
@@ -38,7 +38,7 @@ namespace ElementalWard
         private void Start()
         {
             _currentCharacterPrefab = _defaultBodyPrefab;
-            if (_defaultBodyPrefab && _spawnOnStart)
+            if (_currentCharacterPrefab && _spawnOnStart && !CurrentBody)
             {
                 SpawnHere();
             }
