@@ -272,8 +272,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dungeonFloor: 0
   _dungeonDirector: {fileID: 399343968}
-  _combatDirector: {fileID: 0}
+  _combatDirector: {fileID: 399343970}
   _playableCharacterMaster: {fileID: 1749386452}
+  _useCustomSeed: 1
+  _customSeed: 11988261680478083533
 --- !u!4 &282182098
 Transform:
   m_ObjectHideFlags: 0
@@ -283,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 282182096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.531516, y: -1.0798101, z: 1.2854528}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -299,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 399343969}
   - component: {fileID: 399343968}
+  - component: {fileID: 399343970}
   m_Layer: 3
   m_Name: DungeonDirector
   m_TagString: Untagged
@@ -321,7 +324,7 @@ MonoBehaviour:
   _dungeonDeck: {fileID: 11400000, guid: 1fbd09945c5eddb42ad59916ebbaf0ae, type: 2}
   _dungeonFloor: 0
   slowGeneration: 1
-  slowGenerationWait: 1
+  slowGenerationWait: 0.5
   useCustomSeed: 0
   _customSeed: 0
 --- !u!4 &399343969
@@ -333,12 +336,35 @@ Transform:
   m_GameObject: {fileID: 399343967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.45, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399343970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399343967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f1ec942ea7b7a4a9c2bfb9f30b0ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deck: {fileID: 11400000, guid: 4654927c54a158f42a29539f2768b570, type: 2}
+  availableElements:
+    values:
+    - value: {fileID: 11400000, guid: 67bad244a16e7b5438cfbc289891ca86, type: 2}
+      weight: 10
+    - value: {fileID: 11400000, guid: 9ce85ac5506aef942beb4eeedb885921, type: 2}
+      weight: 10
+    - value: {fileID: 11400000, guid: 5288bfc2c6fc0a24c8ded36f8f774a21, type: 2}
+      weight: 10
+  _dungeonFloor: 0
+  _startingCredits: 1000
 --- !u!1 &703047834
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,17 +562,17 @@ PrefabInstance:
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.34
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.64
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}

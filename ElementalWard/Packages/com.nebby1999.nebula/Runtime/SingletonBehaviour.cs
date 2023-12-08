@@ -15,14 +15,12 @@ namespace Nebula
                 Debug.LogWarning($"An instance of the singleton {typeof(T).Name} already exists! " +
                     $"Only a single instance should exist at a time! ");
                 DestroySelf();
+                return;
             }
             Instance = this as T;
         }
 
-        protected virtual void DestroySelf()
-        {
-
-        }
+        protected virtual void DestroySelf() { }
 
         public virtual void OnDisable()
         {

@@ -14,8 +14,15 @@ using Object = UnityEngine.Object;
 
 namespace ElementalWard
 {
+    public enum NodeGraphType
+    {
+        None = -1,
+        Air = 0,
+        Ground = 1
+    }
     public static class SceneNavigationSystem
     {
+        public static bool HasBakedGraphs => HasGraphs && _baked;
         public static bool HasGraphs => _airGraph && _groundGraph;
         public static IGraphProvider AirNodeProvider => _airGraphProvider;
         public static IGraphProvider GroundNodeProvider => _groundGraphProvider;
@@ -24,6 +31,7 @@ namespace ElementalWard
         private static AirNodeGraph _airGraph;
         private static GroundNodeGraph _groundGraph;
         private static GameObject _gameObject;
+        private static bool _baked = false;
 
         public static IEnumerator RequestPathAsync(PathRequest request, PathRequestResult in_Result)
         {
@@ -160,6 +168,13 @@ namespace ElementalWard
             };
         }
 
+        public static Vector3 GetRandomPositionFromNodeGraph(IGraphProvider provider, Xoroshiro128Plus rng = null)
+        {
+            var array = provider.GetRuntimePathNodes();
+            var index = rng?.RangeInt(0, array.Length) ?? UnityEngine.Random.Range(0, array.Length - 1);
+            return array[index].worldPosition;
+        }
+
         public static Vector3 FindClosestPositionUsingNodeGraph(Vector3 position, IGraphProvider graphProvider)
         {
             NativeArray<RuntimePathNode> runtimeNodes = new NativeArray<RuntimePathNode>(graphProvider.GetRuntimePathNodes(), Allocator.TempJob);
@@ -208,6 +223,7 @@ namespace ElementalWard
             if (arg1 != LoadSceneMode.Single)
                 return;
 
+            _baked = false;
             if (_airGraph)
             {
                 Object.Destroy(_airGraph);
@@ -257,7 +273,11 @@ namespace ElementalWard
 
                 _airGraph = CreateSceneGraph<AirNodeGraph>(airProviders);
                 _airGraphProvider.NodeGraph = _airGraph;
-                _airGraphProvider.BakeAsynchronously(_airGraphProvider.NodeGraph.UpdateRuntimeNodesAndLinks);
+                _airGraphProvider.BakeAsynchronously(() =>
+                {
+                    _airGraphProvider.NodeGraph.UpdateRuntimeNodesAndLinks();
+                    _baked = true;
+                });
             });
 
         }

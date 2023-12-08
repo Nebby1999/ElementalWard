@@ -59,9 +59,10 @@ namespace ElementalWard
 
         private void Start()
         {
+            _dungeonRNG = new Xoroshiro128Plus(DungeonManager.Instance.rng.NextUlong);
             DungeonFloor = DungeonManager.Instance ? DungeonManager.Instance.DungeonFloor : _dungeonFloor;
-            float sizeMultiplier = 1 + (float)_dungeonFloor / 20;
-            float creditMultiplier = 1 + (float)_dungeonFloor / 10;
+            float sizeMultiplier = DungeonManager.Instance.DifficultyCoefficient * 1.1f;
+            float creditMultiplier = DungeonManager.Instance.DifficultyCoefficient;
 
             float[] sizes = new float[3];
             for(int i = 0; i < sizes.Length; i++)
@@ -168,11 +169,16 @@ namespace ElementalWard
         private void PlaceEntryway()
         {
             var entryway = _entrywayCards.Next();
-            if(!entryway.spawnCard.TrySpawn(transform.position, transform.rotation, out var result))
+            var placementRule = new PlacementRule(transform)
             {
-                return;
-            }
-            var gameObject = result.spawnedInstance;
+                maxDistance = entryway.maximumSpawnDistance,
+                minDistance = entryway.minimumSpawnDistance,
+                placement = PlacementRule.DirectPlacement
+            };
+
+            SpawnRequest spawnRequest = new SpawnRequest(entryway.spawnCard, placementRule, _dungeonRNG);
+            var gameObject = DungeonManager.Instance.TrySpawnObject(spawnRequest);
+
             Transform instantiatedTransform = gameObject.transform;
             instantiatedTransform.parent = transform;
             instantiatedTransform.localScale = Vector3.one;
@@ -183,18 +189,23 @@ namespace ElementalWard
             b.Expand(-1f);
             room.RawBoundingBox = b;
             _instantiatedRooms.Add(room);
-            var request = new RoomPlacementRequest(room, this, _dungeonRNG.NextUlong, _roomCards);
-            _placementRequestQueue.Enqueue(request);
+            var roomRequest = new RoomPlacementRequest(room, this, _dungeonRNG.NextUlong, _roomCards);
+            _placementRequestQueue.Enqueue(roomRequest);
         }
 
 
         public GameObject TryPlaceRoom(DirectorCard card, Door door, bool respectBoundary)
         {
-            if (!card.spawnCard.TrySpawn(door.ParentRoom.transform.position, door.ParentRoom.transform.rotation, out var result))
+            var placementRule = new PlacementRule(door.ParentRoom.transform)
             {
-                return null;
-            }
-            GameObject instantiatedObject = result.spawnedInstance;
+                maxDistance = card.maximumSpawnDistance,
+                minDistance = card.minimumSpawnDistance,
+                placement = PlacementRule.DirectPlacement
+            };
+
+            SpawnRequest spawnRequest = new SpawnRequest(card.spawnCard, placementRule, _dungeonRNG);
+            GameObject instantiatedObject = DungeonManager.Instance.TrySpawnObject(spawnRequest);
+
             Transform instantiatedTransform = instantiatedObject.transform;
             instantiatedTransform.parent = transform;
             instantiatedTransform.localScale = Vector3.one;

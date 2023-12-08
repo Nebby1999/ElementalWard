@@ -65,6 +65,7 @@ namespace ElementalWard
             _weapon3Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot3GUID);
             _weapon4Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot4GUID);
             OnPlayableCharacterMasterEnabled?.Invoke(this);
+            InstanceTracker.Add(this);
         }
 
         private void SpawnCamera(CharacterBody body)
@@ -131,6 +132,7 @@ namespace ElementalWard
         {
             ManagedMaster.OnBodySpawned -= SpawnCamera;
             OnPlayableCharacterMasterDisabled?.Invoke(this);
+            InstanceTracker.Remove(this);
         }
 
         public void OnMove(InputAction.CallbackContext ctx)

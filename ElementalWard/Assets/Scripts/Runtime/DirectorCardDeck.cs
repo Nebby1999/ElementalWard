@@ -70,6 +70,7 @@ namespace ElementalWard
     {
         public SpawnCard spawnCard;
         public float minimumSpawnDistance;
+        public float maximumSpawnDistance;
         [Range(0, 100)]
         public float weight;
         public float cardCost;

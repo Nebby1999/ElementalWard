@@ -1,4 +1,5 @@
 using Nebula;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -13,16 +14,44 @@ namespace ElementalWard
             {
                 return 1 + (_dungeonFloor / 10);
             }
-        }    
+        }
+        public DungeonDirector DungeonDirector => _dungeonDirector;
+        public CombatDirector CombatDirector => _combatDirector;
+        public ulong Seed { get; private set; }
+        public Xoroshiro128Plus rng;
         [SerializeField] private ulong _dungeonFloor;
         [SerializeField] private DungeonDirector _dungeonDirector;
         [SerializeField] private CombatDirector _combatDirector;
         [SerializeField] private PlayableCharacterMaster _playableCharacterMaster;
 
+        [SerializeField] private bool _useCustomSeed;
+        [SerializeField] private ulong _customSeed;
+
+        private void Awake()
+        {
+            Seed = _useCustomSeed ? _customSeed : ElementalWardApplication.rng.NextUlong;
+            Debug.Log("Dungeon RNG Seed: " + Seed);
+            rng = new Xoroshiro128Plus(Seed);
+        }
 
         private void Start()
         {
-            StartCoroutine(WaitForEverythingToBeSetUp());   
+            _combatDirector.enabled = false;
+            StartCoroutine(WaitForEverythingToBeSetUp());
+        }
+
+        public GameObject TrySpawnObject(SpawnRequest spawnRequest)
+        {
+            PlacementRule placementRule = spawnRequest.placementRule;
+            try
+            {
+                return placementRule.placement.Invoke(spawnRequest);
+            }
+            catch(Exception e)
+            {
+                Debug.LogError(e);
+                return null;
+            }
         }
 
         protected override void DestroySelf()
@@ -33,6 +62,7 @@ namespace ElementalWard
             Destroy(gameObject);
 #endif
         }
+
         private IEnumerator WaitForEverythingToBeSetUp()
         {
             while(_dungeonDirector ? _dungeonDirector.GenerationComplete : false)
@@ -40,10 +70,15 @@ namespace ElementalWard
                 yield return null;
             }
 
-            while(!SceneNavigationSystem.HasGraphs)
+            while(!SceneNavigationSystem.HasBakedGraphs)
                 yield return null;
 
-
+            if(_combatDirector)
+            {
+                _combatDirector.enabled = true;
+                yield return null;
+                _combatDirector.SpendAllCreditsOnMapSpawn();
+            }
 
             if(_playableCharacterMaster)
             {
