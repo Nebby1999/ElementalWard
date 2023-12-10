@@ -322,11 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dungeonDeck: {fileID: 11400000, guid: 1fbd09945c5eddb42ad59916ebbaf0ae, type: 2}
-  _dungeonFloor: 0
-  slowGeneration: 1
-  slowGenerationWait: 0.5
-  useCustomSeed: 0
-  _customSeed: 0
+  slowGeneration: 0
+  slowGenerationWait: 1
 --- !u!4 &399343969
 Transform:
   m_ObjectHideFlags: 0
@@ -336,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 399343967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -1, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -364,7 +361,7 @@ MonoBehaviour:
     - value: {fileID: 11400000, guid: 5288bfc2c6fc0a24c8ded36f8f774a21, type: 2}
       weight: 10
   _dungeonFloor: 0
-  _startingCredits: 1000
+  _startingCredits: 150
 --- !u!1 &703047834
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,12 +564,12 @@ PrefabInstance:
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 3.23
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.43
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}

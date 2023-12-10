@@ -21,25 +21,12 @@ namespace ElementalWard
         public ReadOnlyCollection<Room> InstantiatedRooms => new ReadOnlyCollection<Room>(_instantiatedRooms);
         public event Action<DungeonDirector> OnDungeonGenerationComplete;
         [SerializeField] private DungeonCardDeck _dungeonDeck;
-        public ulong DungeonFloor
-        {
-            get => _dungeonFloor;
-            private set
-            {
-                _dungeonFloor = value;
-            }
-        }
-#if UNITY_EDITOR
-        [SerializeField]
-#endif
-        private ulong _dungeonFloor;
+        public ulong DungeonFloor { get; private set; }
 #if DEBUG
         public bool slowGeneration;
         [Range(0, 10)]
         public float slowGenerationWait;
 #endif
-        [SerializeField] private bool useCustomSeed;
-        [SerializeField] private ulong _customSeed;
 
         private Xoroshiro128Plus _dungeonRNG;
         private WeightedCollection<DirectorCard> _entrywayCards;
@@ -47,20 +34,17 @@ namespace ElementalWard
         private WeightedCollection<DirectorCard> _bossRoomCards;
         private Queue<RoomPlacementRequest> _placementRequestQueue = new Queue<RoomPlacementRequest>();
         private RoomPlacementRequest _currentRequest;
-        private ulong _seed;
         private List<Room> _instantiatedRooms = new List<Room>();
 
         private void Awake()
         {
-            _seed = useCustomSeed ? _customSeed : ElementalWardApplication.rng.NextUlong;
-            Debug.Log("Dungeon RNG Seed: " + _seed);
-            _dungeonRNG = new Xoroshiro128Plus(_seed);
+            _dungeonRNG = new Xoroshiro128Plus(DungeonManager.Instance.rng.NextUlong);
         }
 
         private void Start()
         {
             _dungeonRNG = new Xoroshiro128Plus(DungeonManager.Instance.rng.NextUlong);
-            DungeonFloor = DungeonManager.Instance ? DungeonManager.Instance.DungeonFloor : _dungeonFloor;
+            DungeonFloor = DungeonManager.Instance.DungeonFloor;
             float sizeMultiplier = DungeonManager.Instance.DifficultyCoefficient * 1.1f;
             float creditMultiplier = DungeonManager.Instance.DifficultyCoefficient;
 

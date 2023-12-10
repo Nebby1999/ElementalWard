@@ -78,11 +78,13 @@ namespace ElementalWard
                 _combatDirector.enabled = true;
                 yield return null;
                 _combatDirector.SpendAllCreditsOnMapSpawn();
+                _combatDirector.enabled = false;
             }
 
             if(_playableCharacterMaster)
             {
-                _playableCharacterMaster.ManagedMaster.SpawnHere();
+                _playableCharacterMaster.ManagedMaster.Spawn(transform.position + Vector3.up, transform.rotation);
+                _combatDirector.enabled = true;
             }
         }
     }

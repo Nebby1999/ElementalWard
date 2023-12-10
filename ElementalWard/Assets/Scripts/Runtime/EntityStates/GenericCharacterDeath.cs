@@ -6,6 +6,12 @@ namespace EntityStates
         {
             base.OnEnter();
             PlayAnimation("Base", "Death");
+            DestroyBody();
+        }
+
+        public virtual void DestroyBody()
+        {
+            Destroy(GameObject);
         }
     }
 }

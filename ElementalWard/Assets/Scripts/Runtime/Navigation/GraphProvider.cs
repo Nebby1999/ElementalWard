@@ -74,6 +74,7 @@ namespace ElementalWard.Navigation
             }
             finally
             {
+                Debug.Log("Node Baking Complete, disposing.", this);
                 baker.Dispose();
             }
         }
@@ -100,6 +101,7 @@ namespace ElementalWard.Navigation
             }
             finally
             {
+                Debug.Log("Node Baking Complete, disposing.", this);
                 baker.Dispose();
             }
             onComplete?.Invoke();

@@ -1,6 +1,7 @@
 using Nebula;
 using Nebula.Navigation;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ElementalWard
@@ -94,10 +95,26 @@ namespace ElementalWard
                 default:
                     throw new Exception("Invalid graph type.");
             }
-            var position = SceneNavigationSystem.GetRandomPositionFromNodeGraph(graphProider, request.rng);
+            HashSet<int> forbiddenIndices = new HashSet<int>();
+            int tries = 0;
+            Vector3 position = Vector3.zero;
+            while(tries < 10)
+            {
+                var node = SceneNavigationSystem.GetRandomNodeFromNodeGraph(graphProider, forbiddenIndices, request.rng);
+
+                if(Physics.OverlapSphere(node.worldPosition, 1, LayerIndex.body.Mask).Length != 0)
+                {
+                    forbiddenIndices.Add(node.nodeIndex);
+                    tries++;
+                    continue;
+                }
+                position = node.worldPosition;
+                break;
+            }
             Quaternion rotation = Quaternion.Euler(0f, request.rng.NextNormalizedFloat * 360f, 0f);
 
             return request.spawnCard.DoSpawn(position, rotation, request).spawnedInstance;
+
         }
 
         public delegate GameObject PlacementDelegate(SpawnRequest spawnRequest);

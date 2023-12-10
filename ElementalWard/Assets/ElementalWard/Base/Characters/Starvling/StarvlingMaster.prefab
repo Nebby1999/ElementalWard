@@ -69,11 +69,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachineName: AI
   initialState:
-    _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _assemblyQualifiedName: 
   mainState:
-    _assemblyQualifiedName: EntityStates.Idle, ElementalWard, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    _assemblyQualifiedName: EntityStates.CharacterAI.AIGuardState, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &8320696453838848100
 MonoBehaviour:
   m_ObjectHideFlags: 0

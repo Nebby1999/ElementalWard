@@ -1,3 +1,4 @@
+using KinematicCharacterController;
 using Nebula;
 using System;
 using UnityEngine;
@@ -83,6 +84,7 @@ namespace ElementalWard
             var go = Instantiate(CurrentCharacterPrefab, position, rotation);
             CurrentBody = go.GetComponent<CharacterBody>();
             CurrentBody.TiedMaster = this;
+            go.GetComponent<KinematicCharacterMotor>().SetPositionAndRotation(position, rotation, true);
 
             TeamComponent teamComponent = go.GetComponent<TeamComponent>();
             if (teamComponent)

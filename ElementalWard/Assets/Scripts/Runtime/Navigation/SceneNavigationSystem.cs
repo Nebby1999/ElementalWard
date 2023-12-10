@@ -168,11 +168,12 @@ namespace ElementalWard
             };
         }
 
-        public static Vector3 GetRandomPositionFromNodeGraph(IGraphProvider provider, Xoroshiro128Plus rng = null)
+        public static RuntimePathNode GetRandomNodeFromNodeGraph(IGraphProvider provider, HashSet<int> forbiddenIndices, Xoroshiro128Plus rng = null)
         {
-            var array = provider.GetRuntimePathNodes();
+            forbiddenIndices ??= new HashSet<int>();
+            var array = provider.GetRuntimePathNodes().Where(n => !forbiddenIndices.Contains(n.nodeIndex)).ToArray();
             var index = rng?.RangeInt(0, array.Length) ?? UnityEngine.Random.Range(0, array.Length - 1);
-            return array[index].worldPosition;
+            return array[index];
         }
 
         public static Vector3 FindClosestPositionUsingNodeGraph(Vector3 position, IGraphProvider graphProvider)

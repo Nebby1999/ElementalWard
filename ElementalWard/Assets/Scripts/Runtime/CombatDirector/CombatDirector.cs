@@ -5,9 +5,10 @@ namespace ElementalWard
 {
     public class CombatDirector : MonoBehaviour
     {
-        public static readonly FloatMinMax CREDIT_GAIN_RANGE = new FloatMinMax(10, 50);
-        public static readonly FloatMinMax CREDIT_GAIN_INTERVAL = new FloatMinMax(10, 30);
-        public static readonly FloatMinMax REROLL_RANGE = new FloatMinMax(5, 10);
+        private static readonly FloatMinMax CREDIT_GAIN_RANGE = new FloatMinMax(10, 50);
+        private static readonly FloatMinMax CREDIT_GAIN_INTERVAL = new FloatMinMax(10, 30);
+        private static readonly FloatMinMax SPAWN_RANGE = new FloatMinMax(25, 50);
+        private static readonly FloatMinMax REROLL_RANGE = new FloatMinMax(5, 10);
 
         public ulong DungeonFloor { get => _dungeonFloor; private set => _dungeonFloor = value; }
 
@@ -29,7 +30,6 @@ namespace ElementalWard
         private float _difficultyCoefficient;
         private int _spawnAttempts;
         private int _monsterSpawnCount;
-        private float _timeBetweenSpawns;
         private uint _maxSpawnTimes; 
 
         private void Start()
@@ -62,7 +62,7 @@ namespace ElementalWard
 
             Credits = _startingCredits * _difficultyCoefficient;
             _creditGainStopwatch = CREDIT_GAIN_INTERVAL.GetRandomRange(_rng);
-            _spawnStopwatch = _timeBetweenSpawns;
+            _spawnStopwatch = SPAWN_RANGE.GetRandomRange(_rng);
         }
 
         private void FixedUpdate()
@@ -83,7 +83,7 @@ namespace ElementalWard
             
             if(AttemptSpawnOnTarget(deltaTime))
             {
-                _spawnStopwatch += _timeBetweenSpawns;
+                _spawnStopwatch += SPAWN_RANGE.GetRandomRange(_rng);
                 return;
             }
             _spawnStopwatch += REROLL_RANGE.GetRandomRange(_rng);
@@ -158,11 +158,12 @@ namespace ElementalWard
                 }
                 if(result.body.TryGetComponent<CharacterMotorController>(out var controller))
                 {
+                    UnityEditor.EditorApplication.isPaused = true;
                     if(!controller.IsFlying)
                     {
                         var pos = result.body.transform.position;
-                        pos.y = controller.MotorCapsule.height / 2;
-                        result.body.transform.position = pos;
+                        pos.y += controller.MotorCapsule.height / 2;
+                        controller.Motor.SetPosition(pos, true);
                     }
                 }
             }
@@ -186,6 +187,7 @@ namespace ElementalWard
                 {
                     Credits -= _currentCard.cardCost;
                     _currentCard = null;
+                    Physics.SyncTransforms();
                 }
             }
         }

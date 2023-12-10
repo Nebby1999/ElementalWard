@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 6385374238828156273}
   - component: {fileID: -3459156510547728091}
   - component: {fileID: 7573095424657892213}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WanderingSoulBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVector: {x: 0, y: 0, z: 0}
-  elementAxis: 0
+  elementalScroll: 0
 --- !u!114 &1571667998473302451
 MonoBehaviour:
   m_ObjectHideFlags: 0

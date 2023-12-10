@@ -69,7 +69,7 @@ namespace ElementalWard
             transform.parent = newParent.transform;
             var corpseRigidbody = newParent.AddComponent<Rigidbody>();
             corpseRigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-            newParent.layer = LayerIndex.decoration.Mask;
+            newParent.layer = LayerIndex.decoration.IntVal;
         }
     }
 }
