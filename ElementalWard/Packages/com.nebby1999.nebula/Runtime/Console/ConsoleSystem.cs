@@ -14,7 +14,7 @@ namespace Nebula.Console
     {
         private static readonly int maxLogCount = 30;
         private static List<Log> _logs = new List<Log>();
-        public static event Action<ReadOnlyCollection<Log>> onLogChanged;
+        public static event Action<ReadOnlyCollection<Log>> OnLogChanged;
         public delegate void ConsoleCommandDelegate(ConsoleCommandArgs args);
         private static Dictionary<string, ConsoleCommand> consoleCommands = new Dictionary<string, ConsoleCommand>(StringComparer.OrdinalIgnoreCase);
         private class ConsoleCommand
@@ -74,7 +74,7 @@ namespace Nebula.Console
                     _logs.RemoveAt(0);
                 }
             }
-            onLogChanged?.Invoke(new(_logs));
+            OnLogChanged?.Invoke(new(_logs));
         }
 
         [ConsoleCommand("help", "Displays all the commands, specifying a command as the second argument displays specific help for that command.")]

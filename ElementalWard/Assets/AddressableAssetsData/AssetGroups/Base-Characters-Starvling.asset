@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c5daaf5b2214a6b45a398e4003a95174
   m_SerializeEntries:
+  - m_GUID: 5e09f10885aa90149ac556b3bc91ebd5
+    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingSpawnCard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7bdfeca22eeedfb4b83f232794054e25
     m_Address: ElementalWard/Base/Characters/Starvling/StarvlingAnimController.controller
     m_ReadOnly: 0
@@ -33,35 +38,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterBodies
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 52d51d72699dc584c9da352f5dfb2119
-    m_Address: ElementalWard/Base/Characters/Starvling/Skills/EntityStates.Starvling.Bite.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EntityStateConfigurations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d42d13a09f90e2f4193d1937d8850d9b
-    m_Address: ElementalWard/Base/Characters/Starvling/Skills/Bite.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 40aa3f826501d164c90151e56e993184
-    m_Address: ElementalWard/Base/Characters/Starvling/texStarvlingEmissive.aseprite
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 57aba9fe325f0bf498005c907511d27f
     m_Address: ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterMasters
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 20b8d68e818e0c34d82da8e302b7a2a4
-    m_Address: ElementalWard/Base/Characters/Starvling/Bite.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 02e5bdc4a12c161408221ac92d1e2807
-    m_Address: ElementalWard/Base/Characters/Starvling/MoveTowardsEnemy.asset
+  - m_GUID: 8541ea0cc84e3e14a81e71da37a79af7
+    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingSpawnCard_Elemental.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -70,13 +54,29 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8541ea0cc84e3e14a81e71da37a79af7
-    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingSpawnCard_Elemental.asset
+  - m_GUID: d42d13a09f90e2f4193d1937d8850d9b
+    m_Address: ElementalWard/Base/Characters/Starvling/Skills/Bite.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5e09f10885aa90149ac556b3bc91ebd5
-    m_Address: ElementalWard/Base/Characters/Starvling/StarvlingSpawnCard.asset
+  - m_GUID: 52d51d72699dc584c9da352f5dfb2119
+    m_Address: ElementalWard/Base/Characters/Starvling/Skills/EntityStates.Starvling.Bite.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02e5bdc4a12c161408221ac92d1e2807
+    m_Address: ElementalWard/Base/Characters/Starvling/MoveTowardsEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40aa3f826501d164c90151e56e993184
+    m_Address: ElementalWard/Base/Characters/Starvling/texStarvlingEmissive.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20b8d68e818e0c34d82da8e302b7a2a4
+    m_Address: ElementalWard/Base/Characters/Starvling/Bite.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

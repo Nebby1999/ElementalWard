@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f78510e0929af44d8ccb496a804125b, type: 3}
+  m_Name: EntityStates.ElementalSpectre.FireFireballs
+  m_EditorClassIdentifier: 
+  targetType:
+    _assemblyQualifiedName: EntityStates.ElementalSpectre.FireFireballs, ElementalWard,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  fieldCollection:
+    serializedFields:
+    - fieldName: angleBetweenProjectiles
+      serializedValue:
+        stringValue: 10
+        objectReferenceValue: {fileID: 0}
+    - fieldName: baseDuration
+      serializedValue:
+        stringValue: 0.71
+        objectReferenceValue: {fileID: 0}
+    - fieldName: projectilePrefab
+      serializedValue:
+        stringValue: 
+        objectReferenceValue: {fileID: 8682911027866062950, guid: 309903ac669f4e24ca536e0f23924b1b,
+          type: 3}
+    - fieldName: animName
+      serializedValue:
+        stringValue: HomingProjectiles
+        objectReferenceValue: {fileID: 0}

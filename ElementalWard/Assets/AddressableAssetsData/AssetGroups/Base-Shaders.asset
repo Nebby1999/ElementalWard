@@ -32,11 +32,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b8f1310cf4101af43aca4945627311ed
-    m_Address: ElementalWard/Base/Shaders/FX.shadergraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 672015b7ca7f2654f9e0ed73fdb7db7d
     m_Address: ElementalWard/Base/Shaders/TextParticles.shadergraph
     m_ReadOnly: 0
@@ -54,11 +49,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6420dc3fb2a7c66489576ec3e9342327
     m_Address: ElementalWard/Base/Shaders/SubGraphs/Branch.shadersubgraph
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 73f42b8782bc71b48990a19c26bb36c0
-    m_Address: ElementalWard/Base/Shaders/Shader Graphs_FX.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

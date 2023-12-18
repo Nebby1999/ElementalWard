@@ -11,6 +11,7 @@ namespace ElementalWard
         public SpawnCard spawnCard;
         public PlacementRule placementRule;
         public Xoroshiro128Plus rng;
+        public GameObject spawnerObject;
         public Action<SpawnCard.SpawnResult> onSpawned;
 
         public SpawnRequest(SpawnCard spawnCard, PlacementRule placementRule, Xoroshiro128Plus rng)

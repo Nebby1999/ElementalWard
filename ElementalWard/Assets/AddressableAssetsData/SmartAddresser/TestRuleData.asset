@@ -105,6 +105,21 @@ MonoBehaviour:
               - rid: 6975382076635742208
         _addressProviderInternal:
           rid: 6975382077004054532
+      - _id: a07f1260-22c9-4088-8e8f-cce357b63d79
+        _addressableGroup: {fileID: 11400000, guid: 4d67dc36b0430e14997d221ce6b9558c,
+          type: 2}
+        _control:
+          _value: 1
+        _assetGroups:
+          _internalList:
+          - _id: abdf9443-ce48-40fe-b2ab-ac77e7577e83
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 9172620057062408195
+        _addressProviderInternal:
+          rid: 9172620057062408196
       - _id: 4a35408a-a637-4a66-84d0-86e9316198ef
         _addressableGroup: {fileID: 11400000, guid: f4a71cfc974d7b844b332817981fd21c,
           type: 2}
@@ -866,7 +881,10 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreBody.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireballProjectile.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingBody.prefab
+        - Assets/ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
@@ -1123,7 +1141,10 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreBody.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireballProjectile.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingBody.prefab
+        - Assets/ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
@@ -1478,7 +1499,10 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreBody.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireballProjectile.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingBody.prefab
+        - Assets/ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
@@ -1536,6 +1560,20 @@ MonoBehaviour:
               Culture=neutral, PublicKeyToken=null
         _matchWithDerivedComponents: 1
     - rid: 8245431297511784455
+      type: {class: SimplifiedAssetPath, ns: ElementalWard.Editor.SmartAddresser.AddressProviders,
+        asm: ElementalWard.Editor}
+      data: 
+    - rid: 9172620057062408195
+      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
+        asm: SmartAddresser.Editor}
+      data:
+        _id: fcf3c731-9f92-490f-8f4d-3e5bda1a8b00
+        _folderTargetingMode: 2
+        _object:
+          _isListMode: 0
+          _values:
+          - {fileID: 102900000, guid: f4e3ebe61b40fd846bd0fa8aee3874e5, type: 3}
+    - rid: 9172620057062408196
       type: {class: SimplifiedAssetPath, ns: ElementalWard.Editor.SmartAddresser.AddressProviders,
         asm: ElementalWard.Editor}
       data: 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _requiredSkillSlot: 0
   _requireSkillReady: 0
-  _minDistance: 0
+  _minDistance: 2
   _maxDistance: 5
   _selectionRequiresLOS: 1
   _selectionRequiresGrounded: 0

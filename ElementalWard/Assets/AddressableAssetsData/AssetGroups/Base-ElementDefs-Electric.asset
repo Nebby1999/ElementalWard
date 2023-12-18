@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 02bb25454df1c284182549bd0f2d51b4
   m_SerializeEntries:
+  - m_GUID: 0fa685ee9cdc58942816959b89516d13
+    m_Address: ElementalWard/Base/ElementDefs/Electric/ChargedJumpProc.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ProcAssets
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 67bad244a16e7b5438cfbc289891ca86
     m_Address: ElementalWard/Base/ElementDefs/Electric/ElectricElement.asset
     m_ReadOnly: 0
@@ -38,12 +44,6 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/ElementDefs/Electric/texRampElementElectric.psd
     m_ReadOnly: 0
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0fa685ee9cdc58942816959b89516d13
-    m_Address: ElementalWard/Base/ElementDefs/Electric/ChargedJumpProc.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - ProcAssets
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

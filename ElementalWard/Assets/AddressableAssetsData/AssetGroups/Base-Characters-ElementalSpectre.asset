@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Characters-ElementalSpectre
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Characters-ElementalSpectre
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5e46262a0c0d9bb4d8b4e355837e5a29
+  m_SerializeEntries:
+  - m_GUID: dd4a1f8766cce5447a825f799c5741fd
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/EntityStates.ElementalSpectre.FireFireballs.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b092fa080b6170429a603178d864590
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireball.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7d9eb7c285fb3542b63583f5adfef86
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/texElementalSpectreEmmission.ase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a679f1491d31c164f9b1399d95fb1e02
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/texElementalSpectreDiffuse.ase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4e3ebe61b40fd846bd0fa8aee3874e5
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f49060bdf13bdd64da4b02417aa54461
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreAnimController.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2cb4510c01f66d41a0337bf74072bb1
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreBody.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CharacterBodies
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 309903ac669f4e24ca536e0f23924b1b
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireballProjectile.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa2e1dbaeadf5dd43b5f3f437a5c9ff3
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/SummonSouls.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0693f9569310bf94a8a93b0aace09c30
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/EntityStates.ElementalSpectre.SummonSouls.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54633e9b8a2f7b6458b1a1a3b6b30226
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/EntityStates.ElementalSpectre.StareAttack.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f09952e4d4909c8498b771c4caa7e14e
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/StareAttack.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e38c7327a3fd2b40bd2f87662d3b3a7
+    m_Address: ElementalWard/Base/Characters/ElementalSpectre/Skills/matStareRay.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 38c8c94534725d0449cfd4a817c7cea6, type: 2}
+    - {fileID: 11400000, guid: 95d0b101fb356914fa95262f443f33a0, type: 2}

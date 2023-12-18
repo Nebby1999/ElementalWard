@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,7 @@ namespace ElementalWard.Projectiles
         [Range(0, 180)]
         public float lookCone;
         public float searchInterval;
+        public bool allowTargetLoss;
         public UnityEvent<HurtBox> OnNewTargetFound;
         public UnityEvent OnTargetLost;
         public bool HasTarget => ProjectileTarget.Target;
@@ -49,7 +51,17 @@ namespace ElementalWard.Projectiles
         private void FixedUpdate()
         {
             if (ProjectileTarget.Target)
-                return;
+            {
+                if (!allowTargetLoss)
+                    return;
+
+                var distance = Vector3.Distance(ProjectileTarget.Target.position, transform.position);
+                if (distance <= lookRange)
+                {
+                    return;
+                }
+                ProjectileTarget.Target = null;
+            }
 
             _searchTimer += Time.fixedDeltaTime;
             if(_searchTimer > searchInterval)

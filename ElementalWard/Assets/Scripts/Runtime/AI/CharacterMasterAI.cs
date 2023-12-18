@@ -30,7 +30,7 @@ namespace ElementalWard
         public CharacterMaster Master { get; private set; }
         public CharacterBody Body { get; private set; }
         public CharacterInputBank BodyInputBank { get; private set; }
-        public TeamIndex CurrentTeam => Body.TeamIndex;
+        public TeamIndex CurrentTeam => Body.TeamComponent.CurrentTeamIndex;
         public KinematicCharacterMotor BodyCharacterMotor { get; private set; }
         public CharacterMotorController BodyMotorController { get; private set; }
         public SkillManager BodySkillManager { get; private set; }

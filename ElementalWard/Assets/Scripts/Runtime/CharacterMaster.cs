@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public class CharacterMaster : MonoBehaviour
+    public class CharacterMaster : MonoBehaviour, ITeamProvider
     {
         public const int LEVEL_TO_XP_COEF = 420;
         public const float LEVEL_TO_XP_DIVISOR = 7.69f;
@@ -26,6 +26,28 @@ namespace ElementalWard
         public PlayableCharacterMaster PlayableCharacterMaster { get; private set; }
         public MasterIndex MasterIndex { get; internal set; }
         internal bool IsGod { get; set; }
+        TeamIndex ITeamProvider.TeamIndex
+        {
+            get
+            {
+                if(!CurrentBody)
+                {
+                    return defaultTeam?.TeamIndex ?? TeamIndex.None;
+                }
+                return CurrentBody.TeamComponent ? CurrentBody.TeamComponent.CurrentTeamIndex : TeamIndex.None;
+            }
+            set
+            {
+                if (!CurrentBody || !CurrentBody.TeamComponent)
+                {
+                    defaultTeam = TeamCatalog.GetTeamDef(value);
+                    return;
+                }
+
+                CurrentBody.TeamComponent.CurrentTeamIndex = value;
+            }
+        }
+
         public event Action<CharacterBody> OnBodySpawned;
         public event Action OnBodyLost;
         public TeamDef defaultTeam;

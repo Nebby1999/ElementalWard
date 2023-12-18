@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 391d05268f7fb774a9e013e831b07427
   m_SerializeEntries:
+  - m_GUID: bfa34d08d02988849b573fc8a35c3ad3
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/PathfindToEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ce5167194439edb439eaa5bd7b89c457
     m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulAnimController.controller
     m_ReadOnly: 0
@@ -26,6 +31,12 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/Characters/WanderingSoul/texWanderingSoulDiffuse.aseprite
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa8910d5d022e724c934afc2b9c1270b
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/EntityStates.WanderingSoul.Weapon.FireBone.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: da016e1265975d549a05d00b62a5cd02
     m_Address: ElementalWard/Base/Characters/WanderingSoul/texWanderingSoulEmission.aseprite
@@ -38,8 +49,23 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterBodies
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f776d2d98ea20f24ebe3c907de8d318d
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulSpawnCard_Elemental.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c70caa8f7ada52e4fb37fa27c0dcaacf
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulSpawnCard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f63eab86efba3d34a9ade46d068d3868
     m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/WanderingSoulProjectile.ase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f62b3378755d3364f988452e2de61b2a
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/FireBones.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -48,6 +74,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterMasters
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3bff69488b43f44d9fec6c6d0a98fa3
+    m_Address: ElementalWard/Base/Characters/WanderingSoul/MoveTowardsEnemy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 22c0e8cba7b73474987a8847773f36e0
     m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/BoneSpikeProjectile.prefab
@@ -61,37 +92,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e0b20fea812facd4b92cc0732961bcab
     m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/FireBoneSkill.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f62b3378755d3364f988452e2de61b2a
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/FireBones.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bfa34d08d02988849b573fc8a35c3ad3
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/PathfindToEnemy.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b3bff69488b43f44d9fec6c6d0a98fa3
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/MoveTowardsEnemy.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fa8910d5d022e724c934afc2b9c1270b
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/Skills/EntityStates.WanderingSoul.Weapon.FireBone.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EntityStateConfigurations
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c70caa8f7ada52e4fb37fa27c0dcaacf
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulSpawnCard.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f776d2d98ea20f24ebe3c907de8d318d
-    m_Address: ElementalWard/Base/Characters/WanderingSoul/WanderingSoulSpawnCard_Elemental.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

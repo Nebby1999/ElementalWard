@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 504e84fbfb23de043a608fe59b6302ee
   m_SerializeEntries:
+  - m_GUID: 5ebbf4303a39ec7489f53d5a9598ef44
+    m_Address: ElementalWard/Base/ElementDefs/Water/bdWaterlogged.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BuffDefs
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5c70ac757d5920d4a959e52ace634b90
     m_Address: ElementalWard/Base/ElementDefs/Water
     m_ReadOnly: 0
@@ -32,12 +38,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - ElementDefs
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5ebbf4303a39ec7489f53d5a9598ef44
-    m_Address: ElementalWard/Base/ElementDefs/Water/bdWaterlogged.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BuffDefs
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

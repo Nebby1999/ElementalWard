@@ -15,16 +15,16 @@ namespace ElementalWard
             result.rotation = rotation;
             result.position = position;
 
-            if (!prefab.TryGetComponent<CharacterMaster>(out var master))
-                return false;
-
-            var masterInstance =  Instantiate(master, position, rotation);
-            if (!masterInstance)
-                return false;
-
-            result.spawnedInstance = masterInstance.gameObject;
-            masterInstance.Spawn(position, rotation);
-            result.body = masterInstance.CurrentBody;
+            var masterSummon = new MasterSummon
+            {
+                masterPrefab = prefab,
+                position = position,
+                rotation = rotation,
+                summonerObject = spawnRequest.spawnerObject
+            };
+            var instancedMaster = masterSummon.Perform();
+            result.spawnedInstance = instancedMaster.gameObject;
+            result.body = instancedMaster.CurrentBody;
             return true;
         }
 

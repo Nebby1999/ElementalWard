@@ -65,22 +65,23 @@ namespace ElementalWard
         public CharacterMaster TiedMaster { get; set; }
         public float Radius { get; internal set; }
         public BodyIndex BodyIndex { get; internal set; }
-        public TeamIndex TeamIndex => _teamComponent.CurrentTeamIndex;
+        public TeamComponent TeamComponent { get; private set; }
+        public Xoroshiro128Plus CharacterRNG { get; private set; }
         public Transform AimOriginTransform => aimOriginTransform.AsValidOrNull() ?? transform;
         private bool _isSprinting;
         private bool _statsDirty;
         private IBodyStatModifier[] _bodyStatModifiers = Array.Empty<IBodyStatModifier>();
         private BuffController _buffController;
-        private TeamComponent _teamComponent;
         private void Awake()
         {
             InputBank = GetComponent<CharacterInputBank>();
             HealthComponent = GetComponent<HealthComponent>();
+            TeamComponent = GetComponent<TeamComponent>();
             _buffController = GetComponent<BuffController>();
-            _teamComponent = GetComponent<TeamComponent>();
 
             var collider1 = GetComponent<CapsuleCollider>();
             Radius = collider1 ? collider1.radius : 1;
+            CharacterRNG = new Xoroshiro128Plus(DungeonManager.Instance ? DungeonManager.Instance.rng.NextUlong : ElementalWardApplication.rng.NextUlong);
 
             _bodyStatModifiers = GetComponents<IBodyStatModifier>();
         }

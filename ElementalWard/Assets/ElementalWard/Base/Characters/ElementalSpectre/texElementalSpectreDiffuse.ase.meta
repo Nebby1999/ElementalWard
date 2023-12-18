@@ -1,0 +1,5747 @@
+fileFormatVersion: 2
+guid: a679f1491d31c164f9b1399d95fb1e02
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 0
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 0
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 0
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638382496124523127
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: texElementalSpectreDiffuse
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1809
+      y: 928
+      width: 65
+      height: 125
+    spriteID: 582d256c4d597404e9569c3c11c11abe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1809, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_1
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1044
+      y: 928
+      width: 69
+      height: 122
+    spriteID: a2a4951875a67f8459f6c3d37dfd6657
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1044, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_2
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1882
+      y: 928
+      width: 65
+      height: 125
+    spriteID: 60c3ec1d7e648e04ca19695ffdc6da07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1882, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_3
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1474
+      y: 1061
+      width: 75
+      height: 124
+    spriteID: 1c7880b254ede8a428bb071b6080cbfd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1474, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_4
+    originalName: 
+    pivot: {x: 0.5181818, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1788
+      y: 528
+      width: 110
+      height: 123
+    spriteID: e809c2ef3f455054c901e089a1e6f88e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1788, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1054
+      y: 4
+      width: 142
+      height: 122
+    spriteID: 7ed00560fce13ec40ba06539fea8b9e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1054, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_9
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 528
+      width: 112
+      height: 126
+    spriteID: 5a19d9973a4ee2f4a9ab2509c3d62297
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_1
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1955
+      y: 928
+      width: 65
+      height: 125
+    spriteID: 42f4902568ca6fd4bbc0c224e3273a77
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1955, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_2
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1121
+      y: 928
+      width: 69
+      height: 122
+    spriteID: 1afa06d381b443a4d889030583b43f2c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1121, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_3
+    originalName: 
+    pivot: {x: 0.5445545, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1805
+      y: 662
+      width: 101
+      height: 121
+    spriteID: 1defe245ed19ca049914499c65df1f69
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1805, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_4
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 884
+      y: 395
+      width: 118
+      height: 120
+    spriteID: 10745cc83d0408c46a3c2c4abfda6b26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 884, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_1
+    originalName: 
+    pivot: {x: 0.52238804, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 137
+      width: 134
+      height: 119
+    spriteID: 2465dd355f3f8ef47b157b1c32ebe717
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 137}
+  - name: texElementalSpectreDiffuse_Frame_2
+    originalName: 
+    pivot: {x: 0.57009345, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 146
+      y: 264
+      width: 107
+      height: 123
+    spriteID: 68f7f7832ea79d94798d7ffbdeace205
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 146, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_3
+    originalName: 
+    pivot: {x: 0.47692305, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 300
+      y: 1329
+      width: 65
+      height: 122
+    spriteID: 8108c43dac53e494bb665ee5ea04168c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 300, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_8
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 158
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: b991af6bba63de5448a3deb4389f4c47
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 158, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 213
+      y: 796
+      width: 94
+      height: 124
+    spriteID: f5ffeb269aa00a8459521fcacfa1912b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 213, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1513
+      y: 395
+      width: 114
+      height: 124
+    spriteID: 751b31e19597683409f609af31627da9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1513, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 904
+      y: 4
+      width: 142
+      height: 124
+    spriteID: 83eebb9e1ba3fc84cbf5489bac43c7eb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 904, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_54
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 846
+      y: 528
+      width: 112
+      height: 124
+    spriteID: d8d6827e64a94c3448c1fbb4c264501c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 846, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_55
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 905
+      y: 796
+      width: 88
+      height: 124
+    spriteID: 382b782ef5d76794d885a7e89ef324f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 905, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_56
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1001
+      y: 796
+      width: 88
+      height: 124
+    spriteID: 8faaac2084510c5469361e03670de0cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1001, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_57
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1635
+      y: 395
+      width: 114
+      height: 124
+    spriteID: 79be09b36771e404aa1f0a7276212fdb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1635, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_58
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 231
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: e1f3ff312e42dfa4a97957a0dc7f8d6e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 231, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_59
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1198
+      y: 928
+      width: 69
+      height: 122
+    spriteID: 07d017d2f732c394a90d797ad3298b0e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1198, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_60
+    originalName: 
+    pivot: {x: 0.5445545, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1696
+      y: 662
+      width: 101
+      height: 122
+    spriteID: dc59a842e4e3f0343a916e24116a0551
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1696, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_61
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 508
+      y: 395
+      width: 118
+      height: 122
+    spriteID: 6b4148bee616cdb43bdfe7f0580b7f59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 508, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_62
+    originalName: 
+    pivot: {x: 0.52238804, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 264
+      width: 134
+      height: 123
+    spriteID: 1712817c124b4a34bb16fd34ddbf3d8a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_63
+    originalName: 
+    pivot: {x: 0.57009345, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1133
+      y: 662
+      width: 107
+      height: 121
+    spriteID: 7533d87d2ff54c6478a031a6d75af56a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1133, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_64
+    originalName: 
+    pivot: {x: 0.57142854, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1926
+      y: 796
+      width: 84
+      height: 121
+    spriteID: e07e2f7990008324b9118bbccc585784
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1926, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_65
+    originalName: 
+    pivot: {x: 0.57142854, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1504
+      y: 264
+      width: 84
+      height: 121
+    spriteID: 170fdcae8465941449d399b05095ed9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1504, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_66
+    originalName: 
+    pivot: {x: 0.50000006, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1685
+      y: 264
+      width: 72
+      height: 122
+    spriteID: 3dfee1435ef18b7438b452bf7a7d49b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1685, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_67
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1275
+      y: 928
+      width: 69
+      height: 122
+    spriteID: d916ce9edefd5a64a812528c4f3f224a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1275, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_95
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 0a440f62a96004740940ff3b8ebfa04c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 304, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_96
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1557
+      y: 1061
+      width: 75
+      height: 124
+    spriteID: 2914cabac5304d845805d7a263c83b08
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1557, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_97
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1640
+      y: 1061
+      width: 75
+      height: 124
+    spriteID: c70bbe9705f2ac247bbd6ea8800008f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1640, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_98
+    originalName: 
+    pivot: {x: 0.5181818, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1906
+      y: 528
+      width: 110
+      height: 123
+    spriteID: d4752efaa8b297c498335cec504e4eef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1906, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_99
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1204
+      y: 4
+      width: 142
+      height: 122
+    spriteID: 3d1b5785ef394db45a1d4b04ab048f08
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1204, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_100
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 528
+      width: 112
+      height: 126
+    spriteID: 30be5799499bda6439fa3bc0ab0c9e6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_101
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 377
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: a45f7c2f1afa96e429e18691b8afdf1b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 377, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_102
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1352
+      y: 928
+      width: 69
+      height: 122
+    spriteID: 90f991e1b4b5d9f4fa525b6ae73cb888
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1352, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_103
+    originalName: 
+    pivot: {x: 0.5445545, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1914
+      y: 662
+      width: 101
+      height: 121
+    spriteID: 4fd2654bcd1b826409f2e42a65547689
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1914, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_104
+    originalName: 
+    pivot: {x: 0.5445545, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 376
+      y: 264
+      width: 101
+      height: 121
+    spriteID: de695cebe082bd34c95a406bb17b1a4c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 376, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_105
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1010
+      y: 395
+      width: 118
+      height: 120
+    spriteID: 4adc74652892faf4087fb4fd95b75116
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1010, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_106
+    originalName: 
+    pivot: {x: 0.52238804, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 137
+      width: 134
+      height: 119
+    spriteID: 124e8cf928a1a0549abc87bfab152f84
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 296, y: 137}
+  - name: texElementalSpectreDiffuse_Frame_107
+    originalName: 
+    pivot: {x: 0.57009345, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 261
+      y: 264
+      width: 107
+      height: 123
+    spriteID: 9b498b5207fd97345bd502af1a5c31bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 261, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_108
+    originalName: 
+    pivot: {x: 0.47692305, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 373
+      y: 1329
+      width: 65
+      height: 122
+    spriteID: eb8079c3a80c71548b8208be2df7f3a1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 373, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_130
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 450
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 2cf5dd48f02225249b93ecf4a24abd8f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 450, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_131
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1142
+      y: 1061
+      width: 75
+      height: 125
+    spriteID: 891c01f961d17de43a493b812eef2b10
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1142, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_132
+    originalName: 
+    pivot: {x: 0.5181818, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 966
+      y: 528
+      width: 110
+      height: 125
+    spriteID: 24db65e265ffc7846a53a7ef9e878ac9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 966, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_133
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 142
+      height: 125
+    spriteID: 98f3c6a96549f2f4a96ca3911468d0ab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_134
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1879
+      y: 395
+      width: 112
+      height: 125
+    spriteID: 175289e0c8feca942914173d96fda2d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1879, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_135
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 523
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 7c4706905cdf710409d513bbbf6f70ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 523, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_136
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 596
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 8f8dfd0913506d44792fe40ec16179a4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 596, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_137
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 669
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 4cbe11303fde53847ab45cba26abc610
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 669, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_138
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1225
+      y: 1061
+      width: 75
+      height: 125
+    spriteID: 8ecfa24a1e4e3e04c8daaba8795b9ff6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1225, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_139
+    originalName: 
+    pivot: {x: 0.5181818, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1084
+      y: 528
+      width: 110
+      height: 125
+    spriteID: d2c57ad24d0f0b44b8bb291236de9f20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1084, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_140
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 154
+      y: 4
+      width: 142
+      height: 125
+    spriteID: 841fbc43ba11eb942b6dda179bb87c33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 154, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_141
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 244
+      y: 528
+      width: 112
+      height: 125
+    spriteID: 937c82c6abd7fef498d2d4fa15a58528
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 244, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_142
+    originalName: 
+    pivot: {x: 0.45833334, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1887
+      y: 1061
+      width: 72
+      height: 125
+    spriteID: 8b238f6a02474ce4a8bae65e9392d3c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1887, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_143
+    originalName: 
+    pivot: {x: 0.45833334, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1967
+      y: 1061
+      width: 72
+      height: 125
+    spriteID: 1bfc02fbd77a6d04bafec315daa0c230
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1967, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_144
+    originalName: 
+    pivot: {x: 0.45833334, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 104
+      y: 928
+      width: 72
+      height: 125
+    spriteID: 47752bb62dca58549a91de93745792d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 104, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_145
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 382
+      y: 1061
+      width: 78
+      height: 125
+    spriteID: 5f0a9c60566cfc244b0031e26c176cbb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 382, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_146
+    originalName: 
+    pivot: {x: 0.5181818, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1202
+      y: 528
+      width: 110
+      height: 125
+    spriteID: 5298a13d7d0bca444aecb60d88cc5a5b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1202, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_147
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 4
+      width: 142
+      height: 125
+    spriteID: e07f46c290d864241b8157a3db1ad40e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 304, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_148
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 364
+      y: 528
+      width: 112
+      height: 125
+    spriteID: 89cd8c81ad599204389da8be8be6fe20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 364, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_149
+    originalName: 
+    pivot: {x: 0.45833334, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 928
+      width: 72
+      height: 125
+    spriteID: 6c86fa583808cc34c835ed66297c2f15
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 184, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_150
+    originalName: 
+    pivot: {x: 0.45833334, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 264
+      y: 928
+      width: 72
+      height: 125
+    spriteID: 981dcc5429166324a9e444c949f09781
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 264, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_151
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 468
+      y: 1061
+      width: 78
+      height: 125
+    spriteID: ee25aa768032fe5459587a105920036d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 468, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_152
+    originalName: 
+    pivot: {x: 0.5181818, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1320
+      y: 528
+      width: 110
+      height: 125
+    spriteID: 622dcab40aa689949b69c1ca420c186f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1320, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_153
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 454
+      y: 4
+      width: 142
+      height: 125
+    spriteID: fed29bcc9cef22c489b4a2e8c0f80592
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 454, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_154
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 484
+      y: 528
+      width: 112
+      height: 125
+    spriteID: 87ecdd6cff043cf4eb7bfb4abc6fef8c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 484, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_155
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 742
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 2f89a04496f419844b061173b42e9f6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 742, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_156
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 815
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 5d22bd86cde1ff34188458de2339e6cc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 815, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_157
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 888
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: fe703c5c0f529744883f8cdd5db6157b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 888, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_158
+    originalName: 
+    pivot: {x: 0.52, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1308
+      y: 1061
+      width: 75
+      height: 125
+    spriteID: 8dfe9bcd8c15ab146b02a7ed97167728
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1308, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_159
+    originalName: 
+    pivot: {x: 0.5181818, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1438
+      y: 528
+      width: 110
+      height: 125
+    spriteID: d9884f8742db9214294d69c2b6641792
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1438, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_160
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 604
+      y: 4
+      width: 142
+      height: 125
+    spriteID: ec810f9c4a3e0b346a73d9fc53b05ebd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 604, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_161
+    originalName: 
+    pivot: {x: 0.5178572, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 604
+      y: 528
+      width: 112
+      height: 125
+    spriteID: 83051b4e333629b429563a0ccc06e7c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 604, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_162
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 961
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: f079155eac1694e47929d3c40dab45fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 961, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_163
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1034
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: d1ab93f6fd5ff104f944f88258a7eb7f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1034, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_164
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 424
+      y: 928
+      width: 70
+      height: 125
+    spriteID: 8ba6b416be6d8b74cb86d6e40b51c48a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 424, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_165
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1723
+      y: 1061
+      width: 74
+      height: 125
+    spriteID: 983240aa98777de40aa12213f7d81a52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1723, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_166
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 502
+      y: 928
+      width: 70
+      height: 125
+    spriteID: c4d21261a90d8c245aa87e8d3e3aa156
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 502, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_167
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1107
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 3fc2ea801e35b504b85a724909c46c97
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1107, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_168
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 580
+      y: 928
+      width: 70
+      height: 125
+    spriteID: fddfb53fa0b0e8d47a12aee45131a836
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 580, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_169
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1805
+      y: 1061
+      width: 74
+      height: 125
+    spriteID: ae82771b56336d24092c2b3cfcc7bb64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1805, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_170
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 315
+      y: 796
+      width: 94
+      height: 124
+    spriteID: dd1b9bcfb2dd05746bd311910050549d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 315, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_171
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1757
+      y: 395
+      width: 114
+      height: 124
+    spriteID: d7e5728b7af068a469924b418016d5dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1757, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_172
+    originalName: 
+    pivot: {x: 0.49999997, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1190
+      y: 796
+      width: 84
+      height: 124
+    spriteID: 8c6557bb296451740860d1798d85b586
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1190, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_173
+    originalName: 
+    pivot: {x: 0.49438202, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 711
+      y: 796
+      width: 89
+      height: 124
+    spriteID: 2a0304a830aac4540a474312c4a8d6c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 711, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_174
+    originalName: 
+    pivot: {x: 0.49438202, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 808
+      y: 796
+      width: 89
+      height: 124
+    spriteID: 89f9f47e74604274595b388929981390
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 808, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_175
+    originalName: 
+    pivot: {x: 0.47826087, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 928
+      width: 92
+      height: 125
+    spriteID: 24c1c5a33c9240c41a2c934694080c0c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_176
+    originalName: 
+    pivot: {x: 0.45263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 110
+      y: 796
+      width: 95
+      height: 124
+    spriteID: c6b48f8476b4a7e4cbd3a180ea95ab1b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 110, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_177
+    originalName: 
+    pivot: {x: 0.41346154, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 797
+      y: 662
+      width: 104
+      height: 125
+    spriteID: 009fdaa302672824d8767021a6848584
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 797, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_178
+    originalName: 
+    pivot: {x: 0.40952381, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 662
+      width: 105
+      height: 126
+    spriteID: 3632b7a12519aed4faa3bce505536805
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_179
+    originalName: 
+    pivot: {x: 0.39423078, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 909
+      y: 662
+      width: 104
+      height: 125
+    spriteID: 71994d8b288e42d418acfedac8d3aaf7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 909, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_1
+    originalName: 
+    pivot: {x: 0.52238804, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1506
+      y: 928
+      width: 67
+      height: 125
+    spriteID: 5b00934000f0af348a7eefa25ec1cc07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1506, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_2
+    originalName: 
+    pivot: {x: 0.5362319, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 814
+      y: 928
+      width: 69
+      height: 125
+    spriteID: d18bf5222f1714e4991309680822c8b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 814, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_3
+    originalName: 
+    pivot: {x: 0.52238804, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1581
+      y: 928
+      width: 67
+      height: 125
+    spriteID: 918bdf60a416beb4786045bd375f4ccd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1581, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_5
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 967
+      y: 928
+      width: 69
+      height: 123
+    spriteID: b16a3252163e2fb4fb5a3b3c4dc9d534
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 967, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_6
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1429
+      y: 928
+      width: 69
+      height: 122
+    spriteID: 738be832beea0e94cb780d1b96272748
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1429, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_7
+    originalName: 
+    pivot: {x: 0.5072464, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1656
+      y: 928
+      width: 69
+      height: 121
+    spriteID: 93bc7f6c85b066749820c1fe16510d8c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1656, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_8
+    originalName: 
+    pivot: {x: 0.55263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 554
+      y: 1061
+      width: 76
+      height: 125
+    spriteID: 9e076df1df1197646b0925544274a809
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 554, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_12
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1913
+      y: 1195
+      width: 66
+      height: 122
+    spriteID: cd3b4558c32dc6b43aff2e0d807ac7b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1913, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_16
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1180
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 062f1ef8b8e5ea44082e3f3e055698ca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1180, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_32
+    originalName: 
+    pivot: {x: 0.55263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 638
+      y: 1061
+      width: 76
+      height: 125
+    spriteID: 5e8a0c017294bb047a7820c3f08e5876
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 638, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_38
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1329
+      width: 66
+      height: 122
+    spriteID: 4ddd1a0be000bd7429e3e0acbd5fe516
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_44
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1253
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: b9347019a8a81184eb0a7ca5526349e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1253, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_68
+    originalName: 
+    pivot: {x: 0.55263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 722
+      y: 1061
+      width: 76
+      height: 125
+    spriteID: 05269dc119a787d41a54ff772aae59d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 722, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_69
+    originalName: 
+    pivot: {x: 0.6344086, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1010
+      y: 264
+      width: 93
+      height: 121
+    spriteID: 7fdc17ca45e37294684a1a8287d1644f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1010, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_70
+    originalName: 
+    pivot: {x: 0.65999997, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 598
+      y: 264
+      width: 100
+      height: 115
+    spriteID: 6ba7e57f20dde024c980df0139e0e984
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 598, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_71
+    originalName: 
+    pivot: {x: 0.6761905, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 485
+      y: 264
+      width: 105
+      height: 115
+    spriteID: 6efeb2a255339cc41ab31f76d51f027d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 485, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_72
+    originalName: 
+    pivot: {x: 0.6344086, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1111
+      y: 264
+      width: 93
+      height: 115
+    spriteID: 56955c88ce338b44bbaa64f980c3d24a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1111, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_73
+    originalName: 
+    pivot: {x: 0.5405405, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1923
+      y: 264
+      width: 74
+      height: 115
+    spriteID: be0899bb650d1b447bd85b7754eee59c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1923, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_74
+    originalName: 
+    pivot: {x: 0.5802469, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1596
+      y: 264
+      width: 81
+      height: 115
+    spriteID: a99b2861c9db7ef4daf8cb0ac3de6d6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1596, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_75
+    originalName: 
+    pivot: {x: 0.5277778, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1765
+      y: 264
+      width: 72
+      height: 121
+    spriteID: a4954a6fe6d220e46858f68fd7877abd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1765, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_76
+    originalName: 
+    pivot: {x: 0.5466667, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1391
+      y: 1061
+      width: 75
+      height: 125
+    spriteID: 086dccaba8edbe1488da4fdd06e0c964
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1391, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_77
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 78
+      y: 1329
+      width: 66
+      height: 122
+    spriteID: 21c232ebdef23af4ea30085b5314b72f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 78, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_78
+    originalName: 
+    pivot: {x: 0.5411765, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1097
+      y: 796
+      width: 85
+      height: 124
+    spriteID: ac9a7f09af9c5824aafaabd2f824faee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1097, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_79
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 395
+      width: 118
+      height: 125
+    spriteID: df6721ccc194fbc488046226e789030e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_80
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 754
+      y: 4
+      width: 142
+      height: 125
+    spriteID: 3c5b60a43c356914ebbaebaf537af82c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 754, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_81
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 130
+      y: 395
+      width: 118
+      height: 125
+    spriteID: 78f592645c7472d43a75c7e8135769f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 130, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_82
+    originalName: 
+    pivot: {x: 0.42857146, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 198
+      y: 1061
+      width: 84
+      height: 125
+    spriteID: 34720fb5bcdf6094ba5307753148edbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 198, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_83
+    originalName: 
+    pivot: {x: 0.42857146, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 290
+      y: 1061
+      width: 84
+      height: 125
+    spriteID: ee8ef0605e56c33488b6d875d9068fa9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 290, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_84
+    originalName: 
+    pivot: {x: 0.50000006, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 344
+      y: 928
+      width: 72
+      height: 124
+    spriteID: e1e1288aca92ba94db5db17af54e3e7a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 344, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_85
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 152
+      y: 1329
+      width: 66
+      height: 122
+    spriteID: f54e6d6fef7e67e4bb847af347763fed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 152, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_86
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1326
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 585a7b843f1cec44bb1c6cefa4d1e505
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1326, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_87
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 706
+      y: 264
+      width: 94
+      height: 122
+    spriteID: 463a8924ea89e4848a3b44bf6e82a2ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 706, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_88
+    originalName: 
+    pivot: {x: 0.51282054, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1388
+      y: 395
+      width: 117
+      height: 121
+    spriteID: 8e6ab41d6b5d89842aab35ac95d5b62f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1388, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_89
+    originalName: 
+    pivot: {x: 0.51079136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1354
+      y: 4
+      width: 139
+      height: 123
+    spriteID: c304268a43831a8448960114839730df
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1354, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_90
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 455
+      y: 662
+      width: 108
+      height: 121
+    spriteID: 42ada8a96d066a2468b3683a5d46d987
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 455, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_91
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1312
+      y: 264
+      width: 88
+      height: 121
+    spriteID: bdd7f80abc60e2e489abcb65c3c5bcb3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1312, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_92
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1408
+      y: 264
+      width: 88
+      height: 121
+    spriteID: 2e26f38e186019142b9a1812cc48aaae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1408, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_93
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 724
+      y: 528
+      width: 114
+      height: 122
+    spriteID: caabc77ba39e1144c8e705e7a8a1e9e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 724, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_94
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1399
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: a62d06487d02acf4fb34278a42e75775
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1399, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_109
+    originalName: 
+    pivot: {x: 0.55263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 806
+      y: 1061
+      width: 76
+      height: 125
+    spriteID: b098f5cc20f136b448a3b2ef3a344a2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 806, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_116
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 226
+      y: 1329
+      width: 66
+      height: 122
+    spriteID: cc55324b6d89e9d40b13c56bd517d18c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 226, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_123
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1472
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: de8f4b3e5db5fa04293378693e40a2fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1472, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_9
+    originalName: 
+    pivot: {x: 0.55263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 890
+      y: 1061
+      width: 76
+      height: 125
+    spriteID: ff0d7b7aeff3fc74aba14424fe006443
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 890, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_10
+    originalName: 
+    pivot: {x: 0.55263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 974
+      y: 1061
+      width: 76
+      height: 125
+    spriteID: e561ea94d8448ae48bd3f345c629b400
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 974, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_11
+    originalName: 
+    pivot: {x: 0.55263156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1058
+      y: 1061
+      width: 76
+      height: 125
+    spriteID: cbdc8a9d4d55b1242b59695ab46fa23e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1058, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_13
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1691
+      y: 1195
+      width: 66
+      height: 123
+    spriteID: d6e3de968419cd54f8ee9a55970bd98a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1691, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_14
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1765
+      y: 1195
+      width: 66
+      height: 123
+    spriteID: a19ea1b75bed0f342b42ab0d24f23a29
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1765, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_15
+    originalName: 
+    pivot: {x: 0.53030306, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1839
+      y: 1195
+      width: 66
+      height: 123
+    spriteID: 115adbf3f946fa148bc76e51ee53fd39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1839, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_17
+    originalName: 
+    pivot: {x: 0.48529413, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 82
+      y: 1195
+      width: 68
+      height: 126
+    spriteID: e57049ea17e1dfa479f4af422afb561c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 82, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_18
+    originalName: 
+    pivot: {x: 0.47142857, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1195
+      width: 70
+      height: 126
+    spriteID: aff1a361520968e409bff64786365502
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_19
+    originalName: 
+    pivot: {x: 0.48529413, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 891
+      y: 928
+      width: 68
+      height: 125
+    spriteID: 8f58a68d2e6965d4c85fbc6ab7076e1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 891, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_33
+    originalName: 
+    pivot: {x: 0.62222224, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 417
+      y: 796
+      width: 90
+      height: 124
+    spriteID: 0daf003ffa37d4a439af0777a75821db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 417, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_34
+    originalName: 
+    pivot: {x: 0.6344086, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 808
+      y: 264
+      width: 93
+      height: 123
+    spriteID: ee31fcff7f1a1654fb67be8f093c0f28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 808, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_35
+    originalName: 
+    pivot: {x: 0.6761905, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1470
+      y: 662
+      width: 105
+      height: 122
+    spriteID: 45d49bb58b2b7b44b8b1fa1397b6558b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1470, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_36
+    originalName: 
+    pivot: {x: 0.6179775, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1061
+      width: 89
+      height: 126
+    spriteID: 3f04926421d9a5349a83ec94262446ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_37
+    originalName: 
+    pivot: {x: 0.51428574, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 658
+      y: 928
+      width: 70
+      height: 125
+    spriteID: 533dd154c435a0848bd76868ed49cf6c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 658, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_39
+    originalName: 
+    pivot: {x: 0.5411765, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1555
+      y: 796
+      width: 85
+      height: 121
+    spriteID: 3cef87da916968c41b2c3b85beda2bdc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1555, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_40
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1136
+      y: 395
+      width: 118
+      height: 120
+    spriteID: c3a59a07f0f28d04a95bea2f07231f4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1136, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_41
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1795
+      y: 4
+      width: 142
+      height: 119
+    spriteID: 1eb9b04fed4492449be1acb23c6f5b10
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1795, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_42
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 395
+      width: 118
+      height: 123
+    spriteID: d4ca99b8658c1764c9ebcabdb7b3f2f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 256, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_43
+    originalName: 
+    pivot: {x: 0.52307695, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 446
+      y: 1329
+      width: 65
+      height: 122
+    spriteID: 22220ebbaebe0824b9bbd7647d49c79a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 446, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_45
+    originalName: 
+    pivot: {x: 0.51807225, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1282
+      y: 796
+      width: 83
+      height: 124
+    spriteID: 28542af4d4918454fb9d2c715abecff8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1282, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_46
+    originalName: 
+    pivot: {x: 0.51282054, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 634
+      y: 395
+      width: 117
+      height: 123
+    spriteID: 095d65ce5a690644d8b3a948c907087c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 634, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_47
+    originalName: 
+    pivot: {x: 0.51079136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1501
+      y: 4
+      width: 139
+      height: 122
+    spriteID: 20f3d3e1fe8a2e6478b99de9e2e6543b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1501, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_48
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1556
+      y: 528
+      width: 108
+      height: 126
+    spriteID: 1a15c68b44216fe4697949fd6b58ab4a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1556, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_49
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1545
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: 4657efe9021940441bd008738a30dfdc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1545, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_110
+    originalName: 
+    pivot: {x: 0.62222224, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 515
+      y: 796
+      width: 90
+      height: 124
+    spriteID: 7b70f7e16ad211941a3492d3292de53e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 515, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_111
+    originalName: 
+    pivot: {x: 0.62222224, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 613
+      y: 796
+      width: 90
+      height: 124
+    spriteID: af25962939482ab4db902f9aa06b75a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 613, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_112
+    originalName: 
+    pivot: {x: 0.6344086, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 909
+      y: 264
+      width: 93
+      height: 123
+    spriteID: 4533c5a6acb0c6e40a5ad685622186aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 909, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_113
+    originalName: 
+    pivot: {x: 0.6761905, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1583
+      y: 662
+      width: 105
+      height: 122
+    spriteID: 9f2828702eff6bf4bac8f0ad21e6f8ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1583, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_114
+    originalName: 
+    pivot: {x: 0.6179775, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 1061
+      width: 89
+      height: 126
+    spriteID: fe6d95dcf47173a4eb9f727bfdb85c4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 1061}
+  - name: texElementalSpectreDiffuse_Frame_115
+    originalName: 
+    pivot: {x: 0.51428574, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 736
+      y: 928
+      width: 70
+      height: 125
+    spriteID: 6902bd50d07fca440bb528c3c0335e2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 736, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_117
+    originalName: 
+    pivot: {x: 0.5411765, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1648
+      y: 796
+      width: 85
+      height: 121
+    spriteID: 0ca83be0791777346bc2b7ad5e4ad567
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1648, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_118
+    originalName: 
+    pivot: {x: 0.5411765, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1741
+      y: 796
+      width: 85
+      height: 121
+    spriteID: 06df6579cd650ff4aabe407961f6cb20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1741, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_119
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1262
+      y: 395
+      width: 118
+      height: 120
+    spriteID: 810719525b1adcc4c8ba266dc55df637
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1262, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_120
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 137
+      width: 142
+      height: 119
+    spriteID: 1a2e78fb0b04ac0458eeade8ce41999b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 137}
+  - name: texElementalSpectreDiffuse_Frame_121
+    originalName: 
+    pivot: {x: 0.52542377, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 382
+      y: 395
+      width: 118
+      height: 123
+    spriteID: 404a1e04b5152d64ca818e41f1c419bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 382, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_122
+    originalName: 
+    pivot: {x: 0.52307695, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 519
+      y: 1329
+      width: 65
+      height: 122
+    spriteID: e4dd42c6889d70647ad4d9d181d0f064
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 519, y: 1329}
+  - name: texElementalSpectreDiffuse_Frame_124
+    originalName: 
+    pivot: {x: 0.51807225, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1373
+      y: 796
+      width: 83
+      height: 124
+    spriteID: f3e225f1f0acfc44e800486759ea3bba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1373, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_125
+    originalName: 
+    pivot: {x: 0.51807225, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1464
+      y: 796
+      width: 83
+      height: 124
+    spriteID: 41d26aeee2ce38f408def9cbf39b01a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1464, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_126
+    originalName: 
+    pivot: {x: 0.51282054, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 759
+      y: 395
+      width: 117
+      height: 123
+    spriteID: 4ac4a29459b76624e82c7ad172c68aca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 759, y: 395}
+  - name: texElementalSpectreDiffuse_Frame_127
+    originalName: 
+    pivot: {x: 0.51079136, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1648
+      y: 4
+      width: 139
+      height: 122
+    spriteID: 4690607b6a20873409a84cb61ede350c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1648, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_128
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1672
+      y: 528
+      width: 108
+      height: 126
+    spriteID: 79a81274d8542b441801a8d0472831f2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1672, y: 528}
+  - name: texElementalSpectreDiffuse_Frame_129
+    originalName: 
+    pivot: {x: 0.50769234, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1618
+      y: 1195
+      width: 65
+      height: 125
+    spriteID: ec600522a6b2d5d43ba5fbb1234cf212
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1618, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_180
+    originalName: 
+    pivot: {x: 0.39047623, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 571
+      y: 662
+      width: 105
+      height: 124
+    spriteID: db380f1839eaeac44bbde137b60bbab7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 571, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_181
+    originalName: 
+    pivot: {x: 0.39047623, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 117
+      y: 662
+      width: 105
+      height: 125
+    spriteID: 39de87ddd2ea0604bae36711e289d0e6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 117, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_182
+    originalName: 
+    pivot: {x: 0.40816325, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1945
+      y: 4
+      width: 98
+      height: 124
+    spriteID: a6701ba4181ab924b9ea94fb33828098
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1945, y: 4}
+  - name: texElementalSpectreDiffuse_Frame_183
+    originalName: 
+    pivot: {x: 0.40776697, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1248
+      y: 662
+      width: 103
+      height: 125
+    spriteID: 7bebde07a5295cc47940617848766a60
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1248, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_184
+    originalName: 
+    pivot: {x: 0.40384614, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 343
+      y: 662
+      width: 104
+      height: 126
+    spriteID: 87053a4d7889295428939fdf2d608406
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 343, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_185
+    originalName: 
+    pivot: {x: 0.39423078, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1021
+      y: 662
+      width: 104
+      height: 125
+    spriteID: 6a049a52a19946b438af95733af2aaf0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1021, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_186
+    originalName: 
+    pivot: {x: 0.39047623, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 684
+      y: 662
+      width: 105
+      height: 124
+    spriteID: d16de51f57bb70540a4413733d10966f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 684, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_187
+    originalName: 
+    pivot: {x: 0.39047623, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 230
+      y: 662
+      width: 105
+      height: 125
+    spriteID: 29b9123dc63c68e4891a2855faeb4c23
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 230, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_188
+    originalName: 
+    pivot: {x: 0.40816325, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 796
+      width: 98
+      height: 124
+    spriteID: 78afc18a8e91a76418cd9b643dfad55c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_189
+    originalName: 
+    pivot: {x: 0.40776697, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1359
+      y: 662
+      width: 103
+      height: 125
+    spriteID: fc7e04a3a1463e444a7cf5a02d2525b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1359, y: 662}
+  - name: texElementalSpectreDiffuse_Frame_190
+    originalName: 
+    pivot: {x: 0.43478256, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1212
+      y: 264
+      width: 92
+      height: 116
+    spriteID: 1d4bbed4a6703fb43aa142b963accfaf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1212, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_191
+    originalName: 
+    pivot: {x: 0.46428573, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1834
+      y: 796
+      width: 84
+      height: 122
+    spriteID: c9c231cea3c78034ea8c4a9d1a4d03a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1834, y: 796}
+  - name: texElementalSpectreDiffuse_Frame_192
+    originalName: 
+    pivot: {x: 0.47142857, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1845
+      y: 264
+      width: 70
+      height: 123
+    spriteID: 9c726607149281a47aa17c251dea9dac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1845, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_193
+    originalName: 
+    pivot: {x: 0.41176474, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1733
+      y: 928
+      width: 68
+      height: 122
+    spriteID: 4d5266e4fca9be44794139c0ba3c5a2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1733, y: 928}
+  - name: texElementalSpectreDiffuse_Frame_194
+    originalName: 
+    pivot: {x: 0.39999998, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1987
+      y: 1195
+      width: 55
+      height: 47
+    spriteID: 0163f9ebad62d0946ad46e8b6ed523e7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1987, y: 1195}
+  - name: texElementalSpectreDiffuse_Frame_195
+    originalName: 
+    pivot: {x: 0.45945948, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1987
+      y: 1250
+      width: 37
+      height: 38
+    spriteID: 3cddb569aad576a41abe2ba8d911a9c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1987, y: 1250}
+  - name: texElementalSpectreDiffuse_Frame_196
+    originalName: 
+    pivot: {x: 0.51515156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2005
+      y: 264
+      width: 33
+      height: 26
+    spriteID: b52c2c7b2538fe542a4722e22e0fc599
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2005, y: 264}
+  - name: texElementalSpectreDiffuse_Frame_197
+    originalName: 
+    pivot: {x: 0.51515156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1987
+      y: 1296
+      width: 33
+      height: 15
+    spriteID: 52ea62f01cb73e1408428438b6565c17
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1987, y: 1296}
+  - name: texElementalSpectreDiffuse_Frame_198
+    originalName: 
+    pivot: {x: 0.51515156, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2005
+      y: 298
+      width: 33
+      height: 15
+    spriteID: 2537eed66e9404a4199f87c1ace1695f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2005, y: 298}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -498494374
+    name: texElementalSpectreDiffuse
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: texElementalSpectreDiffuse_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 582d256c4d597404e9569c3c11c11abe
+    - name: texElementalSpectreDiffuse_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 122
+      spriteId: a2a4951875a67f8459f6c3d37dfd6657
+    - name: texElementalSpectreDiffuse_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 60c3ec1d7e648e04ca19695ffdc6da07
+    - name: texElementalSpectreDiffuse_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 32
+        y: 0
+        width: 75
+        height: 124
+      spriteId: 1c7880b254ede8a428bb071b6080cbfd
+    - name: texElementalSpectreDiffuse_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 14
+        y: 0
+        width: 110
+        height: 123
+      spriteId: e809c2ef3f455054c901e089a1e6f88e
+    - name: texElementalSpectreDiffuse_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 122
+      spriteId: 7ed00560fce13ec40ba06539fea8b9e7
+    - name: texElementalSpectreDiffuse_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 126
+      spriteId: 5a19d9973a4ee2f4a9ab2509c3d62297
+    - name: texElementalSpectreDiffuse_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 42f4902568ca6fd4bbc0c224e3273a77
+    - name: texElementalSpectreDiffuse_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 122
+      spriteId: 1afa06d381b443a4d889030583b43f2c
+    - name: texElementalSpectreDiffuse_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 16
+        y: 0
+        width: 101
+        height: 121
+      spriteId: 1defe245ed19ca049914499c65df1f69
+    - name: texElementalSpectreDiffuse_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 120
+      spriteId: 10745cc83d0408c46a3c2c4abfda6b26
+    - name: texElementalSpectreDiffuse_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 1
+        y: 0
+        width: 134
+        height: 119
+      spriteId: 2465dd355f3f8ef47b157b1c32ebe717
+    - name: texElementalSpectreDiffuse_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 10
+        y: 0
+        width: 107
+        height: 123
+      spriteId: 68f7f7832ea79d94798d7ffbdeace205
+    - name: texElementalSpectreDiffuse_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 40
+        y: 0
+        width: 65
+        height: 122
+      spriteId: 8108c43dac53e494bb665ee5ea04168c
+    - name: texElementalSpectreDiffuse_Frame_50
+      frameIndex: 50
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: b991af6bba63de5448a3deb4389f4c47
+    - name: texElementalSpectreDiffuse_Frame_51
+      frameIndex: 51
+      cellRect:
+        x: 24
+        y: 0
+        width: 94
+        height: 124
+      spriteId: f5ffeb269aa00a8459521fcacfa1912b
+    - name: texElementalSpectreDiffuse_Frame_52
+      frameIndex: 52
+      cellRect:
+        x: 14
+        y: 0
+        width: 114
+        height: 124
+      spriteId: 751b31e19597683409f609af31627da9
+    - name: texElementalSpectreDiffuse_Frame_53
+      frameIndex: 53
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 124
+      spriteId: 83eebb9e1ba3fc84cbf5489bac43c7eb
+    - name: texElementalSpectreDiffuse_Frame_54
+      frameIndex: 54
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 124
+      spriteId: d8d6827e64a94c3448c1fbb4c264501c
+    - name: texElementalSpectreDiffuse_Frame_55
+      frameIndex: 55
+      cellRect:
+        x: 27
+        y: 0
+        width: 88
+        height: 124
+      spriteId: 382b782ef5d76794d885a7e89ef324f4
+    - name: texElementalSpectreDiffuse_Frame_56
+      frameIndex: 56
+      cellRect:
+        x: 27
+        y: 0
+        width: 88
+        height: 124
+      spriteId: 8faaac2084510c5469361e03670de0cc
+    - name: texElementalSpectreDiffuse_Frame_57
+      frameIndex: 57
+      cellRect:
+        x: 14
+        y: 0
+        width: 114
+        height: 124
+      spriteId: 79be09b36771e404aa1f0a7276212fdb
+    - name: texElementalSpectreDiffuse_Frame_58
+      frameIndex: 58
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: e1f3ff312e42dfa4a97957a0dc7f8d6e
+    - name: texElementalSpectreDiffuse_Frame_59
+      frameIndex: 59
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 122
+      spriteId: 07d017d2f732c394a90d797ad3298b0e
+    - name: texElementalSpectreDiffuse_Frame_60
+      frameIndex: 60
+      cellRect:
+        x: 16
+        y: 0
+        width: 101
+        height: 122
+      spriteId: dc59a842e4e3f0343a916e24116a0551
+    - name: texElementalSpectreDiffuse_Frame_61
+      frameIndex: 61
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 122
+      spriteId: 6b4148bee616cdb43bdfe7f0580b7f59
+    - name: texElementalSpectreDiffuse_Frame_62
+      frameIndex: 62
+      cellRect:
+        x: 1
+        y: 0
+        width: 134
+        height: 123
+      spriteId: 1712817c124b4a34bb16fd34ddbf3d8a
+    - name: texElementalSpectreDiffuse_Frame_63
+      frameIndex: 63
+      cellRect:
+        x: 10
+        y: 0
+        width: 107
+        height: 121
+      spriteId: 7533d87d2ff54c6478a031a6d75af56a
+    - name: texElementalSpectreDiffuse_Frame_64
+      frameIndex: 64
+      cellRect:
+        x: 23
+        y: 0
+        width: 84
+        height: 121
+      spriteId: e07e2f7990008324b9118bbccc585784
+    - name: texElementalSpectreDiffuse_Frame_65
+      frameIndex: 65
+      cellRect:
+        x: 23
+        y: 0
+        width: 84
+        height: 121
+      spriteId: 170fdcae8465941449d399b05095ed9a
+    - name: texElementalSpectreDiffuse_Frame_66
+      frameIndex: 66
+      cellRect:
+        x: 35
+        y: 0
+        width: 72
+        height: 122
+      spriteId: 3dfee1435ef18b7438b452bf7a7d49b8
+    - name: texElementalSpectreDiffuse_Frame_67
+      frameIndex: 67
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 122
+      spriteId: d916ce9edefd5a64a812528c4f3f224a
+    - name: texElementalSpectreDiffuse_Frame_95
+      frameIndex: 95
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 0a440f62a96004740940ff3b8ebfa04c
+    - name: texElementalSpectreDiffuse_Frame_96
+      frameIndex: 96
+      cellRect:
+        x: 32
+        y: 0
+        width: 75
+        height: 124
+      spriteId: 2914cabac5304d845805d7a263c83b08
+    - name: texElementalSpectreDiffuse_Frame_97
+      frameIndex: 97
+      cellRect:
+        x: 32
+        y: 0
+        width: 75
+        height: 124
+      spriteId: c70bbe9705f2ac247bbd6ea8800008f7
+    - name: texElementalSpectreDiffuse_Frame_98
+      frameIndex: 98
+      cellRect:
+        x: 14
+        y: 0
+        width: 110
+        height: 123
+      spriteId: d4752efaa8b297c498335cec504e4eef
+    - name: texElementalSpectreDiffuse_Frame_99
+      frameIndex: 99
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 122
+      spriteId: 3d1b5785ef394db45a1d4b04ab048f08
+    - name: texElementalSpectreDiffuse_Frame_100
+      frameIndex: 100
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 126
+      spriteId: 30be5799499bda6439fa3bc0ab0c9e6c
+    - name: texElementalSpectreDiffuse_Frame_101
+      frameIndex: 101
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: a45f7c2f1afa96e429e18691b8afdf1b
+    - name: texElementalSpectreDiffuse_Frame_102
+      frameIndex: 102
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 122
+      spriteId: 90f991e1b4b5d9f4fa525b6ae73cb888
+    - name: texElementalSpectreDiffuse_Frame_103
+      frameIndex: 103
+      cellRect:
+        x: 16
+        y: 0
+        width: 101
+        height: 121
+      spriteId: 4fd2654bcd1b826409f2e42a65547689
+    - name: texElementalSpectreDiffuse_Frame_104
+      frameIndex: 104
+      cellRect:
+        x: 16
+        y: 0
+        width: 101
+        height: 121
+      spriteId: de695cebe082bd34c95a406bb17b1a4c
+    - name: texElementalSpectreDiffuse_Frame_105
+      frameIndex: 105
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 120
+      spriteId: 4adc74652892faf4087fb4fd95b75116
+    - name: texElementalSpectreDiffuse_Frame_106
+      frameIndex: 106
+      cellRect:
+        x: 1
+        y: 0
+        width: 134
+        height: 119
+      spriteId: 124e8cf928a1a0549abc87bfab152f84
+    - name: texElementalSpectreDiffuse_Frame_107
+      frameIndex: 107
+      cellRect:
+        x: 10
+        y: 0
+        width: 107
+        height: 123
+      spriteId: 9b498b5207fd97345bd502af1a5c31bc
+    - name: texElementalSpectreDiffuse_Frame_108
+      frameIndex: 108
+      cellRect:
+        x: 40
+        y: 0
+        width: 65
+        height: 122
+      spriteId: eb8079c3a80c71548b8208be2df7f3a1
+    - name: texElementalSpectreDiffuse_Frame_130
+      frameIndex: 130
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 2cf5dd48f02225249b93ecf4a24abd8f
+    - name: texElementalSpectreDiffuse_Frame_131
+      frameIndex: 131
+      cellRect:
+        x: 32
+        y: 0
+        width: 75
+        height: 125
+      spriteId: 891c01f961d17de43a493b812eef2b10
+    - name: texElementalSpectreDiffuse_Frame_132
+      frameIndex: 132
+      cellRect:
+        x: 14
+        y: 0
+        width: 110
+        height: 125
+      spriteId: 24db65e265ffc7846a53a7ef9e878ac9
+    - name: texElementalSpectreDiffuse_Frame_133
+      frameIndex: 133
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 125
+      spriteId: 98f3c6a96549f2f4a96ca3911468d0ab
+    - name: texElementalSpectreDiffuse_Frame_134
+      frameIndex: 134
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 125
+      spriteId: 175289e0c8feca942914173d96fda2d5
+    - name: texElementalSpectreDiffuse_Frame_135
+      frameIndex: 135
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 7c4706905cdf710409d513bbbf6f70ad
+    - name: texElementalSpectreDiffuse_Frame_136
+      frameIndex: 136
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 8f8dfd0913506d44792fe40ec16179a4
+    - name: texElementalSpectreDiffuse_Frame_137
+      frameIndex: 137
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 4cbe11303fde53847ab45cba26abc610
+    - name: texElementalSpectreDiffuse_Frame_138
+      frameIndex: 138
+      cellRect:
+        x: 32
+        y: 0
+        width: 75
+        height: 125
+      spriteId: 8ecfa24a1e4e3e04c8daaba8795b9ff6
+    - name: texElementalSpectreDiffuse_Frame_139
+      frameIndex: 139
+      cellRect:
+        x: 14
+        y: 0
+        width: 110
+        height: 125
+      spriteId: d2c57ad24d0f0b44b8bb291236de9f20
+    - name: texElementalSpectreDiffuse_Frame_140
+      frameIndex: 140
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 125
+      spriteId: 841fbc43ba11eb942b6dda179bb87c33
+    - name: texElementalSpectreDiffuse_Frame_141
+      frameIndex: 141
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 125
+      spriteId: 937c82c6abd7fef498d2d4fa15a58528
+    - name: texElementalSpectreDiffuse_Frame_142
+      frameIndex: 142
+      cellRect:
+        x: 38
+        y: 0
+        width: 72
+        height: 125
+      spriteId: 8b238f6a02474ce4a8bae65e9392d3c1
+    - name: texElementalSpectreDiffuse_Frame_143
+      frameIndex: 143
+      cellRect:
+        x: 38
+        y: 0
+        width: 72
+        height: 125
+      spriteId: 1bfc02fbd77a6d04bafec315daa0c230
+    - name: texElementalSpectreDiffuse_Frame_144
+      frameIndex: 144
+      cellRect:
+        x: 38
+        y: 0
+        width: 72
+        height: 125
+      spriteId: 47752bb62dca58549a91de93745792d1
+    - name: texElementalSpectreDiffuse_Frame_145
+      frameIndex: 145
+      cellRect:
+        x: 32
+        y: 0
+        width: 78
+        height: 125
+      spriteId: 5f0a9c60566cfc244b0031e26c176cbb
+    - name: texElementalSpectreDiffuse_Frame_146
+      frameIndex: 146
+      cellRect:
+        x: 14
+        y: 0
+        width: 110
+        height: 125
+      spriteId: 5298a13d7d0bca444aecb60d88cc5a5b
+    - name: texElementalSpectreDiffuse_Frame_147
+      frameIndex: 147
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 125
+      spriteId: e07f46c290d864241b8157a3db1ad40e
+    - name: texElementalSpectreDiffuse_Frame_148
+      frameIndex: 148
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 125
+      spriteId: 89cd8c81ad599204389da8be8be6fe20
+    - name: texElementalSpectreDiffuse_Frame_149
+      frameIndex: 149
+      cellRect:
+        x: 38
+        y: 0
+        width: 72
+        height: 125
+      spriteId: 6c86fa583808cc34c835ed66297c2f15
+    - name: texElementalSpectreDiffuse_Frame_150
+      frameIndex: 150
+      cellRect:
+        x: 38
+        y: 0
+        width: 72
+        height: 125
+      spriteId: 981dcc5429166324a9e444c949f09781
+    - name: texElementalSpectreDiffuse_Frame_151
+      frameIndex: 151
+      cellRect:
+        x: 32
+        y: 0
+        width: 78
+        height: 125
+      spriteId: ee25aa768032fe5459587a105920036d
+    - name: texElementalSpectreDiffuse_Frame_152
+      frameIndex: 152
+      cellRect:
+        x: 14
+        y: 0
+        width: 110
+        height: 125
+      spriteId: 622dcab40aa689949b69c1ca420c186f
+    - name: texElementalSpectreDiffuse_Frame_153
+      frameIndex: 153
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 125
+      spriteId: fed29bcc9cef22c489b4a2e8c0f80592
+    - name: texElementalSpectreDiffuse_Frame_154
+      frameIndex: 154
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 125
+      spriteId: 87ecdd6cff043cf4eb7bfb4abc6fef8c
+    - name: texElementalSpectreDiffuse_Frame_155
+      frameIndex: 155
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 2f89a04496f419844b061173b42e9f6d
+    - name: texElementalSpectreDiffuse_Frame_156
+      frameIndex: 156
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 5d22bd86cde1ff34188458de2339e6cc
+    - name: texElementalSpectreDiffuse_Frame_157
+      frameIndex: 157
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: fe703c5c0f529744883f8cdd5db6157b
+    - name: texElementalSpectreDiffuse_Frame_158
+      frameIndex: 158
+      cellRect:
+        x: 32
+        y: 0
+        width: 75
+        height: 125
+      spriteId: 8dfe9bcd8c15ab146b02a7ed97167728
+    - name: texElementalSpectreDiffuse_Frame_159
+      frameIndex: 159
+      cellRect:
+        x: 14
+        y: 0
+        width: 110
+        height: 125
+      spriteId: d9884f8742db9214294d69c2b6641792
+    - name: texElementalSpectreDiffuse_Frame_160
+      frameIndex: 160
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 125
+      spriteId: ec810f9c4a3e0b346a73d9fc53b05ebd
+    - name: texElementalSpectreDiffuse_Frame_161
+      frameIndex: 161
+      cellRect:
+        x: 13
+        y: 0
+        width: 112
+        height: 125
+      spriteId: 83051b4e333629b429563a0ccc06e7c7
+    - name: texElementalSpectreDiffuse_Frame_162
+      frameIndex: 162
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: f079155eac1694e47929d3c40dab45fa
+    - name: texElementalSpectreDiffuse_Frame_163
+      frameIndex: 163
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: d1ab93f6fd5ff104f944f88258a7eb7f
+    - name: texElementalSpectreDiffuse_Frame_164
+      frameIndex: 164
+      cellRect:
+        x: 36
+        y: 0
+        width: 70
+        height: 125
+      spriteId: 8ba6b416be6d8b74cb86d6e40b51c48a
+    - name: texElementalSpectreDiffuse_Frame_165
+      frameIndex: 165
+      cellRect:
+        x: 34
+        y: 0
+        width: 74
+        height: 125
+      spriteId: 983240aa98777de40aa12213f7d81a52
+    - name: texElementalSpectreDiffuse_Frame_166
+      frameIndex: 166
+      cellRect:
+        x: 36
+        y: 0
+        width: 70
+        height: 125
+      spriteId: c4d21261a90d8c245aa87e8d3e3aa156
+    - name: texElementalSpectreDiffuse_Frame_167
+      frameIndex: 167
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 3fc2ea801e35b504b85a724909c46c97
+    - name: texElementalSpectreDiffuse_Frame_168
+      frameIndex: 168
+      cellRect:
+        x: 36
+        y: 0
+        width: 70
+        height: 125
+      spriteId: fddfb53fa0b0e8d47a12aee45131a836
+    - name: texElementalSpectreDiffuse_Frame_169
+      frameIndex: 169
+      cellRect:
+        x: 34
+        y: 0
+        width: 74
+        height: 125
+      spriteId: ae82771b56336d24092c2b3cfcc7bb64
+    - name: texElementalSpectreDiffuse_Frame_170
+      frameIndex: 170
+      cellRect:
+        x: 24
+        y: 0
+        width: 94
+        height: 124
+      spriteId: dd1b9bcfb2dd05746bd311910050549d
+    - name: texElementalSpectreDiffuse_Frame_171
+      frameIndex: 171
+      cellRect:
+        x: 14
+        y: 0
+        width: 114
+        height: 124
+      spriteId: d7e5728b7af068a469924b418016d5dc
+    - name: texElementalSpectreDiffuse_Frame_172
+      frameIndex: 172
+      cellRect:
+        x: 29
+        y: 0
+        width: 84
+        height: 124
+      spriteId: 8c6557bb296451740860d1798d85b586
+    - name: texElementalSpectreDiffuse_Frame_173
+      frameIndex: 173
+      cellRect:
+        x: 27
+        y: 0
+        width: 89
+        height: 124
+      spriteId: 2a0304a830aac4540a474312c4a8d6c2
+    - name: texElementalSpectreDiffuse_Frame_174
+      frameIndex: 174
+      cellRect:
+        x: 27
+        y: 0
+        width: 89
+        height: 124
+      spriteId: 89f9f47e74604274595b388929981390
+    - name: texElementalSpectreDiffuse_Frame_175
+      frameIndex: 175
+      cellRect:
+        x: 27
+        y: 0
+        width: 92
+        height: 125
+      spriteId: 24c1c5a33c9240c41a2c934694080c0c
+    - name: texElementalSpectreDiffuse_Frame_176
+      frameIndex: 176
+      cellRect:
+        x: 28
+        y: 0
+        width: 95
+        height: 124
+      spriteId: c6b48f8476b4a7e4cbd3a180ea95ab1b
+    - name: texElementalSpectreDiffuse_Frame_177
+      frameIndex: 177
+      cellRect:
+        x: 28
+        y: 0
+        width: 104
+        height: 125
+      spriteId: 009fdaa302672824d8767021a6848584
+    - name: texElementalSpectreDiffuse_Frame_178
+      frameIndex: 178
+      cellRect:
+        x: 28
+        y: 0
+        width: 105
+        height: 126
+      spriteId: 3632b7a12519aed4faa3bce505536805
+    - name: texElementalSpectreDiffuse_Frame_179
+      frameIndex: 179
+      cellRect:
+        x: 30
+        y: 0
+        width: 104
+        height: 125
+      spriteId: 71994d8b288e42d418acfedac8d3aaf7
+    - name: texElementalSpectreDiffuse_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 36
+        y: 0
+        width: 67
+        height: 125
+      spriteId: 5b00934000f0af348a7eefa25ec1cc07
+    - name: texElementalSpectreDiffuse_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 34
+        y: 0
+        width: 69
+        height: 125
+      spriteId: d18bf5222f1714e4991309680822c8b1
+    - name: texElementalSpectreDiffuse_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 36
+        y: 0
+        width: 67
+        height: 125
+      spriteId: 918bdf60a416beb4786045bd375f4ccd
+    - name: texElementalSpectreDiffuse_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 123
+      spriteId: b16a3252163e2fb4fb5a3b3c4dc9d534
+    - name: texElementalSpectreDiffuse_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 122
+      spriteId: 738be832beea0e94cb780d1b96272748
+    - name: texElementalSpectreDiffuse_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 36
+        y: 0
+        width: 69
+        height: 121
+      spriteId: 93bc7f6c85b066749820c1fe16510d8c
+    - name: texElementalSpectreDiffuse_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 29
+        y: 0
+        width: 76
+        height: 125
+      spriteId: 9e076df1df1197646b0925544274a809
+    - name: texElementalSpectreDiffuse_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 122
+      spriteId: cd3b4558c32dc6b43aff2e0d807ac7b7
+    - name: texElementalSpectreDiffuse_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 062f1ef8b8e5ea44082e3f3e055698ca
+    - name: texElementalSpectreDiffuse_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 29
+        y: 0
+        width: 76
+        height: 125
+      spriteId: 5e8a0c017294bb047a7820c3f08e5876
+    - name: texElementalSpectreDiffuse_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 122
+      spriteId: 4ddd1a0be000bd7429e3e0acbd5fe516
+    - name: texElementalSpectreDiffuse_Frame_44
+      frameIndex: 44
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: b9347019a8a81184eb0a7ca5526349e3
+    - name: texElementalSpectreDiffuse_Frame_68
+      frameIndex: 68
+      cellRect:
+        x: 29
+        y: 0
+        width: 76
+        height: 125
+      spriteId: 05269dc119a787d41a54ff772aae59d1
+    - name: texElementalSpectreDiffuse_Frame_69
+      frameIndex: 69
+      cellRect:
+        x: 12
+        y: 0
+        width: 93
+        height: 121
+      spriteId: 7fdc17ca45e37294684a1a8287d1644f
+    - name: texElementalSpectreDiffuse_Frame_70
+      frameIndex: 70
+      cellRect:
+        x: 5
+        y: 0
+        width: 100
+        height: 115
+      spriteId: 6ba7e57f20dde024c980df0139e0e984
+    - name: texElementalSpectreDiffuse_Frame_71
+      frameIndex: 71
+      cellRect:
+        x: 0
+        y: 0
+        width: 105
+        height: 115
+      spriteId: 6efeb2a255339cc41ab31f76d51f027d
+    - name: texElementalSpectreDiffuse_Frame_72
+      frameIndex: 72
+      cellRect:
+        x: 12
+        y: 0
+        width: 93
+        height: 115
+      spriteId: 56955c88ce338b44bbaa64f980c3d24a
+    - name: texElementalSpectreDiffuse_Frame_73
+      frameIndex: 73
+      cellRect:
+        x: 31
+        y: 0
+        width: 74
+        height: 115
+      spriteId: be0899bb650d1b447bd85b7754eee59c
+    - name: texElementalSpectreDiffuse_Frame_74
+      frameIndex: 74
+      cellRect:
+        x: 24
+        y: 0
+        width: 81
+        height: 115
+      spriteId: a99b2861c9db7ef4daf8cb0ac3de6d6c
+    - name: texElementalSpectreDiffuse_Frame_75
+      frameIndex: 75
+      cellRect:
+        x: 33
+        y: 0
+        width: 72
+        height: 121
+      spriteId: a4954a6fe6d220e46858f68fd7877abd
+    - name: texElementalSpectreDiffuse_Frame_76
+      frameIndex: 76
+      cellRect:
+        x: 30
+        y: 0
+        width: 75
+        height: 125
+      spriteId: 086dccaba8edbe1488da4fdd06e0c964
+    - name: texElementalSpectreDiffuse_Frame_77
+      frameIndex: 77
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 122
+      spriteId: 21c232ebdef23af4ea30085b5314b72f
+    - name: texElementalSpectreDiffuse_Frame_78
+      frameIndex: 78
+      cellRect:
+        x: 25
+        y: 0
+        width: 85
+        height: 124
+      spriteId: ac9a7f09af9c5824aafaabd2f824faee
+    - name: texElementalSpectreDiffuse_Frame_79
+      frameIndex: 79
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 125
+      spriteId: df6721ccc194fbc488046226e789030e
+    - name: texElementalSpectreDiffuse_Frame_80
+      frameIndex: 80
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 125
+      spriteId: 3c5b60a43c356914ebbaebaf537af82c
+    - name: texElementalSpectreDiffuse_Frame_81
+      frameIndex: 81
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 125
+      spriteId: 78f592645c7472d43a75c7e8135769f0
+    - name: texElementalSpectreDiffuse_Frame_82
+      frameIndex: 82
+      cellRect:
+        x: 35
+        y: 0
+        width: 84
+        height: 125
+      spriteId: 34720fb5bcdf6094ba5307753148edbd
+    - name: texElementalSpectreDiffuse_Frame_83
+      frameIndex: 83
+      cellRect:
+        x: 35
+        y: 0
+        width: 84
+        height: 125
+      spriteId: ee8ef0605e56c33488b6d875d9068fa9
+    - name: texElementalSpectreDiffuse_Frame_84
+      frameIndex: 84
+      cellRect:
+        x: 35
+        y: 0
+        width: 72
+        height: 124
+      spriteId: e1e1288aca92ba94db5db17af54e3e7a
+    - name: texElementalSpectreDiffuse_Frame_85
+      frameIndex: 85
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 122
+      spriteId: f54e6d6fef7e67e4bb847af347763fed
+    - name: texElementalSpectreDiffuse_Frame_86
+      frameIndex: 86
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 585a7b843f1cec44bb1c6cefa4d1e505
+    - name: texElementalSpectreDiffuse_Frame_87
+      frameIndex: 87
+      cellRect:
+        x: 24
+        y: 0
+        width: 94
+        height: 122
+      spriteId: 463a8924ea89e4848a3b44bf6e82a2ec
+    - name: texElementalSpectreDiffuse_Frame_88
+      frameIndex: 88
+      cellRect:
+        x: 11
+        y: 0
+        width: 117
+        height: 121
+      spriteId: 8e6ab41d6b5d89842aab35ac95d5b62f
+    - name: texElementalSpectreDiffuse_Frame_89
+      frameIndex: 89
+      cellRect:
+        x: 0
+        y: 0
+        width: 139
+        height: 123
+      spriteId: c304268a43831a8448960114839730df
+    - name: texElementalSpectreDiffuse_Frame_90
+      frameIndex: 90
+      cellRect:
+        x: 17
+        y: 0
+        width: 108
+        height: 121
+      spriteId: 42ada8a96d066a2468b3683a5d46d987
+    - name: texElementalSpectreDiffuse_Frame_91
+      frameIndex: 91
+      cellRect:
+        x: 27
+        y: 0
+        width: 88
+        height: 121
+      spriteId: bdd7f80abc60e2e489abcb65c3c5bcb3
+    - name: texElementalSpectreDiffuse_Frame_92
+      frameIndex: 92
+      cellRect:
+        x: 27
+        y: 0
+        width: 88
+        height: 121
+      spriteId: 2e26f38e186019142b9a1812cc48aaae
+    - name: texElementalSpectreDiffuse_Frame_93
+      frameIndex: 93
+      cellRect:
+        x: 14
+        y: 0
+        width: 114
+        height: 122
+      spriteId: caabc77ba39e1144c8e705e7a8a1e9e7
+    - name: texElementalSpectreDiffuse_Frame_94
+      frameIndex: 94
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: a62d06487d02acf4fb34278a42e75775
+    - name: texElementalSpectreDiffuse_Frame_109
+      frameIndex: 109
+      cellRect:
+        x: 29
+        y: 0
+        width: 76
+        height: 125
+      spriteId: b098f5cc20f136b448a3b2ef3a344a2b
+    - name: texElementalSpectreDiffuse_Frame_116
+      frameIndex: 116
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 122
+      spriteId: cc55324b6d89e9d40b13c56bd517d18c
+    - name: texElementalSpectreDiffuse_Frame_123
+      frameIndex: 123
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: de8f4b3e5db5fa04293378693e40a2fc
+    - name: texElementalSpectreDiffuse_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 29
+        y: 0
+        width: 76
+        height: 125
+      spriteId: ff0d7b7aeff3fc74aba14424fe006443
+    - name: texElementalSpectreDiffuse_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 29
+        y: 0
+        width: 76
+        height: 125
+      spriteId: e561ea94d8448ae48bd3f345c629b400
+    - name: texElementalSpectreDiffuse_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 29
+        y: 0
+        width: 76
+        height: 125
+      spriteId: cbdc8a9d4d55b1242b59695ab46fa23e
+    - name: texElementalSpectreDiffuse_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 123
+      spriteId: d6e3de968419cd54f8ee9a55970bd98a
+    - name: texElementalSpectreDiffuse_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 123
+      spriteId: a19ea1b75bed0f342b42ab0d24f23a29
+    - name: texElementalSpectreDiffuse_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 36
+        y: 0
+        width: 66
+        height: 123
+      spriteId: 115adbf3f946fa148bc76e51ee53fd39
+    - name: texElementalSpectreDiffuse_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 38
+        y: 0
+        width: 68
+        height: 126
+      spriteId: e57049ea17e1dfa479f4af422afb561c
+    - name: texElementalSpectreDiffuse_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 38
+        y: 0
+        width: 70
+        height: 126
+      spriteId: aff1a361520968e409bff64786365502
+    - name: texElementalSpectreDiffuse_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 38
+        y: 0
+        width: 68
+        height: 125
+      spriteId: 8f58a68d2e6965d4c85fbc6ab7076e1c
+    - name: texElementalSpectreDiffuse_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 15
+        y: 0
+        width: 90
+        height: 124
+      spriteId: 0daf003ffa37d4a439af0777a75821db
+    - name: texElementalSpectreDiffuse_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 12
+        y: 0
+        width: 93
+        height: 123
+      spriteId: ee31fcff7f1a1654fb67be8f093c0f28
+    - name: texElementalSpectreDiffuse_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 0
+        y: 0
+        width: 105
+        height: 122
+      spriteId: 45d49bb58b2b7b44b8b1fa1397b6558b
+    - name: texElementalSpectreDiffuse_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 16
+        y: 0
+        width: 89
+        height: 126
+      spriteId: 3f04926421d9a5349a83ec94262446ad
+    - name: texElementalSpectreDiffuse_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 35
+        y: 0
+        width: 70
+        height: 125
+      spriteId: 533dd154c435a0848bd76868ed49cf6c
+    - name: texElementalSpectreDiffuse_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 25
+        y: 0
+        width: 85
+        height: 121
+      spriteId: 3cef87da916968c41b2c3b85beda2bdc
+    - name: texElementalSpectreDiffuse_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 120
+      spriteId: c3a59a07f0f28d04a95bea2f07231f4f
+    - name: texElementalSpectreDiffuse_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 119
+      spriteId: 1eb9b04fed4492449be1acb23c6f5b10
+    - name: texElementalSpectreDiffuse_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 123
+      spriteId: d4ca99b8658c1764c9ebcabdb7b3f2f4
+    - name: texElementalSpectreDiffuse_Frame_43
+      frameIndex: 43
+      cellRect:
+        x: 37
+        y: 0
+        width: 65
+        height: 122
+      spriteId: 22220ebbaebe0824b9bbd7647d49c79a
+    - name: texElementalSpectreDiffuse_Frame_45
+      frameIndex: 45
+      cellRect:
+        x: 28
+        y: 0
+        width: 83
+        height: 124
+      spriteId: 28542af4d4918454fb9d2c715abecff8
+    - name: texElementalSpectreDiffuse_Frame_46
+      frameIndex: 46
+      cellRect:
+        x: 11
+        y: 0
+        width: 117
+        height: 123
+      spriteId: 095d65ce5a690644d8b3a948c907087c
+    - name: texElementalSpectreDiffuse_Frame_47
+      frameIndex: 47
+      cellRect:
+        x: 0
+        y: 0
+        width: 139
+        height: 122
+      spriteId: 20f3d3e1fe8a2e6478b99de9e2e6543b
+    - name: texElementalSpectreDiffuse_Frame_48
+      frameIndex: 48
+      cellRect:
+        x: 17
+        y: 0
+        width: 108
+        height: 126
+      spriteId: 1a15c68b44216fe4697949fd6b58ab4a
+    - name: texElementalSpectreDiffuse_Frame_49
+      frameIndex: 49
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: 4657efe9021940441bd008738a30dfdc
+    - name: texElementalSpectreDiffuse_Frame_110
+      frameIndex: 110
+      cellRect:
+        x: 15
+        y: 0
+        width: 90
+        height: 124
+      spriteId: 7b70f7e16ad211941a3492d3292de53e
+    - name: texElementalSpectreDiffuse_Frame_111
+      frameIndex: 111
+      cellRect:
+        x: 15
+        y: 0
+        width: 90
+        height: 124
+      spriteId: af25962939482ab4db902f9aa06b75a2
+    - name: texElementalSpectreDiffuse_Frame_112
+      frameIndex: 112
+      cellRect:
+        x: 12
+        y: 0
+        width: 93
+        height: 123
+      spriteId: 4533c5a6acb0c6e40a5ad685622186aa
+    - name: texElementalSpectreDiffuse_Frame_113
+      frameIndex: 113
+      cellRect:
+        x: 0
+        y: 0
+        width: 105
+        height: 122
+      spriteId: 9f2828702eff6bf4bac8f0ad21e6f8ae
+    - name: texElementalSpectreDiffuse_Frame_114
+      frameIndex: 114
+      cellRect:
+        x: 16
+        y: 0
+        width: 89
+        height: 126
+      spriteId: fe6d95dcf47173a4eb9f727bfdb85c4e
+    - name: texElementalSpectreDiffuse_Frame_115
+      frameIndex: 115
+      cellRect:
+        x: 35
+        y: 0
+        width: 70
+        height: 125
+      spriteId: 6902bd50d07fca440bb528c3c0335e2a
+    - name: texElementalSpectreDiffuse_Frame_117
+      frameIndex: 117
+      cellRect:
+        x: 25
+        y: 0
+        width: 85
+        height: 121
+      spriteId: 0ca83be0791777346bc2b7ad5e4ad567
+    - name: texElementalSpectreDiffuse_Frame_118
+      frameIndex: 118
+      cellRect:
+        x: 25
+        y: 0
+        width: 85
+        height: 121
+      spriteId: 06df6579cd650ff4aabe407961f6cb20
+    - name: texElementalSpectreDiffuse_Frame_119
+      frameIndex: 119
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 120
+      spriteId: 810719525b1adcc4c8ba266dc55df637
+    - name: texElementalSpectreDiffuse_Frame_120
+      frameIndex: 120
+      cellRect:
+        x: 0
+        y: 0
+        width: 142
+        height: 119
+      spriteId: 1a2e78fb0b04ac0458eeade8ce41999b
+    - name: texElementalSpectreDiffuse_Frame_121
+      frameIndex: 121
+      cellRect:
+        x: 9
+        y: 0
+        width: 118
+        height: 123
+      spriteId: 404a1e04b5152d64ca818e41f1c419bc
+    - name: texElementalSpectreDiffuse_Frame_122
+      frameIndex: 122
+      cellRect:
+        x: 37
+        y: 0
+        width: 65
+        height: 122
+      spriteId: e4dd42c6889d70647ad4d9d181d0f064
+    - name: texElementalSpectreDiffuse_Frame_124
+      frameIndex: 124
+      cellRect:
+        x: 28
+        y: 0
+        width: 83
+        height: 124
+      spriteId: f3e225f1f0acfc44e800486759ea3bba
+    - name: texElementalSpectreDiffuse_Frame_125
+      frameIndex: 125
+      cellRect:
+        x: 28
+        y: 0
+        width: 83
+        height: 124
+      spriteId: 41d26aeee2ce38f408def9cbf39b01a5
+    - name: texElementalSpectreDiffuse_Frame_126
+      frameIndex: 126
+      cellRect:
+        x: 11
+        y: 0
+        width: 117
+        height: 123
+      spriteId: 4ac4a29459b76624e82c7ad172c68aca
+    - name: texElementalSpectreDiffuse_Frame_127
+      frameIndex: 127
+      cellRect:
+        x: 0
+        y: 0
+        width: 139
+        height: 122
+      spriteId: 4690607b6a20873409a84cb61ede350c
+    - name: texElementalSpectreDiffuse_Frame_128
+      frameIndex: 128
+      cellRect:
+        x: 17
+        y: 0
+        width: 108
+        height: 126
+      spriteId: 79a81274d8542b441801a8d0472831f2
+    - name: texElementalSpectreDiffuse_Frame_129
+      frameIndex: 129
+      cellRect:
+        x: 38
+        y: 0
+        width: 65
+        height: 125
+      spriteId: ec600522a6b2d5d43ba5fbb1234cf212
+    - name: texElementalSpectreDiffuse_Frame_180
+      frameIndex: 180
+      cellRect:
+        x: 30
+        y: 0
+        width: 105
+        height: 124
+      spriteId: db380f1839eaeac44bbde137b60bbab7
+    - name: texElementalSpectreDiffuse_Frame_181
+      frameIndex: 181
+      cellRect:
+        x: 30
+        y: 0
+        width: 105
+        height: 125
+      spriteId: 39de87ddd2ea0604bae36711e289d0e6
+    - name: texElementalSpectreDiffuse_Frame_182
+      frameIndex: 182
+      cellRect:
+        x: 31
+        y: 0
+        width: 98
+        height: 124
+      spriteId: a6701ba4181ab924b9ea94fb33828098
+    - name: texElementalSpectreDiffuse_Frame_183
+      frameIndex: 183
+      cellRect:
+        x: 29
+        y: 0
+        width: 103
+        height: 125
+      spriteId: 7bebde07a5295cc47940617848766a60
+    - name: texElementalSpectreDiffuse_Frame_184
+      frameIndex: 184
+      cellRect:
+        x: 29
+        y: 0
+        width: 104
+        height: 126
+      spriteId: 87053a4d7889295428939fdf2d608406
+    - name: texElementalSpectreDiffuse_Frame_185
+      frameIndex: 185
+      cellRect:
+        x: 30
+        y: 0
+        width: 104
+        height: 125
+      spriteId: 6a049a52a19946b438af95733af2aaf0
+    - name: texElementalSpectreDiffuse_Frame_186
+      frameIndex: 186
+      cellRect:
+        x: 30
+        y: 0
+        width: 105
+        height: 124
+      spriteId: d16de51f57bb70540a4413733d10966f
+    - name: texElementalSpectreDiffuse_Frame_187
+      frameIndex: 187
+      cellRect:
+        x: 30
+        y: 0
+        width: 105
+        height: 125
+      spriteId: 29b9123dc63c68e4891a2855faeb4c23
+    - name: texElementalSpectreDiffuse_Frame_188
+      frameIndex: 188
+      cellRect:
+        x: 31
+        y: 0
+        width: 98
+        height: 124
+      spriteId: 78afc18a8e91a76418cd9b643dfad55c
+    - name: texElementalSpectreDiffuse_Frame_189
+      frameIndex: 189
+      cellRect:
+        x: 29
+        y: 0
+        width: 103
+        height: 125
+      spriteId: fc7e04a3a1463e444a7cf5a02d2525b6
+    - name: texElementalSpectreDiffuse_Frame_190
+      frameIndex: 190
+      cellRect:
+        x: 31
+        y: 0
+        width: 92
+        height: 116
+      spriteId: 1d4bbed4a6703fb43aa142b963accfaf
+    - name: texElementalSpectreDiffuse_Frame_191
+      frameIndex: 191
+      cellRect:
+        x: 32
+        y: 0
+        width: 84
+        height: 122
+      spriteId: c9c231cea3c78034ea8c4a9d1a4d03a2
+    - name: texElementalSpectreDiffuse_Frame_192
+      frameIndex: 192
+      cellRect:
+        x: 38
+        y: 0
+        width: 70
+        height: 123
+      spriteId: 9c726607149281a47aa17c251dea9dac
+    - name: texElementalSpectreDiffuse_Frame_193
+      frameIndex: 193
+      cellRect:
+        x: 43
+        y: 0
+        width: 68
+        height: 122
+      spriteId: 4d5266e4fca9be44794139c0ba3c5a2b
+    - name: texElementalSpectreDiffuse_Frame_194
+      frameIndex: 194
+      cellRect:
+        x: 49
+        y: 0
+        width: 55
+        height: 47
+      spriteId: 0163f9ebad62d0946ad46e8b6ed523e7
+    - name: texElementalSpectreDiffuse_Frame_195
+      frameIndex: 195
+      cellRect:
+        x: 54
+        y: 0
+        width: 37
+        height: 38
+      spriteId: 3cddb569aad576a41abe2ba8d911a9c3
+    - name: texElementalSpectreDiffuse_Frame_196
+      frameIndex: 196
+      cellRect:
+        x: 54
+        y: 0
+        width: 33
+        height: 26
+      spriteId: b52c2c7b2538fe542a4722e22e0fc599
+    - name: texElementalSpectreDiffuse_Frame_197
+      frameIndex: 197
+      cellRect:
+        x: 54
+        y: 0
+        width: 33
+        height: 15
+      spriteId: 52ea62f01cb73e1408428438b6565c17
+    - name: texElementalSpectreDiffuse_Frame_198
+      frameIndex: 198
+      cellRect:
+        x: 54
+        y: 0
+        width: 33
+        height: 15
+      spriteId: 2537eed66e9404a4199f87c1ace1695f
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures:
+  - name: _EmissionTex
+    texture: {fileID: -8328923581568760697, guid: f7d9eb7c285fb3542b63583f5adfef86,
+      type: 3}
+  spritePackingTag: 
+  canvasSize: {x: 142, y: 126}

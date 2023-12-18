@@ -21,7 +21,7 @@ namespace Nebula.UI
         private NebulaConsoleCommand keyCombo;
         private void Awake()
         {
-            ConsoleSystem.onLogChanged += OutputLog;
+            ConsoleSystem.OnLogChanged += OutputLog;
             keyCombo = new NebulaConsoleCommand();
             keyCombo.Enable();
             keyCombo.Nebula.OpenConsole.started += (arg) =>
@@ -63,7 +63,7 @@ namespace Nebula.UI
 
         public void OnDestroy()
         {
-            ConsoleSystem.onLogChanged -= OutputLog;
+            ConsoleSystem.OnLogChanged -= OutputLog;
             keyCombo.Disable();
             keyCombo.Dispose();
         }

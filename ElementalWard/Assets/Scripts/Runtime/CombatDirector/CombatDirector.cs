@@ -26,6 +26,7 @@ namespace ElementalWard
         private float _spawnStopwatch;
         private DirectorCard _currentCard;
         private DirectorCard _cheapestCard;
+        private DirectorCard _lastAttemptedCard;
         private ElementDef _currentElement;
         private float _difficultyCoefficient;
         private int _spawnAttempts;
@@ -104,6 +105,9 @@ namespace ElementalWard
 
                 PrepareNewSpawnWave(Cards.Next());
             }
+            if (_currentCard == null)
+                return false;
+
             if(Credits < _currentCard.cardCost)
             {
                 return false;
@@ -121,6 +125,12 @@ namespace ElementalWard
         private void PrepareNewSpawnWave(DirectorCard card)
         {
             _currentCard = card;
+            if(_currentCard == _lastAttemptedCard)
+            {
+                _currentCard = null;
+                return;
+            }
+
             _currentElement = null;
 
             ElementDef elementDef = null;
@@ -158,12 +168,10 @@ namespace ElementalWard
                 }
                 if(result.body.TryGetComponent<CharacterMotorController>(out var controller))
                 {
-                    UnityEditor.EditorApplication.isPaused = true;
                     if(!controller.IsFlying)
                     {
                         var pos = result.body.transform.position;
                         pos.y += controller.MotorCapsule.height / 2;
-                        controller.Motor.SetPosition(pos, true);
                     }
                 }
             }
@@ -181,7 +189,17 @@ namespace ElementalWard
 
                     PrepareNewSpawnWave(Cards.Next());
                 }
+                if (_currentCard == null)
+                    continue;
+
                 CharacterSpawnCard spawnCard = _currentCard.spawnCard as CharacterSpawnCard;
+
+                if(Credits < _currentCard.cardCost)
+                {
+                    _lastAttemptedCard = _currentCard;
+                    _currentCard = null;
+                    continue;
+                }
 
                 if (TrySpawn(spawnCard, transform, PlacementRule.RandomNodePlacement))
                 {

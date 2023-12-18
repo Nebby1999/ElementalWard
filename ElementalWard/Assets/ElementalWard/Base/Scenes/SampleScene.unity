@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &399343968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399343967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402ec431c90cff6488bdd98511ca38fb, type: 3}
   m_Name: 
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399343967}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0f1ec942ea7b7a4a9c2bfb9f30b0ace, type: 3}
   m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     - value: {fileID: 11400000, guid: 5288bfc2c6fc0a24c8ded36f8f774a21, type: 2}
       weight: 10
   _dungeonFloor: 0
-  _startingCredits: 150
+  _startingCredits: 0
 --- !u!1 &703047834
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +544,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 7637794846450996916, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: defaultTeam
@@ -552,10 +557,20 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
+      propertyPath: _spawnOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
       propertyPath: _defaultBodyPrefab
       value: 
-      objectReference: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
+      objectReference: {fileID: 5338726505615578528, guid: c2cb4510c01f66d41a0337bf74072bb1,
         type: 3}
+    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
+        type: 3}
+      propertyPath: _autoCalculateNextLevelRequirement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -776,7 +791,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -791,7 +806,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1011,7 +1026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1302145148
 Transform:
   m_ObjectHideFlags: 0
