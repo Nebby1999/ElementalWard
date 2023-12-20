@@ -19,7 +19,7 @@ MonoBehaviour:
     serializedFields:
     - fieldName: bulletRadius
       serializedValue:
-        stringValue: 1
+        stringValue: 0.25
         objectReferenceValue: {fileID: 0}
     - fieldName: bulletRange
       serializedValue:
@@ -41,4 +41,8 @@ MonoBehaviour:
     - fieldName: procCoefficient
       serializedValue:
         stringValue: 0.5
+        objectReferenceValue: {fileID: 0}
+    - fieldName: baseDuration
+      serializedValue:
+        stringValue: 0.3
         objectReferenceValue: {fileID: 0}

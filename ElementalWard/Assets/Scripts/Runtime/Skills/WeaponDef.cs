@@ -6,10 +6,9 @@ namespace ElementalWard
     [CreateAssetMenu(fileName = "New WeaponDef", menuName = ElementalWardApplication.APP_NAME + "/Skills/WeaponDef", order = int.MinValue)]
     public class WeaponDef : NebulaScriptableObject
     {
-        [SerializeField]
-        public SkillDef _primarySkill;
-        [SerializeField]
-        public SkillDef _secondarySkill;
+        public SkillDef primarySkill;
+        public SkillDef secondarySkill;
+        public RuntimeAnimatorController controller;
         public void AssignWeapons(SkillManager manager)
         {
             if (!manager)
@@ -21,7 +20,7 @@ namespace ElementalWard
             }
             else
             {
-                manager.Primary.SkillDef = _primarySkill;
+                manager.Primary.SkillDef = primarySkill;
             }
 
             if(!manager.Secondary)
@@ -30,7 +29,7 @@ namespace ElementalWard
             }
             else
             {
-                manager.Secondary.SkillDef = _secondarySkill;
+                manager.Secondary.SkillDef = secondarySkill;
             }
         }
     }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031c10f2da8bc8b43a958aa0bf8d12c6, type: 3}
   m_Name: Staff
   m_EditorClassIdentifier: 
-  _primarySkill: {fileID: 11400000, guid: 2ea46d27e3aad3f4fb7c859f3ad08503, type: 2}
-  _secondarySkill: {fileID: 11400000, guid: 5081b21b9b6182249800bd48efd4004f, type: 2}
+  primarySkill: {fileID: 11400000, guid: 2ea46d27e3aad3f4fb7c859f3ad08503, type: 2}
+  secondarySkill: {fileID: 11400000, guid: 5081b21b9b6182249800bd48efd4004f, type: 2}
+  controller: {fileID: 9100000, guid: 96eff12dcd147ee43a214d064475b282, type: 2}

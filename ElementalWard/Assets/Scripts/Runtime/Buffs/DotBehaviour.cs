@@ -170,7 +170,7 @@ namespace ElementalWard
         {
             var inflictorBody = Info.inflictor.characterBody;
             var totalDamage = (inflictorBody ? inflictorBody.Damage : Info.customDamageSource) * TiedDotDef.damageCoefficient;
-            _damagePerTick = (totalDamage * DotStacks) / (TiedDotDef.secondsPerTick * Info.fixedAgeDuration);
+            _damagePerTick = (totalDamage * DotStacks) * (TiedDotDef.secondsPerTick * Info.fixedAgeDuration);
         }
 
         public static void Destroy(GameObject obj)

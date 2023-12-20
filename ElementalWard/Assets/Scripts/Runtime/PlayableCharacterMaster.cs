@@ -34,7 +34,6 @@ namespace ElementalWard
         private InputAction _weapon1Action;
         private InputAction _weapon2Action;
         private InputAction _weapon3Action;
-        private InputAction _weapon4Action;
         private Vector2 _rawMovementInput;
         private Vector2 _rawLookInput;
         private int _rawScrollInput;
@@ -63,7 +62,6 @@ namespace ElementalWard
             _weapon1Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot1GUID);
             _weapon2Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot2GUID);
             _weapon3Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot3GUID);
-            _weapon4Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot4GUID);
             OnPlayableCharacterMasterEnabled?.Invoke(this);
             InstanceTracker.Add(this);
         }
@@ -104,7 +102,6 @@ namespace ElementalWard
                 BodyInputs.weaponSlot1.PushState(playerInputs.weapon1Pressed);
                 BodyInputs.weaponSlot2.PushState(playerInputs.weapon2Pressed);
                 BodyInputs.weaponSlot3.PushState(playerInputs.weapon3Pressed);
-                BodyInputs.weaponSlot4.PushState(playerInputs.weapon4Pressed);
             }
         }
 
@@ -124,7 +121,6 @@ namespace ElementalWard
                 weapon1Pressed = _weapon1Action?.IsPressed() ?? false,
                 weapon2Pressed = _weapon2Action?.IsPressed() ?? false,
                 weapon3Pressed = _weapon3Action?.IsPressed() ?? false,
-                weapon4Pressed = _weapon4Action?.IsPressed() ?? false,
             };
         }
 

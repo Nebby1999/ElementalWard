@@ -11,6 +11,7 @@ using System.Linq;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ElementalWard
 {
@@ -27,6 +28,7 @@ namespace ElementalWard
         [Range(0, 360)]
         public float awarenessAngle;
         public float awarenessRange;
+        public UnityEvent OnFirstTargetObtained;
         public CharacterMaster Master { get; private set; }
         public CharacterBody Body { get; private set; }
         public CharacterInputBank BodyInputBank { get; private set; }
@@ -110,6 +112,7 @@ namespace ElementalWard
             if(newEnemy)
             {
                 _enemyTarget = new AITarget(newEnemy.HealthComponent.gameObject);
+                OnFirstTargetObtained?.Invoke();
             }
         }
 
@@ -300,12 +303,14 @@ namespace ElementalWard
                 return;
 
             _enemyTarget = new AITarget(damageReport.attackerBody.gameObject);
+            OnFirstTargetObtained?.Invoke();
             return;
         }
 
         public void SetTarget(AITarget other)
         {
             _enemyTarget = new AITarget(other.gameObject);
+            OnFirstTargetObtained?.Invoke();
         }
 
 

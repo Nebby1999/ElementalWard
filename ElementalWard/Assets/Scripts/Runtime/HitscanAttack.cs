@@ -20,11 +20,11 @@ namespace ElementalWard
         public float baseDamage;
         public float procCoefficient;
         public int raycastCount;
-        public bool smartCollision = true;
+        public bool smartCollision = false;
         public GameObject tracerEffect;
         public VFXData tracerData;
-        public LayerMask hitMask = LayerIndex.CommonMasks.Bullet;
-        public LayerMask stopperMask = LayerIndex.CommonMasks.Bullet;
+        public LayerMask hitMask = LayerIndex.entityPrecise.Mask;
+        public LayerMask stopperMask = LayerIndex.entityPrecise.Mask;
 
         public FalloffCalculateDelegate falloffCalculation = DefaultFalloffCalculation;
         public HitCallback hitCallback = DefaultHitCallback;

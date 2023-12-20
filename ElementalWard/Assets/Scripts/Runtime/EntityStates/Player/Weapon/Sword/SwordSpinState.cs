@@ -3,16 +3,19 @@ using UnityEngine;
 
 namespace EntityStates.Player.Weapon.Sword
 {
-    public class SwordSpinState : BaseCharacterState
+    public class SwordSpinState : BaseWeaponState
     {
         public static float damageCoefficient;
         public static float procCoefficient;
         public static float spinRadius;
+        public static float baseDuration;
 
         private ExplosiveAttack attack;
+        private float _duration;
         public override void OnEnter()
         {
             base.OnEnter();
+            _duration = baseDuration / attackSpeedStat;
             if (CharacterInputBank && CharacterController)
             {
                 var lookDirection = CharacterInputBank.AimDirection;
@@ -36,8 +39,17 @@ namespace EntityStates.Player.Weapon.Sword
                 falloffCalculation = ExplosiveAttack.DefaultFalloffCalculation
             };
 
+            PlayWeaponAnimation("Base", "Fire", "attackSpeed", _duration);
             attack.Fire();
-            outer.SetNextStateToMain();
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (FixedAge > _duration)
+            {
+                outer.SetNextStateToMain();
+            }
         }
     }
 }

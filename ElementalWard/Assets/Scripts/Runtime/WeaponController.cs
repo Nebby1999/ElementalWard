@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace ElementalWard
@@ -8,11 +9,12 @@ namespace ElementalWard
         [SerializeField] private WeaponDef _weapon1;
         [SerializeField] private WeaponDef _weapon2;
         [SerializeField] private WeaponDef _weapon3;
-        [SerializeField] private WeaponDef _weapon4;
 
         public SkillManager SkillManager { get; private set; }
         public WeaponDef CurrentWeapon { get; private set; }
         public int CurrentWeaponIndex { get; private set; }
+
+        public event Action OnWeaponUpdated;
 
         private void Awake()
         {
@@ -38,9 +40,6 @@ namespace ElementalWard
                 case 2:
                     CurrentWeapon = _weapon3;
                     break;
-                case 3:
-                    CurrentWeapon = _weapon4;
-                    break;
                 default:
                     return;
             }
@@ -52,6 +51,7 @@ namespace ElementalWard
                 return;
             }
             CurrentWeapon.AssignWeapons(SkillManager);
+            OnWeaponUpdated?.Invoke();
         }
     }
 }

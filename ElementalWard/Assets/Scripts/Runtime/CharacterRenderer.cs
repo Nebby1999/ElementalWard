@@ -66,7 +66,9 @@ namespace ElementalWard
         {
             transform.parent = null;
             GameObject newParent = new GameObject("Corpse");
+            newParent.transform.SetPositionAndRotation(transform.position, transform.rotation);
             transform.parent = newParent.transform;
+            newParent.AddComponent<BoxCollider>();
             var corpseRigidbody = newParent.AddComponent<Rigidbody>();
             corpseRigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             newParent.layer = LayerIndex.decoration.IntVal;

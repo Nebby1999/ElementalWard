@@ -7,18 +7,23 @@ using System.Threading.Tasks;
 
 namespace EntityStates.Player.Weapon.Sword
 {
-    public class SwingSwordState : BaseCharacterState
+    public class SwingSwordState : BaseWeaponState
     {
         public static float damageCoefficient;
         public static float procCoefficient;
+        public static float baseDuration;
         public static string hitBoxGroup;
 
         private HitBoxAttack attack;
+        private float _duration;
+        private CharacterAnimationEvents _events;
+        private bool _hasFired;
 
         public override void OnEnter()
         {
             base.OnEnter();
 
+            _duration = baseDuration / attackSpeedStat;
             var damage = damageStat * damageCoefficient;
             var locator = GetSpriteBaseTransform();
             attack = new HitBoxAttack
@@ -30,8 +35,22 @@ namespace EntityStates.Player.Weapon.Sword
                 hitBoxGroup = HitBoxGroup.FindHitBoxGroup(locator.gameObject, hitBoxGroup)
             };
 
-            attack.Fire();
-            outer.SetNextStateToMain();
+
+            PlayWeaponAnimation("Base", "Fire", "attackSpeed", _duration);
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if(!_hasFired && FixedAge > _duration / 2)
+            {
+                _hasFired = true;
+                attack.Fire();
+            }
+            if(FixedAge > _duration)
+            {
+                outer.SetNextStateToMain();
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

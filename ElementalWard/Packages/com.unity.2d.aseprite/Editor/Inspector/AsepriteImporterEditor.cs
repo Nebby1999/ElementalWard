@@ -65,6 +65,7 @@ namespace UnityEditor.U2D.Aseprite
         SerializedProperty m_AddSortingGroup;
         SerializedProperty m_AddShadowCasters;
         SerializedProperty m_GenerateAnimationClips;
+        SerializedProperty m_AnimationClipsUseImageComponent;
         SerializedProperty m_PrevGenerateAnimationClips;
 
         VisualElement m_RootVisualElement;
@@ -174,6 +175,7 @@ namespace UnityEditor.U2D.Aseprite
             m_AddSortingGroup = asepriteImporterSettings.FindPropertyRelative("m_AddSortingGroup");
             m_AddShadowCasters = asepriteImporterSettings.FindPropertyRelative("m_AddShadowCasters");
             m_GenerateAnimationClips = asepriteImporterSettings.FindPropertyRelative("m_GenerateAnimationClips");
+            m_AnimationClipsUseImageComponent = asepriteImporterSettings.FindPropertyRelative(nameof(m_AnimationClipsUseImageComponent));
             
             var prevAsepriteImporterSettings = serializedObject.FindProperty("m_PreviousAsepriteImporterSettings");
             m_PrevGenerateAnimationClips = prevAsepriteImporterSettings.FindPropertyRelative("m_GenerateAnimationClips");
@@ -503,6 +505,14 @@ namespace UnityEditor.U2D.Aseprite
             };
             generateClipsField.Bind(serializedObject);
             foldOut.Add(generateClipsField);
+
+            var imageAnimations = new PropertyField(m_AnimationClipsUseImageComponent,
+                styles.imageAnimationClips.text)
+            {
+                tooltip = styles.imageAnimationClips.tooltip
+            };
+            imageAnimations.Bind(serializedObject);
+            foldOut.Add(imageAnimations);
             
             SetupAnimationAssetsButton(foldOut);
             
@@ -1492,7 +1502,9 @@ namespace UnityEditor.U2D.Aseprite
             public readonly GUIContent addSortingGroup = EditorGUIUtility.TrTextContent("Sorting Group", "Add a Sorting Group component to the root of the generated model prefab if it has more than one Sprite Renderer.");
             public readonly GUIContent addShadowCasters = EditorGUIUtility.TrTextContent("Shadow Casters", "Add Shadow Casters on all GameObjects with SpriteRenderer. Note: The Universal Rendering Pipeline package has to be installed.");
             public readonly GUIContent generateAnimationClips = EditorGUIUtility.TrTextContent("Animation Clips", "Generate Animation Clips based on the frame and tag data from the Aseprite file.");
-            
+            public readonly GUIContent imageAnimationClips = EditorGUIUtility.TrTextContent("Image Animation Clips", "Generated Animation clips use the Image component instead of the SpriteRenderer component.");
+
+
             public readonly GUIContent generalHeaderText = EditorGUIUtility.TrTextContent("General", "General settings.");
             public readonly GUIContent layerImportHeaderText = EditorGUIUtility.TrTextContent("Layer Import","Layer Import settings.");
             public readonly GUIContent generateAssetsHeaderText = EditorGUIUtility.TrTextContent("Generate Assets","Generated assets settings.");

@@ -3,21 +3,24 @@ using UnityEngine;
 
 namespace EntityStates.Player.Weapon.Staff
 {
-    public class FireShotgun : BaseCharacterState
+    public class FireShotgun : BaseWeaponState
     {
         public static float bulletRadius;
         public static float bulletRange;
         public static float damageCoefficient;
         public static float procCoefficient;
         public static float baseSpread;
+        public static float baseDuration;
         public static GameObject tracerPrefab;
 
         public int bulletCount;
 
         private float _maxSpread;
+        private float _duration;
         public override void OnEnter()
         {
             base.OnEnter();
+            _duration = baseDuration / attackSpeedStat;
             Ray aimRay = GetAimRay();
             _maxSpread = baseSpread * bulletCount;
             VFXData data = new VFXData
@@ -43,7 +46,16 @@ namespace EntityStates.Player.Weapon.Staff
                 tracerEffect = tracerPrefab,
                 procCoefficient = procCoefficient
             }.Fire();
-            outer.SetNextStateToMain();
+            PlayWeaponAnimation("Base", "Fire");
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if(FixedAge > _duration)
+            {
+                outer.SetNextStateToMain();
+            }
         }
     }
 }

@@ -739,7 +739,8 @@ namespace UnityEditor.U2D.Aseprite
                 m_AsepriteLayers, 
                 m_Frames,
                 m_Tags, 
-                m_LayerIdToGameObject);
+                m_LayerIdToGameObject,
+                m_AsepriteImporterSettings.animationClipsUseImageComponent);
             
             for (var i = 0; i < clips.Length; ++i)
                 ctx.AddObjectToAsset(clips[i].name, clips[i]);

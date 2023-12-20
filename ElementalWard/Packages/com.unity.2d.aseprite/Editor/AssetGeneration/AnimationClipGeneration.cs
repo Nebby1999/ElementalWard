@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UnityEditor.U2D.Aseprite
 {
@@ -14,7 +15,8 @@ namespace UnityEditor.U2D.Aseprite
             List<Layer> layers,
             List<Frame> frames,
             List<Tag> tags, 
-            Dictionary<int, GameObject> layerIdToGameObject)
+            Dictionary<int, GameObject> layerIdToGameObject,
+            bool useImageComponent)
         {
             var noOfFrames = file.noOfFrames;
             if (tags.Count == 0)
@@ -29,12 +31,12 @@ namespace UnityEditor.U2D.Aseprite
             
             var clips = new AnimationClip[tags.Count];
             for (var i = 0; i < tags.Count; ++i)
-                clips[i] = CreateClip(tags[i], layers, frames, sprites, layerIdToGameObject);
+                clips[i] = CreateClip(tags[i], layers, frames, sprites, layerIdToGameObject, useImageComponent);
 
             return clips;
         }
 
-        static AnimationClip CreateClip(Tag tag, List<Layer> layers, List<Frame> frames, Sprite[] sprites, Dictionary<int, GameObject> layerIdToGameObject)
+        static AnimationClip CreateClip(Tag tag, List<Layer> layers, List<Frame> frames, Sprite[] sprites, Dictionary<int, GameObject> layerIdToGameObject, bool useImageComponent)
         {
             var animationClip = new AnimationClip()
             {
@@ -66,7 +68,7 @@ namespace UnityEditor.U2D.Aseprite
                 DuplicateLastFrame(ref spriteKeyframes, frames[tag.toFrame - 1]);
 
                 var path = GetGameObjectPath(layerGo.transform);
-                var spriteBinding = EditorCurveBinding.PPtrCurve(path, typeof(SpriteRenderer), "m_Sprite");
+                EditorCurveBinding spriteBinding = EditorCurveBinding.PPtrCurve(path, useImageComponent ? typeof(Image) : typeof(SpriteRenderer), "m_Sprite");
                 AnimationUtility.SetObjectReferenceCurve(animationClip, spriteBinding, spriteKeyframes.ToArray());
 
                 AddEnabledKeyframes(layerGo, tag, in frames, in activeFrames, in animationClip);

@@ -328,6 +328,7 @@ Transform:
   - {fileID: 186407239818478769}
   - {fileID: 2397158550295149793}
   - {fileID: 3930394729685167410}
+  - {fileID: 4831095853296580525}
   - {fileID: 3569104469897359826}
   - {fileID: 3131609881074762226}
   - {fileID: 4685510541085827205}
@@ -862,6 +863,54 @@ Transform:
   - {fileID: 3491938042897819738}
   m_Father: {fileID: 2397158550295149793}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3790376984455894388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4831095853296580525}
+  - component: {fileID: 3081315723834327267}
+  m_Layer: 9
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4831095853296580525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790376984455894388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.862, y: 2.111, z: 1.376}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 508962223987536416}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3081315723834327267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790376984455894388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bdd603011197547acb899f80fae666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterMasterPrefab: {fileID: 8702186268554915921, guid: 5f5bd4fd5ae5c184fbfd2a0def075369,
+    type: 3}
+  spawnOnStart: 1
+  destroyAfterSpawning: 1
 --- !u!1 &3810529946860525215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _graphName: 
   _nodeGraphAsset: {fileID: 11400000, guid: d61ba501a6040b445b3f38065415d50f, type: 2}
+  providerScale: 1
 --- !u!1 &5732187232151651867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _graphName: 
   _nodeGraphAsset: {fileID: 11400000, guid: 900a126f4aca6294e84f2461ecaea582, type: 2}
+  providerScale: 1
 --- !u!1 &6226252206055771707
 GameObject:
   m_ObjectHideFlags: 0

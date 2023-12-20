@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EntityStates.Player.Weapon.Book
 {
-    public class FireExplodingOrb : BaseCharacterState
+    public class FireExplodingOrb : BaseWeaponState
     {
         public static GameObject projectilePrefab;
         public static float baseDuration;
@@ -24,6 +24,7 @@ namespace EntityStates.Player.Weapon.Book
             };
 
             ProjectileManager.SpawnProjectile(projectilePrefab, projectileInfo);
+            PlayWeaponAnimation("Base", "Fire");
         }
 
         public override void FixedUpdate()

@@ -23,15 +23,15 @@ MonoBehaviour:
         objectReferenceValue: {fileID: 0}
     - fieldName: damageCoefficient
       serializedValue:
-        stringValue: 1
+        stringValue: 0.15
         objectReferenceValue: {fileID: 0}
     - fieldName: baseDuration
       serializedValue:
-        stringValue: 1
+        stringValue: 0.6
         objectReferenceValue: {fileID: 0}
     - fieldName: bulletRadius
       serializedValue:
-        stringValue: 1
+        stringValue: 0.25
         objectReferenceValue: {fileID: 0}
     - fieldName: bulletRange
       serializedValue:

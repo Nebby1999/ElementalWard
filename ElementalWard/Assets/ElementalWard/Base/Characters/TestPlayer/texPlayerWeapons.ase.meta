@@ -1,0 +1,1413 @@
+fileFormatVersion: 2
+guid: 770484574ee72424089ff11127a87ca0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Book/Detonate
+    second: {fileID: 7400000, guid: 08faf1f3fe5a2b84ba84e28fd5f0e989, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Book/Fire
+    second: {fileID: 7400000, guid: 10afbff356eea8b43bb5b7591c24c0cc, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Book/Idle
+    second: {fileID: 7400000, guid: aba47a92a024c0d4991cc973f752eff3, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Staff/Charge
+    second: {fileID: 7400000, guid: 71ed05c039bae7a4bb0f041bb85284a7, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Staff/Fire
+    second: {fileID: 7400000, guid: f4ed70dc4c800e04dae7c7abdd718ab9, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Staff/Idle
+    second: {fileID: 7400000, guid: 5b186bd892f965c4e8d862733b2f6007, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Sword/Swing
+    second: {fileID: 7400000, guid: 75e1b5199c2a51d4592080852a6d4e56, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 0
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    animationClipsUseImageComponent: 0
+    addSortingGroup: 0
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 0
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 0
+    generateAnimationClips: 0
+    animationClipsUseImageComponent: 0
+    addSortingGroup: 0
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638386324100603552
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: texPlayerWeapons_Frame_0
+    originalName: 
+    pivot: {x: -0.86666656, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 473
+      width: 60
+      height: 135
+    spriteID: ec47b8e90bb51074e872c62d3020b839
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 473}
+  - name: texPlayerWeapons_Frame_1
+    originalName: 
+    pivot: {x: -0.86666656, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 616
+      width: 60
+      height: 135
+    spriteID: 6dc1b048374180349899e7ec9c06d757
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 616}
+  - name: texPlayerWeapons_Frame_2
+    originalName: 
+    pivot: {x: -0.7647058, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 112
+      width: 68
+      height: 135
+    spriteID: d175363db948539448bd805d4a0b72ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 112}
+  - name: texPlayerWeapons_Frame_3
+    originalName: 
+    pivot: {x: -1, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 759
+      width: 60
+      height: 135
+    spriteID: b738aa8bc739a324884195febc07aff7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 759}
+  - name: texPlayerWeapons_Frame_4
+    originalName: 
+    pivot: {x: -0.89473677, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 822
+      width: 57
+      height: 135
+    spriteID: 8066be4c13cc02b4d97ea5159263b34a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 822}
+  - name: texPlayerWeapons_Frame_5
+    originalName: 
+    pivot: {x: -0.33333325, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 255
+      width: 66
+      height: 135
+    spriteID: 3183409d7c7fbee438bc1525b2d6ef62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 255}
+  - name: texPlayerWeapons_Frame_6
+    originalName: 
+    pivot: {x: 0.31884056, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 250
+      width: 69
+      height: 98
+    spriteID: 3a38f3580b60be4448b00cacf02a1b9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 250}
+  - name: texPlayerWeapons_Frame_7
+    originalName: 
+    pivot: {x: 1.5625, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 963
+      y: 59
+      width: 48
+      height: 37
+    spriteID: fdfd7285e8ca04e4ea35f661369a9927
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 963, y: 59}
+  - name: texPlayerWeapons_Frame_8
+    originalName: 
+    pivot: {x: 1.5625, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 962
+      y: 4
+      width: 48
+      height: 37
+    spriteID: fb1d289060e3b2f40b61d2e0a369afc8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 962, y: 4}
+  - name: texPlayerWeapons_Frame_9
+    originalName: 
+    pivot: {x: 0.31884056, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 356
+      width: 69
+      height: 98
+    spriteID: 68acbe431b8e9e046b4acbb78105b781
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 356}
+  - name: texPlayerWeapons_Frame_10
+    originalName: 
+    pivot: {x: -0.86666656, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 398
+      width: 60
+      height: 135
+    spriteID: db9dce90c5702d7439b3eca7cc2d98bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 398}
+  - name: texPlayerWeapons_Frame_11
+    originalName: 
+    pivot: {x: -0.86666656, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 541
+      width: 60
+      height: 135
+    spriteID: f32f30542733a514b9198740dac1eed0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 541}
+  - name: texPlayerWeapons_Frame_12
+    originalName: 
+    pivot: {x: 0.37500003, y: -0.22}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 152
+      height: 100
+    spriteID: fc35a22a225264d47979af53f72715fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: texPlayerWeapons_Frame_13
+    originalName: 
+    pivot: {x: 0.5645161, y: -0.03846154}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 684
+      width: 62
+      height: 130
+    spriteID: c7f0ccc5f1651cc4095406d16bd2a6fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 684}
+  - name: texPlayerWeapons_Frame_14
+    originalName: 
+    pivot: {x: 0.5645161, y: 0.24561405}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 294
+      width: 62
+      height: 171
+    spriteID: 68c9210b78a42374ba85470cf764318c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 294}
+  - name: texPlayerWeapons_Frame_15
+    originalName: 
+    pivot: {x: 0.5645161, y: 0.24137932}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 112
+      width: 62
+      height: 174
+    spriteID: 23cddaf1c40332c43b4282b6d5e66f98
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 112}
+  - name: texPlayerWeapons_Frame_16
+    originalName: 
+    pivot: {x: 0.52941185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 74
+      y: 965
+      width: 51
+      height: 52
+    spriteID: 03b7de07db3820a498ba8107e2fd8bc3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 74, y: 965}
+  - name: texPlayerWeapons_Frame_17
+    originalName: 
+    pivot: {x: 0.52941185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 622
+      width: 51
+      height: 52
+    spriteID: 019f340520f47fb4ca3d8735a36f7c70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 622}
+  - name: texPlayerWeapons_Frame_18
+    originalName: 
+    pivot: {x: 0.52941185, y: 0.14084508}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 902
+      width: 51
+      height: 71
+    spriteID: e77100776ef13ab4d898ba651e90009e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 902}
+  - name: texPlayerWeapons_Frame_19
+    originalName: 
+    pivot: {x: 0.52941185, y: 0.1724138}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 556
+      width: 51
+      height: 58
+    spriteID: 36ed5dd41befec946888d0720fe9ebe1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 556}
+  - name: texPlayerWeapons_Frame_20
+    originalName: 
+    pivot: {x: 0.52941185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 682
+      width: 51
+      height: 52
+    spriteID: ddf328487bf51e34482ce1c028243b0e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 682}
+  - name: texPlayerWeapons_Frame_21
+    originalName: 
+    pivot: {x: 0.52941185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 742
+      width: 51
+      height: 52
+    spriteID: feea0e37f82990d4596f2fa0cc5b8a22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 742}
+  - name: texPlayerWeapons_Frame_22
+    originalName: 
+    pivot: {x: 0.52941185, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 802
+      width: 51
+      height: 52
+    spriteID: f43c4177ce6fd32439368db0334757db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 802}
+  - name: texPlayerWeapons_Frame_23
+    originalName: 
+    pivot: {x: 0.5686275, y: 0.038461536}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 862
+      width: 51
+      height: 52
+    spriteID: cbad189619e004f42a2cff08294d460d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 862}
+  - name: texPlayerWeapons_Frame_24
+    originalName: 
+    pivot: {x: 0.49019605, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 922
+      width: 51
+      height: 52
+    spriteID: 103f38aaf58d93644a7e877168d8533a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 922}
+  - name: texPlayerWeapons_Frame_25
+    originalName: 
+    pivot: {x: 0.5686275, y: 0.038461536}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 421
+      y: 167
+      width: 51
+      height: 52
+    spriteID: c02cd287b32c82049adffc33a5670f12
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 421, y: 167}
+  - name: texPlayerWeapons_Frame_26
+    originalName: 
+    pivot: {x: 0.49685532, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 317
+      y: 112
+      width: 159
+      height: 22
+    spriteID: 95a34a0f7354be44bbeb2acaf76f73fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 317, y: 112}
+  - name: texPlayerWeapons_Frame_27
+    originalName: 
+    pivot: {x: 0.49685532, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 484
+      y: 112
+      width: 159
+      height: 22
+    spriteID: 94e5d8dac881d5e4ba6216a810c6a709
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 484, y: 112}
+  - name: texPlayerWeapons_Frame_28
+    originalName: 
+    pivot: {x: 0.49685532, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 795
+      y: 4
+      width: 159
+      height: 47
+    spriteID: a75926a72a43174419b71e9668f6aa52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 795, y: 4}
+  - name: texPlayerWeapons_Frame_29
+    originalName: 
+    pivot: {x: 0.49999997, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 4
+      width: 158
+      height: 72
+    spriteID: 7ee9876d18f2d934a935f1bef4c1413a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 4}
+  - name: texPlayerWeapons_Frame_30
+    originalName: 
+    pivot: {x: 0.49685532, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 164
+      y: 4
+      width: 159
+      height: 73
+    spriteID: d84ba406288efff45961584cead0b087
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 164, y: 4}
+  - name: texPlayerWeapons_Frame_31
+    originalName: 
+    pivot: {x: 0.49999997, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 331
+      y: 4
+      width: 158
+      height: 73
+    spriteID: ebf7a34d35e4ce343a9ed3506abb55cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 331, y: 4}
+  - name: texPlayerWeapons_Frame_32
+    originalName: 
+    pivot: {x: 0.5031446, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 112
+      width: 159
+      height: 47
+    spriteID: 776d3e6099f7c9c4193f113fd2c71df1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 112}
+  - name: texPlayerWeapons_Frame_33
+    originalName: 
+    pivot: {x: 0.49685532, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 651
+      y: 112
+      width: 159
+      height: 22
+    spriteID: 77388015b6880514eb31fa8eb0518b14
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 651, y: 112}
+  - name: texPlayerWeapons_Frame_34
+    originalName: 
+    pivot: {x: 0.49685532, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 818
+      y: 112
+      width: 159
+      height: 22
+    spriteID: 665cee5ad84e50d488af582f0178c0e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 818, y: 112}
+  - name: texPlayerWeapons_Frame_35
+    originalName: 
+    pivot: {x: 0.49999997, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 663
+      y: 4
+      width: 124
+      height: 72
+    spriteID: cf7cdd7319172454fbc4a8960d6b2b64
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 663, y: 4}
+  - name: texPlayerWeapons_Frame_36
+    originalName: 
+    pivot: {x: 0.50000006, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 462
+      width: 42
+      height: 86
+    spriteID: 6c777e789ea08f149a916b962adcaeb6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 462}
+  - name: texPlayerWeapons_Frame_37
+    originalName: 
+    pivot: {x: 0.5263157, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 200
+      y: 462
+      width: 19
+      height: 86
+    spriteID: aa49e782fd8ca4548bbdd7b86f7f213d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 200, y: 462}
+  - name: texPlayerWeapons_Frame_38
+    originalName: 
+    pivot: {x: 0.54166675, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 227
+      y: 250
+      width: 24
+      height: 104
+    spriteID: 7135c12e23860d84388f222a4229b5e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 227, y: 250}
+  - name: texPlayerWeapons_Frame_39
+    originalName: 
+    pivot: {x: 0.5263157, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 227
+      y: 362
+      width: 19
+      height: 86
+    spriteID: 33956acd44438ef40a3951dcde224c1d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 227, y: 362}
+  - name: texPlayerWeapons_Frame_40
+    originalName: 
+    pivot: {x: 0.5208334, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 150
+      y: 167
+      width: 96
+      height: 75
+    spriteID: d7f346913be60214e90f141803dbad72
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 150, y: 167}
+  - name: texPlayerWeapons_Frame_41
+    originalName: 
+    pivot: {x: 0.49374998, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 795
+      y: 59
+      width: 160
+      height: 29
+    spriteID: 4b6b2be663660054dad4642210ac2cff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 795, y: 59}
+  - name: texPlayerWeapons_Frame_42
+    originalName: 
+    pivot: {x: 0.49685532, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 254
+      y: 167
+      width: 159
+      height: 22
+    spriteID: e614bd84494632b4a8cb0ef07c67518e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 254, y: 167}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -349814481
+    name: texPlayerWeapons
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: texPlayerWeapons_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 172
+        y: 0
+        width: 60
+        height: 135
+      spriteId: ec47b8e90bb51074e872c62d3020b839
+    - name: texPlayerWeapons_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 172
+        y: 0
+        width: 60
+        height: 135
+      spriteId: 6dc1b048374180349899e7ec9c06d757
+    - name: texPlayerWeapons_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 172
+        y: 0
+        width: 68
+        height: 135
+      spriteId: d175363db948539448bd805d4a0b72ae
+    - name: texPlayerWeapons_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 180
+        y: 0
+        width: 60
+        height: 135
+      spriteId: b738aa8bc739a324884195febc07aff7
+    - name: texPlayerWeapons_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 171
+        y: 0
+        width: 57
+        height: 135
+      spriteId: 8066be4c13cc02b4d97ea5159263b34a
+    - name: texPlayerWeapons_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 142
+        y: 0
+        width: 66
+        height: 135
+      spriteId: 3183409d7c7fbee438bc1525b2d6ef62
+    - name: texPlayerWeapons_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 98
+        y: 0
+        width: 69
+        height: 98
+      spriteId: 3a38f3580b60be4448b00cacf02a1b9c
+    - name: texPlayerWeapons_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 45
+        y: 0
+        width: 48
+        height: 37
+      spriteId: fdfd7285e8ca04e4ea35f661369a9927
+    - name: texPlayerWeapons_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 45
+        y: 0
+        width: 48
+        height: 37
+      spriteId: fb1d289060e3b2f40b61d2e0a369afc8
+    - name: texPlayerWeapons_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 98
+        y: 0
+        width: 69
+        height: 98
+      spriteId: 68acbe431b8e9e046b4acbb78105b781
+    - name: texPlayerWeapons_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 172
+        y: 0
+        width: 60
+        height: 135
+      spriteId: db9dce90c5702d7439b3eca7cc2d98bf
+    - name: texPlayerWeapons_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 172
+        y: 0
+        width: 60
+        height: 135
+      spriteId: f32f30542733a514b9198740dac1eed0
+    - name: texPlayerWeapons_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 63
+        y: 22
+        width: 152
+        height: 100
+      spriteId: fc35a22a225264d47979af53f72715fa
+    - name: texPlayerWeapons_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 85
+        y: 5
+        width: 62
+        height: 130
+      spriteId: c7f0ccc5f1651cc4095406d16bd2a6fb
+    - name: texPlayerWeapons_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 85
+        y: -42
+        width: 62
+        height: 171
+      spriteId: 68c9210b78a42374ba85470cf764318c
+    - name: texPlayerWeapons_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 85
+        y: -42
+        width: 62
+        height: 174
+      spriteId: 23cddaf1c40332c43b4282b6d5e66f98
+    - name: texPlayerWeapons_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 93
+        y: 0
+        width: 51
+        height: 52
+      spriteId: 03b7de07db3820a498ba8107e2fd8bc3
+    - name: texPlayerWeapons_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 93
+        y: 0
+        width: 51
+        height: 52
+      spriteId: 019f340520f47fb4ca3d8735a36f7c70
+    - name: texPlayerWeapons_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 93
+        y: -10
+        width: 51
+        height: 71
+      spriteId: e77100776ef13ab4d898ba651e90009e
+    - name: texPlayerWeapons_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 93
+        y: -10
+        width: 51
+        height: 58
+      spriteId: 36ed5dd41befec946888d0720fe9ebe1
+    - name: texPlayerWeapons_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 93
+        y: 0
+        width: 51
+        height: 52
+      spriteId: ddf328487bf51e34482ce1c028243b0e
+    - name: texPlayerWeapons_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 93
+        y: 0
+        width: 51
+        height: 52
+      spriteId: feea0e37f82990d4596f2fa0cc5b8a22
+    - name: texPlayerWeapons_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 93
+        y: 0
+        width: 51
+        height: 52
+      spriteId: f43c4177ce6fd32439368db0334757db
+    - name: texPlayerWeapons_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 91
+        y: -2
+        width: 51
+        height: 52
+      spriteId: cbad189619e004f42a2cff08294d460d
+    - name: texPlayerWeapons_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 95
+        y: 0
+        width: 51
+        height: 52
+      spriteId: 103f38aaf58d93644a7e877168d8533a
+    - name: texPlayerWeapons_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 91
+        y: -2
+        width: 51
+        height: 52
+      spriteId: c02cd287b32c82049adffc33a5670f12
+    - name: texPlayerWeapons_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 41
+        y: 0
+        width: 159
+        height: 22
+      spriteId: 95a34a0f7354be44bbeb2acaf76f73fd
+    - name: texPlayerWeapons_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 41
+        y: 0
+        width: 159
+        height: 22
+      spriteId: 94e5d8dac881d5e4ba6216a810c6a709
+    - name: texPlayerWeapons_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 41
+        y: 0
+        width: 159
+        height: 47
+      spriteId: a75926a72a43174419b71e9668f6aa52
+    - name: texPlayerWeapons_Frame_29
+      frameIndex: 29
+      cellRect:
+        x: 41
+        y: 0
+        width: 158
+        height: 72
+      spriteId: 7ee9876d18f2d934a935f1bef4c1413a
+    - name: texPlayerWeapons_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 41
+        y: 0
+        width: 159
+        height: 73
+      spriteId: d84ba406288efff45961584cead0b087
+    - name: texPlayerWeapons_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 41
+        y: 0
+        width: 158
+        height: 73
+      spriteId: ebf7a34d35e4ce343a9ed3506abb55cd
+    - name: texPlayerWeapons_Frame_32
+      frameIndex: 32
+      cellRect:
+        x: 40
+        y: 0
+        width: 159
+        height: 47
+      spriteId: 776d3e6099f7c9c4193f113fd2c71df1
+    - name: texPlayerWeapons_Frame_33
+      frameIndex: 33
+      cellRect:
+        x: 41
+        y: 0
+        width: 159
+        height: 22
+      spriteId: 77388015b6880514eb31fa8eb0518b14
+    - name: texPlayerWeapons_Frame_34
+      frameIndex: 34
+      cellRect:
+        x: 41
+        y: 0
+        width: 159
+        height: 22
+      spriteId: 665cee5ad84e50d488af582f0178c0e1
+    - name: texPlayerWeapons_Frame_35
+      frameIndex: 35
+      cellRect:
+        x: 58
+        y: 0
+        width: 124
+        height: 72
+      spriteId: cf7cdd7319172454fbc4a8960d6b2b64
+    - name: texPlayerWeapons_Frame_36
+      frameIndex: 36
+      cellRect:
+        x: 99
+        y: 0
+        width: 42
+        height: 86
+      spriteId: 6c777e789ea08f149a916b962adcaeb6
+    - name: texPlayerWeapons_Frame_37
+      frameIndex: 37
+      cellRect:
+        x: 110
+        y: 0
+        width: 19
+        height: 86
+      spriteId: aa49e782fd8ca4548bbdd7b86f7f213d
+    - name: texPlayerWeapons_Frame_38
+      frameIndex: 38
+      cellRect:
+        x: 107
+        y: 0
+        width: 24
+        height: 104
+      spriteId: 7135c12e23860d84388f222a4229b5e2
+    - name: texPlayerWeapons_Frame_39
+      frameIndex: 39
+      cellRect:
+        x: 110
+        y: 0
+        width: 19
+        height: 86
+      spriteId: 33956acd44438ef40a3951dcde224c1d
+    - name: texPlayerWeapons_Frame_40
+      frameIndex: 40
+      cellRect:
+        x: 70
+        y: 0
+        width: 96
+        height: 75
+      spriteId: d7f346913be60214e90f141803dbad72
+    - name: texPlayerWeapons_Frame_41
+      frameIndex: 41
+      cellRect:
+        x: 41
+        y: 0
+        width: 160
+        height: 29
+      spriteId: 4b6b2be663660054dad4642210ac2cff
+    - name: texPlayerWeapons_Frame_42
+      frameIndex: 42
+      cellRect:
+        x: 41
+        y: 0
+        width: 159
+        height: 22
+      spriteId: e614bd84494632b4a8cb0ef07c67518e
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 240, y: 135}

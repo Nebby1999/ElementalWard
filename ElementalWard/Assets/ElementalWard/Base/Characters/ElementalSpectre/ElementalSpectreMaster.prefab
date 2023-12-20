@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3128840680765998317}
   - component: {fileID: 2229859495472857666}
   - component: {fileID: 7110818059703385549}
+  - component: {fileID: 6509823741557486577}
   m_Layer: 0
   m_Name: ElementalSpectreMaster
   m_TagString: Untagged
@@ -79,6 +80,21 @@ MonoBehaviour:
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   awarenessAngle: 360
   awarenessRange: 10
+  OnFirstTargetObtained:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6509823741557486577}
+        m_TargetAssemblyTypeName: ElementalWard.UI.BossBarSpawner, ElementalWard
+        m_MethodName: SpawnBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _currentDriverName: 
 --- !u!114 &2229859495472857666
 MonoBehaviour:
@@ -113,3 +129,16 @@ MonoBehaviour:
   mainState:
     _assemblyQualifiedName: EntityStates.CharacterAI.AIGuardState, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &6509823741557486577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702186268554915921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c27b404a2392d54e8d8b26d7ce6bfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 863887306145548569, guid: 7f59cc498e67d144fa3dd60dd6956c54, type: 3}

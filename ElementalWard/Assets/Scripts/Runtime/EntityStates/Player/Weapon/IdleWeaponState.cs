@@ -6,15 +6,17 @@ using UnityEngine;
 
 namespace EntityStates.Player.Weapon
 {
-    public class IdleWeaponState : BaseCharacterState
+    public class IdleWeaponState : BaseWeaponState
     {
         public WeaponController WeaponController { get; private set; }
 
-        private bool4 _weaponSwitch;
+        private bool3 _weaponSwitch;
         public override void OnEnter()
         {
             base.OnEnter();
             WeaponController = GetComponent<WeaponController>();
+
+            PlayWeaponAnimation("Base", "Idle");
         }
 
         public override void Update()
@@ -24,12 +26,11 @@ namespace EntityStates.Player.Weapon
                 return;
             }
 
-            _weaponSwitch = new bool4
+            _weaponSwitch = new bool3
             {
                 x = CharacterInputBank.weaponSlot1.down,
                 y = CharacterInputBank.weaponSlot2.down,
                 z = CharacterInputBank.weaponSlot3.down,
-                w = CharacterInputBank.weaponSlot4.down,
             };
         }
 
@@ -38,7 +39,7 @@ namespace EntityStates.Player.Weapon
             if (!math.any(_weaponSwitch))
                 return;
 
-            for(int i = 0; i < 4; i++)
+            for(int i = 0; i < 3; i++)
             {
                 if (_weaponSwitch[i])
                 {

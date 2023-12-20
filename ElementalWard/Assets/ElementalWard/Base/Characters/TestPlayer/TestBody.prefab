@@ -395,9 +395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon1: {fileID: 11400000, guid: d94fe3107559be1449f36f8de1b26f79, type: 2}
-  _weapon2: {fileID: 11400000, guid: 58cfc6c2f07a6284c9227dd9c13974cc, type: 2}
-  _weapon3: {fileID: 11400000, guid: e0df220f365d7b3468b96ca3f9acaf5b, type: 2}
-  _weapon4: {fileID: 11400000, guid: 11906938f0512ce498b3756c26361400, type: 2}
+  _weapon2: {fileID: 11400000, guid: e0df220f365d7b3468b96ca3f9acaf5b, type: 2}
+  _weapon3: {fileID: 11400000, guid: 11906938f0512ce498b3756c26361400, type: 2}
 --- !u!114 &3900817627430093398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +764,7 @@ MonoBehaviour:
   groupName: Sword
   hitboxes:
   - {fileID: 2630238930534475826}
-  updateRotation: 0
+  updateRotation: 1
 --- !u!1 &7475562833050368859
 GameObject:
   m_ObjectHideFlags: 0

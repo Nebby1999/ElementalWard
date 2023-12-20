@@ -45,12 +45,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - CharacterBodies
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9dae103542439e24fbe311d875bcf877
-    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.Weapon.Sword.SwordSpinState.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - EntityStateConfigurations
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc563c421bdb1bb4780b1ee355b6376b
     m_Address: ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
     m_ReadOnly: 0
@@ -68,8 +62,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1ca8535b3f71ef54688803a52830232b
-    m_Address: ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
+  - m_GUID: 8070d85c02cf1eb419c3841319c1089f
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/BookAnimController.controller
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -205,6 +199,88 @@ MonoBehaviour:
     m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/ChargeShotgun.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 770484574ee72424089ff11127a87ca0
+    m_Address: ElementalWard/Base/Characters/TestPlayer/texPlayerWeapons.ase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e8a876e692f12540b64242951a5d3a5
+    m_Address: ElementalWard/Base/Characters/TestPlayer/texPlayerWeapons.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7db365bdecc510840af2bb7eca3fcdc8
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Staff_Idle.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96eff12dcd147ee43a214d064475b282
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/StaffAnimController.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd44e6f59cd5e38439bde96ce6254500
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Staff_Charge.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca6dae7dd6ec7924785682c86f4ae10d
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Staff_Fire.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64a7d33c3be017a4bbae2b5acc7eb182
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Book_Idle.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d03a39a09bf1f7f4089dcbd212961757
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Book_Fire.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b908daae68d1f8f4da2130faf33afb30
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Book_Detonate.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ff39afbaca090445b68ce1eb83b8618
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Sword_Idle.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f096197bcf0c9cf4b9b4fbd47c4bdb33
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Sword_Swing.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a211329730fb9441896c10816ba2f74
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Sword_Plunge_Start.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce294fe3b788cc44bbc1ac92b4a9db92
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/Sword_Plunge_Loop.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec41847f3d3f25149bd7fae3088c4356
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Anims/SwordAnimController.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dae103542439e24fbe311d875bcf877
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.Weapon.Sword.SwordSpinState.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6946067ff81af164aba81e69f88b3c70
+    m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Book/EntityStates.Player.Weapon.Book.DetonateOrbs.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - EntityStateConfigurations
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

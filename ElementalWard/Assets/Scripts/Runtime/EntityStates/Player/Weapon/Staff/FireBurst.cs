@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EntityStates.Player.Weapon.Staff
 {
-    public class FireBurst : BaseCharacterState
+    public class FireBurst : BaseWeaponState
     {
         public static int fireCount;
         public static float damageCoefficient;
@@ -40,6 +40,8 @@ namespace EntityStates.Player.Weapon.Staff
                 spreadYawScale = 0,
                 tracerEffect = tracerPrefab,
             };
+
+            PlayWeaponAnimation("Base", "Fire", "attackSpeed", _duration);
         }
 
         public override void FixedUpdate()
@@ -67,7 +69,7 @@ namespace EntityStates.Player.Weapon.Staff
                 instantiationPosition = ray.origin,
                 instantiationRotation = Quaternion.identity
             };
-            data.AddProperty(CommonVFXProperties.Color, Color.white);
+            data.AddProperty(CommonVFXProperties.Color, ElementProvider.Color ?? Color.white);
 
             attack.tracerData = data;
             attack.raycastOrigin = ray.origin;

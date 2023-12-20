@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EntityStates.Player.Weapon.Sword
 {
-    public class SwordPlungeState : BaseCharacterState
+    public class SwordPlungeState : BaseWeaponState
     {
         public static float damageCoefficient;
         public static float procCoefficient;
@@ -33,6 +33,8 @@ namespace EntityStates.Player.Weapon.Sword
                 hitSelf = false,
                 requireLineOfSight = true,
             };
+
+            PlayWeaponAnimation("Base", "Secondary");
         }
 
         private void Detonate()

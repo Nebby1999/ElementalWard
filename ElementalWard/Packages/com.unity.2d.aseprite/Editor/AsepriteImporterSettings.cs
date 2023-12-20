@@ -68,6 +68,13 @@ namespace UnityEditor.U2D.Aseprite
             get => m_GenerateAnimationClips;
             set => m_GenerateAnimationClips = value;
         }
+
+        [SerializeField] bool m_AnimationClipsUseImageComponent;
+        public bool animationClipsUseImageComponent
+        {
+            get => m_AnimationClipsUseImageComponent;
+            set => m_AnimationClipsUseImageComponent = true;
+        }
         
         [SerializeField] bool m_AddSortingGroup;
         public bool addSortingGroup

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031c10f2da8bc8b43a958aa0bf8d12c6, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  _primarySkill: {fileID: 11400000, guid: e89f90f7998407b409562bc2e7c55bf9, type: 2}
-  _secondarySkill: {fileID: 11400000, guid: db3ebba2bda71474198a42497ec3efe4, type: 2}
+  primarySkill: {fileID: 11400000, guid: e89f90f7998407b409562bc2e7c55bf9, type: 2}
+  secondarySkill: {fileID: 11400000, guid: db3ebba2bda71474198a42497ec3efe4, type: 2}
+  controller: {fileID: 9100000, guid: ec41847f3d3f25149bd7fae3088c4356, type: 2}
