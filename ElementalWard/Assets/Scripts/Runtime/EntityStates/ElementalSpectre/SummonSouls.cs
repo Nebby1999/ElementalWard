@@ -75,6 +75,10 @@ namespace EntityStates.ElementalSpectre
                         provider.ElementDef = ElementProvider.ElementDef;
                     }
 
+                    if(CharacterBody.TiedMaster && CharacterBody.TiedMaster.CharacterMasterAI)
+                    {
+                        result.spawnedInstance.GetComponent<CharacterMasterAI>().SetTarget(CharacterBody.TiedMaster.CharacterMasterAI.CurrentTarget);
+                    }
                     if (_hasTracker)
                         _minionTracker.AddMinion(result.body);
                 };

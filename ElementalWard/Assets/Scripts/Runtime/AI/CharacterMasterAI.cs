@@ -92,6 +92,7 @@ namespace ElementalWard
                 _updateStopwatch = 0;
                 Tick(deltaTime);
             }
+            UpdateInputs();
         }
 
         private void Tick(float deltaTime)
@@ -99,7 +100,6 @@ namespace ElementalWard
             EnsureEnemyTarget();
 
             BeginAIDriver(EvaluateDrivers(deltaTime));
-            UpdateInputs();
         }
 
         private void EnsureEnemyTarget()
@@ -159,6 +159,16 @@ namespace ElementalWard
             if (!Body || !BodySkillManager)
                 return null;
 
+            if(currentEvaluation.dominantDriver?.TransitionOnSkillEnd ?? false)
+            {
+                var currentEvaluationSkill = BodySkillManager.GetSkillBySkillSlot(currentEvaluation.dominantDriver.RequiredSkillSlot);
+                if (!currentEvaluationSkill)
+                    return null;
+
+                if (currentEvaluationSkill.IsInSkillState())
+                    return null;
+            }
+
             if (driver.NoRepeat && currentEvaluation.dominantDriver == driver)
                 return null;
 
@@ -168,7 +178,10 @@ namespace ElementalWard
             if(driver.RequiredSkillSlot != SkillSlot.None)
             {
                 GenericSkill skill = BodySkillManager.GetSkillBySkillSlot(driver.RequiredSkillSlot);
-                if (driver.RequireSkillReady && (!skill || !skill.IsReady()))
+                if (!skill)
+                    return null;
+
+                if (driver.RequireSkillReady && !skill.IsReady())
                     return null;
             }
             if (!driver.SelectionRequiresGrounded && BodyMotorController && BodyMotorController.IsGrounded)
@@ -290,6 +303,11 @@ namespace ElementalWard
             return;
         }
 
+        public void SetTarget(AITarget other)
+        {
+            _enemyTarget = new AITarget(other.gameObject);
+        }
+
 
         private void Master_OnBodySpawned(CharacterBody obj)
         {
@@ -333,7 +351,7 @@ namespace ElementalWard
 
             Vector3 rotatedForward = Quaternion.Euler(0, -awarenessAngle * 0.5f, 0) * transform.forward;
 
-            UnityEditor.Handles.DrawSolidArc(transform.position, Vector3.up, rotatedForward, awarenessAngle, awarenessRange);
+            UnityEditor.Handles.DrawWireArc(transform.position, Vector3.up, rotatedForward, awarenessAngle, awarenessRange);
         }
 #endif
         public struct AIInputs
@@ -362,6 +380,7 @@ namespace ElementalWard
             public static AITarget Invalid => new AITarget(null);
             public readonly CharacterBody body;
             public readonly Transform bodyTransform;
+            public readonly GameObject gameObject;
             public bool IsValid
             {
                 get
@@ -434,6 +453,7 @@ namespace ElementalWard
                 if (!targetGameObject)
                     return;
 
+                gameObject = targetGameObject;
                 body = targetGameObject.GetComponent<CharacterBody>();
                 bodyTransform = body.transform;
                 healthComponent = body.HealthComponent;

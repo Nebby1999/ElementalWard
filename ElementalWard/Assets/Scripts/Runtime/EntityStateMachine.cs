@@ -21,6 +21,7 @@ namespace ElementalWard
             public readonly HealthComponent healthComponent;
             public readonly SpriteLocator spriteLocator;
             public readonly IElementProvider elementProvider;
+            public readonly ChildLocator childLocator;
             public CommonComponentLocator(GameObject go)
             {
                 gameObject = go;
@@ -35,6 +36,7 @@ namespace ElementalWard
                 healthComponent = go.GetComponent<HealthComponent>();
                 spriteLocator = go.GetComponent<SpriteLocator>();
                 elementProvider = go.GetComponent<IElementProvider>();
+                childLocator = go.GetComponent<ChildLocator>();
             }
         }
 

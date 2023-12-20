@@ -1,5 +1,6 @@
 ﻿using ElementalWard;
 using KinematicCharacterController;
+using Nebula;
 using UnityEngine;
 
 namespace EntityStates
@@ -19,6 +20,7 @@ namespace EntityStates
         protected HealthComponent HealthComponent => outer.CommonComponents.healthComponent;
         protected SpriteLocator SpriteLocator => outer.CommonComponents.spriteLocator;
         protected IElementProvider ElementProvider => outer.CommonComponents.elementProvider;
+        protected ChildLocator ChildLocator => outer.CommonComponents.childLocator;
 
         public override void OnEnter()
         {

@@ -1,10 +1,12 @@
 using ElementalWard;
+using Nebula;
 using UnityEngine;
 
 namespace EntityStates.ElementalSpectre
 {
     public class StareAttack : BaseCharacterState
     {
+        public static GameObject stareVFX;
         public static float raycastDistance;
         public static float explosionRadius;
         public static float damageCoefficient;
@@ -15,6 +17,10 @@ namespace EntityStates.ElementalSpectre
         private bool _hasFired;
         private CharacterAnimationEvents _animationEvents;
 
+        private Transform _headTransform;
+        private GameObject _stareVFXInstance;
+        private LineRendererHelper _stareVFXRendererHelper;
+        private RaycastHit _raycastHit;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -24,6 +30,18 @@ namespace EntityStates.ElementalSpectre
             if(_animationEvents)
                 _animationEvents.OnAnimationEvent += FireExplosion;
 
+            _headTransform = ChildLocator.FindChild("Head");
+            if(stareVFX && _headTransform)
+            {
+                var vfxData = new VFXData
+                {
+                    instantiationPosition = _headTransform.position,
+                    instantiationRotation = Quaternion.identity
+                };
+                vfxData.AddProperty(CommonVFXProperties.Color, ElementProvider.Color);
+                _stareVFXInstance = FXManager.SpawnVisualFX(stareVFX, vfxData);
+                _stareVFXRendererHelper = _stareVFXInstance.GetComponent<LineRendererHelper>();
+            }
             PlayAnimation("Base", animName, "attackSpeed", _duration);
         }
 
@@ -50,10 +68,30 @@ namespace EntityStates.ElementalSpectre
             }
         }
 
+        private void UpdateRaycastHit()
+        {
+            Ray ray = GetAimRay();
+            if(Physics.Raycast(ray, out _raycastHit, raycastDistance, LayerIndex.CommonMasks.Bullet, QueryTriggerInteraction.UseGlobal))
+            {
+                return;
+            }
+
+            _raycastHit = new RaycastHit
+            {
+                point = ray.direction * raycastDistance
+            };
+        }
+
         public override void Update()
         {
             base.Update();
-            //VFX, have ray between attacker and raycast hit.
+
+            UpdateRaycastHit();
+            if (_stareVFXRendererHelper)
+            {
+                _stareVFXRendererHelper.StartPos = _headTransform ? _headTransform.position : Transform.position;
+                _stareVFXRendererHelper.EndPos = _raycastHit.point;
+            }
         }
         private void Fire()
         {
@@ -74,10 +112,7 @@ namespace EntityStates.ElementalSpectre
                 requireLineOfSight = true
             };
 
-            if (Physics.Raycast(ray, out var hit, raycastDistance, LayerIndex.CommonMasks.Bullet, QueryTriggerInteraction.UseGlobal))
-            {
-                attack.explosionOrigin = hit.point;
-            }
+            attack.explosionOrigin = _raycastHit.point;
             attack.Fire();
         }
 
@@ -86,6 +121,9 @@ namespace EntityStates.ElementalSpectre
             base.OnExit();
             if(_animationEvents)
                 _animationEvents.OnAnimationEvent -= FireExplosion;
+
+            if (_stareVFXInstance)
+                Destroy(_stareVFXInstance);
         }
     }
 }

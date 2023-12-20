@@ -85,6 +85,14 @@ namespace ElementalWard
 
             return SkillDef.CanExecute(this);
         }
+
+        public bool IsInSkillState()
+        {
+            if (!SkillDef)
+                return false;
+
+            return CachedStateMachine.CurrentState.GetType() == (Type)SkillDef.stateType;
+        }
         public bool ExecuteSkillIfReady()
         {
             var canExecute = IsReady();

@@ -146,10 +146,18 @@ namespace EntityStates.CharacterAI
             {
                 _currentSkillMeetsActivationConditions = AI.CurrentTarget.HasLOS(CharacterBody, out var _);
             }
+            else
+            {
+                _currentSkillMeetsActivationConditions = true;
+            }
 
             if(_dominantAIDriver.ActivationRequiresAimTargetLOS)
             {
                 _currentSkillMeetsActivationConditions = AI.DriverEvaluation.aimTarget.HasAimLOS(CharacterBody, out _, out _);
+            }
+            else
+            {
+                _currentSkillMeetsActivationConditions = true;
             }
         }
     }

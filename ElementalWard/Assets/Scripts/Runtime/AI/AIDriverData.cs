@@ -28,6 +28,7 @@ namespace ElementalWard.AI
         [SerializeField] private bool _activationRequiresAimTargetLOS;
 
         [Header("Transition Behaviour")]
+        [SerializeField] private bool _transitionOnSkillEnd;
         [SerializeField] private bool _noRepeat;
 
         public AIDriver CreateDriver()
@@ -51,6 +52,7 @@ namespace ElementalWard.AI
                 SelectionRequiresAimTarget = _selectionRequiresAimTarget,
                 ShouldSprint = _shouldSprint,
                 TargetType = _targetType,
+                TransitionOnSkillEnd = _transitionOnSkillEnd,
                 IsAvailable = true
             };
         }
@@ -103,6 +105,7 @@ namespace ElementalWard.AI
         public bool ActivationRequiresTargetLOS { get; init; }
         public bool ActivationRequiresAimTargetLOS { get; init; }
         public bool NoRepeat { get; init; }
+        public bool TransitionOnSkillEnd { get; init; }
         public bool IsAvailable { get; set; }
 
         public float MinDistanceSqr => MinDistance * MinDistance;

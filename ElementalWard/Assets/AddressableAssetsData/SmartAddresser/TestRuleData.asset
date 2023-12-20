@@ -194,6 +194,7 @@ MonoBehaviour:
             _filters:
               _internalList:
               - rid: 6975382074470432777
+              - rid: 9172620110270300162
         _addressProviderInternal:
           rid: 6975382077004054535
       - _id: 0a8b7678-4c2b-4958-8480-091098c5c82c
@@ -1577,3 +1578,12 @@ MonoBehaviour:
       type: {class: SimplifiedAssetPath, ns: ElementalWard.Editor.SmartAddresser.AddressProviders,
         asm: ElementalWard.Editor}
       data: 
+    - rid: 9172620110270300162
+      type: {class: ExcludeExtension, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
+        asm: ElementalWard.Editor}
+      data:
+        _id: a31d707c-2b18-4c15-86ae-cb41a3cd87ee
+        excludedExtensions:
+          _isListMode: 0
+          _values:
+          - .ase

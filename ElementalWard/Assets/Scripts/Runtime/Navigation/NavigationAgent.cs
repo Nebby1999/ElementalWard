@@ -12,7 +12,7 @@ namespace ElementalWard.Navigation
 {
     public class NavigationAgent : MonoBehaviour
     {
-        public const float TIME_BETWEEN_NAVIGATION_UPDATE = 0.175f;
+        public const float TIME_BETWEEN_NAVIGATION_UPDATE = 0.5f;
         public static List<NavigationAgent> _activeAgents { get; private set; }
         public Vector3 TargetPos => _targetOverride ?? NavigationDataProvider.Target;
         private Vector3? _targetOverride;

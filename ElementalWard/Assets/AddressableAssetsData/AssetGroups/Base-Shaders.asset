@@ -62,6 +62,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 105225bb157ce584d9d1d112ccf8fd60
+    m_Address: ElementalWard/Base/Shaders/FX.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d44e0cd2eea9ff4d8081a28ac50e08d
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/SplitToRGBAndAlpha.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b2afb19ec9c4e446bb8d8b6c143691f
+    m_Address: ElementalWard/Base/Shaders/SubGraphs/ScrollUV.shadersubgraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

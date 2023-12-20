@@ -44,8 +44,13 @@ namespace ElementalWard
             _vfxProperties ??= new Dictionary<string, object>();
             if (_vfxProperties.TryGetValue(propName, out var val))
             {
-                value = (T)val;
-                return true;
+                if(val != null)
+                {
+                    value = (T)val;
+                    return true;
+                }
+                value = default;
+                return false;
             }
             List<string> validProperties = _vfxProperties.Select(k => $"Key=\"{k.Key}\"-Value=\"{k.Value}\"").ToList();
             Debug.LogError($"VFXData does not have a projectile property of name \"{propName}\". Valid VFX properties=\"{string.Join("\n", validProperties)}\"");
