@@ -52,7 +52,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _loadingFinishedScene:
-    m_AssetGUID: 99c9720ab356a0642a771bea13969a05
+    m_AssetGUID: d65c26b744e1c014fab9c98ec353bfee
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -61,6 +61,8 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  inputActionAsset: {fileID: -944628639613478452, guid: 8d6f348ac9e174c4a8289bd2cfae6db9,
+    type: 3}
 --- !u!114 &2871027746177969316
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [assembly: SearchableAttribute.OptIn]
 [assembly: InternalsVisibleTo("ElementalWard.Editor", AllInternalsVisible = true)]
@@ -12,6 +13,7 @@ namespace ElementalWard
 {
     public class ElementalWardApplication : MainGameBehaviour<ElementalWardApplication>
     {
+        public InputActionAsset inputActionAsset;
         public const string APP_NAME = "ElementalWard";
 
         public static Xoroshiro128Plus rng = new Xoroshiro128Plus((ulong)DateTime.Now.Ticks);
@@ -39,6 +41,14 @@ namespace ElementalWard
         {
             yield return InitializeCatalogs();
             SystemInitializerAttribute.Execute();
+
+
+            var map = inputActionAsset.FindActionMap("Player");
+            var overrides = SettingsCollection.PlayerInputOverrides;
+            if (map != null && !overrides.IsNullOrWhiteSpace())
+            {
+                map.LoadBindingOverridesFromJson(overrides);
+            }
             yield break;
         }
 
