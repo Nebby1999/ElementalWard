@@ -26,6 +26,9 @@ MonoBehaviour:
   elementInteractions:
     _assemblyQualifiedName: ElementalWard.ElectricElementInteractions, ElementalWard,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  icon: {fileID: 6441088686165995349, guid: aff15b80a0bbc50409ddc4acd62c0601, type: 3}
+  pickupPrefab: {fileID: 0}
+  affinityFX: {fileID: 0}
   references:
     version: 2
     RefIds: []

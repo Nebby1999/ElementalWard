@@ -10,6 +10,7 @@ namespace ElementalWard
     public class SkillDef : NebulaScriptableObject
     {
         public float baseCooldown;
+        public bool beginCooldownOnStateEnd;
         public uint requiredStock = 1;
         public string entityStateMachineName;
         [SerializableSystemType.RequiredBaseType(typeof(EntityState))]
@@ -17,6 +18,7 @@ namespace ElementalWard
         [SerializableSystemType.RequiredBaseType(typeof(ISkillBehaviourCallback))]
         public SerializableSystemType[] skillBehaviourCallbacks = Array.Empty<SerializableSystemType>();
         public InterruptPriority interruptStrength = InterruptPriority.Any;
+        public Sprite icon;
 
         public void OnAssign(GenericSkill skillSlot)
         {
@@ -87,6 +89,9 @@ namespace ElementalWard
 
         public void OnFixedUpdate(GenericSkill skillSlot)
         {
+            if (beginCooldownOnStateEnd && skillSlot.IsInSkillState())
+                return;
+
             var deltaTime = Time.fixedDeltaTime;
             for(int i = 0; i < skillSlot.SkillBehaviourCallbacks.Length; i++)
             {

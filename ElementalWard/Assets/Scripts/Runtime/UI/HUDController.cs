@@ -1,4 +1,5 @@
 using Nebula;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,10 +19,11 @@ namespace ElementalWard.UI
         private WeaponController _weaponController;
         private HealthComponent _healthComponent;
 
-
+        private HUDBehaviour[] _hudBehaviours = Array.Empty<HUDBehaviour>();
         private void Awake()
         {
             PlayableCharacterMaster.OnPlayableBodySpawned += SetBody;
+            _hudBehaviours = GetComponentsInChildren<HUDBehaviour>();
         }
 
         private void Start()
@@ -53,6 +55,10 @@ namespace ElementalWard.UI
                 _weaponController.OnWeaponUpdated += SetAnimationController;
                 SetAnimationController();
             }
+            foreach(HUDBehaviour behaviour in _hudBehaviours)
+            {
+                behaviour.OnBodyAssigned();
+            }
         }
 
         private void LateUpdate()
@@ -75,6 +81,7 @@ namespace ElementalWard.UI
         private void OnDestroy()
         {
             PlayableCharacterMaster.OnPlayableBodySpawned -= SetBody;
+            
         }
 
         public static HUDController FindController(CharacterBody body)

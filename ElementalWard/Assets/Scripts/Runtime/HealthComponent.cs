@@ -21,6 +21,7 @@ namespace ElementalWard
     {
         public bool IsAlive => CurrentHealth > 0;
         public float CurrentHealth { get; internal set; }
+        public float FullHealth => HealthProvider?.MaxHealth ?? _defaultMaxHealth;
         public IHealthProvider HealthProvider
         {
             get => _healthProvider;

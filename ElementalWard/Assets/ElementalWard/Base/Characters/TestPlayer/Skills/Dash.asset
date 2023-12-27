@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176d1b6e5fab60147ba268c3e7266674, type: 3}
   m_Name: Dash
   m_EditorClassIdentifier: 
-  baseCooldown: 1
+  baseCooldown: 1.5
   requiredStock: 1
   entityStateMachineName: Body
   stateType:
     _assemblyQualifiedName: EntityStates.Player.DashState, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  skillBehaviourCallbacks: []
+  interruptStrength: 0
+  icon: {fileID: 4672394708146917641, guid: 17c9d9ff405a99a42823cea134e5716e, type: 3}
