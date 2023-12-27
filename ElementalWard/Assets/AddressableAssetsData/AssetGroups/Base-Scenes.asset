@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c3507b9cfdd21e24abf1e65e0afbdee0
   m_SerializeEntries:
+  - m_GUID: bb92c185d3b12824f898c039589c1340
+    m_Address: GlobalVolumeProfile.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9bcfc0c0cf2799a4ca7a472860280bcd
     m_Address: Scenes
     m_ReadOnly: 0
@@ -27,18 +32,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d60fc2e6b5761084f81a3e14fe3263cd
-    m_Address: InbetweenScenesLoading.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 017bb06a82373a34799f739ae341ef7c
-    m_Address: GlobalVolumeProfile.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 694ce9e34df26f74c91687ff76bae4c0
     m_Address: GameLoadingScene.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87ca3e96750891e4fbf567c4e27a2ea6
+    m_Address: ReflectionProbe-0.exr
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 272ea28e9e0377d479c3f4b9fb11ed01
+    m_Address: MainMenu_LightningSettings.lighting
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d60fc2e6b5761084f81a3e14fe3263cd
+    m_Address: InbetweenScenesLoading.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -47,8 +57,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bb92c185d3b12824f898c039589c1340
+  - m_GUID: 4453cc8904537914eb973cf34c44358f
+    m_Address: SampleScene_LightingSettings.lighting
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 017bb06a82373a34799f739ae341ef7c
     m_Address: GlobalVolumeProfile.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5078eeece3a8388459417960d12416c1
+    m_Address: LightingData.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

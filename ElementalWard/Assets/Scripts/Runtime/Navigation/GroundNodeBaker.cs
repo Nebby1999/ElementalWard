@@ -178,6 +178,7 @@ namespace ElementalWard.Navigation
                 pathNodeObject.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
                 var collider = pathNodeObject.AddComponent<BoxCollider>();
                 collider.size = Vector3.one * 1.5f * ProviderScale;
+                pathNodeObject.AddComponent<KYS>();
                 Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
                 _collidersForBaking.Add(collider);
             }
@@ -190,7 +191,7 @@ namespace ElementalWard.Navigation
             foreach (var collider in _collidersForBaking)
             {
                 if(collider)
-                    GameObject.DestroyImmediate(collider.gameObject, true);
+                    GameObject.Destroy(collider.gameObject);
             }
             _mover?.Dispose();
         }

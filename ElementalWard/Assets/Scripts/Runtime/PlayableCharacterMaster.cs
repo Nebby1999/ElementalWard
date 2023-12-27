@@ -4,6 +4,7 @@ using Nebula.Console;
 using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace ElementalWard
@@ -23,6 +24,8 @@ namespace ElementalWard
         public static event Action<CharacterBody> OnPlayableBodySpawned;
         public static event Action<PlayableCharacterMaster> OnPlayableCharacterMasterEnabled;
         public static event Action<PlayableCharacterMaster> OnPlayableCharacterMasterDisabled;
+        [SerializeField]
+        private UnityEvent<CharacterBody> OnPlayableBodySpawnedUnityEvent;
 
         private Transform _bodyCameraTransform;
         private InputAction _jumpAction;
@@ -30,7 +33,6 @@ namespace ElementalWard
         private InputAction _primaryAction;
         private InputAction _secondaryAction;
         private InputAction _utilityAction;
-        private InputAction _specialAction;
         private InputAction _weapon1Action;
         private InputAction _weapon2Action;
         private InputAction _weapon3Action;
@@ -58,7 +60,6 @@ namespace ElementalWard
             _primaryAction = map.FindAction(ElementalWardInputGuids.Player.primaryGUID);
             _secondaryAction = map.FindAction(ElementalWardInputGuids.Player.secondaryGUID);
             _utilityAction = map.FindAction(ElementalWardInputGuids.Player.utilityGUID);
-            _specialAction = map.FindAction(ElementalWardInputGuids.Player.specialGUID);
             _weapon1Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot1GUID);
             _weapon2Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot2GUID);
             _weapon3Action = map.FindAction(ElementalWardInputGuids.Player.weaponSlot3GUID);
@@ -82,6 +83,7 @@ namespace ElementalWard
             }
             BodyInputs = body.GetComponent<CharacterInputBank>();
             OnPlayableBodySpawned?.Invoke(body);
+            OnPlayableBodySpawnedUnityEvent?.Invoke(body);
         }
 
         private void Update()
@@ -98,7 +100,6 @@ namespace ElementalWard
                 BodyInputs.primaryButton.PushState(playerInputs.primaryPressed);
                 BodyInputs.secondaryButton.PushState(playerInputs.secondaryPressed);
                 BodyInputs.utilityButton.PushState(playerInputs.utilityPressed);
-                BodyInputs.specialButton.PushState(playerInputs.specialPressed);
                 BodyInputs.weaponSlot1.PushState(playerInputs.weapon1Pressed);
                 BodyInputs.weaponSlot2.PushState(playerInputs.weapon2Pressed);
                 BodyInputs.weaponSlot3.PushState(playerInputs.weapon3Pressed);
@@ -117,7 +118,6 @@ namespace ElementalWard
                 primaryPressed = _primaryAction?.IsPressed() ?? false,
                 secondaryPressed = _secondaryAction?.IsPressed() ?? false,
                 utilityPressed = _utilityAction?.IsPressed() ?? false,
-                specialPressed = _specialAction?.IsPressed() ?? false,
                 weapon1Pressed = _weapon1Action?.IsPressed() ?? false,
                 weapon2Pressed = _weapon2Action?.IsPressed() ?? false,
                 weapon3Pressed = _weapon3Action?.IsPressed() ?? false,
@@ -139,6 +139,12 @@ namespace ElementalWard
         public void OnLook(InputAction.CallbackContext ctx)
         {
             _rawLookInput = ctx.ReadValue<Vector2>();
+        }
+
+        public void OnPause(InputAction.CallbackContext ctx)
+        {
+            PauseManager.Switch();
+
         }
 
         public void OnElementScroll(InputAction.CallbackContext ctx)
@@ -235,11 +241,9 @@ namespace ElementalWard
             public bool primaryPressed;
             public bool secondaryPressed;
             public bool utilityPressed;
-            public bool specialPressed;
             public bool weapon1Pressed;
             public bool weapon2Pressed;
             public bool weapon3Pressed;
-            public bool weapon4Pressed;
         }
     }
 }

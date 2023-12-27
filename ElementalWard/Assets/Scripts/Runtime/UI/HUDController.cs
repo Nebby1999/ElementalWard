@@ -24,6 +24,11 @@ namespace ElementalWard.UI
             PlayableCharacterMaster.OnPlayableBodySpawned += SetBody;
         }
 
+        private void Start()
+        {
+            gameObject.SetActive(false);
+        }
+
         private void OnEnable()
         {
             InstanceTracker.Add(this);

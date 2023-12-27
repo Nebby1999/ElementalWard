@@ -26,6 +26,9 @@ namespace Nebula.UI
         {
             foreach(var inputAction in map)
             {
+                if (inputAction.processors.Contains(nameof(InputRebinderIgnore)))
+                    continue;
+
                 var rebinderInstance = Instantiate(inputRebinderPrefab, container);
                 rebinderInstance.ActionReference = InputActionReference.Create(inputAction);
             }

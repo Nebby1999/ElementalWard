@@ -97,12 +97,12 @@ MonoBehaviour:
           _value: 1
         _assetGroups:
           _internalList:
-          - _id: 32107150-3461-4493-a041-40187c4e4570
+          - _id: 16519397-16b5-40f5-a24f-6792c0c43159
             _name:
-              _value: Default Asset Group
+              _value: New Asset Group
             _filters:
               _internalList:
-              - rid: 6975382076635742208
+              - rid: 9172620286619287556
         _addressProviderInternal:
           rid: 6975382077004054532
       - _id: a07f1260-22c9-4088-8e8f-cce357b63d79
@@ -316,6 +316,21 @@ MonoBehaviour:
               _internalList: []
         _addressProviderInternal:
           rid: 1723081152090341378
+      - _id: 2474e677-8fd7-45a2-9a9c-2cd4f8c1e699
+        _addressableGroup: {fileID: 11400000, guid: 52a1b5ad48a486e4086ba87747303a3f,
+          type: 2}
+        _control:
+          _value: 1
+        _assetGroups:
+          _internalList:
+          - _id: bea5932b-a7ac-4366-9c5d-e0ed1c703d54
+            _name:
+              _value: Default Asset Group
+            _filters:
+              _internalList:
+              - rid: 9172620286619287555
+        _addressProviderInternal:
+          rid: 9172620286619287554
     _labelRules:
       _internalList:
       - _id: 84e1125a-e22f-44a7-84f5-7243aab4eb27
@@ -587,13 +602,6 @@ MonoBehaviour:
           _isListMode: 0
           _values:
           - {fileID: 102900000, guid: 120f62710cddc0a4d9671bac10f1d03a, type: 3}
-    - rid: 6975382076635742208
-      type: {class: NonFolderAssetsInFolder, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
-        asm: ElementalWard.Editor}
-      data:
-        _id: 1bca23fc-15fa-4dfc-84b9-df17a38029b9
-        _folderAsset: {fileID: 102900000, guid: 80c54d70da83b5343ac88b2fe2793aeb,
-          type: 3}
     - rid: 6975382076635742210
       type: {class: NonFolderAssetsInFolder, ns: ElementalWard.Editor.SmartAddresser.AssetFilters,
         asm: ElementalWard.Editor}
@@ -882,13 +890,15 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/BossHPBar.prefab
         - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreBody.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreMaster.prefab
         - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireballProjectile.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/Stare.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingBody.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
-        - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/Book/ExplodingOrb.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/ExplodingBoltProjectile.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/HomingBolt.prefab
@@ -926,6 +936,11 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/InputRebinder.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/LabeledSlider.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/Options.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/PauseMenu.prefab
         - Assets/Scripts/Editor/Assets/NewBossRoom.prefab
         - Assets/Scripts/Editor/Assets/NewEntranceRoom.prefab
         - Assets/Scripts/Editor/Assets/NewRoom.prefab
@@ -1142,13 +1157,15 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/BossHPBar.prefab
         - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreBody.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreMaster.prefab
         - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireballProjectile.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/Stare.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingBody.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
-        - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/Book/ExplodingOrb.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/ExplodingBoltProjectile.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/HomingBolt.prefab
@@ -1186,6 +1203,11 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/InputRebinder.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/LabeledSlider.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/Options.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/PauseMenu.prefab
         - Assets/Scripts/Editor/Assets/NewBossRoom.prefab
         - Assets/Scripts/Editor/Assets/NewEntranceRoom.prefab
         - Assets/Scripts/Editor/Assets/NewRoom.prefab
@@ -1500,13 +1522,15 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Stairs_Ramp_Low.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Ramp_Small.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Steps_Small.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/BossHPBar.prefab
         - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreBody.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/ElementalSpectreMaster.prefab
         - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/HomingFireballProjectile.prefab
+        - Assets/ElementalWard/Base/Characters/ElementalSpectre/Skills/Stare.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingBody.prefab
         - Assets/ElementalWard/Base/Characters/Starvling/StarvlingMaster.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/GenericExplosion.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/LineRendererTest.prefab
-        - Assets/ElementalWard/Base/Characters/TestPlayer/ProjectileTest.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/Book/ExplodingOrb.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/ExplodingBoltProjectile.prefab
         - Assets/ElementalWard/Base/Characters/TestPlayer/Skills/EnchantedCrossbow/HomingBolt.prefab
@@ -1544,6 +1568,11 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/InputRebinder.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/LabeledSlider.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/Options.prefab
+        - Assets/ElementalWard/Base/UI/Prefabs/PauseMenu.prefab
         - Assets/Scripts/Editor/Assets/NewBossRoom.prefab
         - Assets/Scripts/Editor/Assets/NewEntranceRoom.prefab
         - Assets/Scripts/Editor/Assets/NewRoom.prefab
@@ -1587,3 +1616,31 @@ MonoBehaviour:
           _isListMode: 0
           _values:
           - .ase
+    - rid: 9172620286619287554
+      type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules,
+        asm: SmartAddresser.Editor}
+      data:
+        _source: 2
+        _replaceWithRegex: 0
+        _pattern: 
+        _replacement: 
+    - rid: 9172620286619287555
+      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
+        asm: SmartAddresser.Editor}
+      data:
+        _id: ccd05a3a-1388-4b3a-81bd-c33bd9ba145e
+        _folderTargetingMode: 0
+        _object:
+          _isListMode: 0
+          _values:
+          - {fileID: 0}
+    - rid: 9172620286619287556
+      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
+        asm: SmartAddresser.Editor}
+      data:
+        _id: 69e03da4-c4c9-4062-a2f7-f70c7637ccf8
+        _folderTargetingMode: 2
+        _object:
+          _isListMode: 0
+          _values:
+          - {fileID: 102900000, guid: 4046bd7885990e04a8bb34262889e16b, type: 3}

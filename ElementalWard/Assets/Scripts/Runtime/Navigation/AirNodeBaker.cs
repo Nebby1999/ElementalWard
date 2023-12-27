@@ -159,7 +159,7 @@ namespace ElementalWard.Navigation
             foreach(var collider in _collidersForBaking)
             {
                 if (collider)
-                    GameObject.DestroyImmediate(collider.gameObject, true);
+                    GameObject.Destroy(collider.gameObject);
             }
             _mover?.Dispose();
         }
@@ -184,6 +184,7 @@ namespace ElementalWard.Navigation
                 var collider = pathNodeObject.AddComponent<CapsuleCollider>();
                 collider.radius = 0.5f * ProviderScale;
                 collider.height = 2 * ProviderScale;
+                pathNodeObject.AddComponent<KYS>();
                 Physics.IgnoreCollision(_mover.MoverCharacterController, collider, true);
                 _collidersForBaking.Add(collider);
             }

@@ -61,7 +61,7 @@ namespace Nebula
 
             //Special loading logic should happen only on runtime, so we're ommiting this when loading from the editor.
             //By ommiting this, we can load any scene and theoretically have entity states and the like running properly.
-#if !UNITY_EDITOR
+#if UNITY_EDITOR
             var sceneName = SceneManager.GetActiveScene().name;
             var address = sceneName + ".unity";
 #endif
@@ -83,7 +83,7 @@ namespace Nebula
 
             //Special loading logic should happen only on runtime, so we're ommiting this when loading from the editor.
             //By ommiting this, we can load any scene and theoretically have entity states and the like running properly.
-#if !UNITY_EDITOR
+#if UNITY_EDITOR
             asyncOp = Addressables.LoadSceneAsync(address);
             while (!asyncOp.IsDone)
                 yield return new WaitForEndOfFrame();

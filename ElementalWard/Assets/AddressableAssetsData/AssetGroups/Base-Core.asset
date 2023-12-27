@@ -28,6 +28,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9da0ec0726fff5a4c8199c37c0b9b116
+    m_Address: ElementalWard/Base/Core/Font/Nebscript.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8d6f348ac9e174c4a8289bd2cfae6db9
     m_Address: ElementalWard/Base/Core/ElementalWardInput.inputactions
     m_ReadOnly: 0
@@ -54,23 +59,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a39892892f75ca947a718c47888ec5a7
-    m_Address: ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d8fe70ca243df29478045eae955754ec
     m_Address: ElementalWard/Base/Core/BETA_LOGO.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9da0ec0726fff5a4c8199c37c0b9b116
-    m_Address: ElementalWard/Base/Core/Font/Nebscript.ttf
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d1dd584b12c31804dac48be952763c22
-    m_Address: ElementalWard/Base/Core/Font/Nebscript_copy.png
+  - m_GUID: a39892892f75ca947a718c47888ec5a7
+    m_Address: ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -79,13 +74,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0164eafa30f1eff4a8f2a63afbb0d267
-    m_Address: ElementalWard/Base/Core/Font/Nebscript.fontsettings
+  - m_GUID: e1fe3cfb24430bb48b28932221fd4c0c
+    m_Address: ElementalWard/Base/Core/Font/Nebscript SDF.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e1fe3cfb24430bb48b28932221fd4c0c
-    m_Address: ElementalWard/Base/Core/Font/Nebscript SDF.asset
+  - m_GUID: d1dd584b12c31804dac48be952763c22
+    m_Address: ElementalWard/Base/Core/Font/Nebscript_copy.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0164eafa30f1eff4a8f2a63afbb0d267
+    m_Address: ElementalWard/Base/Core/Font/Nebscript.fontsettings
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

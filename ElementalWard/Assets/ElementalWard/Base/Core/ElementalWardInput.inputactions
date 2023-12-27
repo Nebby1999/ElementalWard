@@ -69,15 +69,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Special",
-                    "type": "Button",
-                    "id": "4055a09a-f132-44d5-966d-a092ffa26753",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ElementScroll",
                     "type": "Value",
                     "id": "90496791-75a5-486f-a739-1442f5dcf45d",
@@ -110,6 +101,15 @@
                     "id": "cd5465ea-f1df-4374-9636-4935d0a9feff",
                     "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "5cb0f34b-b040-49a5-b9db-34d360f5198f",
+                    "expectedControlType": "Button",
+                    "processors": "InputRebinderIgnore",
                     "interactions": "",
                     "initialStateCheck": false
                 }
@@ -249,17 +249,6 @@
                 },
                 {
                     "name": "",
-                    "id": "7f57fdc9-0156-43e7-ba7e-0cff4bd79083",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Special",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "cc37b0a7-cd0d-41a0-9df6-30aef365084b",
                     "path": "<Keyboard>/1",
                     "interactions": "",
@@ -288,6 +277,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "WeaponSlot3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "924f6418-ff6c-4560-afe2-91315e0481ca",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

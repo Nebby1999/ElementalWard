@@ -22,28 +22,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f056ca2ed719bc14d8ef5b81ac3770a2
-    m_Address: ElementalWard/Base/Common/FXTextures/texLightning.png
+  - m_GUID: 5df25f955332ed842b71a7f0c5285308
+    m_Address: ElementalWard/Base/Common
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e1c70adc4e795594e9690bfb268565a7
-    m_Address: ElementalWard/Base/Common/FXTextures/texPixelParticle.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 65e24e525afbe884696cf5c32901a9b9
-    m_Address: ElementalWard/Base/Common/FXTextures/texSwirly.png
+  - m_GUID: dc719cd69f3db9a47a545ee4e0c93ff0
+    m_Address: ElementalWard/Base/Common/FXTextures/texRampTest.psd
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9aa7c7ebddb709f41abd1e6c06feab59
     m_Address: ElementalWard/Base/Common/FXTextures/texSplat.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5df25f955332ed842b71a7f0c5285308
-    m_Address: ElementalWard/Base/Common
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -57,8 +47,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dc719cd69f3db9a47a545ee4e0c93ff0
-    m_Address: ElementalWard/Base/Common/FXTextures/texRampTest.psd
+  - m_GUID: 65e24e525afbe884696cf5c32901a9b9
+    m_Address: ElementalWard/Base/Common/FXTextures/texSwirly.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1c70adc4e795594e9690bfb268565a7
+    m_Address: ElementalWard/Base/Common/FXTextures/texPixelParticle.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f056ca2ed719bc14d8ef5b81ac3770a2
+    m_Address: ElementalWard/Base/Common/FXTextures/texLightning.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
