@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7637794846450996917}
   - component: {fileID: 7342703876500854070}
   - component: {fileID: 8925966596371757928}
+  - component: {fileID: 369750102347311234}
   m_Layer: 0
   m_Name: TestMaster
   m_TagString: Untagged
@@ -205,10 +206,6 @@ MonoBehaviour:
     m_ActionName: Player/Utility[/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4055a09a-f132-44d5-966d-a092ffa26753
-    m_ActionName: Player/Special[/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: d7558ea7-0f10-4d94-baa2-d3149fdcea36
     m_ActionName: Player/WeaponSlot1[/Keyboard/1]
   - m_PersistentCalls:
@@ -240,3 +237,15 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &369750102347311234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637794846450996916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990a90162b529a14bb524280567fdf0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -16,7 +16,77 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: a130076e80b29a6478b7017a2e9e4f4c
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: cfc7321ec46a1e84e9223dcbd180a877
+    m_Address: ElementalWard/Base/UI/Prefabs/PauseMenu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: def643d44b4522d499266753cf69d962
+    m_Address: ElementalWard/Base/UI/Textures/texStoneBarWide.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ceac07cc035fce2428b986ae0ef30350
+    m_Address: ElementalWard/Base/UI/Textures/texHUDIcon.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2db95da202859754c810460fd78d9e51
+    m_Address: ElementalWard/Base/UI/Textures/texStoneButton.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1beac0e882fc23340b0abe2930c6216c
+    m_Address: ElementalWard/Base/UI/Prefabs/LabeledSlider.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6517b8e401ccd444e89684b0095090fd
+    m_Address: ElementalWard/Base/UI/Textures/WoodenSign.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4459590973f9d9449c453a3eb9aea5f
+    m_Address: ElementalWard/Base/UI/Prefabs/GenericButton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 842a594cc8852dd4e8896cb80ac94c91
+    m_Address: ElementalWard/Base/UI/Prefabs/InputRebinder.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a34bac5e6b3db3e4aa6d6da8452beab7
+    m_Address: ElementalWard/Base/UI/Textures/StoneButton_Wide.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1589c4f4452a9844b9781e3ad56569a
+    m_Address: ElementalWard/Base/UI/Textures/WoodenBar.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01cf92b71a7955c4f91610da2c610bfd
+    m_Address: ElementalWard/Base/UI/Textures/texHPManaBar.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0fb826de2f9ac8489d7310a8ebb796b
+    m_Address: ElementalWard/Base/UI/Prefabs/Options.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0eb5505a10ff494499d078e3d1eba25
+    m_Address: ElementalWard/Base/UI/Textures/texSlider.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4046bd7885990e04a8bb34262889e16b
+    m_Address: ElementalWard/Base/UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

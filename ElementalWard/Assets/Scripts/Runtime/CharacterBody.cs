@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 namespace ElementalWard
 {
-    public class CharacterBody : MonoBehaviour, IHealthProvider, IManaProvider, ILifeBehaviour, IOnTakeDamage
+    public class CharacterBody : MonoBehaviour, IHealthProvider, IManaProvider, ILifeBehaviour, IOnTakeDamage, IInventoryProvider
     {
         public LocalizedString bodyName;
 
@@ -42,6 +42,7 @@ namespace ElementalWard
         public CharacterInputBank InputBank { get; private set; }
         public HealthComponent HealthComponent { get; private set; }
         public ManaComponent ManaComponent { get; private set; }
+        public Inventory Inventory => TiedMaster ? TiedMaster.Inventory : null;
         public bool IsSprinting
         {
             get => _isSprinting;

@@ -24,6 +24,7 @@ namespace ElementalWard
         public CharacterBody CurrentBody { get; private set; }
         public CharacterMasterAI CharacterMasterAI { get; private set; }
         public PlayableCharacterMaster PlayableCharacterMaster { get; private set; }
+        public Inventory Inventory { get; private set; }
         public MasterIndex MasterIndex { get; internal set; }
         internal bool IsGod { get; set; }
         TeamIndex ITeamProvider.TeamIndex
@@ -57,6 +58,7 @@ namespace ElementalWard
         {
             CharacterMasterAI = GetComponent<CharacterMasterAI>();
             PlayableCharacterMaster = GetComponent<PlayableCharacterMaster>();
+            Inventory = GetComponent<Inventory>();
         }
         private void Start()
         {

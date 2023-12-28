@@ -96,13 +96,7 @@ MonoBehaviour:
         _control:
           _value: 1
         _assetGroups:
-          _internalList:
-          - _id: 16519397-16b5-40f5-a24f-6792c0c43159
-            _name:
-              _value: New Asset Group
-            _filters:
-              _internalList:
-              - rid: 9172620286619287556
+          _internalList: []
         _addressProviderInternal:
           rid: 6975382077004054532
       - _id: a07f1260-22c9-4088-8e8f-cce357b63d79
@@ -330,7 +324,7 @@ MonoBehaviour:
               _internalList:
               - rid: 9172620286619287555
         _addressProviderInternal:
-          rid: 9172620286619287554
+          rid: 9172620329654943746
     _labelRules:
       _internalList:
       - _id: 84e1125a-e22f-44a7-84f5-7243aab4eb27
@@ -907,6 +901,7 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Characters/WanderingSoul/Skills/BoneSpikeProjectile.prefab
         - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulBody.prefab
         - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulMaster.prefab
+        - Assets/ElementalWard/Base/Common/GenericPickupController.prefab
         - Assets/ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
         - Assets/ElementalWard/Base/Core/ElementalWardApplication.prefab
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
@@ -1174,6 +1169,7 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Characters/WanderingSoul/Skills/BoneSpikeProjectile.prefab
         - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulBody.prefab
         - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulMaster.prefab
+        - Assets/ElementalWard/Base/Common/GenericPickupController.prefab
         - Assets/ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
         - Assets/ElementalWard/Base/Core/ElementalWardApplication.prefab
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
@@ -1539,6 +1535,7 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Characters/WanderingSoul/Skills/BoneSpikeProjectile.prefab
         - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulBody.prefab
         - Assets/ElementalWard/Base/Characters/WanderingSoul/WanderingSoulMaster.prefab
+        - Assets/ElementalWard/Base/Common/GenericPickupController.prefab
         - Assets/ElementalWard/Base/Core/DamageNumbers/DefaultParticleTextSystem.prefab
         - Assets/ElementalWard/Base/Core/ElementalWardApplication.prefab
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
@@ -1616,31 +1613,17 @@ MonoBehaviour:
           _isListMode: 0
           _values:
           - .ase
-    - rid: 9172620286619287554
-      type: {class: AssetPathBasedAddressProvider, ns: SmartAddresser.Editor.Core.Models.LayoutRules.AddressRules,
-        asm: SmartAddresser.Editor}
-      data:
-        _source: 2
-        _replaceWithRegex: 0
-        _pattern: 
-        _replacement: 
     - rid: 9172620286619287555
       type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
         asm: SmartAddresser.Editor}
       data:
         _id: ccd05a3a-1388-4b3a-81bd-c33bd9ba145e
-        _folderTargetingMode: 0
-        _object:
-          _isListMode: 0
-          _values:
-          - {fileID: 0}
-    - rid: 9172620286619287556
-      type: {class: ObjectBasedAssetFilter, ns: SmartAddresser.Editor.Core.Models.Shared.AssetGroups.AssetFilterImpl,
-        asm: SmartAddresser.Editor}
-      data:
-        _id: 69e03da4-c4c9-4062-a2f7-f70c7637ccf8
         _folderTargetingMode: 2
         _object:
           _isListMode: 0
           _values:
           - {fileID: 102900000, guid: 4046bd7885990e04a8bb34262889e16b, type: 3}
+    - rid: 9172620329654943746
+      type: {class: SimplifiedAssetPath, ns: ElementalWard.Editor.SmartAddresser.AddressProviders,
+        asm: ElementalWard.Editor}
+      data: 
