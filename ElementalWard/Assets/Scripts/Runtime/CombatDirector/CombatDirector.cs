@@ -5,9 +5,9 @@ namespace ElementalWard
 {
     public class CombatDirector : MonoBehaviour
     {
-        private static readonly FloatMinMax CREDIT_GAIN_RANGE = new FloatMinMax(10, 50);
-        private static readonly FloatMinMax CREDIT_GAIN_INTERVAL = new FloatMinMax(10, 30);
-        private static readonly FloatMinMax SPAWN_RANGE = new FloatMinMax(25, 50);
+        private static readonly FloatMinMax CREDIT_GAIN_RANGE = new FloatMinMax(20, 100);
+        private static readonly FloatMinMax CREDIT_GAIN_INTERVAL = new FloatMinMax(5, 20);
+        private static readonly FloatMinMax SPAWN_RANGE = new FloatMinMax(10, 40);
         private static readonly FloatMinMax REROLL_RANGE = new FloatMinMax(5, 10);
 
         public ulong DungeonFloor { get => _dungeonFloor; private set => _dungeonFloor = value; }

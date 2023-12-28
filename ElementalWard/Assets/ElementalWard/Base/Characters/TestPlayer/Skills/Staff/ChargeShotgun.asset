@@ -15,6 +15,7 @@ MonoBehaviour:
   baseCooldown: 5
   beginCooldownOnStateEnd: 1
   requiredStock: 1
+  requiredMana: 10
   entityStateMachineName: Weapon
   stateType:
     _assemblyQualifiedName: EntityStates.Player.Weapon.Staff.ChargeShotgun, ElementalWard,

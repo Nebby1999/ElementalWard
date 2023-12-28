@@ -12,6 +12,7 @@ namespace ElementalWard
         public float baseCooldown;
         public bool beginCooldownOnStateEnd;
         public uint requiredStock = 1;
+        public float requiredMana;
         public string entityStateMachineName;
         [SerializableSystemType.RequiredBaseType(typeof(EntityState))]
         public SerializableSystemType stateType;
@@ -43,6 +44,12 @@ namespace ElementalWard
 
         public bool CanExecute(GenericSkill skillSlot)
         {
+            if(skillSlot.ManaComponent && requiredMana > 0)
+            {
+                var manaComponent = skillSlot.ManaComponent;
+                if (!(manaComponent.CurrentMana > requiredMana))
+                    return false;
+            }
             if(skillSlot.Stock >= requiredStock && skillSlot.CooldownTimer <= 0)
             {
                 bool canInterruptState = skillSlot.CachedStateMachine.CanInterruptState(interruptStrength);
@@ -85,6 +92,8 @@ namespace ElementalWard
             stateMachine.SetNextState(state);
             skillSlot.Stock--;
             skillSlot.CooldownTimer = baseCooldown;
+            if (skillSlot.ManaComponent && requiredMana > 0)
+                skillSlot.ManaComponent.ConsumeMana(requiredMana);
         }
 
         public void OnFixedUpdate(GenericSkill skillSlot)

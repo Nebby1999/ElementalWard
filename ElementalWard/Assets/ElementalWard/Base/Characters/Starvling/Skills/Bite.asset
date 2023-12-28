@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Bite
   m_EditorClassIdentifier: 
   baseCooldown: 1
+  beginCooldownOnStateEnd: 0
   requiredStock: 1
+  requiredMana: 0
   entityStateMachineName: Body
   stateType:
     _assemblyQualifiedName: EntityStates.Starvling.Bite, ElementalWard, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   skillBehaviourCallbacks: []
   interruptStrength: 1
+  icon: {fileID: 0}

@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 3775747226426235318}
   - component: {fileID: 8476049896921157341}
   - component: {fileID: 3169269267638083133}
+  - component: {fileID: 695840016702221726}
   - component: {fileID: -4341213335146336977}
   - component: {fileID: -7556436084046398385}
   - component: {fileID: 1757390674160115001}
@@ -345,21 +346,21 @@ MonoBehaviour:
     m_WaitForCompletion: 1
     m_LocalVariables: []
   _baseHealth: 100
-  _baseShield: 0
-  _baseRegen: 1
+  _baseHealthRegen: 1
+  _baseMana: 50
+  _baseManaRegen: 2
   _baseMovementSpeed: 14
   _baseAttackSpeed: 1
   _baseDamage: 10
-  _baseArmor: 0
   _jumpStrength: 15
   autoCalculateLevelStats: 1
   _lvlHealth: 20
-  _lvlShield: 0
-  _lvlRegen: 0.1
+  _lvlHealthRegen: 0.1
+  _lvlMana: 5
+  _lvlManaRegen: 0.1
   _lvlMovementSpeed: 0
   _lvlAttackSpeed: 0
   _lvlDamage: 1.5
-  _lvlArmor: 0
   aimOriginTransform: {fileID: 2525960900767664063}
   sprintSpeedMultiplier: 1.5
   references:
@@ -391,6 +392,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultTeam: {fileID: 11400000, guid: 5f60cf8be3e00b04dbc78fb2486f8614, type: 2}
+--- !u!114 &695840016702221726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2905e0ff00262184ab2080821ab7c29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultMaxMana: 50
 --- !u!114 &-4341213335146336977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,7 +640,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3775747226426235317}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

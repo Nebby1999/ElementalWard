@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 0
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638392110735497269
+  platformSettingsDirtyTick: 638393602224215650
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -141,7 +141,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Fill
+  - name: HealthFill
     originalName: 
     pivot: {x: 0.5, y: -0.3}
     alignment: 9
@@ -152,7 +152,7 @@ ScriptedImporter:
       y: 28
       width: 116
       height: 10
-    spriteID: 2e6b0ea63b1e91b44a5c6478f2ccbfb8
+    spriteID: 7ff49498e16b72442bfde560ab8929df
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -161,6 +161,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 28}
+  - name: ManaFill
+    originalName: 
+    pivot: {x: 0.5, y: -0.3}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 28
+      width: 116
+      height: 10
+    spriteID: 7fbf8c3ab3acaa343a6fb9d5ac1240cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 128, y: 28}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -181,20 +201,37 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   - layerIndex: 1
-    guid: -1029745150
-    name: Fill
+    guid: 1226772874
+    name: HealthFill
     layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Fill
+    - name: HealthFill
       frameIndex: 0
       cellRect:
         x: 6
         y: 3
         width: 116
         height: 10
-      spriteId: 2e6b0ea63b1e91b44a5c6478f2ccbfb8
+      spriteId: 7ff49498e16b72442bfde560ab8929df
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -847487298
+    name: ManaFill
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: ManaFill
+      frameIndex: 0
+      cellRect:
+        x: 6
+        y: 3
+        width: 116
+        height: 10
+      spriteId: 7fbf8c3ab3acaa343a6fb9d5ac1240cf
     linkedCells: []
     parentIndex: -1
   platformSettings:

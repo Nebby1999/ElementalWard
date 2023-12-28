@@ -34,10 +34,12 @@ namespace ElementalWard
         public uint Stock { get; set; }
         public ISkillBehaviourCallback[] SkillBehaviourCallbacks { get; set; } = Array.Empty<ISkillBehaviourCallback>();
         public EntityStateMachine CachedStateMachine { get; private set; }
+        public ManaComponent ManaComponent { get; private set; }
 
         private void Awake()
         {
-            SkillDef = _defaultSkill;   
+            SkillDef = _defaultSkill;
+            ManaComponent = GetComponent<ManaComponent>();
         }
 
         private void FixedUpdate()

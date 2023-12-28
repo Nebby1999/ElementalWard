@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: FireBurst
   m_EditorClassIdentifier: 
   baseCooldown: 0
+  beginCooldownOnStateEnd: 0
   requiredStock: 1
+  requiredMana: 3
   entityStateMachineName: Weapon
   stateType:
     _assemblyQualifiedName: EntityStates.Player.Weapon.Staff.FireBurst, ElementalWard,

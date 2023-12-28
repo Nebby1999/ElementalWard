@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 4687771136404633515}
   - component: {fileID: 6616821231843013767}
   - component: {fileID: 4223593420474213238}
+  - component: {fileID: 6921301389475147597}
   - component: {fileID: 4782624858085695039}
   - component: {fileID: 1637553487392259605}
   - component: {fileID: 1571667998473302451}
@@ -185,21 +186,21 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   _baseHealth: 50
-  _baseShield: 0
-  _baseRegen: 0
+  _baseHealthRegen: 0
+  _baseMana: 0
+  _baseManaRegen: 0
   _baseMovementSpeed: 5
   _baseAttackSpeed: 1
   _baseDamage: 10
-  _baseArmor: 0
   _jumpStrength: 0
   autoCalculateLevelStats: 1
   _lvlHealth: 10
-  _lvlShield: 0
-  _lvlRegen: 0
+  _lvlHealthRegen: 0
+  _lvlMana: 0
+  _lvlManaRegen: 0
   _lvlMovementSpeed: 0
   _lvlAttackSpeed: 0
   _lvlDamage: 1.5
-  _lvlArmor: 0
   aimOriginTransform: {fileID: 0}
   sprintSpeedMultiplier: 1.5
   references:
@@ -218,6 +219,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _elementDef: {fileID: 0}
+--- !u!114 &6921301389475147597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2905e0ff00262184ab2080821ab7c29d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultMaxMana: 0
 --- !u!114 &4782624858085695039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619d13cc3dea8fc469daeddd2c3fdd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultMaxHealth: 100
+  _defaultMaxHealth: 50
   hurtBoxGroup: {fileID: 3929800432298406685}
 --- !u!114 &1637553487392259605
 MonoBehaviour:
@@ -433,7 +447,7 @@ MonoBehaviour:
   MaxVelocityForLedgeSnap: 0
   MaxStableDenivelationAngle: 180
   InteractiveRigidbodyHandling: 1
-  RigidbodyInteractionType: 1
+  RigidbodyInteractionType: 0
   SimulatedCharacterMass: 1
   PreserveAttachedRigidbodyMomentum: 1
   HasPlanarConstraint: 0
@@ -490,7 +504,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5338726505615578528}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

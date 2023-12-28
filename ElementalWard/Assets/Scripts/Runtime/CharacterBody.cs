@@ -4,43 +4,44 @@ using UnityEngine;
 using UnityEngine.Localization;
 namespace ElementalWard
 {
-    public class CharacterBody : MonoBehaviour, IHealthProvider, ILifeBehaviour, IOnTakeDamage
+    public class CharacterBody : MonoBehaviour, IHealthProvider, IManaProvider, ILifeBehaviour, IOnTakeDamage
     {
         public LocalizedString bodyName;
 
         [SerializeField] private float _baseHealth;
-        [SerializeField] private float _baseShield;
-        [SerializeField] private float _baseRegen;
+        [SerializeField] private float _baseHealthRegen;
+        [SerializeField] private float _baseMana;
+        [SerializeField] private float _baseManaRegen;
         [SerializeField] private float _baseMovementSpeed;
         [SerializeField] private float _baseAttackSpeed;
         [SerializeField] private float _baseDamage;
-        [SerializeField] private float _baseArmor;
         [SerializeField] private float _jumpStrength;
 
         public bool autoCalculateLevelStats;
 
         [SerializeField] private float _lvlHealth;
-        [SerializeField] private float _lvlShield;
-        [SerializeField] private float _lvlRegen;
+        [SerializeField] private float _lvlHealthRegen;
+        [SerializeField] private float _lvlMana;
+        [SerializeField] private float _lvlManaRegen;
         [SerializeField] private float _lvlMovementSpeed;
         [SerializeField] private float _lvlAttackSpeed;
         [SerializeField] private float _lvlDamage;
-        [SerializeField] private float _lvlArmor;
         [SerializeField] private Transform aimOriginTransform;
         [SerializeField] private float sprintSpeedMultiplier;
 
         public float SprintSpeedMultiplier => sprintSpeedMultiplier;
         public float MaxHealth { get; private set; }
-        public float MaxShield { get; private set; }
-        public float Regen { get; private set; }
+        public float HealthRegen { get; private set; }
+        public float MaxMana { get; private set; }
+        public float ManaRegen { get; private set; }
         public float MovementSpeed { get; private set; }
         public float AttackSpeed { get; private set; }
         public float Damage { get; private set; }
-        public float Armor { get; private set; }
         public float JumpStrength { get; private set; }
         public uint Level => TiedMaster.AsValidOrNull()?.Level ?? 1;
         public CharacterInputBank InputBank { get; private set; }
         public HealthComponent HealthComponent { get; private set; }
+        public ManaComponent ManaComponent { get; private set; }
         public bool IsSprinting
         {
             get => _isSprinting;
@@ -76,6 +77,7 @@ namespace ElementalWard
         {
             InputBank = GetComponent<CharacterInputBank>();
             HealthComponent = GetComponent<HealthComponent>();
+            ManaComponent = GetComponent<ManaComponent>();
             TeamComponent = GetComponent<TeamComponent>();
             _buffController = GetComponent<BuffController>();
 
@@ -90,6 +92,8 @@ namespace ElementalWard
             RecalculateStats();
             HealthComponent.HealthProvider = this;
             HealthComponent.CurrentHealth = MaxHealth;
+            ManaComponent.ManaProvider = this;
+            ManaComponent.CurrentMana = MaxMana;
         }
 
         public void RecalculateStats()
@@ -107,22 +111,27 @@ namespace ElementalWard
 
             float baseStat = _baseHealth + args.baseHealthAdd;
             float levelStat = _lvlHealth * levelMinusOne;
-            float finalStat = (baseStat + levelStat) * (1 + args.healthMultAdd);
+            float finalStat = (baseStat + levelStat) * args.healthMultAdd;
             MaxHealth = finalStat;
 
-            baseStat = _baseRegen + args.baseRegenAdd;
-            levelStat = _lvlRegen * levelMinusOne;
-            finalStat = (baseStat + levelStat) * (1 + args.regenMultAdd);
-            Regen = finalStat;
+            baseStat = _baseHealthRegen + args.baseHealthRegenAdd;
+            levelStat = _lvlHealthRegen * levelMinusOne;
+            finalStat = (baseStat + levelStat) * args.healthRegenMultAdd;
+            HealthRegen = finalStat;
 
-            baseStat = _baseShield + args.baseShieldAdd;
-            levelStat = _lvlShield * levelMinusOne;
-            finalStat = (baseStat + levelStat) * (1 + args.shieldMultAdd);
-            MaxShield = finalStat;
+            baseStat = _baseMana + args.baseManaAdd;
+            levelStat = _lvlMana * levelMinusOne;
+            finalStat = (baseStat + levelStat) * args.manaMultAdd;
+            MaxMana = finalStat;
+
+            baseStat = _baseManaRegen + args.baseManaRegenAdd;
+            levelStat = _lvlManaRegen * levelMinusOne;
+            finalStat = (baseStat + levelStat) * args.manaRegenMultAdd;
+            ManaRegen = finalStat;
 
             baseStat = _baseMovementSpeed + args.baseMovementSpeedAdd;
             levelStat = _lvlMovementSpeed * levelMinusOne;
-            finalStat = (baseStat + levelStat) * (1 + args.movementSpeedMultAdd);
+            finalStat = (baseStat + levelStat) * args.movementSpeedMultAdd;
             if (IsSprinting)
                 finalStat *= sprintSpeedMultiplier;
 
@@ -136,7 +145,7 @@ namespace ElementalWard
 
             baseStat = _baseAttackSpeed + args.baseAttackSpeedAdd;
             levelStat = _lvlAttackSpeed * levelMinusOne;
-            finalStat = (baseStat + levelStat) * (1 + args.attackSpeedMultAdd);
+            finalStat = (baseStat + levelStat) * args.attackSpeedMultAdd;
             var attackSpeedReduction = 1f;
             if(waterloggedCount > 0)
             {
@@ -147,13 +156,8 @@ namespace ElementalWard
 
             baseStat = _baseDamage + args.baseDamageAdd;
             levelStat = _lvlDamage * levelMinusOne;
-            finalStat = (baseStat + levelStat) * (1 + args.damageMultAdd);
+            finalStat = (baseStat + levelStat) * args.damageMultAdd;
             Damage = finalStat;
-
-            baseStat = _baseArmor;
-            levelStat = _lvlArmor * levelMinusOne;
-            finalStat = (baseStat + levelStat) + args.baseArmorAdd;
-            Armor = finalStat;
 
             baseStat = _jumpStrength;
             finalStat = baseStat + args.baseJumpStrengthAdd;
@@ -181,7 +185,9 @@ namespace ElementalWard
             if (autoCalculateLevelStats)
             {
                 _lvlHealth = _baseHealth * 0.2f;
-                _lvlRegen = _baseRegen * 0.1f;
+                _lvlHealthRegen = _baseHealthRegen * 0.1f;
+                _lvlMana = _baseMana * 0.1f;
+                _lvlManaRegen = _baseManaRegen * 0.05f;
                 _lvlDamage = _baseDamage * 0.15f;
             }
         }
@@ -218,22 +224,25 @@ namespace ElementalWard
     public class StatModifierArgs
     {
         public float baseHealthAdd = 0;
-        public float healthMultAdd = 0;
+        public float healthMultAdd = 1;
 
-        public float baseShieldAdd = 0;
-        public float shieldMultAdd = 0;
+        public float baseHealthRegenAdd = 0;
+        public float healthRegenMultAdd = 1;
 
-        public float baseRegenAdd = 0;
-        public float regenMultAdd = 0;
+        public float baseManaAdd = 0;
+        public float manaMultAdd = 1;
+
+        public float baseManaRegenAdd = 0;
+        public float manaRegenMultAdd = 1;
 
         public float baseMovementSpeedAdd = 0;
-        public float movementSpeedMultAdd = 0;
+        public float movementSpeedMultAdd = 1;
 
         public float baseAttackSpeedAdd = 0;
-        public float attackSpeedMultAdd = 0;
+        public float attackSpeedMultAdd = 1;
 
         public float baseDamageAdd = 0;
-        public float damageMultAdd = 0;
+        public float damageMultAdd = 1;
 
         public float baseArmorAdd = 0;
 

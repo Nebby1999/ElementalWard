@@ -15,7 +15,7 @@ namespace ElementalWard
     public interface IHealthProvider
     {
         public float MaxHealth { get; }
-        public float MaxShield { get; }
+        public float HealthRegen { get; }
     }
     public class HealthComponent : MonoBehaviour
     {
@@ -130,13 +130,15 @@ namespace ElementalWard
 
         public void Heal(float amount)
         {
-            CurrentHealth += amount;
-            if (CurrentHealth > HealthProvider.MaxHealth)
-                CurrentHealth = HealthProvider.MaxHealth;
+            CurrentHealth = Mathf.Min(CurrentHealth + amount, FullHealth);
         }
 
         private void FixedUpdate()
         {
+            if(IsAlive && HealthProvider != null)
+            {
+                CurrentHealth = Mathf.Min(CurrentHealth + (HealthProvider.HealthRegen * Time.fixedDeltaTime), FullHealth);
+            }
             if (!IsAlive && _wasAlive)
             {
                 _wasAlive = false;

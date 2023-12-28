@@ -6,16 +6,18 @@ namespace ElementalWard
     {
         [SerializeField] private float _baseHealth;
         [SerializeField] private float _lvlHealth;
-        public uint level;
-        public bool useAmbientLevel;
         public float MaxHealth => _maxHealth;
         private float _maxHealth;
-        public float MaxShield => 0;
+        public float HealthRegen => 0;
 
         private HealthComponent _healthComponent;
         private void Awake()
         {
             _healthComponent = GetComponent<HealthComponent>();
+            ulong level = 1;
+            if (DungeonManager.Instance)
+                level = DungeonManager.Instance.DungeonFloor;
+
             _maxHealth = _baseHealth + (_lvlHealth * level - 1);
             _healthComponent.HealthProvider = this;
             _healthComponent.CurrentHealth = MaxHealth;

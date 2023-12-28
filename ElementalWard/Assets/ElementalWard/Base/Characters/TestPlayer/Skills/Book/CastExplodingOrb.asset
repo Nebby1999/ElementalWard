@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CastExplodingOrb
   m_EditorClassIdentifier: 
   baseCooldown: 0
+  beginCooldownOnStateEnd: 0
   requiredStock: 1
+  requiredMana: 5
   entityStateMachineName: Weapon
   stateType:
     _assemblyQualifiedName: EntityStates.Player.Weapon.Book.FireExplodingOrb, ElementalWard,
