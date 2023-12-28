@@ -66,11 +66,15 @@ namespace ElementalWard.UI
 
         private IEnumerator C_ReturnToMenu()
         {
+            DontDestroyOnLoad(gameObject);
             mainGroup.interactable = false;
 
             var loadRequest = Addressables.LoadSceneAsync("MainMenu.unity");
             while (!loadRequest.IsDone)
                 yield return null;
+
+            Unpause();
+            Destroy(gameObject);
         }
 
         [SystemInitializer]

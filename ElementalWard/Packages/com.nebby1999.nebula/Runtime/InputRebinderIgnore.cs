@@ -26,7 +26,7 @@ namespace Nebula
         }
 #endif
 
-        [SystemInitializer]
+        [RuntimeInitializeOnLoadMethod]
         private static void Initialize()
         {
             InputSystem.RegisterProcessor<InputRebinderIgnore>();

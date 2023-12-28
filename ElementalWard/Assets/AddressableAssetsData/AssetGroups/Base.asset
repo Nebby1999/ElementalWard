@@ -17,8 +17,18 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 2e729ad2d4394c84b9afa2822009077c
   m_SerializeEntries:
+  - m_GUID: cfc7321ec46a1e84e9223dcbd180a877
+    m_Address: ElementalWard/Base/UI/Prefabs/PauseMenu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: def643d44b4522d499266753cf69d962
     m_Address: ElementalWard/Base/UI/Textures/texStoneBarWide.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ceac07cc035fce2428b986ae0ef30350
+    m_Address: ElementalWard/Base/UI/Textures/texHUDIcon.aseprite
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -57,6 +67,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 01cf92b71a7955c4f91610da2c610bfd
+    m_Address: ElementalWard/Base/UI/Textures/texHPBar.aseprite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e0fb826de2f9ac8489d7310a8ebb796b
     m_Address: ElementalWard/Base/UI/Prefabs/Options.prefab
     m_ReadOnly: 0
@@ -69,21 +84,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4046bd7885990e04a8bb34262889e16b
     m_Address: ElementalWard/Base/UI
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cfc7321ec46a1e84e9223dcbd180a877
-    m_Address: ElementalWard/Base/UI/Prefabs/PauseMenu.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 01cf92b71a7955c4f91610da2c610bfd
-    m_Address: ElementalWard/Base/UI/Textures/texHPBar.aseprite
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ceac07cc035fce2428b986ae0ef30350
-    m_Address: ElementalWard/Base/UI/Textures/texHUDIcon.aseprite
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

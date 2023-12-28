@@ -21,7 +21,7 @@ namespace ElementalWard
         {
             base.Awake();
 #if !UNITY_EDITOR
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
 #endif
         }
 

@@ -144,7 +144,7 @@ namespace ElementalWard
         public void OnPause(InputAction.CallbackContext ctx)
         {
             PauseManager.Switch();
-
+            Cursor.lockState = PauseManager.IsPaused ? CursorLockMode.Confined : CursorLockMode.Locked;
         }
 
         public void OnElementScroll(InputAction.CallbackContext ctx)

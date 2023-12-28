@@ -466,7 +466,7 @@ MonoBehaviour:
   _dungeonDirector: {fileID: 399343968}
   _combatDirector: {fileID: 399343970}
   _playableCharacterMaster: {fileID: 1749386452}
-  _useCustomSeed: 1
+  _useCustomSeed: 0
   _customSeed: 11988261680478083533
 --- !u!4 &282182098
 Transform:
@@ -1604,28 +1604,6 @@ PrefabInstance:
     - target: {fileID: 7637794846450996916, guid: b4c34184ec23db44f8561c05e84cd6e4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
-        type: 3}
-      propertyPath: defaultTeam
-      value: 
-      objectReference: {fileID: 11400000, guid: 5f60cf8be3e00b04dbc78fb2486f8614,
-        type: 2}
-    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
-        type: 3}
-      propertyPath: _spawnOnStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
-        type: 3}
-      propertyPath: _defaultBodyPrefab
-      value: 
-      objectReference: {fileID: 3775747226426235317, guid: fd67e06c4dac8744bb19ec472ef5350b,
-        type: 3}
-    - target: {fileID: 7637794846450996917, guid: b4c34184ec23db44f8561c05e84cd6e4,
-        type: 3}
-      propertyPath: _autoCalculateNextLevelRequirement
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7637794846450996918, guid: b4c34184ec23db44f8561c05e84cd6e4,

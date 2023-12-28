@@ -31,7 +31,7 @@ namespace Nebula
             DontDestroyOnLoad(gameObject);
             if(Instance)
             {
-                Destroy(gameObject);
+                DestroyImmediate(gameObject);
                 return;
             }
             Instance = this as T;

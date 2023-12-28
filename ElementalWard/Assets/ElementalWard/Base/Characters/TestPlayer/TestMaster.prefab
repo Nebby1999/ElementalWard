@@ -53,7 +53,7 @@ MonoBehaviour:
   _currentXP: 0
   _neededXPForNextLevel: 109.23277
   _autoCalculateNextLevelRequirement: 1
-  defaultTeam: {fileID: 0}
+  defaultTeam: {fileID: 11400000, guid: 5f60cf8be3e00b04dbc78fb2486f8614, type: 2}
 --- !u!114 &7342703876500854070
 MonoBehaviour:
   m_ObjectHideFlags: 0

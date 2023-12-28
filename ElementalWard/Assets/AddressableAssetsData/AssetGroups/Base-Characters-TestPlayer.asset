@@ -198,6 +198,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17c9d9ff405a99a42823cea134e5716e
+    m_Address: ElementalWard/Base/Characters/TestPlayer/PlayerSkills.ase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 07f2422b65378584f82adcf2e8bb12d8
     m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Sword/EntityStates.Player.Weapon.Sword.SwordPlungeState.asset
     m_ReadOnly: 0
@@ -279,11 +284,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5081b21b9b6182249800bd48efd4004f
     m_Address: ElementalWard/Base/Characters/TestPlayer/Skills/Staff/ChargeShotgun.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 17c9d9ff405a99a42823cea134e5716e
-    m_Address: ElementalWard/Base/Characters/TestPlayer/PlayerSkills.ase
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

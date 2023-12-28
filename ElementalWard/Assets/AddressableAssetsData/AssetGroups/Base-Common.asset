@@ -27,6 +27,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1dbc87f4f740a894cbebfeaaa67dbbab
+    m_Address: ElementalWard/Base/Common/matDistortion.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc719cd69f3db9a47a545ee4e0c93ff0
     m_Address: ElementalWard/Base/Common/FXTextures/texRampTest.psd
     m_ReadOnly: 0
@@ -59,11 +64,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f056ca2ed719bc14d8ef5b81ac3770a2
     m_Address: ElementalWard/Base/Common/FXTextures/texLightning.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1dbc87f4f740a894cbebfeaaa67dbbab
-    m_Address: ElementalWard/Base/Common/matDistortion.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
