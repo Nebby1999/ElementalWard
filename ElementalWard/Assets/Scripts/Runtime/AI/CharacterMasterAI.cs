@@ -329,7 +329,7 @@ namespace ElementalWard
             }
         }
 
-        private void Master_OnBodyLost()
+        private void Master_OnBodyLost(DamageReport obj)
         {
             Body = null;
             BodyInputBank = null;
@@ -341,6 +341,7 @@ namespace ElementalWard
             {
                 aiStateMachine.SetNextStateToMain();
             }
+            Destroy(gameObject);
         }
 
         private void OnDestroy()

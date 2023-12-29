@@ -83,9 +83,11 @@ namespace ElementalWard
         {
             yield return C_FadeCanvasGroup(mainCanvasGroup, 0);
 
-            var sceneLoadRequest = Addressables.LoadSceneAsync("SampleScene.unity", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
-            while (sceneLoadRequest.IsDone)
+            var op = Addressables.LoadAssetAsync<GameObject>("ElementalWard/Base/Core/Run.prefab");
+            while (!op.IsDone)
                 yield return null;
+
+            Instantiate(op.Result);
         }
     }
 }

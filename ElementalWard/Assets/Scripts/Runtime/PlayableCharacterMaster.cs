@@ -1,4 +1,5 @@
 using Cinemachine;
+using ElementalWard.UI;
 using Nebula;
 using Nebula.Console;
 using System;
@@ -17,6 +18,7 @@ namespace ElementalWard
     {
         private const string CAMERA_ADDRESS = "ElementalWard/Base/Core/FirstPersonCamera.prefab";
         private const string INPUT_ACTION_ASSET_ADDRESS = "ElementalWard/Base/Core/ElementalWardInput.inputactions";
+        private const string HUD_ADDRESS = "ElementalWard/Base/UI/Prefabs/HUD.prefab";
         public CharacterMaster ManagedMaster { get; private set; }
         public PlayerInput PlayerInput { get; private set; }
         public CharacterInputBank BodyInputs { get; private set; }
@@ -82,6 +84,8 @@ namespace ElementalWard
                 _bodyCameraTransform = fpsVirtualCamera.transform;
             }
             BodyInputs = body.GetComponent<CharacterInputBank>();
+            var hud = Instantiate(Addressables.LoadAssetAsync<GameObject>(HUD_ADDRESS).WaitForCompletion()).GetComponent<HUDController>();
+            hud.SetBody(body);
             OnPlayableBodySpawned?.Invoke(body);
             OnPlayableBodySpawnedUnityEvent?.Invoke(body);
         }

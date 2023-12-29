@@ -6,6 +6,7 @@ namespace ElementalWard
     {
         public GameObject gameObject;
         public CharacterBody characterBody;
+        public CharacterMaster characterMaster;
         public ElementDef ElementDef => _elementProvider?.ElementDef ?? fallbackElement;
         public ElementDef fallbackElement;
         public TeamIndex team;
@@ -47,6 +48,7 @@ namespace ElementalWard
             gameObject = characterBody.gameObject;
             this.characterBody = characterBody;
             team = TeamComponent.GetObjectTeamIndex(gameObject);
+            characterMaster = characterBody.TiedMaster;
 
             _elementProvider = characterBody.GetComponent<IElementProvider>();
             fallbackElement = null;
@@ -57,19 +59,10 @@ namespace ElementalWard
             gameObject = bodyGameObject;
             this.characterBody = bodyGameObject.GetComponent<CharacterBody>();
             team = TeamComponent.GetObjectTeamIndex(gameObject);
+            characterMaster = characterBody ? characterBody.TiedMaster : null;
 
             _elementProvider = bodyGameObject.GetComponent<IElementProvider>();
             fallbackElement = null;
-        }
-
-        public BodyInfo(TeamIndex team, ElementDef element = null)
-        {
-            gameObject = null;
-            characterBody = null;
-            _elementProvider = null;
-
-            this.team = team;
-            fallbackElement = element;
         }
     }
     public class DamageInfo

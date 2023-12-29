@@ -50,7 +50,7 @@ namespace ElementalWard
         }
 
         public event Action<CharacterBody> OnBodySpawned;
-        public event Action OnBodyLost;
+        public event Action<DamageReport> OnBodyLost;
         public TeamDef defaultTeam;
         public static event Action<CharacterMaster> OnLevelUpGlobal;
 
@@ -166,12 +166,13 @@ namespace ElementalWard
             return levelToCalculate * LEVEL_TO_XP_COEF / LEVEL_TO_XP_DIVISOR;
         }
 
-        public void BodyKilled(CharacterBody body)
+        public void BodyKilled(CharacterBody body, DamageReport damageReport)
         {
             if (CurrentBody == body)
             {
-                OnBodyLost?.Invoke();
+                OnBodyLost?.Invoke(damageReport);
             }
         }
+
     }
 }

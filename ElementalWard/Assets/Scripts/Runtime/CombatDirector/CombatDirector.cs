@@ -172,6 +172,7 @@ namespace ElementalWard
                     {
                         var pos = result.body.transform.position;
                         pos.y += controller.MotorCapsule.height / 2;
+                        controller.Motor.SetPosition(pos, true);
                     }
                 }
             }

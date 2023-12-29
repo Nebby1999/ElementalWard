@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 4000646230687331242}
   - component: {fileID: 4491813597380548421}
   - component: {fileID: 5225117992790200305}
+  - component: {fileID: 8329159321435524910}
   m_Layer: 0
   m_Name: TestBody
   m_TagString: Untagged
@@ -695,6 +696,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8329159321435524910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3775747226426235317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947bfa0a91ad7084f853ee9825a0cac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathStateMachine: {fileID: -7556436084046398385}
+  deathState:
+    _assemblyQualifiedName: EntityStates.GenericCharacterDeath, ElementalWard, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  idleStateMachines: []
 --- !u!1 &3775747228327262252
 GameObject:
   m_ObjectHideFlags: 0

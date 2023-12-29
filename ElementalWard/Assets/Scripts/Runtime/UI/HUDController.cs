@@ -11,9 +11,6 @@ namespace ElementalWard.UI
         [SerializeField]
         private Animator _weaponAnimator;
 
-        public Slider HPBar => _hpBar;
-        [SerializeField] private Slider _hpBar;
-
         public CharacterBody TiedBody => _body;
         private CharacterBody _body;
         private WeaponController _weaponController;
@@ -22,13 +19,7 @@ namespace ElementalWard.UI
         private HUDBehaviour[] _hudBehaviours = Array.Empty<HUDBehaviour>();
         private void Awake()
         {
-            PlayableCharacterMaster.OnPlayableBodySpawned += SetBody;
             _hudBehaviours = GetComponentsInChildren<HUDBehaviour>();
-        }
-
-        private void Start()
-        {
-            gameObject.SetActive(false);
         }
 
         private void OnEnable()
@@ -59,18 +50,6 @@ namespace ElementalWard.UI
             {
                 behaviour.OnBodyAssigned();
             }
-        }
-
-        private void LateUpdate()
-        {
-            if(!_healthComponent || !_hpBar)
-            {
-                return;
-            }
-
-            _hpBar.maxValue = _healthComponent.HealthProvider.MaxHealth;
-            _hpBar.minValue = 0;
-            _hpBar.value = _healthComponent.CurrentHealth;
         }
 
         private void SetAnimationController()

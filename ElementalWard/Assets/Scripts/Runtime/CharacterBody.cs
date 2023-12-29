@@ -197,7 +197,7 @@ namespace ElementalWard
         {
             if (TiedMaster)
             {
-                TiedMaster.BodyKilled(this);
+                TiedMaster.BodyKilled(this, killingDamageInfo);
             }
         }
 
@@ -210,6 +210,11 @@ namespace ElementalWard
                 return;
 
             TiedMaster.CharacterMasterAI.SetTargetFromDamageReport(report);
+        }
+
+        private void OnDestroy()
+        {
+            TiedMaster.BodyKilled(this, null);
         }
     }
 

@@ -23,7 +23,6 @@ namespace ElementalWard
         [SerializeField] private DungeonDirector _dungeonDirector;
         [SerializeField] private SceneDirector _sceneDirector;
         [SerializeField] private CombatDirector _combatDirector;
-        [SerializeField] private PlayableCharacterMaster _playableCharacterMaster;
 
         [SerializeField] private bool _useCustomSeed;
         [SerializeField] private ulong _customSeed;
@@ -37,6 +36,7 @@ namespace ElementalWard
 
         private void Start()
         {
+            _dungeonFloor = Run.Instance.currentFloor;
             _combatDirector.enabled = false;
             _sceneDirector.enabled = false;
             StartCoroutine(WaitForEverythingToBeSetUp());
@@ -90,11 +90,7 @@ namespace ElementalWard
                 _combatDirector.enabled = false;
             }
 
-            if(_playableCharacterMaster)
-            {
-                _playableCharacterMaster.ManagedMaster.Spawn(transform.position + Vector3.up, transform.rotation);
-                _combatDirector.enabled = true;
-            }
+            Run.Instance.SpawnPlayers(transform);
         }
     }
 }

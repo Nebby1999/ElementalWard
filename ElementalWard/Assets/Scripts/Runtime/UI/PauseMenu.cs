@@ -61,7 +61,6 @@ namespace ElementalWard.UI
 
         public void ReturnToMenu()
         {
-            StartCoroutine(C_ReturnToMenu());
         }
 
         private IEnumerator C_ReturnToMenu()
@@ -69,9 +68,7 @@ namespace ElementalWard.UI
             DontDestroyOnLoad(gameObject);
             mainGroup.interactable = false;
 
-            var loadRequest = Addressables.LoadSceneAsync("MainMenu.unity");
-            while (!loadRequest.IsDone)
-                yield return null;
+            yield return Run.Instance.C_EndRun();
 
             Unpause();
             Destroy(gameObject);

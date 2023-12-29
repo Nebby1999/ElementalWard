@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ElementalWard
 {
@@ -6,8 +7,10 @@ namespace ElementalWard
     {
         public GameObject characterMasterPrefab;
         public bool spawnOnStart = true;
-        public bool destroyAfterSpawning = true;
+        public bool destroyWithCharacter = true;
+        public UnityEvent OnDestroy;
 
+        GameObject character = null;
 
         private void Start()
         {
@@ -21,10 +24,16 @@ namespace ElementalWard
             if (!characterMasterPrefab)
                 return;
 
-            Instantiate(characterMasterPrefab, transform.position, Quaternion.identity);
+            character = Instantiate(characterMasterPrefab, transform.position, Quaternion.identity);
+        }
 
-            if (destroyAfterSpawning)
-                Destroy(this);
+        private void FixedUpdate()
+        {
+            if(!character)
+            {
+                OnDestroy?.Invoke();
+                Destroy(gameObject);
+            }
         }
     }
 }
