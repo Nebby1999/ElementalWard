@@ -9,6 +9,7 @@ namespace EntityStates.Player.Weapon.Book
     {
         public static GameObject projectilePrefab;
         public static float baseDuration;
+        public static float elementEssenceCost;
 
         private float _duration;
         public override void OnEnter()
@@ -16,9 +17,12 @@ namespace EntityStates.Player.Weapon.Book
             base.OnEnter();
             _duration = baseDuration / attackSpeedStat;
             Ray aimRay = GetAimRay();
+            var owner = new BodyInfo(GameObject);
+            owner.NullElementProvider();
+            owner.fallbackElement = ElementProvider.GetElementDefForAttack(elementEssenceCost);
             FireProjectileInfo projectileInfo = new FireProjectileInfo
             {
-                owner = new BodyInfo(GameObject),
+                owner = owner,
                 instantiationPosition = aimRay.origin,
                 instantiationRotation = UnityUtil.SafeLookRotation(aimRay.direction),
             };

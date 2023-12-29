@@ -9,5 +9,7 @@ namespace ElementalWard
         public Color? Color => ElementDef?.elementColor;
 
         public void ChangeElement(int scrollValue);
+
+        public ElementDef GetElementDefForAttack(float minRequiredElementEssence);
     }
 }

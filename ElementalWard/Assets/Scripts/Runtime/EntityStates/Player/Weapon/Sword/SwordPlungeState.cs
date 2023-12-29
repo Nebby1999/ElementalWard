@@ -7,6 +7,7 @@ namespace EntityStates.Player.Weapon.Sword
     {
         public static float damageCoefficient;
         public static float procCoefficient;
+        public static float requiredEssence;
         public static float radius;
 
         private float origGravityCoefficient;
@@ -23,9 +24,13 @@ namespace EntityStates.Player.Weapon.Sword
                 CharacterController.GravityCoefficient *= 1.5f;
             }
 
+            var attacker = new BodyInfo(GameObject);
+            attacker.NullElementProvider();
+            attacker.fallbackElement = ElementProvider.GetElementDefForAttack(requiredEssence);
+
             _attack = new ExplosiveAttack
             {
-                attacker = new BodyInfo(GameObject),
+                attacker = attacker,
                 baseDamage = damageStat * damageCoefficient,
                 baseProcCoefficient = procCoefficient,
                 explosionRadius = radius,

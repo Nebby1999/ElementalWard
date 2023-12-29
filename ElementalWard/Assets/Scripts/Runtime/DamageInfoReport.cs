@@ -9,6 +9,12 @@ namespace ElementalWard
         public ElementDef ElementDef => _elementProvider?.ElementDef ?? fallbackElement;
         public ElementDef fallbackElement;
         public TeamIndex team;
+
+        public void NullElementProvider()
+        {
+            _elementProvider = null;
+        }
+
         public bool TryGetComponent<T>(out T component)
         {
             if (gameObject)

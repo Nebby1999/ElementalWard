@@ -11,6 +11,7 @@ namespace EntityStates.Player.Weapon.Staff
         public static float procCoefficient;
         public static float baseSpread;
         public static float baseDuration;
+        public static float requiredEssence;
         public static GameObject tracerPrefab;
 
         public int bulletCount;
@@ -23,16 +24,20 @@ namespace EntityStates.Player.Weapon.Staff
             _duration = baseDuration / attackSpeedStat;
             Ray aimRay = GetAimRay();
             _maxSpread = baseSpread * bulletCount;
+
+            var owner = new BodyInfo(GameObject);
+            owner.NullElementProvider();
+            owner.fallbackElement = ElementProvider.GetElementDefForAttack(requiredEssence);
+
             VFXData data = new VFXData
             {
                 instantiationPosition = aimRay.origin,
                 instantiationRotation = Quaternion.identity,
             };
-            data.AddProperty(CommonVFXProperties.Color, Color.white);
-
+            data.AddProperty(CommonVFXProperties.Color, owner.ElementDef?.elementColor);
             new HitscanAttack()
             {
-                attacker = new BodyInfo(GameObject),
+                attacker = owner,
                 falloffCalculation = HitscanAttack.BuckshotFalloffCalculation,
                 baseDamage = damageStat * damageCoefficient,
                 minSpread = 0,

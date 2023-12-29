@@ -45,5 +45,10 @@ namespace ElementalWard
 
             _elementDef.ElementalInteraction.OnElementalDamageDealt(report);
         }
+
+        public ElementDef GetElementDefForAttack(float minRequiredElementEssence)
+        {
+            return ElementDef;
+        }
     }
 }

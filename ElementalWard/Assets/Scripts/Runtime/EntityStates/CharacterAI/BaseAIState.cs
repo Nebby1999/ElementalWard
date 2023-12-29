@@ -27,9 +27,12 @@ namespace EntityStates.CharacterAI
             if (AI)
             {
                 CharacterBody = AI.Body;
-                CharacterTransform = CharacterBody.transform;
-                CharacterGameObject = CharacterBody.gameObject;
-                CharacterInputBank = CharacterBody.InputBank;
+                if(CharacterBody)
+                {
+                    CharacterTransform = CharacterBody.transform;
+                    CharacterGameObject = CharacterBody.gameObject;
+                    CharacterInputBank = CharacterBody.InputBank;
+                }
             }
         }
         public virtual CharacterMasterAI.AIInputs GenerateAIInputs(in CharacterMasterAI.AIInputs previousInputs)

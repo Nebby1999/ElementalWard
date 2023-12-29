@@ -46,3 +46,7 @@ MonoBehaviour:
       serializedValue:
         stringValue: 0.3
         objectReferenceValue: {fileID: 0}
+    - fieldName: requiredEssence
+      serializedValue:
+        stringValue: 10
+        objectReferenceValue: {fileID: 0}

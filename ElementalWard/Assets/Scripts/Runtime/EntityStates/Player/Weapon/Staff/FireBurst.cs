@@ -13,6 +13,7 @@ namespace EntityStates.Player.Weapon.Staff
         public static float baseDuration;
         public static float bulletRadius;
         public static float bulletRange;
+        public static float requiredEssence;
         public static GameObject tracerPrefab;
 
         private int _bulletsFired;
@@ -25,9 +26,12 @@ namespace EntityStates.Player.Weapon.Staff
             base.OnEnter();
             _duration = baseDuration * attackSpeedStat;
             _timeBetweenShots = _duration / (fireCount * 2);
+            var attacker = new BodyInfo(GameObject);
+            attacker.NullElementProvider();
+            attacker.fallbackElement = ElementProvider.GetElementDefForAttack(requiredEssence);
             attack = new HitscanAttack
             {
-                attacker = new BodyInfo(GameObject),
+                attacker = attacker,
                 baseDamage = damageStat * damageCoefficient,
                 procCoefficient = procCoefficient,
                 falloffCalculation = HitscanAttack.BulletFalloffCalculation,
@@ -69,7 +73,7 @@ namespace EntityStates.Player.Weapon.Staff
                 instantiationPosition = ray.origin,
                 instantiationRotation = Quaternion.identity
             };
-            data.AddProperty(CommonVFXProperties.Color, ElementProvider.Color ?? Color.white);
+            data.AddProperty(CommonVFXProperties.Color, attack.attacker.ElementDef?.elementColor ?? Color.white);
 
             attack.tracerData = data;
             attack.raycastOrigin = ray.origin;

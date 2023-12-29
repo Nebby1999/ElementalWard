@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: -2440111289173182685}
   - component: {fileID: 8614331159853775388}
   - component: {fileID: 2411870207854478728}
+  - component: {fileID: -7427929533366497417}
   m_Layer: 9
   m_Name: ElementalSpectreBody
   m_TagString: Untagged
@@ -597,6 +598,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc52979c46f87042bede96192baccf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7427929533366497417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338726505615578528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4a507a2bbf2ba4e99a04e604506581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elements:
+  - {fileID: 11400000, guid: 67bad244a16e7b5438cfbc289891ca86, type: 2}
+  - {fileID: 11400000, guid: 9ce85ac5506aef942beb4eeedb885921, type: 2}
+  - {fileID: 11400000, guid: 5288bfc2c6fc0a24c8ded36f8f774a21, type: 2}
+  minTime: 20
+  maxTime: 60
 --- !u!1 &6473949024297625731
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,9 @@ namespace ElementalWard
     public class Inventory : MonoBehaviour
     {
         public CharacterMaster CharacterMaster { get; private set; }
-        private uint money;
+        public float defaultElementEnergy;
+        public ulong Money => _money;
+        private ulong _money;
         private float[] _elementEnergy;
         private ulong[] _items;
         private Action OnInventoryUpdated;
@@ -19,6 +21,10 @@ namespace ElementalWard
         {
             CharacterMaster = GetComponent<CharacterMaster>();
             _elementEnergy = new float[ElementCatalog.ElementCount];
+            for(int i = 0; i < _elementEnergy.Length; i++)
+            {
+                _elementEnergy[i] = defaultElementEnergy;
+            }
             _items = new ulong[ItemCatalog.ItemCount];
         }
         public bool HandlePickup(GenericPickupController controller)
@@ -58,8 +64,24 @@ namespace ElementalWard
             return true;
         }
 
+        public float GetElementEssence(ElementDef elementDef)
+        {
+            return _elementEnergy[(int)elementDef.ElementIndex];
+        }
+
         private void InventoryUpdated()
         {
+            ulong money = 0;
+            for(int i = 0; i <  _items.Length; i++)
+            {
+                ulong count = _items[i];
+                if (count <= 0)
+                    continue;
+
+                ItemDef def = ItemCatalog.GetItemDef((ItemIndex)i);
+                money += def.value * count;
+            }
+            _money = money;
             OnInventoryUpdated?.Invoke();
         }
     }
