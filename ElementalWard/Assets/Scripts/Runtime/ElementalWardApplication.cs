@@ -61,6 +61,7 @@ namespace ElementalWard
             yield return ProcCatalog.Initialize();
             yield return BuffCatalog.Initialize();
             yield return ElementCatalog.Initialize();
+            yield return ItemCatalog.Initialize();
             yield return PickupCatalog.Initialize();
         }
     }

@@ -7,10 +7,18 @@ namespace ElementalWard
     {
         public Sprite pickupSprite;
         public string internalName;
-        public ElementIndex? ElementIndex { get; internal set; } = ElementalWard.ElementIndex.None;
+        public ElementIndex? ElementIndex { get; internal set; }
+        public ItemIndex? ItemIndex { get; internal set; }
         public PickupIndex PickupIndex { get; internal set; } = PickupIndex.none;
     }
 
+    [Serializable]
+    public struct SerializablePickupIndex
+    {
+        public string pickupName;
+        
+        public static implicit operator PickupIndex(SerializablePickupIndex a) => PickupCatalog.FindPickupIndex(a.pickupName); 
+    }
     public struct PickupIndex : IEquatable<PickupIndex>
     {
         public static readonly PickupIndex none = new PickupIndex(-1);

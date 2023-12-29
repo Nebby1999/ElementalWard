@@ -21,6 +21,7 @@ namespace ElementalWard
         private static PickupDef[] _pickupDefs = Array.Empty<PickupDef>();
         private static Dictionary<string, PickupIndex> _pickupNameToIndex = new(StringComparer.OrdinalIgnoreCase);
         private static Dictionary<ElementIndex, PickupIndex> _elementIndexToPickupIndex = new Dictionary<ElementIndex, PickupIndex>();
+        private static Dictionary<ItemIndex, PickupIndex> _itemIndexToPickupIndex = new Dictionary<ItemIndex, PickupIndex>();
 
         public static ResourceAvailability resourceAvailability = new ResourceAvailability(typeof(PickupCatalog));
         public static PickupDef GetPickupDef(PickupIndex index)
@@ -33,6 +34,15 @@ namespace ElementalWard
             if (_elementIndexToPickupIndex.TryGetValue(elementIndex, out var value))
                 return value;
 
+            return PickupIndex.none;
+        }
+
+        public static PickupIndex FindPickupIndex(ItemIndex itemIndex)
+        {
+            if(_itemIndexToPickupIndex.TryGetValue(itemIndex, out var value))
+            {
+                return value;
+            }
             return PickupIndex.none;
         }
 
@@ -55,6 +65,7 @@ namespace ElementalWard
             List<PickupDef> pickupDefs = new List<PickupDef>();
 
             yield return GeneratePickupsForElements(pickupIndices, pickupDefs);
+            yield return GeneratePickupsForItems(pickupIndices, pickupDefs);
             _pickupDefs = pickupDefs.ToArray();
             resourceAvailability.MakeAvailable(typeof(PickupCatalog));
         }
@@ -72,7 +83,7 @@ namespace ElementalWard
                 PickupIndex pickupIndex = new PickupIndex(pickupIndices.Count);
                 PickupDef def = new PickupDef
                 {
-                    ElementIndex = (ElementIndex)i,
+                    ElementIndex = index,
                     PickupIndex = pickupIndex,
                     internalName = provider.PickupName,
                     pickupSprite = provider.PickupSprite,
@@ -82,6 +93,33 @@ namespace ElementalWard
                 pickupDefs.Add(def);
                 _pickupNameToIndex.Add(def.internalName, pickupIndex);
                 _elementIndexToPickupIndex.Add(index, pickupIndex);
+            }
+            yield break;
+        }
+
+        private static IEnumerator GeneratePickupsForItems(List<PickupIndex> pickupIndices, List<PickupDef> pickupDefs)
+        {
+            for(int i = 0; i < ItemCatalog.ItemCount; i++)
+            {
+                if (i % 2 == 0)
+                    yield return null;
+
+                ItemIndex index = (ItemIndex)i;
+                var provider = (IPickupMetadataProvider)ItemCatalog.GetItemDef(index);
+
+                PickupIndex pickupIndex = new PickupIndex(pickupIndices.Count);
+                PickupDef def = new PickupDef
+                {
+                    ItemIndex = index,
+                    PickupIndex = pickupIndex,
+                    pickupSprite = provider.PickupSprite,
+                    internalName = provider.PickupName,
+                };
+
+                pickupIndices.Add(pickupIndex);
+                pickupDefs.Add(def);
+                _pickupNameToIndex.Add(def.internalName, pickupIndex);
+                _itemIndexToPickupIndex.Add(index, pickupIndex);
             }
             yield break;
         }

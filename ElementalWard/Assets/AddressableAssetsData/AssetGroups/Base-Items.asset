@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Base-Items
+  m_EditorClassIdentifier: 
+  m_GroupName: Base-Items
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8c83cf229d824984c8e2af5f7b0df8fb
+  m_SerializeEntries:
+  - m_GUID: fe6d3f3364372c144b20c2b7aec90aef
+    m_Address: Assets/ElementalWard/Base/Items
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc793d2588cc9164ab7d0cef351e24d3
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/GoldenCrown.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b039e49c2a41f641a9dfc4510355a85
+    m_Address: Assets/ElementalWard/Base/Items/Vials/SuperHPVial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cad7515f32c6af64399bdd26046efecf
+    m_Address: Assets/ElementalWard/Base/Items/Vials/MediumMPVIal.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9c32cb9425f9104db04d61c75ef35d4
+    m_Address: Assets/ElementalWard/Base/Items/Vials/LesserlHPVial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 387caf97a1ce5944bb03a2601d5fc7b0
+    m_Address: Assets/ElementalWard/Base/Items/Vials/LesserMPVial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18bb5f0c8751f574b8b7811738ccbf6b
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/CoinPile.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7f025be7a7081c45bdd918b2e389298
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/GoldBag.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1758c039ffd0aa84cb4b6a5ed94a3158
+    m_Address: Assets/ElementalWard/Base/Items/Vials/MediumHPVial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 434574fcd8143d44eae3168b09403e39
+    m_Address: Assets/ElementalWard/Base/Items/Vials/SuperMPVial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51aed17bc4e7af843bfc3a0f7a787ea4
+    m_Address: Assets/ElementalWard/Base/Items/Items.ase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2027b96440284fd4285a7e3ef020fd6e
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/GoldenGoblet.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9f3274aacaab05149a5099d3875a8eb5, type: 2}
+    - {fileID: 11400000, guid: bf372566c0e0b844481578f7f93d6fc2, type: 2}

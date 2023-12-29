@@ -10,6 +10,7 @@ namespace ElementalWard
         private static GameObject _defaultPrefab;
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private bool _destroyIfInvalidPickupIndex;
+        [SerializeField] private SerializablePickupIndex _defaultPickup;
         public Rigidbody RigidBody { get; private set; }
         public PickupIndex PickupIndex
         {
@@ -25,9 +26,20 @@ namespace ElementalWard
         }
         private PickupIndex _pickupIndex = PickupIndex.none;
 
+        private bool _hasCollidedWithWorld;
+
         private void Awake()
         {
             RigidBody = GetComponent<Rigidbody>();
+        }
+
+        private void Start()
+        {
+            PickupIndex = _defaultPickup;
+            if(!PickupIndex.IsValid && _destroyIfInvalidPickupIndex)
+            {
+                Destroy(gameObject);
+            }
         }
 
         //Give pickup to body.
@@ -38,16 +50,21 @@ namespace ElementalWard
                 return;
             }
 
-            pickupPicker.Grant(this);
+            if(pickupPicker.Grant(this))
+            {
+                Destroy(gameObject);
+            }
         }
 
         //stops the pickup from oving if it hits the world. and sets the constraits to everything except y pos
         private void OnCollisionEnter(Collision collision)
         {
-            if (!RigidBody)
+            if (!RigidBody || _hasCollidedWithWorld)
                 return;
+
             if(collision.gameObject && collision.gameObject.layer == LayerIndex.world.IntVal)
             {
+                _hasCollidedWithWorld = true;
                 RigidBody.velocity = Vector3.zero;
                 RigidBody.constraints |= RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             }
@@ -55,7 +72,7 @@ namespace ElementalWard
 
         private void UpdateRenderer()
         {
-            if(PickupIndex == PickupIndex.none && _destroyIfInvalidPickupIndex)
+            if(!PickupIndex.IsValid && _destroyIfInvalidPickupIndex)
             {
                 Destroy(gameObject);
                 return;

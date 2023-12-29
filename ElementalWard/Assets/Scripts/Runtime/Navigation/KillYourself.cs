@@ -12,14 +12,14 @@ namespace ElementalWard.Navigation
     {
         private void FixedUpdate()
         {
-            /*if (SceneNavigationSystem.HasBakedGraphs)
+            if (SceneNavigationSystem.HasBakedGraphs)
             {
 #if UNITY_EDITOR
                 DestroyImmediate(gameObject);
 #else
                 Destroy(gameObject);
 #endif
-            }*/
+            }
         }
     }
 }
