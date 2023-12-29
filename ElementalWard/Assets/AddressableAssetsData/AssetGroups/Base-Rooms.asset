@@ -43,7 +43,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe34b11677b528a43ada9e3a1add3ee0
-    m_Address: ElementalWard/Base/Rooms/Wall-Open.prefab
+    m_Address: ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Open.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8db7117aaa5910d47b6ee884b9d82a2b
-    m_Address: ElementalWard/Base/Rooms/BossRoomEntrance.prefab
+    m_Address: ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomEntrance.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f8852af2272a1c44996da75ddc537373
-    m_Address: ElementalWard/Base/Rooms/Wall-Door.prefab
+    m_Address: ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Door.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 47aba74ec8dc1ce45a6b08e0314e5d68
-    m_Address: ElementalWard/Base/Rooms/Boss_Wall-Door.prefab
+    m_Address: ElementalWard/Base/Rooms/RoomElements/CustomTiles/Boss_Wall-Door.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 824c96dc9775fa34181451a5fa7e9b9e
-    m_Address: ElementalWard/Base/Rooms/BossRoomExit.prefab
+    m_Address: ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomExit.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -453,7 +453,7 @@ MonoBehaviour:
     - Rooms
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7450749061bdc0d4cb1f588e2a1314a9
-    m_Address: ElementalWard/Base/Rooms/CrackedWall.prefab
+    m_Address: ElementalWard/Base/Rooms/RoomElements/CustomTiles/CrackedWall.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -480,6 +480,41 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eed39b32be4181342b453389bd5726b3
     m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e5f4f958266b324598d8c44f850165c
+    m_Address: ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickWall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e2561fa7d6710f4b8ed67e26dfe13a7
+    m_Address: ElementalWard/Base/Rooms/RoomElements/Lights/Torch.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1e0b8bf9a6b9574d8d3b9a1160e2c49
+    m_Address: ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickSmall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6439ff4745da40e49b2e44336c3d8bd6
+    m_Address: ElementalWard/Base/Rooms/RoomElements/Lights/Chandelier.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b71994931d207b419da2bde5133e47d
+    m_Address: ElementalWard/Base/Rooms/RoomElements/Lights/Candlestick.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9935fb259e70a234a8b3ba52f61ea2c1
+    m_Address: ElementalWard/Base/Rooms/RoomElements/Lights/TorchWall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0c0575a52a07864ca702d255246a41f
+    m_Address: ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickTriple.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

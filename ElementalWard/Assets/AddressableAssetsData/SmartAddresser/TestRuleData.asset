@@ -937,9 +937,6 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
         - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
         - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
-        - Assets/ElementalWard/Base/Rooms/Boss_Wall-Door.prefab
-        - Assets/ElementalWard/Base/Rooms/BossRoomEntrance.prefab
-        - Assets/ElementalWard/Base/Rooms/BossRoomExit.prefab
         - Assets/ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
@@ -949,7 +946,6 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall.prefab
-        - Assets/ElementalWard/Base/Rooms/CrackedWall.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLarge.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomPlus.prefab
@@ -960,10 +956,21 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Boss_Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomEntrance.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomExit.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/CrackedWall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Open.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Candlestick.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickSmall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickTriple.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickWall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Chandelier.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Torch.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/TorchWall.prefab
         - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd.prefab
         - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice.prefab
-        - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
-        - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/InputRebinder.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/LabeledSlider.prefab
@@ -1210,9 +1217,6 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
         - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
         - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
-        - Assets/ElementalWard/Base/Rooms/Boss_Wall-Door.prefab
-        - Assets/ElementalWard/Base/Rooms/BossRoomEntrance.prefab
-        - Assets/ElementalWard/Base/Rooms/BossRoomExit.prefab
         - Assets/ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
@@ -1222,7 +1226,6 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall.prefab
-        - Assets/ElementalWard/Base/Rooms/CrackedWall.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLarge.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomPlus.prefab
@@ -1233,10 +1236,21 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Boss_Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomEntrance.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomExit.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/CrackedWall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Open.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Candlestick.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickSmall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickTriple.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickWall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Chandelier.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Torch.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/TorchWall.prefab
         - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd.prefab
         - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice.prefab
-        - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
-        - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/InputRebinder.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/LabeledSlider.prefab
@@ -1581,9 +1595,6 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Core/FirstPersonCamera.prefab
         - Assets/ElementalWard/Base/ElementDefs/ElementOverload.prefab
         - Assets/ElementalWard/Base/ElementDefs/Fire/OnFireVFX.prefab
-        - Assets/ElementalWard/Base/Rooms/Boss_Wall-Door.prefab
-        - Assets/ElementalWard/Base/Rooms/BossRoomEntrance.prefab
-        - Assets/ElementalWard/Base/Rooms/BossRoomExit.prefab
         - Assets/ElementalWard/Base/Rooms/BossRooms/Room_DeadSimple.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallway.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Hallways/RoomHallwayCorner.prefab
@@ -1593,7 +1604,6 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsLarge.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsMedium.prefab
         - Assets/ElementalWard/Base/Rooms/Connectors/Stairs/RoomStairsSmall.prefab
-        - Assets/ElementalWard/Base/Rooms/CrackedWall.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLarge.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomLargeStairs.prefab
         - Assets/ElementalWard/Base/Rooms/EnemyRooms/RoomPlus.prefab
@@ -1604,10 +1614,21 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Boss_Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomEntrance.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/BossRoomExit.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/CrackedWall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Door.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/CustomTiles/Wall-Open.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Candlestick.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickSmall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickTriple.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/CandlestickWall.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Chandelier.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/Torch.prefab
+        - Assets/ElementalWard/Base/Rooms/RoomElements/Lights/TorchWall.prefab
         - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd.prefab
         - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice.prefab
-        - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
-        - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/InputRebinder.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/LabeledSlider.prefab
