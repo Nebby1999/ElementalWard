@@ -27,15 +27,15 @@ MonoBehaviour:
       weight: 40
       cardCost: 150
   - poolName: ElementalEnemies
-    weight: 25
+    weight: 50
     cards:
     - spawnCard: {fileID: 11400000, guid: f776d2d98ea20f24ebe3c907de8d318d, type: 2}
       minimumSpawnDistance: 0
       maximumSpawnDistance: 0
-      weight: 25
+      weight: 50
       cardCost: 150
     - spawnCard: {fileID: 11400000, guid: 8541ea0cc84e3e14a81e71da37a79af7, type: 2}
       minimumSpawnDistance: 0
       maximumSpawnDistance: 0
-      weight: 12
+      weight: 40
       cardCost: 200

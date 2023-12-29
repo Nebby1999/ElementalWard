@@ -41,7 +41,7 @@ MonoBehaviour:
     - ItemDefs
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d9c32cb9425f9104db04d61c75ef35d4
-    m_Address: Assets/ElementalWard/Base/Items/Vials/LesserlHPVial.asset
+    m_Address: Assets/ElementalWard/Base/Items/Vials/LesserHPVial.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - ItemDefs
@@ -86,6 +86,56 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - ItemDefs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a72576c119acc554d97dcb92fcbacedc
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/CoinPile_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aaf47793eec05bf44bc6b69c033652d1
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/GoldBag_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63f658cc51ca36040b23b6f0a0b90bc9
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/GoldenCrown_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9cc26df11bd54ec4083f70f3b01220f3
+    m_Address: Assets/ElementalWard/Base/Items/Treasure/GoldenGoblet_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a5364437dac3884390debe974928c19
+    m_Address: Assets/ElementalWard/Base/Items/Vials/LesserHPVial_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e28d7391825a9dc46998c74c951b38fc
+    m_Address: Assets/ElementalWard/Base/Items/Vials/LesserMPVial_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b50eb3074a52323499bfb9ef75858c50
+    m_Address: Assets/ElementalWard/Base/Items/Vials/MediumHPVial_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1c9361aa1eb67f4ab540990b76c03c8
+    m_Address: Assets/ElementalWard/Base/Items/Vials/MediumMPVial_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7db396f3841743d4b932ba968f86895a
+    m_Address: Assets/ElementalWard/Base/Items/Vials/SuperHPVial_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df3134ef410859d45b3724f4d543d950
+    m_Address: Assets/ElementalWard/Base/Items/Vials/SuperMPVial_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}

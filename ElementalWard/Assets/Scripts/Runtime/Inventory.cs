@@ -18,6 +18,8 @@ namespace ElementalWard
         private void Awake()
         {
             CharacterMaster = GetComponent<CharacterMaster>();
+            _elementEnergy = new float[ElementCatalog.ElementCount];
+            _items = new ulong[ItemCatalog.ItemCount];
         }
         public bool HandlePickup(GenericPickupController controller)
         {

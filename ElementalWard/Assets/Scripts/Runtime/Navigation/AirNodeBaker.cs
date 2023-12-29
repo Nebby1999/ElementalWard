@@ -57,6 +57,11 @@ namespace ElementalWard.Navigation
                     var hitName = hit.collider.name;
                     if(!hitName.StartsWith("TempCollider_"))
                     {
+                        if (hit.collider.GetComponent<NodeBlocker>())
+                        {
+                            _mover.Ignore(hit.collider);
+                            continue;
+                        }
                         //Check the Angle, see if it's either a wall or a slope
                         var hitAngle = Vector3.Angle(hit.normal, Vector3.up);
                         if(hitAngle > 89 && hitAngle < 91)
@@ -156,10 +161,19 @@ namespace ElementalWard.Navigation
 
         public void Dispose()
         {
-            foreach(var collider in _collidersForBaking)
+            foreach (var collider in _collidersForBaking)
             {
                 if (collider)
-                    GameObject.Destroy(collider.gameObject);
+                {
+                    if (Application.isEditor)
+                    {
+                        GameObject.DestroyImmediate(collider.gameObject);
+                    }
+                    else
+                    {
+                        GameObject.Destroy(collider.gameObject);
+                    }
+                }
             }
             _mover?.Dispose();
         }
@@ -219,9 +233,16 @@ namespace ElementalWard.Navigation
             private Transform _transform;
             public void Dispose()
             {
-                if(_moverObject)
+                if (_moverObject)
                 {
-                    GameObject.DestroyImmediate(_moverObject, true);
+                    if(Application.isEditor)
+                    {
+                        GameObject.DestroyImmediate(_moverObject);
+                    }
+                    else
+                    {
+                        GameObject.Destroy(_moverObject);
+                    }
                 }
             }
 
@@ -263,6 +284,11 @@ namespace ElementalWard.Navigation
             {
                 float distance = Vector3.Distance(MoverPosition, DestinationPosition);
                 return distance < 0.05f;
+            }
+
+            public void Ignore(Collider other)
+            {
+                Physics.IgnoreCollision(_moverCharacterController, other);
             }
 
             public Mover()

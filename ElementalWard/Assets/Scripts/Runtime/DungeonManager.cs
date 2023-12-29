@@ -21,6 +21,7 @@ namespace ElementalWard
         public Xoroshiro128Plus rng;
         [SerializeField] private ulong _dungeonFloor;
         [SerializeField] private DungeonDirector _dungeonDirector;
+        [SerializeField] private SceneDirector _sceneDirector;
         [SerializeField] private CombatDirector _combatDirector;
         [SerializeField] private PlayableCharacterMaster _playableCharacterMaster;
 
@@ -37,6 +38,7 @@ namespace ElementalWard
         private void Start()
         {
             _combatDirector.enabled = false;
+            _sceneDirector.enabled = false;
             StartCoroutine(WaitForEverythingToBeSetUp());
         }
 
@@ -73,6 +75,13 @@ namespace ElementalWard
             while(!SceneNavigationSystem.HasBakedGraphs)
                 yield return null;
 
+            if(_sceneDirector)
+            {
+                _sceneDirector.enabled = true;
+                yield return null;
+                _sceneDirector.PopulateScene();
+                _sceneDirector.enabled = false;
+            }
             if(_combatDirector)
             {
                 _combatDirector.enabled = true;

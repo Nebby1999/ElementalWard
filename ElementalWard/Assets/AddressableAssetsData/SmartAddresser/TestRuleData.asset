@@ -860,6 +860,8 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_CornerCrossing.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Arched.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat_Ceiling.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Ceiling.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Center.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Arched.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Flat.prefab
@@ -958,7 +960,8 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
-        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd_.prefab
+        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd.prefab
+        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
@@ -1130,6 +1133,8 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_CornerCrossing.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Arched.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat_Ceiling.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Ceiling.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Center.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Arched.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Flat.prefab
@@ -1228,7 +1233,8 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
-        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd_.prefab
+        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd.prefab
+        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab
@@ -1498,6 +1504,8 @@ MonoBehaviour:
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_CornerCrossing.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Arched.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Border_Flat_Ceiling.prefab
+        - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Ceiling.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Center.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Arched.prefab
         - Assets/BrokenVector/LowPolyDungeon/Prefabs/Tiles/Dungeon_Custom_Corner_Flat.prefab
@@ -1596,7 +1604,8 @@ MonoBehaviour:
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_2.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_3.prefab
         - Assets/ElementalWard/Base/Rooms/Entrances/RoomDungeonEntrance_4.prefab
-        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd_.prefab
+        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd.prefab
+        - Assets/ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Door.prefab
         - Assets/ElementalWard/Base/Rooms/Wall-Open.prefab
         - Assets/ElementalWard/Base/UI/Prefabs/GenericButton.prefab

@@ -57,6 +57,11 @@ namespace ElementalWard.Navigation
                     //This is not a nodeCollider.
                     if (!hitName.StartsWith("TempCollider_"))
                     {
+                        if(hit.collider.GetComponent<NodeBlocker>())
+                        {
+                            hitWall = true;
+                            break;
+                        }
                         //Check the angle, see if its either a wall or a slope.
                         var hitAngle = Vector3.Angle(hit.normal, Vector3.up);
                         if (hitAngle > 89 && hitAngle < 91)
@@ -191,7 +196,16 @@ namespace ElementalWard.Navigation
             foreach (var collider in _collidersForBaking)
             {
                 if(collider)
-                    GameObject.Destroy(collider.gameObject);
+                {
+                    if(Application.isEditor)
+                    {
+                        GameObject.DestroyImmediate(collider.gameObject);
+                    }
+                    else
+                    {
+                        GameObject.Destroy(collider.gameObject);
+                    }
+                }
             }
             _mover?.Dispose();
         }
@@ -223,7 +237,14 @@ namespace ElementalWard.Navigation
 
             public void Dispose()
             {
-                UnityEngine.Object.DestroyImmediate(_moverObject);
+                if (Application.isEditor)
+                {
+                    GameObject.DestroyImmediate(_moverObject);
+                }
+                else
+                {
+                    GameObject.Destroy(_moverObject);
+                }
             }
 
             public void Move()

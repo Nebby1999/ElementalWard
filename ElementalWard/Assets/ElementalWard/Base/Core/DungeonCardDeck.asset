@@ -114,13 +114,18 @@ MonoBehaviour:
       weight: 50
       cardCost: 10
   - poolName: SpecialRooms
-    weight: 5
+    weight: 10
     cards:
     - spawnCard: {fileID: 11400000, guid: 4ec209dcd09e35b4e86bfb25c658c9c3, type: 2}
       minimumSpawnDistance: 0
       maximumSpawnDistance: 0
-      weight: 100
+      weight: 50
       cardCost: 0
+    - spawnCard: {fileID: 11400000, guid: eed39b32be4181342b453389bd5726b3, type: 2}
+      minimumSpawnDistance: 0
+      maximumSpawnDistance: 0
+      weight: 100
+      cardCost: 5
   bossRoomCards:
     poolName: Boss Room Cards
     weight: 1

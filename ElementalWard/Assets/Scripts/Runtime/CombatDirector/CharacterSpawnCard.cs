@@ -25,7 +25,8 @@ namespace ElementalWard
             var instancedMaster = masterSummon.Perform();
             result.spawnedInstance = instancedMaster.gameObject;
             result.body = instancedMaster.CurrentBody;
-            return true;
+            result.success = result.spawnedInstance;
+            return result.success;
         }
 
         private void OnValidate()

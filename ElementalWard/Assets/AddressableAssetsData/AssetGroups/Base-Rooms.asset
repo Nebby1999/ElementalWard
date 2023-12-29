@@ -447,7 +447,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0249158b1c3a4694aa4a587c9ec87552
-    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd_.prefab
+    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Rooms
@@ -459,6 +459,27 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ec209dcd09e35b4e86bfb25c658c9c3
     m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e445003893e9de4f9a60f281eab4ad7
+    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice_Ground.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfe4c6a297aeab04cbfa9eb0f5d988b2
+    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice_Air.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6414d4fd4601e5d46bbc4be3bc8c7396
+    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eed39b32be4181342b453389bd5726b3
+    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomPrecipice_Card.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

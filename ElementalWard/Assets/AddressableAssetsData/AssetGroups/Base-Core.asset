@@ -89,6 +89,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4654927c54a158f42a29539f2768b570
+    m_Address: ElementalWard/Base/Core/CombatCardDeck.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fbd09945c5eddb42ad59916ebbaf0ae
+    m_Address: ElementalWard/Base/Core/DungeonCardDeck.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf94fb9b28af7504b8fc8c7ac7385b99
+    m_Address: ElementalWard/Base/Core/SceneCardDeck.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:
