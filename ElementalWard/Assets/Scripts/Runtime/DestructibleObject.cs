@@ -2,10 +2,12 @@ using UnityEngine;
 
 namespace ElementalWard
 {
-    public class DestructibleObject : MonoBehaviour, IHealthProvider
+    [RequireComponent(typeof(HealthComponent))]
+    public class DestructibleObject : MonoBehaviour, IHealthProvider, IOnIncomingDamage
     {
         [SerializeField] private float _baseHealth;
         [SerializeField] private float _lvlHealth;
+        [SerializeField] private ElementDef requiredElement;
         public float MaxHealth => _maxHealth;
         private float _maxHealth;
         public float HealthRegen => 0;
@@ -21,6 +23,23 @@ namespace ElementalWard
             _maxHealth = _baseHealth + (_lvlHealth * level - 1);
             _healthComponent.HealthProvider = this;
             _healthComponent.CurrentHealth = MaxHealth;
+        }
+
+        public void OnIncomingDamage(DamageInfo info)
+        {
+            if (!requiredElement)
+                return;
+
+            if(!info.attackerBody)
+            {
+                return;
+            }
+
+            var element = info.attackerBody.ElementDef;
+            if(element != requiredElement)
+            {
+                info.rejected = true;
+            }
         }
     }
 }

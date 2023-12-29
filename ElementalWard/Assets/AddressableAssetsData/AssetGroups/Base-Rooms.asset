@@ -446,6 +446,22 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0249158b1c3a4694aa4a587c9ec87552
+    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd_.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Rooms
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7450749061bdc0d4cb1f588e2a1314a9
+    m_Address: ElementalWard/Base/Rooms/CrackedWall.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ec209dcd09e35b4e86bfb25c658c9c3
+    m_Address: ElementalWard/Base/Rooms/SpecialRooms/RoomDeadEnd_Card.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a4a0e1656ed912649bd03e9e7cd695cc, type: 2}
   m_SchemaSet:

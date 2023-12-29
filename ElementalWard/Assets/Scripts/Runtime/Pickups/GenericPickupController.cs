@@ -35,7 +35,11 @@ namespace ElementalWard
 
         private void Start()
         {
-            PickupIndex = _defaultPickup;
+            if(PickupIndex ==  PickupIndex.none)
+            {
+                PickupIndex = _defaultPickup;
+            }
+
             if(!PickupIndex.IsValid && _destroyIfInvalidPickupIndex)
             {
                 Destroy(gameObject);
